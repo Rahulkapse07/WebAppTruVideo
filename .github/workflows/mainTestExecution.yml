@@ -39,6 +39,7 @@ jobs:
       run: |
         echo "Current directory: $(pwd)"
         ls -al Reports
+        
     - name: Send Email with Report
       run: |
         echo "Sending email with report..."
@@ -50,16 +51,30 @@ jobs:
         echo "FromLineOverride=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseSTARTTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        # Prepare the email content
+        
+        # Prepare the email content with attachment
         echo "To: rahul.kapse@5exceptions.com" > email.txt
         echo "From: ${{ secrets.EMAIL_USER }}" >> email.txt
         echo "Subject: Playwright Test Report" >> email.txt
+        echo "MIME-Version: 1.0" >> email.txt
+        echo "Content-Type: multipart/mixed; boundary=\"boundary123\"" >> email.txt
+        echo "" >> email.txt
+        echo "--boundary123" >> email.txt
+        echo "Content-Type: text/plain; charset=UTF-8" >> email.txt
         echo "" >> email.txt
         echo "Please find the attached test report." >> email.txt
-        # Attach the report
-        echo "Content-Type: text/html; charset="UTF-8"" >> email.txt
+        echo "" >> email.txt
+
+        # Attach the HTML report
+        echo "--boundary123" >> email.txt
+        echo "Content-Type: text/html; charset=UTF-8" >> email.txt
+        echo "Content-Disposition: attachment; filename=\"TestReport.html\"" >> email.txt
         echo "" >> email.txt
         cat Reports/Index.html >> email.txt
+        echo "" >> email.txt
+        echo "--boundary123--" >> email.txt
+
         # Send the email
         ssmtp rahul.kapse@5exceptions.com < email.txt
         echo "Email sent."
+
