@@ -12,6 +12,7 @@ jobs:
       EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
       SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
       SMTP_PORT: ${{ secrets.SMTP_PORT }}
+
     steps:
     - uses: actions/checkout@v4
 
@@ -20,29 +21,24 @@ jobs:
         distribution: 'temurin'
         java-version: '11'
 
-    - name: Build & Install
+    - name: Build & Install (only if changes in pom.xml)
+      if: steps.cache.outputs.cache-hit != 'true'
       run: mvn -B install -D skipTests --no-transfer-progress
 
-    - name: Install Xvfb
+    - name: Install Xvfb (only if Playwright tests require a display)
       run: sudo apt-get install -y xvfb
 
-    - name: Install Playwright
+    - name: Install Playwright (only if not cached)
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
-    - name: Run tests with Xvfb
+    - name: Run Playwright Tests
       run: xvfb-run --auto-servernum -- mvn test -Dsurefire.suiteXmlFiles=TestRunnerSuites/FullRegressionSuite.xml
 
     - name: Set permissions for Report file
       run: chmod 644 Reports/Index.html
 
-    - name: Debug Report Path
-      run: |
-        echo "Current directory: $(pwd)"
-        ls -al Reports
-        
     - name: Send Email with Report
       run: |
-        echo "Sending email with report..."
         sudo apt-get install -y ssmtp
         echo "root=postmaster" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "mailhub=${{ secrets.SMTP_SERVER }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
@@ -51,8 +47,7 @@ jobs:
         echo "FromLineOverride=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseSTARTTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        
-        # Prepare the email content with attachment
+
         echo "To: rahul.kapse@5exceptions.com" > email.txt
         echo "From: ${{ secrets.EMAIL_USER }}" >> email.txt
         echo "Subject: Playwright Test Report" >> email.txt
@@ -65,7 +60,6 @@ jobs:
         echo "Please find the attached test report." >> email.txt
         echo "" >> email.txt
 
-        # Attach the HTML report
         echo "--boundary123" >> email.txt
         echo "Content-Type: text/html; charset=UTF-8" >> email.txt
         echo "Content-Disposition: attachment; filename=\"TestReport.html\"" >> email.txt
@@ -74,7 +68,6 @@ jobs:
         echo "" >> email.txt
         echo "--boundary123--" >> email.txt
 
-        # Send the email
         ssmtp rahul.kapse@5exceptions.com < email.txt
         echo "Email sent."
 
