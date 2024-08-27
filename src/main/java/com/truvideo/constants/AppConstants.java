@@ -45,6 +45,7 @@ public class AppConstants {
 	public static final String ADD_ORDER_URL = "https://rc.truvideo.com/crud/repair-order/0";
 	// RO Details Page
 	public static final String PRINT_SCREEN_URL = "https://dashboard-rc.truvideo.com/";
+	public static final String REPAIR_ORDER_DELETED_MESSAGE = "Repair order Deleted successfully";
 
 	// Users Page
 	public static final String USER_SAVED_MESSAGE = "Record has been successfully added";

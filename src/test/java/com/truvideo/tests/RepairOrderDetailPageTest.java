@@ -82,6 +82,10 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.submitPayment();
 	}
 	
-	
+
+	@Test(priority = 17)
+	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
+		repairOrderPage.deleteRepairOrder();
+	}
 
 }

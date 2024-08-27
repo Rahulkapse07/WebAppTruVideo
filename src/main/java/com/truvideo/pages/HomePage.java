@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.sun.tools.sjavac.Log;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
@@ -47,7 +48,8 @@ public class HomePage extends JavaUtility {
 	private String repairOrder_Message_checkBox = "#ro_message_type_search";
 	private String prospect_Message_checkBox = "#so_message_type_search";
 	private String reminder_checkBox = "#reminder_type_search";
-
+	//private String noResultFoundText="h4:has-text('No Results Found')";
+	private String noResultFoundText="#bd h4:has-text('No Results Found.')";
 	private String getRadio(String radioType) {
 		String radioElement = "label[class='radio']:has-text('" + radioType + "')";
 		return radioElement;
@@ -543,6 +545,36 @@ public class HomePage extends JavaUtility {
 		return !flags.contains(false);
 	}
 
+	public boolean globalSearchwitheText(String text) {
+		page.click(search_TextBox);
+		logger.info("Clicked on search text box");
+//		if (page.isChecked(all_checkBox)) {
+//			page.click(all_checkBox);// Removed All checkBox
+//		}
+		page.waitForTimeout(500);
+		if (!page.isChecked(repairOrder_checkBox)) {
+			page.click(repairOrder_checkBox);// Selecting repair order checkBox
+		}
+		if (!page.isChecked(getRadio("This month"))) {
+			page.click(getRadio("This month"));// Selecting this month radio filter
+		}
+		String enteredTextForSearch = text;
+		page.fill(search_TextBox_UnderWindow, enteredTextForSearch); // searching for the 'test' keyword
+		logger.info("Text entered in search box");
+		page.click(search_Button);
+		logger.info("Clicked on search button when text is entered in the text box");
+		page.waitForTimeout(5000);
+		
+		if(page.locator(noResultFoundText).isVisible()) {
+		logger.info("Searched data has been not found in TruVideo");
+		return true;
+		}else {
+			logger.info("Something went wrong to find selected value ");
+			return false ;
+		}
+			
+		}
+	
 	public boolean listAsPerTheTextSearch() {
 		page.click(search_TextBox);
 		logger.info("Clicked on search text box");
@@ -562,6 +594,7 @@ public class HomePage extends JavaUtility {
 		page.click(search_Button);
 		logger.info("Clicked on search button when text is entered in the text box");
 		page.waitForTimeout(2000);
+		
 		List<String> allTextUnderRO = page.locator(tableRows).allInnerTexts();
 		List<Boolean> flags = new ArrayList<>();
 		int intCount = 1;
