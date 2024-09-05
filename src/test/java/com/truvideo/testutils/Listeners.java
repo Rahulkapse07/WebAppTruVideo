@@ -20,6 +20,7 @@ public class Listeners extends TestUtils implements ITestListener {
 		test = extent.createTest(result.getMethod().getMethodName()); // Method Name
 		test.assignCategory("All");
 		try {
+			//result.getMethod().getDescription();
 			List<String> tags = getTicketID(result.getMethod().getMethodName());
 			if (!tags.isEmpty()) {
 				for (String tag : tags) {

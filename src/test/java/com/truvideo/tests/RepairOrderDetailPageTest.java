@@ -82,8 +82,32 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.submitPayment();
 	}
 	
-
-	@Test(priority = 17)
+	
+	//Added by RK
+	@Test(priority = 14)
+	public void verifyCopylinktoClipboardFunctionality() {
+		repairOrderPage.copyLinktoClipboard();
+	}
+	@Test(priority = 14)
+	public void verifyViewWithCustomerFunctionality() {
+		repairOrderPage.viewWithCustomer();
+	}
+	@Test(priority = 14)
+	public void verifyEditThisROFunctionality() {
+		repairOrderPage.editThisRO();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	@Test(priority = 17)       //try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}

@@ -33,15 +33,17 @@ public class LoginPageTest extends BaseTest {
 				.contains(AppConstants.ERROR_MESSAGE_WITHOUT_ENTERING_lOGIN_CREDENTIALS));
 	}
 
-	@Test(priority = 5)
-	public void loginWithInvalidCredentials_showErrorMessage() {
+	@Test(priority = 5 )
+	//public void loginWithInvalidCredentials_showErrorMessage() 
+	public void AT_686_Repair_Order_Verify_creating_a_New_Repair_Order()
+	{
 		String actualError_WhenWrongCredentialsEntered = loginpage.loginWithInvalidCredentials();
 		Assert.assertTrue(actualError_WhenWrongCredentialsEntered
 				.contains(AppConstants.ERROR_MESSAGE_WHEN_ENTERING_WRONG_CREDENTIALS));
 	}
 
 	@Test(priority = 6)
-	public void loginToApplication_ValidCredentials() {
+	public void WA_5572_loginToApplication_ValidCredentials() {
 		String actualTitle = loginpage.loginToApplication(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertEquals(actualTitle, AppConstants.HOME_PAGE_TITLE);
 	}
