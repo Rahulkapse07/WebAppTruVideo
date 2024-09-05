@@ -1,0 +1,73 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      EMAIL_USER: ${{ secrets.EMAIL_USER }}
+      EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+
+    - name: Build & Install (only if changes in pom.xml)
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: mvn -B install -D skipTests --no-transfer-progress
+
+    - name: Install Xvfb (only if Playwright tests require a display)
+      run: sudo apt-get install -y xvfb
+
+    - name: Install Playwright (only if not cached)
+      run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+
+    - name: Run Playwright Tests
+      run: xvfb-run --auto-servernum -- mvn test -Dsurefire.suiteXmlFiles=TestRunnerSuites/FullRegressionSuite.xml
+
+    - name: Set permissions for Report file
+      run: chmod 644 Reports/Index.html
+
+    - name: Send Email with Report
+      run: |
+        sudo apt-get install -y ssmtp
+        echo "root=postmaster" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "mailhub=${{ secrets.SMTP_SERVER }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "AuthUser=${{ secrets.EMAIL_USER }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "AuthPass=${{ secrets.EMAIL_PASS }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "FromLineOverride=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "UseTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
+        echo "UseSTARTTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
+
+        echo "To: rahul.kapse@5exceptions.com" > email.txt
+        echo "From: ${{ secrets.EMAIL_USER }}" >> email.txt
+        echo "Subject: Playwright Test Report" >> email.txt
+        echo "MIME-Version: 1.0" >> email.txt
+        echo "Content-Type: multipart/mixed; boundary=\"boundary123\"" >> email.txt
+        echo "" >> email.txt
+        echo "--boundary123" >> email.txt
+        echo "Content-Type: text/plain; charset=UTF-8" >> email.txt
+        echo "" >> email.txt
+        echo "Please find the attached test report." >> email.txt
+        echo "" >> email.txt
+
+        echo "--boundary123" >> email.txt
+        echo "Content-Type: text/html; charset=UTF-8" >> email.txt
+        echo "Content-Disposition: attachment; filename=\"TestReport.html\"" >> email.txt
+        echo "" >> email.txt
+        cat Reports/Index.html >> email.txt
+        echo "" >> email.txt
+        echo "--boundary123--" >> email.txt
+
+        ssmtp rahul.kapse@5exceptions.com < email.txt
+        echo "Email sent."
+

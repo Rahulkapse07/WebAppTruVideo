@@ -81,7 +81,45 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifySubmitPayment_ProcessedPayment() {
 		repairOrderPage.submitPayment();
 	}
+
+	//added by Yash
+	@Test(priority = 15)
+	public void verifyCreateReminder() throws InterruptedException {
+		Assert.assertTrue(repairOrderPage.createreminder());
+	}
+	//added by Yash
+	@Test(priority = 15)
+	public void VerifyOpenInspection() throws InterruptedException{
+		Assert.assertTrue(repairOrderPage.openInspection());
+	}
+	//added by Yash
+	@Test(priority = 15)
+	public void VerifySendbackInspection() {
+		Assert.assertTrue(repairOrderPage.sendbackInspection());
+	}
+	//added by Yash
+	@Test(priority = 15)
+	public void VerifyPublishInspections() {
+		Assert.assertTrue(repairOrderPage.publishInspection());
+	}
+	//added by Yash
+	@Test(priority = 15)
+	public void VerifyNotifyCustomer() {
+		Assert.assertTrue(repairOrderPage.notifyCustomerBtn());
+	}
+	// added by Yash
+	@Test(priority = 15)
+	public void VerifyHide_Show() {
+		Assert.assertTrue(repairOrderPage.hide_showBtn());
+	}
 	
+
 	
+
+	@Test(priority = 17)
+	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
+		repairOrderPage.deleteRepairOrder();
+	}
+
 
 }

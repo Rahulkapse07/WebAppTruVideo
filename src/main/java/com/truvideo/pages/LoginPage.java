@@ -14,9 +14,10 @@ public class LoginPage extends JavaUtility {
 	private String password_Field = "input[name='j_password']";
 	private String logIn_Button = "input[value='Log In']";
 	private String createAccount_ButtonLink = "#register-user";
-	private String forgotPassword_ButtonLink = "#forgot-password";
+	private String forgotPassword_ButtonLink = "#forgot-password"; //added alert word
 	private String errorAlertMessage_Login = "div[class='alert alert-error']";
 	private String close_Button_ErrorAlert = "a[class='close']";
+	//private String close_Button_ErrorAlert = "b 2 a[class='close']";
 
 	public static String logInUsername;
 	public static String logInDealer;

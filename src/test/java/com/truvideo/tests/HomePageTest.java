@@ -132,6 +132,7 @@ public class HomePageTest extends BaseTest {
 	@Test(priority = 19)
 	public void verify_SearchFilter_OnAdvanceSearchWindow() {
 		Assert.assertTrue(homepage.listAsPerTheTextSearch());
+		//Assert.assertTrue(homepage.listAsPerTheTextSearch("text"));  //Added by RK
 	}
 
 	@Test(priority = 20)
