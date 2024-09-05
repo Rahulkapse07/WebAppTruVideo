@@ -13,6 +13,8 @@ import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
 
+import net.bytebuddy.implementation.bytecode.Throw;
+
 public class HomePage extends JavaUtility {
 	private Page page;
 
@@ -36,6 +38,7 @@ public class HomePage extends JavaUtility {
 	private String userGroupsTab = "a[href='/organization/usergroups/']";
 	private String savedVideoLibraryTab = "a[href='/crud/saved-video']";
 	private String devicesTab = "a[href='/device/']";
+	
 
 	// search
 	private String search_TextBox = "#search-header";
@@ -80,7 +83,7 @@ public class HomePage extends JavaUtility {
 	private String dealerCode_Button = "div a:has-text('Dealer Code')";
 	private String serviceCode = "#dealer-menu-list li:has-text('Service Code:')";
 	private String salesCode = "#dealer-menu-list li:has-text('Sales Code:')";
-	private String chat_Button = "#chat-button";
+	private String chatv2_Header = "input#chat-button";
 	private String backAway_Button = "#away-button";
 	private String awayBackMessage_AlertMessage = "div.notifications-button div";
 	private String closeMessageButton = "div.notifications-button a.close";
@@ -126,6 +129,7 @@ public class HomePage extends JavaUtility {
 	private String allRightReserved_Label = "#user-menu-list a:has-text('© TruVideo  |  All Rights Reserved.')";
 	private String dealerSearch_TextBox = "#dealer-search-form";
 	private String logOut_Button = "#user-menu-list li a[class='logout-a']";
+	private String other = "//a[contains(text(), 'Other ')]";
 
 	private String getSearchedDealer(String dealerName) {
 		return "ul#dealerList li a:has-text('" + dealerName + "')";
@@ -133,6 +137,7 @@ public class HomePage extends JavaUtility {
 
 	public String clickOn_RepairOrder_Header() {
 		navigateToOrderList();
+		page.click(repairOrder_Header);
 		logger.info("Clicked on Repair Order Header Tab");
 		return page.title();
 	}
@@ -140,9 +145,10 @@ public class HomePage extends JavaUtility {
 	public OrderListPage navigateToOrderList() {
 		page.click(repairOrder_Header);
 		return new OrderListPage(page);
+	
 	}
 
-	public boolean clickOn_Order_MessagesHeader() {
+	public boolean clickOn_Order_MessagesHeader() throws Exception {
 		navigateToMessageScreen_Order();
 		logger.info("Clicked on Orders Message Screen Header Tab");
 		if (page.title().equals(AppConstants.MESSAGES_PAGE_TITLE)
@@ -157,10 +163,16 @@ public class HomePage extends JavaUtility {
 		}
 	}
 
-	public MessageScreen_Order navigateToMessageScreen_Order() {
-		page.click(orderMessage_Header);
-		page.waitForTimeout(5000);
-		return new MessageScreen_Order(page);
+	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception {
+		if(page.locator(orderMessage_Header).isVisible()) {
+			page.click(orderMessage_Header);
+			page.waitForTimeout(5000);
+			return new MessageScreen_Order(page);
+			}
+		else {
+			throw new Exception("Message header Disable");
+		}
+		
 	}
 
 	public String clickOn_Prospect_Header() {
@@ -199,10 +211,11 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Reminder Header Tab");
 		return page.url();
 	}
-
+	
 	public ReminderPage navigateToReminder() {
+		page.waitForTimeout(4000);
 		if (!page.isVisible(reminder_Header)) {
-			page.click(other_Header);
+			page.click(other);
 		}
 		page.click(reminder_Header);
 		return new ReminderPage(page);
@@ -655,8 +668,8 @@ public class HomePage extends JavaUtility {
 	}
 
 	public ChatPage navigateToChat() {
-		page.click(chat_Button);
-		page.waitForTimeout(5000);
+		page.click(chatv2_Header);
+		page.waitForTimeout(10000);
 		return new ChatPage(page);
 	}
 

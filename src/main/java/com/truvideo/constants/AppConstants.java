@@ -59,5 +59,16 @@ public class AppConstants {
 	public static final String ERROR_MESSAGE_CLICKONCLOSESO_WHEN_SONOTSELECTED = "Please select sales prospects to be closed.";
 	public static final String SUCESS_MESSAGE_SO_CLOSE_WHEN_SO_SELECTED = "Sales prospects have been successfully closed.";
 	public static final String ADD_PROSPECT_URL = "https://rc.truvideo.com/crud/sales/0";
+	
+	//Reminder
+	public static final String Reminder_Send_Message = "Text message sent to customer";
+	public static final String Reminder_Send_EmailMessage = "Email message sent to customer";
+	public static final String Reminder_Cancel_Message = "Reminder has been cancelled";
+	public static final String Reminder_Save = "Service recomendation successfully saved";
+	
+	//Inspection
+	public static final String Inspection_Sent = "The notification was sent successfully to the client";
+
+	
 }
 

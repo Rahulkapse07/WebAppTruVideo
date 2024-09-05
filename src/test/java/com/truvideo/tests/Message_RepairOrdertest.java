@@ -12,7 +12,7 @@ public class Message_RepairOrdertest extends BaseTest {
 	MessageScreen_Order MessageScreen_order;
 
 	@BeforeClass
-	public void setuplogin() {
+	public void setuplogin() throws Exception {
 
 		MessageScreen_order = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
 				.navigateToMessageScreen_Order();
@@ -22,15 +22,14 @@ public class Message_RepairOrdertest extends BaseTest {
 	public void verifyallelement() {
 		Assert.assertTrue(MessageScreen_order.VerifyAll_Elements());
 	}
-
-    @Test(priority = 2)
-	public void verifyDefaultFilters() {
-		Assert.assertTrue(MessageScreen_order.checkMy_WhatsApp_FilterIsApplied());
-	}
+//   @Test(priority = 2)
+//	public void VerifyReadUnreadnotification() {
+//		Assert.assertTrue(MessageScreen_order.VerifyReadUnreadNotification());
+//	}
     @Test(priority = 3)
-    	public void VerifyReadUnreadnotification() {
-    	Assert.assertTrue(MessageScreen_order.VerifyReadUnreadNotification());
-    }
+	public void verifyDefaultFilters() throws Exception {
+		Assert.assertTrue(MessageScreen_order.verify_Default_Filters());
+	}
     @Test(priority = 4)
     public void verifyGoToRopage() {
     	Assert.assertTrue(MessageScreen_order.ConversationGOtoRobtn());
@@ -44,12 +43,7 @@ public class Message_RepairOrdertest extends BaseTest {
     public void VerifyWhatsAppChatEnablecondition() {
     	Assert.assertTrue(MessageScreen_order.VerifyWhatsAppChatEnableCondition());
     }
-//	@Test(priority = 7)
-//	public void clickOn_MYfilterBotton() {
-//		Assert.assertTrue(MessageScreen_order.click_My_filterBotton());
-//	}
-
-	@Test(priority = 8)
+    @Test(priority = 8)
 	public void click_whatsapp_filterBotton() {
 		Assert.assertTrue(MessageScreen_order.click_Whatsapp_filterBotton());
 	}
@@ -75,11 +69,11 @@ public class Message_RepairOrdertest extends BaseTest {
 	}
     @Test(priority = 13)
 	public void message_Profile_setting_button() {
-		Assert.assertTrue(MessageScreen_order.Message_Profile_setting_button());
+		Assert.assertTrue(MessageScreen_order.Message_Profile_setting_button("Suraj singh"));
 	}
     @Test(priority = 14)
 	public void verifystartConversatationbtn() {
-		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo")));
+		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo"),"WHATSAPP"));
 	}
 	@Test(priority = 15)
 	public void verifyMessageuser() {
@@ -94,8 +88,14 @@ public class Message_RepairOrdertest extends BaseTest {
 
 		Assert.assertTrue(MessageScreen_order.verifyfilterbuttons());
 	}
-    @Test(priority = 18)
+    @Test(priority = 19)
     public void MessageSendattachments() {
-    	MessageScreen_order.MessageSendAttachments();
+    	Assert.assertTrue(MessageScreen_order.MessageSendAttachments(prop.getProperty("MobileNo")));
+    }
+    
+    @Test(priority = 18)
+    public void VerifyConversationMessage_roDetails() throws Exception {
+    	MessageScreen_order.VerifyConversationMessage_RoDetails();
     }
 }
+

@@ -4,3 +4,4 @@ logs/loggers.log
 test-output/
 Reports/Index.html
 Reports/
+*.csv

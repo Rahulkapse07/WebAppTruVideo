@@ -23,7 +23,7 @@ public class HomePageTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void verify_OrdersMessage_HeaderTab_Working() {
+	public void verify_OrdersMessage_HeaderTab_Working() throws Exception {
 		Assert.assertTrue(homepage.clickOn_Order_MessagesHeader());
 		page.goBack();
 	}
