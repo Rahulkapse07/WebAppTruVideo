@@ -2,13 +2,17 @@ package com.truvideo.pages;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.ElementNotInteractableException;
 
+import com.microsoft.playwright.ElementHandle.SetInputFilesOptions;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.AriaRole;
 import com.truvideo.utility.JavaUtility;
 
 public class MessageScreen_Order extends JavaUtility {
@@ -24,34 +28,68 @@ public class MessageScreen_Order extends JavaUtility {
 	private String message_profile_user = ".profile__user-info  p.profile__user-info-title";
 	// private String Store_profile_name = "//a[@class='dropdown-toggle']//span[2]";
 	private String Store_profile_name = "a.dropdown-toggle >span >span:nth-child(3)";
-	private String message_profile_inside_close_btn = ".mat-mdc-dialog-component-host > .close";
-	private String message_profile_input = "#mat-input-8";
-	private String message_profile_save_btn = "//span[@class='mdc-button__label'][text()=' Save ']";
+	private String message_profile_inside_close_btn = ".mat-mdc-dialog-component-host .close";
+	private String message_profile_input = "input[id='mat-input-2']";
+	private String message_profile_save_btn = "div.mat-mdc-dialog-actions button span:nth-child(3)";
 	private String message_profile_change = ".ng-pristine .avatar-container >.avatar-content";
 	private String createIcon = "mat-icon.profile__action-fab-icon";
 	private String Message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
-	private String Message_Search_conversation = "//input[@placeholder ='Search a conversation']";
+	private String Message_Search_conversation = "input[id='mat-input-0']";
 	private String Message_Search_icon = "//div[@class='mat-mdc-form-field-icon-prefix ng-tns-c3736059725-2 ng-star-inserted']";
-	private String Message_filter_icon = "//div[@class='mat-mdc-form-field-icon-suffix ng-tns-c3736059725-2 ng-star-inserted']";
 	private String Message_filter_buttons = "span.mat-mdc-chip-focus-overlay";
 	private String Message_list_icon_whatsapp = "div.channels-list-item__main > .channels-list-item__status-phone > .channels-list-item__avatar__service-icon";
 	private String Message_filter_Whatsapplable = ".channels-list-item__status-phone .mat-icon";
 	private String Message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
-	private String StartconversationBtn = ".chat-input__button span.mat-mdc-button-persistent-ripple";
+	private String StartconversationBtn = ".chat-input__button span.mdc-button__label";
 	private String Countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
 	private String StartconversatationFirstname = "#mat-input-1";
 	private String Startconversatationlastname = "#mat-input-2";
 	private String StartconMobileno = "#mat-input-3";
 
+	private String StartConverSMS_Whatsapp_filterbuttn = "#mat-select-value-1";
+	private String StartConverSMS_Whatsapp_text = ".mat-mdc-option span";
+	private String StartConverSMS_Whatsapp = "#mat-select-0-panel mat-option span:has-text('Whatsapp')";
+	private String StartConverSMS_Sms = "#mat-option-0:has-text('SMS')";
+	private String ConversationInfo = "#first-content .info-container__content__title";
+	private String Converstiontitlename = ".chat-header__main p.chat-header__title";
+	private String ConversationInfobn = ".chat-header__drop-down button span.mat-mdc-button-touch-target";
+
+	private String SearchFilter2 = ".channels-search div.mat-mdc-text-field-wrapper div.mat-mdc-form-field-focus-overlay ";
+	private String SearchFilter = "#mat-input-0";
+	private String SearchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
+	private String Searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
+
+	private String Conversation_GotoRo_btn = "button.order-button";
+	private String ReturnToMessagePAge = ".main-body div div.return p";
+	private String Conversationtbcanclebtn = ".info-container__header__close-btn mat-icon svg";
+	private String ConversationChannelOwnerName = "#first-content div.info-container__content__title";
+	private String ROChannelOwnerName = "div.chat-header__main p.chat-header__title";
+
+	private String Conversationinactivemess = "div.chat-body__blocked-message.ng-star-inserted";
+	private String Reactivatebtn = ".chat-input__options div";
+	private String Inactivechat = "#mat-input-1";
+	private String NOconversationStartmessasge = ".chat-empty-container.ng-star-inserted h1";
+	private String ChannalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
+
+	private String MessageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
+	private String AttachmentPath = "src/main/resources/Images/testimage.png";
+	private String MessageSendBtn = ".chat-input__options button:nth-child(2) mat-icon";
+	private String ConversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
+
+	private String addRepairOrder_Btn = "#repair-order-add";
+	private String SendOriginal_btn = ".mdc-button.mdc-button--outlined.mat-mdc-outlined-button span.mat-mdc-focus-indicator";
+
+	private String conversationTextlabel = ".chat-header__main p.chat-header__title";
+
 	// Check UI of message R/O
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
 		FrameLocator iframe = page.frameLocator(messageIframe);
-	    page.waitForCondition(()-> iframe.locator(Converstiontitlename).isVisible());
+		page.waitForCondition(() -> iframe.locator(Message_Search_conversation).isVisible());
 		// Frame for Message
 		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
-		if (iframe.locator(Message_Filter_Icon).isVisible() && iframe.locator(createIcon).isVisible()
-				&& iframe.locator(Message_Search_conversation).isVisible()) {
+		if (iframe.locator(Message_Search_conversation).isVisible() && iframe.locator(Message_Search_icon).isVisible()
+				&& iframe.locator(message_profile).isVisible() && iframe.locator(message_profile).isVisible()) {
 			logger.info("Elements are verifed and Visible");
 			return true;
 		} else {
@@ -59,32 +97,47 @@ public class MessageScreen_Order extends JavaUtility {
 			return false;
 		}
 	}
-	// Verify functionality of all Elements
 
-	public boolean Message_Profile_setting_button() {
+	// Verify functionality of all Elements
+	private String MessageProfileName = ".profile__user-info p:nth-child(1)";
+
+	public boolean Message_Profile_setting_button(String ProfileName) {
+		page.reload();
+		logger.info("Verify Message Profile Settings");
+		List<Boolean> flags = new ArrayList<>();
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		page.waitForCondition(()->iframe.locator(message_profile).isVisible());
+		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
 		if (iframe.locator(message_profile).isVisible()) {
+			page.waitForTimeout(3000);
 			iframe.locator(message_profile).click();
 			logger.info("Message profile clicked");
 			page.waitForTimeout(2000);
-			
-		//	iframe.locator(message_profile_input).click();
-			logger.info("hsv");
+			// iframe.locator(message_profile_input).click();
 			page.keyboard().press("Control+A");
-			page.keyboard().press("Backspace");
-			iframe.locator(message_profile_input).fill("Suraj singh");
-
+			iframe.locator(message_profile_input).type(ProfileName);
+			page.waitForTimeout(1500);
 			iframe.locator(message_profile_save_btn).click();
+			page.waitForTimeout(3000);
 			logger.info("Clicked on save button");
-
-			// iframe.locator(message_profile_change).click();
-			// iframe.locator(message_profile_change).setInputFiles(Paths.get("./src/main/resources/Images/image.jpg"));
-			iframe.locator(message_profile_inside_close_btn);
-			logger.info("message_profile_close");
-			return true;
+			page.reload();
+		} else {
+			logger.info("Message Profile Setting Failed To Open");
+			flags.add(false);
 		}
-		return false;
+		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
+		page.waitForTimeout(3000);
+		List<String> Names = iframe.locator(".message__header .message__author b").allInnerTexts();
+		for (String value : Names) {
+			if (value.toLowerCase().contains(MessageprofileName)) {
+				logger.info(MessageprofileName + " " + "matched to:-" + value);
+			} else if (value.toLowerCase().contains("automatic message")) {
+				logger.info("automatic message" + " " + "matched to:-" + value);
+			} else {
+				logger.info(MessageprofileName + "Not matched to" + value);
+				flags.add(false);
+			}
+		}
+		return !flags.contains(false);
 	}
 
 	public boolean Verify_message_Name() {
@@ -122,8 +175,9 @@ public class MessageScreen_Order extends JavaUtility {
 		logger.info("Login user name catched : " + loginUser);
 		page.waitForTimeout(5000);
 		List<String> adviosrlist = iframe.locator(list_channelowner).allInnerTexts();
+		System.out.println(adviosrlist);
 		for (String advisor : adviosrlist) {
-		if (advisor.toLowerCase().contains(loginUser)) {
+			if (advisor.toLowerCase().contains(loginUser)) {
 				logger.info(loginUser + " Login user is matched with channele owner : " + advisor);
 				flags.add(true);
 			} else {
@@ -134,7 +188,7 @@ public class MessageScreen_Order extends JavaUtility {
 		return !flags.contains(false);
 	}
 
-	private String ChatFilterButtons = "span button";
+	private String ChatFilterButtons = "span button span:nth-child(2)";
 
 	public boolean verifyfilterbuttons() {
 		page.reload();
@@ -188,8 +242,9 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-	public boolean checkMy_WhatsApp_FilterIsApplied() {
+	public boolean verify_Default_Filters() throws Exception {
 		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage HP = new HomePage(page);
 		List<Boolean> flags = new ArrayList<>();
 		if (!isFilterApplied("My") == true) {
 			flags.add(false);
@@ -198,7 +253,22 @@ public class MessageScreen_Order extends JavaUtility {
 			if (!isFilterApplied("Whatsapp") == true) {
 				flags.add(false);
 			}
+		} else {
+			HP.navigateToDealersPage();
+			page.waitForTimeout(5000);
+			DealersPage dp = new DealersPage(page);
+			dp.Verify_Whatsapp_textconversation("Tru", "Text Conversation");
+			logger.info("CHAT IS ENABLE NOW");
+			HP.navigateToMessageScreen_Order();
+			logger.info("VERIFY WHATSAPP FILTER ");
+			if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
+				if (!isFilterApplied("Whatsapp") == true) {
+					flags.add(false);
+				}
+			}
+
 		}
+		logger.info("DEFAULT FILTERS PRESENT");
 		return !flags.contains(false);
 	}
 
@@ -218,60 +288,30 @@ public class MessageScreen_Order extends JavaUtility {
 
 		return !flags.contains(false);
 	}
-
-	// method to select filter buttons
-
-//	public boolean click_My_filterBotton() {
-//		FrameLocator iframe = page.frameLocator(messageIframe);
-//		// Store true false for return value
-//		List<Boolean> values = new ArrayList<>();
-//
-//		if (!isFilterApplied("My") == true) {
-//			logger.info("My button was not selected");
-//			iframe.locator(filterButton("My")).click();
-//			values.add(false);
-//		}
-//		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-//			if (!isFilterApplied("Whatsapp") == true) {
-//				logger.info("whatsapp is alredy selected");
-//				values.add(false);
-//			}
-//			iframe.locator(filterButton("Whatsapp")).click();
-//			logger.info("Remove Whatsapp filter");
-//			page.waitForTimeout(5000);
-//		}
-//
-//		return !values.contains(false);
-//
-//	}
-
-	public boolean click_Whatsapp_filterBotton() {
-
+		public boolean click_Whatsapp_filterBotton() {
+		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		// Store true false for return value
 		List<Boolean> values = new ArrayList<>();
 
 		logger.info("Select only Whatsapp filter");
 
-		if (isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			iframe.locator(filterButton("My")).click();
-			values.add(true);
+		if (!isFilterApplied("My") == true) {
+			values.add(false);
 		}
+		iframe.locator(filterButton("My")).click();
 
 		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (isFilterApplied("Whatsapp") == true) {
+			if (!isFilterApplied("Whatsapp") == true) {
 				values.add(false);
 			}
-			iframe.locator(filterButton("Whatsapp")).click();
+
 			logger.info("whatsapp selected");
 			page.waitForTimeout(5000);
 		}
 
 		return !values.contains(false);
-
-	}
-
+}
 	public boolean click_Sms_filterBotton() {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
@@ -448,7 +488,7 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	// Method For Verify Functionality Of filter buttons
-	
+
 	private boolean isFilterApplied(String buttonName) {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		String isMyButtonSelected = iframe.locator(filterButton(buttonName)).getAttribute("aria-selected");
@@ -463,25 +503,19 @@ public class MessageScreen_Order extends JavaUtility {
 		return ".channels-list-item__status-phone .mat-icon : has-text('" + buttonText + "')";
 	}
 
-	private String firstname = "Suraj";
-	private String lastname = "Singh";
-
-	private String StartConverSMS_Whatsapp_filterbuttn = "#mat-select-value-1";
-	private String StartConverSMS_Whatsapp_text = ".mat-mdc-option span";
-	private String StartConverSMS_Whatsapp = "#mat-select-0-panel mat-option span:has-text('Whatsapp')";
-	private String StartConverSMS_Sms = "#mat-option-0:has-text('SMS')";
-	private String ConversationInfo = "#first-content .info-container__content__title";
-	private String Converstiontitlename = ".chat-header__main p.chat-header__title";
-	private String ConversationInfobn = ".chat-header__drop-down button span.mat-mdc-button-touch-target";
-
-	private String conversationTextlabel = "div.channels-list-item__title-container p[aria-describedby='cdk-describedby-message-ng-1-4']";
-
 	private String CountryName(String countryname) {
 
 		return ".mdc-list-item__primary-text .country-option  div:nth-child(2):has-text('" + countryname + "')";
 	}
 
-	public boolean verifyStartconversatationbtn(String number) {
+	private String firstname = "Suraj";
+	private String lastname = "Singh";
+
+	private String StartConFilter(String filter) {
+		return "#mat-select-0-panel mat-option span:has-text('" + filter + "')";
+	}
+
+	public boolean verifyStartconversatationbtn(String number, String filter) {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
 		iframe.locator(Message_start_convers_buttn).click();
@@ -502,21 +536,24 @@ public class MessageScreen_Order extends JavaUtility {
 		iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
 		page.waitForTimeout(2000);
 
-		List<String> Text = iframe.locator(filterButton("SMS")).allInnerTexts();
-
+		List<String> Text = iframe.locator(StartConFilter(filter)).allInnerTexts();
 		for (String value : Text) {
-
 			if (value.trim().toUpperCase().contains("SMS")) {
-				iframe.locator(filterButton("SMS")).click();
+				iframe.locator(StartConFilter(filter)).click();
 				logger.info("Select SMS");
 
-			} else {
-				logger.info("not clicked");
+			}
+			if (value.trim().toUpperCase().contains("WHATSAPP")) {
+				iframe.locator(StartConFilter(filter)).click();
+				logger.info("Select WHATSAPP");
 
+			} else {
+				flags.add(false);
+				logger.info("not clicked");
 			}
 		}
-        if(iframe.locator(StartconversationBtn).isVisible()) {
-        	try {
+		if (iframe.locator(StartconversationBtn).isVisible()) {
+			try {
 				iframe.locator(StartconversationBtn).click();
 				logger.info("Button hit");
 				flags.add(true);
@@ -527,12 +564,19 @@ public class MessageScreen_Order extends JavaUtility {
 				flags.add(true);
 			}
 		} else {
+			flags.add(false);
 			logger.info("Element not found");
 		}
 		page.waitForCondition(() -> iframe.locator(Converstiontitlename).isVisible());
 		page.waitForTimeout(7000);
+		if (!iframe.locator(ConversationInfo).isVisible()) {
+			iframe.locator(".chat-header__drop-down button").click();
+			}
+		logger.info("text1");
 		String conversinfoname = iframe.locator(ConversationInfo).innerText().toLowerCase();
+		logger.info("text1");
 		String converstextlabelname = iframe.locator(conversationTextlabel).innerText().toLowerCase();
+		logger.info("text1");
 		String converstitlename = iframe.locator(Converstiontitlename).innerText().toLowerCase();
 		System.out.println(conversinfoname + converstextlabelname + converstitlename);
 		iframe.locator(ConversationInfobn).click();
@@ -547,16 +591,11 @@ public class MessageScreen_Order extends JavaUtility {
 		return !flags.contains(false);
 	}
 
-	private String SearchFilter2 = ".channels-search div.mat-mdc-text-field-wrapper div.mat-mdc-form-field-focus-overlay ";
-	private String SearchFilter = "#mat-input-0";
-	private String SearchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
-	private String Searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
-
 	public boolean SearchMessagefilter() {
 		page.waitForTimeout(5000);
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
-		if (iframe.locator(SearchFilter2).isVisible()) {
+		if (!iframe.locator(SearchFilter2).isVisible()) {
 			iframe.locator(SearchFilter).fill("suraj");
 			page.waitForTimeout(2000);
 			logger.info("Search Filter is not Present");
@@ -570,250 +609,231 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-	private String ConversationTab = "#header-info p";
-	private String ReadUnreadbtn = ".info-container__content__actions span";
-
-	private String MessageRedDotNotification = ".channels-list-item__unreads-container.ng-star-inserted span";
-	private String Messagebandage = "#my-service-message span.km-tab";
-	private String Messagebandagtotalcount = "#all-service-message a span";
-
-	public boolean VerifyReadUnreadNotification() {
-
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		// iframe.locator("#first-content button span:nth-child(2)").click();
-		List<Boolean> flags = new ArrayList<>();
-
-		page.waitForCondition(() -> iframe.locator(ConversationTab).isVisible());
-		if (!iframe.locator(Conversation_GotoRo_btn).isVisible()) {
-			logger.info("Conversation Tab Not Visible");
-			flags.add(false);
-		}
-		logger.info("Conversation Tab Visible");
-
-		page.waitForTimeout(4000);
-		String beforeupdate;
-
-		if (page.locator(Messagebandage).isVisible()) {
-			logger.info("Unread messages are present");
-
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			page.waitForTimeout(5000);
-			beforeupdate = page.locator(Messagebandage).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
-
-		} else {
-			beforeupdate = "0";
-			logger.info("No Unread Message present");
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			beforeupdate = page.locator(Messagebandage).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-		}
-
-		// Count Total Number Of Bandags
-		List<Boolean> values = new ArrayList<>();
-		logger.info("Select Unread filter");
-		if (!isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			values.add(false);
-		}
-		iframe.locator(filterButton("My")).click();
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				values.add(false);
-			}
-			page.waitForTimeout(5000);
-			iframe.locator(filterButton("Whatsapp")).click();
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (isFilterApplied("SMS") == true) {
-				iframe.locator(filterButton("SMS")).click();
-				values.add(false);
-			}
-			page.waitForTimeout(5000);
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Unread")) {
-			if (isFilterApplied("Unread") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("Unread")).click();
-			logger.info("Unread selected");
-
-		}
-
-		page.waitForTimeout(4000);
-		iframe.locator(".ng-star-inserted div.channels-list-item.channels-list-item--active").click();
-		System.out.println("clicked");
-		page.waitForTimeout(2000);
-
-		if (page.locator(Messagebandagtotalcount).isVisible()) {
-			logger.info("Unread messages are present");
-
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			page.waitForTimeout(5000);
-			flags.add(true);
-		} else {
-			logger.info("No Unread Message present");
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			beforeupdate = page.locator(Messagebandagtotalcount).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
-		}
-
-		return !flags.contains(false);
-	}
-
-	private String Conversation_GotoRo_btn = "button.order-button";
-	private String ReturnToMessagePAge = ".main-body div div.return p";
-	private String RopageIframe = "messages-iframe";
-	private String Conversationtbcanclebtn = ".info-container__header__close-btn mat-icon svg";
-
+//	private String ConversationTab = "#header-info p";
+//    private String ReadUnreadbtn(String Value) {
+//		return ".info-container__content__actions.ng-star-inserted:has-text('" + Value + "')";
+//	}
+//
+//	private String MessageRedDotNotification = ".channels-list-item__unreads-container.ng-star-inserted span";
+//	private String Messagebadge = "span#my-service-message";
+//	private String Messagebandagtotalcount = "#all-service-message a span";
+//
+//	public boolean VerifyReadUnreadNotification() {
+//
+//		FrameLocator iframe = page.frameLocator(messageIframe);
+//		List<Boolean> flags = new ArrayList<>();
+//		page.waitForCondition(() -> page.locator(Messagebadge).isVisible());
+//		if (!page.locator(Messagebadge).isVisible()) {
+//			logger.info("NO UNREAD MESSAGES ARE PRESENT");
+//		}
+//		logger.info("UNREAD NOTIFICATIONS ARE PRESENT");
+//		page.waitForTimeout(3000);
+//		String beforeupdate;
+//		logger.info("COUNT UNREAD MESSAGE PRESENT");
+//		page.locator(Messagebadge).click();
+//        logger.info("Button has clicked");
+//		page.waitForTimeout(5000);
+//		beforeupdate = page.locator(Messagebadge).innerText();
+//		System.out.println(beforeupdate);
+//		logger.info("a");
+//		return true;
+//
+//	}
 	public boolean ConversationGOtoRobtn() {
-
 		FrameLocator iframe = page.frameLocator(messageIframe);
+		page.waitForCondition(() -> iframe.locator(message_profile_user).isVisible());
+		page.waitForTimeout(3000);
 
-		page.waitForCondition(() -> iframe.locator(Conversation_GotoRo_btn).isVisible());
-		if (!iframe.locator(Conversation_GotoRo_btn).isVisible()) {
-			logger.info("Go To Ro button not visible");
-			return false;
+		if (iframe.locator(NOconversationStartmessasge).isVisible()) {
+			if (!isFilterApplied("My") == true && !isFilterApplied("Whatsapp") == true) {
+				return false;
+			}
+			iframe.locator(filterButton("My")).click();
+			page.waitForTimeout(2000);
+			iframe.locator(ChannalList).first().click();
+			if (!iframe.locator(Conversation_GotoRo_btn).isVisible()) {
+				logger.info("Go To Ro button not visible");
+				return false;
+			}
+			String ChannelOwnerName = iframe.locator(ConversationChannelOwnerName).innerText();
+			iframe.locator(Conversation_GotoRo_btn).click();
+			logger.info("GO_TO_RO button clicked");
+			page.waitForCondition(() -> iframe.locator(ReturnToMessagePAge).isVisible());
+			String ROChannelname = iframe.locator(ROChannelOwnerName).innerText();
+			page.waitForTimeout(10000);
+			if (ROChannelname.contains(ChannelOwnerName)) {
+				iframe.locator(ReturnToMessagePAge).click();
+				logger.info("CHANNEL OWNER NAME MATCHED" + ROChannelname + ":" + ChannelOwnerName);
+			} else {
+				logger.info("CHANNEL OWER NAME IS NOT MATCHED");
+				return false;
+			}
 		}
-		iframe.locator(Conversation_GotoRo_btn).click();
-		logger.info("GO_TO_RO button clicked");
-
-		page.waitForCondition(() -> iframe.locator(ReturnToMessagePAge).isVisible());
-		iframe.locator(ReturnToMessagePAge).click();
-		logger.info("ReturnToMessagePAge");
 		iframe.locator(Conversationtbcanclebtn).click();
 		return true;
 	}
 
-	private String Conversationinactivemess = ".chat-body__blocked-message.ng-star-inserted mat-icon";
-	private String Reactivatebtn = ".chat-input__options div";
-	private String InsertTextfield = "#mat-input-1";
-	private String InsertTextField2 = ".mat-mdc-input-element.ng-tns-c3736059725-6.ng-pristine.mat-mdc-form-field-textarea-control.mat-mdc-form-field-input-control.mdc-text-field__input.cdk-text-field-autofill-monitored.ng-touched.ng-valid";
-
 	public boolean VerifyWhatsAppChatEnableCondition() {
-
+		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> flags = new ArrayList<>();
 		logger.info("CheckWhatsapp filter is Enable or Disable From Dealer Setting");
-
-		page.waitForTimeout(8000);
+		page.waitForTimeout(6000);
 		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-
-			if (isFilterApplied("My") == true) {
-				logger.info("Remove My filter");
+			logger.info("CheckWhatsapp filter is Enable");
+			if (!isFilterApplied("My") == true && !isFilterApplied("Whatsapp") == true) {
+				return false;
 			}
-			logger.info("Remove My filter");
 			iframe.locator(filterButton("My")).click();
-			if (isFilterApplied("Whatsapp") == true) {
-				logger.info("Clicked on whatsapp filter");
-			}
-			page.waitForTimeout(5000);
-
-			if (isFilterApplied("SMS") == true) {
+			page.waitForTimeout(2000);
+			if (isFilterApplied("SMS") == true && isFilterApplied("Unread") == true) {
 				iframe.locator(filterButton("SMS")).click();
-			}
-			page.waitForTimeout(5000);
-
-			if (isFilterApplied("Unread") == true) {
 				iframe.locator(filterButton("Unread")).click();
 			}
 			page.waitForTimeout(5000);
+			logger.info("WHATSAPP FILTER SELECTED");
+			iframe.locator(ChannalList).first().click();
 
 			/* Check Text Box For WhatsApp */
+
 			if (iframe.locator(Conversationinactivemess).isVisible()) {
 				String InactiveMessage = iframe.locator(Conversationinactivemess).innerText();
 				if (iframe.locator(Conversationinactivemess).innerText().contains(InactiveMessage)) {
-					iframe.locator(Reactivatebtn).click();
-					logger.info("click");
+					iframe.locator(".channels-list-item__main div:nth-child(3) span:has-text('(781) 205-9487')")
+							.click();
+					logger.info("Whatsapp Chat is Expired");
+					page.waitForTimeout(5000);
 				} else {
-					iframe.locator(InsertTextfield).fill("DemoTestMessage");
-					logger.info("Message Insert");
+					if (iframe.locator(NOconversationStartmessasge).isVisible()) {
+						logger.info("NO Conversation start Until in Whatsapp");
+					} else {
+						return false;
+					}
 				}
-
+			} else {
+				logger.info("WHATSAPP CHAT IS ACTIVE");
+				iframe.locator(".channels-list-item__main div:nth-child(3) span:has-text('(781) 205-9487')").first()
+						.click();
+				iframe.locator(Inactivechat).fill("demotext..........");
+				iframe.locator(".chat-input__options button:nth-child(3) mat-icon").click();
+				iframe.locator(SendOriginal_btn).click();
 			}
-
+		} else {
 			logger.info("WhatsApp filter is Disabled");
-			flags.add(false);
+			iframe.locator(ChannalList).first().click();
+			iframe.locator(Inactivechat).fill("demotext..........");
+			iframe.locator(MessageSendBtn).click();
+			iframe.locator(SendOriginal_btn).click();
 
 		}
-
-		return !flags.contains(false);
-
+		return true;
 	}
 
-	private String Messagechannel = ".channels-list-item__main p";
-
-	public boolean MessageSendAttachments() {
+	public boolean MessageSendAttachments(String number) {
+		page.reload();
+		logger.info("VERIFY ATTACHMENT");
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> values = new ArrayList<>();
+		List<Boolean> flags = new ArrayList<>();
+		logger.info("SELECT SMS FILTER TOS END ATTACHMENT");
 		if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true) {
-
 			iframe.locator(filterButton("My")).click();
 			iframe.locator(filterButton("Whatsapp")).click();
-			logger.info("Filter Removed");
 		} else {
-			values.add(false);
+			flags.add(false);
+			logger.info("Filters are not Visible");
 		}
 		page.waitForTimeout(5000);
-
 		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
 			if (isFilterApplied("SMS") == true) {
-				values.add(false);
+				flags.add(false);
 			}
 			iframe.locator(filterButton("SMS")).click();
-			logger.info("SMS selected");
+			logger.info("SMS SELECTED");
 			page.waitForTimeout(5000);
-			
-			iframe.locator(SearchFilter).type("suraj Singh");
-//			iframe.locator(SearchFilter).fill("suraj Singh");
-			page.waitForTimeout(8000);
-			
-			iframe.locator(".channels-list-item.channels-list-item--active").first().click();
-			page.waitForTimeout(3000);
-			iframe.locator("button input[type=file]").setInputFiles(Paths.get(".src/main/resources/Images/image.jpg"));
-			
-		
-			  
+			iframe.locator(SearchFilter).type("suraj Singh");// Using Type
+//			iframe.locator(SearchFilter).fill("suraj Singh");//
+			page.waitForTimeout(5000);
 
-	            
-			
+			if (iframe.locator(NOconversationStartmessasge).isVisible()) {
+				iframe.locator(Message_start_convers_buttn).click();
+				logger.info("Verify Start Conversation Tab");
+				page.waitForCondition(() -> iframe.locator(StartconversatationFirstname).isVisible());
+				iframe.locator(StartconversatationFirstname).fill(firstname);
+				logger.info("INSERT FIRST NAME" + ":" + firstname);
+				iframe.locator(Startconversatationlastname).fill(lastname);
+				logger.info("INSERT LAST NAME" + ":" + lastname);
+				page.waitForTimeout(3000);
+				iframe.locator(Countryoptionbtn).click();
+				iframe.locator(CountryName("United States")).click();
+				logger.info("SELECT COUNTRY :-" + "United States");
+				logger.info(Message_Filter_Icon);
+				iframe.locator(StartconMobileno).fill(number);
+				logger.info("Number:-" + number);
+				page.waitForTimeout(2000);
+				iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
+				page.waitForTimeout(2000);
+				iframe.locator(ConversationStartbtn).click();
+				if (iframe.locator(StartconversationBtn).isVisible()) {
+					try {
+						iframe.locator(StartconversationBtn).click();
+						logger.info("START CONVERSATION");
+						flags.add(true);
+
+					} catch (ElementNotInteractableException e) {
+						logger.info("elemnt is not clickable right now");
+						e.printStackTrace();
+						flags.add(true);
+					}
+				} else {
+					logger.info("Element not found");
+				}
+			}
+			page.waitForTimeout(3000);
+			iframe.locator(ChannalList).first().click();
+			page.waitForTimeout(3000);
+			iframe.locator(MessageAttachment_btn).setInputFiles(Paths.get(AttachmentPath));
+			logger.info("File Attached");
+			iframe.locator(MessageSendBtn).click();
+			logger.info("Attachement Send");
+			page.waitForTimeout(5000);
 		}
 
 		return true;
 
+	}
+
+	public boolean VerifyConversationMessage_RoDetails() throws Exception {
+		HomePage HP = new HomePage(page);
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+
+		FrameLocator iframe = page.frameLocator(messageIframe);
+
+		HP.clickOn_RepairOrder_Header();
+		OLP.addRepairOrder();
+		page.waitForTimeout(5000);
+
+		HP.navigateToMessageScreen_Order();
+
+		page.waitForTimeout(5000);
+
+		List<Boolean> flags = new ArrayList<>();
+		if (!isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true) {
+			return false;
+		}
+		iframe.locator(filterButton("Whatsapp")).click();
+		iframe.locator(filterButton("SMS")).click();
+
+		logger.info("Filters are not Visible");
+
+		iframe.locator(ChannalList).first().click();
+
+		iframe.locator(Inactivechat).fill("DemoTestMessage");
+
+		iframe.locator(MessageSendBtn).click();
+		page.waitForTimeout(3000);
+		iframe.locator(SendOriginal_btn).click();
+		page.waitForTimeout(5000);
+		return true;
 	}
 
 }
