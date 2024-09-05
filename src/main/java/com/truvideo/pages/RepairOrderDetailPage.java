@@ -36,7 +36,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String customer_tab = "div[role='tab'] span:has-text('Customer')";
 	private String activities = "app-activity div.detail__activity  p.detail__activity-title";
 	private String addVideo_Title = "div.video-library__title p";
-	private String operations_Buttons = ".menu-options";
+	private String operations_Buttons = "div.menu-options span";
 	private String videos = "img[alt='video thumbnail']";
 	private String add_Button = "div.video-library__add-video-container button";
 	private String added_Video = "div.orders-detail-menu__media-videos img";
@@ -45,6 +45,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
 	private String communicationTabs = ".mat-mdc-tab-label-container div[role='tab']";
 	private String messages = "ngx-message div.message";
+	private String topRightCornerNotification = "div.notifications";
+	private String topRightCornerNotification1 = "div.tru-toast";
 	// Estimate
 	private String create_Edit_Estimate_WindowHeader = "mat-card span:has-text('Estimate - Create/Edit Estimate')";
 	private String items_Tab = "mat-card-content .mdc-tab__content span:has-text('Items')";
@@ -916,10 +918,14 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operations_Buttons);
+		System.out.println("Test 1");
 		for (ElementHandle locator : buttons.elementHandles()) {
 			String textContent = locator.innerText();
+			System.out.println("IS Text found ?"+ textContent);
 			if (textContent != null && textContent.contains(buttonText)) {
+				System.out.println("Test 2");
 				locator.click();
+				System.out.println("Test 3");
 				break;
 			}
 		}
@@ -937,8 +943,63 @@ public class RepairOrderDetailPage extends JavaUtility {
 		private String no_reminder = "#mat-option-0";
 		private String three_days = "#mat-option-1";
 		private String save_Btn = "span.mdc-button__label";
-		private String topRightCornerNotification = "div.tru-toast";
+		//private String topRightCornerNotification = "div.tru-toast";
 		public static final String Reminder_Save = "Service recomendation successfully saved";
+
+	private void clickOperationButton1(String buttonText) {
+		page.waitForTimeout(5000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		Locator buttons = frame.locator(operations_Buttons);
+		page.waitForCondition(()->frame.locator(buttons).allInnerTexts().contains(buttonText));
+		if (buttons.isVisible()) {
+		    System.out.println("Element is visible");
+		    for (ElementHandle locator : buttons.elementHandles()) {
+		        String textContent = locator.innerText();
+		        System.out.println("Text found: " + textContent);
+		        if (textContent != null && textContent.contains(buttonText)) {
+		            System.out.println("Test 2");
+		            locator.click();
+		            System.out.println("Test 3");
+		            break;
+		        }
+		    }
+		} else {
+		    System.out.println("Element is not visible");
+		}
+
+	}
+	
+
+	
+	public void deleteRepairOrder() throws InterruptedException
+	{
+		page.waitForTimeout(4000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		
+		List<Boolean> flags = new ArrayList<Boolean>();
+		SoftAssert softAssert = new SoftAssert();
+		page.waitForTimeout(5000);
+		logger.info(" back 2 ");
+		logger.info(OrderListPage.newRoNumber);
+		frame.locator(".menu-options__info.delete").click();
+		page.waitForTimeout(2000);
+		
+		HomePage hp=new HomePage(page);
+		hp.globalSearchwitheText(OrderListPage.newRoNumber);
+	//	page.waitForCondition(() -> frame.locator(topRightCornerNotification1).isVisible());
+		
+//		page.waitForSelector(topRightCornerNotification1);
+//		System.out.println("545454");
+//		String topRightCornerNotificationPopup = page.locator(topRightCornerNotification1).innerText();
+//		logger.info(topRightCornerNotificationPopup);
+//		if (topRightCornerNotificationPopup.contains(AppConstants.REPAIR_ORDER_DELETED_MESSAGE)) {
+//			logger.info("New RO has been deleted successfully Successfully");
+//		} else {
+//			logger.info("Getting error to delete Repair Order ");
+//		}
+		softAssert.assertAll();
+	}
+
 
 	    public boolean createreminder() throws InterruptedException {
 

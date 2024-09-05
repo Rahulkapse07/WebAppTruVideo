@@ -81,6 +81,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifySubmitPayment_ProcessedPayment() {
 		repairOrderPage.submitPayment();
 	}
+
 	//added by Yash
 	@Test(priority = 15)
 	public void verifyCreateReminder() throws InterruptedException {
@@ -112,5 +113,13 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 	
+
+	
+
+	@Test(priority = 17)
+	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
+		repairOrderPage.deleteRepairOrder();
+	}
+
 
 }

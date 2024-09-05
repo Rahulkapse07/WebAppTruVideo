@@ -34,24 +34,44 @@ public class Listeners extends TestUtils implements ITestListener {
 		}
 	}
 
+//	public void onTestFailure(ITestResult result) {
+//		test.fail(result.getThrowable());
+//		try {
+//			Object testInstance = result.getInstance();
+//			page = (Page) testInstance.getClass().getField("page").get(testInstance);
+//		} catch (Exception e1) {
+//			e1.printStackTrace();
+//		}
+//
+//		if (page != null) {
+//			try {
+//				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
+//				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	
+	//Testing new report with screenshot on mail from RK
 	public void onTestFailure(ITestResult result) {
-		test.fail(result.getThrowable());
-		try {
-			Object testInstance = result.getInstance();
-			page = (Page) testInstance.getClass().getField("page").get(testInstance);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
+	    test.fail(result.getThrowable());
+	    Page page = null;
+	    try {
+	        // Assuming 'page' is the name of your Playwright Page object
+	        page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
+	    } catch (Exception e1) {
+	        e1.printStackTrace();
+	    }
 
-		if (page != null) {
-			try {
-				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+	    if (page != null) {
+	        String base64Screenshot = getBase64Screenshot(page);
+	        test.addScreenCaptureFromBase64String(base64Screenshot, result.getMethod().getMethodName());
+	    } else {
+	        test.fail("Page object is null, unable to capture screenshot.");
+	    }
 	}
+
 
 	public void onTestSkipped(ITestResult result) {
 

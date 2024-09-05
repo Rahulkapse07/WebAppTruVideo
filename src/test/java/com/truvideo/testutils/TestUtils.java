@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
@@ -18,10 +19,13 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.ScreenshotType;
 import com.truvideo.utility.JavaUtility;
 import io.appium.java_client.AppiumDriver;
 
@@ -55,6 +59,20 @@ static ExtentReports extent;
 	    page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(destinationField)));
 	    return destinationField;
 	}
+	
+	//Testing email screenshot from RK
+	public String getBase64Screenshot(Page page) {
+	    String base64Screenshot = "";
+	    try {
+	        // Playwright's method to take a screenshot in Base64 format
+	        byte[] screenshotBytes = page.screenshot(new Page.ScreenshotOptions().setType(ScreenshotType.PNG));
+	        base64Screenshot = Base64.getEncoder().encodeToString(screenshotBytes);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return base64Screenshot;
+	}
+
 
 	public void sendReportToEmail() {
 		//try {
@@ -84,17 +102,37 @@ static ExtentReports extent;
 			
 			
 			// Create the email message
+//			MultiPartEmail email = new MultiPartEmail();
+//			email.setHostName("smtp.mail.yahoo.com");
+//			email.setSmtpPort(465); // port
+//			email.setTLS(true);
+//			email.setAuthenticator(new DefaultAuthenticator("sandip.chopkar@5exceptions.com", "scusooxsoohzvlfz")); // pass=AppPass
+//			email.setSSLOnConnect(true); // Use SSL
+//			email.setFrom("sandip.chopkar@5exceptions.com");
+//			email.addTo("rahul.kapse@5exceptions.com");
+//			//email.addTo("sandipchopkar789@gmail.com");
+//			email.addTo("rk434kapse@gmail.com");
+//			email.setSubject("Web App Automation Report");
+//			email.setMsg("Please find the attached Automation Report For Truvideo Web App.");
+//			
+			
 			MultiPartEmail email = new MultiPartEmail();
 			email.setHostName("smtp.mail.yahoo.com");
 			email.setSmtpPort(465); // port
 			email.setTLS(true);
-			email.setAuthenticator(new DefaultAuthenticator("sandip.chopkar@5exceptions.com", "scusooxsoohzvlfz")); // pass=AppPass
+			//scusooxsoohzvlfz
+			email.setAuthenticator(new DefaultAuthenticator("rahul.kapse@5exceptions.com", "lnvpdqluxdqhdufz")); // pass=AppPass
 			email.setSSLOnConnect(true); // Use SSL
-			email.setFrom("sandip.chopkar@5exceptions.com");
-			email.addTo("rahul.kapse@5exceptions.com");
-			email.addTo("sandipchopkar789@gmail.com");
-			email.setSubject("Web App Automation Report");
-			email.setMsg("Please find the attached Automation Report For Truvideo Web App.");
+			email.setFrom("rahul.kapse@5exceptions.com");
+			//email.setFrom("sandip.chopkar@5exceptions.com");
+			
+			//email.addTo("rahul.kapse@5exceptions.com");
+			email.addTo("gopal.chandre@5exceptions.com");
+			email.addTo("yash.modi@5exceptions.com");
+			email.addTo("suraj.kushwah@5exceptions.com");
+			email.setSubject("Automation Report");
+			email.setMsg("Please find the attached Automation Report For Truvideo Flutter App.");
+			
 			// Attach the file
 			email.attach(attachment);
 			// Send the email
