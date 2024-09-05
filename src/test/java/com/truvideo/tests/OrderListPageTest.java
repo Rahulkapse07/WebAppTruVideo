@@ -87,12 +87,16 @@ public class OrderListPageTest extends BaseTest {
 //	        }
 	    }
 	
-	
-	
 
 	@Test(priority = 12, dependsOnMethods = "verifyAddRepairOrder")
 	public void verifyCreatedROIsVisibleObMobileApp() throws Exception {
 		orderlistpage.verifyCreatedRO_OnMobile();
+	}
+	
+	//added by yash
+	@Test(priority = 18)
+	public void verifyInspectionStatus() {
+	Assert.assertTrue(orderlistpage.checkInspectionStatus());
 	}
 
 }

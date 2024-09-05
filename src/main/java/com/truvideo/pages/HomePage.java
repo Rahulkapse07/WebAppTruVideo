@@ -124,6 +124,7 @@ public class HomePage extends JavaUtility {
 	private String allRightReserved_Label = "#user-menu-list a:has-text('© TruVideo  |  All Rights Reserved.')";
 	private String dealerSearch_TextBox = "#dealer-search-form";
 	private String logOut_Button = "#user-menu-list li a[class='logout-a']";
+	private String other = "//a[contains(text(), 'Other ')]";
 
 	private String getSearchedDealer(String dealerName) {
 		return "ul#dealerList li a:has-text('" + dealerName + "')";
@@ -131,6 +132,7 @@ public class HomePage extends JavaUtility {
 
 	public String clickOn_RepairOrder_Header() {
 		navigateToOrderList();
+		page.click(repairOrder_Header);
 		logger.info("Clicked on Repair Order Header Tab");
 		return page.title();
 	}
@@ -197,10 +199,11 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Reminder Header Tab");
 		return page.url();
 	}
-
+	
 	public ReminderPage navigateToReminder() {
+		page.waitForTimeout(4000);
 		if (!page.isVisible(reminder_Header)) {
-			page.click(other_Header);
+			page.click(other);
 		}
 		page.click(reminder_Header);
 		return new ReminderPage(page);
