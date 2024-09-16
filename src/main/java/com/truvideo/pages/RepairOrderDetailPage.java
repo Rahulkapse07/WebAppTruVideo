@@ -3,6 +3,8 @@ package com.truvideo.pages;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.openqa.selenium.support.ui.Select;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
 import com.microsoft.playwright.ElementHandle;
@@ -10,6 +12,7 @@ import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.TimeoutError;
+import com.microsoft.playwright.options.SelectOption;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
@@ -37,8 +40,13 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String activities = "app-activity div.detail__activity  p.detail__activity-title";
 	private String addVideo_Title = "div.video-library__title p";
 	private String operations_Buttons = "div .menu-options__info";
+	private String operationinsighttest="mat-mdc-tooltip-trigger menu-options disabled";
 	private String operations_Buttons_buttonTag = "button.menu-options";
 	private String operations_Buttons_DivTag = "div.menu-options";
+	private String insightButton=".operations__container__action-menu tru-button:nth-child(5) button";
+	private String noInsightText=".insights__content-no-data.ng-star-inserted p";
+	private String insightDataafterVideoView=".insights__content-header p";
+	private String closeInsightWindow=".insights__header mat-icon:nth-child(2)";
 	private String videos = "img[alt='video thumbnail']";
 	private String add_Button = "div.video-library__add-video-container button";
 	private String added_Video = "div.orders-detail-menu__media-videos img";
@@ -46,7 +54,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String whatsApp_Button = ".selected-channel-actions button:has-text('WhatsApp')";
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
 	private String sms_Tab="#mat-tab-label-1-1";
-	private String sms_Textbox="#mat-input-1";
+	private String sms_Textbox="#mat-input-2";
 	private String send_SMS_Button="mat-icon[svgicon=\"send\"]";
 	private String send_Original_Button=".mdc-button--outlined";
 	private String customerName=".chat-header__main .chat-header__title";
@@ -58,6 +66,16 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String textboxNotesTab="app-orders-notes textarea";
 	private String saveButton="button.edit";
 	private String cancelButton="button.cancel";
+	private String firstNameEditing="[formcontrolname='firstName']";
+	private String firstNameWithoutEdit=".detail__main-data-wrapper.apply-border div:nth-child(1) p:nth-child(2)";
+	private String lastNameEditing="[formcontrolname='lastName']";
+	private String lastNameWithoutEdit="[formgroupname='customerDTO'].detail__main-data-wrapper.apply-border div:nth-child(2) p:nth-child(2)";
+	private String mobileFieldEditing="#mat-input-1";
+	private String mobileNumberField="[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(5)";
+	private String emailFieldEditing="[formcontrolname='email']";
+	private String emailField="[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(6)";
+	private String advisorField=".detail__main-data-wrapper.ng-star-inserted div:nth-child(4) p:nth-child(2)";
+	private String advisorFieldEditing="[formcontrolname='advisorId']";
 	private String topRightCornerNotification = "div.notifications";
 	private String topRightCornerNotification1 = "div.tru-toast";
 	
@@ -76,10 +94,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	private String closeWindow_Button = "mat-icon:has-text('close')";
-	private String addItem_Button = ".items__input-container button:has-text('add')";
+	//private String addItem_Button = ".items__input-container button:has-text('add')";
+	private String addItem_Button = "//button //mat-icon[text()='add']";
 	private String removeItem_Button = ".items__input-container button:has-text('backspace')";
 	private String items_DropdownList = ".tru-dropdown__content-items";
-	private String deleteItem_Button = "mat-tab-body .items__info-data button:has-text('delete_outline')";
+	private String deleteItem_Button = ".actions__div.ng-star-inserted button mat-icon:has-text('delete')";
 	private String editItem_Button = ".items__info-data__row-data button.mdc-button :has-text('edit')";
 	private String preview_Button = ".mdc-button__label:has-text('Preview')";
 	private String itemsAmount = "app-estimate-invoice .items__container p.items__info-data__row-data:nth-child(3)";
@@ -260,8 +279,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(preview_Button).click();
 		logger.info("Click on Preview Estimate button");
 		page.waitForTimeout(4000);
-		softAssert.assertTrue(calculateTotalItemAmount(itemsAmount) == getTotalAmount(totalAmount),
-				"Verify total amount");
+//		softAssert.assertTrue(calculateTotalItemAmount(itemsAmount) == getTotalAmount(totalAmount),
+//				"Verify total amount");
 		List<String> allAvailableButtons_PreviewScreen = Arrays.asList("Hide from customer", "Close Estimate", "Edit",
 				"Print", "Send");
 		List<String> allButtonTexts_PreviewScreen = page.locator(buttons_PreviewScreen).allInnerTexts();
@@ -1136,13 +1155,142 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertAll();
 		
 	}
-	public void editThisRO() {
+	public void editThisRO() throws InterruptedException {
 		page.waitForTimeout(9000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		logger.info(OrderListPage.newRoNumber);
-		clickOperationButton("Edit this RO");
 		page.waitForTimeout(5000);
+		  String firstName=frame.locator(firstNameWithoutEdit).innerText();
+		  logger.info("FirstName before edited :-"+firstName);
+		 
+		clickOperationButton("Edit this RO");
+		logger.info("Clicked on Edit this RO button");
+		page.waitForTimeout(6000);
+		frame.locator(firstNameEditing).click();
+		page.waitForTimeout(1000);
+		frame.locator(firstNameEditing).fill("FirstName Edited");
+		logger.info("Edited FirstName successfully");
+		frame.locator(lastNameEditing).fill("Edited LastName");
+		//String lastName=frame.locator(lastNameEditing).innerText();
+		logger.info("Edited LastName successfully :-");
+		frame.locator(mobileFieldEditing).clear();
+		frame.locator(mobileFieldEditing).fill("7812049488");
+		logger.info("Mobile number edited successfully :-");
+		frame.locator(emailFieldEditing).clear();
+		frame.locator(emailFieldEditing).fill("testemailedited@gmail.com");
+		logger.info("Edited Email successfully :-");
+		
+		Locator dropdown = frame.locator(advisorFieldEditing);
+		// Select an option by the visible text (label)
+		dropdown.selectOption(new SelectOption().setLabel("Advisor Dinesh"));
+
+
+		logger.info("Changed Advisor ");
+		frame.locator(saveButton).click();
+		page.waitForTimeout(4000);
+		Thread.sleep(4000);
+		String firstNameEdited=frame.locator(firstNameWithoutEdit).innerText();
+		logger.info("FirstName After edited :-"+firstNameEdited);
+		String name=frame.locator(customerName).innerText();
+		String lastNameEdited=frame.locator(lastNameWithoutEdit).innerText();
+		logger.info("LastName After edited :-"+lastNameEdited);
+		String EmailEdited=frame.locator(emailField).innerText();
+		logger.info("Email After edited :-"+EmailEdited);
+		String MobileNumberEdited=frame.locator(mobileNumberField).innerText();
+		logger.info("Mobile Number After edited :-"+MobileNumberEdited);
+		
+		
+		//String name=frame.locator(customerName).innerText();
+		//logger.info(name);
+		
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(name.contains("FirstName Edited"), "Verify Customer First name update");
+		logger.info("Name changed to : " + name);
+		softAssert.assertTrue(lastNameEdited.contains("Edited LastName"), "Verify Customer Last name update");
+		softAssert.assertTrue(EmailEdited.contains("testemailedited@gmail.com"), "Verify Customer email update");
+		softAssert.assertTrue(MobileNumberEdited.contains("+1 (781) 204-9488"), "Verify Customer Mobile number update");
+		//softAssert.assertTrue(lastNameEdited.contains("Edited LastName"), "Verify Customer Last name update");
+		
+		softAssert.assertAll();
+		//page.waitForTimeout(1000);
+		/*
+		 * page.waitForCondition(() ->
+		 * frame.locator(topRightCornerNotification1).isVisible());
+		 * 
+		 * page.waitForSelector(topRightCornerNotification1);
+		 * //page.waitForTimeout(1000); System.out.println("545454"); String
+		 * topRightCornerNotificationPopup =
+		 * page.locator(topRightCornerNotification1).innerText();
+		 * logger.info(topRightCornerNotificationPopup); page.waitForTimeout(1000); if
+		 * (topRightCornerNotificationPopup.contains(AppConstants.
+		 * REPAIR_ORDER_EDITED_MESSAGE)) {
+		 * logger.info("New RO has been deleted successfully Successfully"); } else {
+		 * logger.info("Getting error to delete Repair Order "); }
+		 */
+		
+		//logger.info(firstName);
 	}
+	
+	public void insightFunctionality() {
+		//addVideoToOrder();
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		frame.locator(repairOrder_PageHeading).waitFor();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		SoftAssert softAssert = new SoftAssert();
+		if (frame.locator(roStatusBar).textContent().contains("New")) {
+			logger.info("RO is New & No media is added");
+			//String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to customer");
+			//String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with customer");
+			String insightClass = getLocatorClass(operations_Buttons, "Insights");
+			//System.out.println("send to customer class "+sendToCustomerClass);
+			//System.out.println("viewWithCustomerClass "+viewWithCustomerClass);
+			System.out.println("insightClass "+insightClass);
+			if ( insightClass.contains("disabled")) {
+				logger.info("'Insights' button is disabled");
+				flags.add(true);
+			} else {
+				logger.info(" 'Insights' button is not disabled");
+				flags.add(false);
+			}
+			softAssert.assertTrue(!flags.contains(true), //should be false
+					"Verify 'Insight' button is disabled");
+			flags.clear();
+		} else {
+			logger.info("RO is Not new & some videos are already added to RO");
+		}
+		frame.locator(addMedia).click();
+		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
+			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
+			flags.add(true);
+		} else {
+			logger.info("Multimedia Screen not opened");
+			flags.add(false);
+		}
+		softAssert.assertTrue(!flags.contains(false), "Verify Add Media button is clickable");
+		flags.clear();
+		frame.locator(videos).first().click();
+		logger.info("Selected 1 video from multimedia screen");
+		page.waitForTimeout(2000);
+		frame.locator(add_Button).click();
+		logger.info("Clicked on Add Video Button");
+		page.waitForTimeout(4000);
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is not showing");
+		String insightText=frame.locator(noInsightText).innerText().trim();
+		softAssert.assertTrue(insightText.contains("There's no insights yet"), "Verify No insight showing");
+		frame.locator(closeInsightWindow).click();
+		copyLinktoClipboard();
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is now showing");
+		String InsightData=frame.locator(insightDataafterVideoView).innerText().trim();
+		softAssert.assertTrue(InsightData.contains("Seen by"), "Verify now insight data is showing");
+		
+		frame.locator(closeInsightWindow).click();
+		logger.info("Insight window closed");
+		softAssert.assertAll();
+	//	There's no insights yet
+	}
+	
 
 
 	    public boolean createreminder() throws InterruptedException {

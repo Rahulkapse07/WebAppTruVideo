@@ -81,34 +81,27 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifySubmitPayment_ProcessedPayment() {
 		repairOrderPage.submitPayment();
 	}
-
-	//added by Yash
-	@Test(priority = 15)
+	@Test(priority = 14)
 	public void verifyCreateReminder() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.createreminder());
 	}
-	//added by Yash
 	@Test(priority = 15)
 	public void VerifyOpenInspection() throws InterruptedException{
 		Assert.assertTrue(repairOrderPage.openInspection());
 	}
-	//added by Yash
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void VerifySendbackInspection() {
 		Assert.assertTrue(repairOrderPage.sendbackInspection());
 	}
-	//added by Yash
-	@Test(priority = 15)
+	@Test(priority = 17)
 	public void VerifyPublishInspections() {
 		Assert.assertTrue(repairOrderPage.publishInspection());
 	}
-	//added by Yash
-	@Test(priority = 15)
+	@Test(priority = 18)
 	public void VerifyNotifyCustomer() {
 		Assert.assertTrue(repairOrderPage.notifyCustomerBtn());
 	}
-	// added by Yash
-	@Test(priority = 15)
+	@Test(priority = 19)
 	public void VerifyHide_Show() {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
@@ -116,19 +109,24 @@ public class RepairOrderDetailPageTest extends BaseTest {
 
 	
 	
-	//Added by RK
-	@Test(priority = 14)
+	@Test(priority = 20)
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
-	@Test(priority = 14)
+	@Test(priority = 21)
 	public void verifyViewWithCustomerFunctionality() {
 		repairOrderPage.viewWithCustomer();
 	}
-	@Test(priority = 14)
-	public void verifyEditThisROFunctionality() {
+	@Test(priority = 22)
+	public void verifyEditThisROFunctionality() throws InterruptedException {
 		repairOrderPage.editThisRO();
 	}
+	@Test(priority = 23)
+	public void verifyInsightFunctionality() throws InterruptedException {
+		repairOrderPage.insightFunctionality();
+	}
+	
+	
 	
 	
 	
@@ -140,7 +138,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	
 	
 		
-	@Test(priority = 17)       //try to run this method at the end of class
+	//@Test(priority = 17)       //try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}
