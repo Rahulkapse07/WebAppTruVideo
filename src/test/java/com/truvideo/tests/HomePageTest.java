@@ -230,5 +230,9 @@ public class HomePageTest extends BaseTest {
 	public void verify_All_Reminder_Badge() {
 		Assert.assertTrue(homepage.clickOn_All_Reminder_Badge());
 	}
+	
+	public void Verify_dealer_Name() {
+		homepage.Verify_dealer_Name(prop.getProperty("dealerused"));
+	}
 
 }

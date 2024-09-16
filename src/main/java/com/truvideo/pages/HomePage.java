@@ -38,6 +38,7 @@ public class HomePage extends JavaUtility {
 	private String userGroupsTab = "a[href='/organization/usergroups/']";
 	private String savedVideoLibraryTab = "a[href='/crud/saved-video']";
 	private String devicesTab = "a[href='/device/']";
+	private String dealername ="a.dropdown-toggle span span:nth-child(1)";
 	
 
 	// search
@@ -182,6 +183,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public ProspectListPage navigateToProspectList() {
+		page.waitForTimeout(5000);
 		page.click(prospect_Header);
 		return new ProspectListPage(page);
 	}
@@ -202,6 +204,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public MessageScreen_Prospect navigateToMessageScreen_Prospect() {
+		page.waitForTimeout(4000);
 		page.click(prospectMessage_Header);
 		return new MessageScreen_Prospect(page);
 	}
@@ -1129,6 +1132,19 @@ public class HomePage extends JavaUtility {
 		} else {
 			logger.info("The count " + countOnBadge + " on badge is not equal to total count " + countLabel);
 			return false;
+		}
+	}
+	
+	public void Verify_dealer_Name(String name) {
+		logger.info("Verify Dealer Name");
+		page.waitForCondition(() -> page.locator(dealername).isVisible());
+		
+		if(dealername.equals(name)){
+			logger.info("DEALER IS CORRECT");
+		}
+		else {
+			logger.info("DEALER IS DIFFRENT");
+			
 		}
 	}
 }

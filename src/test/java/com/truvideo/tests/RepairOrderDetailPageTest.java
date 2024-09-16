@@ -114,8 +114,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	}
 	
 
-	
-
 	@Test(priority = 17)
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();

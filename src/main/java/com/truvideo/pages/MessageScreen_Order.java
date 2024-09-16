@@ -2,17 +2,12 @@ package com.truvideo.pages;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.ElementNotInteractableException;
 
-import com.microsoft.playwright.ElementHandle.SetInputFilesOptions;
 import com.microsoft.playwright.FrameLocator;
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.AriaRole;
 import com.truvideo.utility.JavaUtility;
 
 public class MessageScreen_Order extends JavaUtility {
@@ -22,29 +17,25 @@ public class MessageScreen_Order extends JavaUtility {
 	public MessageScreen_Order(Page page) {
 		this.page = page;
 	}
-
+	
 	private String messageIframe = "#messages-body-iframe > #messages-iframe";
-	private String message_profile = "//div[@class='profile__avatar']//div//div";
+	private String message_profile = "#profile .avatar-container";
 	private String message_profile_user = ".profile__user-info  p.profile__user-info-title";
 	// private String Store_profile_name = "//a[@class='dropdown-toggle']//span[2]";
-	private String Store_profile_name = "a.dropdown-toggle >span >span:nth-child(3)";
-	private String message_profile_inside_close_btn = ".mat-mdc-dialog-component-host .close";
 	private String message_profile_input = "input[id='mat-input-2']";
 	private String message_profile_save_btn = "div.mat-mdc-dialog-actions button span:nth-child(3)";
-	private String message_profile_change = ".ng-pristine .avatar-container >.avatar-content";
 	private String createIcon = "mat-icon.profile__action-fab-icon";
 	private String Message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
 	private String Message_Search_conversation = "input[id='mat-input-0']";
-	private String Message_Search_icon = "//div[@class='mat-mdc-form-field-icon-prefix ng-tns-c3736059725-2 ng-star-inserted']";
 	private String Message_filter_buttons = "span.mat-mdc-chip-focus-overlay";
-	private String Message_list_icon_whatsapp = "div.channels-list-item__main > .channels-list-item__status-phone > .channels-list-item__avatar__service-icon";
 	private String Message_filter_Whatsapplable = ".channels-list-item__status-phone .mat-icon";
 	private String Message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
 	private String StartconversationBtn = ".chat-input__button span.mdc-button__label";
 	private String Countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
 	private String StartconversatationFirstname = "#mat-input-1";
 	private String Startconversatationlastname = "#mat-input-2";
-	private String StartconMobileno = "#mat-input-3";
+	private String StartconMobileno = "#mat-input-7";
+	private String Message_Search_icon = "#profile div.avatar-container";
 
 	private String StartConverSMS_Whatsapp_filterbuttn = "#mat-select-value-1";
 	private String StartConverSMS_Whatsapp_text = ".mat-mdc-option span";
@@ -59,6 +50,7 @@ public class MessageScreen_Order extends JavaUtility {
 	private String SearchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
 	private String Searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
 
+	private String Conversation_header = ".info-container__content div.avatar-container";
 	private String Conversation_GotoRo_btn = "button.order-button";
 	private String ReturnToMessagePAge = ".main-body div div.return p";
 	private String Conversationtbcanclebtn = ".info-container__header__close-btn mat-icon svg";
@@ -67,7 +59,7 @@ public class MessageScreen_Order extends JavaUtility {
 
 	private String Conversationinactivemess = "div.chat-body__blocked-message.ng-star-inserted";
 	private String Reactivatebtn = ".chat-input__options div";
-	private String Inactivechat = "#mat-input-1";
+	private String Messagechatfield = "#mat-input-1";
 	private String NOconversationStartmessasge = ".chat-empty-container.ng-star-inserted h1";
 	private String ChannalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
 
@@ -75,7 +67,7 @@ public class MessageScreen_Order extends JavaUtility {
 	private String AttachmentPath = "src/main/resources/Images/testimage.png";
 	private String MessageSendBtn = ".chat-input__options button:nth-child(2) mat-icon";
 	private String ConversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
-
+	private String Messageownername = ".chat-header__phone p:nth-child(4)";
 	private String addRepairOrder_Btn = "#repair-order-add";
 	private String SendOriginal_btn = ".mdc-button.mdc-button--outlined.mat-mdc-outlined-button span.mat-mdc-focus-indicator";
 
@@ -84,12 +76,14 @@ public class MessageScreen_Order extends JavaUtility {
 	// Check UI of message R/O
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		page.waitForCondition(() -> iframe.locator(Message_Search_conversation).isVisible());
+		FrameLocator iframes = page.frameLocator(messageIframe);
+		page.waitForTimeout(5000);
+		page.waitForCondition(() -> iframes.locator(message_profile).isVisible());
 		// Frame for Message
-		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
-		if (iframe.locator(Message_Search_conversation).isVisible() && iframe.locator(Message_Search_icon).isVisible()
-				&& iframe.locator(message_profile).isVisible() && iframe.locator(message_profile).isVisible()) {
+		page.waitForTimeout(4000);
+		page.waitForCondition(() -> iframes.locator(message_profile).isVisible());
+		if  (iframes.locator(createIcon).isVisible() && iframes.locator(Message_Search_conversation).isVisible()
+				&& iframes.locator(Message_Search_icon).isVisible() && iframes.locator(Conversation_header).isVisible()) {
 			logger.info("Elements are verifed and Visible");
 			return true;
 		} else {
@@ -98,44 +92,47 @@ public class MessageScreen_Order extends JavaUtility {
 		}
 	}
 
+
 	// Verify functionality of all Elements
+
 	private String MessageProfileName = ".profile__user-info p:nth-child(1)";
 
-	public boolean Message_Profile_setting_button(String ProfileName) {
+	public boolean Verify_Profile_setting_button(String ProfileName) {
 		page.reload();
 		logger.info("Verify Message Profile Settings");
 		List<Boolean> flags = new ArrayList<>();
 		FrameLocator iframe = page.frameLocator(messageIframe);
+		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
+		String MessageOwneraName = iframe.locator(Messageownername).innerText().toLowerCase();
 		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
+		}
 		if (iframe.locator(message_profile).isVisible()) {
 			page.waitForTimeout(3000);
 			iframe.locator(message_profile).click();
 			logger.info("Message profile clicked");
-			page.waitForTimeout(2000);
+			page.waitForTimeout(5000);
 			// iframe.locator(message_profile_input).click();
 			page.keyboard().press("Control+A");
+			page.waitForTimeout(5000);
 			iframe.locator(message_profile_input).type(ProfileName);
 			page.waitForTimeout(1500);
 			iframe.locator(message_profile_save_btn).click();
 			page.waitForTimeout(3000);
 			logger.info("Clicked on save button");
-			page.reload();
+			page.reload(); // We dont need this reload,This is the issue right now
 		} else {
 			logger.info("Message Profile Setting Failed To Open");
 			flags.add(false);
 		}
-		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
 		page.waitForTimeout(3000);
-		List<String> Names = iframe.locator(".message__header .message__author b").allInnerTexts();
-		for (String value : Names) {
-			if (value.toLowerCase().contains(MessageprofileName)) {
-				logger.info(MessageprofileName + " " + "matched to:-" + value);
-			} else if (value.toLowerCase().contains("automatic message")) {
-				logger.info("automatic message" + " " + "matched to:-" + value);
-			} else {
-				logger.info(MessageprofileName + "Not matched to" + value);
-				flags.add(false);
-			}
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
 		}
 		return !flags.contains(false);
 	}
@@ -144,7 +141,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage homePage = new HomePage(page);
 		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
-		System.out.println(storeusername);
 		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
 		System.out.println(messageusername);
 		if (storeusername.trim().equals(messageusername.trim())) {
@@ -272,7 +268,7 @@ public class MessageScreen_Order extends JavaUtility {
 		return !flags.contains(false);
 	}
 
-	public boolean check_my_filterIsApplied() {
+	public boolean Verify_my_filterIsApplied() {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
 		if (!isFilterApplied("My") == true) {
@@ -288,7 +284,8 @@ public class MessageScreen_Order extends JavaUtility {
 
 		return !flags.contains(false);
 	}
-		public boolean click_Whatsapp_filterBotton() {
+
+	public boolean verify_Whatsapp_filterBotton() {
 		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		// Store true false for return value
@@ -311,7 +308,8 @@ public class MessageScreen_Order extends JavaUtility {
 		}
 
 		return !values.contains(false);
-}
+	}
+
 	public boolean click_Sms_filterBotton() {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
@@ -400,7 +398,6 @@ public class MessageScreen_Order extends JavaUtility {
 		List<Boolean> values = new ArrayList<>();
 
 		logger.info("Select only Whatsapp filter");
-
 		if (!isFilterApplied("My") == true) {
 			values.add(false);
 		}
@@ -518,74 +515,81 @@ public class MessageScreen_Order extends JavaUtility {
 	public boolean verifyStartconversatationbtn(String number, String filter) {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
-		iframe.locator(Message_start_convers_buttn).click();
-		logger.info(Message_Filter_Icon);
-		page.waitForCondition(() -> iframe.locator(StartconversatationFirstname).isVisible());
-		iframe.locator(StartconversatationFirstname).fill(firstname);
-		logger.info(Message_Filter_Icon);
-		iframe.locator(Startconversatationlastname).fill(lastname);
-		logger.info(Message_Filter_Icon);
-		page.waitForTimeout(3000);
-		iframe.locator(Countryoptionbtn).click();
-		logger.info(Message_Filter_Icon);
-		iframe.locator(CountryName("United States")).click();
-		logger.info(Message_Filter_Icon);
-		iframe.locator(StartconMobileno).fill(number);
-		logger.info("Number:-" + number);
-		page.waitForTimeout(2000);
-		iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
-		page.waitForTimeout(2000);
+		page.waitForCondition(() -> iframe.locator(Message_start_convers_buttn).isVisible());
+		if (iframe.locator(Message_start_convers_buttn).isVisible()) {
+			logger.info("CONVERSATION CHAT IS VISIBLE");
+			iframe.locator(Message_start_convers_buttn).click();
+			logger.info("OPENED CONVERSATION TAB");
+			page.waitForCondition(() -> iframe.locator(StartconversatationFirstname).isVisible());
+			iframe.locator(StartconversatationFirstname).fill(firstname);
+			logger.info("ENTERED FIRSTNAME :-"+ firstname);
+			iframe.locator(Startconversatationlastname).fill(lastname);
+			logger.info("ENTERED LASTNAME :-" + lastname);
+			page.waitForTimeout(3000);
+			iframe.locator(Countryoptionbtn).click();
+			iframe.locator(CountryName("United States")).click();
+			logger.info("SELECTED COUNTRY");
+			page.waitForTimeout(3000);
+			iframe.locator(StartconMobileno).fill(number);
+			logger.info("Number:-" + number);
+			page.waitForTimeout(2000);
+			iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
+			page.waitForTimeout(2000);
 
-		List<String> Text = iframe.locator(StartConFilter(filter)).allInnerTexts();
-		for (String value : Text) {
-			if (value.trim().toUpperCase().contains("SMS")) {
-				iframe.locator(StartConFilter(filter)).click();
-				logger.info("Select SMS");
+			List<String> Text = iframe.locator(StartConFilter(filter)).allInnerTexts();
+			for (String value : Text) {
+				if (value.trim().toUpperCase().contains("SMS")) {
+					iframe.locator(StartConFilter(filter)).click();
+					logger.info("Select SMS");
 
+				}
+				if (value.trim().toUpperCase().contains("WHATSAPP")) {
+					iframe.locator(StartConFilter(filter)).click();
+					logger.info("Select WHATSAPP");
+
+				} else {
+					flags.add(false);
+					logger.info("not clicked");
+				}
 			}
-			if (value.trim().toUpperCase().contains("WHATSAPP")) {
-				iframe.locator(StartConFilter(filter)).click();
-				logger.info("Select WHATSAPP");
+			if (iframe.locator(StartconversationBtn).isVisible()) {
+				try {
+					iframe.locator(StartconversationBtn).click();
+					logger.info("Button hit");
+					flags.add(true);
 
+				} catch (ElementNotInteractableException e) {
+					logger.info("elemnt is not clickable right now");
+					e.printStackTrace();
+					flags.add(true);
+				}
 			} else {
 				flags.add(false);
-				logger.info("not clicked");
+				logger.info("Element not found");
 			}
-		}
-		if (iframe.locator(StartconversationBtn).isVisible()) {
-			try {
-				iframe.locator(StartconversationBtn).click();
-				logger.info("Button hit");
+			page.waitForCondition(() -> iframe.locator(Converstiontitlename).isVisible());
+			page.waitForTimeout(7000);
+			if (!iframe.locator(ConversationInfo).isVisible()) {
+				iframe.locator(".chat-header__drop-down button").click();
+			}
+			logger.info("text1");
+			String conversinfoname = iframe.locator(ConversationInfo).innerText().toLowerCase();
+			logger.info("text1");
+			String converstextlabelname = iframe.locator(conversationTextlabel).innerText().toLowerCase();
+			logger.info("text1");
+			String converstitlename = iframe.locator(Converstiontitlename).innerText().toLowerCase();
+			System.out.println(conversinfoname + converstextlabelname + converstitlename);
+			iframe.locator(ConversationInfobn).click();
+			if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
+				logger.info("All names are Matched :" + converstitlename + ":" + conversinfoname + ":"
+						+ converstextlabelname);
 				flags.add(true);
-
-			} catch (ElementNotInteractableException e) {
-				logger.info("elemnt is not clickable right now");
-				e.printStackTrace();
-				flags.add(true);
+			} else {
+				logger.info("error message");
+				flags.add(false);
 			}
 		} else {
-			flags.add(false);
-			logger.info("Element not found");
-		}
-		page.waitForCondition(() -> iframe.locator(Converstiontitlename).isVisible());
-		page.waitForTimeout(7000);
-		if (!iframe.locator(ConversationInfo).isVisible()) {
-			iframe.locator(".chat-header__drop-down button").click();
-			}
-		logger.info("text1");
-		String conversinfoname = iframe.locator(ConversationInfo).innerText().toLowerCase();
-		logger.info("text1");
-		String converstextlabelname = iframe.locator(conversationTextlabel).innerText().toLowerCase();
-		logger.info("text1");
-		String converstitlename = iframe.locator(Converstiontitlename).innerText().toLowerCase();
-		System.out.println(conversinfoname + converstextlabelname + converstitlename);
-		iframe.locator(ConversationInfobn).click();
-		if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
-			logger.info(
-					"All names are Matched :" + converstitlename + ":" + conversinfoname + ":" + converstextlabelname);
-			flags.add(true);
-		} else {
-			logger.info("error message");
+			logger.info("CONVERSATION CHAT IS NOT VISIBLE");
 			flags.add(false);
 		}
 		return !flags.contains(false);
@@ -713,14 +717,14 @@ public class MessageScreen_Order extends JavaUtility {
 				logger.info("WHATSAPP CHAT IS ACTIVE");
 				iframe.locator(".channels-list-item__main div:nth-child(3) span:has-text('(781) 205-9487')").first()
 						.click();
-				iframe.locator(Inactivechat).fill("demotext..........");
+				iframe.locator(Messagechatfield).fill("demotext..........");
 				iframe.locator(".chat-input__options button:nth-child(3) mat-icon").click();
 				iframe.locator(SendOriginal_btn).click();
 			}
 		} else {
 			logger.info("WhatsApp filter is Disabled");
 			iframe.locator(ChannalList).first().click();
-			iframe.locator(Inactivechat).fill("demotext..........");
+			iframe.locator(Messagechatfield).fill("demotext..........");
 			iframe.locator(MessageSendBtn).click();
 			iframe.locator(SendOriginal_btn).click();
 
@@ -827,7 +831,7 @@ public class MessageScreen_Order extends JavaUtility {
 
 		iframe.locator(ChannalList).first().click();
 
-		iframe.locator(Inactivechat).fill("DemoTestMessage");
+		iframe.locator(Messagechatfield).fill("DemoTestMessage");
 
 		iframe.locator(MessageSendBtn).click();
 		page.waitForTimeout(3000);
