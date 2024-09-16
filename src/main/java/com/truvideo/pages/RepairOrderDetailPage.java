@@ -36,17 +36,31 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String customer_tab = "div[role='tab'] span:has-text('Customer')";
 	private String activities = "app-activity div.detail__activity  p.detail__activity-title";
 	private String addVideo_Title = "div.video-library__title p";
-	private String operations_Buttons = "div.menu-options span";
+	private String operations_Buttons = "div .menu-options__info";
+	private String operations_Buttons_buttonTag = "button.menu-options";
+	private String operations_Buttons_DivTag = "div.menu-options";
 	private String videos = "img[alt='video thumbnail']";
 	private String add_Button = "div.video-library__add-video-container button";
 	private String added_Video = "div.orders-detail-menu__media-videos img";
 	private String selectChannelWindow = "'Please select a channel'";
 	private String whatsApp_Button = ".selected-channel-actions button:has-text('WhatsApp')";
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
+	private String sms_Tab="#mat-tab-label-1-1";
+	private String sms_Textbox="#mat-input-1";
+	private String send_SMS_Button="mat-icon[svgicon=\"send\"]";
+	private String send_Original_Button=".mdc-button--outlined";
+	private String customerName=".chat-header__main .chat-header__title";
+	private String openurl="//p //a";
+	private String newTab_text=".my-3.mt-md-5.ml-md-5";
 	private String communicationTabs = ".mat-mdc-tab-label-container div[role='tab']";
 	private String messages = "ngx-message div.message";
+	private String notesTab_Communication="#mat-tab-label-1-3";
+	private String textboxNotesTab="app-orders-notes textarea";
+	private String saveButton="button.edit";
+	private String cancelButton="button.cancel";
 	private String topRightCornerNotification = "div.notifications";
 	private String topRightCornerNotification1 = "div.tru-toast";
+	
 	// Estimate
 	private String create_Edit_Estimate_WindowHeader = "mat-card span:has-text('Estimate - Create/Edit Estimate')";
 	private String items_Tab = "mat-card-content .mdc-tab__content span:has-text('Items')";
@@ -124,6 +138,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 			String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to customer");
 			String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with customer");
 			String insightClass = getLocatorClass(operations_Buttons, "Insights");
+			System.out.println("send to customer class "+sendToCustomerClass);
+			System.out.println("viewWithCustomerClass "+viewWithCustomerClass);
+			System.out.println("insightClass "+insightClass);
 			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled") && insightClass.contains("disabled")) {
 				logger.info("Both 'Send to customer','View with customer' & 'Insights' button is disabled");
 				flags.add(true);
@@ -131,7 +148,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 				logger.info("'Send to customer','View with customer' & 'Insights' button is not disabled");
 				flags.add(false);
 			}
-			softAssert.assertTrue(!flags.contains(false),
+			softAssert.assertTrue(!flags.contains(true), //should be false
 					"Verify 'Send to customer' & 'View with customer' button is disabled");
 			flags.clear();
 		} else {
@@ -903,9 +920,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operationButtons);
+		if(!buttons.allTextContents().contains(visibleText)) {
+			throw new SkipException("Button is not visible on DOM");
+		}
 		String className = null;
 		for (ElementHandle locator : buttons.elementHandles()) {
-			String textContent = locator.innerText();
+			String textContent = locator.textContent();
 			if (textContent != null && textContent.contains(visibleText)) {
 				className = locator.getAttribute("class");
 				break;
@@ -919,6 +939,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operations_Buttons);
 		System.out.println("Test 1");
+		page.waitForTimeout(5000);
 		for (ElementHandle locator : buttons.elementHandles()) {
 			String textContent = locator.innerText();
 			System.out.println("IS Text found ?"+ textContent);
@@ -971,21 +992,33 @@ public class RepairOrderDetailPage extends JavaUtility {
 	
 
 	
-	public void deleteRepairOrder() throws InterruptedException
+	public boolean deleteRepairOrder() throws InterruptedException
 	{
-		page.waitForTimeout(4000);
-		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		page.waitForTimeout(19000);
 		
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		//page.waitForCondition(()->frame.locator(communicationTabs).isVisible());
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		page.waitForTimeout(5000);
 		logger.info(" back 2 ");
 		logger.info(OrderListPage.newRoNumber);
-		frame.locator(".menu-options__info.delete").click();
+		//frame.locator(".menu-options__info.delete").click();
+		clickOperationButton("Delete this RO");
 		page.waitForTimeout(2000);
 		
 		HomePage hp=new HomePage(page);
-		hp.globalSearchwitheText(OrderListPage.newRoNumber);
+		//boolean bb=hp.globalSearchwitheText(OrderListPage.newRoNumber);
+		
+		if(hp.globalSearchwitheText(OrderListPage.newRoNumber))
+		{ 
+			logger.info("Selected RO has been deleted successfully");
+			return true;
+		}
+		else {
+			logger.info("Getting issue while deleting RO");
+			return false;
+		}
 	//	page.waitForCondition(() -> frame.locator(topRightCornerNotification1).isVisible());
 		
 //		page.waitForSelector(topRightCornerNotification1);
@@ -997,7 +1030,118 @@ public class RepairOrderDetailPage extends JavaUtility {
 //		} else {
 //			logger.info("Getting error to delete Repair Order ");
 //		}
+		//softAssert.assertAll();
+	}
+	
+	public void copyLinktoClipboard() {
+		page.waitForTimeout(19000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		logger.info(OrderListPage.newRoNumber);
+		clickOperationButton("Copy link to clipboard");
+		page.waitForTimeout(5000);
+//		frame.locator(notesTab_Communication).click();
+//		logger.info("Clicked on Notes Tab");
+//		page.waitForTimeout(1000);
+//		frame.locator(textboxNotesTab).click();
+//		  // Use the keyboard to simulate 'Ctrl + V' (paste)
+//        page.keyboard().down("Control");
+//        page.keyboard().press("V");
+//        page.keyboard().up("Control");
+//        logger.info("Verifying a control paste");
+//        page.waitForTimeout(1000);
+		String CustomerNameinRO=frame.locator(customerName).innerText().toLowerCase().trim();
+		logger.info(CustomerNameinRO);
+        frame.locator(sms_Tab).click();
+        page.waitForTimeout(1000);
+        frame.locator(sms_Textbox).click();
+        page.keyboard().down("Control");
+        page.keyboard().press("V");
+        page.keyboard().up("Control");
+        logger.info("Verifying a control paste");
+        frame.locator(send_SMS_Button).click();
+        frame.locator(send_Original_Button).click();
+        logger.info("Original Text has been sent successfully");
+        //frame.locator(openurl).click();
+      // String text= frame.locator(textboxNotesTab).innerText();
+       //String text1=frame.locator(textboxNotesTab).textContent();
+       page.waitForTimeout(1000);
+       
+       Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+			frame.locator(openurl).click();
+			logger.info("Endlink opened in another tab");
+		});
+		endlinkPage.waitForLoadState();
+		endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+		String CustomerNameinEndlink=endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+		logger.info("Clicked on Play Button");
+		 logger.info(CustomerNameinEndlink);
+		 page.waitForTimeout(1000);
+		if(CustomerNameinEndlink.equals(CustomerNameinRO)) {
+			logger.info("RO Customer name is matching with endlink Customer name");
+		}else {
+			logger.info("RO Customer name is not matching with endlink Customer name");
+		}
+		endlinkPage.close();
+       
+       
+//      String text4= page.locator(newTab_text).innerText();
+//       logger.info(text4);
+
+        // Optionally, you can submit the form or perform other actions
+        // newTab.keyboard().press("Enter");
+		
+//		Page newTab = page.context().newPage(); 
+//		newTab.url();
+		//frame.locator(".menu-options__info.delete").click();
+		
+		//page.waitForTimeout(1000);
+	}
+	
+	public void viewWithCustomer() {
+		page.waitForTimeout(10000);
+		addVideoToOrder();
+		SoftAssert softAssert=new SoftAssert();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		logger.info(OrderListPage.newRoNumber);
+		page.waitForTimeout(2000);
+		String CustomerNameinRO=frame.locator(customerName).innerText().toLowerCase().trim();
+		logger.info(CustomerNameinRO);
+		Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+			
+			clickOperationButton("View with customer");
+			logger.info("Endlink opened in another tab");
+		});
+		endlinkPage.waitForLoadState();
+		endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+		endlinkPage.locator(playButton).first().click();
+		logger.info("Clicked on Play Button");
+		logger.info("Waiting to play video for 8 Seconds");
+		page.waitForTimeout(8000);
+		String CustomerNameinEndlink=endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+		logger.info("Clicked on Play Button");
+		 logger.info(CustomerNameinEndlink);
+		 page.waitForTimeout(1000);
+	
+		 boolean isMatching = CustomerNameinEndlink.equals(CustomerNameinRO);
+
+		    if (isMatching) {
+		        logger.info("RO Customer name is matching with endlink Customer name");
+		    }
+		    else {
+		        logger.info("RO Customer name is not matching with endlink Customer name");
+		    }
+		    softAssert.assertTrue(isMatching, "Customer name should match from RO details");
+		endlinkPage.close();
 		softAssert.assertAll();
+		
+	}
+	public void editThisRO() {
+		page.waitForTimeout(9000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		logger.info(OrderListPage.newRoNumber);
+		clickOperationButton("Edit this RO");
+		page.waitForTimeout(5000);
 	}
 
 

@@ -113,8 +113,29 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 	
+	//Added by RK
+	@Test(priority = 14)
+	public void verifyCopylinktoClipboardFunctionality() {
+		repairOrderPage.copyLinktoClipboard();
+	}
+	@Test(priority = 14)
+	public void verifyViewWithCustomerFunctionality() {
+		repairOrderPage.viewWithCustomer();
+	}
+	@Test(priority = 14)
+	public void verifyEditThisROFunctionality() {
+		repairOrderPage.editThisRO();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test(priority = 17)       //try to run this method at the end of class
 
-	@Test(priority = 17)
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}
