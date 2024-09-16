@@ -34,4 +34,15 @@
 			<class name="com.truvideo.tests.UserPageTest"></class>
 		</classes>
 	</test>
+	
+	<!-- <test name="Message Service Page Test">
+		<classes>
+			<class name="com.truvideo.tests.Message_SaleOrdertest"></class>
+		</classes>
+	</test>
+	<test name="Message Sales Test">
+		<classes>
+			<class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+		</classes>
+	</test> -->
 </suite> 

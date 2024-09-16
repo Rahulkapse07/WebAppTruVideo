@@ -106,10 +106,15 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 	
+<<<<<<< HEAD
 
 	
 	
 	@Test(priority = 20)
+=======
+	//Added by RK
+	@Test(priority = 14)
+>>>>>>> 979736b65c235c1bac16e672ef02c0b8456d8831
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
@@ -135,10 +140,9 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	
 	
 	
-	
-	
-		
-	//@Test(priority = 17)       //try to run this method at the end of class
+
+
+	@Test(priority = 17)       //try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}

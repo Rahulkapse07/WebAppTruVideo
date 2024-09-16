@@ -117,7 +117,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String next_Button = "app-items button:has-text('Next')";
 	private String internalNotes_TextBox = "form input[placeholder='Write an internal note.']";
 	private String customerNotes_TextBox = "form input[placeholder='Write a note for the customer.']";
-	private String rowCount = "div.items__info-container div button:has-text('delete_outline')";
+	private String rowCount = "div.items__info-container div button:has-text('delete')";
 	private String windowTitle = "mat-card-content .mat-toolbar span";
 	private String toaster_Message = "'Amount is empty or incorrect.'";
 	private String back_Button = ".mdc-button__label:has-text('Back')";
@@ -705,7 +705,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	private void deleteItemFromList() {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		frame.locator(deleteItem_Button).last().click();
+		frame.locator(".actions__div.ng-star-inserted button mat-icon:has-text('delete')").last().click();
 		logger.info("Item deleted from list");
 		page.waitForTimeout(3000);
 	}
@@ -1592,9 +1592,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	    	
 	    }
 	    
-	    
-	    
-	 // Hide from customer/ Show to customer button functionality  
+	     // Hide from customer/ Show to customer button functionality  
 	    
 	    private String showtocustomer = ".mdc-button__label:has-text(' Show to customer ')";
 	    
