@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
-	
+	    
 	    <parameter name="browser" value="chrome"/>
         <parameter name="headless" value="false"/> 
 	
@@ -24,18 +24,19 @@
 			<class name="com.truvideo.tests.OrderListPageTest"></class>
 		</classes>
 	</test>
-	<!-- <test name="Order Details Page Test">
+	<test name="Order Details Page Test">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
 		</classes>
-	</test>  -->
+	</test> 
 	<test name="User Page Test">
 		<classes>
 			<class name="com.truvideo.tests.UserPageTest"></class>
 		</classes>
 	</test>
 	
-	<!-- <test name="Message Service Page Test">
+	
+	<test name="Message Service Page Test">
 		<classes>
 			<class name="com.truvideo.tests.Message_SaleOrdertest"></class>
 		</classes>
@@ -44,5 +45,5 @@
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest"></class>
 		</classes>
-	</test> -->
+	</test>
 </suite> 

@@ -1,8 +1,19 @@
 package com.truvideo.pages;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+
+import com.mailosaur.MailosaurClient;
+import com.mailosaur.models.Message;
+import com.mailosaur.models.MessageSearchParams;
+import com.mailosaur.models.SearchCriteria;
 import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
@@ -19,8 +30,9 @@ public class UserPage extends JavaUtility {
 	private String selectRoles_option = "#s2id_autogen1";
 
 	public String getRoles(String roles) {
-		//String element = "div[class='select2-result-label']:has-text('" + roles + "')";
-		String element = "div.select2-result-label >> text='"+roles+"'";
+		// String element = "div[class='select2-result-label']:has-text('" + roles +
+		// "')";
+		String element = "div.select2-result-label >> text='" + roles + "'";
 		return element;
 	}
 
@@ -235,6 +247,7 @@ public class UserPage extends JavaUtility {
 				"verify technician user creation");
 		softAssert.assertAll();
 	}
+
 	public void addNewSalesUser(String roles, String dealer) throws InterruptedException {
 		System.out.println("test rnner");
 		page.click(addUser_button);
@@ -325,7 +338,7 @@ public class UserPage extends JavaUtility {
 		}
 		softAssert.assertAll();
 	}
-	
+
 	public void addNewSalesManager(String roles, String dealer) throws InterruptedException {
 		page.click(addUser_button);
 		logger.info("Clicked on Add User Button");
@@ -415,7 +428,7 @@ public class UserPage extends JavaUtility {
 		}
 		softAssert.assertAll();
 	}
-	
+
 	public void addNewAdminUser(String roles, String dealer) throws InterruptedException {
 		page.click(addUser_button);
 		logger.info("Clicked on Add User Button");
@@ -669,41 +682,72 @@ public class UserPage extends JavaUtility {
 		softAssert.assertAll();
 	}
 
-	public void actionsOnUsers() {
+	public boolean actionsOnUsers(String Type, String errormessage, String SubjectMessage) {
 		SoftAssert softAssert = new SoftAssert();
-		page.selectOption(selectActionDropdown, "Send Invite to App");
+		boolean flag = false;
+		page.selectOption(selectActionDropdown, Type);
 		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
+
+		page.fill(userSearchbox, "us@");
+		page.waitForTimeout(2000);
+		logger.info("Searched with Latest user created");
+		page.click(searchButton);
+
+		page.waitForTimeout(5000);
 		page.click(firstUsercheckbox);
 		logger.info("Selected first user to perform Send Invite to App action");
 		page.click(selectActionSubmitButton);
-		page.waitForTimeout(1000);
+		page.waitForTimeout(5000);
 		page.waitForSelector(topRightCornerNotification);
 		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		softAssert.assertTrue(topRightCornerNotificationPopup.contains(AppConstants.USER_SEND_INVITE_TO_APP_MESSAGE),
+		softAssert.assertTrue(topRightCornerNotificationPopup.contains(errormessage),
 				"verify technician user creation");
 
-		page.selectOption(selectActionDropdown, "Send Invite to Web Dashboard");
-		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
-		page.click(firstUsercheckbox);
-		logger.info("Selected first user to perform Send Invite to Web Dashboard action");
-		page.click(selectActionSubmitButton);
-		page.waitForTimeout(1000);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup1 = page.innerText(topRightCornerNotification);
-		softAssert.assertTrue(
-				topRightCornerNotificationPopup1.contains(AppConstants.USER_SEND_INVITE_TO_WEB_DASHBOARD_MESSAGE),
-				"verify send Invite to Dashboard");
+		String apiKey = "0I12RZR2fG2B7Mdh8prK3XnUl8VoG38j";
+		String serverId = "rwy0mofv";
+		String serverDomain = "rwy0mofv.mailosaur.net";
 
-		page.selectOption(selectActionDropdown, "Deactivate User/Device");
-		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
-		page.click(firstUsercheckbox);
-		logger.info("Selected first user to perform Deactivate User action");
-		page.click(selectActionSubmitButton);
-		page.waitForTimeout(1000);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup2 = page.innerText(topRightCornerNotification);
-		softAssert.assertTrue(topRightCornerNotificationPopup2.contains(AppConstants.USER_DEVICE_DEACTIVATE_MESSAGE),
-				"verify user action to deactivate ");
-		softAssert.assertAll();
+		MailosaurClient mailosaur = new MailosaurClient(apiKey);
+		// Set up search parameters
+		MessageSearchParams params = new MessageSearchParams();
+		params.withServer(serverId);
+
+		// Specify search criteria (e.g., sent to a specific email)
+		SearchCriteria criteria = new SearchCriteria();
+		criteria.withSentTo("us@" + serverDomain);
+
+		OffsetDateTime receivedAfter = OffsetDateTime.now().minusSeconds(30);
+		params.withReceivedAfter(receivedAfter.toInstant().toEpochMilli());
+
+		try {
+			// Set a longer timeout (e.g., 60 seconds) to wait for the email to arrive
+			int timeoutMillis = 60000;
+			Message message = mailosaur.messages().get(serverId, criteria, timeoutMillis);
+
+			if (message != null) {
+				// Extract details from the email
+				String subject = message.subject();
+				String fromEmail = message.from().get(0).email();
+				String toEmail = message.to().get(0).email();
+				// Print the extracted data
+				System.out.println("Subject: " + subject);
+				System.out.println("From: " + fromEmail);
+				System.out.println("To: " + toEmail);
+				assertNotNull(message);
+				assertEquals(SubjectMessage, message.subject(),"Subject not matched");
+				logger.info("Customer get message from advisor :-" + SubjectMessage);
+				flag = true;
+
+			} else {
+				System.out.println("Subject Not present");
+				flag = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			flag = false ; 
+		}
+		
+		return flag;
+
 	}
 }

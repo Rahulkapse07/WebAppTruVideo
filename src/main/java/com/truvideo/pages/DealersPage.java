@@ -29,7 +29,7 @@ public class DealersPage extends JavaUtility {
 	}
 
 	public boolean Verify_Whatsapp_textconversation(String Name , String value ) {
-
+		
 		page.waitForCondition(() -> page.locator(DealerName).isVisible());
 		page.fill(DealerName, Name);
 		page.locator(DealerSearchBtn).click();
@@ -37,9 +37,7 @@ public class DealersPage extends JavaUtility {
 		System.out.println("click1");
 
 		List<String> Dealerlist = page.locator(DealerList).allInnerTexts();
-
-		logger.info(DealerList);
-		String name = "TruVideo";
+		String name = Name;
 		int n = 0;
 		int i = 2;
 		while (n <= DealerList.length()) {

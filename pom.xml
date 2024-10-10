@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>TruvideoWeb</groupId>
 	<artifactId>TruvideoWeb</artifactId>
@@ -21,28 +19,35 @@
 	</properties>
 
 	<dependencies>
+		<!-- Playwright dependency -->
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
 			<artifactId>playwright</artifactId>
 			<version>${playwright-version}</version>
 		</dependency>
+
+		<!-- TestNG dependency -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>${testng-version}</version>
 		</dependency>
-		<!-- dependencies for Extent Report-->
+
+		<!-- Extent Reports dependency -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>${extentreports-version}</version>
 		</dependency>
+
+		<!-- Appium dependency -->
 		<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
 			<version>${java-client-version}</version>
 		</dependency>
-		<!--Loggin dependencies-->
+
+		<!-- Log4j2 dependencies -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -53,7 +58,13 @@
 			<artifactId>log4j-core</artifactId>
 			<version>${log-4j-verision}</version>
 		</dependency>
-		<!-- depedencies for CSV reader-->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${log-4j-verision}</version>
+		</dependency>
+
+		<!-- Commons dependencies for execution and IO -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-exec</artifactId>
@@ -63,12 +74,6 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.5</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-io</groupId>
-					<artifactId>commons-io</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -81,7 +86,21 @@
 			<artifactId>commons-email</artifactId>
 			<version>1.5</version>
 		</dependency>
+
+		<!-- Mailosaur dependency -->
+		<dependency>
+			<groupId>com.mailosaur</groupId>
+			<artifactId>mailosaur-java</artifactId>
+			<version>8.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>5.5.2</version> <!-- or the latest version -->
+		</dependency>
+
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

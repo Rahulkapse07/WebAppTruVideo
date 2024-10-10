@@ -1,7 +1,10 @@
 package com.truvideo.utility;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,12 +14,23 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.FilePayload;
@@ -31,7 +45,7 @@ public class JavaUtility {
 		StringBuilder sb = new StringBuilder(length);
 		for (int i = 0; i < length; i++) {
 			sb.append(CHARACTERS.charAt(RANDOM.nextInt(CHARACTERS.length())));
-			
+
 		}
 		return sb.toString();
 	}
@@ -90,7 +104,7 @@ public class JavaUtility {
 	}
 
 	public void createAndUploadCsvFile_Advisor(Page page) {
-		String filePath = "./src/test/resources/CreateUserData"+"unique_data_advisor.csv";
+		String filePath = "./src/test/resources/CreateUserData" + "unique_data_advisor.csv";
 		createCsvFile_Advisor(filePath);
 		try {
 			byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
@@ -101,7 +115,7 @@ public class JavaUtility {
 	}
 
 	public void createAndUploadCsvFile_Technician(Page page) {
-		String filePath = "./src/test/resources/CreateUserData"+"unique_data_technician.csv";
+		String filePath = "./src/test/resources/CreateUserData" + "unique_data_technician.csv";
 		createCsvFile_Technician(filePath);
 		try {
 			byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
@@ -157,4 +171,9 @@ public class JavaUtility {
 	private String generateUniqueString() {
 		return "Text" + getRandomString(5);
 	}
+
+	// ---------------------------Read Csv file-------------
+	
+
+
 }

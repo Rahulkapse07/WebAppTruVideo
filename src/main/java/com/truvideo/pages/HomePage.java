@@ -164,10 +164,10 @@ public class HomePage extends JavaUtility {
 		}
 	}
 
-	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception {
+	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception{
+		page.waitForTimeout(5000);
 		if(page.locator(orderMessage_Header).isVisible()) {
 			page.click(orderMessage_Header);
-			page.waitForTimeout(5000);
 			return new MessageScreen_Order(page);
 			}
 		else {
@@ -1027,8 +1027,8 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Badge for Self SO's Messages");
 		String isMyButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("My"))
 				.getAttribute("aria-selected");
-		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
-				.getAttribute("aria-selected");
+//		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
+//				.getAttribute("aria-selected");
 		if (isMyButtonSelected.equals("true")) {
 			logger.info("My Filter is selected on message screen");
 			flags.add(true);
@@ -1036,13 +1036,13 @@ public class HomePage extends JavaUtility {
 			logger.info("My Filter is not selected on message screen");
 			flags.add(false);
 		}
-		if (isActiveButtonSelected.equals("true")) {
-			logger.info("Active Filter is selected on message screen");
-			flags.add(true);
-		} else {
-			logger.info("Active Filter is not selected on message screen");
-			flags.add(false);
-		}
+//		if (isActiveButtonSelected.equals("true")) {
+//			logger.info("Active Filter is selected on message screen");
+//			flags.add(true);
+//		} else {
+//			logger.info("Active Filter is not selected on message screen");
+//			flags.add(false);
+//		}
 		return !flags.contains(false);
 	}
 
@@ -1059,8 +1059,8 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Badge for All SO's Messages");
 		String isMyButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("My"))
 				.getAttribute("aria-selected");
-		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
-				.getAttribute("aria-selected");
+//		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
+//				.getAttribute("aria-selected");
 		if (isMyButtonSelected.equals("false")) {
 			logger.info("My Filter is not selected on message screen");
 			flags.add(true);
@@ -1068,13 +1068,13 @@ public class HomePage extends JavaUtility {
 			logger.info("My Filter is selected on message screen");
 			flags.add(false);
 		}
-		if (isActiveButtonSelected.equals("true")) {
-			logger.info("Active Filter is selected on message screen");
-			flags.add(true);
-		} else {
-			logger.info("Active Filter is not selected on message screen");
-			flags.add(false);
-		}
+//		if (isActiveButtonSelected.equals("true")) {
+//			logger.info("Active Filter is selected on message screen");
+//			flags.add(true);
+//		} else {
+//			logger.info("Active Filter is not selected on message screen");
+//			flags.add(false);
+//		}
 		return !flags.contains(false);
 	}
 

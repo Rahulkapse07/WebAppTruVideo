@@ -55,7 +55,7 @@ public class AppConstants {
 	public static final String USER_DEACTIVATE_MESSAGE = "Successfully changed the user status to inactive";
 	public static final String USER_ACTIVATE_MESSAGE = "Successfully changed the user status to active";
 	public static final String USER_SEND_INVITE_TO_APP_MESSAGE = "Sent invitation to app";
-	public static final String USER_SEND_INVITE_TO_WEB_DASHBOARD_MESSAGE = "Sent invitation to app";
+	public static final String USER_SEND_INVITE_TO_WEB_DASHBOARD_MESSAGE = "Sent invitation to dashboard.";
 	public static final String USER_DEVICE_DEACTIVATE_MESSAGE = "Sent invitation to app";
 
 	// SO List Page

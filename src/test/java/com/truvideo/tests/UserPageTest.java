@@ -1,5 +1,6 @@
 package com.truvideo.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import com.truvideo.base.BaseTest;
@@ -52,8 +53,19 @@ public class UserPageTest extends BaseTest {
 	public void verifyBulkUserCreation() throws InterruptedException {
 		userPage.bulkCreateUser();
 	}
-	@Test(priority = 8)
-	public void verifyselectActionsonUser() throws InterruptedException {
-		userPage.actionsOnUsers();
-	}
+	
+	  @DataProvider(name = "userActionsProvider")
+	    public Object[][] userActionsProvider() {
+	        return new Object[][]{
+	                {"Send Invite to App","Sent invitation to app" , "Kenility Store  - App Invitation" },
+	                {"Send Invite to Web Dashboard","Sent invitation to dashboard." , "Password Creation"}
+	        };
+	    }
+	
+	  @Test(dataProvider = "userActionsProvider")
+	    public void verifySelectActionsOnUser(String actionType, String expectedMessage, String message ) throws InterruptedException {
+		  
+		  Assert.assertTrue(userPage.actionsOnUsers(actionType , expectedMessage , message ));		
+	        }
+
 }

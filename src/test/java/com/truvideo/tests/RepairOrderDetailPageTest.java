@@ -2,6 +2,7 @@ package com.truvideo.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.RepairOrderDetailPage;
@@ -19,35 +20,27 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
-
+	
 	@Test(priority = 2)
 	public void verifyAddMediaFunction_FirstVideo() {
 		repairOrderPage.addVideoToOrder();
 	}
-
-	@Test(priority = 3)
+	
+	@Test(priority = 4)
 	public void verifySendToCustomer_ForFirstVideo() {
 		repairOrderPage.sendVideoToCustomer("WhatsApp");
 	}
-
-	@Test(priority = 4)
-	public void verifyAddMediaFunction_SecondVideo() {
-		repairOrderPage.addVideoToOrder();
-	}
-
+	
 	@Test(priority = 5)
 	public void verifySendToCustomer_ForSecondVideo() {
 		repairOrderPage.sendVideoToCustomer("SMS");
 	}
-
 	@Test(priority = 6)
 	public void verifyViewedStatus() {
-		repairOrderPage.checkStatus_OnVideoWatch();
+		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
-
 	@Test(priority = 7)
 	public void verifyVariousActivityOfEstimate() {
-		page.reload();
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
@@ -77,72 +70,65 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.resendPayment("SMS");
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 13, dependsOnMethods = "verifyPaymentFunction" )
 	public void verifySubmitPayment_ProcessedPayment() {
-		repairOrderPage.submitPayment();
+		
+		repairOrderPage.submitPayment("SMS");
 	}
+	
 	@Test(priority = 14)
 	public void verifyCreateReminder() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.createreminder());
 	}
+	
 	@Test(priority = 15)
 	public void VerifyOpenInspection() throws InterruptedException{
 		Assert.assertTrue(repairOrderPage.openInspection());
 	}
+	
 	@Test(priority = 16)
 	public void VerifySendbackInspection() {
 		Assert.assertTrue(repairOrderPage.sendbackInspection());
 	}
+	
 	@Test(priority = 17)
 	public void VerifyPublishInspections() {
 		Assert.assertTrue(repairOrderPage.publishInspection());
 	}
+	
 	@Test(priority = 18)
 	public void VerifyNotifyCustomer() {
 		Assert.assertTrue(repairOrderPage.notifyCustomerBtn());
 	}
+	
 	@Test(priority = 19)
 	public void VerifyHide_Show() {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 	
-
-
-	
-	
-
-
 	//Added by RK
-	@Test(priority = 14)
+	@Test(priority = 20)
 
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
+	
 	@Test(priority = 21)
 	public void verifyViewWithCustomerFunctionality() {
 		repairOrderPage.viewWithCustomer();
 	}
+	
 	@Test(priority = 22)
 	public void verifyEditThisROFunctionality() throws InterruptedException {
 		repairOrderPage.editThisRO();
 	}
+	
 	@Test(priority = 23)
 	public void verifyInsightFunctionality() throws InterruptedException {
 		repairOrderPage.insightFunctionality();
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-	@Test(priority = 17)       //try to run this method at the end of class
+	@Test(priority = 24)       //try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}
