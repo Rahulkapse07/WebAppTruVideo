@@ -32,12 +32,17 @@ jobs:
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
     - name: Run Playwright Tests
-      run: xvfb-run --auto-servernum -- mvn test -Dsurefire.suiteXmlFiles=TestRunnerSuites/FullRegressionSuite.xml
+      id: test-result # Capture test result
+      run: |
+        xvfb-run --auto-servernum -- mvn test -Dsurefire.suiteXmlFiles=TestRunnerSuites/FullRegressionSuite.xml
+        echo "exit_code=$?" >> $GITHUB_ENV  # Store the exit code of the tests
+      continue-on-error: true # Continue even if tests fail
 
     - name: Set permissions for Report file
       run: chmod 644 Reports/Index.html
 
     - name: Send Email with Report
+      if: always()  # Ensure email is always sent
       run: |
         sudo apt-get install -y ssmtp
         echo "root=postmaster" | sudo tee -a /etc/ssmtp/ssmtp.conf
@@ -47,8 +52,11 @@ jobs:
         echo "FromLineOverride=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
         echo "UseSTARTTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-
-        echo "To: rahul.kapse@5exceptions.com" > email.txt
+        
+        # Read the exit code from the environment variable
+        exit_code=${{ env.exit_code }}
+        
+        echo "To: rahul.kapse@5exceptions.com, gopal.chandre@5exceptions.com, yash.modi@5exceptions.com, suraj.kushwah@5exceptions.com" > email.txt
         echo "From: ${{ secrets.EMAIL_USER }}" >> email.txt
         echo "Subject: Playwright Test Report" >> email.txt
         echo "MIME-Version: 1.0" >> email.txt
@@ -57,9 +65,15 @@ jobs:
         echo "--boundary123" >> email.txt
         echo "Content-Type: text/plain; charset=UTF-8" >> email.txt
         echo "" >> email.txt
-        echo "Please find the attached test report." >> email.txt
+        
+        # Check exit code and set the message accordingly
+        if [ "$exit_code" -eq 0 ]; then
+          echo "All tests passed successfully." >> email.txt
+        else
+          echo "Some tests failed. Please check the attached report for details." >> email.txt
+        fi
+        
         echo "" >> email.txt
-
         echo "--boundary123" >> email.txt
         echo "Content-Type: text/html; charset=UTF-8" >> email.txt
         echo "Content-Disposition: attachment; filename=\"TestReport.html\"" >> email.txt
@@ -67,7 +81,7 @@ jobs:
         cat Reports/Index.html >> email.txt
         echo "" >> email.txt
         echo "--boundary123--" >> email.txt
-
+        
         ssmtp rahul.kapse@5exceptions.com < email.txt
         echo "Email sent."
 
