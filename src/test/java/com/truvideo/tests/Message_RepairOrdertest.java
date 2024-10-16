@@ -44,7 +44,7 @@ public class Message_RepairOrdertest extends BaseTest {
 	}
 
 	@Test(dependsOnMethods = "verifyDefaultFilters")
-	public void verifyWhatsAppChatEnablecondition() {
+	public void verifyWhatsAppChatEnablecondition() throws Exception {
 		Assert.assertTrue(MessageScreen_order.VerifyWhatsAppChatEnableCondition());
 	}
 
@@ -95,7 +95,7 @@ public class Message_RepairOrdertest extends BaseTest {
 	}
 
 	@Test()
-	public void verifystartConversatationbtn() {
+	public void verifystartConversatationbtn() throws Exception {
 		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo"), "SMS"));
 	}
 

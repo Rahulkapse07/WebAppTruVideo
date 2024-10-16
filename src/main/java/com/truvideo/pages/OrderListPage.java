@@ -28,7 +28,7 @@ public class OrderListPage extends JavaUtility {
 	private String allOpen_FilterButton = "#LBL_ALL_OPEN";
 	private String ForReview_FilterButton = "#LBL_FOR_REVIEW";
 	private String allClosed_FilterButton = "#LBL_ALL_CLOSED";
-	private String selectDealer_Dropdown = "span.select2-chosen";
+	private String selectDealer_Dropdown = "#s2id_dealer a .select2-chosen";
 	private String dealerSearch_TextBox = "div.select2-search input";
 
 	private String getSearchedDealer(String dealerToSearch) {
@@ -174,7 +174,7 @@ public class OrderListPage extends JavaUtility {
 	}
 
 	public boolean selectDealerFromSelectDealerDropdown() {
-		page.waitForLoadState();
+		page.waitForTimeout(5000);
 		page.click(selectDealer_Dropdown);
 		logger.info("Clicked on 'Select Dealer' dropdown");
 		page.waitForTimeout(2000);
@@ -190,7 +190,6 @@ public class OrderListPage extends JavaUtility {
 			Locator DealerNames = tableRow.locator("td:nth-child(3)").nth(i);
 			String dealerName = DealerNames.textContent().trim();
 			if (dealerName.contains(prop.getProperty("anotherDealer"))) {
-				logger.info("All ROs is of selected dealer & dealer is : " + dealerName);
 				flags.add(true);
 			} else {
 				logger.info("All ROs is Not of selected dealer & dealer is : " + dealerName);
