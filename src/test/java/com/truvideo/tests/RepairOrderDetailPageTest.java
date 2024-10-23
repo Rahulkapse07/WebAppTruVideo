@@ -68,6 +68,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.createPayment("WhatsApp");
 	}
 
+
 	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction")
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
@@ -109,8 +110,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 
-//	
-	// Added by RK
+
 	@Test(priority = 20)
 
 	public void verifyCopylinktoClipboardFunctionality() {

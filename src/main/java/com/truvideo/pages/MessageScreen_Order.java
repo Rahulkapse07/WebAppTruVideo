@@ -371,8 +371,10 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	private String Infobuttn = ".chat-header__drop-down button";
+
 	private String firstname = "Automation";
 	private String lastname = "Name";
+
 
 	private String StartConFilter(String filter) {
 		return "#mat-select-0-panel mat-option span:has-text('" + filter + "')";
@@ -446,9 +448,9 @@ public class MessageScreen_Order extends JavaUtility {
 			String converstitlename = iframe.locator(converstiontitlename).innerText().toLowerCase();
 			String channelownername = iframe.locator(channelOwnername).innerText().toLowerCase();
 			String userlable = page.innerText(homepage.getLoginUserLabel()).toLowerCase();
-			System.out
-					.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable);
-			if (channelownername == userlable) {
+
+			System.out.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable );
+			if (channelownername == userlable ) {
 				logger.info("Channel Owner name is matched" + ":-" + userlable);
 			}
 			iframe.locator(conversationInfobn).click();
@@ -469,20 +471,22 @@ public class MessageScreen_Order extends JavaUtility {
 
 		page.waitForTimeout(3000);
 		logger.info("Launch new browser");
-		BrowserContext newContext = PlaywrightFactory.getBrowser()
-				.newContext(new Browser.NewContextOptions().setViewportSize(null));
+
+		BrowserContext newContext = PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null));
 		Page newBrowserPage = newContext.newPage();
-		// Page newBrowserPage = PlaywrightFactory.getBrowser().newContext().newPage();
+		//Page newBrowserPage = PlaywrightFactory.getBrowser().newContext().newPage();
+
 		newBrowserPage.navigate("https://rc.truvideo.com/");
 		logger.info("navigated to the url" + newBrowserPage.url());
 		newBrowserPage.waitForTimeout(6000);
 		LoginPage loginPage = new LoginPage(newBrowserPage);
-		loginPage.navigateToUpdatePassword(newBrowserPage, prop.getProperty("username3"),
-				prop.getProperty("password3"));
-		HomePage Homepage = new HomePage(newBrowserPage);
-		Homepage.navigateToMessageScreen_Order();
-		FrameLocator iframe2 = newBrowserPage.frameLocator(messageIframe);
-		List<Boolean> flag = new ArrayList<>();
+
+        loginPage.navigateToUpdatePassword(newBrowserPage, prop.getProperty("username3"), prop.getProperty("password3"));
+        HomePage Homepage = new HomePage(newBrowserPage);
+        Homepage.navigateToMessageScreen_Order();
+        FrameLocator iframe2 = newBrowserPage.frameLocator(messageIframe);
+	    List<Boolean> flag = new ArrayList<>();
+
 		newBrowserPage.waitForCondition(() -> iframe2.locator(message_start_convers_buttn).isVisible());
 		if (iframe2.locator(message_start_convers_buttn).isVisible()) {
 			logger.info("CONVERSATION CHAT IS VISIBLE");
@@ -504,71 +508,74 @@ public class MessageScreen_Order extends JavaUtility {
 			iframe2.locator(startConverSMS_Whatsapp_filterbuttn).click();
 			newBrowserPage.waitForTimeout(2000);
 
-			List<String> Text2 = iframe2.locator(StartConFilter(filter)).allInnerTexts();
-			for (String value : Text2) {
-				if (value.trim().toUpperCase().contains("SMS")) {
-					iframe2.locator(StartConFilter(filter)).click();
-					logger.info("Select SMS");
 
-				} else if (value.trim().toUpperCase().contains("WHATSAPP")) {
-					iframe2.locator(StartConFilter(filter)).click();
-					logger.info("Select WHATSAPP");
+				List<String> Text2 = iframe2.locator(StartConFilter(filter)).allInnerTexts();
+				for (String value : Text2) {
+					if (value.trim().toUpperCase().contains("SMS")) {
+						iframe2.locator(StartConFilter(filter)).click();
+						logger.info("Select SMS");
 
+					} else if (value.trim().toUpperCase().contains("WHATSAPP")) {
+						iframe2.locator(StartConFilter(filter)).click();
+						logger.info("Select WHATSAPP");
+
+					} else {
+						flag.add(false);
+						logger.info("not clicked");
+					}
+				}
+				if (iframe2.locator(startconversationBtn).isVisible()) {
+					try {
+						iframe2.locator(startconversationBtn).click();
+						logger.info("Button hit");
+						flag.add(true);
+
+					} catch (ElementNotInteractableException e) {
+						logger.info("element is not clickable right now");
+						e.printStackTrace();
+						flag.add(true);
+					}
 				} else {
 					flag.add(false);
-					logger.info("not clicked");
+					logger.info("Element not found");
 				}
-			}
-			if (iframe2.locator(startconversationBtn).isVisible()) {
-				try {
-					iframe2.locator(startconversationBtn).click();
-					logger.info("Button hit");
+				newBrowserPage.waitForCondition(() -> iframe.locator(converstiontitlename).isVisible());
+				newBrowserPage.waitForTimeout(5000);
+				if (!iframe2.locator(conversationInfo).isVisible()) {
+					iframe2.locator(Infobuttn).click();
+				}
+				String conversinfoname = iframe2.locator(conversationInfoname).innerText().toLowerCase();
+				String converstextlabelname = iframe2.locator(conversationTextlabel).innerText().toLowerCase();
+				String converstitlename = iframe2.locator(converstiontitlename).innerText().toLowerCase();
+				String channelownername = iframe2.locator(channelOwnername).innerText().toLowerCase();
+				String userlable = newBrowserPage.innerText(homepage.getLoginUserLabel()).toLowerCase();
+				if (channelownername == userlable ) {
+					logger.info("Channel Owner name is matched" + ":-" + userlable);
+				}
+				System.out.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable);
+				iframe2.locator(conversationInfobn).click();
+				if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
+					logger.info("All names are Matched :" + converstitlename + ":" + conversinfoname + ":"
+							+ converstextlabelname);
 					flag.add(true);
-
-				} catch (ElementNotInteractableException e) {
-					logger.info("element is not clickable right now");
-					e.printStackTrace();
-					flag.add(true);
+					
+				} else {
+					logger.info("error message");
+					flag.add(false);
 				}
 			} else {
+				logger.info("CONVERSATION CHAT IS NOT VISIBLE");
 				flag.add(false);
-				logger.info("Element not found");
 			}
-			newBrowserPage.waitForCondition(() -> iframe.locator(converstiontitlename).isVisible());
-			newBrowserPage.waitForTimeout(5000);
-			if (!iframe2.locator(conversationInfo).isVisible()) {
-				iframe2.locator(Infobuttn).click();
-			}
-			String conversinfoname = iframe2.locator(conversationInfoname).innerText().toLowerCase();
-			String converstextlabelname = iframe2.locator(conversationTextlabel).innerText().toLowerCase();
-			String converstitlename = iframe2.locator(converstiontitlename).innerText().toLowerCase();
-			String channelownername = iframe2.locator(channelOwnername).innerText().toLowerCase();
-			String userlable = newBrowserPage.innerText(homepage.getLoginUserLabel()).toLowerCase();
-			if (channelownername == userlable) {
-				logger.info("Channel Owner name is matched" + ":-" + userlable);
-			}
-			System.out
-					.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable);
-			iframe2.locator(conversationInfobn).click();
-			if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
-				logger.info("All names are Matched :" + converstitlename + ":" + conversinfoname + ":"
-						+ converstextlabelname);
-				flag.add(true);
 
-			} else {
-				logger.info("error message");
-				flag.add(false);
-			}
-		} else {
-			logger.info("CONVERSATION CHAT IS NOT VISIBLE");
-			flag.add(false);
-		}
 		newBrowserPage.close();
 		page.waitForTimeout(5000);
 		String channelownername = iframe.locator(channelOwnername).innerText().toLowerCase();
 		String userlable = page.innerText(homepage.getLoginUserLabel()).toLowerCase();
 
-		return !flag.contains(false);
+		
+	return!flag.contains(false);
+
 
 	}
 
