@@ -30,8 +30,6 @@ public class UserPage extends JavaUtility {
 	private String selectRoles_option = "#s2id_autogen1";
 
 	public String getRoles(String roles) {
-		// String element = "div[class='select2-result-label']:has-text('" + roles +
-		// "')";
 		String element = "div.select2-result-label >> text='" + roles + "'";
 		return element;
 	}
@@ -55,8 +53,11 @@ public class UserPage extends JavaUtility {
 	private String userSearchbox = "input[name='keyword']";
 	private String searchButton = "button:has-text('Search')";
 	private String activeFilter = "#ACTIVE_FILTER";
+	private String activeFilterText = ".active-action .btn.btn-default:nth-child(1)";
 	private String pendingFilter = "#PENDING_FILTER";
+	private String pendingFilterText = ".btn.btn-default:nth-child(2)";
 	private String inactiveFilter = "#INACTIVE_FILTER";
+	private String inactiveFilterText = ".btn.btn-default:nth-child(3)";
 	private String emptyRoleAlert = "small:has-text('At least one Group is required.')";
 	private String emptyDealerAlert = "small:has-text('At least one Dealer is required.')";
 	private String emptyFirstNameAlert = "small:has-text('First Name is a required field.')";
@@ -88,6 +89,8 @@ public class UserPage extends JavaUtility {
 	private String activeStatusbutton = "label.btn:has-text('Active')";
 	private String inActiveStatusButton = "label.btn:has-text('Inactive')";
 	private String selectActionDropdown = "#selectAction";
+	private String selectDealerDropdown = "#select2-drop-mask";
+	private String selectDealerDropdown1 = "#s2id_dealerId";
 	private String selectActionSubmitButton = "#users-action";
 	private String bulkCreate = ".page-title-div .dropdown-toggle[data-toggle='dropdown']";
 	private String technicianBulkCreate = ".bulk-create-button[data-type='technician']";
@@ -100,6 +103,13 @@ public class UserPage extends JavaUtility {
 	private String usersLabel = "#page-title-text";
 	private String firstUsercheckbox = "table#user-results tbody tr:nth-child(2) td:nth-child(1)";
 	private String secondUsercheckbox = "table#user-results tbody tr:nth-child(3) td:nth-child(1)";
+	private String disabledUserAlert = ".alert-error";
+	private String kenilityDealer = ".select2-results li:has-text('Kenility Store ')";
+	private String dealer1 = "#user-results tbody tr td:nth-child(2)";
+	private String emailinUser = ".table.table-striped tr:nth-child(1) td:nth-child(2) span";
+	private String titleinUser = ".table.table-striped tr:nth-child(5) td:nth-child(2) span";
+	private String firstnameinUser = ".table.table-striped tr:nth-child(3) td:nth-child(2) span";
+	private String openUserDetails = ".table-bordered:nth-child(1) tbody tr td:nth-child(5)";
 	String uniqueFirstname;
 	String userEmailID;
 	String usernewDummyPassword;
@@ -109,417 +119,139 @@ public class UserPage extends JavaUtility {
 		return username1;
 	}
 
-	public void addNewAdvisor(String roles, String dealer) throws InterruptedException {
-		System.out.println("test rnner");
-		page.click(addUser_button);
-		logger.info("Clicked on Add User Button");
-		page.click(saveButton);
-		logger.info("Clicked on Save button when no Roles or Dealers are selected");
-		SoftAssert softAssert = new SoftAssert();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		if (page.textContent(emptyRoleAlert).contains("At least one Group is required.")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Role Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyDealerAlert).contains("At least one Dealer is required.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Dealer Not Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false), "Error Alert message when Role & Dealer is not entered");
-		flags.clear();
-		page.waitForTimeout(2000);
-		page.click(selectRoles_option);
-		page.fill(selectRoles_option, roles);
-		page.click(getRoles(roles));
-		page.waitForTimeout(1000);
-		page.click(selectDealer_option);
-		page.fill(selectDealer_option, dealer);
-		page.click(getDealer(dealer));
-		page.waitForTimeout(1000);
-		if (page.textContent(emptyFirstNameAlert).contains("First Name is a required field")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for First Name is Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyLastNameAlert).contains("Last Name is a required field.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Last Name Not is Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyEmailAddressAlert).contains("Email Address is a required field.")) {
+	public String getSearchedUser(String username) {
+		return "#user-results tbody tr td:nth-child(3) p:text('" + username + "')";
+	}
 
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Email Address Not is Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false),
-				"Error Alert message when Role,Dealer,First Name,Last Name and Email is not entered");
-		page.waitForTimeout(1000);
-		page.click(firstName);
-		page.fill(firstName, getRandomString(5));
-		logger.info("First name is Added");
-		page.click(lastName);
-		page.fill(lastName, getRandomString(5) + "Test Automation");
-		logger.info("Last name is Added");
-		page.click(emailAddress);
-		page.fill(emailAddress, "testautomation@gmail.com");
-		logger.info("Email address is Added");
-		page.click(saveButton);
-		logger.info("Clicked on Save button");
-		page.waitForTimeout(2000);
-		uniqueFirstname = page.inputValue(firstName);
-		logger.info("Updated First Name " + uniqueFirstname);
-		softAssert.assertTrue(page.textContent(alredyExistsEmail).contains("is already registered."),
-				"Verify Existing users email error message");
-		if (page.isVisible(alredyExistsEmail)) {
-			page.fill(emailAddress, getRandomString(5) + "@gmail.com");
-		}
-		logger.info(page.inputValue(emailAddress));
-		userEmailID = page.inputValue(emailAddress);
-		page.click(saveButton);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		logger.info(topRightCornerNotificationPopup);
-		if (topRightCornerNotificationPopup.contains(AppConstants.USER_SAVED_MESSAGE)) {
-			logger.info("New User saved Successfully");
-		} else {
-			logger.info("Getting error to add New User ");
-		}
-		softAssert.assertAll();
+	public void addNewAdvisor(String roles, String dealer) throws InterruptedException {
+		createUser(roles, dealer, "Advisor");
 	}
 
 	public void addNewTechnician(String dealer, String roles) throws InterruptedException {
-		page.click(addUser_button);
-		logger.info("Clicked on Add User Button");
-		page.click(saveButton);
-		logger.info("Clicked on Save button when no Roles or Dealers are selected");
-		SoftAssert softAssert = new SoftAssert();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		if (page.textContent(emptyRoleAlert).contains("At least one Group is required.")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Role Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyDealerAlert).contains("At least one Dealer is required.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Dealer Not Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false), "Error Alert message when Role & Dealer is not entered");
-		flags.clear();
-		page.waitForTimeout(2000);
-		page.click(selectRoles_option);
-		page.fill(selectRoles_option, roles);
-		page.click(getRoles(roles));
-		page.waitForTimeout(1000);
-		page.click(selectDealer_option);
-		page.fill(selectDealer_option, dealer);
-		page.click(getDealer(dealer));
-		page.waitForTimeout(1000);
-		page.click(firstName);
-		page.fill(firstName, getRandomString(5));
-		logger.info("First name is Added");
-		page.click(lastName);
-		page.fill(lastName, getRandomString(5) + "Test Automation");
-		logger.info("Last name is Added");
-		page.fill(title, "Technician");
-		page.click(saveButton);
-		logger.info("Clicked on Save button");
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		softAssert.assertTrue(topRightCornerNotificationPopup.contains(AppConstants.USER_SAVED_MESSAGE),
-				"verify technician user creation");
-		softAssert.assertAll();
+		createUser(roles, dealer, "Technician");
 	}
 
 	public void addNewSalesUser(String roles, String dealer) throws InterruptedException {
-		System.out.println("test rnner");
-		page.click(addUser_button);
-		logger.info("Clicked on Add User Button");
-		page.click(saveButton);
-		logger.info("Clicked on Save button when no Roles or Dealers are selected");
-		SoftAssert softAssert = new SoftAssert();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		if (page.textContent(emptyRoleAlert).contains("At least one Group is required.")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Role Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyDealerAlert).contains("At least one Dealer is required.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Dealer Not Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false), "Error Alert message when Role & Dealer is not entered");
-		flags.clear();
-		page.waitForTimeout(2000);
-		page.click(selectRoles_option);
-		page.fill(selectRoles_option, roles);
-		page.click(getRoles(roles));
-		page.waitForTimeout(1000);
-		page.click(selectDealer_option);
-		page.fill(selectDealer_option, dealer);
-		page.click(getDealer(dealer));
-		page.waitForTimeout(1000);
-		if (page.textContent(emptyFirstNameAlert).contains("First Name is a required field")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for First Name is Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyLastNameAlert).contains("Last Name is a required field.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Last Name Not is Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyEmailAddressAlert).contains("Email Address is a required field.")) {
-
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Email Address Not is Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false),
-				"Error Alert message when Role,Dealer,First Name,Last Name and Email is not entered");
-		page.waitForTimeout(1000);
-		page.click(firstName);
-		page.fill(firstName, getRandomString(5));
-		logger.info("First name is Added");
-		page.click(lastName);
-		page.fill(lastName, getRandomString(5) + "Test Automation");
-		logger.info("Last name is Added");
-		page.click(emailAddress);
-		page.fill(emailAddress, "testautomation@gmail.com");
-		logger.info("Email address is Added");
-		page.click(saveButton);
-		logger.info("Clicked on Save button");
-		page.waitForTimeout(2000);
-		uniqueFirstname = page.inputValue(firstName);
-		logger.info("Updated First Name " + uniqueFirstname);
-		softAssert.assertTrue(page.textContent(alredyExistsEmail).contains("is already registered."),
-				"Verify Existing users email error message");
-		if (page.isVisible(alredyExistsEmail)) {
-			page.fill(emailAddress, getRandomString(5) + "@gmail.com");
-		}
-		logger.info(page.inputValue(emailAddress));
-		userEmailID = page.inputValue(emailAddress);
-		page.click(saveButton);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		logger.info(topRightCornerNotificationPopup);
-		if (topRightCornerNotificationPopup.contains(AppConstants.USER_SAVED_MESSAGE)) {
-			logger.info("New User saved Successfully");
-		} else {
-			logger.info("Getting error to add New User ");
-		}
-		softAssert.assertAll();
+		createUser(roles, dealer, "Sales Agent");
 	}
 
-	public void addNewSalesManager(String roles, String dealer) throws InterruptedException {
-		page.click(addUser_button);
-		logger.info("Clicked on Add User Button");
-		page.click(saveButton);
-		logger.info("Clicked on Save button when no Roles or Dealers are selected");
-		SoftAssert softAssert = new SoftAssert();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		if (page.textContent(emptyRoleAlert).contains("At least one Group is required.")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Role Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyDealerAlert).contains("At least one Dealer is required.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Dealer Not Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false), "Error Alert message when Role & Dealer is not entered");
-		flags.clear();
-		page.waitForTimeout(2000);
-		page.click(selectRoles_option);
-		page.fill(selectRoles_option, roles);
-		page.click(getRoles(roles));
-		page.waitForTimeout(1000);
-		page.click(selectDealer_option);
-		page.fill(selectDealer_option, dealer);
-		page.click(getDealer(dealer));
-		page.waitForTimeout(1000);
-		if (page.textContent(emptyFirstNameAlert).contains("First Name is a required field")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for First Name is Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyLastNameAlert).contains("Last Name is a required field.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Last Name Not is Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyEmailAddressAlert).contains("Email Address is a required field.")) {
-
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Email Address Not is Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false),
-				"Error Alert message when Role,Dealer,First Name,Last Name and Email is not entered");
-		page.waitForTimeout(1000);
-		page.click(firstName);
-		page.fill(firstName, getRandomString(5));
-		logger.info("First name is Added");
-		page.click(lastName);
-		page.fill(lastName, getRandomString(5) + "Test Automation");
-		logger.info("Last name is Added");
-		page.click(emailAddress);
-		page.fill(emailAddress, "testautomation@gmail.com");
-		logger.info("Email address is Added");
-		page.click(saveButton);
-		logger.info("Clicked on Save button");
-		page.waitForTimeout(2000);
-		uniqueFirstname = page.inputValue(firstName);
-		logger.info("Updated First Name " + uniqueFirstname);
-		softAssert.assertTrue(page.textContent(alredyExistsEmail).contains("is already registered."),
-				"Verify Existing users email error message");
-		if (page.isVisible(alredyExistsEmail)) {
-			page.fill(emailAddress, getRandomString(5) + "@gmail.com");
-		}
-		logger.info(page.inputValue(emailAddress));
-		userEmailID = page.inputValue(emailAddress);
-		page.click(saveButton);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		logger.info(topRightCornerNotificationPopup);
-		if (topRightCornerNotificationPopup.contains(AppConstants.USER_SAVED_MESSAGE)) {
-			logger.info("New User saved Successfully");
-		} else {
-			logger.info("Getting error to add New User ");
-		}
-		softAssert.assertAll();
+	public void addNewSalesManagerUser(String roles, String dealer) throws InterruptedException {
+		createUser(roles, dealer, "Sales Manager");
 	}
 
 	public void addNewAdminUser(String roles, String dealer) throws InterruptedException {
+		createUser(roles, dealer, "Administrator");
+	}
+
+	public void addNewDealerAdmin(String roles, String dealer) throws InterruptedException {
+		createUser(roles, dealer, "Dealer Admin");
+	}
+
+	private void createUser(String roles, String dealer, String title1) throws InterruptedException {
 		page.click(addUser_button);
 		logger.info("Clicked on Add User Button");
 		page.click(saveButton);
-		logger.info("Clicked on Save button when no Roles or Dealers are selected");
-		SoftAssert softAssert = new SoftAssert();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		if (page.textContent(emptyRoleAlert).contains("At least one Group is required.")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Role Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyDealerAlert).contains("At least one Dealer is required.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Dealer Not Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false), "Error Alert message when Role & Dealer is not entered");
-		flags.clear();
-		page.waitForTimeout(2000);
-		page.click(selectRoles_option);
-		page.fill(selectRoles_option, roles);
-		page.click(getRoles(roles));
-		page.waitForTimeout(1000);
-		page.click(selectDealer_option);
-		page.fill(selectDealer_option, dealer);
-		page.click(getDealer(dealer));
-		page.waitForTimeout(1000);
-		if (page.textContent(emptyFirstNameAlert).contains("First Name is a required field")) {
-			logger.info("Alert message for Role Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for First Name is Not Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyLastNameAlert).contains("Last Name is a required field.")) {
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Last Name Not is Displayed");
-			flags.add(false);
-		}
-		if (page.textContent(emptyEmailAddressAlert).contains("Email Address is a required field.")) {
+		logger.info("Clicked on Save button without selecting Roles or Dealers");
 
-			logger.info("Alert message for Dealer Displayed");
-			flags.add(true);
-		} else {
-			logger.info("Alert message for Email Address Not is Displayed");
-			flags.add(false);
-		}
-		softAssert.assertTrue(!flags.contains(false),
-				"Error Alert message when Role,Dealer,First Name,Last Name and Email is not entered");
-		page.waitForTimeout(1000);
-		page.click(firstName);
-		page.fill(firstName, getRandomString(5));
-		logger.info("First name is Added");
-		page.click(lastName);
-		page.fill(lastName, getRandomString(5) + "Test Automation");
-		logger.info("Last name is Added");
-		page.click(emailAddress);
-		page.fill(emailAddress, "testautomation@gmail.com");
-		logger.info("Email address is Added");
-		page.click(saveButton);
-		logger.info("Clicked on Save button");
-		page.waitForTimeout(2000);
-		uniqueFirstname = page.inputValue(firstName);
-		logger.info("Updated First Name " + uniqueFirstname);
-		softAssert.assertTrue(page.textContent(alredyExistsEmail).contains("is already registered."),
-				"Verify Existing users email error message");
-		if (page.isVisible(alredyExistsEmail)) {
-			page.fill(emailAddress, getRandomString(5) + "@gmail.com");
-		}
-		logger.info(page.inputValue(emailAddress));
-		userEmailID = page.inputValue(emailAddress);
-		page.click(saveButton);
-		page.waitForSelector(topRightCornerNotification);
-		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
-		logger.info(topRightCornerNotificationPopup);
-		if (topRightCornerNotificationPopup.contains(AppConstants.USER_SAVED_MESSAGE)) {
-			logger.info("New User saved Successfully");
-		} else {
-			logger.info("Getting error to add New User ");
-		}
+		SoftAssert softAssert = new SoftAssert();
+		checkAlertMessages(softAssert);
+		selectRoleAndDealer(roles, dealer);
+		fillUserDetails(title1);
 		softAssert.assertAll();
 	}
 
-	public void bulkCreateUser() throws InterruptedException {
+	private void checkAlertMessages(SoftAssert softAssert) {
+		List<Boolean> flags = new ArrayList<>();
+
+		flags.add(checkAlert(emptyRoleAlert, "At least one Group is required.", "Role"));
+		flags.add(checkAlert(emptyDealerAlert, "At least one Dealer is required.", "Dealer"));
+		softAssert.assertTrue(!flags.contains(false), "Error Alert message for missing Role & Dealer");
+
+		flags.clear();
+		flags.add(checkAlert(emptyFirstNameAlert, "First Name is a required field.", "First Name"));
+		flags.add(checkAlert(emptyLastNameAlert, "Last Name is a required field.", "Last Name"));
+		flags.add(checkAlert(emptyEmailAddressAlert, "Email Address is a required field.", "Email Address"));
+		softAssert.assertTrue(!flags.contains(false),
+				"Error Alert message for missing First Name, Last Name, or Email");
+	}
+
+	private boolean checkAlert(String alertLocator, String expectedText, String field) {
+		boolean isAlertDisplayed = page.textContent(alertLocator).contains(expectedText);
+		if (isAlertDisplayed) {
+			logger.info("Alert message for " + field + " displayed");
+		} else {
+			logger.info("Alert message for " + field + " not displayed");
+		}
+		return isAlertDisplayed;
+	}
+
+	private void selectRoleAndDealer(String roles, String dealer) throws InterruptedException {
+		page.waitForTimeout(2000);
+		selectOption(selectRoles_option, roles, getRoles(roles));
+		selectOption(selectDealer_option, dealer, getDealer(dealer));
+	}
+
+	private void selectOption(String optionLocator, String value, String optionValue) throws InterruptedException {
+		page.click(optionLocator);
+		page.fill(optionLocator, value);
+		page.click(optionValue);
+		page.waitForTimeout(1000);
+	}
+
+	private void fillUserDetails(String title1) throws InterruptedException {
+		page.click(firstName);
+		page.fill(firstName, getRandomString(5));
+		logger.info("First name is added");
+
+		page.click(lastName);
+		page.fill(lastName, getRandomString(5) + " Test Automation");
+		logger.info("Last name is added");
+		
+		if (page.locator(title) != null) {
+			page.fill(title, title1);
+		}
+
+		if (page.locator(emailAddress).isVisible()) {
+			validateAndFillEmail();
+		}
+
+		page.click(saveButton);
+		page.waitForTimeout(2000);
+		logger.info("User saved successfully");
+		verifyTopRightNotification(AppConstants.USER_SAVED_MESSAGE);
+	}
+
+	private void validateAndFillEmail() throws InterruptedException {
+		page.waitForTimeout(2000);
+		page.click(emailAddress);
+		page.fill(emailAddress, "mailto:testautomation@gmail.com");
+		logger.info("Email address is added");
+
+		page.click(saveButton);
+		uniqueFirstname = page.inputValue(firstName);
+		logger.info("Updated First Name: " + uniqueFirstname);
+
+		if (page.isVisible(alredyExistsEmail)) {
+			logger.info("Email already registered, updating email...");
+			page.fill(emailAddress, getRandomString(5) + "@gmail.com");
+		}
+
+		logger.info("Final email address: " + page.inputValue(emailAddress));
+		userEmailID = page.inputValue(emailAddress);
+		page.click(saveButton);
+	}
+
+	private void verifyTopRightNotification(String expectedMessage) {
+		page.waitForSelector(topRightCornerNotification);
+		String notification = page.innerText(topRightCornerNotification);
+		if (notification.contains(expectedMessage)) {
+			logger.info("User saved successfully ");
+		} else {
+			logger.info("Error in saving the user");
+		}
+	}
+
+	public boolean bulkCreateUser() throws InterruptedException {
 		SoftAssert softAssert = new SoftAssert();
 		page.click(bulkCreate);
 		logger.info("Clicked on Bulk create button for adding users");
@@ -547,9 +279,112 @@ public class UserPage extends JavaUtility {
 		page.waitForTimeout(2000);
 		page.click(doneButtonForBulkCreate);
 		logger.info("Advisors are created successfully and navigatiged to user page");
+		page.waitForTimeout(4000);
+		String text = getFirstUser();
+		page.fill(userSearchbox, text);
+		page.waitForTimeout(5000);
+		logger.info("Searched with Latest user created");
+		page.click(searchButton);
+		page.waitForTimeout(5000);
+		logger.info("Clicked on search button - Associated user is displayed");
+		page.click(editUser);
+		logger.info(" Successfully edited searched user");
+		page.click(updateUserButton);
+		logger.info("Clicked on Update User button");
+		page.waitForTimeout(4000);
+		page.click(passwordField);
+		page.fill(passwordField, "test123");
+		page.click(confirmPasswordField);
+		page.fill(confirmPasswordField, "test123");
+		if (passwordField.equals(confirmPasswordField)) {
+			logger.info("Confirm password is matched with password field");
+		} else {
+			logger.info("Confirm password is NOT matched with password field");
+		}
+		softAssert.assertTrue(passwordField.equals(confirmPasswordField),
+				"Password and Confirmed password both values are same");
+		page.click(saveButton);
+		logger.info("Password updated for new user and clicked on Save button");
+		page.waitForTimeout(6000);
+		Page newBrowserPage = PlaywrightFactory.getBrowser().newContext().newPage();
+		newBrowserPage.navigate("https://rc.truvideo.com/");
+		logger.info("navigated to the url" + newBrowserPage.url());
+		newBrowserPage.waitForTimeout(4000);
+		LoginPage loginPage = new LoginPage(newBrowserPage);
+		loginPage.navigateToUpdatePassword(newBrowserPage, text, "test123");
+		newBrowserPage.waitForTimeout(2000);
+		logger.info("navigated to the update password page after putting new username and password value");
+		newBrowserPage.waitForTimeout(2000);
+		newBrowserPage.click(submitButton);
+		logger.info("Without adding password value clicked on Submit button");
+		if (newBrowserPage.isVisible(updatePasswordRequiredLabel)) {
+			logger.info("Without adding password value clicked on Submit button and its showing error message");
+		} else {
+			logger.info("Password required field label is not showing");
+		}
+		newBrowserPage.fill(password_TextBox, "test123");
+		logger.info("password value is filled");
+		newBrowserPage.fill(confirmNewPassword_TextBox, "test123");
+		logger.info("Both Password and Confirm Password field is filled");
+		newBrowserPage.click(submitButton);
+		newBrowserPage.waitForTimeout(3000);
+		if (newBrowserPage.isVisible(PasswordUpdatedLabelonLoginPage)) {
+			logger.info("User is navigated on Login page and Pasword updated label is displayed");
+		} else {
+			logger.info("Password is not updated and User is unable to navigate on Login page");
+		}
+		loginPage.navigateToHomePage(text, "test123");
+		newBrowserPage.waitForTimeout(4000);
+		logger.info("Login User is " + LoginPage.logInUsername);
+		newBrowserPage.waitForTimeout(6000);
+		newBrowserPage.close();
+		// softAssert.assertAll();
+		if (page.locator(addUser_button).isVisible() || users.contains("Users")) {
+			logger.info("User is again navigated back to his main account");
+			return true;
+		} else {
+			logger.info("New Browser window has been not closed propely");
+			return false;
+		}
+	}
+
+	public boolean searchUser(String roles, String dealer) throws InterruptedException {
+		addNewAdvisor(roles, dealer);
+		page.waitForTimeout(1000);
+		page.fill(userSearchbox, userEmailID);
 		page.waitForTimeout(2000);
-		softAssert.assertTrue(users.contains("Users"));
-		softAssert.assertAll();
+		page.click(searchButton);
+		logger.info("Searched with Latest user created by  Email_ID");
+		page.waitForTimeout(2000);
+		page.click(openUserDetails);
+		page.waitForTimeout(4000);
+		String emailUser = page.locator(emailinUser).innerText();
+		if (userEmailID.equals(emailUser)) {
+			logger.info("User is verified with Email_ID in user profile");
+		} else {
+			logger.info("User email is not verified with Email_ID in user profile");
+		}
+		page.click(backButton);
+		page.fill(userSearchbox, "");
+		page.fill(userSearchbox, "Advisor");
+		logger.info("Searched with user by Title");
+		String titleofUser = page.locator(titleinUser).innerText();
+		logger.info(titleofUser);
+		String firstNameUser = page.locator(firstnameinUser).innerText();
+		page.fill(userSearchbox, "");
+		page.fill(userSearchbox, uniqueFirstname);
+		logger.info("Searched with user by User FirstName");
+		page.click(openUserDetails);
+		if (uniqueFirstname.equals(firstNameUser)) {
+			logger.info("User is verified with FirstName in user profile");
+			page.click(backButton);
+			return true;
+		} else {
+			logger.info("User FirstName is not verified with FirstName in user profile");
+
+			page.click(backButton);
+			return false;
+		}
 	}
 
 	public void updateUserPassword(String roles, String dealer, String password) throws InterruptedException {
@@ -580,6 +415,11 @@ public class UserPage extends JavaUtility {
 		logger.info("Successfully navigated on userpage through back button");
 		page.click(editUser);
 		logger.info("Again Successfully edited searched user");
+		page.click(lastName);
+		page.fill(lastName, "Automation");
+		logger.info("Last Name edited");
+		page.fill(title, "Title Test");
+		logger.info("Title edited");
 		page.isVisible(deactivateUserButton);
 		logger.info("Deactivate User button is displayed");
 		page.click(updateUserButton);
@@ -609,7 +449,7 @@ public class UserPage extends JavaUtility {
 
 	}
 
-	public void loginwithNewUser(String roles, String dealer, String password, String newpassword)
+	public void checkLoginWithEdit_Update_User(String roles, String dealer, String password, String newpassword)
 			throws InterruptedException {
 		updateUserPassword(roles, dealer, password);
 		page.waitForTimeout(6000);
@@ -618,7 +458,6 @@ public class UserPage extends JavaUtility {
 		logger.info("navigated to the url" + newBrowserPage.url());
 		newBrowserPage.waitForTimeout(6000);
 		LoginPage loginPage = new LoginPage(newBrowserPage);
-		// HomePage homePage = new HomePage(newBrowserPage);
 		loginPage.navigateToUpdatePassword(newBrowserPage, userEmailID, usernewDummyPassword);
 		logger.info("navigated to the update password page after putting new username and password value");
 		newBrowserPage.waitForTimeout(2000);
@@ -636,7 +475,7 @@ public class UserPage extends JavaUtility {
 		newBrowserPage.click(submitButton);
 		newBrowserPage.waitForTimeout(3000);
 		if (newBrowserPage.isVisible(PasswordUpdatedLabelonLoginPage)) {
-			logger.info("User is navigated on Login page and Pawword updated label is displayed");
+			logger.info("User is navigated on Login page and Pasword updated label is displayed");
 		} else {
 			logger.info("Password is not updated and User is unable to navigate on Login page");
 		}
@@ -647,13 +486,21 @@ public class UserPage extends JavaUtility {
 		newBrowserPage.close();
 	}
 
-	public void userStatus() throws InterruptedException {
-		page.waitForTimeout(9000);
+	public String extractValue(String labeledValue) {
+		if (labeledValue == null || labeledValue.isEmpty()) {
+			return "";
+		}
+		String[] parts = labeledValue.split(": ");
+		return parts.length > 1 ? parts[1].trim() : labeledValue; // Return the value after the colon
+	}
+	
+	public boolean userStatus() throws InterruptedException {
+		page.waitForTimeout(4000);
 		page.fill(userSearchbox, "test");
-		page.waitForTimeout(9000);
+		page.waitForTimeout(2000);
 		logger.info("Searched with Latest user created");
 		page.click(searchButton);
-		page.waitForTimeout(9000);
+		page.waitForTimeout(4000);
 		page.click(userDeactivateStatus);
 		SoftAssert softAssert = new SoftAssert();
 		page.waitForTimeout(4000);
@@ -667,20 +514,141 @@ public class UserPage extends JavaUtility {
 			isUserActivateMessageDispayed = true;
 		}
 		softAssert.assertTrue(isUserActivateMessageDispayed, "Successfully changed the user status to active");
-
-		page.waitForTimeout(9000);
+		page.waitForTimeout(3000);
 		page.waitForCondition(() -> page.isVisible(inActiveStatusButton));
 		page.click(inActiveStatusButton);
 		logger.info("User is clicked on InActive status button");
 		page.waitForTimeout(3000);
-		page.click(userActivateStatus);
-		Thread.sleep(3000);
-		logger.info("Again Successfully Activated user");
+		page.click(editUser);
+		logger.info("Opened User profile for edit details");
+		page.click(firstName);
+		String userFirstName = "TestUserStatus";
+		page.fill(firstName, userFirstName);
+		page.click(emailAddress);
+		String emailAddress1 = "statusinactive" + getRandomString(3) + "@gmail.com";
+		page.click(emailAddress);
+		page.fill(emailAddress, "");
 		page.waitForTimeout(2000);
-		page.click(activeStatusbutton);
-		logger.info("Again Clicked on Active status button and Verified user is present in Active filter");
+		page.fill(emailAddress, emailAddress1);
+		page.waitForTimeout(2000);
+		page.click(saveButton);
+		page.waitForTimeout(3000);
+		Page newBrowserPage = PlaywrightFactory.getBrowser().newContext().newPage();
+		newBrowserPage.navigate("https://rc.truvideo.com/");
+		logger.info("navigated to the url" + newBrowserPage.url());
+		newBrowserPage.waitForTimeout(6000);
+		LoginPage loginPage = new LoginPage(newBrowserPage);
+		loginPage.navigateToUpdatePassword(newBrowserPage, emailAddress1, "test123");
+		logger.info("Verify log in failed message is showing");
+		newBrowserPage.waitForTimeout(3000);
+		String text = newBrowserPage.innerText(disabledUserAlert).trim();
+		logger.info(text);
+		newBrowserPage.waitForTimeout(2000);
+		newBrowserPage.close();
+		if (text.contains(AppConstants.USER_LOGIN_DEACTIVATED_ALERT_MESSAGE)) {
+			logger.info("String is match");
+			return true;
+		} else {
+			logger.info("String is Not match");
+			return false;
+		}
+	}
+
+	public boolean elementsonUserPage() {
+		page.waitForTimeout(2000);
+		if (waitForAndLogVisibility(page.locator(usersLabel), "Users Label")
+				&& waitForAndLogVisibility(page.locator(selectActionDropdown), "Select Action Dropdown")
+				&& waitForAndLogVisibility(page.locator(selectDealerDropdown1), "Select Dealer Dropdown")
+				&& waitForAndLogVisibility(page.locator(addUser_button), "Add User Button")
+				&& waitForAndLogVisibility(page.locator(bulkCreate), "Bulk Create Button")) {
+
+			page.locator(bulkCreate).click();
+			logger.info("Bulk Create button clicked");
+
+			if (waitForAndLogVisibility(page.locator(technicianBulkCreate), "Technician Bulk Create Button")
+					&& waitForAndLogVisibility(page.locator(advisorBulkCreate), "Advisor Bulk Create Button")
+					&& waitForAndLogVisibility(page.locator(userSearchbox), "User Searchbox Button")
+					&& waitForAndLogVisibility(page.locator(searchButton), "Search Button")
+					&& waitForAndLogVisibility(page.locator(activeFilterText), "Active Filter Button")
+					&& waitForAndLogVisibility(page.locator(pendingFilterText), "Pending Filter Button")
+					&& waitForAndLogVisibility(page.locator(inactiveFilterText), "Inactive Filter Button")) {
+
+				logger.info("All bulk creation options and filters are visible.");
+				return true;
+
+			} else {
+				logger.error("One or more bulk creation options or filters are not visible.");
+			}
+		} else {
+			logger.error(
+					"One or more initial elements are not visible (Users Label, Select Action Dropdown, Select Dealer Dropdown, Add User Button, or Bulk Create Button).");
+		}
+		return false;
+
+	}
+
+	public boolean getUsersFromSelectDealer() {
+		page.waitForTimeout(2000);
+		page.waitForCondition(() -> page.locator(selectDealerDropdown1).isVisible());
+		page.locator(selectDealerDropdown1).click();
+		page.locator(kenilityDealer).click();
+		logger.info("Selected Kenility Dealer from Dropdown");
+		page.waitForTimeout(2000);
+		List<String> list = page.locator(dealer1).allInnerTexts();
+		boolean isUserFound = false;
+		String expectedDealerName = "kenility store";
+		for (String dealer : list) {
+			if (dealer.toLowerCase().contains(expectedDealerName)) {
+				logger.info("User with dealer name found: " + dealer);
+				isUserFound = true;
+				break;
+			} else {
+				logger.info("User with dealer name not found: " + dealer);
+			}
+		}
+		if (!isUserFound) {
+			logger.warn("Expected user with dealer name '" + expectedDealerName + "' not found in the table.");
+		}
+
+		return isUserFound;
+	}
+
+	public void actionsOnUsers() {
+		SoftAssert softAssert = new SoftAssert();
+		page.selectOption(selectActionDropdown, "Send Invite to App");
+		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
+		page.click(firstUsercheckbox);
+		logger.info("Selected first user to perform Send Invite to App action");
+		page.click(selectActionSubmitButton);
+		page.waitForTimeout(1000);
+		page.waitForSelector(topRightCornerNotification);
+		String topRightCornerNotificationPopup = page.innerText(topRightCornerNotification);
+		softAssert.assertTrue(topRightCornerNotificationPopup.contains(AppConstants.USER_SEND_INVITE_TO_APP_MESSAGE),
+				"verify technician user creation");
+		page.selectOption(selectActionDropdown, "Send Invite to Web Dashboard");
+		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
+		page.click(firstUsercheckbox);
+		logger.info("Selected first user to perform Send Invite to Web Dashboard action");
+		page.click(selectActionSubmitButton);
+		page.waitForTimeout(1000);
+		page.waitForSelector(topRightCornerNotification);
+		String topRightCornerNotificationPopup1 = page.innerText(topRightCornerNotification);
+		softAssert.assertTrue(
+				topRightCornerNotificationPopup1.contains(AppConstants.USER_SEND_INVITE_TO_WEB_DASHBOARD_MESSAGE),
+				"verify send Invite to Dashboard");
+		page.selectOption(selectActionDropdown, "Deactivate User/Device");
+		logger.info("Actions dropdown is opened now selected Send Invite to App to perform on users");
+		page.click(firstUsercheckbox);
+		logger.info("Selected first user to perform Deactivate User action");
+		page.click(selectActionSubmitButton);
+		page.waitForTimeout(1000);
+		page.waitForSelector(topRightCornerNotification);
+		String topRightCornerNotificationPopup2 = page.innerText(topRightCornerNotification);
+		softAssert.assertTrue(topRightCornerNotificationPopup2.contains(AppConstants.USER_DEVICE_DEACTIVATE_MESSAGE),
+				"verify user action to deactivate ");
 		softAssert.assertAll();
 	}
+
 
 	public boolean actionsOnUsers(String Type, String errormessage, String SubjectMessage) {
 		SoftAssert softAssert = new SoftAssert();

@@ -8,12 +8,9 @@ import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.sun.tools.sjavac.Log;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
-
-import net.bytebuddy.implementation.bytecode.Throw;
 
 public class HomePage extends JavaUtility {
 	private Page page;
@@ -143,11 +140,18 @@ public class HomePage extends JavaUtility {
 		return page.title();
 	}
 
+	public Multimediapage NavigateToOrderList() {
+		page.click(repairOrder_Header);
+		return new Multimediapage(page);
+	
+	}
+	
 	public OrderListPage navigateToOrderList() {
 		page.click(repairOrder_Header);
 		return new OrderListPage(page);
 	
 	}
+	
 
 	public boolean clickOn_Order_MessagesHeader() throws Exception {
 		navigateToMessageScreen_Order();

@@ -9,31 +9,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
-import java.util.regex.Pattern;
 
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
+
 import com.microsoft.playwright.ElementHandle;
-import com.microsoft.playwright.Frame;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.TimeoutError;
 import com.microsoft.playwright.options.SelectOption;
-import com.microsoft.playwright.options.WaitForSelectorState;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
 
 public class RepairOrderDetailPage extends JavaUtility {
 	private Page page;
+	OrderListPage orderpage = new OrderListPage(page);
 
 	public RepairOrderDetailPage(Page page) {
 		this.page = page;
 	}
 
+	private String repairOrder_Header = "a[href='/crud/repair-order']";
 	private String repairOrder_PageHeading = ".main-body span:has-text('Repair Order')";
 	private String orderDetailsIFrame = "iframe#order-details-iframe";
 	private String nextRO_Button = ".order-navigation:has-text('Next RO')";
@@ -63,7 +62,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String whatsApp_Button = ".selected-channel-actions button:has-text('WhatsApp')";
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
 	private String sms_Tab = "#mat-tab-label-1-1";
-	private String sms_Textbox = "#mat-input-2";
+	private String sms_Textbox = ".mat-mdc-form-field-infix textarea";
 	private String send_SMS_Button = "mat-icon[svgicon=\"send\"]";
 	private String send_Original_Button = ".mdc-button--outlined";
 	private String customerName = ".chat-header__main .chat-header__title";
@@ -127,7 +126,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String next_Button = "app-items button:has-text('Next')";
 	private String internalNotes_TextBox = "form input[placeholder='Write an internal note.']";
 	private String customerNotes_TextBox = "form input[placeholder='Write a note for the customer.']";
-	//private String rowCount = "div.items__info-container div button:has-text('delete')";
+	// private String rowCount = "div.items__info-container div
+	// button:has-text('delete')";
 	private String rowCount = ".actions__div.ng-star-inserted button  mat-icon:has-text('delete')";
 	private String windowTitle = "mat-card-content .mat-toolbar span";
 	private String toaster_Message = "' Amount is required '";
@@ -149,6 +149,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public boolean checkAllMandatoryFields_ForNewRO() {
+
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -158,6 +159,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public void addVideoToOrder() {
+
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -258,7 +260,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void activitiesOfCreateEstimateWindow() {
 		SoftAssert softAssert = new SoftAssert();
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		
+		page.click(repairOrder_Header);
+		OrderListPage orderpage = new OrderListPage(page);
+		orderpage.navigateToOrderDetails();
+
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
 			page.waitForCondition(() -> frame.locator(estimate_Button).isVisible());
@@ -359,7 +364,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void sendEstimate(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		activitiesOfCreateEstimateWindow(); // changes by suraj
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
 			page.waitForCondition(() -> frame.locator(estimate_Button).isVisible());
@@ -397,7 +401,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void resendEstimate(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		sendEstimate(channelSelected);
 		frame.locator(estimate_Button).click();
 		page.waitForTimeout(10000);
 		if (!frame.locator(confirm_Button).isVisible()) {
@@ -439,9 +442,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 		addItemToList_Payment(items_DropdownList, "Payment Item 1"); // adding value that is not in list
 		addItemToList_Payment(items_DropdownList, "Payment Item 2"); // adding value that is not in list
 		frame.locator(closeWindow_Button).click();
+		page.waitForTimeout(4000);
 		softAssert.assertTrue(checkActivity("Created new invoice."), "verify activity for new invoice creation");
 		String paymentButtonText = frame.locator(payment_Button).textContent();
 		logger.info("Payment Status changed to " + paymentButtonText);
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(paymentButtonText.contains("Edit Payment"), "verify payment status");
 		frame.locator(payment_Button).click();
 		addItemToList_Payment(items_DropdownList, "Test Item 3"); // adding value reopen payment window
@@ -484,6 +489,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Amount entered in payment");
 		frame.locator(preview_Button).click();
 		logger.info("Click on Preview button afterd adding Amount");
+		page.waitForTimeout(3000);
 		softAssert.assertEquals(getWindowHeading(), "Payment - Review and Send Invoice",
 				"Verify Review window heading");
 		// softAssert.assertTrue(frame.locator(addedNote_ReviewScreen).textContent().contains(customerNote),"Verify
@@ -514,6 +520,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Payment status changed to : " + buttonName);
 		softAssert.assertTrue(verifyChangedStatusOnROList("$-Sent"), "Verify Status changed to $-Sent on RO List");
 		boolean isPaymentEndlink = false;
+		page.waitForTimeout(5000);
 		if (checkLastMessageInConversation("invoice") || checkLastMessageInConversation("payment")) {
 			isPaymentEndlink = true;
 		}
@@ -525,7 +532,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void resendPayment(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
-		createPayment(channelSelected);
 		try {
 			logger.info("Waiting for the Payment button to be visible");
 			page.waitForCondition(() -> frame.locator(payment_Button).isVisible());
@@ -549,6 +555,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		selectChannelToPerformAction(channelSelected);// Select channel to send video
 		softAssert.assertTrue(verifyNavigationToChannel(channelSelected), "Verify Navigation To selected channel");
 		String buttonName = frame.locator(payment_Button).textContent();
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(buttonName.contains("Resend Payment"), "Verify payment Status");
 		logger.info("Payment status changed to : " + buttonName);
 		softAssert.assertTrue(verifyChangedStatusOnROList("$-Sent"), "Verify Status changed to $-Sent on RO List");
@@ -584,6 +591,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not video Endlink");
 			throw new SkipException("Last message is not video Endlink");
 		}
+		page.waitForTimeout(4000);
 		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
 		page.waitForTimeout(2000);
 		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
@@ -617,6 +625,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not estimate Endlink");
 			throw new SkipException("Last message is not estimate Endlink");
 		}
+		page.waitForTimeout(5000);
 		softAssert.assertTrue(frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Review Approved Work status");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Approved"), "verify Est-Approved status on RO list");
@@ -628,6 +637,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Click on Confirm button");
 		frame.locator(closeWindow_Button).click();
 		logger.info("Click on close estimate window button");
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(!frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Estimate status on confirm estimate");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Confirmed"), "verify Est-Confirmed status on RO list");
@@ -660,7 +670,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String printPayment_Button = "button:has-text('Print')";
 	private String processedPayment_Button = "button:has-text('Processed')";
 	private String paymentIframe = "//iframe[@name='stripe_checkout_app']";
-	
 
 	public void submitPayment(String filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
@@ -677,16 +686,16 @@ public class RepairOrderDetailPage extends JavaUtility {
 			endlinkPage.click(payNow_Button);
 			logger.info("Endlink : Click on pay Now Button");
 			endlinkPage.click(payWithCardButton);
-			//------------------------------------------
+			// ------------------------------------------
 			String paymentResponse = createPayment();
-		        if (paymentResponse != null) {
-		            sendToTruvideo(paymentResponse);
-		        }
-			Assert.assertEquals( paymentResponse,"200");
+			if (paymentResponse != null) {
+				sendToTruvideo(paymentResponse);
+			}
+			Assert.assertEquals(paymentResponse, "200");
 			logger.info("Status code matched" + paymentResponse);
 			endlinkPage.close();
-			//-----------------------------------------
-			
+			// -----------------------------------------
+
 //			boolean isInvoicePaid = false;
 //			if (endlinkPage.isVisible(paidInvoice_Heading)) {
 //				logger.info("Invoice Paid Sucessfully");
@@ -696,142 +705,125 @@ public class RepairOrderDetailPage extends JavaUtility {
 //		} else {
 //			throw new SkipException("Last Message is not payment Endlink");
 //		}
-		softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Process payment"),
-				"verify payemt Status changed to Process Payment");
-		softAssert.assertTrue(verifyChangedStatusOnROList("$-Paid"), "verify $-Paid status on RO list");
-		softAssert.assertTrue(checkActivity("Invoice paid by customer."), "verify activity for paid invoice");
-		frame.locator(payment_Button).click();
-		Page newPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
-			frame.locator(printPayment_Button).first().click();
-			logger.info("Click on Print button");
-		});
-		newPage.waitForLoadState();
-		softAssert.assertTrue(newPage.url().contains(AppConstants.PRINT_SCREEN_URL), "verify print screen opened?");
-		newPage.close();
-		logger.info("Print window closed");
-		frame.locator(processedPayment_Button).first().click();
-		softAssert.assertTrue(getWindowHeading().contains("COMPLETED"), "Verify payment heading -COMPLETED");
-		frame.locator(closeWindow_Button).click();
-		logger.info("Payment window closed");
-		softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Processed"),
-				"verify payemt Status changed to Processed");
-		softAssert.assertTrue(verifyChangedStatusOnROList("$-Processed"), "verify $-Processed status on RO list");
-		softAssert.assertTrue(checkLastMessageInConversation("successful"), "Verify payment successful message");
-		softAssert.assertTrue(checkActivity("Invoice processed by Advisor."), "Verify activity for Processed payment");
+			softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Process payment"),
+					"verify payemt Status changed to Process Payment");
+			softAssert.assertTrue(verifyChangedStatusOnROList("$-Paid"), "verify $-Paid status on RO list");
+			softAssert.assertTrue(checkActivity("Invoice paid by customer."), "verify activity for paid invoice");
+			frame.locator(payment_Button).click();
+			Page newPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+				frame.locator(printPayment_Button).first().click();
+				logger.info("Click on Print button");
+			});
+			newPage.waitForLoadState();
+			softAssert.assertTrue(newPage.url().contains(AppConstants.PRINT_SCREEN_URL), "verify print screen opened?");
+			newPage.close();
+			logger.info("Print window closed");
+			frame.locator(processedPayment_Button).first().click();
+			softAssert.assertTrue(getWindowHeading().contains("COMPLETED"), "Verify payment heading -COMPLETED");
+			frame.locator(closeWindow_Button).click();
+			logger.info("Payment window closed");
+			softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Processed"),
+					"verify payemt Status changed to Processed");
+			softAssert.assertTrue(verifyChangedStatusOnROList("$-Processed"), "verify $-Processed status on RO list");
+			softAssert.assertTrue(checkLastMessageInConversation("successful"), "Verify payment successful message");
+			softAssert.assertTrue(checkActivity("Invoice processed by Advisor."),
+					"Verify activity for Processed payment");
+		}
+
 	}
-		
+
+	private static final String STRIPE_API_URL = "https://api.stripe.com/v1/payment_intents";
+	private static final String TRUVIDEO_API_URL = "https://rc.truvideo.com/v/stripe/MSFqTV0e";
+	private static final String STRIPE_SECRET_KEY = "sk_test_tR3PYbcVNZZ796tH88S4VQ2u"; // Replace with your secret key
+
+	private static String createPayment() {
+		try {
+			// Create the URL and open a connection to Stripe
+			URL url = new URL(STRIPE_API_URL);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+			// Set up the connection properties
+			connection.setRequestMethod("POST");
+			connection.setDoOutput(true);
+			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			String encoded = Base64.getEncoder().encodeToString((STRIPE_SECRET_KEY + ":").getBytes());
+			connection.setRequestProperty("Authorization", "Basic " + encoded);
+
+			// Create the request body
+			String urlParameters = "amount=500&currency=gbp&payment_method=pm_card_visa";
+
+			// Send the request
+			try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+				wr.writeBytes(urlParameters);
+				wr.flush();
+			}
+
+			// Read the response
+			int responseCode = connection.getResponseCode();
+			String code = Integer.toString(responseCode);
+			StringBuilder response = new StringBuilder();
+			try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+				String inputLine;
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+			}
+
+			return code; // Return response for further processing
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
-	 private static final String STRIPE_API_URL = "https://api.stripe.com/v1/payment_intents";
-	    private static final String TRUVIDEO_API_URL = "https://rc.truvideo.com/v/stripe/MSFqTV0e";
-	    private static final String STRIPE_SECRET_KEY = "sk_test_tR3PYbcVNZZ796tH88S4VQ2u"; // Replace with your secret key
-	 
-	    private static String createPayment() {
-	        try {
-	            // Create the URL and open a connection to Stripe
-	            URL url = new URL(STRIPE_API_URL);
-	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	            
-	            // Set up the connection properties
-	            connection.setRequestMethod("POST");
-	            connection.setDoOutput(true);
-	            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-	            String encoded = Base64.getEncoder().encodeToString((STRIPE_SECRET_KEY + ":").getBytes());
-	            connection.setRequestProperty("Authorization", "Basic " + encoded);
 
-	            // Create the request body
-	            String urlParameters = "amount=500&currency=gbp&payment_method=pm_card_visa";
+	private static void sendToTruvideo(String paymentResponse) {
+		try {
+			// Create the URL and open a connection to Truvideo
+			URL url = new URL(TRUVIDEO_API_URL);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-	            // Send the request
-	            try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
-	                wr.writeBytes(urlParameters);
-	                wr.flush();
-	            }
+			// Set up the connection properties
+			connection.setRequestMethod("POST");
+			connection.setDoOutput(true);
+			connection.setRequestProperty("Content-Type", "text/plain");
+			connection.setRequestProperty("Cookie",
+					"AWSALB=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; AWSALBCORS=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; JSESSIONID=D977CC2D465B0BACFB0A68E21CDE7F6D");
 
-	            // Read the response
-	            int responseCode = connection.getResponseCode();
-	            String code = Integer.toString(responseCode);
-	            StringBuilder response = new StringBuilder();
-	            try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-	                String inputLine;
-	                while ((inputLine = in.readLine()) != null) {
-	                    response.append(inputLine);
-	                }
-	            }
+			// Parse the payment response for necessary details (example JSON parsing)
+			// Assuming response contains stripeToken and other details; adjust based on
+			// actual response
+			String jsonInputString = "{" + "\"amount\": \"10100\","
+					+ "\"stripeToken\": \"tok_1Q51QcLCZyWkGXxjb63uwWh6\"," + "\"stripeTokenType\": \"card\","
+					+ "\"stripeEmail\": \"suraj.kushwah@5exceptions.com\"" + "}";
 
-	           
-	            return code; // Return response for further processing
+			// Send the request
+			try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+				wr.writeBytes(jsonInputString);
+				wr.flush();
+			}
 
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	            return null;
-	        }
-	    }
+			// Read the response
+			int responseCode = connection.getResponseCode();
+			StringBuilder response = new StringBuilder();
+			try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+				String inputLine;
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
 
-	    private static void sendToTruvideo(String paymentResponse) {
-	        try {
-	            //Create the URL and open a connection to Truvideo
-	            URL url = new URL(TRUVIDEO_API_URL);
-	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	            
-	            // Set up the connection properties
-	            connection.setRequestMethod("POST");
-	            connection.setDoOutput(true);
-	            connection.setRequestProperty("Content-Type","text/plain");
-	            connection.setRequestProperty("Cookie", "AWSALB=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; AWSALBCORS=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; JSESSIONID=D977CC2D465B0BACFB0A68E21CDE7F6D");
+			}
 
-	            // Parse the payment response for necessary details (example JSON parsing)
-	            // Assuming response contains stripeToken and other details; adjust based on actual response
-	            String jsonInputString = "{"
-	                    + "\"amount\": \"10100\","
-	                    + "\"stripeToken\": \"tok_1Q51QcLCZyWkGXxjb63uwWh6\","
-	                    + "\"stripeTokenType\": \"card\","
-	                    + "\"stripeEmail\": \"suraj.kushwah@5exceptions.com\""
-	                    + "}";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-	            // Send the request
-	            try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
-	                wr.writeBytes(jsonInputString);
-	                wr.flush();
-	            }
-
-	            // Read the response
-	            int responseCode = connection.getResponseCode();
-	            StringBuilder response = new StringBuilder();
-	            try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-	                String inputLine;
-	                while ((inputLine = in.readLine()) != null) {
-	                    response.append(inputLine);
-	                }
-	     
-	            }
-
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	    }
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//------------------------------------------------------------------------------------
+	// ------------------------------------------------------------------------------------
 
 	private void verifyPaymentResendFunction(String filter) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private String getWindowHeading() {
@@ -1423,7 +1415,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public boolean createreminder() throws InterruptedException {
-        Thread.sleep(8000);
+		Thread.sleep(8000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.waitForTimeout(5000);
 		logger.info("click on Service_Rec!!!!!!!!");

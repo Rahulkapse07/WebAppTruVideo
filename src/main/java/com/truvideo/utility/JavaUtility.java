@@ -1,10 +1,7 @@
 package com.truvideo.utility;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,23 +12,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.FilePayload;
 
@@ -125,21 +113,31 @@ public class JavaUtility {
 		}
 	}
 
+
+	
+	private String firstUser="";
 	private void createCsvFile_Advisor(String filePath) {
-		String[] headers = { "Firstname", "Lastname", "Title", "Phone number", "Email", "Username" };
+		ArrayList<String>emailList=new ArrayList<String>();
+		String[] headers = { "Firstname", "Lastname", "Title", "Phone number", "Email" }; //, "Username"
 		try (FileWriter writer = new FileWriter(filePath)) {
 			for (String header : headers) {
 				writer.append(header).append(",");
 			}
 			writer.append("\n");
 			for (int i = 0; i < 3; i++) {
+				String email=generateUniqueEmail();
+				emailList.add(email);
 				String[] data = { generateUniqueString(), generateUniqueString(), "Advisor", "1234567890",
-						generateUniqueEmail(), generateUniqueString() };
+						email };  //, generateUniqueString()
 				for (String field : data) {
 					writer.append(field).append(",");
 				}
 				writer.append("\n");
+				//logger.info(emailList.get(0).toString());
+				
 			}
+			 setFirstUser(emailList.get(0).toString());
+			//logger.info(firstUser);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -163,7 +161,7 @@ public class JavaUtility {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private String generateUniqueEmail() {
 		return "user" + getRandomString(5) + "@example.com";
 	}
@@ -174,6 +172,24 @@ public class JavaUtility {
 
 	// ---------------------------Read Csv file-------------
 	
+
+	public String getFirstUser() {
+		return firstUser;
+	}
+
+	public void setFirstUser(String firstUser) {
+		this.firstUser = firstUser;
+	}
+	public boolean waitForAndLogVisibility(Locator locator, String elementName) {
+	    try {
+	        locator.waitFor(); 
+	        logger.info(elementName + " is visible.");
+	        return true;
+	    } catch (org.openqa.selenium.TimeoutException e) {
+	        logger.error(elementName + " is not visible.");
+	        return false;
+	    }
+	}
 
 
 }

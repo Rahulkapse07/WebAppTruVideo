@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.sun.tools.javac.util.Names;
 import com.truvideo.utility.JavaUtility;
@@ -30,6 +31,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 	// Check UI of message R/O
 	private String Messageownername = ".chat-header__phone p:nth-child(4)";
 	private String message_profile_input = "input[id='mat-input-2']";
+	private String message_profile_input2 = "input[id='mat-input-3']";
 	private String message_profile_save_btn = "div.mat-mdc-dialog-actions button span:nth-child(3)";
 	private String SMS_channel_icon = ".channels-list-item__status-phone.ng-star-inserted mat-icon";
 	private String list_channelowner = ".list-all div p.channels-list-item__advisor";
@@ -80,60 +82,86 @@ public class MessageScreen_Prospect extends JavaUtility {
 		}
 	}
 
-	private String MessageProfileName = ".profile__user-info p:nth-child(1)";
+	 private String messageownername = ".chat-header__phone p:nth-child(4)";
+		private String MessageProfileName = ".profile__user-info p:nth-child(1)";
+		private String loginusername =   "li.account-nav a span span:nth-child(3)";
+		public boolean Verify_Profile_setting_button(String ProfileName) {
+			page.reload();
+			logger.info("Verify Message Profile Settings");
+			List<Boolean> flags = new ArrayList<>();
+			FrameLocator iframe = page.frameLocator(messageIframe);
+			String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
+			String MessageOwneraName = iframe.locator(messageownername).innerText().toLowerCase();
+			page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
+//			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+//				logger.info("Profile After changes Matched");
+//			} else {
+//				logger.info("Profile name not changed");
+//			}
+		
+			if (iframe.locator(message_profile).isVisible()) {
+				page.waitForTimeout(3000);
+				iframe.locator(message_profile).click();
+				logger.info("Message profile clicked");
+				page.waitForTimeout(5000);
+				// iframe.locator(message_profile_input).click();
+				page.keyboard().press("Control+A");
+				page.waitForTimeout(5000);
+				iframe.locator(message_profile_input).type(ProfileName);
+				page.waitForTimeout(1500);
+				iframe.locator(message_profile_save_btn).click();
+				page.waitForTimeout(3000);
+				logger.info("Clicked on save button");
+				//page.reload(); // We dont need this reload,This is the issue right now
+			} else {
+				logger.info("Message Profile Setting Failed To Open");
+				flags.add(false);
+			}
+			page.waitForTimeout(3000);
+			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+				logger.info("Profile After changes Matched");
+			} else {
+				logger.info("Profile name not changed");
+			}
+			
+			if (iframe.locator(message_profile).isVisible()) {
+				page.waitForTimeout(3000);
+				iframe.locator(message_profile).click();
+				logger.info("Message profile clicked");
+				page.waitForTimeout(5000);
+				Locator Loginuserlabel = page.locator(loginusername);
+				String Loginuser = Loginuserlabel.innerText();
+				System.out.println(Loginuser);
+				page.keyboard().press("Control+A");
+				page.waitForTimeout(5000);
+				iframe.locator(message_profile_input2).type(Loginuser);
+				page.waitForTimeout(1500);
+				iframe.locator(message_profile_save_btn).click();
+				logger.info("Clicked on save button");
+			}
+			page.waitForTimeout(3000);
+			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+				logger.info("Profile After changes Matched");
+			} else {
+				logger.info("Profile name not changed");
+			}
+			return !flags.contains(false);
+		}
 
-	public boolean Verify_Profile_setting_button(String ProfileName) {
-		page.reload();
-		logger.info("Verify Message Profile Settings");
-		List<Boolean> flags = new ArrayList<>();
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
-		String MessageOwneraName = iframe.locator(Messageownername).innerText().toLowerCase();
-		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
-		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
-			logger.info("Profile After changes Matched");
-		} else {
-			logger.info("Profile name not changed");
+		public boolean Verify_message_Name() {
+			FrameLocator iframe = page.frameLocator(messageIframe);
+			HomePage homePage = new HomePage(page);
+			String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
+			String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
+
+			if (storeusername.trim().equals(messageusername.trim())) {
+				logger.info(storeusername + "The Channel owner is same user who is login--" + messageusername);
+				return true;
+			} else {
+				logger.info(storeusername+"The Channel owner is not match with user who is login--" + messageusername);
+				return false;
+			}
 		}
-		if (iframe.locator(message_profile).isVisible()) {
-			page.waitForTimeout(3000);
-			iframe.locator(message_profile).click();
-			logger.info("Message profile clicked");
-			page.waitForTimeout(5000);
-			// iframe.locator(message_profile_input).click();
-			page.keyboard().press("Control+A");
-			page.waitForTimeout(5000);
-			iframe.locator(message_profile_input).type(ProfileName);
-			page.waitForTimeout(1500);
-			iframe.locator(message_profile_save_btn).click();
-			page.waitForTimeout(3000);
-			logger.info("Clicked on save button");
-			page.reload(); // We dont need this reload,This is the issue right now
-		} else {
-			logger.info("Message Profile Setting Failed To Open");
-			flags.add(false);
-		}
-		page.waitForTimeout(3000);
-		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
-			logger.info("Profile After changes Matched");
-		} else {
-			logger.info("Profile name not changed");
-		}
-		return !flags.contains(false);
-	}
-	public boolean Verify_message_Name() {
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		HomePage homePage = new HomePage(page);
-		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
-		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
-		if (storeusername.trim().equals(messageusername.trim())) {
-			logger.info("The Channel owner is same user who is login" + messageusername);
-			return true;
-		} else {
-			logger.info("The Channel owner is not match with user who is login");
-			return false;
-		}
-	}
 
 	private String filterButton(String buttonText) {
 		return "button:has-text('" + buttonText + "')";

@@ -28,7 +28,7 @@ public class OrderListPage extends JavaUtility {
 	private String allOpen_FilterButton = "#LBL_ALL_OPEN";
 	private String ForReview_FilterButton = "#LBL_FOR_REVIEW";
 	private String allClosed_FilterButton = "#LBL_ALL_CLOSED";
-	private String selectDealer_Dropdown = "span.select2-chosen";
+	private String selectDealer_Dropdown = "#s2id_dealer a .select2-chosen";
 	private String dealerSearch_TextBox = "div.select2-search input";
 
 	private String getSearchedDealer(String dealerToSearch) {
@@ -77,104 +77,107 @@ public class OrderListPage extends JavaUtility {
 		}
 	}
 
-	public boolean clickOn_MyROs_Filter() {
-		page.click(myROs_FilterButton);
-		logger.info("Clicked on My RO's Filter button");
-		page.waitForURL(url -> url.contains("MY_RO"));
+	public boolean clickOnFilter(String filterType) {
+		String filterButton = null;
+		final String urlFragment;
+
+		switch (filterType.toLowerCase()) {
+		case "myros":
+			filterButton = myROs_FilterButton;
+			urlFragment = "MY_RO";
+			break;
+		case "allopen":
+			filterButton = allOpen_FilterButton;
+			urlFragment = "ALL_OPEN";
+			break;
+		case "forreview":
+			filterButton = ForReview_FilterButton;
+			urlFragment = "FOR_REVIEW";
+			break;
+		case "allclosed":
+			filterButton = allClosed_FilterButton;
+			urlFragment = "ALL_CLOSED";
+			break;
+		default:
+			logger.error("Invalid filter type provided: " + filterType);
+			return false;
+		}
+		page.click(filterButton);
+		logger.info("Clicked on " + filterType + " filter");
+
+		page.waitForURL(url -> url.contains(urlFragment));
+		page.waitForSelector(tableRows);
 		Locator tableRow = page.locator(tableRows);
 		int rowCount = tableRow.count();
-		boolean flag = false;
+		List<Boolean> flags = new ArrayList<>();
+
 		for (int i = 0; i < rowCount - 1; i++) {
 			Locator advisor = tableRow.locator("td:nth-child(5)").nth(i);
 			Locator technician = tableRow.locator("td:nth-child(6)").nth(i);
+			Locator roNumbers = tableRow.locator("td:nth-child(4)").nth(i);
+			Locator statuses = tableRow.locator("td:nth-child(10)").nth(i);
+
 			String advisorName = advisor.textContent().trim();
 			String technicianName = technician.textContent().trim();
-			if (advisorName.equals(LoginPage.logInUsername) || technicianName.equals(LoginPage.logInUsername)) {
-				logger.info("Match found in Row " + (i + 1) + ": Advisor: " + advisorName + ", Technician: "
-						+ technicianName);
-				flag = true;
-			}
-		}
-		if (flag == false) {
-			logger.info("Something went wrong during Ro loding on My ROs filter with login user as : "
-					+ LoginPage.logInUsername);
-		}
-		return flag;
-	}
-
-	public boolean clickOn_AllOpen_Filter() {
-		page.click(allOpen_FilterButton);
-		logger.info("Clicked on All Open filter");
-		page.waitForURL(url -> url.contains("ALL_OPEN"));
-		Locator tableRow = page.locator(tableRows);
-		int rowCount = tableRow.count();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		for (int i = 0; i < rowCount - 1; i++) {
-			Locator roNumbers = tableRow.locator("td:nth-child(4)").nth(i);
-			Locator statuses = tableRow.locator("td:nth-child(10)").nth(i);
 			String roNumber = roNumbers.textContent().trim();
-			String status = statuses.innerText().replaceAll("\\s+", " ");
-			if (!status.contains("Closed")) {
-				logger.info("The RO :" + roNumber + " is open & Statuses is: " + status);
-				flags.add(true);
-			} else {
-				logger.info("The RO :" + roNumber + " is open & Statuses is: " + status);
-				flags.add(false);
-			}
-		}
-		return !flags.contains(false);
-	}
+			String status = statuses.innerText().replaceAll("\\s+", " ").trim();
 
-	public boolean clickOn_ForReview_Filter() {
-		page.click(ForReview_FilterButton);
-		logger.info("Clicked on For Review filter");
-		page.waitForURL(url -> url.contains("FOR_REVIEW"));
-		Locator tableRow = page.locator(tableRows);
-		int rowCount = tableRow.count();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		for (int i = 0; i < rowCount - 1; i++) {
-			Locator roNumbers = tableRow.locator("td:nth-child(4)").nth(i);
-			Locator statuses = tableRow.locator("td:nth-child(10)").nth(i);
-			String roNumber = roNumbers.textContent().trim();
-			String status = statuses.innerText().replaceAll("\\s+", " ");
-			if (status.contains("For Review")) {
-				logger.info("The Status of RO :" + roNumber + " Contains For Review and  : " + status);
-				flags.add(true);
-			} else {
-				logger.info("The Status of RO :" + roNumber + " Not Contains For Review  : " + status);
-				flags.add(false);
-			}
-		}
-		return !flags.contains(false);
-	}
+			boolean matchFound = false;
 
-	public boolean clickOn_AllClosed_Filter() {
-		page.click(allClosed_FilterButton);
-		logger.info("Clicked on All Closed filter");
-		page.waitForURL(url -> url.contains("ALL_CLOSED"));
-		Locator tableRow = page.locator(tableRows);
-		int rowCount = tableRow.count();
-		List<Boolean> flags = new ArrayList<Boolean>();
-		for (int i = 0; i < rowCount - 1; i++) {
-			Locator roNumbers = tableRow.locator("td:nth-child(4)").nth(i);
-			Locator statuses = tableRow.locator("td:nth-child(10)").nth(i);
-			String roNumber = roNumbers.textContent().trim();
-			String status = statuses.innerText().replaceAll("\\s+", " ");
-			if (status.contains("Closed")) {
-				logger.info(
-						"The Status of RO :" + roNumber + " under All Closed filter is closed & Contains: " + status);
-				flags.add(true);
-			} else {
-				logger.info("The Status of RO :" + roNumber + " under All Closed filter is Not closed & Contains: "
-						+ status);
-				flags.add(false);
+			switch (filterType.toLowerCase()) {
+			case "myros":
+				if (advisorName.equals(LoginPage.logInUsername) || technicianName.equals(LoginPage.logInUsername)) {
+					logger.info("Match found in Row " + (i + 1) + ": Advisor: " + advisorName + ", Technician: "
+							+ technicianName);
+					flags.add(true);
+					matchFound = true;
+				}
+				break;
+
+			case "allopen":
+				if (!status.contains("Closed")) {
+					logger.info("The RO: " + roNumber + " is open & Status is: " + status);
+					flags.add(true);
+				} else {
+					flags.add(false);
+				}
+				page.waitForTimeout(1000);
+				break;
+
+			case "forreview":
+				page.waitForTimeout(2000); // Wait to ensure elements are fully loaded
+				if (status.contains("For Review")) {
+					logger.info("The Status of RO: " + roNumber + " Contains For Review and is: " + status);
+					flags.add(true);
+				} else {
+					logger.info("The Status of RO: " + roNumber + " does NOT contain For Review: " + status);
+					flags.add(false);
+				}
+				break;
+
+			case "allclosed":
+				page.waitForTimeout(1000); // Adding a wait for elements to load properly
+				if (status.contains("Closed")) {
+					logger.info("The Status of RO: " + roNumber + " is closed & Contains: " + status);
+					flags.add(true);
+				} else {
+					logger.info("The Status of RO: " + roNumber + " is NOT closed & Contains: " + status);
+					flags.add(false);
+				}
+				break;
+			}
+			if (!matchFound && filterType.equals("myros")) {
+				logger.info("No match found for My ROs filter with login user: " + LoginPage.logInUsername);
 			}
 		}
-		return !flags.contains(false);
+		if (!filterType.equals("myros")) {
+			return !flags.contains(false); // Ensures no invalid rows exist
+		}
+		return flags.contains(true);
 	}
 
 	public boolean selectDealerFromSelectDealerDropdown() {
-		page.waitForLoadState();
+		page.waitForTimeout(5000);
 		page.click(selectDealer_Dropdown);
 		logger.info("Clicked on 'Select Dealer' dropdown");
 		page.waitForTimeout(2000);
@@ -190,7 +193,6 @@ public class OrderListPage extends JavaUtility {
 			Locator DealerNames = tableRow.locator("td:nth-child(3)").nth(i);
 			String dealerName = DealerNames.textContent().trim();
 			if (dealerName.contains(prop.getProperty("anotherDealer"))) {
-				logger.info("All ROs is of selected dealer & dealer is : " + dealerName);
 				flags.add(true);
 			} else {
 				logger.info("All ROs is Not of selected dealer & dealer is : " + dealerName);
@@ -351,7 +353,7 @@ public class OrderListPage extends JavaUtility {
 		newRoNumber = "Automation" + getRandomString(5);
 		page.fill(repairOrderNumber_Field, newRoNumber);
 		logger.info("Repair Order Number filled : " + newRoNumber);
-		String firstName = "First" + getRandomString(8);
+		String firstName = "Automation";
 		page.fill(firstName_Field, firstName);
 		logger.info("First Name filled : " + firstName);
 		String lastName = "Last" + getRandomString(8);
@@ -361,7 +363,7 @@ public class OrderListPage extends JavaUtility {
 		String phoneNumber = "781205" + getRandomNumber(4);
 		page.fill(phoneNumber_Field, phoneNumber);
 		logger.info("Phone number filled : " + phoneNumber);
-		String emailId = getRandomString(8) + "@gmail.com";
+		String emailId = "Automated" + getRandomString(4) + "@gmail.com";
 		page.fill(emailId_Field, emailId);
 		logger.info("Email Id filled : " + emailId);
 		page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
@@ -372,31 +374,30 @@ public class OrderListPage extends JavaUtility {
 		return newRoNumber;
 	}
 
-	public void addmultipleRepairOrder(String firstname , String lastname,String emailId,String phoneNumber ) {
-		
-		    page.click(addRepairOrder_Button);
-			page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
-			logger.info("Clicked on Add Repair Order button");
-			page.waitForLoadState();
-			newRoNumber = "Automation" + getRandomString(5);
-			page.fill(repairOrderNumber_Field, newRoNumber);
-			logger.info("Repair Order Number filled : " + newRoNumber);
-			page.fill(firstName_Field, firstname);
-			logger.info("First Name filled : " + lastname);
-			page.fill(lastName_Field, lastname);
-			logger.info("Last Name filled : " + lastname);
-			page.click(phoneNumber_Field);
-			page.fill(phoneNumber_Field, phoneNumber);
-			logger.info("Phone number filled : " + phoneNumber);
-			page.fill(emailId_Field, emailId);
-			logger.info("Email Id filled : " + emailId);
-			page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
-			page.waitForTimeout(2000);
-			page.click(save_Button);
-			logger.info("Clicked on Save Button");
-			page.waitForSelector(tableRows);
-			}
-		
+	public void addmultipleRepairOrder(String firstname, String lastname, String emailId, String phoneNumber) {
+
+		page.click(addRepairOrder_Button);
+		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
+		logger.info("Clicked on Add Repair Order button");
+		page.waitForLoadState();
+		newRoNumber = "Automation" + getRandomString(5);
+		page.fill(repairOrderNumber_Field, newRoNumber);
+		logger.info("Repair Order Number filled : " + newRoNumber);
+		page.fill(firstName_Field, firstname);
+		logger.info("First Name filled : " + lastname);
+		page.fill(lastName_Field, lastname);
+		logger.info("Last Name filled : " + lastname);
+		page.click(phoneNumber_Field);
+		page.fill(phoneNumber_Field, phoneNumber);
+		logger.info("Phone number filled : " + phoneNumber);
+		page.fill(emailId_Field, emailId);
+		logger.info("Email Id filled : " + emailId);
+		page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
+		page.waitForTimeout(2000);
+		page.click(save_Button);
+		logger.info("Clicked on Save Button");
+		page.waitForSelector(tableRows);
+	}
 
 	public String getFirstROInList() {
 		page.waitForSelector(tableRows);
@@ -427,6 +428,9 @@ public class OrderListPage extends JavaUtility {
 	private String SearchInspectionStatus = "#repair-order-results tbody tr td.results-row:nth-child(10) span:has-text('Insp-Review')";
 	private String SearchInspectionStatus1 = "td.results-row:nth-child(10)";
 	private String Inspec_Review = "td.results-row:nth-child(10) > span.label.status-insp-submitted";
+	
+// Get Ro number from table
+	private String Ronumber = "td.results-row:nth-child(4)";
 
 	public boolean checkInspectionStatus() {
 		page.click(RepairOrdertab);

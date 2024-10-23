@@ -55,7 +55,7 @@ public class LoginPage extends JavaUtility {
 		page.click(logIn_Button);
 		logger.info("Clicked on LogIn button without entering credentials");
 		String errorMessage = page.textContent(errorAlertMessage_Login).trim();
-		logger.info("Error message displayed for null credentials as : " + errorMessage);
+		logger.info("Error message displayed for null credentials ");
 		page.locator(close_Button_ErrorAlert).first().click();
 		return errorMessage;
 	}
@@ -66,7 +66,7 @@ public class LoginPage extends JavaUtility {
 		page.click(logIn_Button);
 		logger.info("Clicked on LogIn button when entering invalid login credentials");
 		String errorMessage = page.textContent(errorAlertMessage_Login);
-		logger.info("Error message displayed for ivalid credentials as : " + errorMessage);
+		logger.info("Error message displayed for ivalid credentials " );
 		page.locator(close_Button_ErrorAlert).first().click();
 		return errorMessage;
 	}
@@ -91,9 +91,9 @@ public class LoginPage extends JavaUtility {
 
 	public HomePage navigateToHomePage(String username, String password){
 		page.fill(username_Field, username);
-		logger.info("Entered User Name"+username);
+		logger.info("Entered User Name  "+username);
 		page.fill(password_Field, password);
-		logger.info("Entered Password"+password);
+		logger.info("Entered Password    *********");
 		page.click(logIn_Button);
 		logger.info("Navigated to the Home Page");
 		HomePage homePage = new HomePage(page);

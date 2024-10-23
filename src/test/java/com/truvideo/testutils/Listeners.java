@@ -2,6 +2,8 @@ package com.truvideo.testutils;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,45 +18,61 @@ public class Listeners extends TestUtils implements ITestListener {
 	ExtentTest test;
 	ExtentReports extent = TestUtils.getReporterObject();
 
+
+	
+	@Override
 	public void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getMethod().getMethodName()); // Method Name
-		test.assignCategory("All");
-		try {
-			//result.getMethod().getDescription();
-			List<String> tags = getTicketID(result.getMethod().getMethodName());
-			if (!tags.isEmpty()) {
-				for (String tag : tags) {
-					if (tag.contains("AT-"))
-						test.assignCategory(tag);
-					else
-						test.log(Status.INFO, tag);
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	    // Extract parameters passed to the test
+	    Object[] parameters = result.getParameters();
+	    String methodName = result.getMethod().getMethodName();
+
+	    // Build a custom name for the test
+	    if (parameters != null && parameters.length > 0 && parameters[0] instanceof Map) {
+	        Map<String, String> userData = (Map<String, String>) parameters[0];
+	        String dealer = userData.get("dealer");
+	        String method = userData.get("methodName");
+	        String role = userData.get("role");
+
+	        // Create a dynamic test name based on the test parameters
+	        String testName = "User Creation: " + method + " for " + role + " at " + dealer;
+	        String methodName1=method;
+
+	        // Create the test in Extent Reports with the dynamic name
+	        test = extent.createTest(methodName1);
+
+	        // Optionally assign categories
+	        test.assignCategory("User Creation");
+	        test.assignCategory(role);
+	    } else {
+	        // Fallback to method name if parameters are not available
+	        test = extent.createTest(methodName);
+	    }
+
+	    test.assignCategory("All");
+
+	    try {
+	        // Handle tags if necessary
+	        List<String> tags = getTicketID(methodName);
+	        if (!tags.isEmpty()) {
+	            for (String tag : tags) {
+	                if (tag.contains("AT-")) {
+	                    test.assignCategory(tag);
+	                } else {
+	                    test.log(Status.INFO, tag);
+	                }
+	            }
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 
-//	public void onTestFailure(ITestResult result) {
-//		test.fail(result.getThrowable());
-//		try {
-//			Object testInstance = result.getInstance();
-//			page = (Page) testInstance.getClass().getField("page").get(testInstance);
-//		} catch (Exception e1) {
-//			e1.printStackTrace();
-//		}
-//
-//		if (page != null) {
-//			try {
-//				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-//				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	}
-	
-	//Testing new report with screenshot on mail from RK
+	//added for test until 41 by RK
+	@Override
+    public void onTestSuccess(ITestResult result) {
+        test.pass("Test Passed");
+    }
+
 	public void onTestFailure(ITestResult result) {
 	    test.fail(result.getThrowable());
 	    Page page = null;

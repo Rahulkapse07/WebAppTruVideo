@@ -91,7 +91,8 @@ static ExtentReports extent;
 
 		        // Determine the path based on the environment
 		        if (System.getProperty("os.name").toLowerCase().contains("win")) {
-		            reportPath = "D:/TruvideoWeb_Playwright/Reports/Index.html"; // Adjust for Windows
+		            reportPath = System.getProperty("user.dir") + "/Reports/index.html";
+		            		//"D:/TruvideoWeb_Playwright/Reports/Index.html"; // Adjust for Windows
 		        } else {
 		            reportPath = System.getProperty("user.dir") + "/Reports/Index.html"; // Default relative path
 		        }
@@ -102,7 +103,7 @@ static ExtentReports extent;
 		            return;
 		        }
 
-		        System.out.println("Report file found: " + reportPath);
+		     //   System.out.println("Report file found: " + reportPath);
 			
 			
 			// Create the email message
