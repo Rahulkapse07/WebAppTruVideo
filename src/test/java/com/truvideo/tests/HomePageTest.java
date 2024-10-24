@@ -23,7 +23,7 @@ public class HomePageTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void verify_OrdersMessage_HeaderTab_Working() {
+	public void verify_OrdersMessage_HeaderTab_Working() throws Exception {
 		Assert.assertTrue(homepage.clickOn_Order_MessagesHeader());
 		page.goBack();
 	}
@@ -229,6 +229,10 @@ public class HomePageTest extends BaseTest {
 	@Test(priority = 37)
 	public void verify_All_Reminder_Badge() {
 		Assert.assertTrue(homepage.clickOn_All_Reminder_Badge());
+	}
+	@Test(priority = 38)
+	public void Verify_dealer_Name() {
+		homepage.Verify_dealer_Name(prop.getProperty("dealerused"));
 	}
 
 }

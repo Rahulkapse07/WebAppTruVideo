@@ -55,22 +55,31 @@ public class LoginPage extends JavaUtility {
 		page.click(logIn_Button);
 		logger.info("Clicked on LogIn button without entering credentials");
 		String errorMessage = page.textContent(errorAlertMessage_Login).trim();
-		logger.info("Error message displayed for null credentials as : " + errorMessage);
+		logger.info("Error message displayed for null credentials ");
 		page.locator(close_Button_ErrorAlert).first().click();
 		return errorMessage;
 	}
 
-	public String loginWithInvalidCredentials() {
-		page.fill(username_Field, "test9fjr@gmail.com");
-		page.fill(password_Field, "3787hjdsd");
+	public String loginWithInvalidCredentials(String Username ,String password) {
+		page.fill(username_Field, Username);
+		page.fill(password_Field, password);
 		page.click(logIn_Button);
 		logger.info("Clicked on LogIn button when entering invalid login credentials");
 		String errorMessage = page.textContent(errorAlertMessage_Login);
-		logger.info("Error message displayed for ivalid credentials as : " + errorMessage);
+		logger.info("Error message displayed for ivalid credentials " );
 		page.locator(close_Button_ErrorAlert).first().click();
 		return errorMessage;
 	}
 
+	public String loginToApplicationUpdatedpass(String username , String password) {
+		
+		navigateToHomePage(username,password);
+		logger.info("Username / password entered and clicked on LogIn button");
+		System.out.println("New Page title is : " + page.title());
+		logger.info("navigated to the Home Page & Title is : " + page.title());
+		return page.title();
+	}
+	
 	public String loginToApplication(String username, String password) {
 		page.reload();
 		navigateToHomePage(username, password);
@@ -80,11 +89,11 @@ public class LoginPage extends JavaUtility {
 		return page.title();
 	}
 
-	public HomePage navigateToHomePage(String username, String password) {
+	public HomePage navigateToHomePage(String username, String password){
 		page.fill(username_Field, username);
-		logger.info("Entered User Name"+username);
+		logger.info("Entered User Name  "+username);
 		page.fill(password_Field, password);
-		logger.info("Entered Password"+password);
+		logger.info("Entered Password    *********");
 		page.click(logIn_Button);
 		logger.info("Navigated to the Home Page");
 		HomePage homePage = new HomePage(page);
@@ -92,7 +101,7 @@ public class LoginPage extends JavaUtility {
 		logInDealer = page.textContent(homePage.getLoginDealerLabel());
 		//PlaywrightFactory.getBrowserContext().storageState(new BrowserContext.StorageStateOptions()
 		//		.setPath(Paths.get("./src/main/resources/LoginStorageState/loginDetails.json")));
-		return new HomePage(page);
+	return new HomePage(page);
 	}
 	
 	public void navigateToUpdatePassword(Page newPage,String username, String password) {

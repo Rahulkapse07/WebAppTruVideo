@@ -1,8 +1,10 @@
 package com.truvideo.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import com.truvideo.base.BaseTest;
+import com.truvideo.pages.LoginPage;
 import com.truvideo.pages.UserPage;
 
 public class UserPageTest extends BaseTest {
@@ -10,50 +12,99 @@ public class UserPageTest extends BaseTest {
 
 	@BeforeClass
 	public void init() {
-		userPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToUserspage();
+		LoginPage loginPage = new LoginPage(page);
+		loginPage.loginToApplication(prop.getProperty("username"), prop.getProperty("password"));
+		page.navigate(prop.getProperty("usersPageURL"));
+		userPage = new UserPage(page);
 	}
 
-	@Test (priority = 2)
-	public void verifyRequiredFieldinAddUser() throws InterruptedException {
-		userPage.addNewAdvisor("Service Dashboard", "Kenility Store");
+	@DataProvider(name = "userData")
+	public Object[][] userDataProvider() {
+		return new Object[][] {
+				{ "Service Dashboard", "Kenility Store", "loginwithNewUser", "Test123", "updatedpassword" },
+				{ "Service App", "Kenility Store", "addNewTechnician", "", "" },
+				{ "Sales App and Dashboard", "Kenility Store", "addNewSalesUser", "", "" },
+				{ "Sales Manager", "Kenility Store", "addNewSalesManager", "", "" },
+				{ "Administrator", "Kenility Store", "addNewAdminUser", "", "" },
+				{ "Service Dashboard", "Kenility Store", "addNewAdvisor", "", "" },
+				{ "Dealer admin", "Kenility Store", "addNewDealerAdmin", "", "" },
+				{ "Service Dashboard", "Kenility Store", "verifyusersSearchFunctionality", "", "" } };
 	}
 
-	@Test(priority = 1)
-	public void verifyNewTechnicianUser() throws InterruptedException {
-		userPage.addNewTechnician("Kenility Store", "Service App");
-	}
-	@Test(priority = 3)
-	public void verifyNewSalesUser() throws InterruptedException {
-		userPage.addNewSalesUser("Sales App and Dashboard","Kenility Store");
-	}
-	@Test(priority = 4)
-	public void verifyNewSalesManagerCreation() throws InterruptedException {
-		userPage.addNewSalesManager("Sales Manager","Kenility Store");
-	}
-	@Test(priority = 5)
-	public void verifyNewAdminUserCreation() throws InterruptedException {
-		userPage.addNewAdminUser("Administrator","Kenility Store");
-	}
-	@Test(priority = 9)
-	public void updatePasswordNewUser() throws InterruptedException {
-		userPage.updateUserPassword("Service Dashboard", "Kenility Store", "Test123");
-	}
-	@Test(priority = 10)
-	public void loginwithNewUser() throws InterruptedException {
-		userPage.loginwithNewUser("Service Dashboard", "Kenility Store", "Test123", "updatedpassword");
+	@Test(dataProvider = "userData")
+	public void verifyUserCreation(String role, String store, String methodName, String password,
+			String updatedPassword) throws InterruptedException {
+		role = userPage.extractValue(role);
+		store = userPage.extractValue(store);
+		password = userPage.extractValue(password);
+		updatedPassword = userPage.extractValue(updatedPassword);
+
+		switch (methodName) {
+		case "addNewAdvisor":
+			userPage.addNewAdvisor(role, store);
+			break;
+		case "addNewTechnician":
+			userPage.addNewTechnician(store, role);
+			break;
+		case "addNewSalesUser":
+			userPage.addNewSalesUser(role, store);
+			break;
+		case "addNewSalesManager":
+			userPage.addNewSalesManagerUser(role, store);
+			break;
+		case "addNewAdminUser":
+			userPage.addNewAdminUser(role, store);
+			break;
+		case "loginwithNewUser":
+			userPage.checkLoginWithEdit_Update_User(role, store, password, updatedPassword);
+			break;
+		case "addNewDealerAdmin":
+			userPage.addNewDealerAdmin(role, store);
+			break;
+		case "verifyusersSearchFunctionality":
+			userPage.searchUser(role, store);
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid method name: " + methodName);
+		}
 	}
 
-	@Test(priority = 7)
+	@Test
 	public void verifyUserStatus() throws InterruptedException {
-		userPage.userStatus();
+		Assert.assertTrue(userPage.userStatus());
 	}
-	@Test(priority = 6)
+
+	@Test
 	public void verifyBulkUserCreation() throws InterruptedException {
-		userPage.bulkCreateUser();
+		Assert.assertTrue(userPage.bulkCreateUser());
 	}
-	@Test(priority = 8)
+
+	@Test
 	public void verifyselectActionsonUser() throws InterruptedException {
 		userPage.actionsOnUsers();
 	}
+
+	@Test
+	public void verifyElementsOnUserPage() throws InterruptedException {
+		Assert.assertTrue(userPage.elementsonUserPage());
+	}
+
+	@Test
+	public void verifyusersfromSelectDealer() throws InterruptedException {
+		Assert.assertTrue(userPage.getUsersFromSelectDealer());
+	}
+
+	@DataProvider(name = "userActionsProvider")
+	public Object[][] userActionsProvider() {
+		return new Object[][] { { "Send Invite to App", "Sent invitation to app", "Kenility Store  - App Invitation" },
+				{ "Send Invite to Web Dashboard", "Sent invitation to dashboard.", "Password Creation" } };
+	}
+
+	@Test(dataProvider = "userActionsProvider")
+	public void verifySelectActionsOnUser(String actionType, String expectedMessage, String message)
+			throws InterruptedException {
+
+		Assert.assertTrue(userPage.actionsOnUsers(actionType, expectedMessage, message));
+	}
+
 }

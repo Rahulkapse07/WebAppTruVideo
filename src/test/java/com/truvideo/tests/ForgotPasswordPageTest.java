@@ -1,7 +1,11 @@
 package com.truvideo.tests;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import com.mailosaur.MailosaurException;
 import com.truvideo.base.BaseTest;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.pages.ForgotPasswordPage;
@@ -37,8 +41,8 @@ public class ForgotPasswordPageTest extends BaseTest {
 	}
 	
 	@Test(priority = 5)
-	public void verifySendPasswordRecoveryMail() {
-		Assert.assertTrue(forgotPasswordPage.enterValidUsersEmailId_ClickOnResendPass());
+	public void verifySendPasswordRecoveryMail() throws IOException, MailosaurException, InterruptedException {
+		forgotPasswordPage.enterValidUsersEmailId_ClickOnResendPass(prop.getProperty("validUserEmail"),prop.getProperty("NewPassword"));
 	}
 	
 	@Test(priority = 6)
@@ -46,5 +50,6 @@ public class ForgotPasswordPageTest extends BaseTest {
 		String actualPageTitle=forgotPasswordPage.clickOnBackToLoginPage_Button();
 		Assert.assertEquals(actualPageTitle, AppConstants.LOGINPAGE_TITLE);
 	}
+	
  
 }

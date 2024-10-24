@@ -5,10 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.ElementNotInteractableException;
+import org.testng.SkipException;
+import org.testng.asserts.SoftAssert;
 
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.SelectOption;
+import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
 
 public class MessageScreen_Order extends JavaUtility {
@@ -20,38 +27,75 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	private String messageIframe = "#messages-body-iframe > #messages-iframe";
-	private String message_profile = "//div[@class='profile__avatar']//div//div";
+	private String message_profile = "#profile .avatar-container";
 	private String message_profile_user = ".profile__user-info  p.profile__user-info-title";
 	// private String Store_profile_name = "//a[@class='dropdown-toggle']//span[2]";
-	private String Store_profile_name = "a.dropdown-toggle >span >span:nth-child(3)";
-	private String message_profile_inside_close_btn = ".mat-mdc-dialog-component-host > .close";
-	private String message_profile_input = "#mat-input-8";
-	private String message_profile_save_btn = "//span[@class='mdc-button__label'][text()=' Save ']";
-	private String message_profile_change = ".ng-pristine .avatar-container >.avatar-content";
+	private String message_profile_input = "input[id='mat-input-2']";
+	private String message_profile_input2 = "input[id='mat-input-3']";
+	private String message_profile_save_btn = "div.mat-mdc-dialog-actions button span:nth-child(3)";
 	private String createIcon = "mat-icon.profile__action-fab-icon";
-	private String Message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
-	private String Message_Search_conversation = "//input[@placeholder ='Search a conversation']";
-	private String Message_Search_icon = "//div[@class='mat-mdc-form-field-icon-prefix ng-tns-c3736059725-2 ng-star-inserted']";
-	private String Message_filter_icon = "//div[@class='mat-mdc-form-field-icon-suffix ng-tns-c3736059725-2 ng-star-inserted']";
-	private String Message_filter_buttons = "span.mat-mdc-chip-focus-overlay";
-	private String Message_list_icon_whatsapp = "div.channels-list-item__main > .channels-list-item__status-phone > .channels-list-item__avatar__service-icon";
-	private String Message_filter_Whatsapplable = ".channels-list-item__status-phone .mat-icon";
-	private String Message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
-	private String StartconversationBtn = ".chat-input__button span.mat-mdc-button-persistent-ripple";
-	private String Countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
-	private String StartconversatationFirstname = "#mat-input-1";
-	private String Startconversatationlastname = "#mat-input-2";
-	private String StartconMobileno = "#mat-input-3";
+	private String message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
+	private String message_Search_conversation = "input[id='mat-input-0']";
+	private String message_filter_buttons = "span.mat-mdc-chip-focus-overlay";
+	private String message_filter_Whatsapplable = ".channels-list-item__status-phone .mat-icon";
+	private String message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
+	private String startconversationBtn = ".chat-input__button span.mdc-button__label";
+	private String countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
+	private String startconversatationFirstname = "#mat-input-2";
+	private String startconversatationlastname = "#mat-input-3";
+	private String startconMobileno = "ngx-material-intl-tel-input mat-form-field:nth-child(2) input";
+	private String message_Search_icon = "#profile div.avatar-container";
+	private String startConverSMS_Whatsapp_filterbuttn = "form mat-form-field:nth-child(4) ";
 
-	// Check UI of message R/O
+	private String startConverSMS_Whatsapp_text = ".mat-mdc-option span";
+	private String startConverSMS_Whatsapp = "#mat-select-0-panel mat-option span:has-text('Whatsapp')";
+	private String startConverSMS_Sms = "#mat-option-0:has-text('SMS')";
+	private String conversationInfo = "#header-info p";
+	private String conversationInfoname = "#first-content div.info-container__content__title";
+	private String converstiontitlename = ".chat-header__main p.chat-header__title";
+	private String conversationInfobn = ".chat-header__drop-down button span.mat-mdc-button-touch-target";
+
+	private String searchFilter2 = ".channels-search div.mat-mdc-text-field-wrapper div.mat-mdc-form-field-focus-overlay ";
+	private String searchFilter = "#mat-input-0";
+	private String searchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
+	private String searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
+
+	private String conversation_header = ".info-container__content div.avatar-container";
+	private String conversation_GotoRo_btn = "button.order-button";
+	private String returnToMessagePAge = ".main-body div div.return p";
+	private String conversationtbcanclebtn = ".info-container__header__close-btn mat-icon svg";
+	private String conversationChannelOwnerName = "#first-content div.info-container__content__title";
+	private String rochannelName = "div.chat-header__main p.chat-header__title";
+
+	private String conversationinactivemess = "div.chat-body__blocked-message.ng-star-inserted";
+	private String ceactivatebtn = ".chat-input__options div";
+	private String messagechatfield = "#mat-input-1";
+	private String nOconversationStartmessasge = ".chat-empty-container.ng-star-inserted h1";
+	// private String nOconversationStartmessasge = "#header-info p";
+	private String channalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
+	private String channelscount = ".channels-list__section.list-all .channels-list-item__main";
+
+	private String messageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
+	private String attachmentPath = "src/main/resources/Data/image/testimage.png";
+	private String messageSendBtn = ".chat-input__options button:nth-child(2) mat-icon";
+	private String conversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
+	private String messageownername = ".chat-header__phone p:nth-child(4)";
+	private String addRepairOrder_Btn = "#repair-order-add";
+	private String sendOriginal_btn = ".mdc-button.mdc-button--outlined.mat-mdc-outlined-button span.mat-mdc-focus-indicator";
+
+	private String conversationTextlabel = ".chat-header__main p.chat-header__title";
+
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
-		FrameLocator iframe = page.frameLocator(messageIframe);
-	    page.waitForCondition(()-> iframe.locator(Converstiontitlename).isVisible());
+		FrameLocator iframes = page.frameLocator(messageIframe);
+		page.waitForTimeout(5000);
+		page.waitForCondition(() -> iframes.locator(message_profile).isVisible());
 		// Frame for Message
-		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
-		if (iframe.locator(Message_Filter_Icon).isVisible() && iframe.locator(createIcon).isVisible()
-				&& iframe.locator(Message_Search_conversation).isVisible()) {
+		page.waitForTimeout(4000);
+		page.waitForCondition(() -> iframes.locator(message_profile).isVisible());
+		if (iframes.locator(createIcon).isVisible() && iframes.locator(message_Search_conversation).isVisible()
+				&& iframes.locator(message_Search_icon).isVisible()
+				&& iframes.locator(conversation_header).isVisible()) {
 			logger.info("Elements are verifed and Visible");
 			return true;
 		} else {
@@ -59,48 +103,127 @@ public class MessageScreen_Order extends JavaUtility {
 			return false;
 		}
 	}
+
 	// Verify functionality of all Elements
 
-	public boolean Message_Profile_setting_button() {
+	private String MessageProfileName = ".profile__user-info p:nth-child(1)";
+	private String loginusername =   "li.account-nav a span span:nth-child(3)";
+	public boolean Verify_Profile_setting_button(String ProfileName) {
+		page.reload();
+		logger.info("Verify Message Profile Settings");
+		List<Boolean> flags = new ArrayList<>();
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		page.waitForCondition(()->iframe.locator(message_profile).isVisible());
+		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
+		String MessageOwneraName = iframe.locator(messageownername).innerText().toLowerCase();
+		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
+//		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+//			logger.info("Profile After changes Matched");
+//		} else {
+//			logger.info("Profile name not changed");
+//		}
+	
 		if (iframe.locator(message_profile).isVisible()) {
+			page.waitForTimeout(3000);
 			iframe.locator(message_profile).click();
 			logger.info("Message profile clicked");
-			page.waitForTimeout(2000);
-			
-		//	iframe.locator(message_profile_input).click();
-			logger.info("hsv");
+			page.waitForTimeout(5000);
+			// iframe.locator(message_profile_input).click();
 			page.keyboard().press("Control+A");
-			page.keyboard().press("Backspace");
-			iframe.locator(message_profile_input).fill("Suraj singh");
-
+			page.waitForTimeout(5000);
+			iframe.locator(message_profile_input).type(ProfileName);
+			page.waitForTimeout(1500);
+			iframe.locator(message_profile_save_btn).click();
+			page.waitForTimeout(3000);
+			logger.info("Clicked on save button");
+			//page.reload(); // We dont need this reload,This is the issue right now
+		} else {
+			logger.info("Message Profile Setting Failed To Open");
+			flags.add(false);
+		}
+		page.waitForTimeout(3000);
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
+		}
+		
+		if (iframe.locator(message_profile).isVisible()) {
+			page.waitForTimeout(3000);
+			iframe.locator(message_profile).click();
+			logger.info("Message profile clicked");
+			page.waitForTimeout(5000);
+			Locator Loginuserlabel = page.locator(loginusername);
+			String Loginuser = Loginuserlabel.innerText();
+			System.out.println(Loginuser);
+			page.keyboard().press("Control+A");
+			page.waitForTimeout(5000);
+			iframe.locator(message_profile_input2).type(Loginuser);
+			page.waitForTimeout(1500);
 			iframe.locator(message_profile_save_btn).click();
 			logger.info("Clicked on save button");
-
-			// iframe.locator(message_profile_change).click();
-			// iframe.locator(message_profile_change).setInputFiles(Paths.get("./src/main/resources/Images/image.jpg"));
-			iframe.locator(message_profile_inside_close_btn);
-			logger.info("message_profile_close");
-			return true;
 		}
-		return false;
+		page.waitForTimeout(3000);
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
+		}
+		return !flags.contains(false);
 	}
 
 	public boolean Verify_message_Name() {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage homePage = new HomePage(page);
 		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
-		System.out.println(storeusername);
 		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
-		System.out.println(messageusername);
+
 		if (storeusername.trim().equals(messageusername.trim())) {
-			logger.info("The Channel owner is same user who is login" + messageusername);
+			logger.info(storeusername + "The Channel owner is same user who is login--" + messageusername);
 			return true;
 		} else {
-			logger.info("The Channel owner is not match with user who is login");
+			logger.info(storeusername+"The Channel owner is not match with user who is login--" + messageusername);
 			return false;
 		}
+	}
+
+	private String ChatFilterButtons = "span button span:nth-child(2)";
+//	private String logInDealerLabel = "li.account-nav a span span:nth-child(1)";
+//
+//	public String getLoginDealerLabel() {
+//		return logInDealerLabel;
+//	}
+
+	public boolean verify_Default_Filters() throws Exception {
+		page.reload();
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage HP = new HomePage(page);
+		List<Boolean> flags = new ArrayList<>();
+		if (!isFilterApplied("My") == true) {
+			flags.add(false);
+		}
+		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
+			if (!isFilterApplied("Whatsapp") == true) {
+				flags.add(false);
+			}
+		} else {
+			HP.navigateToDealersPage();
+			page.waitForTimeout(5000);
+			DealersPage dp = new DealersPage(page);
+			String dealername = page.locator(HP.getLoginDealerLabel()).innerText();
+			dp.Verify_Whatsapp_textconversation(dealername, "Text Conversation");
+			logger.info("CHAT IS ENABLE NOW");
+			HP.navigateToMessageScreen_Order();
+			logger.info("VERIFY WHATSAPP FILTER ");
+			page.waitForTimeout(4000);
+			if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
+				if (!isFilterApplied("Whatsapp") == true) {
+					flags.add(false);
+				}
+			}
+
+		}
+		logger.info("DEFAULT FILTERS PRESENT");
+		return !flags.contains(false);
 	}
 
 	private String list_channelowner = ".list-all div p.channels-list-item__advisor";
@@ -109,293 +232,22 @@ public class MessageScreen_Order extends JavaUtility {
 		return "button:has-text('" + buttonText + "')";
 	}
 
-	public boolean verifyMyFilter() {
+	public boolean verifyMyFilter(String filter) {
+		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
 
-		page.waitForCondition(() -> iframe.locator(filterButton("My")).isVisible());
+		page.waitForCondition(() -> iframe.locator(filterButton(filter)).isVisible());
 
-		isFilterApplied("My");
+		isFilterApplied(filter);
 
 		List<Boolean> flags = new ArrayList<>();
 		HomePage homePage = new HomePage(page);
+		logger.info("filter name" + ":-" + filter);
 		String loginUser = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
 		logger.info("Login user name catched : " + loginUser);
 		page.waitForTimeout(5000);
 		List<String> adviosrlist = iframe.locator(list_channelowner).allInnerTexts();
 		for (String advisor : adviosrlist) {
-		if (advisor.toLowerCase().contains(loginUser)) {
-				logger.info(loginUser + " Login user is matched with channele owner : " + advisor);
-				flags.add(true);
-			} else {
-				logger.info(loginUser + " Login user is not matched with channele owner : " + advisor);
-				flags.add(false);
-			}
-		}
-		return !flags.contains(false);
-	}
-
-	private String ChatFilterButtons = "span button";
-
-	public boolean verifyfilterbuttons() {
-		page.reload();
-		page.waitForTimeout(5000);
-		FrameLocator iframe = page.frameLocator(messageIframe);
-
-		page.waitForTimeout(5000);
-		page.waitForCondition(() -> iframe.locator(filterButton("My")).isVisible());
-
-		String isMyButtonSelected = iframe.locator(filterButton("My")).getAttribute("aria-selected");
-		String iswhatsappButtonSelected = iframe.locator(filterButton(" Whatsapp")).getAttribute("aria-selected");
-		String isSmsButtonSelected = iframe.locator(filterButton(" SMS")).getAttribute("aria-selected");
-		String isunreadButtonSelected = iframe.locator(filterButton(" Unread")).getAttribute("aria-selected");
-
-		List<Boolean> flags = new ArrayList<>();
-		if (!isMyButtonSelected.equals("true") == true) {
-			logger.info("My filter is not selected by default");
-			iframe.locator(filterButton("My")).click();
-			logger.info("Click on My filter to select it");
-			flags.add(false);
-		}
-		iframe.locator(filterButton("My")).click();
-		logger.info("My button working properly");
-
-		if (!iswhatsappButtonSelected.equals("true")) {
-			logger.info("My filter is not selected by default");
-			iframe.locator(filterButton("Whatsapp")).dblclick();
-			logger.info("Click on My filter to select it");
-			flags.add(false);
-		}
-		iframe.locator(filterButton("Whatsapp")).click();
-		logger.info("Whatsapp button working properly");
-		page.waitForTimeout(2000);
-		if (isSmsButtonSelected.equals("true")) {
-			logger.info("My filter is not selected by default");
-			flags.add(false);
-		}
-		iframe.locator(filterButton("SMS")).click();
-		logger.info("Click on My filter to select it");
-		page.waitForTimeout(2000);
-
-		if (isunreadButtonSelected.equals("true")) {
-			logger.info("My filter is not selected by default");
-			flags.add(false);
-			logger.info("Click on My filter to select it");
-		}
-		iframe.locator(filterButton("Unread")).click();
-		page.waitForTimeout(2000);
-
-		return !flags.contains(false);
-
-	}
-
-	public boolean checkMy_WhatsApp_FilterIsApplied() {
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> flags = new ArrayList<>();
-		if (!isFilterApplied("My") == true) {
-			flags.add(false);
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				flags.add(false);
-			}
-		}
-		return !flags.contains(false);
-	}
-
-	public boolean check_my_filterIsApplied() {
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> flags = new ArrayList<>();
-		if (!isFilterApplied("My") == true) {
-			flags.add(false);
-		}
-		iframe.locator(filterButton("My")).click();
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				flags.add(false);
-			}
-		}
-
-		return !flags.contains(false);
-	}
-
-	// method to select filter buttons
-
-//	public boolean click_My_filterBotton() {
-//		FrameLocator iframe = page.frameLocator(messageIframe);
-//		// Store true false for return value
-//		List<Boolean> values = new ArrayList<>();
-//
-//		if (!isFilterApplied("My") == true) {
-//			logger.info("My button was not selected");
-//			iframe.locator(filterButton("My")).click();
-//			values.add(false);
-//		}
-//		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-//			if (!isFilterApplied("Whatsapp") == true) {
-//				logger.info("whatsapp is alredy selected");
-//				values.add(false);
-//			}
-//			iframe.locator(filterButton("Whatsapp")).click();
-//			logger.info("Remove Whatsapp filter");
-//			page.waitForTimeout(5000);
-//		}
-//
-//		return !values.contains(false);
-//
-//	}
-
-	public boolean click_Whatsapp_filterBotton() {
-
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		// Store true false for return value
-		List<Boolean> values = new ArrayList<>();
-
-		logger.info("Select only Whatsapp filter");
-
-		if (isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			iframe.locator(filterButton("My")).click();
-			values.add(true);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (isFilterApplied("Whatsapp") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("Whatsapp")).click();
-			logger.info("whatsapp selected");
-			page.waitForTimeout(5000);
-		}
-
-		return !values.contains(false);
-
-	}
-
-	public boolean click_Sms_filterBotton() {
-
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		// Store true false for return value
-		List<Boolean> values = new ArrayList<>();
-
-		logger.info("Select only Whatsapp filter");
-
-		if (isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			values.add(false);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (isFilterApplied("Whatsapp") == true) {
-				iframe.locator(filterButton("Whatsapp")).click();
-				values.add(true);
-			}
-			page.waitForTimeout(5000);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (isFilterApplied("SMS") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("SMS")).click();
-			logger.info("SMS selected");
-
-			page.waitForTimeout(5000);
-		}
-
-		return !values.contains(false);
-
-	}
-
-	public boolean click_Unread_filterBotton() {
-
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		// Store true false for return value
-		List<Boolean> values = new ArrayList<>();
-
-		logger.info("Select only Whatsapp filter");
-
-		if (isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			values.add(true);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				values.add(true);
-			}
-			page.waitForTimeout(5000);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (!isFilterApplied("SMS") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("SMS")).click();
-
-			page.waitForTimeout(5000);
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Unread")) {
-			if (isFilterApplied("Unread") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("Unread")).click();
-			logger.info("Unread selected");
-
-			page.waitForTimeout(5000);
-		}
-
-		return !values.contains(false);
-
-	}
-
-	private String Channal_list_MY_SmS = ".channels-list-item__main .channels-list-item__advisor";
-
-	public boolean click_My_AND_Sms_filterBotton() {
-
-		page.reload();
-
-		FrameLocator iframe = page.frameLocator(messageIframe);
-		// Store true false for return value
-		List<Boolean> values = new ArrayList<>();
-
-		logger.info("Select only Whatsapp filter");
-
-		if (!isFilterApplied("My") == true) {
-			values.add(false);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("Whatsapp")).click();
-			page.waitForTimeout(5000);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (isFilterApplied("SMS") == true) {
-				values.add(true);
-			}
-			iframe.locator(filterButton("SMS")).click();
-			page.waitForTimeout(5000);
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Unread")) {
-			if (isFilterApplied("Unread") == true) {
-				values.add(false);
-			}
-			page.waitForTimeout(5000);
-		}
-
-		page.waitForCondition(() -> iframe.locator(filterButton("my")).isVisible());
-		List<Boolean> flags = new ArrayList<>();
-		HomePage homePage = new HomePage(page);
-		String loginUser = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
-		logger.info("Login user name catched : " + loginUser);
-		page.waitForTimeout(5000);
-		List<String> adviosrlist = iframe.locator(Channal_list_MY_SmS).allInnerTexts();
-		for (String advisor : adviosrlist) {
-			logger.info("Iterating list of owner");
 			if (advisor.toLowerCase().contains(loginUser)) {
 				logger.info(loginUser + " Login user is matched with channele owner : " + advisor);
 				flags.add(true);
@@ -404,43 +256,96 @@ public class MessageScreen_Order extends JavaUtility {
 				flags.add(false);
 			}
 		}
-
-		return !values.contains(false);
-
+		return !flags.contains(false);
 	}
 
-	public boolean click_My_AND_UNREAD_filterBotton() {
-		page.reload();
+	private String channel_icon = ".channels-list-item__status-phone.ng-star-inserted mat-icon";
 
+	public boolean verify_with_My_filterBotton(String Filtertype, String My, String Whatsapp, String SMS, String Unread,
+			String filter2) {
+
+		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		// Store true false for return value
 		List<Boolean> values = new ArrayList<>();
-
-		logger.info("Select only Whatsapp filter");
-
-		if (!isFilterApplied("My") == true) {
-			values.add(false);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				values.add(false);
+		List<String> isWhatsappButtonSelected = new ArrayList<>();
+		List<Boolean> flags = new ArrayList<>();
+		HomePage homePage = new HomePage(page);
+		String loginUser = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
+		if (isFilterApplied(My) == true && isFilterApplied(Whatsapp) == true && !isFilterApplied(SMS) == true
+				&& !isFilterApplied(Unread) == true) {
+			logger.info("Condition True");
+			if (Filtertype.contains("My & Whatsapp")) {
+				logger.info("FILTER SELECTED " + Filtertype);
+			} else if (Filtertype.contains("My & SMS")) {
+				iframe.locator(filterButton(SMS)).click();
+				iframe.locator(filterButton(Whatsapp)).click();
+				logger.info("FILTER SELECTED" + Filtertype);
+			} else {
+				logger.warn("Wrong filters present" + Filtertype);
 			}
+
+			logger.info("Login user name catched : " + loginUser);
+			List<String> adviosrlist = iframe.locator(list_channelowner).allInnerTexts();
+			page.waitForTimeout(3000);
+			for (String advisor : adviosrlist) {
+				if (advisor.toLowerCase().contains(loginUser)) {
+					logger.info(loginUser + " Login user is matched with channele owner : " + advisor);
+					flags.add(true);
+				} else {
+					logger.info(loginUser + " Login user is not matched with channele owner : " + advisor);
+					flags.add(false);
+				}
+			}
+			List<ElementHandle> elements = iframe.locator(channel_icon).elementHandles();
+			for (ElementHandle element : elements) {
+				String iconName = element.getAttribute("data-mat-icon-name");
+				isWhatsappButtonSelected.add(iconName);
+			}
+			for (String element : isWhatsappButtonSelected) {
+				if (element.contains(filter2)) {
+					logger.info("CHANNELS ARE IN RIGHT FILTER" + Filtertype);
+				} else {
+					logger.info("CHANNELS ARE IN WRONG FILTER");
+					values.add(false);
+				}
+			}
+		} else {
+			System.out.println("FAILED");
+		}
+		return !values.contains(false);
+	}
+
+	public boolean click_My_AND_UNREAD_filterBotton(String Filtertype, String My, String Whatsapp, String SMS,
+			String Unread, String filter2) {
+
+		page.reload();
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		// Store true false for return value
+		List<String> isWhatsappButtonSelected = new ArrayList<>();
+		List<Boolean> values = new ArrayList<>();
+		if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true && !isFilterApplied("SMS") == true
+				&& !isFilterApplied("Unread") == true) {
+
 			iframe.locator(filterButton("Whatsapp")).click();
-			page.waitForTimeout(5000);
-		}
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (isFilterApplied("SMS") == true) {
-				values.add(false);
-			}
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Unread")) {
-			if (isFilterApplied("Unread") == true) {
-				values.add(false);
-			}
 			iframe.locator(filterButton("Unread")).click();
+			page.waitForTimeout(8000);
+			List<ElementHandle> elements = iframe.locator(channel_icon).elementHandles();
+			for (ElementHandle element : elements) {
+				String iconName = element.getAttribute("data-mat-icon-name");
+				isWhatsappButtonSelected.add(iconName);
+			}
+			for (String element : isWhatsappButtonSelected) {
+				if (element.contains(filter2)) {
+					logger.info("CHANNELS ARE IN RIGHT FILTER" + Filtertype);
+				} else {
+					logger.info("CHANNELS ARE IN WRONG FILTER");
+					values.add(false);
+				}
+			}
+		} else {
 			page.waitForTimeout(5000);
+			return !values.contains(false);
 		}
 
 		return !values.contains(false);
@@ -448,7 +353,7 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	// Method For Verify Functionality Of filter buttons
-	
+
 	private boolean isFilterApplied(String buttonName) {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		String isMyButtonSelected = iframe.locator(filterButton(buttonName)).getAttribute("aria-selected");
@@ -459,361 +364,709 @@ public class MessageScreen_Order extends JavaUtility {
 		}
 	}
 
-	private String filterButtonforwhatsapp(String buttonText) {
-		return ".channels-list-item__status-phone .mat-icon : has-text('" + buttonText + "')";
-	}
-
-	private String firstname = "Suraj";
-	private String lastname = "Singh";
-
-	private String StartConverSMS_Whatsapp_filterbuttn = "#mat-select-value-1";
-	private String StartConverSMS_Whatsapp_text = ".mat-mdc-option span";
-	private String StartConverSMS_Whatsapp = "#mat-select-0-panel mat-option span:has-text('Whatsapp')";
-	private String StartConverSMS_Sms = "#mat-option-0:has-text('SMS')";
-	private String ConversationInfo = "#first-content .info-container__content__title";
-	private String Converstiontitlename = ".chat-header__main p.chat-header__title";
-	private String ConversationInfobn = ".chat-header__drop-down button span.mat-mdc-button-touch-target";
-
-	private String conversationTextlabel = "div.channels-list-item__title-container p[aria-describedby='cdk-describedby-message-ng-1-4']";
-
 	private String CountryName(String countryname) {
 
 		return ".mdc-list-item__primary-text .country-option  div:nth-child(2):has-text('" + countryname + "')";
+
 	}
 
-	public boolean verifyStartconversatationbtn(String number) {
+	private String Infobuttn = ".chat-header__drop-down button";
+
+	private String firstname = "Automation";
+	private String lastname = "Name";
+
+
+	private String StartConFilter(String filter) {
+		return "#mat-select-0-panel mat-option span:has-text('" + filter + "')";
+	}
+
+	private String informationicon = ".chat-header__drop-down button";
+
+	public boolean verifyStartconversatationbtn(String number, String filter) throws Exception {
+
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
-		iframe.locator(Message_start_convers_buttn).click();
-		logger.info(Message_Filter_Icon);
-		page.waitForCondition(() -> iframe.locator(StartconversatationFirstname).isVisible());
-		iframe.locator(StartconversatationFirstname).fill(firstname);
-		logger.info(Message_Filter_Icon);
-		iframe.locator(Startconversatationlastname).fill(lastname);
-		logger.info(Message_Filter_Icon);
-		page.waitForTimeout(3000);
-		iframe.locator(Countryoptionbtn).click();
-		logger.info(Message_Filter_Icon);
-		iframe.locator(CountryName("United States")).click();
-		logger.info(Message_Filter_Icon);
-		iframe.locator(StartconMobileno).fill(number);
-		logger.info("Number:-" + number);
-		page.waitForTimeout(2000);
-		iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
-		page.waitForTimeout(2000);
+		HomePage homepage = new HomePage(page);
+		homepage.navigateToMessageScreen_Order();
+		page.waitForCondition(() -> iframe.locator(message_start_convers_buttn).isVisible());
+		if (iframe.locator(message_start_convers_buttn).isVisible()) {
+			logger.info("CONVERSATION CHAT IS VISIBLE");
+			iframe.locator(message_start_convers_buttn).click();
+			logger.info("OPENED CONVERSATION TAB");
+			page.waitForCondition(() -> iframe.locator(startconversatationFirstname).isVisible());
+			iframe.locator(startconversatationFirstname).fill(firstname);
+			logger.info("ENTERED FIRSTNAME :-" + firstname);
+			iframe.locator(startconversatationlastname).fill(lastname);
+			logger.info("ENTERED LASTNAME :-" + lastname);
+			page.waitForTimeout(3000);
+			iframe.locator(countryoptionbtn).click();
+			iframe.locator(CountryName("United States")).click();
+			logger.info("SELECTED COUNTRY");
+			page.waitForTimeout(3000);
+			iframe.locator(startconMobileno).fill(number);
+			logger.info("Number:-" + number);
+			page.waitForTimeout(2000);
+			iframe.locator(startConverSMS_Whatsapp_filterbuttn).click();
+			page.waitForTimeout(2000);
+			List<String> Text = iframe.locator(StartConFilter("SMS")).allInnerTexts();
+			for (String value : Text) {
+				if (value.trim().toUpperCase().contains("SMS")) {
+					iframe.locator(StartConFilter(filter)).click();
+					logger.info("Select SMS");
 
-		List<String> Text = iframe.locator(filterButton("SMS")).allInnerTexts();
+				} else if (value.trim().toUpperCase().contains("WHATSAPP")) {
+					iframe.locator(StartConFilter(filter)).click();
+					logger.info("Select WHATSAPP");
 
-		for (String value : Text) {
+				} else {
+					flags.add(false);
+					logger.info("not clicked");
+				}
+			}
+			if (iframe.locator(startconversationBtn).isVisible()) {
+				try {
+					iframe.locator(startconversationBtn).click();
+					logger.info("Button hit");
+					flags.add(true);
 
-			if (value.trim().toUpperCase().contains("SMS")) {
-				iframe.locator(filterButton("SMS")).click();
-				logger.info("Select SMS");
-
+				} catch (ElementNotInteractableException e) {
+					logger.info("element is not clickable right now");
+					e.printStackTrace();
+					flags.add(true);
+				}
 			} else {
-				logger.info("not clicked");
-
+				flags.add(false);
+				logger.info("Element not found");
 			}
-		}
-        if(iframe.locator(StartconversationBtn).isVisible()) {
-        	try {
-				iframe.locator(StartconversationBtn).click();
-				logger.info("Button hit");
-				flags.add(true);
+			page.waitForCondition(() -> iframe.locator(converstiontitlename).isVisible());
+			page.waitForTimeout(5000);
+			if (!iframe.locator(conversationInfo).isVisible()) {
+				iframe.locator(Infobuttn).click();
+			}
+			String conversinfoname = iframe.locator(conversationInfoname).innerText().toLowerCase();
+			String converstextlabelname = iframe.locator(conversationTextlabel).innerText().toLowerCase();
+			String converstitlename = iframe.locator(converstiontitlename).innerText().toLowerCase();
+			String channelownername = iframe.locator(channelOwnername).innerText().toLowerCase();
+			String userlable = page.innerText(homepage.getLoginUserLabel()).toLowerCase();
 
-			} catch (ElementNotInteractableException e) {
-				logger.info("elemnt is not clickable right now");
-				e.printStackTrace();
+			System.out.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable );
+			if (channelownername == userlable ) {
+				logger.info("Channel Owner name is matched" + ":-" + userlable);
+			}
+			iframe.locator(conversationInfobn).click();
+			if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
+				logger.info("All names are Matched :" + converstitlename + ":" + conversinfoname + ":"
+						+ converstextlabelname);
 				flags.add(true);
+			} else {
+				logger.info("error message");
+				flags.add(false);
 			}
 		} else {
-			logger.info("Element not found");
-		}
-		page.waitForCondition(() -> iframe.locator(Converstiontitlename).isVisible());
-		page.waitForTimeout(7000);
-		String conversinfoname = iframe.locator(ConversationInfo).innerText().toLowerCase();
-		String converstextlabelname = iframe.locator(conversationTextlabel).innerText().toLowerCase();
-		String converstitlename = iframe.locator(Converstiontitlename).innerText().toLowerCase();
-		System.out.println(conversinfoname + converstextlabelname + converstitlename);
-		iframe.locator(ConversationInfobn).click();
-		if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
-			logger.info(
-					"All names are Matched :" + converstitlename + ":" + conversinfoname + ":" + converstextlabelname);
-			flags.add(true);
-		} else {
-			logger.info("error message");
+			logger.info("CONVERSATION CHAT IS NOT VISIBLE");
 			flags.add(false);
 		}
-		return !flags.contains(false);
-	}
 
-	private String SearchFilter2 = ".channels-search div.mat-mdc-text-field-wrapper div.mat-mdc-form-field-focus-overlay ";
-	private String SearchFilter = "#mat-input-0";
-	private String SearchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
-	private String Searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
+		/*-------second window open------*/
+
+		page.waitForTimeout(3000);
+		logger.info("Launch new browser");
+
+		BrowserContext newContext = PlaywrightFactory.getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null));
+		Page newBrowserPage = newContext.newPage();
+		//Page newBrowserPage = PlaywrightFactory.getBrowser().newContext().newPage();
+
+		newBrowserPage.navigate("https://rc.truvideo.com/");
+		logger.info("navigated to the url" + newBrowserPage.url());
+		newBrowserPage.waitForTimeout(6000);
+		LoginPage loginPage = new LoginPage(newBrowserPage);
+
+        loginPage.navigateToUpdatePassword(newBrowserPage, prop.getProperty("username3"), prop.getProperty("password3"));
+        HomePage Homepage = new HomePage(newBrowserPage);
+        Homepage.navigateToMessageScreen_Order();
+        FrameLocator iframe2 = newBrowserPage.frameLocator(messageIframe);
+	    List<Boolean> flag = new ArrayList<>();
+
+		newBrowserPage.waitForCondition(() -> iframe2.locator(message_start_convers_buttn).isVisible());
+		if (iframe2.locator(message_start_convers_buttn).isVisible()) {
+			logger.info("CONVERSATION CHAT IS VISIBLE");
+			iframe2.locator(message_start_convers_buttn).click();
+			logger.info("OPENED CONVERSATION TAB");
+			newBrowserPage.waitForCondition(() -> iframe2.locator(startconversatationFirstname).isVisible());
+			iframe2.locator(startconversatationFirstname).fill(firstname);
+			logger.info("ENTERED FIRSTNAME :-" + firstname);
+			iframe2.locator(startconversatationlastname).fill(lastname);
+			logger.info("ENTERED LASTNAME :-" + lastname);
+			newBrowserPage.waitForTimeout(3000);
+			iframe2.locator(countryoptionbtn).click();
+			iframe2.locator(CountryName("United States")).click();
+			logger.info("SELECTED COUNTRY");
+			newBrowserPage.waitForTimeout(3000);
+			iframe2.locator(startconMobileno).fill(number);
+			logger.info("Number:-" + number);
+			newBrowserPage.waitForTimeout(2000);
+			iframe2.locator(startConverSMS_Whatsapp_filterbuttn).click();
+			newBrowserPage.waitForTimeout(2000);
+
+
+				List<String> Text2 = iframe2.locator(StartConFilter(filter)).allInnerTexts();
+				for (String value : Text2) {
+					if (value.trim().toUpperCase().contains("SMS")) {
+						iframe2.locator(StartConFilter(filter)).click();
+						logger.info("Select SMS");
+
+					} else if (value.trim().toUpperCase().contains("WHATSAPP")) {
+						iframe2.locator(StartConFilter(filter)).click();
+						logger.info("Select WHATSAPP");
+
+					} else {
+						flag.add(false);
+						logger.info("not clicked");
+					}
+				}
+				if (iframe2.locator(startconversationBtn).isVisible()) {
+					try {
+						iframe2.locator(startconversationBtn).click();
+						logger.info("Button hit");
+						flag.add(true);
+
+					} catch (ElementNotInteractableException e) {
+						logger.info("element is not clickable right now");
+						e.printStackTrace();
+						flag.add(true);
+					}
+				} else {
+					flag.add(false);
+					logger.info("Element not found");
+				}
+				newBrowserPage.waitForCondition(() -> iframe.locator(converstiontitlename).isVisible());
+				newBrowserPage.waitForTimeout(5000);
+				if (!iframe2.locator(conversationInfo).isVisible()) {
+					iframe2.locator(Infobuttn).click();
+				}
+				String conversinfoname = iframe2.locator(conversationInfoname).innerText().toLowerCase();
+				String converstextlabelname = iframe2.locator(conversationTextlabel).innerText().toLowerCase();
+				String converstitlename = iframe2.locator(converstiontitlename).innerText().toLowerCase();
+				String channelownername = iframe2.locator(channelOwnername).innerText().toLowerCase();
+				String userlable = newBrowserPage.innerText(homepage.getLoginUserLabel()).toLowerCase();
+				if (channelownername == userlable ) {
+					logger.info("Channel Owner name is matched" + ":-" + userlable);
+				}
+				System.out.println(conversinfoname + converstextlabelname + converstitlename + channelownername + userlable);
+				iframe2.locator(conversationInfobn).click();
+				if (conversinfoname.contains(converstitlename) && conversinfoname.contains(converstextlabelname)) {
+					logger.info("All names are Matched :" + converstitlename + ":" + conversinfoname + ":"
+							+ converstextlabelname);
+					flag.add(true);
+					
+				} else {
+					logger.info("error message");
+					flag.add(false);
+				}
+			} else {
+				logger.info("CONVERSATION CHAT IS NOT VISIBLE");
+				flag.add(false);
+			}
+
+		newBrowserPage.close();
+		page.waitForTimeout(5000);
+		String channelownername = iframe.locator(channelOwnername).innerText().toLowerCase();
+		String userlable = page.innerText(homepage.getLoginUserLabel()).toLowerCase();
+
+		
+	return!flag.contains(false);
+
+
+	}
 
 	public boolean SearchMessagefilter() {
 		page.waitForTimeout(5000);
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
-		if (iframe.locator(SearchFilter2).isVisible()) {
-			iframe.locator(SearchFilter).fill("suraj");
+		page.waitForTimeout(5000);
+		if (!iframe.locator(searchFilter2).isVisible()) {
 			page.waitForTimeout(2000);
 			logger.info("Search Filter is not Present");
 			flags.add(false);
 		} else {
-			String name = "Suraj";
-			iframe.locator(SearchFilter).fill(name);
+
+			iframe.locator(searchFilter).fill("Suraj");
+			logger.info("Search Filter is Present");
 		}
 
 		return !flags.contains(false);
 
 	}
 
-	private String ConversationTab = "#header-info p";
-	private String ReadUnreadbtn = ".info-container__content__actions span";
+	private String ReadUnreadbtn(String Value) {
+		return ".info-container__content__actions.ng-star-inserted:has-text('" + Value + "')";
+	}
 
-	private String MessageRedDotNotification = ".channels-list-item__unreads-container.ng-star-inserted span";
-	private String Messagebandage = "#my-service-message span.km-tab";
+	private String MessageReDotNotification = "div.channels-list-item__unreads-container.ng-star-inserted span";
+	private String Messagebadge = "span#my-service-message";
 	private String Messagebandagtotalcount = "#all-service-message a span";
 
-	public boolean VerifyReadUnreadNotification() {
+	public boolean VerifyReadUnreadNotification() throws Exception {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		// iframe.locator("#first-content button span:nth-child(2)").click();
 		List<Boolean> flags = new ArrayList<>();
+		page.waitForCondition(() -> page.locator(Messagebadge).isVisible());
+		if (!page.locator(Messagebadge).isVisible() && !page.locator(Messagebandagtotalcount).isVisible()) {
+			logger.info("NO UNREAD MESSAGES ARE PRESENT");
+			throw new Exception("Notifications not available");
+		}
+		logger.info("UNREAD NOTIFICATIONS ARE PRESENT");
+		page.waitForTimeout(3000);
+		logger.info("COUNT UNREAD MESSAGE PRESENT");
+		page.locator(Messagebadge).click();
+		page.waitForCondition(() -> iframe.locator(conversationinactivemess).isVisible());
 
-		page.waitForCondition(() -> iframe.locator(ConversationTab).isVisible());
-		if (!iframe.locator(Conversation_GotoRo_btn).isVisible()) {
-			logger.info("Conversation Tab Not Visible");
+		// Badge count for self notifications.
+		iframe.locator(ReadUnreadbtn(" Mark as unread ")).click();
+		int num = iframe.locator(MessageReDotNotification).count();
+		String count = Integer.toString(num);
+		System.out.println(count);
+		page.waitForTimeout(5000);
+		String ownernotifications;
+		ownernotifications = page.locator(Messagebadge).innerText();
+		System.out.println(ownernotifications);
+
+		if (count.contains(ownernotifications)) {
+			logger.info("Badge count is correct" + ownernotifications);
+		} else {
+			logger.info("Badge count is incorrect" + ownernotifications);
 			flags.add(false);
 		}
-		logger.info("Conversation Tab Visible");
 
-		page.waitForTimeout(4000);
-		String beforeupdate;
+		// Badge count for all notifications
+		page.locator(Messagebandagtotalcount).click();
+		page.waitForCondition(() -> iframe.locator(conversationinactivemess).isVisible());
+		iframe.locator(ReadUnreadbtn(" Mark as unread ")).click();
+		iframe.locator(filterButton("Whatsapp")).click();
+		int Totalcount = iframe.locator(MessageReDotNotification).count();
+		int value = (Totalcount - num);
+		String count2 = Integer.toString(value);
+		System.out.println(count2);
+		page.waitForTimeout(5000);
+		String AllNotications;
+		AllNotications = page.locator(Messagebandagtotalcount).innerText();
+		System.out.println(AllNotications);
 
-		if (page.locator(Messagebandage).isVisible()) {
-			logger.info("Unread messages are present");
-
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			page.waitForTimeout(5000);
-			beforeupdate = page.locator(Messagebandage).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
-
+		if (count2.equals(AllNotications)) {
+			logger.info("Badge count is correct" + AllNotications);
 		} else {
-			beforeupdate = "0";
-			logger.info("No Unread Message present");
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			beforeupdate = page.locator(Messagebandage).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-		}
-
-		// Count Total Number Of Bandags
-		List<Boolean> values = new ArrayList<>();
-		logger.info("Select Unread filter");
-		if (!isFilterApplied("My") == true) {
-			logger.info("Remove My filter");
-			values.add(false);
-		}
-		iframe.locator(filterButton("My")).click();
-
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-			if (!isFilterApplied("Whatsapp") == true) {
-				values.add(false);
-			}
-			page.waitForTimeout(5000);
-			iframe.locator(filterButton("Whatsapp")).click();
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
-			if (isFilterApplied("SMS") == true) {
-				iframe.locator(filterButton("SMS")).click();
-				values.add(false);
-			}
-			page.waitForTimeout(5000);
-		}
-		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Unread")) {
-			if (isFilterApplied("Unread") == true) {
-				values.add(false);
-			}
-			iframe.locator(filterButton("Unread")).click();
-			logger.info("Unread selected");
-
-		}
-
-		page.waitForTimeout(4000);
-		iframe.locator(".ng-star-inserted div.channels-list-item.channels-list-item--active").click();
-		System.out.println("clicked");
-		page.waitForTimeout(2000);
-
-		if (page.locator(Messagebandagtotalcount).isVisible()) {
-			logger.info("Unread messages are present");
-
-			int count = iframe.locator(MessageRedDotNotification).count();
-			String Str = String.valueOf(count);
-			System.out.println(Str);
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			page.waitForTimeout(5000);
-			flags.add(true);
-		} else {
-			logger.info("No Unread Message present");
-			if (!iframe.locator(ReadUnreadbtn).isVisible()) {
-				logger.info("Button has not clicked");
-				flags.add(false);
-			}
-			iframe.locator(ReadUnreadbtn).click();
-			logger.info("Button has clicked");
-			beforeupdate = page.locator(Messagebandagtotalcount).innerText();
-			System.out.println(beforeupdate);
-			logger.info("a");
+			logger.info("Badge count is incorrect" + AllNotications);
+			flags.add(false);
 		}
 
 		return !flags.contains(false);
-	}
 
-	private String Conversation_GotoRo_btn = "button.order-button";
-	private String ReturnToMessagePAge = ".main-body div div.return p";
-	private String RopageIframe = "messages-iframe";
-	private String Conversationtbcanclebtn = ".info-container__header__close-btn mat-icon svg";
+	}
 
 	public boolean ConversationGOtoRobtn() {
-
+		page.reload();
 		FrameLocator iframe = page.frameLocator(messageIframe);
+		List<Boolean> flag = new ArrayList<>();
+		page.waitForCondition(() -> iframe.locator(message_profile_user).isVisible());
+		page.waitForTimeout(3000);
+		if (iframe.locator(conversationInfo).isVisible()) {
+			if (!isFilterApplied("My") == true && !isFilterApplied("Whatsapp") == true) {
 
-		page.waitForCondition(() -> iframe.locator(Conversation_GotoRo_btn).isVisible());
-		if (!iframe.locator(Conversation_GotoRo_btn).isVisible()) {
-			logger.info("Go To Ro button not visible");
-			return false;
+				flag.add(false);
+			}
+
+			iframe.locator(filterButton("My")).click();
+			page.waitForTimeout(2000);
+			iframe.locator(channalList).first().click();
+			if (!iframe.locator(conversation_GotoRo_btn).isVisible()) {
+				logger.info("Go To Ro button not visible");
+				flag.add(false);
+			}
+			String ChannelOwnerName = iframe.locator(conversationChannelOwnerName).innerText();
+			iframe.locator(conversation_GotoRo_btn).click();
+			logger.info("GO_TO_RO button clicked");
+			page.waitForCondition(() -> iframe.locator(returnToMessagePAge).isVisible());
+			String ROChannelname = iframe.locator(rochannelName).innerText();
+			page.waitForTimeout(5000);
+			if (ROChannelname.contains(ChannelOwnerName)) {
+				iframe.locator(returnToMessagePAge).click();
+				logger.info("CHANNEL OWNER NAME MATCHED" + ROChannelname + "-:-" + ChannelOwnerName);
+				logger.info("CHANNEL OWNER NAME MATCHED");
+			} else {
+				logger.info("CHANNEL OWER NAME IS NOT MATCHED");
+				flag.add(false);
+			}
+		} else {
+			iframe.locator(conversationtbcanclebtn).click();
+			flag.add(false);
 		}
-		iframe.locator(Conversation_GotoRo_btn).click();
-		logger.info("GO_TO_RO button clicked");
+		flag.add(true);
 
-		page.waitForCondition(() -> iframe.locator(ReturnToMessagePAge).isVisible());
-		iframe.locator(ReturnToMessagePAge).click();
-		logger.info("ReturnToMessagePAge");
-		iframe.locator(Conversationtbcanclebtn).click();
-		return true;
+		return !flag.contains(false);
 	}
 
-	private String Conversationinactivemess = ".chat-body__blocked-message.ng-star-inserted mat-icon";
-	private String Reactivatebtn = ".chat-input__options div";
-	private String InsertTextfield = "#mat-input-1";
-	private String InsertTextField2 = ".mat-mdc-input-element.ng-tns-c3736059725-6.ng-pristine.mat-mdc-form-field-textarea-control.mat-mdc-form-field-input-control.mdc-text-field__input.cdk-text-field-autofill-monitored.ng-touched.ng-valid";
-
-	public boolean VerifyWhatsAppChatEnableCondition() {
+	public boolean VerifyWhatsAppChatEnableCondition() throws Exception {
+		page.reload();
+		HomePage homepage = new HomePage(page);
+		homepage.navigateToMessageScreen_Order();
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> flags = new ArrayList<>();
 		logger.info("CheckWhatsapp filter is Enable or Disable From Dealer Setting");
-
-		page.waitForTimeout(8000);
+		page.waitForTimeout(5000);
 		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("Whatsapp")) {
-
-			if (isFilterApplied("My") == true) {
-				logger.info("Remove My filter");
+			logger.info("CheckWhatsapp filter is Enable");
+			if (!isFilterApplied("My") == true && !isFilterApplied("Whatsapp") == true) {
+				return false;
 			}
-			logger.info("Remove My filter");
 			iframe.locator(filterButton("My")).click();
-			if (isFilterApplied("Whatsapp") == true) {
-				logger.info("Clicked on whatsapp filter");
-			}
-			page.waitForTimeout(5000);
-
-			if (isFilterApplied("SMS") == true) {
+			page.waitForTimeout(2000);
+			if (isFilterApplied("SMS") == true && isFilterApplied("Unread") == true) {
 				iframe.locator(filterButton("SMS")).click();
-			}
-			page.waitForTimeout(5000);
-
-			if (isFilterApplied("Unread") == true) {
 				iframe.locator(filterButton("Unread")).click();
 			}
 			page.waitForTimeout(5000);
+			logger.info("WHATSAPP FILTER SELECTED");
+			iframe.locator(channalList).first().click();
 
 			/* Check Text Box For WhatsApp */
-			if (iframe.locator(Conversationinactivemess).isVisible()) {
-				String InactiveMessage = iframe.locator(Conversationinactivemess).innerText();
-				if (iframe.locator(Conversationinactivemess).innerText().contains(InactiveMessage)) {
-					iframe.locator(Reactivatebtn).click();
-					logger.info("click");
+
+			if (iframe.locator(conversationinactivemess).isVisible()) {
+				String InactiveMessage = iframe.locator(conversationinactivemess).innerText();
+				if (iframe.locator(conversationinactivemess).innerText().contains(InactiveMessage)) {
+					iframe.locator(channalList).first().click();
+					logger.info("Whatsapp Chat is Expired");
+					page.waitForTimeout(5000);
 				} else {
-					iframe.locator(InsertTextfield).fill("DemoTestMessage");
-					logger.info("Message Insert");
+					if (iframe.locator(nOconversationStartmessasge).isVisible()) {
+						logger.info("NO Conversation start Until in Whatsapp");
+					} else {
+						return false;
+					}
 				}
-
+			} else {
+				logger.info("WHATSAPP CHAT IS ACTIVE");
+				iframe.locator(".channels-list-item__main div:nth-child(3) span:has-text('(781) 205-9487')").first()
+						.click();
+				iframe.locator(messagechatfield).fill("demotext..........");
+				iframe.locator(".chat-input__options button:nth-child(3) mat-icon").click();
+				iframe.locator(sendOriginal_btn).click();
 			}
-
+		} else {
 			logger.info("WhatsApp filter is Disabled");
-			flags.add(false);
+			iframe.locator(channalList).first().click();
+			iframe.locator(messagechatfield).fill("demotext..........");
+			iframe.locator(messageSendBtn).click();
+			iframe.locator(sendOriginal_btn).click();
 
 		}
-
-		return !flags.contains(false);
-
+		return true;
 	}
 
-	private String Messagechannel = ".channels-list-item__main p";
-
-	public boolean MessageSendAttachments() {
+	public boolean MessageSendAttachments(String number) {
+		page.reload();
+		logger.info("VERIFY ATTACHMENT");
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> values = new ArrayList<>();
+		List<Boolean> flags = new ArrayList<>();
+		logger.info("SELECT SMS FILTER TOS END ATTACHMENT");
 		if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true) {
-
 			iframe.locator(filterButton("My")).click();
 			iframe.locator(filterButton("Whatsapp")).click();
-			logger.info("Filter Removed");
 		} else {
-			values.add(false);
+			flags.add(false);
+			logger.info("Filters are not Visible");
 		}
 		page.waitForTimeout(5000);
-
 		if (iframe.locator(ChatFilterButtons).allInnerTexts().contains("SMS")) {
 			if (isFilterApplied("SMS") == true) {
-				values.add(false);
+				flags.add(false);
 			}
 			iframe.locator(filterButton("SMS")).click();
-			logger.info("SMS selected");
+			logger.info("SMS SELECTED");
 			page.waitForTimeout(5000);
-			
-			iframe.locator(SearchFilter).type("suraj Singh");
-//			iframe.locator(SearchFilter).fill("suraj Singh");
-			page.waitForTimeout(8000);
-			
-			iframe.locator(".channels-list-item.channels-list-item--active").first().click();
-			page.waitForTimeout(3000);
-			iframe.locator("button input[type=file]").setInputFiles(Paths.get(".src/main/resources/Images/image.jpg"));
-			
-		
-			  
+			iframe.locator(searchFilter).type("Automation Name");// Using
+			page.waitForTimeout(5000);
+			if (iframe.locator(nOconversationStartmessasge).isVisible()) {
+				iframe.locator(message_start_convers_buttn).click();
+				logger.info("Verify Start Conversation Tab");
+				page.waitForCondition(() -> iframe.locator(startconversatationFirstname).isVisible());
+				iframe.locator(startconversatationFirstname).fill(firstname);
+				logger.info("INSERT FIRST NAME" + ":" + firstname);
+				iframe.locator(startconversatationlastname).fill(lastname);
+				logger.info("INSERT LAST NAME" + ":" + lastname);
+				page.waitForTimeout(3000);
+				iframe.locator(countryoptionbtn).click();
+				iframe.locator(CountryName("United States")).click();
+				logger.info("SELECT COUNTRY :-" + "United States");
+				logger.info(message_Filter_Icon);
+				iframe.locator(startconMobileno).fill(number);
+				logger.info("Number:-" + number);
+				page.waitForTimeout(2000);
+				iframe.locator(startConverSMS_Whatsapp_filterbuttn).click();
+				page.waitForTimeout(2000);
+				iframe.locator(conversationStartbtn).click();
+				if (iframe.locator(startconversationBtn).isVisible()) {
+					try {
+						iframe.locator(startconversationBtn).click();
+						logger.info("START CONVERSATION");
+						flags.add(true);
 
-	            
-			
+					} catch (ElementNotInteractableException e) {
+						logger.info("elemnt is not clickable right now");
+						e.printStackTrace();
+						flags.add(true);
+					}
+				} else {
+					logger.info("Element not found");
+				}
+			} else {
+				logger.info("New message not created");
+			}
+			page.waitForTimeout(3000);
+			iframe.locator(channalList).first().click();
+			page.waitForTimeout(3000);
+			iframe.locator(messageAttachment_btn).setInputFiles(Paths.get(attachmentPath));
+			logger.info("File Attached");
+			iframe.locator(messageSendBtn).click();
+			logger.info("Attachement Send");
+			page.waitForTimeout(5000);
 		}
 
 		return true;
 
 	}
 
+	private String operations_Buttons = "div .menu-options__info";
+
+	private void clickOperationButton(String buttonText) {
+		page.waitForTimeout(2000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		Locator buttons = frame.locator(operations_Buttons);
+		page.waitForTimeout(5000);
+		for (ElementHandle locator : buttons.elementHandles()) {
+			String textContent = locator.innerText();
+			System.out.println("IS Text found ?" + textContent);
+			if (textContent != null && textContent.contains(buttonText)) {
+				locator.click();
+				break;
+
+			}
+		}
+	}
+
+	private String saveButton = "button.edit";
+	private String customerName = ".chat-header__main .chat-header__title";
+	private String orderDetailsIFrame = "iframe#order-details-iframe";
+	private String tableRows = "table#repair-order-results tr";
+	private String roNumber = "h1.orders-detail-menu__ro-number";
+	private String channelOwnername = ".chat-header__main .chat-header__phone p:nth-child(4)";
+
+	public void verifyconversationStartfromRO() throws Exception {
+
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage HP = new HomePage(page);
+		OrderListPage OLP = new OrderListPage(page);
+		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
+		HP.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder();
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.keyboard().down("Control");
+		page.keyboard().press("-");
+		page.keyboard().press("-");
+		page.keyboard().up("Control");
+		page.waitForTimeout(7000);
+		page.waitForCondition(() -> orderDetailsiframe.locator(saveButton).isVisible());
+		clickOperationButton("Edit this RO");
+		page.waitForTimeout(5000);
+		Locator select = orderDetailsiframe.locator("select.detail__main-data-item--select");
+		select.selectOption(new SelectOption().setLabel("yaduwanshi Toshi"));
+		orderDetailsiframe.locator(saveButton).click();
+		logger.info("Changes Saved");
+		page.waitForTimeout(5000);
+		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText();
+		String customername = orderDetailsiframe.locator(customerName).innerText().toLowerCase();
+		String Ronumber = orderDetailsiframe.locator(roNumber).innerText();
+		String channelownername = orderDetailsiframe.locator(channelOwnername).innerText().toLowerCase();
+		try {
+			if (RONumber.equals(Ronumber)) {
+				logger.info("Same RO opened we created");
+			} else {
+				throw new SkipException("The opened Repair Order (RO) does not match the expected one");
+			}
+		} catch (Exception e) {
+
+			logger.error("An unexpected error occurred: " + e.getMessage());
+			page.reload(); // Reload the page to refresh the state
+			throw new SkipException(
+					"Owner name appears after refreshing the page due to an unexpected error: " + e.getMessage());
+		}
+		page.waitForTimeout(5000);
+		HP.navigateToMessageScreen_Order();
+		if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true && !isFilterApplied("SMS") == true
+				&& !isFilterApplied("Unread") == true) {
+			logger.info("Condition True");
+			iframe.locator(filterButton("My")).click();
+		}
+		iframe.locator(searchFilter).type(ROChannelname);
+		iframe.locator(channalList).first().click();
+		page.waitForTimeout(50000);
+		String messageChannelname = iframe.locator(rochannelName).innerText();
+		String MessageOwnerchannelname = iframe.locator(messageownername).innerText();
+		if (channelownername.equals(MessageOwnerchannelname) && ROChannelname.equals(messageChannelname)) {
+			logger.info("matched");
+		}
+	}
+
+	public void verifyChannelNamewithExistingno() {
+
+	}
+
+	public void verifychannelownereditRo() throws Exception {
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage HP = new HomePage(page);
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
+		HP.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder();
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.waitForTimeout(5000);
+		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText();
+		String customername = orderDetailsiframe.locator(customerName).innerText().toLowerCase();
+		String Ronumber = orderDetailsiframe.locator(roNumber).innerText();
+		String channelownername = orderDetailsiframe.locator(".chat-header__main .chat-header__phone p:nth-child(4) ")
+				.innerText().toLowerCase();
+		System.out.println(ROChannelname);
+		if (RONumber.equals(Ronumber)) {
+			logger.info("Same ro opened we created");
+		} else {
+			throw new SkipException("Wrong ro opened");
+		}
+
+		page.waitForTimeout(5000);
+
+		HP.navigateToMessageScreen_Order();
+		iframe.locator(channalList).first().click();
+		page.waitForTimeout(10000);
+		String messageChannelname = iframe.locator(rochannelName).innerText();
+		String MessageOwnerchannelname = iframe.locator(messageownername).innerText();
+		if (channelownername.equals(MessageOwnerchannelname) && ROChannelname.equals(messageChannelname)) {
+			logger.info("matched");
+
+		}
+	}
+
+	private String RoMobnumber = ".chat-header__main .chat-header__phone p:nth-child(2)";
+	private String Conversationinfo = ".chat-header__drop-down button";
+	private String ConversationInfo = "#first-content .info-container__content__title";
+	public void verifychannelname(String filter) throws Exception {
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		List<Boolean> flags = new ArrayList<>();
+		HomePage HP = new HomePage(page);
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
+		logger.info("Navigate to repair order header");
+		HP.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder();
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.waitForTimeout(5000);
+		String RoMobileno = orderDetailsiframe.locator(RoMobnumber).innerText();
+		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText();
+		System.out.println(ROChannelname + RoMobileno);
+		// page.waitForCondition(()-> iframe.locator(rochannelName).isVisible());
+		page.waitForTimeout(5000);
+		HP.navigateToMessageScreen_Order();
+		logger.info("Navigate to message header");
+		page.waitForTimeout(9000);
+		iframe.locator(searchFilter).type(ROChannelname);
+		page.waitForTimeout(9000);
+		iframe.locator(channalList).first().click();
+		String Channelname = iframe.locator(rochannelName).innerText();
+		if (ROChannelname.equals(Channelname)) {
+			page.waitForTimeout(5000);
+			logger.info("test case");
+			if (iframe.locator(message_start_convers_buttn).isVisible()) {
+				iframe.locator(message_start_convers_buttn).click();
+				logger.info("Verify Start Conversation Tab");
+				page.waitForCondition(() -> iframe.locator(startconversatationFirstname).isVisible());
+				iframe.locator(startconversatationFirstname).fill(firstname);
+				logger.info("INSERT FIRST NAME" + ":" + firstname);
+				iframe.locator(startconversatationlastname).fill(lastname);
+				logger.info("INSERT LAST NAME" + ":" + lastname);
+				page.waitForTimeout(3000);
+				iframe.locator(countryoptionbtn).click();
+				iframe.locator(CountryName("United States")).click();
+				logger.info("SELECT COUNTRY :-" + "United States");
+				iframe.locator(startconMobileno).fill(RoMobileno);
+				logger.info("Number:-" + RoMobileno);
+				page.waitForTimeout(2000);
+				iframe.locator(startConverSMS_Whatsapp_filterbuttn).click();
+				page.waitForTimeout(2000);
+				List<String> Text2 = iframe.locator(StartConFilter(filter)).allInnerTexts();
+				for (String value : Text2) {
+					if (value.trim().toUpperCase().contains(filter)) {
+						iframe.locator(StartConFilter(filter)).click();
+						logger.info("Select SMS");
+
+					} else if (value.trim().toUpperCase().contains(filter)) {
+						iframe.locator(StartConFilter(filter)).click();
+						logger.info("Select WHATSAPP");
+
+					} else {
+						flags.add(false);
+						logger.info("not clicked");
+					}
+				}
+				if (iframe.locator(startconversationBtn).isVisible()) {
+					try {
+						iframe.locator(startconversationBtn).click();
+						logger.info("Button hit");
+						flags.add(true);
+
+					} catch (ElementNotInteractableException e) {
+						logger.info("element is not clickable right now");
+						e.printStackTrace();
+						flags.add(true);
+					}
+				} else {
+					flags.add(false);
+					logger.info("Element not found");
+				}
+				page.waitForTimeout(4000);
+				if (!iframe.locator(ConversationInfo).isVisible()) {
+					iframe.locator(Conversationinfo).click();
+				}
+				String newChannelname = iframe.locator(rochannelName).innerText();
+			    String newchannelname2 = iframe.locator(conversationInfoname).innerText();
+			    if(newChannelname.equals(newchannelname2)) {
+			    	if (!iframe.locator(conversation_GotoRo_btn).isVisible()) {
+						logger.info("Go To Ro button not visible");
+						flags.add(false);
+					}
+					
+					iframe.locator(conversation_GotoRo_btn).click();
+					logger.info("GO_TO_RO button clicked");
+					page.waitForCondition(()->iframe.locator(rochannelName).isVisible());
+					String newROChannelname =iframe.locator(rochannelName).innerText();
+					if(newChannelname.equals(newROChannelname)) {
+						logger.info("Ro Channel name updated correctlly");
+						
+					}
+					else {
+						throw new Exception("Ro channel name not updated");
+					}
+			    }
+			}
+		} else {
+			logger.info("Repair order not matched");
+			throw new Exception("Repair order not matched");
+		}
+		
+	}
 }

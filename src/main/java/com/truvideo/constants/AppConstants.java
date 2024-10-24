@@ -1,6 +1,8 @@
 
 package com.truvideo.constants;
 
+
+
 public class AppConstants {
 
 	// Login Page
@@ -46,11 +48,13 @@ public class AppConstants {
 	// RO Details Page
 	public static final String PRINT_SCREEN_URL = "https://dashboard-rc.truvideo.com/";
 	public static final String REPAIR_ORDER_DELETED_MESSAGE = "Repair order Deleted successfully";
+	public static final String REPAIR_ORDER_EDITED_MESSAGE="The Repair Order has been edited successfully";
 
 	// Users Page
 	public static final String USER_SAVED_MESSAGE = "Record has been successfully added";
 	public static final String USER_DEACTIVATE_MESSAGE = "Successfully changed the user status to inactive";
 	public static final String USER_ACTIVATE_MESSAGE = "Successfully changed the user status to active";
+	public static final String USER_LOGIN_DEACTIVATED_ALERT_MESSAGE="Log in Failed. Your account is currently disabled.";
 	public static final String USER_SEND_INVITE_TO_APP_MESSAGE = "Sent invitation to app";
 	public static final String USER_SEND_INVITE_TO_WEB_DASHBOARD_MESSAGE = "Sent invitation to app";
 	public static final String USER_DEVICE_DEACTIVATE_MESSAGE = "Sent invitation to app";

@@ -2,9 +2,12 @@ package com.truvideo.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
+import com.truvideo.pages.HomePage;
+import com.truvideo.pages.LoginPage;
 import com.truvideo.pages.MessageScreen_Order;
 
 public class Message_RepairOrdertest extends BaseTest {
@@ -12,90 +15,117 @@ public class Message_RepairOrdertest extends BaseTest {
 	MessageScreen_Order MessageScreen_order;
 
 	@BeforeClass
-	public void setuplogin() {
-
+	public void setuplogin() throws Exception {
 		MessageScreen_order = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
 				.navigateToMessageScreen_Order();
-		}
+	}
 
-	@Test(priority = 1)
-	public void verifyallelement() {
+	@Test()
+	public void verifyelement() {
 		Assert.assertTrue(MessageScreen_order.VerifyAll_Elements());
 	}
 
-    @Test(priority = 2)
-	public void verifyDefaultFilters() {
-		Assert.assertTrue(MessageScreen_order.checkMy_WhatsApp_FilterIsApplied());
-	}
-    @Test(priority = 3)
-    	public void VerifyReadUnreadnotification() {
-    	Assert.assertTrue(MessageScreen_order.VerifyReadUnreadNotification());
-    }
-    @Test(priority = 4)
-    public void verifyGoToRopage() {
-    	Assert.assertTrue(MessageScreen_order.ConversationGOtoRobtn());
-    }
-    @Test(priority = 5)
-    public void VerifySearchfilterbtn() {
-    	Assert.assertTrue(MessageScreen_order.SearchMessagefilter());
-    }
-
-    @Test(priority= 6)
-    public void VerifyWhatsAppChatEnablecondition() {
-    	Assert.assertTrue(MessageScreen_order.VerifyWhatsAppChatEnableCondition());
-    }
-//	@Test(priority = 7)
-//	public void clickOn_MYfilterBotton() {
-//		Assert.assertTrue(MessageScreen_order.click_My_filterBotton());
-//	}
-
-	@Test(priority = 8)
-	public void click_whatsapp_filterBotton() {
-		Assert.assertTrue(MessageScreen_order.click_Whatsapp_filterBotton());
+	@Test()
+	public void VerifyReadUnreadnotification() throws Exception {
+		Assert.assertTrue(MessageScreen_order.VerifyReadUnreadNotification());
 	}
 
-	@Test(priority = 9)
-	public void click_sms_filterBotton() {
-		Assert.assertTrue(MessageScreen_order.click_Sms_filterBotton());
+	@Test()
+	public void verifyGoToRopage() {
+		Assert.assertTrue(MessageScreen_order.ConversationGOtoRobtn());
 	}
 
-	@Test(priority = 10)
-	public void click_unread_filterBotton() {
-		Assert.assertTrue(MessageScreen_order.click_Unread_filterBotton());
+	@Test(dependsOnMethods = "verifyelement")
+	public void verifySearchfilterbtn() {
+		Assert.assertTrue(MessageScreen_order.SearchMessagefilter());
 	}
 
-	@Test(priority = 11)
-	public void click_My_and_Sms_filterBotton() {
-		Assert.assertTrue(MessageScreen_order.click_My_AND_Sms_filterBotton());
+	@Test()
+	public void verifyDefaultFilters() throws Exception {
+		Assert.assertTrue(MessageScreen_order.verify_Default_Filters());
 	}
 
-	@Test(priority = 12)
-	public void click_My_and_unread_filterBotton() {
-		Assert.assertTrue(MessageScreen_order.click_My_AND_UNREAD_filterBotton());
+	@Test(dependsOnMethods = "verifyDefaultFilters")
+	public void verifyWhatsAppChatEnablecondition() throws Exception {
+		Assert.assertTrue(MessageScreen_order.VerifyWhatsAppChatEnableCondition());
 	}
-    @Test(priority = 13)
+
+	@DataProvider(name = "VerifyFilters")
+	public Object[][] VerifyFilters() {
+		return new Object[][] { { "My", "My", "SMS", "Whatsapp", "Unread", "" },
+				{ "My & Whatsapp", "My", "Whatsapp", "SMS", "Unread", "whatsapp" },
+				{ "My & SMS", "My", "Whatsapp", "SMS", "Unread", "sms" },
+				{ "My & Unread", "My", "whatsapp", "SMS", "Unread", "" } };
+	}
+
+	@Test(dataProvider = "VerifyFilters")
+	public void verifyfilters(String filtername, String MY, String Whatsapp, String SMS, String Unread,
+			String filter2) {
+		switch (filtername) {
+		case "My":
+			Assert.assertTrue(MessageScreen_order.verifyMyFilter(MY));
+			break;
+
+		case "My & Whatsapp":
+			Assert.assertTrue(
+					MessageScreen_order.verify_with_My_filterBotton(filtername, MY, Whatsapp, SMS, Unread, filter2));
+			break;
+
+		case "My & SMS":
+			Assert.assertTrue(
+					MessageScreen_order.verify_with_My_filterBotton(filtername, MY, Whatsapp, SMS, Unread, filter2));
+			break;
+
+		case "My & unread":
+			Assert.assertTrue(MessageScreen_order.click_My_AND_UNREAD_filterBotton(filtername, MY, Whatsapp, SMS,
+					Unread, filter2));
+			break;
+
+		default:
+
+			break;
+		}
+	}
+
+	@Test()
+	public void click_My_AND_UNREAD_filterBotton() {
+		Assert.assertTrue(MessageScreen_order.click_My_AND_UNREAD_filterBotton("My & Unread", "My", "whatsapp", "SMS",
+				"Unread", ""));
+	}
+
+	@Test()
 	public void message_Profile_setting_button() {
-		Assert.assertTrue(MessageScreen_order.Message_Profile_setting_button());
+		Assert.assertTrue(MessageScreen_order.Verify_Profile_setting_button("Sandeep singh"));
 	}
-    @Test(priority = 14)
-	public void verifystartConversatationbtn() {
-		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo")));
+
+	@Test()
+	public void verifystartConversatationbtn() throws Exception {
+		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo"), "SMS"));
 	}
-	@Test(priority = 15)
+
+	@Test()
 	public void verifyMessageuser() {
 		Assert.assertTrue(MessageScreen_order.Verify_message_Name());
 	}
-    @Test(priority = 16)
-	public void verifyMyFilter() {
-		Assert.assertTrue(MessageScreen_order.verifyMyFilter());
-	}
-    @Test(priority = 17)
-	public void Verifyfilterbuttons() {
 
-		Assert.assertTrue(MessageScreen_order.verifyfilterbuttons());
+	@Test()
+	public void MessageSendattachments() {
+		Assert.assertTrue(MessageScreen_order.MessageSendAttachments(prop.getProperty("MobileNo")));
 	}
-    @Test(priority = 18)
-    public void MessageSendattachments() {
-    	MessageScreen_order.MessageSendAttachments();
-    }
+
+	@Test()
+	public void verifyconversationStartfromRO() throws Exception {
+		MessageScreen_order.verifyconversationStartfromRO();
+	}
+
+	@Test()
+	public void verifychannelownereditRo() throws Exception {
+		MessageScreen_order.verifychannelownereditRo();
+	}
+
+	@Test()
+	public void verifyChannelname() throws Exception {
+		MessageScreen_order.verifychannelname("SMS");
+
+	}
 }

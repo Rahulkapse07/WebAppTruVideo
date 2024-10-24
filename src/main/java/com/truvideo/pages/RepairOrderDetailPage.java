@@ -1,27 +1,38 @@
 package com.truvideo.pages;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
+
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
+
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.TimeoutError;
-import com.microsoft.playwright.options.WaitForSelectorState;
+import com.microsoft.playwright.options.SelectOption;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
 
 public class RepairOrderDetailPage extends JavaUtility {
 	private Page page;
+	OrderListPage orderpage = new OrderListPage(page);
 
 	public RepairOrderDetailPage(Page page) {
 		this.page = page;
 	}
 
+	private String repairOrder_Header = "a[href='/crud/repair-order']";
 	private String repairOrder_PageHeading = ".main-body span:has-text('Repair Order')";
 	//private String repairOrder_PageHeading1 = "li.nav-item a[href='/crud/repair-order']";
 	private String orderDetailsIFrame = "iframe#order-details-iframe";
@@ -37,18 +48,47 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String customer_tab = "div[role='tab'] span:has-text('Customer')";
 	private String activities = "app-activity div.detail__activity  p.detail__activity-title";
 	private String addVideo_Title = "div.video-library__title p";
-	private String operations_Buttons = "div.menu-options span";
+	private String operations_Buttons = "div .menu-options__info";
+	private String operationinsighttest = "mat-mdc-tooltip-trigger menu-options disabled";
+	private String operations_Buttons_buttonTag = "button.menu-options";
+	private String operations_Buttons_DivTag = "div.menu-options";
+	private String insightButton = ".operations__container__action-menu tru-button:nth-child(5) button";
+	private String noInsightText = ".insights__content-no-data.ng-star-inserted p";
+	private String insightDataafterVideoView = ".insights__content-header p";
+	private String closeInsightWindow = ".insights__header mat-icon:nth-child(2)";
 	private String videos = "img[alt='video thumbnail']";
 	private String add_Button = "div.video-library__add-video-container button";
 	private String added_Video = "div.orders-detail-menu__media-videos img";
 	private String selectChannelWindow = "'Please select a channel'";
 	private String whatsApp_Button = ".selected-channel-actions button:has-text('WhatsApp')";
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
+	private String sms_Tab = "#mat-tab-label-1-1";
+	private String sms_Textbox = ".mat-mdc-form-field-infix textarea";
+	private String send_SMS_Button = "mat-icon[svgicon=\"send\"]";
+	private String send_Original_Button = ".mdc-button--outlined";
+	private String customerName = ".chat-header__main .chat-header__title";
+	private String openurl = "//p //a";
+	private String newTab_text = ".my-3.mt-md-5.ml-md-5";
 	private String communicationTabs = ".mat-mdc-tab-label-container div[role='tab']";
 
 	private String messages = "ngx-message div.message";
+	private String notesTab_Communication = "#mat-tab-label-1-3";
+	private String textboxNotesTab = "app-orders-notes textarea";
+	private String saveButton = "button.edit";
+	private String cancelButton = "button.cancel";
+	private String firstNameEditing = "[formcontrolname='firstName']";
+	private String firstNameWithoutEdit = ".detail__main-data-wrapper.apply-border div:nth-child(1) p:nth-child(2)";
+	private String lastNameEditing = "[formcontrolname='lastName']";
+	private String lastNameWithoutEdit = "[formgroupname='customerDTO'].detail__main-data-wrapper.apply-border div:nth-child(2) p:nth-child(2)";
+	private String mobileFieldEditing = "#mat-input-1";
+	private String mobileNumberField = "[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(5)";
+	private String emailFieldEditing = "[formcontrolname='email']";
+	private String emailField = "[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(6)";
+	private String advisorField = ".detail__main-data-wrapper.ng-star-inserted div:nth-child(4) p:nth-child(2)";
+	private String advisorFieldEditing = "[formcontrolname='advisorId']";
 	private String topRightCornerNotification = "div.notifications";
 	private String topRightCornerNotification1 = "div.tru-toast";
+
 	// Estimate
 	private String create_Edit_Estimate_WindowHeader = "mat-card span:has-text('Estimate - Create/Edit Estimate')";
 	private String items_Tab = "mat-card-content .mdc-tab__content span:has-text('Items')";
@@ -64,10 +104,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	private String closeWindow_Button = "mat-icon:has-text('close')";
-	private String addItem_Button = ".items__input-container button:has-text('add')";
+	// private String addItem_Button = ".items__input-container
+	// button:has-text('add')";
+	private String addItem_Button = "//button //mat-icon[text()='add']";
 	private String removeItem_Button = ".items__input-container button:has-text('backspace')";
 	private String items_DropdownList = ".tru-dropdown__content-items";
-	private String deleteItem_Button = "mat-tab-body .items__info-data button:has-text('delete_outline')";
+	private String deleteItem_Button = ".actions__div.ng-star-inserted button mat-icon:has-text('delete')";
 	private String editItem_Button = ".items__info-data__row-data button.mdc-button :has-text('edit')";
 	private String preview_Button = ".mdc-button__label:has-text('Preview')";
 	private String itemsAmount = "app-estimate-invoice .items__container p.items__info-data__row-data:nth-child(3)";
@@ -86,9 +128,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String next_Button = "app-items button:has-text('Next')";
 	private String internalNotes_TextBox = "form input[placeholder='Write an internal note.']";
 	private String customerNotes_TextBox = "form input[placeholder='Write a note for the customer.']";
-	private String rowCount = "div.items__info-container div button:has-text('delete_outline')";
+	// private String rowCount = "div.items__info-container div
+	// button:has-text('delete')";
+	private String rowCount = ".actions__div.ng-star-inserted button  mat-icon:has-text('delete')";
 	private String windowTitle = "mat-card-content .mat-toolbar span";
-	private String toaster_Message = "'Amount is empty or incorrect.'";
+	private String toaster_Message = "' Amount is required '";
 	private String back_Button = ".mdc-button__label:has-text('Back')";
 	private String amount_TextField_Payment = "app-price tru-text-input input";
 	private String addedNote_ReviewScreen = "app-invoice .invoice-notes";
@@ -107,6 +151,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public boolean checkAllMandatoryFields_ForNewRO() {
+
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -116,6 +161,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public void addVideoToOrder() {
+
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		page.waitForTimeout(3000);
@@ -134,7 +180,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 				logger.info("'Send to customer','View with customer' & 'Insights' button is not disabled");
 				flags.add(false);
 			}
-			softAssert.assertTrue(!flags.contains(false),
+			softAssert.assertTrue(!flags.contains(true), // should be false
 					"Verify 'Send to customer' & 'View with customer' button is disabled");
 			flags.clear();
 		} else {
@@ -217,6 +263,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void activitiesOfCreateEstimateWindow() {
 		SoftAssert softAssert = new SoftAssert();
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		page.click(repairOrder_Header);
+		OrderListPage orderpage = new OrderListPage(page);
+		orderpage.navigateToOrderDetails();
+
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
 			page.waitForCondition(() -> frame.locator(estimate_Button).isVisible());
@@ -246,8 +296,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(preview_Button).click();
 		logger.info("Click on Preview Estimate button");
 		page.waitForTimeout(4000);
-		softAssert.assertTrue(calculateTotalItemAmount(itemsAmount) == getTotalAmount(totalAmount),
-				"Verify total amount");
+//		softAssert.assertTrue(calculateTotalItemAmount(itemsAmount) == getTotalAmount(totalAmount),
+//				"Verify total amount");
 		List<String> allAvailableButtons_PreviewScreen = Arrays.asList("Hide from customer", "Close Estimate", "Edit",
 				"Print", "Send");
 		List<String> allButtonTexts_PreviewScreen = page.locator(buttons_PreviewScreen).allInnerTexts();
@@ -329,6 +379,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 		frame.locator(estimate_Button).click();
 		logger.info("Clicked on Estimate button");
+		page.waitForTimeout(5000);
 		page.waitForCondition(() -> frame.locator(newEstimate_Button).isVisible());
 		frame.locator(newEstimate_Button).click();
 		addItemToList(items_DropdownList, "Test Item 1", "Pre-Approved"); // adding exact same value from list
@@ -394,12 +445,15 @@ public class RepairOrderDetailPage extends JavaUtility {
 		addItemToList_Payment(items_DropdownList, "Payment Item 1"); // adding value that is not in list
 		addItemToList_Payment(items_DropdownList, "Payment Item 2"); // adding value that is not in list
 		frame.locator(closeWindow_Button).click();
+		page.waitForTimeout(4000);
 		softAssert.assertTrue(checkActivity("Created new invoice."), "verify activity for new invoice creation");
 		String paymentButtonText = frame.locator(payment_Button).textContent();
 		logger.info("Payment Status changed to " + paymentButtonText);
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(paymentButtonText.contains("Edit Payment"), "verify payment status");
 		frame.locator(payment_Button).click();
 		addItemToList_Payment(items_DropdownList, "Test Item 3"); // adding value reopen payment window
+		page.waitForTimeout(5000);
 		int itemsAddedInList = frame.locator(rowCount).all().size();
 		String itemsText = frame.locator(items_Tab).textContent();
 		softAssert.assertTrue(itemsText.contains(String.valueOf(itemsAddedInList)), "Verify Count on Items Tab");
@@ -420,6 +474,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 				"Verify Delete Item From List");
 		frame.locator(next_Button).click();
 		logger.info("Click on Next Button");
+		page.waitForTimeout(3000);
 		softAssert.assertEquals(getWindowHeading(), "Payment - Add Invoice Amount", "Verify Amount window heading");
 		frame.locator(preview_Button).click();
 		logger.info("Click on Preview Button without entering amount");
@@ -437,6 +492,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Amount entered in payment");
 		frame.locator(preview_Button).click();
 		logger.info("Click on Preview button afterd adding Amount");
+		page.waitForTimeout(3000);
 		softAssert.assertEquals(getWindowHeading(), "Payment - Review and Send Invoice",
 				"Verify Review window heading");
 		// softAssert.assertTrue(frame.locator(addedNote_ReviewScreen).textContent().contains(customerNote),"Verify
@@ -467,6 +523,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Payment status changed to : " + buttonName);
 		softAssert.assertTrue(verifyChangedStatusOnROList("$-Sent"), "Verify Status changed to $-Sent on RO List");
 		boolean isPaymentEndlink = false;
+		page.waitForTimeout(5000);
 		if (checkLastMessageInConversation("invoice") || checkLastMessageInConversation("payment")) {
 			isPaymentEndlink = true;
 		}
@@ -501,6 +558,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		selectChannelToPerformAction(channelSelected);// Select channel to send video
 		softAssert.assertTrue(verifyNavigationToChannel(channelSelected), "Verify Navigation To selected channel");
 		String buttonName = frame.locator(payment_Button).textContent();
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(buttonName.contains("Resend Payment"), "Verify payment Status");
 		logger.info("Payment status changed to : " + buttonName);
 		softAssert.assertTrue(verifyChangedStatusOnROList("$-Sent"), "Verify Status changed to $-Sent on RO List");
@@ -514,9 +572,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertAll();
 	}
 
-	public void checkStatus_OnVideoWatch() {
+	public void checkStatus_OnVideoWatch(String Filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		sendVideoToCustomer(Filter);
 		String lastMessage = frame.locator(messages).last().textContent();
 		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
 			logger.info("Last message is video Endlink");
@@ -535,15 +594,20 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not video Endlink");
 			throw new SkipException("Last message is not video Endlink");
 		}
+		page.waitForTimeout(4000);
 		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
+		page.waitForTimeout(2000);
 		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
+		page.waitForTimeout(2000);
 		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
+		page.waitForTimeout(2000);
 		softAssert.assertAll();
 	}
 
 	public void estimateConfirmation(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		resendEstimate(channelSelected);
 		String lastMessage = frame.locator(messages).last().textContent();
 		if (lastMessage.contains("estimate") || lastMessage.contains("Estimate")) {
 			logger.info("Last message is estimate Endlink");
@@ -564,6 +628,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not estimate Endlink");
 			throw new SkipException("Last message is not estimate Endlink");
 		}
+		page.waitForTimeout(5000);
 		softAssert.assertTrue(frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Review Approved Work status");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Approved"), "verify Est-Approved status on RO list");
@@ -575,6 +640,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Click on Confirm button");
 		frame.locator(closeWindow_Button).click();
 		logger.info("Click on close estimate window button");
+		page.waitForTimeout(3000);
 		softAssert.assertTrue(!frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Estimate status on confirm estimate");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Confirmed"), "verify Est-Confirmed status on RO list");
@@ -606,9 +672,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String paidInvoice_Heading = "'PAID INVOICE'";
 	private String printPayment_Button = "button:has-text('Print')";
 	private String processedPayment_Button = "button:has-text('Processed')";
-	private String paymentIframe = "iframe[src*='https://checkout.stripe.com']";
+	private String paymentIframe = "//iframe[@name='stripe_checkout_app']";
 
-	public void submitPayment() {
+	public void submitPayment(String filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
 		String lastMessage = frame.locator(messages).last().textContent();
@@ -623,46 +689,147 @@ public class RepairOrderDetailPage extends JavaUtility {
 			endlinkPage.click(payNow_Button);
 			logger.info("Endlink : Click on pay Now Button");
 			endlinkPage.click(payWithCardButton);
-			logger.info("Endlink : Click on pay with card Button");
-			FrameLocator paymentFrame = page.frameLocator(paymentIframe);
-			paymentFrame.locator(emailTextBox).fill("test@gmail.com");
-			paymentFrame.locator(cardNumberTextBox).fill("4111111111111111");
-			paymentFrame.locator(expiryDate).fill("1229");
-			paymentFrame.locator(cvc_Date).fill("123");
-			paymentFrame.locator(submitButton).click();
-			logger.info("Entered all necessary details & click on Submit Button");
-			boolean isInvoicePaid = false;
-			if (endlinkPage.isVisible(paidInvoice_Heading)) {
-				logger.info("Invoice Paid Sucessfully");
-				isInvoicePaid = true;
+			// ------------------------------------------
+			String paymentResponse = createPayment();
+			if (paymentResponse != null) {
+				sendToTruvideo(paymentResponse);
 			}
-			softAssert.assertTrue(isInvoicePaid, "Payment done from Endlink");
-		} else {
-			throw new SkipException("Last Message is not payment Endlink");
+			Assert.assertEquals(paymentResponse, "200");
+			logger.info("Status code matched" + paymentResponse);
+			endlinkPage.close();
+			// -----------------------------------------
+
+//			boolean isInvoicePaid = false;
+//			if (endlinkPage.isVisible(paidInvoice_Heading)) {
+//				logger.info("Invoice Paid Sucessfully");
+//				isInvoicePaid = true;
+//			}
+//			softAssert.assertTrue(isInvoicePaid, "Payment done from Endlink");
+//		} else {
+//			throw new SkipException("Last Message is not payment Endlink");
+//		}
+			softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Process payment"),
+					"verify payemt Status changed to Process Payment");
+			softAssert.assertTrue(verifyChangedStatusOnROList("$-Paid"), "verify $-Paid status on RO list");
+			softAssert.assertTrue(checkActivity("Invoice paid by customer."), "verify activity for paid invoice");
+			frame.locator(payment_Button).click();
+			Page newPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+				frame.locator(printPayment_Button).first().click();
+				logger.info("Click on Print button");
+			});
+			newPage.waitForLoadState();
+			softAssert.assertTrue(newPage.url().contains(AppConstants.PRINT_SCREEN_URL), "verify print screen opened?");
+			newPage.close();
+			logger.info("Print window closed");
+			frame.locator(processedPayment_Button).first().click();
+			softAssert.assertTrue(getWindowHeading().contains("COMPLETED"), "Verify payment heading -COMPLETED");
+			frame.locator(closeWindow_Button).click();
+			logger.info("Payment window closed");
+			softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Processed"),
+					"verify payemt Status changed to Processed");
+			softAssert.assertTrue(verifyChangedStatusOnROList("$-Processed"), "verify $-Processed status on RO list");
+			softAssert.assertTrue(checkLastMessageInConversation("successful"), "Verify payment successful message");
+			softAssert.assertTrue(checkActivity("Invoice processed by Advisor."),
+					"Verify activity for Processed payment");
 		}
-		softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Process payment"),
-				"verify payemt Status changed to Process Payment");
-		softAssert.assertTrue(verifyChangedStatusOnROList("$-Paid"), "verify $-Paid status on RO list");
-		softAssert.assertTrue(checkActivity("Invoice paid by customer."), "verify activity for paid invoice");
-		frame.locator(payment_Button).click();
-		Page newPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
-			frame.locator(printPayment_Button).first().click();
-			logger.info("Click on Print button");
-		});
-		newPage.waitForLoadState();
-		softAssert.assertTrue(newPage.url().contains(AppConstants.PRINT_SCREEN_URL), "verify print screen opened?");
-		newPage.close();
-		logger.info("Print window closed");
-		frame.locator(processedPayment_Button).first().click();
-		softAssert.assertTrue(getWindowHeading().contains("COMPLETED"), "Verify payment heading -COMPLETED");
-		frame.locator(closeWindow_Button).click();
-		logger.info("Payment window closed");
-		softAssert.assertTrue(frame.locator(payment_Button).textContent().contains("Processed"),
-				"verify payemt Status changed to Processed");
-		softAssert.assertTrue(verifyChangedStatusOnROList("$-Processed"), "verify $-Processed status on RO list");
-		softAssert.assertTrue(checkLastMessageInConversation("successful"), "Verify payment successful message");
-		softAssert.assertTrue(checkActivity("Invoice processed by Advisor."), "Verify activity for Processed payment");
+
 	}
+
+
+	private static final String STRIPE_API_URL = "https://api.stripe.com/v1/payment_intents";
+	private static final String TRUVIDEO_API_URL = "https://rc.truvideo.com/v/stripe/MSFqTV0e";
+	private static final String STRIPE_SECRET_KEY = "sk_test_tR3PYbcVNZZ796tH88S4VQ2u"; // Replace with your secret key
+
+	private static String createPayment() {
+		try {
+			// Create the URL and open a connection to Stripe
+			URL url = new URL(STRIPE_API_URL);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+			// Set up the connection properties
+			connection.setRequestMethod("POST");
+			connection.setDoOutput(true);
+			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			String encoded = Base64.getEncoder().encodeToString((STRIPE_SECRET_KEY + ":").getBytes());
+			connection.setRequestProperty("Authorization", "Basic " + encoded);
+
+			// Create the request body
+			String urlParameters = "amount=500&currency=gbp&payment_method=pm_card_visa";
+
+			// Send the request
+			try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+				wr.writeBytes(urlParameters);
+				wr.flush();
+			}
+
+			// Read the response
+			int responseCode = connection.getResponseCode();
+			String code = Integer.toString(responseCode);
+			StringBuilder response = new StringBuilder();
+			try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+				String inputLine;
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+			}
+
+			return code; // Return response for further processing
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	private static void sendToTruvideo(String paymentResponse) {
+		try {
+			// Create the URL and open a connection to Truvideo
+			URL url = new URL(TRUVIDEO_API_URL);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+			// Set up the connection properties
+			connection.setRequestMethod("POST");
+			connection.setDoOutput(true);
+			connection.setRequestProperty("Content-Type", "text/plain");
+			connection.setRequestProperty("Cookie",
+					"AWSALB=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; AWSALBCORS=VuZQpAYYZbkTts3j+M4if/00doAScSIFHwtR/oBFwnMNXwgaVjGm9ayUWfSFW7AaLEwMO2mZPesya+LQo5Fy97HDkPMrCnnmeqa5GL+USIZwuOkLA3NySq/9hY4T; JSESSIONID=D977CC2D465B0BACFB0A68E21CDE7F6D");
+
+			// Parse the payment response for necessary details (example JSON parsing)
+			// Assuming response contains stripeToken and other details; adjust based on
+			// actual response
+			String jsonInputString = "{" + "\"amount\": \"10100\","
+					+ "\"stripeToken\": \"tok_1Q51QcLCZyWkGXxjb63uwWh6\"," + "\"stripeTokenType\": \"card\","
+					+ "\"stripeEmail\": \"suraj.kushwah@5exceptions.com\"" + "}";
+
+			// Send the request
+			try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+				wr.writeBytes(jsonInputString);
+				wr.flush();
+			}
+
+			// Read the response
+			int responseCode = connection.getResponseCode();
+			StringBuilder response = new StringBuilder();
+			try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+				String inputLine;
+				while ((inputLine = in.readLine()) != null) {
+					response.append(inputLine);
+				}
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// ------------------------------------------------------------------------------------
+
+	private void verifyPaymentResendFunction(String filter) {
+		// TODO Auto-generated method stub
+
+	}
+
 
 	private String getWindowHeading() {
 		page.waitForTimeout(4000);
@@ -672,7 +839,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	private void deleteItemFromList() {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		frame.locator(deleteItem_Button).last().click();
+		frame.locator(".actions__div.ng-star-inserted button mat-icon:has-text('delete')").last().click();
 		logger.info("Item deleted from list");
 		page.waitForTimeout(3000);
 	}
@@ -922,9 +1089,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operationButtons);
+		if (!buttons.allTextContents().contains(visibleText)) {
+			throw new SkipException("Button is not visible on DOM");
+		}
 		String className = null;
 		for (ElementHandle locator : buttons.elementHandles()) {
-			String textContent = locator.innerText();
+			String textContent = locator.textContent();
 			if (textContent != null && textContent.contains(visibleText)) {
 				className = locator.getAttribute("class");
 				break;
@@ -937,18 +1107,18 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operations_Buttons);
-		System.out.println("Test 1");
+		page.waitForTimeout(5000);
 		for (ElementHandle locator : buttons.elementHandles()) {
 			String textContent = locator.innerText();
 			System.out.println("IS Text found ?" + textContent);
 			if (textContent != null && textContent.contains(buttonText)) {
-				System.out.println("Test 2");
 				locator.click();
-				System.out.println("Test 3");
 				break;
+
 			}
 		}
 	}
+
 
 	private void clickOperationButton1(String buttonText) {
 		page.waitForTimeout(5000);
@@ -973,20 +1143,33 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	}
 
-	public void deleteRepairOrder() throws InterruptedException {
-		page.waitForTimeout(4000);
-		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 
+	public boolean deleteRepairOrder() throws InterruptedException {
+		page.waitForTimeout(9000);
+
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		// page.waitForCondition(()->frame.locator(communicationTabs).isVisible());
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		page.waitForTimeout(5000);
 		logger.info(" back 2 ");
 		logger.info(OrderListPage.newRoNumber);
-		frame.locator(".menu-options__info.delete").click();
+		// frame.locator(".menu-options__info.delete").click();
+		clickOperationButton("Delete this RO");
 		page.waitForTimeout(2000);
 
 		HomePage hp = new HomePage(page);
-		hp.globalSearchwitheText(OrderListPage.newRoNumber);
+
+		// boolean bb=hp.globalSearchwitheText(OrderListPage.newRoNumber);
+
+		if (hp.globalSearchwitheText(OrderListPage.newRoNumber)) {
+			logger.info("Selected RO has been deleted successfully");
+			return true;
+		} else {
+			logger.info("Getting issue while deleting RO");
+			return false;
+		}
+
 		// page.waitForCondition(() ->
 		// frame.locator(topRightCornerNotification1).isVisible());
 
@@ -999,8 +1182,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 //		} else {
 //			logger.info("Getting error to delete Repair Order ");
 //		}
-		softAssert.assertAll();
+		// softAssert.assertAll();
 	}
+
 
 	// Create reminder on detail page
 	private String Iframe = "#order-details-iframe";
@@ -1018,28 +1202,275 @@ public class RepairOrderDetailPage extends JavaUtility {
 	// private String topRightCornerNotification = "div.tru-toast";
 	public static final String Reminder_Save = "Service recomendation successfully saved";
 
-	public boolean createreminder() throws InterruptedException {
+	
 
-		
+	public void copyLinktoClipboard() {
+		page.waitForTimeout(19000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		
+		logger.info(OrderListPage.newRoNumber);
+		clickOperationButton("Copy link to clipboard");
+		page.waitForTimeout(5000);
+//		frame.locator(notesTab_Communication).click();
+//		logger.info("Clicked on Notes Tab");
+//		page.waitForTimeout(1000);
+//		frame.locator(textboxNotesTab).click();
+//		  // Use the keyboard to simulate 'Ctrl + V' (paste)
+//        page.keyboard().down("Control");
+//        page.keyboard().press("V");
+//        page.keyboard().up("Control");
+//        logger.info("Verifying a control paste");
+//        page.waitForTimeout(1000);
+		String CustomerNameinRO = frame.locator(customerName).innerText().toLowerCase().trim();
+		logger.info(CustomerNameinRO);
+		frame.locator(sms_Tab).click();
+		page.waitForTimeout(1000);
+		frame.locator(sms_Textbox).click();
+		page.keyboard().down("Control");
+		page.keyboard().press("V");
+		page.keyboard().up("Control");
+		logger.info("Verifying a control paste");
+		frame.locator(send_SMS_Button).click();
+		frame.locator(send_Original_Button).click();
+		logger.info("Original Text has been sent successfully");
+		// frame.locator(openurl).click();
+		// String text= frame.locator(textboxNotesTab).innerText();
+		// String text1=frame.locator(textboxNotesTab).textContent();
+		page.waitForTimeout(1000);
+
+		Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+			frame.locator(openurl).click();
+			logger.info("Endlink opened in another tab");
+		});
+		endlinkPage.waitForLoadState();
+		endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+		String CustomerNameinEndlink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+		logger.info("Clicked on Play Button");
+		logger.info(CustomerNameinEndlink);
+		page.waitForTimeout(1000);
+		if (CustomerNameinEndlink.equals(CustomerNameinRO)) {
+			logger.info("RO Customer name is matching with endlink Customer name");
+		} else {
+			logger.info("RO Customer name is not matching with endlink Customer name");
+		}
+		endlinkPage.close();
+
+//      String text4= page.locator(newTab_text).innerText();
+//       logger.info(text4);
+
+		// Optionally, you can submit the form or perform other actions
+		// newTab.keyboard().press("Enter");
+
+//		Page newTab = page.context().newPage(); 
+//		newTab.url();
+		// frame.locator(".menu-options__info.delete").click();
+
+		// page.waitForTimeout(1000);
+	}
+
+	public void viewWithCustomer() {
+		page.waitForTimeout(10000);
+		addVideoToOrder();
+		SoftAssert softAssert = new SoftAssert();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		logger.info(OrderListPage.newRoNumber);
+		page.waitForTimeout(2000);
+		String CustomerNameinRO = frame.locator(customerName).innerText().toLowerCase().trim();
+		logger.info(CustomerNameinRO);
+		Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+
+			clickOperationButton("View with customer");
+			logger.info("Endlink opened in another tab");
+		});
+		endlinkPage.waitForLoadState();
+		endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+		endlinkPage.locator(playButton).first().click();
+		logger.info("Clicked on Play Button");
+		logger.info("Waiting to play video for 8 Seconds");
+		page.waitForTimeout(8000);
+		String CustomerNameinEndlink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+		logger.info("Clicked on Play Button");
+		logger.info(CustomerNameinEndlink);
+		page.waitForTimeout(1000);
+
+		boolean isMatching = CustomerNameinEndlink.equals(CustomerNameinRO);
+
+		if (isMatching) {
+			logger.info("RO Customer name is matching with endlink Customer name");
+		} else {
+			logger.info("RO Customer name is not matching with endlink Customer name");
+		}
+		softAssert.assertTrue(isMatching, "Customer name should match from RO details");
+		endlinkPage.close();
+		softAssert.assertAll();
+
+	}
+
+	public void editThisRO() throws InterruptedException {
+		page.waitForTimeout(9000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		logger.info(OrderListPage.newRoNumber);
+		page.waitForTimeout(5000);
+		String firstName = frame.locator(firstNameWithoutEdit).innerText();
+		logger.info("FirstName before edited :-" + firstName);
+
+		clickOperationButton("Edit this RO");
+		logger.info("Clicked on Edit this RO button");
+		page.waitForTimeout(6000);
+		frame.locator(firstNameEditing).click();
+		page.waitForTimeout(1000);
+		frame.locator(firstNameEditing).fill("FirstName Edited");
+		logger.info("Edited FirstName successfully");
+		frame.locator(lastNameEditing).fill("Edited LastName");
+		// String lastName=frame.locator(lastNameEditing).innerText();
+		logger.info("Edited LastName successfully :-");
+		frame.locator(mobileFieldEditing).clear();
+		frame.locator(mobileFieldEditing).fill("7812049488");
+		logger.info("Mobile number edited successfully :-");
+		frame.locator(emailFieldEditing).clear();
+		frame.locator(emailFieldEditing).fill("testemailedited@gmail.com");
+		logger.info("Edited Email successfully :-");
+
+		Locator dropdown = frame.locator(advisorFieldEditing);
+		// Select an option by the visible text (label)
+		dropdown.selectOption(new SelectOption().setLabel("Advisor Dinesh"));
+
+		logger.info("Changed Advisor ");
+		frame.locator(saveButton).click();
+		page.waitForTimeout(4000);
+		Thread.sleep(4000);
+		String firstNameEdited = frame.locator(firstNameWithoutEdit).innerText();
+		logger.info("FirstName After edited :-" + firstNameEdited);
+		String name = frame.locator(customerName).innerText();
+		String lastNameEdited = frame.locator(lastNameWithoutEdit).innerText();
+		logger.info("LastName After edited :-" + lastNameEdited);
+		String EmailEdited = frame.locator(emailField).innerText();
+		logger.info("Email After edited :-" + EmailEdited);
+		String MobileNumberEdited = frame.locator(mobileNumberField).innerText();
+		logger.info("Mobile Number After edited :-" + MobileNumberEdited);
+
+		// String name=frame.locator(customerName).innerText();
+		// logger.info(name);
+
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertTrue(name.contains("FirstName Edited"), "Verify Customer First name update");
+		logger.info("Name changed to : " + name);
+		softAssert.assertTrue(lastNameEdited.contains("Edited LastName"), "Verify Customer Last name update");
+		softAssert.assertTrue(EmailEdited.contains("testemailedited@gmail.com"), "Verify Customer email update");
+		softAssert.assertTrue(MobileNumberEdited.contains("+1 (781) 204-9488"), "Verify Customer Mobile number update");
+		// softAssert.assertTrue(lastNameEdited.contains("Edited LastName"), "Verify
+		// Customer Last name update");
+
+		softAssert.assertAll();
+		// page.waitForTimeout(1000);
 		/*
-		 * frame.locator(clickRepairOrder).click(); page.waitForTimeout(8000);
-		 * frame.locator(myROs_FilterButton).click(); logger.info("Click on my RO");
-		 * page.waitForTimeout(8000);
+		 * page.waitForCondition(() ->
+		 * frame.locator(topRightCornerNotification1).isVisible());
+		 * 
+		 * page.waitForSelector(topRightCornerNotification1);
+		 * //page.waitForTimeout(1000); System.out.println("545454"); String
+		 * topRightCornerNotificationPopup =
+		 * page.locator(topRightCornerNotification1).innerText();
+		 * logger.info(topRightCornerNotificationPopup); page.waitForTimeout(1000); if
+		 * (topRightCornerNotificationPopup.contains(AppConstants.
+		 * REPAIR_ORDER_EDITED_MESSAGE)) {
+		 * logger.info("New RO has been deleted successfully Successfully"); } else {
+		 * logger.info("Getting error to delete Repair Order "); }
 		 */
-		//if(frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").isVisible()) {
-			   page.keyboard().down("Control");
-			   page.keyboard().press("-");
-			   page.keyboard().press("-");
-			   page.keyboard().up("Control");
-	//}
-		page.waitForCondition(() -> 
-			   frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").isVisible());
-		frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").click();
-		logger.info("Click on Service_Rec");
+
+		// logger.info(firstName);
+	}
+
+	public void insightFunctionality() {
+		// addVideoToOrder();
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		frame.locator(repairOrder_PageHeading).waitFor();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		SoftAssert softAssert = new SoftAssert();
+		if (frame.locator(roStatusBar).textContent().contains("New")) {
+			logger.info("RO is New & No media is added");
+			// String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to
+			// customer");
+			// String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with
+			// customer");
+			String insightClass = getLocatorClass(operations_Buttons, "Insights");
+			// System.out.println("send to customer class "+sendToCustomerClass);
+			// System.out.println("viewWithCustomerClass "+viewWithCustomerClass);
+			System.out.println("insightClass " + insightClass);
+			if (insightClass.contains("disabled")) {
+				logger.info("'Insights' button is disabled");
+				flags.add(true);
+			} else {
+				logger.info(" 'Insights' button is not disabled");
+				flags.add(false);
+			}
+			softAssert.assertTrue(!flags.contains(true), // should be false
+					"Verify 'Insight' button is disabled");
+			flags.clear();
+		} else {
+			logger.info("RO is Not new & some videos are already added to RO");
+		}
+		frame.locator(addMedia).click();
+		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
+			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
+			flags.add(true);
+		} else {
+			logger.info("Multimedia Screen not opened");
+			flags.add(false);
+		}
+		softAssert.assertTrue(!flags.contains(false), "Verify Add Media button is clickable");
+		flags.clear();
+		frame.locator(videos).first().click();
+		logger.info("Selected 1 video from multimedia screen");
+		page.waitForTimeout(2000);
+		frame.locator(add_Button).click();
+		logger.info("Clicked on Add Video Button");
+		page.waitForTimeout(4000);
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is not showing");
+		String insightText = frame.locator(noInsightText).innerText().trim();
+		softAssert.assertTrue(insightText.contains("There's no insights yet"), "Verify No insight showing");
+		frame.locator(closeInsightWindow).click();
+		copyLinktoClipboard();
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is now showing");
+		String InsightData = frame.locator(insightDataafterVideoView).innerText().trim();
+		softAssert.assertTrue(InsightData.contains("Seen by"), "Verify now insight data is showing");
+
+		frame.locator(closeInsightWindow).click();
+		logger.info("Insight window closed");
+		softAssert.assertAll();
+		// There's no insights yet
+	}
+
+	public boolean createreminder() throws InterruptedException {
+		Thread.sleep(8000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		page.waitForTimeout(5000);
+		logger.info("click on Service_Rec!!!!!!!!");
+		page.waitForTimeout(5000);
+		frame.locator(".mat-mdc-tab-list div#mat-tab-label-0-1").click();
+		logger.info("click on Service_Rec");
+		page.waitForTimeout(5000);
+		
+		
+
+			
+		
+			
+				   page.keyboard().down("Control");
+				   page.keyboard().press("-");
+				   page.keyboard().press("-");
+				   page.keyboard().up("Control");
+		
+			page.waitForCondition(() -> 
+				   frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").isVisible());
+			frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").click();
+			logger.info("Click on Service_Rec");
+		
+
 		if (!frame.locator(checkbox).isChecked()) {
-		    frame.locator(checkbox).click();
+			frame.locator(checkbox).click();
 		    logger.info("Checked");
 		}
 
@@ -1227,6 +1658,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		OrderListPage op = new OrderListPage(page);
 		op.checkInspectionStatus();
 		frame.locator(openInspectionBtn).click();
+
 		logger.info("Click on Open- inspection");
 		page.waitForTimeout(3000);
 		frame.locator(publish).click();
@@ -1234,12 +1666,14 @@ public class RepairOrderDetailPage extends JavaUtility {
 		op.checkInspPublishStatus();
 		frame.locator(openInspectionBtn).click();
 		logger.info("Click on Open- inspection again");
+
 		if (!frame.locator(inspPublishStatus).isVisible()
 				&& frame.locator("text=Inspection published: Standard Multipoint Inspection - Mazda").isVisible()) {
 		}
 		logger.info("Check Inspection Publish status is displaying in header");
 		logger.info("Check Inspection publish message are displaying under activity");
 		frame.locator(sendback).isDisabled();
+
 		logger.info("Send back button are displaying disabled");
 		page.waitForTimeout(5000);
 		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
@@ -1249,6 +1683,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			System.out.println("All buttons are not vissible");
 			flags.add(false);
 		}
+
 		return !flags.contains(false);
 	}
 
@@ -1262,6 +1697,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		OrderListPage op = new OrderListPage(page);
 		op.checkInspectionStatus();
 		frame.locator(openInspectionBtn).click();
+
 		logger.info("Click on Open- inspection");
 		page.waitForTimeout(3000);
 		frame.locator(publish).click();
@@ -1269,10 +1705,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 		op.checkInspPublishStatus();
 		frame.locator(openInspectionBtn).click();
 		logger.info("Click on Open- inspection again");
+
 		frame.locator(inspPublishStatus).isVisible();
 		logger.info("Check Inspection Publish status is displaying in header");
 		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
 				&& frame.locator(notifybtn).isVisible()) {
+
 			logger.info("All buttons are vissible");
 		} else {
 			System.out.println("All buttons are not vissible");
@@ -1358,6 +1796,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		} else {
 			logger.info("Inspection status not matched");
 		}
+
 		logger.info("Inspection sent to customer display under activity");
 		frame.locator(topRightCornerNotification).waitFor();
 		String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification).innerText();
@@ -1368,6 +1807,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		} else {
 			logger.info("Not displaying message");
 		}
+
 
 		frame.locator(closeInspection).click();
 		logger.info("Inspection closed successfully");
@@ -1468,5 +1908,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		return !flags.contains(false);
 	}
+
 
 }

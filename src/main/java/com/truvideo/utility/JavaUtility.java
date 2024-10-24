@@ -11,6 +11,8 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
+
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.Random;
@@ -18,6 +20,7 @@ import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.FilePayload;
 
@@ -31,7 +34,7 @@ public class JavaUtility {
 		StringBuilder sb = new StringBuilder(length);
 		for (int i = 0; i < length; i++) {
 			sb.append(CHARACTERS.charAt(RANDOM.nextInt(CHARACTERS.length())));
-			
+
 		}
 		return sb.toString();
 	}
@@ -90,7 +93,7 @@ public class JavaUtility {
 	}
 
 	public void createAndUploadCsvFile_Advisor(Page page) {
-		String filePath = "./src/test/resources/CreateUserData"+"unique_data_advisor.csv";
+		String filePath = "./src/test/resources/CreateUserData" + "unique_data_advisor.csv";
 		createCsvFile_Advisor(filePath);
 		try {
 			byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
@@ -101,7 +104,7 @@ public class JavaUtility {
 	}
 
 	public void createAndUploadCsvFile_Technician(Page page) {
-		String filePath = "./src/test/resources/CreateUserData"+"unique_data_technician.csv";
+		String filePath = "./src/test/resources/CreateUserData" + "unique_data_technician.csv";
 		createCsvFile_Technician(filePath);
 		try {
 			byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
@@ -111,21 +114,31 @@ public class JavaUtility {
 		}
 	}
 
+
+	
+	private String firstUser="";
 	private void createCsvFile_Advisor(String filePath) {
-		String[] headers = { "Firstname", "Lastname", "Title", "Phone number", "Email", "Username" };
+		ArrayList<String>emailList=new ArrayList<String>();
+		String[] headers = { "Firstname", "Lastname", "Title", "Phone number", "Email" }; //, "Username"
 		try (FileWriter writer = new FileWriter(filePath)) {
 			for (String header : headers) {
 				writer.append(header).append(",");
 			}
 			writer.append("\n");
 			for (int i = 0; i < 3; i++) {
+				String email=generateUniqueEmail();
+				emailList.add(email);
 				String[] data = { generateUniqueString(), generateUniqueString(), "Advisor", "1234567890",
-						generateUniqueEmail(), generateUniqueString() };
+						email };  //, generateUniqueString()
 				for (String field : data) {
 					writer.append(field).append(",");
 				}
 				writer.append("\n");
+				//logger.info(emailList.get(0).toString());
+				
 			}
+			 setFirstUser(emailList.get(0).toString());
+			//logger.info(firstUser);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -149,7 +162,7 @@ public class JavaUtility {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private String generateUniqueEmail() {
 		return "user" + getRandomString(5) + "@example.com";
 	}
@@ -157,4 +170,27 @@ public class JavaUtility {
 	private String generateUniqueString() {
 		return "Text" + getRandomString(5);
 	}
+
+	// ---------------------------Read Csv file-------------
+	
+
+	public String getFirstUser() {
+		return firstUser;
+	}
+
+	public void setFirstUser(String firstUser) {
+		this.firstUser = firstUser;
+	}
+	public boolean waitForAndLogVisibility(Locator locator, String elementName) {
+	    try {
+	        locator.waitFor(); 
+	        logger.info(elementName + " is visible.");
+	        return true;
+	    } catch (org.openqa.selenium.TimeoutException e) {
+	        logger.error(elementName + " is not visible.");
+	        return false;
+	    }
+	}
+
+
 }

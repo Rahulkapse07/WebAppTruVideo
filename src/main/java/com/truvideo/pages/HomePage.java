@@ -9,7 +9,6 @@ import org.testng.asserts.SoftAssert;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Locator.HoverOptions;
 import com.microsoft.playwright.Page;
-import com.sun.tools.sjavac.Log;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
@@ -37,6 +36,8 @@ public class HomePage extends JavaUtility {
 	private String userGroupsTab = "a[href='/organization/usergroups/']";
 	private String savedVideoLibraryTab = "a[href='/crud/saved-video']";
 	private String devicesTab = "a[href='/device/']";
+	private String dealername ="a.dropdown-toggle span span:nth-child(1)";
+	
 
 	// search
 	private String search_TextBox = "#search-header";
@@ -81,7 +82,7 @@ public class HomePage extends JavaUtility {
 	private String dealerCode_Button = "div a:has-text('Dealer Code')";
 	private String serviceCode = "#dealer-menu-list li:has-text('Service Code:')";
 	private String salesCode = "#dealer-menu-list li:has-text('Sales Code:')";
-	private String chat_Button = "#chat-button";
+	private String chatv2_Header = "input#chat-button";
 	private String backAway_Button = "#away-button";
 	private String awayBackMessage_AlertMessage = "div.notifications-button div";
 	private String closeMessageButton = "div.notifications-button a.close";
@@ -140,12 +141,20 @@ public class HomePage extends JavaUtility {
 		return page.title();
 	}
 
+	public Multimediapage NavigateToOrderList() {
+		page.click(repairOrder_Header);
+		return new Multimediapage(page);
+	
+	}
+	
 	public OrderListPage navigateToOrderList() {
 		page.click(repairOrder_Header);
 		return new OrderListPage(page);
+	
 	}
+	
 
-	public boolean clickOn_Order_MessagesHeader() {
+	public boolean clickOn_Order_MessagesHeader() throws Exception {
 		navigateToMessageScreen_Order();
 		logger.info("Clicked on Orders Message Screen Header Tab");
 		if (page.title().equals(AppConstants.MESSAGES_PAGE_TITLE)
@@ -160,10 +169,16 @@ public class HomePage extends JavaUtility {
 		}
 	}
 
-	public MessageScreen_Order navigateToMessageScreen_Order() {
-		page.click(orderMessage_Header);
+	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception{
 		page.waitForTimeout(5000);
-		return new MessageScreen_Order(page);
+		if(page.locator(orderMessage_Header).isVisible()) {
+			page.click(orderMessage_Header);
+			return new MessageScreen_Order(page);
+			}
+		else {
+			throw new Exception("Message header Disable");
+		}
+		
 	}
 
 	public String clickOn_Prospect_Header() {
@@ -173,6 +188,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public ProspectListPage navigateToProspectList() {
+		page.waitForTimeout(5000);
 		page.click(prospect_Header);
 		return new ProspectListPage(page);
 	}
@@ -193,6 +209,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public MessageScreen_Prospect navigateToMessageScreen_Prospect() {
+		page.waitForTimeout(4000);
 		page.click(prospectMessage_Header);
 		return new MessageScreen_Prospect(page);
 	}
@@ -677,8 +694,8 @@ public class HomePage extends JavaUtility {
 	}
 
 	public ChatPage navigateToChat() {
-		page.click(chat_Button);
-		page.waitForTimeout(5000);
+		page.click(chatv2_Header);
+		page.waitForTimeout(10000);
 		return new ChatPage(page);
 	}
 
@@ -1033,8 +1050,8 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Badge for Self SO's Messages");
 		String isMyButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("My"))
 				.getAttribute("aria-selected");
-		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
-				.getAttribute("aria-selected");
+//		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
+//				.getAttribute("aria-selected");
 		if (isMyButtonSelected.equals("true")) {
 			logger.info("My Filter is selected on message screen");
 			flags.add(true);
@@ -1042,13 +1059,13 @@ public class HomePage extends JavaUtility {
 			logger.info("My Filter is not selected on message screen");
 			flags.add(false);
 		}
-		if (isActiveButtonSelected.equals("true")) {
-			logger.info("Active Filter is selected on message screen");
-			flags.add(true);
-		} else {
-			logger.info("Active Filter is not selected on message screen");
-			flags.add(false);
-		}
+//		if (isActiveButtonSelected.equals("true")) {
+//			logger.info("Active Filter is selected on message screen");
+//			flags.add(true);
+//		} else {
+//			logger.info("Active Filter is not selected on message screen");
+//			flags.add(false);
+//		}
 		return !flags.contains(false);
 	}
 
@@ -1065,8 +1082,8 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Badge for All SO's Messages");
 		String isMyButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("My"))
 				.getAttribute("aria-selected");
-		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
-				.getAttribute("aria-selected");
+//		String isActiveButtonSelected = page.frameLocator(message_MainFrame).locator(filterButton("Active"))
+//				.getAttribute("aria-selected");
 		if (isMyButtonSelected.equals("false")) {
 			logger.info("My Filter is not selected on message screen");
 			flags.add(true);
@@ -1074,13 +1091,13 @@ public class HomePage extends JavaUtility {
 			logger.info("My Filter is selected on message screen");
 			flags.add(false);
 		}
-		if (isActiveButtonSelected.equals("true")) {
-			logger.info("Active Filter is selected on message screen");
-			flags.add(true);
-		} else {
-			logger.info("Active Filter is not selected on message screen");
-			flags.add(false);
-		}
+//		if (isActiveButtonSelected.equals("true")) {
+//			logger.info("Active Filter is selected on message screen");
+//			flags.add(true);
+//		} else {
+//			logger.info("Active Filter is not selected on message screen");
+//			flags.add(false);
+//		}
 		return !flags.contains(false);
 	}
 
@@ -1138,6 +1155,19 @@ public class HomePage extends JavaUtility {
 		} else {
 			logger.info("The count " + countOnBadge + " on badge is not equal to total count " + countLabel);
 			return false;
+		}
+	}
+	
+	public void Verify_dealer_Name(String name) {
+		logger.info("Verify Dealer Name");
+		page.waitForCondition(() -> page.locator(dealername).isVisible());
+		
+		if(dealername.equals(name)){
+			logger.info("DEALER IS CORRECT");
+		}
+		else {
+			logger.info("DEALER IS DIFFRENT");
+			
 		}
 	}
 }

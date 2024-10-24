@@ -1,7 +1,9 @@
 package com.truvideo.testutils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.ScreenshotType;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
 import com.truvideo.utility.JavaUtility;
 import io.appium.java_client.AppiumDriver;
 
@@ -87,7 +91,8 @@ static ExtentReports extent;
 
 		        // Determine the path based on the environment
 		        if (System.getProperty("os.name").toLowerCase().contains("win")) {
-		            reportPath = "D:/TruvideoWeb_Playwright/Reports/Index.html"; // Adjust for Windows
+		            reportPath = System.getProperty("user.dir") + "/Reports/index.html";
+		            		//"D:/TruvideoWeb_Playwright/Reports/Index.html"; // Adjust for Windows
 		        } else {
 		            reportPath = System.getProperty("user.dir") + "/Reports/Index.html"; // Default relative path
 		        }
@@ -98,7 +103,7 @@ static ExtentReports extent;
 		            return;
 		        }
 
-		        System.out.println("Report file found: " + reportPath);
+		     //   System.out.println("Report file found: " + reportPath);
 			
 			
 			// Create the email message
@@ -177,4 +182,17 @@ static ExtentReports extent;
 		}
 		return tags;
 	}
+	 public static Object[][] readCSV(String filePath) throws CsvException {
+	        try (CSVReader csvReader = new CSVReader(new FileReader(filePath))) {
+	            String[] values;
+	            csvReader.readNext(); // Skip header
+	            return csvReader.readAll().stream()
+	                    .map(row -> new Object[]{row[0], row[1], row[2], row[3]})
+	                    .toArray(Object[][]::new);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            return new Object[0][0];
+	        }
+	 
+	 }
 }

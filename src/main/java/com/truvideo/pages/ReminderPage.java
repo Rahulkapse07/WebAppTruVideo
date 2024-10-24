@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 
