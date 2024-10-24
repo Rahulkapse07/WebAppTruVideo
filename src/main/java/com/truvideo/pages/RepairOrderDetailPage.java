@@ -23,6 +23,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	private String repairOrder_PageHeading = ".main-body span:has-text('Repair Order')";
+	//private String repairOrder_PageHeading1 = "li.nav-item a[href='/crud/repair-order']";
 	private String orderDetailsIFrame = "iframe#order-details-iframe";
 	private String nextRO_Button = ".order-navigation:has-text('Next RO')";
 	private String roNumber = "h1.orders-detail-menu__ro-number";
@@ -44,6 +45,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String whatsApp_Button = ".selected-channel-actions button:has-text('WhatsApp')";
 	private String sms_Button = ".selected-channel-actions button:has-text('SMS')";
 	private String communicationTabs = ".mat-mdc-tab-label-container div[role='tab']";
+
 	private String messages = "ngx-message div.message";
 	private String topRightCornerNotification = "div.notifications";
 	private String topRightCornerNotification1 = "div.tru-toast";
@@ -98,7 +100,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String playButton = "button[title='Play Video']";
 	private String authoriseWork_Button = "button:has-text('Authorize Work')";
 	// Edit RO
-	
 
 	private String getRO(String createdRO) {
 		String createdRoInList = "#repair-order-results tbody tr:has-text('" + createdRO + "')";
@@ -113,10 +114,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 		flags.add(checkActivity("Created new repair order.")); // verify activity:Created new repair order
 		return !flags.contains(false);
 	}
-	
+
 	public void addVideoToOrder() {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
+		page.waitForTimeout(3000);
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		if (frame.locator(roStatusBar).textContent().contains("New")) {
@@ -124,7 +126,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 			String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to customer");
 			String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with customer");
 			String insightClass = getLocatorClass(operations_Buttons, "Insights");
-			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled") && insightClass.contains("disabled")) {
+			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled")
+					&& insightClass.contains("disabled")) {
 				logger.info("Both 'Send to customer','View with customer' & 'Insights' button is disabled");
 				flags.add(true);
 			} else {
@@ -183,7 +186,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
 		softAssert.assertAll();
 	}
-	
+
 	public void sendVideoToCustomer(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		if (!frame.locator(added_Video).first().isVisible()) {
@@ -660,7 +663,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertTrue(checkLastMessageInConversation("successful"), "Verify payment successful message");
 		softAssert.assertTrue(checkActivity("Invoice processed by Advisor."), "Verify activity for Processed payment");
 	}
-	
+
 	private String getWindowHeading() {
 		page.waitForTimeout(4000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
@@ -776,6 +779,22 @@ public class RepairOrderDetailPage extends JavaUtility {
 			frame.locator(whatsApp_Button).click();
 			logger.info("Clicked on whatsApp button : sent through WhatsApp");
 		} else if (frame.locator(selectChannelWindow).isVisible() && channelSelected.contains("SMS")) {
+			logger.info("WhatsApp is enabled & Selected SMS channel to send");
+			frame.locator(sms_Button).click();
+			logger.info("Clicked on SMS button : sent through SMS");
+		} else {
+			logger.info("WhatsApp is Disabled : sent from SMS");
+		}
+	}
+
+	private void selectChannelToPerformAction2(String channelSelected) {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		page.waitForTimeout(2000);
+		if (frame.locator(communicationTabs).isVisible() && channelSelected.contains("WhatsApp")) {
+			logger.info("WhatsApp is enabled & Selected whatsApp channel to send");
+			frame.locator(whatsApp_Button).click();
+			logger.info("Clicked on whatsApp button : sent through WhatsApp");
+		} else if (frame.locator(communicationTabs).isVisible() && channelSelected.contains("SMS")) {
 			logger.info("WhatsApp is enabled & Selected SMS channel to send");
 			frame.locator(sms_Button).click();
 			logger.info("Clicked on SMS button : sent through SMS");
@@ -921,7 +940,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		System.out.println("Test 1");
 		for (ElementHandle locator : buttons.elementHandles()) {
 			String textContent = locator.innerText();
-			System.out.println("IS Text found ?"+ textContent);
+			System.out.println("IS Text found ?" + textContent);
 			if (textContent != null && textContent.contains(buttonText)) {
 				System.out.println("Test 2");
 				locator.click();
@@ -930,52 +949,34 @@ public class RepairOrderDetailPage extends JavaUtility {
 			}
 		}
 	}
-	
-	// Create reminder on detail page
-		private String Iframe = "#order-details-iframe";
-		private String ClickRepairOrder = "#repair-order-results tbody tr:nth-child(2)";
-		private String service_recTab = "div[role='tab'] span:has-text('Serv. Rec.')";
-		private String checkbox = "#mat-mdc-checkbox-1-input";
-		private String original_Amt = "input#mat-input-1";
-		private String final_Amt = "#mat-input-2";
-		private String deferred_Amt = "#mat-input-3";
-		private String reminder_set = "#mat-select-0";
-		private String no_reminder = "#mat-option-0";
-		private String three_days = "#mat-option-1";
-		private String save_Btn = "span.mdc-button__label";
-		//private String topRightCornerNotification = "div.tru-toast";
-		public static final String Reminder_Save = "Service recomendation successfully saved";
 
 	private void clickOperationButton1(String buttonText) {
 		page.waitForTimeout(5000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		Locator buttons = frame.locator(operations_Buttons);
-		page.waitForCondition(()->frame.locator(buttons).allInnerTexts().contains(buttonText));
+		page.waitForCondition(() -> frame.locator(buttons).allInnerTexts().contains(buttonText));
 		if (buttons.isVisible()) {
-		    System.out.println("Element is visible");
-		    for (ElementHandle locator : buttons.elementHandles()) {
-		        String textContent = locator.innerText();
-		        System.out.println("Text found: " + textContent);
-		        if (textContent != null && textContent.contains(buttonText)) {
-		            System.out.println("Test 2");
-		            locator.click();
-		            System.out.println("Test 3");
-		            break;
-		        }
-		    }
+			System.out.println("Element is visible");
+			for (ElementHandle locator : buttons.elementHandles()) {
+				String textContent = locator.innerText();
+				System.out.println("Text found: " + textContent);
+				if (textContent != null && textContent.contains(buttonText)) {
+					System.out.println("Test 2");
+					locator.click();
+					System.out.println("Test 3");
+					break;
+				}
+			}
 		} else {
-		    System.out.println("Element is not visible");
+			System.out.println("Element is not visible");
 		}
 
 	}
-	
 
-	
-	public void deleteRepairOrder() throws InterruptedException
-	{
+	public void deleteRepairOrder() throws InterruptedException {
 		page.waitForTimeout(4000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		
+
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		page.waitForTimeout(5000);
@@ -983,11 +984,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info(OrderListPage.newRoNumber);
 		frame.locator(".menu-options__info.delete").click();
 		page.waitForTimeout(2000);
-		
-		HomePage hp=new HomePage(page);
+
+		HomePage hp = new HomePage(page);
 		hp.globalSearchwitheText(OrderListPage.newRoNumber);
-	//	page.waitForCondition(() -> frame.locator(topRightCornerNotification1).isVisible());
-		
+		// page.waitForCondition(() ->
+		// frame.locator(topRightCornerNotification1).isVisible());
+
 //		page.waitForSelector(topRightCornerNotification1);
 //		System.out.println("545454");
 //		String topRightCornerNotificationPopup = page.locator(topRightCornerNotification1).innerText();
@@ -1000,45 +1002,69 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertAll();
 	}
 
+	// Create reminder on detail page
+	private String Iframe = "#order-details-iframe";
+	private String clickRepairOrder = "#repair-order-results tbody tr:nth-child(2)";
+	private String myROs_FilterButton = "#LBL_MY_RO";
+	private String service_recTab = "div[role='tab'] span:has-text('Serv. Rec.')";
+	private String checkbox = "#mat-mdc-checkbox-1-input";
+	private String original_Amt = "input#mat-input-1";
+	private String final_Amt = "#mat-input-2";
+	private String deferred_Amt = "#mat-input-3";
+	private String reminder_set = "#mat-select-0";
+	private String no_reminder = "#mat-option-0";
+	private String three_days = "#mat-option-1";
+	private String save_Btn = "span.mdc-button__label";
+	// private String topRightCornerNotification = "div.tru-toast";
+	public static final String Reminder_Save = "Service recomendation successfully saved";
 
-	    public boolean createreminder() throws InterruptedException {
+	public boolean createreminder() throws InterruptedException {
 
-		System.out.println("in Remiender 1");
-		Thread.sleep(8000);
-		System.out.println("in Remiender 2");
+		
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		System.out.println("in Remiender 3");
-		page.waitForTimeout(5000);
-		logger.info("click on Service_Rec!!!!!!!!");
-		page.waitForTimeout(5000);
-		frame.locator(".mat-mdc-tab-list div#mat-tab-label-0-1").click();
-		System.out.println("in Remiender 4");
-		logger.info("click on Service_Rec");
-		page.waitForTimeout(5000);
+		
+		/*
+		 * frame.locator(clickRepairOrder).click(); page.waitForTimeout(8000);
+		 * frame.locator(myROs_FilterButton).click(); logger.info("Click on my RO");
+		 * page.waitForTimeout(8000);
+		 */
+		//if(frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").isVisible()) {
+			   page.keyboard().down("Control");
+			   page.keyboard().press("-");
+			   page.keyboard().press("-");
+			   page.keyboard().up("Control");
+	//}
+		page.waitForCondition(() -> 
+			   frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").isVisible());
+		frame.locator("div.order__column--menu .mat-mdc-tab-labels div.mdc-tab:nth-child(2)").click();
+		logger.info("Click on Service_Rec");
 		if (!frame.locator(checkbox).isChecked()) {
-			frame.locator(checkbox).click();
-			logger.info("checked");
+		    frame.locator(checkbox).click();
+		    logger.info("Checked");
 		}
-		page.waitForTimeout(5000);
-		logger.info("click on checkbox ");
+
+//		if (!frame.locator(checkbox).isChecked()) {
+//			frame.locator(checkbox).click();
+//			logger.info("Checked");
+//		}
+		logger.info("Click on checkbox ");
 		String number = "" + getRandomNumber(2);
-		page.waitForTimeout(5000);
 		frame.locator(original_Amt).fill(number);
 		logger.info("Enter original amount");
-		page.waitForTimeout(5000);
 		frame.locator(final_Amt).fill(number);
 		logger.info("Enter final amount");
 		frame.locator(deferred_Amt).fill(number);
 		logger.info("Enter deferred amount");
 		frame.locator(reminder_set).click();
-		logger.info("click on set reminder");
+		logger.info("Click on set reminder");
 		frame.locator(no_reminder).click();
 		page.waitForTimeout(2000);
-		logger.info("click on set reminder");
+		logger.info("Click on set reminder");
 		frame.locator(save_Btn).click();
-		logger.info("click on save button");
-		frame.locator(topRightCornerNotification).waitFor();
-		String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification).innerText();
+		logger.info("Click on save button");
+		page.waitForTimeout(2000);
+		frame.locator(topRightCornerNotification1).waitFor();
+		String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification1).innerText();
 		logger.info(topRightCornerNotificationPopup);
 		if (topRightCornerNotificationPopup.contains(AppConstants.Reminder_Save)) {
 
@@ -1049,285 +1075,398 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		return true;
 	}
-	    
-	    
-	    //OpenInspection on detail page
 
-	    private String openInspectionBtn = "div.mat-mdc-tooltip-trigger.orders-detail-menu__inspections.ng-star-inserted";
-	    private String reviewInspection = ".mat-toolbar.checklist-header.mat-toolbar-single-row";
-	    private String RequiresImmediateAttention = "div.checklist-result-section_title.red";
-	    private String MayRequireFutureAttention = "div.checklist-result-section_title.yellow";
-	    private String FullInspectionResults = "div.checklist-result-section_title.ng-star-inserted";
-	    private String Interior_Exterior1 = "#mat-expansion-panel-header-10";
-	    private String  AdditionalRecommendations1 = "#mat-expansion-panel-header-11";
-        private String  OpenRecalls = "#mat-expansion-panel-header-12";
-        private String Interior_Exterior2 = "#mat-expansion-panel-header-13";
-        private String  UnderHood  = "#mat-expansion-panel-header-14";
-        private String  UnderVehicle  = "#mat-expansion-panel-header-15";
-        private String   AdditionalRecommendations2   = "#mat-expansion-panel-header-16";
-        private String CheckTires_MeasureTire_TreadDepth = "#mat-expansion-panel-header-17";
-        private String  MeasureFront_RearBrakeLinings  = "#mat-expansion-panel-header-18";
-        private String   CheckBatteryPerformance   = "#mat-expansion-panel-header-19";
-        private String Activity = "div p.checklist-activity_title";
-        
-        
-	    
-	    // div.checklist-footer div button span.mat-mdc-button-persistent-ripple.mdc-button__ripple
-	    public boolean openInspection() throws InterruptedException {
-	    	FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-	    	List<Boolean> flags = new ArrayList<>();
-	    	OrderListPage op = new OrderListPage(page);
-	    	op.checkInspectionStatus();
-	    	Thread.sleep(5000);
-			frame.locator(openInspectionBtn).isVisible();
-//			frame.locator("text= Open inspections - (1)").isVisible();
-			logger.info("Check OpenInspction 1");
-			frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection");
-			page.waitForTimeout(3000);
-	//		page.waitForCondition(()-> frame.locator("#mat-mdc-dialog-1").isVisible());
-			
-		    if(frame.locator(reviewInspection).isVisible() && frame.locator("text= Send Back ").isVisible() && 
-			  frame.locator("text=  Publish  ").isVisible() && frame.locator(RequiresImmediateAttention).isVisible() && 
-			  frame.locator(MayRequireFutureAttention).isVisible() && frame.locator(FullInspectionResults).isVisible())
-			  { 
-			  logger.info("check Review inspection heading"); 
-			  logger.info("Hover on send back btn");
-			  logger.info("Hover on publish btn"); 
-			  page.waitForTimeout(2000); 
-			  logger.info("check RequiresImmediateAttention heading");
-			  logger.info("check MayRequireFutureAttention heading"); 
-			  logger.info("check FullInspectionResults heading"); 
-			  }
-		    else
-		    {
-		    	System.out.println("Buttons and header are not vissible");
-		    	flags.add(false);
-		    }
-			 			
-		    frame.locator(Activity).isVisible();
-			logger.info("check activity");
-			if(!frame.locator("text=Inspection submitted: Standard Multipoint Inspection - Mazda").isVisible()) {
-				logger.info("Check Standard Multipoint Inspection");
-			}
-			if(!frame.locator("text=Inspection submitted: Mazda Full Circle Inspection").isVisible()) {
-				logger.info("Check Mazda Full Circle Inspection");
-			}
-			
+	// OpenInspection on detail page
+
+	private String openInspectionBtn = "div.mat-mdc-tooltip-trigger.orders-detail-menu__inspections.ng-star-inserted";
+	private String reviewInspection = ".mat-toolbar.checklist-header.mat-toolbar-single-row";
+	private String RequiresImmediateAttention = "div.checklist-result-section_title.red";
+	private String MayRequireFutureAttention = "div.checklist-result-section_title.yellow";
+	private String FullInspectionResults = "div.checklist-result-section_title.ng-star-inserted";
+	private String Interior_Exterior1 = "#mat-expansion-panel-header-10";
+	private String AdditionalRecommendations1 = "#mat-expansion-panel-header-11";
+	private String OpenRecalls = "#mat-expansion-panel-header-12";
+	private String Interior_Exterior2 = "#mat-expansion-panel-header-13";
+	private String UnderHood = "#mat-expansion-panel-header-14";
+	private String UnderVehicle = "#mat-expansion-panel-header-15";
+	private String AdditionalRecommendations2 = "#mat-expansion-panel-header-16";
+	private String CheckTires_MeasureTire_TreadDepth = "#mat-expansion-panel-header-17";
+	private String MeasureFront_RearBrakeLinings = "#mat-expansion-panel-header-18";
+	private String CheckBatteryPerformance = "#mat-expansion-panel-header-19";
+	private String Activity = "div p.checklist-activity_title";
+
+	// div.checklist-footer div button
+	// span.mat-mdc-button-persistent-ripple.mdc-button__ripple
+	public boolean openInspection() throws InterruptedException {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		OrderListPage op = new OrderListPage(page);
+		op.checkInspectionStatus();
+		Thread.sleep(5000);
+		frame.locator(openInspectionBtn).isVisible();
+		logger.info("Check OpenInspction 1");
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection");
+		page.waitForTimeout(3000);
+		if (frame.locator(reviewInspection).isVisible() && frame.locator("text= Send Back ").isVisible()
+				&& frame.locator("text=  Publish  ").isVisible()
+				&& frame.locator(RequiresImmediateAttention).isVisible()
+				&& frame.locator(MayRequireFutureAttention).isVisible()
+				&& frame.locator(FullInspectionResults).isVisible()) {
+			logger.info("All elements are vissible");
+		} else {
+			System.out.println("Elements are not vissible");
+			flags.add(false);
+		}
+		frame.locator(Activity).isVisible();
+		logger.info("Check activity");
+		if (!frame.locator("text=Inspection submitted: Standard Multipoint Inspection - Mazda").isVisible()) {
+			logger.info("Check Standard Multipoint Inspection");
+		}
+		if (!frame.locator("text=Inspection submitted: Mazda Full Circle Inspection").isVisible()) {
+			logger.info("Check Mazda Full Circle Inspection");
+		}
+
+		/*
+		 * page.waitForTimeout(5000); //frame.locator(Interior_Exterior1).isVisible();
+		 * Locator additionalRecommendations =
+		 * frame.locator(AdditionalRecommendations1); Locator openRecalls =
+		 * frame.locator(OpenRecalls); Locator interior_Exterior2 =
+		 * frame.locator(Interior_Exterior2); Locator underHood =
+		 * frame.locator(UnderHood); Locator underVehicle = frame.locator(UnderVehicle);
+		 * Locator additionalRecommendations2 =
+		 * frame.locator(AdditionalRecommendations2); Locator
+		 * checkTires_MeasureTire_TreadDepth =
+		 * frame.locator(CheckTires_MeasureTire_TreadDepth); Locator
+		 * measureFront_RearBrakeLinings = frame.locator(MeasureFront_RearBrakeLinings);
+		 * Locator checkBatteryPerformance = frame.locator(CheckBatteryPerformance);
+		 */
+		/*
+		 * if (interiorExterior.isVisible() && additionalRecommendations.isVisible()) {
+		 * // Double-click on both elements if they are visible
+		 * interiorExterior.click(); additionalRecommendations.click(); } else { //
+		 * Handle the case when one or both elements are not visible
+		 * System.out.println("One or both elements are not visible"); }
+		 */
+
+		/*
+		 * additionalRecommendations.click(); openRecalls.dblclick();
+		 * interior_Exterior2.dblclick(); underHood.dblclick(); underVehicle.dblclick();
+		 * additionalRecommendations2.dblclick();
+		 * checkTires_MeasureTire_TreadDepth.dblclick();
+		 * measureFront_RearBrakeLinings.dblclick(); checkBatteryPerformance.dblclick();
+		 */
+
+		return !flags.contains(false);
+
+	}
+	
+	// Send Back Inspection
+
+	private String sendback = ".mdc-button__label:has-text(' Send Back ')";
+	private String areyousure = ".mdc-dialog__container div.checklist-send-back-dialog_content";
+	private String cancelBtn = ".checklist-footer_button.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base";
+	private String yesBtn = ".mdc-button__label:has-text(' Yes ')";
+	// private String repairOrder_Header = "a[href='/crud/repair-order']";
+	private String publish = "span.mdc-button__label:has-text(' Publish ')";
+	private String inspReturnedStatus = ".checklist-header div span";
+
+	public boolean sendbackInspection() {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		OrderListPage op = new OrderListPage(page);
+		op.checkInspectionStatus();
+		page.waitForTimeout(5000);
+    	if (frame.locator(openInspectionBtn).isVisible() && frame.locator(openInspectionBtn).isEnabled()) {
+		    logger.info("Open Inspection button is visible and enabled, clicking now.");
 		    
-			/*
-			 * page.waitForTimeout(5000); //frame.locator(Interior_Exterior1).isVisible();
-			 * Locator additionalRecommendations =
-			 * frame.locator(AdditionalRecommendations1); Locator openRecalls =
-			 * frame.locator(OpenRecalls); Locator interior_Exterior2 =
-			 * frame.locator(Interior_Exterior2); Locator underHood =
-			 * frame.locator(UnderHood); Locator underVehicle = frame.locator(UnderVehicle);
-			 * Locator additionalRecommendations2 =
-			 * frame.locator(AdditionalRecommendations2); Locator
-			 * checkTires_MeasureTire_TreadDepth =
-			 * frame.locator(CheckTires_MeasureTire_TreadDepth); Locator
-			 * measureFront_RearBrakeLinings = frame.locator(MeasureFront_RearBrakeLinings);
-			 * Locator checkBatteryPerformance = frame.locator(CheckBatteryPerformance);
-			 */
-			/*
-			 * if (interiorExterior.isVisible() && additionalRecommendations.isVisible()) {
-			 * // Double-click on both elements if they are visible
-			 * interiorExterior.click(); additionalRecommendations.click(); } else { //
-			 * Handle the case when one or both elements are not visible
-			 * System.out.println("One or both elements are not visible"); }
-			 */
-			
-			 
-			/*
-			 * additionalRecommendations.click(); openRecalls.dblclick();
-			 * interior_Exterior2.dblclick(); underHood.dblclick(); underVehicle.dblclick();
-			 * additionalRecommendations2.dblclick();
-			 * checkTires_MeasureTire_TreadDepth.dblclick();
-			 * measureFront_RearBrakeLinings.dblclick(); checkBatteryPerformance.dblclick();
-			 */
-			 
-			return !flags.contains(false);
-	    		    	
-	    }
-	    
-	    //Send Back Inspection
-	    
-	    private String sendback = ".mdc-button__label:has-text(' Send Back ')";
-	    private String areyousure = ".mdc-dialog__container div.checklist-send-back-dialog_content";
-	    private String cancelBtn = ".checklist-footer_button.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base";
-	    private String yesBtn = ".mdc-button__label:has-text(' Yes ')";
-	//   private String repairOrder_Header = "a[href='/crud/repair-order']";
-	    private String publish = ".mdc-button__label:has-text(' Publish ')";
-	    private String inspReturnedStatus = ".checklist-header div span";
-	    
-	    
-	    public boolean sendbackInspection() {
-	    	FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-	    	OrderListPage op = new OrderListPage(page);
-	    	op.checkInspectionStatus();
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection");
-			page.waitForTimeout(3000);
-	    	frame.locator(sendback).click();
-	    	logger.info("click on send back button");
-	    	if(!frame.locator(areyousure).isVisible()) {
-	    		logger.info("Are you sure you want to send this inspection back for a revision?");
-	    	}
-	    	frame.locator(cancelBtn).click();
-	    	logger.info("click on Cancel button");
-	    	frame.locator(sendback).click();
-	    	logger.info("click on again send back button");
-	    	frame.locator(yesBtn).click();
-	    	logger.info("click on Yes button");
-	    	page.waitForTimeout(3000);
-	    	op.checkInspReturnedStatus();
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection again");
-			if(!frame.locator(inspReturnedStatus).isVisible()) {
-		    	logger.info("Check Inspection Returned status is displaying in header");
-			}
-			frame.locator(sendback).isDisabled();
-			logger.info("send back button are displaying disabled");
-			frame.locator(publish).isDisabled();
-			logger.info("publish button are displaying disabled");
-			if(!frame.locator("text=Inspection returned: Mazda Full Circle Inspection").isVisible()) {
-				logger.info("Check Inspection return message are displaying under activity");
-			}
-			
-            return true;
-	    }
-	    
-	    // Publish Inspection
-	    
-	    private String inspPublishStatus = ".checklist-header div span"; //('Inspection (Insp-Published)')
-	    private String hidefromcustomer = ".mdc-button__label:has-text(' Hide from customer ')";
-	    private String createpdf = ".mdc-button__label:has-text(' Create Pdf ')"; 
-	    private String  notifybtn = ".mat-mdc-tooltip-trigger.primary";
-	    
-	     
-	       
-	    public boolean publishInspection() {
-	    	FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-	    	List<Boolean> flags = new ArrayList<>();
-	    	OrderListPage op = new OrderListPage(page);
-	    	op.checkInspectionStatus();
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection");
-			page.waitForTimeout(3000);
-	    	frame.locator(publish).click();
-	    	logger.info("click on Publish button");
-	    	op.checkInspPublishStatus();	
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection again");
-	    	if(!frame.locator(inspPublishStatus).isVisible() && 
-	    	frame.locator("text=Inspection published: Standard Multipoint Inspection - Mazda").isVisible()) {
-	    	}
-	    	logger.info("Check Inspection Publish status is displaying in header");
-			logger.info("Check Inspection publish message are displaying under activity");
-			frame.locator(sendback).isDisabled();
-			logger.info("send back button are displaying disabled");
-			page.waitForTimeout(5000);
-			if(frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible() &&
-					frame.locator(notifybtn).isVisible()	) {
-				logger.info("Verify that Hide from customer button are displaying");
-				logger.info("Verify that Create Pdf button");
-				logger.info("Verify that notify button are displaying ");
+		} else {
+		    logger.error("Open Inspection button is either not visible or not enabled.");
+		}
+		frame.locator(openInspectionBtn).click();
+	    logger.info("Click on Open- inspection");
+		page.waitForTimeout(3000);
+		frame.locator(sendback).click();
+		logger.info("Click on send back button");
+		if (!frame.locator(areyousure).isVisible()) {
+			logger.info("Are you sure you want to send this inspection back for a revision?");
+		}
+		frame.locator(cancelBtn).click();
+	    logger.info("Clicked on Cancel button, closing the confirmation dialog.");
+		frame.locator(sendback).click();
+		logger.info("Click on again send back button");
+		frame.locator(yesBtn).click();
+	    logger.info("Clicked on Yes button to confirm sending back the inspection.");
+		page.waitForTimeout(3000);
+		op.checkInspReturnedStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection again");
+		if (!frame.locator(inspReturnedStatus).isVisible()) {
+			logger.info("Check Inspection Returned status is displaying in header");
+		}
+		frame.locator(sendback).isDisabled();
+		logger.info("Send back button are displaying disabled");
+		frame.locator(publish).isDisabled();
+		logger.info("Publish button are displaying disabled");
+		if (!frame.locator("text=Inspection returned: Mazda Full Circle Inspection").isVisible()) {
+			logger.info("Check Inspection return message are displaying under activity");
+		}
 
-			}
-			
-			else
-		    {
-		    	System.out.println("Hide from customer , Create PDF and Notify button are not vissible");
-		    	flags.add(false);
-		    }
-			
-			
-	    	return !flags.contains(false);
-	    }
-	    
-	 // Notify customer button
-	    
-	    public static final String Inspection_Sent = "The notification was sent successfully to the client";
+		return true;
+	}
+	
+	// Publish Inspection
 
-	    
-	    public boolean notifyCustomerBtn() {
-	    	FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-	    	List<Boolean> flags = new ArrayList<>();
-	    	OrderListPage op = new OrderListPage(page);
-	    	op.checkInspectionStatus();
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection");
-			page.waitForTimeout(3000);
-	    	frame.locator(publish).click();
-	    	logger.info("click on Publish button");
-	    	op.checkInspPublishStatus();	
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection again");
-			frame.locator(inspPublishStatus).isVisible();
-			logger.info("Check Inspection Publish status is displaying in header");
-			if(frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible() &&
-					frame.locator(notifybtn).isVisible()	) {
-				logger.info("Verify that Hide from customer button are displaying");
-				logger.info("Verify that Create Pdf button");
-				logger.info("Verify that notify button are displaying ");
+	private String inspPublishStatus = ".checklist-header div span"; // ('Inspection (Insp-Published)')
+	private String hidefromcustomer = ".mdc-button__label:has-text(' Hide from customer ')";
+	private String createpdf = ".mdc-button__label:has-text(' Create Pdf ')";
+	private String notifybtn = ".mat-mdc-tooltip-trigger.primary";
 
-			}
-			
-			else
-		    {
-		    	System.out.println("Hide from customer , Create PDF and Notify button are not vissible");
-		    	flags.add(false);
-		    }
-	    	
-	    	frame.locator(notifybtn).click();
-			logger.info("click on Notify button");
-			page.waitForTimeout(2000);
-			selectChannelToPerformAction("SMS"); // Select channel to send 
-			frame.locator("text=Inspection sent to customer: Standard Multipoint Inspection - Mazda").isVisible();
+	public boolean publishInspection() {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		OrderListPage op = new OrderListPage(page);
+		op.checkInspectionStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection");
+		page.waitForTimeout(3000);
+		frame.locator(publish).click();
+		logger.info("Click on Publish button");
+		op.checkInspPublishStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection again");
+		if (!frame.locator(inspPublishStatus).isVisible()
+				&& frame.locator("text=Inspection published: Standard Multipoint Inspection - Mazda").isVisible()) {
+		}
+		logger.info("Check Inspection Publish status is displaying in header");
+		logger.info("Check Inspection publish message are displaying under activity");
+		frame.locator(sendback).isDisabled();
+		logger.info("Send back button are displaying disabled");
+		page.waitForTimeout(5000);
+		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
+				&& frame.locator(notifybtn).isVisible()) {
+			logger.info("All buttons are vissible");
+		} else {
+			System.out.println("All buttons are not vissible");
+			flags.add(false);
+		}
+		return !flags.contains(false);
+	}
+
+	// Notify customer button
+
+	public static final String Inspection_Sent = "The notification was sent successfully to the client";
+
+	public boolean notifyCustomerBtn() {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		OrderListPage op = new OrderListPage(page);
+		op.checkInspectionStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection");
+		page.waitForTimeout(3000);
+		frame.locator(publish).click();
+		logger.info("Click on Publish button");
+		op.checkInspPublishStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection again");
+		frame.locator(inspPublishStatus).isVisible();
+		logger.info("Check Inspection Publish status is displaying in header");
+		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
+				&& frame.locator(notifybtn).isVisible()) {
+			logger.info("All buttons are vissible");
+		} else {
+			System.out.println("All buttons are not vissible");
+			flags.add(false);
+		}
+		frame.locator(notifybtn).click();
+		logger.info("Click on Notify button");
+		page.waitForTimeout(4000);
+		selectChannelToPerformAction("SMS"); // Select channel to send
+		if (frame.locator("text=Inspection sent to customer: Standard Multipoint Inspection - Mazda").isVisible()
+				&& frame.locator("text=Inspection sent to customer: Mazda Full Circle Inspection").isVisible()) {
 			logger.info("Inspection sent to customer display under activity");
-			frame.locator(topRightCornerNotification).waitFor();
-			String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification).innerText();
-			logger.info(topRightCornerNotificationPopup);
-			if (topRightCornerNotificationPopup.contains(AppConstants.Inspection_Sent)) {
+		} else {
+			logger.info("Inspection status not matched");
+		}
+		page.waitForTimeout(4000);
+		frame.locator(topRightCornerNotification1).waitFor();
+		String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification1).innerText();
+		logger.info(topRightCornerNotificationPopup);
+		if (topRightCornerNotificationPopup.contains(AppConstants.Inspection_Sent)) {
 
-				logger.info("Notify sent sucessfully to client");
-			} else {
-				logger.info("Not displaying message");
-			}
-			
-			
-			return !flags.contains(false);
-	    	
-	    }
-	    
-	    
-	    
-	 // Hide from customer/ Show to customer button functionality  
-	    
-	    private String showtocustomer = ".mdc-button__label:has-text(' Show to customer ')";
-	    
-	    
-	    public boolean hide_showBtn (){
-	    	
-	    	FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-	    	OrderListPage op = new OrderListPage(page);
-	    	op.checkInspectionStatus();
-	    	frame.locator(openInspectionBtn).click();
-			logger.info("click on Open- inspection");
-			page.waitForTimeout(3000);
-	    	frame.locator(publish).click();
-	    	logger.info("click on publish button");
-	    	//Incomplete
-	    	
-	    	frame.locator(showtocustomer).click();
-			logger.info("click on Show to customer button");
-			
-			
-			
-	    return true;	
-	    }
-	    
-	    // Print Inspection
-	    
-	    
+			logger.info("Notify sent sucessfully to client");
+		} else {
+			logger.info("Not displaying message");
+		}
+		return !flags.contains(false);
+	}
+
+	// Hide from customer/ Show to customer button functionality
+
+	private String showtocustomer = ".mdc-button__label:has-text(' Show to customer ')";
+	private String closeInspection = "app-checklist-container div mat-toolbar mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color.ng-star-inserted";
+	private String InspectionLink = "div.ng-star-inserted p a";
+
+	private String communicationTabs(String Channelname) {
+		return "div.mat-mdc-tab-labels div.mdc-tab.mat-mdc-tab.mat-mdc-focus-indicator:has-text('" + Channelname + "')";
+	}
+
+	public boolean hide_showBtn() {
+
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		OrderListPage op = new OrderListPage(page);
+		page.waitForTimeout(3000);
+		op.checkInspectionStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection");
+		page.waitForTimeout(3000);
+		if (!frame.locator(reviewInspection).isVisible() && frame.locator("text= Send Back ").isVisible()
+				&& frame.locator("text=  Publish  ").isVisible()) {
+			logger.info("All buttons are vissible");
+		} else {
+			System.out.println("Buttons are not vissible");
+			flags.add(false);
+		}
+		page.waitForTimeout(3000);
+		frame.locator(publish).click();
+		logger.info("Click on publish button");
+		page.waitForTimeout(5000);
+		op.checkInspPublishStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection again");
+		frame.locator(inspPublishStatus).isVisible();
+		logger.info("Check Inspection Publish status is displaying in header");
+		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
+				&& frame.locator(notifybtn).isVisible()) {
+			logger.info("All buttons are vissible");
+		}
+
+		else {
+			System.out.println("All buttons are not vissible");
+			flags.add(false);
+		}
+		frame.locator(notifybtn).click();
+		logger.info("Click on Notify button");
+		page.waitForTimeout(4000);
+		selectChannelToPerformAction("SMS"); // Select channel to send
+		if (frame.locator(
+				".checklist-activity_container div p:has-text('Inspection sent to customer: Standard Multipoint Inspection - Mazda')")
+				.first().isVisible()) {
+			logger.info("Inspection sent to customer display under activity");
+
+		} else {
+			logger.info("Inspection status not matched");
+		}
+		logger.info("Inspection sent to customer display under activity");
+		frame.locator(topRightCornerNotification).waitFor();
+		String topRightCornerNotificationPopup = frame.locator(topRightCornerNotification).innerText();
+		logger.info(topRightCornerNotificationPopup);
+		if (topRightCornerNotificationPopup.contains(AppConstants.Inspection_Sent)) {
+
+			logger.info("Notify sent sucessfully to client");
+		} else {
+			logger.info("Not displaying message");
+		}
+
+		frame.locator(closeInspection).click();
+		logger.info("Inspection closed successfully");
+		page.waitForTimeout(8000);
+		frame.locator(communicationTabs("SMS")).click(); // Select channel to send
+		frame.locator(InspectionLink).click();
+		logger.info("Open Inspection link on SMS channel");
+
+		// inspection link sent in SMS
+		// Incomplete need help
+
+		frame.locator(hidefromcustomer).click();
+		logger.info("Click on Hide from customer button");
+
+		if (frame.locator(showtocustomer).isVisible() && frame.locator(createpdf).isVisible()) {
+			logger.info("Verify that Show to customer button are displaying");
+			logger.info("Verify that Create Pdf button are displaying");
+
+		}
+
+		else {
+			System.out.println("Show to customer and Create PDF button are not vissible");
+			flags.add(false);
+		}
+		frame.locator(showtocustomer).click();
+		logger.info("Click on Show to customer button");
+		if (!frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
+				&& frame.locator(notifybtn).isVisible()) {
+			logger.info("Verify that Hide from customer button are displaying");
+			logger.info("Verify that Create Pdf button");
+			logger.info("Verify that notify button are displaying ");
+
+		}
+
+		else {
+			System.out.println("Hide from customer , Create PDF and Notify button are not vissible");
+			flags.add(false);
+		}
+
+		return !flags.contains(false);
+	}
+
+	// Print Inspection
+	// The PDF generation was not optimal, please try again
+	private String printbtn = "button span.mdc-button__label:has-text(' Print ')";
+
+	public boolean printInspection() throws InterruptedException {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		OrderListPage op = new OrderListPage(page);
+		op.checkInspectionStatus();
+		Thread.sleep(4000);
+		frame.locator(openInspectionBtn).isVisible();
+		logger.info("Check OpenInspction 1");
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection");
+		page.waitForTimeout(6000);
+		if (frame.locator(reviewInspection).isVisible() && frame.locator("text= Send Back ").isVisible()
+				&& frame.locator("text=  Publish  ").isVisible()) {
+			logger.info("Check Review inspection heading");
+			logger.info("Hover on send back btn");
+			logger.info("Hover on publish btn");
+		} else {
+			System.out.println("Buttons are not vissible");
+			flags.add(false);
+		}
+		page.waitForTimeout(3000);
+		frame.locator(publish).click();
+		logger.info("Click on Publish button");
+		op.checkInspPublishStatus();
+		frame.locator(openInspectionBtn).click();
+		logger.info("Click on Open- inspection again");
+		frame.locator(inspPublishStatus).isVisible();
+		logger.info("Check Inspection Publish status is displaying in header");
+		if (frame.locator(hidefromcustomer).isVisible() && frame.locator(createpdf).isVisible()
+				&& frame.locator(notifybtn).isVisible()) {
+			logger.info("Verify that Hide from customer button are displaying");
+			logger.info("Verify that Create Pdf button");
+			logger.info("Verify that notify button are displaying ");
+
+		}
+
+		else {
+			System.out.println("Hide from customer , Create PDF and Notify button are not vissible");
+			flags.add(false);
+		}
+		frame.locator(createpdf).click();
+		logger.info("Click on Create PDF button");
+		if (!frame.locator("text=Inspection printed: Standard Multipoint Inspection - Mazda").isVisible()) {
+			logger.info("Inspection printed display under activity");
+
+		}
+		page.waitForTimeout(3000);
+		// Print notification ayega ye remaining he
+		frame.locator(printbtn).click();
+		page.waitForTimeout(5000);
+		logger.info("Click on print button");
+
+		return !flags.contains(false);
+	}
+
 }

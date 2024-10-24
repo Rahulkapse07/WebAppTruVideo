@@ -68,6 +68,11 @@ public class AppConstants {
 	
 	//Inspection
 	public static final String Inspection_Sent = "The notification was sent successfully to the client";
+	//Saved Video Library
+	public static final String VideoUpload = "Record has been successfully added";
+	public static final String Update = "Record has been successfully updated";
+	public static final String Remove = "Record has been successfully deleted";
+			
 
 	
 }

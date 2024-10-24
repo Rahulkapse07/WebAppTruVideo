@@ -407,7 +407,8 @@ private String Inspec_Review = "td.results-row:nth-child(10) > span.label.status
 	  page.click(RepairOrdertab);
       logger.info("click on repair order tab"); 
       page.waitForTimeout(10000);
-	  logger.info("check table");
+      page.click(allOpen_FilterButton);
+      logger.info("check table");
 	  
 	  String Value = "Insp-Review";
   
@@ -453,6 +454,7 @@ private String Inspec_Review = "td.results-row:nth-child(10) > span.label.status
 	  page.click(RepairOrdertab);
       logger.info("click on repair order tab"); 
       page.waitForTimeout(10000);
+      page.click(allOpen_FilterButton);
 	  logger.info("check table");
 	  
 	  String Value = "Insp-Returned";
@@ -499,6 +501,7 @@ private String Inspec_Review = "td.results-row:nth-child(10) > span.label.status
 	  page.click(RepairOrdertab);
       logger.info("click on repair order tab"); 
       page.waitForTimeout(10000);
+      page.click(allOpen_FilterButton);
 	  logger.info("check table");
 	  
 	  String Value = "Insp-Published";

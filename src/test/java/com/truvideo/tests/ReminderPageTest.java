@@ -15,32 +15,32 @@ public class ReminderPageTest extends BaseTest {
 				.navigateToReminder();
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void reminder() {
 		Assert.assertTrue(reminderspage.getRemindersPageServiceAdvisor());
 
 	}
-	@Test(priority=2)
+	@Test(priority = 2)
 	public void remindera() {
 		Assert.assertTrue(reminderspage.getRemindersPageDealer());
 	}
 	
-	@Test(priority=3)
+	@Test(priority = 3)
 	public void verifykeys() {
-		reminderspage.reminder();
+		Assert.assertTrue(reminderspage.reminder());
 	}
 
-	@Test(priority=4)
+	@Test(priority = 4)
 	public void sentreminder() {
-		reminderspage.sentreminder();
+		Assert.assertTrue(reminderspage.sentreminder());
 	}
 
-	@Test(priority=5)
+	@Test(priority = 5)
 	public void cancelreminder() {
-		reminderspage.cancelreminder();
+	Assert.assertTrue(reminderspage.cancelreminder());	
 	}
 	@Test(priority = 6)
 	public void checkremindernavigateToOrderList() throws InterruptedException {
-		reminderspage.checkremindernavigateToOrderListPage();
+		Assert.assertTrue(reminderspage.checkremindernavigateToOrderListPage());
 	}
 }
