@@ -1383,19 +1383,17 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void insightFunctionality() {
 		// addVideoToOrder();
+		HomePage homepage=new HomePage(page);
+		homepage.clickOn_RepairOrder_Header();
+		OrderListPage listpage=new OrderListPage(page);
+		listpage.navigateToOrderDetails();
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		if (frame.locator(roStatusBar).textContent().contains("New")) {
-			logger.info("RO is New & No media is added");
-			// String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to
-			// customer");
-			// String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with
-			// customer");
+			logger.info("RO is New & No media is added");		
 			String insightClass = getLocatorClass(operations_Buttons, "Insights");
-			// System.out.println("send to customer class "+sendToCustomerClass);
-			// System.out.println("viewWithCustomerClass "+viewWithCustomerClass);
 			System.out.println("insightClass " + insightClass);
 			if (insightClass.contains("disabled")) {
 				logger.info("'Insights' button is disabled");
