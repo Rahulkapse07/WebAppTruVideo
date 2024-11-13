@@ -50,7 +50,8 @@ public class OrderListPage extends JavaUtility {
 	private String companyName_TextBox = "(//input[@id='customer.companyName'])[1]";
 	private String phoneNumber_Field = "//input[@id='phoneNumberCreate']";
 	private String emailId_Field = "(//input[@id='customer.email'])[1]";
-	private String technician_Dropdown = "(//select[@id='technician'])[1]";
+	//private String technician_Dropdown = "(//select[@id='technician'])[1]";
+	private String technician_Dropdown ="//select[@id='technician']";
 	private String save_Button = "#add-repair-order-save";
 	private String cancel_Button = "#add-repair-order-cancel";
 	// Error messages
@@ -422,6 +423,7 @@ public class OrderListPage extends JavaUtility {
 		page.waitForURL(url -> url.contains("order/service/view"));
 		return new RepairOrderDetailPage(page);
 	}
+	
 
 // Inspection
 	private String RepairOrdertab = "li.nav-item > a[href=\"/crud/repair-order\"]";

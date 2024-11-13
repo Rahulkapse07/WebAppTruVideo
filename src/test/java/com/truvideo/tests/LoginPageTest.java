@@ -8,7 +8,7 @@ import com.truvideo.constants.AppConstants;
 
 public class LoginPageTest extends BaseTest {
 
-	@Test(priority = 1)
+	@Test(priority = 1,description = "WA-5572")
 	public void verifyAllElementsOfLoginPage() {
 		Assert.assertTrue(loginpage.checkAllElements_LoginPage());
 	}
@@ -42,8 +42,8 @@ public class LoginPageTest extends BaseTest {
 				{ prop.getProperty("username"), prop.getProperty("password"), "VALID" } // Valid credentials
 		};
 	}
-
-	@Test(dataProvider = "loginDataProvider", priority = 5)
+	
+	@Test(dataProvider = "loginDataProvider", priority = 5,description = "WA-5571")
 	public void testLogin(String Username, String password, String loginType) {
 
 		switch (loginType) {

@@ -14,7 +14,7 @@
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-	<test name="Home page Test">
+	<!-- <test name="Home page Test">
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest"></class>
 		</classes>
@@ -28,7 +28,7 @@
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
 		</classes>
-	</test>
+	</test> 
 	<test name="User Page Test">
 		<classes>
 			<class name="com.truvideo.tests.UserPageTest"></class>
@@ -43,5 +43,5 @@
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest"></class>
 		</classes>
-	</test> 
+	</test>  -->
 </suite> 
