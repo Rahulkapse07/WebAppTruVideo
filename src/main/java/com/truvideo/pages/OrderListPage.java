@@ -50,7 +50,8 @@ public class OrderListPage extends JavaUtility {
 	private String companyName_TextBox = "(//input[@id='customer.companyName'])[1]";
 	private String phoneNumber_Field = "//input[@id='phoneNumberCreate']";
 	private String emailId_Field = "(//input[@id='customer.email'])[1]";
-	private String technician_Dropdown = "(//select[@id='technician'])[1]";
+	//private String technician_Dropdown = "(//select[@id='technician'])[1]";
+	private String technician_Dropdown ="//select[@id='technician']";
 	private String save_Button = "#add-repair-order-save";
 	private String cancel_Button = "#add-repair-order-cancel";
 	// Error messages
@@ -431,11 +432,12 @@ public class OrderListPage extends JavaUtility {
 		newRoNumber = addRepairOrder("New");
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
-		// page.locator("table#repair-order-results tr
+		// page.locator("table#repair-order-results 
 		// td:nth-child(4)").first().click();
 		page.waitForURL(url -> url.contains("order/service/view"));
 		return new RepairOrderDetailPage(page);
 	}
+	
 
 // Inspection
 	private String RepairOrdertab = "li.nav-item > a[href=\"/crud/repair-order\"]";
@@ -446,11 +448,14 @@ public class OrderListPage extends JavaUtility {
 // Get Ro number from table
 	private String Ronumber = "td.results-row:nth-child(4)";
 
-	public boolean checkInspectionStatus() {
-		page.click(RepairOrdertab);
-		logger.info("click on repair order tab");
-		page.waitForTimeout(10000);
-		logger.info("check table");
+	public boolean checkInspectionStatus() { 
+	  page.click(RepairOrdertab);
+      logger.info("click on repair order tab"); 
+      page.waitForTimeout(10000);
+      page.click(allOpen_FilterButton);
+      logger.info("check table");
+	  
+	  
 
 		String Value = "Insp-Review";
 
@@ -476,142 +481,119 @@ public class OrderListPage extends JavaUtility {
 				}
 				logger.info("Checking for: " + Value + " And found :" + roNumber);
 			}
-			if (!roFound && page.isVisible(nextButton)) {
-				logger.info("next button displayed ");
-				page.click(nextButton);
-				logger.info("The Closed RO is not found on the current page, checking on the next page.");
-				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+			
+		if (!roFound && page.isVisible(nextButton)) {
+			logger.info("next button displayed ");
+			page.click(nextButton);
+			logger.info("The Closed RO is not found on the current page, checking on the next page.");
+			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+			page.waitForTimeout(4000);
+		} else if (!roFound) {
+			logger.info("RO number not found and no more pages to check.");
+			roFound = false;
+			break;
+		}
+	}
+	return roFound;
+  
+  }
+	
+  public boolean checkInspReturnedStatus() { 
+	  page.click(RepairOrdertab);
+      logger.info("click on repair order tab"); 
+      page.waitForTimeout(10000);
+      page.click(allOpen_FilterButton);
+	  logger.info("check table");
+	  
+	  String Value = "Insp-Returned";
+  
+    boolean roFound = false;
+	while (!roFound) {
+		Locator TableRow = page.locator(tableRows);
+		int rowCount = TableRow.count();
+		logger.info(rowCount);
+		for (int i = 0; i < rowCount - 1; i++) {
+			Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
+			String roNumber = roNumberList.innerText().trim();
+			
+			if (roNumber.contains(Value)) {
+				logger.info("The Closed RO " + Value + " found in closed list and RO Number is: "
+						+ roNumber);
+				
+				TableRow.locator(SearchInspectionStatus1).nth(i).click();
 				page.waitForTimeout(4000);
-			} else if (!roFound) {
-				logger.info("RO number not found and no more pages to check.");
-				roFound = false;
+				//page.waitForCondition(() ->page.locator(".order__column--main div div.orders-detail-communications__title span").isVisible());
+			   
+				roFound = true;
 				break;
 			}
+			logger.info("Checking for: " + Value + " And found :" + roNumber);
 		}
-		return roFound;
-
+		if (!roFound && page.isVisible(nextButton)) {
+			logger.info("next button displayed ");
+			page.click(nextButton);
+			logger.info("The Closed RO is not found on the current page, checking on the next page.");
+			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+			page.waitForTimeout(4000);
+		} else if (!roFound) {
+			logger.info("RO number not found and no more pages to check.");
+			roFound = false;
+			break;
+		}
 	}
-
-	public boolean checkInspReturnedStatus() {
-		page.click(RepairOrdertab);
-		logger.info("click on repair order tab");
-		page.waitForTimeout(10000);
-		logger.info("check table");
-
-		String Value = "Insp-Returned";
-
-		boolean roFound = false;
-		while (!roFound) {
-			Locator TableRow = page.locator(tableRows);
-			int rowCount = TableRow.count();
-			logger.info(rowCount);
-			for (int i = 0; i < rowCount - 1; i++) {
-				Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
-				String roNumber = roNumberList.innerText().trim();
-
-				if (roNumber.contains(Value)) {
-					logger.info("The Closed RO " + Value + " found in closed list and RO Number is: " + roNumber);
-
-					TableRow.locator(SearchInspectionStatus1).nth(i).click();
-					page.waitForTimeout(4000);
-					// page.waitForCondition(() ->page.locator(".order__column--main div
-					// div.orders-detail-communications__title span").isVisible());
-
-					roFound = true;
-					break;
-				}
-				logger.info("Checking for: " + Value + " And found :" + roNumber);
-			}
-			if (!roFound && page.isVisible(nextButton)) {
-				logger.info("next button displayed ");
-				page.click(nextButton);
-				logger.info("The Closed RO is not found on the current page, checking on the next page.");
-				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+	return roFound;
+  }
+  
+  
+  public boolean checkInspPublishStatus() { 
+	  page.click(RepairOrdertab);
+      logger.info("click on repair order tab"); 
+      page.waitForTimeout(10000);
+      page.click(allOpen_FilterButton);
+	  logger.info("check table");
+	  
+	  String Value = "Insp-Published";
+  
+    boolean roFound = false;
+	while (!roFound) {
+		Locator TableRow = page.locator(tableRows);
+		int rowCount = TableRow.count();
+		logger.info(rowCount);
+		for (int i = 0; i < rowCount - 1; i++) {
+			Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
+			String roNumber = roNumberList.innerText().trim();
+			
+			if (roNumber.contains(Value)) {
+				logger.info("The Closed RO " + Value + " found in closed list and RO Number is: "
+						+ roNumber);
+				
+				TableRow.locator(SearchInspectionStatus1).nth(i).click();
 				page.waitForTimeout(4000);
-			} else if (!roFound) {
-				logger.info("RO number not found and no more pages to check.");
-				roFound = false;
+				//page.waitForCondition(() ->page.locator(".order__column--main div div.orders-detail-communications__title span").isVisible());
+			   
+				roFound = true;
 				break;
 			}
+			logger.info("Checking for: " + Value + " And found :" + roNumber);
 		}
-		return roFound;
-	}
-
-	public boolean checkInspPublishStatus() {
-		page.click(RepairOrdertab);
-		logger.info("click on repair order tab");
-		page.waitForTimeout(10000);
-		logger.info("check table");
-
-		String Value = "Insp-Published";
-
-		boolean roFound = false;
-		while (!roFound) {
-			Locator TableRow = page.locator(tableRows);
-			int rowCount = TableRow.count();
-			logger.info(rowCount);
-			for (int i = 0; i < rowCount - 1; i++) {
-				Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
-				String roNumber = roNumberList.innerText().trim();
-
-				if (roNumber.contains(Value)) {
-					logger.info("The Closed RO " + Value + " found in closed list and RO Number is: " + roNumber);
-
-					TableRow.locator(SearchInspectionStatus1).nth(i).click();
-					page.waitForTimeout(4000);
-					// page.waitForCondition(() ->page.locator(".order__column--main div
-					// div.orders-detail-communications__title span").isVisible());
-
-					roFound = true;
-					break;
-				}
-				logger.info("Checking for: " + Value + " And found :" + roNumber);
-			}
-			if (!roFound && page.isVisible(nextButton)) {
-				logger.info("next button displayed ");
-				page.click(nextButton);
-				logger.info("The Closed RO is not found on the current page, checking on the next page.");
-				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-				page.waitForTimeout(4000);
-			} else if (!roFound) {
-				logger.info("RO number not found and no more pages to check.");
-				roFound = false;
-				break;
-			}
+		if (!roFound && page.isVisible(nextButton)) {
+			logger.info("next button displayed ");
+			page.click(nextButton);
+			logger.info("The Closed RO is not found on the current page, checking on the next page.");
+			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+			page.waitForTimeout(4000);
+		} else if (!roFound) {
+			logger.info("RO number not found and no more pages to check.");
+			roFound = false;
+			break;
 		}
-		return roFound;
 	}
+	return roFound;
+  }
+   	  
 
+
+	
 }
-
-/*
- * if(page.locator("Insp-Review").isVisible()){ page.locator(nextpage).click();
- * logger.info("Inspection not found"); } else {
- * logger.info("Inspection found"); }
- * 
- * Locator locator = page.locator("#repair-order-results tbody tr") .filter(new
- * Locator.FilterOptions().setHasText("Insp-Review"))
- * .locator("td.results-row:nth-child(10) > span.label.status-insp-submitted");
- * page.locator("#repair-order-results tbody tr:nth-child(2)");
- * locator.last().click(); page.waitForTimeout(10000);// For example, clicking
- * the element if needed
- * 
- * 
- * return true; }
- * 
- * }
- */
-
-//locator.first().click();
-// Now you can perform actions on the locator
-
-/*
- * List<String> list = page.locator(SearchInspectionStatus).allInnerTexts();
- * logger.info(list); for(String lists:list) { System.out.println(lists);
- * if(lists.contains("Insp-Review")) {
- * 
- * logger.info("Search anoasdxasxasxsxther status"); } else {
- * logger.info("Search another status"); }
- * 
- * }
- */
+		
+	

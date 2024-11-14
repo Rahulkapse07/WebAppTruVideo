@@ -17,7 +17,10 @@ public class RepairOrderDetailPageTest extends BaseTest {
 				.navigateToOrderList().navigateToOrderDetails("New");
 	}
 
-	@Test
+
+
+	@Test(priority = 1)
+
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
@@ -80,6 +83,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.submitPayment("SMS");
 	}
 
+
 //	@Test(priority = 14)
 //	public void verifyCreateReminder() throws InterruptedException {
 //		Assert.assertTrue(repairOrderPage.createreminder());
@@ -131,6 +135,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 //	public void verifyInsightFunctionality() throws InterruptedException {
 //		repairOrderPage.insightFunctionality();
 //	}
+
 
 	@Test(priority = 24) // try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {

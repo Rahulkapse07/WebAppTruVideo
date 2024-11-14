@@ -25,6 +25,9 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.FilePayload;
 
 public class JavaUtility {
+	
+
+	
 	public static Properties prop;
 	public Logger logger = LogManager.getLogger(this.getClass().getName());
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

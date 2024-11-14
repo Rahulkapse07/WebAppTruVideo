@@ -134,6 +134,7 @@ static ExtentReports extent;
 			//email.addTo("rahul.kapse@5exceptions.com");
 			email.addTo("gopal.chandre@5exceptions.com");
 			email.addTo("yash.modi@5exceptions.com");
+			email.addTo("rahul.kapse@5exceptions.com");
 			email.addTo("suraj.kushwah@5exceptions.com");
 			email.setSubject("Automation Report");
 			email.setMsg("Please find the attached Automation Report For Truvideo Flutter App.");

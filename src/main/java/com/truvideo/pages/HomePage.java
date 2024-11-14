@@ -7,6 +7,7 @@ import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Locator.HoverOptions;
 import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
@@ -227,6 +228,19 @@ public class HomePage extends JavaUtility {
 		page.click(reminder_Header);
 		return new ReminderPage(page);
 	}
+	
+	/*
+	 * public String clickOn_Organization() { navigateToSavedVideoLibrary();
+	 * logger.info("Clicked on Organization"); return page.title(); }'
+	 */
+	public SavedVideoLibraryPage navigateToSavedVideoLibrary() {
+		page.waitForTimeout(4000);
+		page.click(other_Header);
+		page.locator(organization_Header).hover();
+		logger.info("test1");
+		page.locator("a[href='/crud/saved-video']:has-text('Saved Video Library')").click();
+		return new SavedVideoLibraryPage(page);
+	}
 
 	public String clickOn_Training_Header() {
 		navigateToTraining();
@@ -353,9 +367,14 @@ public class HomePage extends JavaUtility {
 			page.click(other_Header);
 			logger.info("Clicked on Other tab");
 		}
-		page.hover(system_Header);
-		logger.info("Mouse hover on System tab");
-		page.click(devicesTab);
+		page.waitForTimeout(4000);
+		page.click(other_Header);
+		page.waitForTimeout(3000);
+		page.locator("a[href='#']:has-text('System')").hover(new HoverOptions().setTimeout(60000));
+		//page.locator(system_Header).hover();
+		logger.info("Clicked on System tab");
+		page.waitForTimeout(3000);
+		page.locator(devicesTab).click();
 		logger.info("Clicked on Devices tab");
 		return new DevicesPage(page);
 	}
