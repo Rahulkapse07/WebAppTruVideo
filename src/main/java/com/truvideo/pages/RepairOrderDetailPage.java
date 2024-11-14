@@ -27,7 +27,6 @@ import com.truvideo.utility.JavaUtility;
 public class RepairOrderDetailPage extends JavaUtility {
 	private Page page;
 	OrderListPage orderpage = new OrderListPage(page);
-
 	public RepairOrderDetailPage(Page page) {
 		this.page = page;
 	}
@@ -262,7 +261,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.click(repairOrder_Header);
 		OrderListPage orderpage = new OrderListPage(page);
-		orderpage.navigateToOrderDetails();
+		orderpage.navigateToOrderDetails("Existing");
 
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
@@ -687,6 +686,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Endlink : Click on pay Now Button");
 			endlinkPage.click(payWithCardButton);
 			// ------------------------------------------
+			
+			
+			
 			String paymentResponse = createPayment();
 			if (paymentResponse != null) {
 				sendToTruvideo(paymentResponse);

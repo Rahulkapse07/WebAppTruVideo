@@ -60,7 +60,7 @@ public class PlaywrightFactory extends JavaUtility {
 
 		switch (browserName.toLowerCase()) {
 		case "chromium":
-			tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+			tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true)));
 			break;
 		case "firefox":
 			tlBrowser.set(getPlaywright().firefox().launch(new LaunchOptions().setChannel("firefox").setHeadless(false).setArgs(argument)));

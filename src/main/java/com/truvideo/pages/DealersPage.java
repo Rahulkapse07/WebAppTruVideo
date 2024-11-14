@@ -34,8 +34,6 @@ public class DealersPage extends JavaUtility {
 		page.fill(DealerName, Name);
 		page.locator(DealerSearchBtn).click();
 		page.waitForTimeout(4000);
-		System.out.println("click1");
-
 		List<String> Dealerlist = page.locator(DealerList).allInnerTexts();
 		String name = Name;
 		int n = 0;
