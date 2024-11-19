@@ -13,8 +13,4 @@
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 </test>
-			
-			
-			
-	
 </suite>

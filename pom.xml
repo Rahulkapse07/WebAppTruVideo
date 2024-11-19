@@ -120,6 +120,9 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/FullRegressionSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<suiteXmlFiles>
+						<suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
+					</suiteXmlFiles>
 				</configuration>
 			</plugin>
 		</plugins>
