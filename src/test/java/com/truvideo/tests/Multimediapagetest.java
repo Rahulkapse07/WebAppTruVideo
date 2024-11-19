@@ -1,6 +1,8 @@
 package com.truvideo.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -15,12 +17,12 @@ public class Multimediapagetest extends BaseTest {
 		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).NavigateToOrderList();
 }
 	
-	@Test(priority = 1)
+	@Test()
 	public void  verifyDownloadsingleimage() throws Exception {
 		multimediapage.verifyDownloadsingleimage();
 	}
 	
-	@Test(priority = 2)
+	@Test()
 	public void verifyDownloadMultipleimage() {
 		
 		multimediapage.VerifyHideandshowMultipleimage("d");
@@ -30,7 +32,9 @@ public class Multimediapagetest extends BaseTest {
 		
 		multimediapage.verify_functionality_Selectall();
 	}
-	
-	
+	@Test
+	public void  verify_functionality_Mark_Unmark() {
+		Assert.assertTrue(multimediapage. verify_functionality_Mark_Unmark());   
+	}
 
 }

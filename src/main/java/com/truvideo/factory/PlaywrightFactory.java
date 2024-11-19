@@ -56,7 +56,7 @@ public class PlaywrightFactory extends JavaUtility {
 		System.out.println("Browser name is : " + browserName);
 		tlPlaywright.set(Playwright.create());
 		ArrayList<String> argument = new ArrayList<>();
-		argument.add("--start-maximized");
+	    argument.add("--start-maximized");
 
 		switch (browserName.toLowerCase()) {
 		case "chromium":

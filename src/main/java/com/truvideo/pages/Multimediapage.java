@@ -2,6 +2,8 @@ package com.truvideo.pages;
 
 import java.util.List;
 
+import javax.mail.Flags.Flag;
+
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.FrameLocator;
@@ -206,6 +208,9 @@ public class Multimediapage extends JavaUtility {
 	private String addbutton = ".button-row > mat-icon:nth-child(1)";
 	private String viewallbutton = ".button-row > mat-icon:nth-child(2)";
 
+	private String View1 = ".button-row > mat-icon:nth-child(1)";
+	private String View2 = ".button-row > mat-icon:nth-child(2)";
+
 	private String Downloadbutton(int i) {
 		return ".mat-mdc-menu-content button:nth-child(" + i + ")";
 	}
@@ -326,14 +331,13 @@ public class Multimediapage extends JavaUtility {
 			if (iframe.locator(add_btn).isVisible()) {
 				iframe.locator(viewbtn).click();
 				page.waitForTimeout(5000);
-				if (iframe.locator(".button-row > mat-icon:nth-child(1)").isVisible()
-						&& iframe.locator(".button-row > mat-icon:nth-child(2)").isVisible()) {
+				if (iframe.locator(View1).isVisible() && iframe.locator(View2).isVisible()) {
 
-					iframe.locator(".button-row > mat-icon:nth-child(2)").click();
+					iframe.locator(View2).click();
 					logger.info("Grid view");
-					iframe.locator(".button-row > mat-icon:nth-child(1)").click();
+					iframe.locator(View1).click();
 					logger.info("normal view");
-					iframe.locator(".button-row > mat-icon:nth-child(2)").click();
+					iframe.locator(View2).click();
 				}
 
 				logger.info("clicked on download button");
@@ -372,22 +376,27 @@ public class Multimediapage extends JavaUtility {
 			if (iframe.locator(Imagecheckbox).isVisible()) {
 
 				iframe.locator(Imagecheckbox).click();
-				System.out.println("test1");
+				System.out.println("Single image selected");
 				page.waitForTimeout(1000);
 				iframe.locator(Select_all).click();
-				System.out.println("test2");
+				System.out.println("All images are selected");
 				page.waitForTimeout(1000);
 				iframe.locator(Selectclosebtn).click();
-				page.waitForTimeout(5000);
+				System.out.println("Removed selected images");
+				page.waitForTimeout(2000);
 				iframe.locator(Imagecheckbox).click();
 				for (int i = 1; i <= 2; i++) {
 
-
 					iframe.locator(Download_Selectedimage).click();
+					System.out.println("Download single image");
+
 					page.waitForTimeout(2000);
-					iframe.locator(Downloadbutton(1)).click();
-					System.out.println("checked");
-					page.waitForTimeout(5000);
+					iframe.locator(Downloadbutton(i)).click();
+					String notify2 = iframe.locator(Roasternotify).innerText();
+					System.out.println(notify2);
+					Softassert.assertEquals(notify2, "Your download has started. Please check your downloads folder");
+					page.waitForTimeout(2000);
+
 				}
 
 			} else {
@@ -395,7 +404,91 @@ public class Multimediapage extends JavaUtility {
 			}
 
 			page.waitForTimeout(5000);
+		} else {
+			throw new Exception("View / ADD Element is missing from UI");
 		}
 
 	}
+
+	private String Conversationinfo = ".chat-header__drop-down  button span:nth-child(3)";
+	private String Conversationtext = "#header-info p";
+	private String Mark_read_buttn = ".info-container__content div.info-container__content__actions";
+	private String Mark_read = ".info-container__content div.info-container__content__actions span";
+	private String Ownbadgecount = ".km-drop-container #my-service-message";
+
+	public boolean verify_functionality_Mark_Unmark() {
+
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+		boolean flag = true;
+		OrderListPage order = new OrderListPage(page);
+		order.navigateToOrderDetails("New");
+		logger.info("New Ro created");
+		page.waitForCondition(()-> iframe.locator(Conversationinfo).isVisible());
+		if (iframe.locator(Conversationinfo).isVisible()) {
+
+			logger.info("Conversation Info. visible");
+			iframe.locator(Conversationinfo).click();
+			logger.info("converdastion info. clicked");
+			page.waitForTimeout(10000);
+			iframe.locator(Mark_read).click();
+
+			if (iframe.locator(Mark_read_buttn).isVisible()) {
+				logger.info("Mark as read element is avaiable on UI");
+				String MarkAsRead = iframe.locator(Mark_read_buttn).innerText();;
+				System.out.println(MarkAsRead);
+				iframe.locator(Mark_read).click();
+				if (MarkAsRead.contains(" Mark as unread ")) {
+					iframe.locator(Mark_read).click();
+					page.waitForTimeout(3000);
+					// ---initial count
+					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
+					int initialCount = Integer.parseInt(initialCountStr);
+					// ---After mark as unread
+					String increasedCount = page.locator(Ownbadgecount).textContent().trim();
+					int finalCount = Integer.parseInt(increasedCount);
+
+					if (finalCount == initialCount + 1) {
+						System.out.println("Badge count increased as expected.");
+					} else {
+						System.out.println("Badge count did not increase as expected. Initial: " + initialCount
+								+ ", After: " + increasedCount);
+					}
+					iframe.locator(Mark_read_buttn).click();
+
+				} else if (MarkAsRead.contains("Mark as read")) {
+
+					iframe.locator(Mark_read).click();
+					// ---initial count
+					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
+					int initialCount = Integer.parseInt(initialCountStr);
+					// ---After mark as unread
+					String increasedCount = page.locator(Ownbadgecount).textContent().trim();
+					int finalCount = Integer.parseInt(increasedCount);
+
+					if (finalCount == initialCount + 1) {
+						System.out.println("Badge count increased as expected.");
+					} else {
+						System.out.println("Badge count did not increase as expected. Initial: " + initialCount
+								+ ", After: " + increasedCount);
+					}
+					iframe.locator(Mark_read_buttn).click();
+
+				}
+				else {
+					logger.info("Element is not visible on UIdscsdcsdcdscsd");
+					flag = false;
+				}
+
+			} else {
+				logger.info("Element is not visible on UI");
+				flag = false;
+			}
+		} else {
+			logger.info("Element is not visible on UI");
+			flag = false;
+		}
+
+		return flag;
+	} 
 }

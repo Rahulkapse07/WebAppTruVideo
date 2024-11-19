@@ -428,8 +428,8 @@ public class OrderListPage extends JavaUtility {
 		return up.login_verify_created_RO(prop.getProperty("MobileUserLogin"));
 	}
 
-	public RepairOrderDetailPage navigateToOrderDetails(String number) {
-		newRoNumber = addRepairOrder("New");
+	public RepairOrderDetailPage navigateToOrderDetails(String String) {
+		newRoNumber = addRepairOrder(String);
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
 		// page.locator("table#repair-order-results 

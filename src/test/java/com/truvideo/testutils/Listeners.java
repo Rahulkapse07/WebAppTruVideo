@@ -51,6 +51,39 @@ public class Listeners extends TestUtils implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		test.pass("Test Passed");
+		 test.pass(result.getMethod().getMethodName() + " passed successfully");
+
+		    Page page = null;
+		    try {
+		        page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    }
+//		    if (page != null) {
+//		        try {
+//		            // Capture screenshot and get the file path
+//		            String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
+//		            // Add screenshot to the report using the file path
+//		            test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
+//		        } catch (IOException e) {
+//		            test.fail("Failed to capture screenshot: " + e.getMessage());
+//		        }
+//		    } else {
+//		        test.fail("Page object is null, unable to capture screenshot.");
+//		    }
+		    
+		    if (page != null) {
+		        try {
+		            // Get the base64 screenshot
+		            String base64Screenshot = getBase64Screenshot(page);
+		            // Embed the screenshot in the report
+		            test.addScreenCaptureFromBase64String(base64Screenshot, result.getMethod().getMethodName());
+		        } catch (Exception e) {
+		            test.fail("Failed to capture screenshot: " + e.getMessage());
+		        }
+		    } else {
+		        test.fail("Page object is null, unable to capture screenshot.");
+		    }
 	}
 
 	public void onTestFailure(ITestResult result) {
