@@ -91,7 +91,7 @@ public class HomePage extends JavaUtility {
 	private String forReviewBadge_OtherRO = "#all-service span.km-tab";
 	private String forReviewBadge_SelfSO = "#my-sales span.km-tab";
 	private String forReviewBadge_OtherSO = "#all-sales span.km-tab";
-	private String inboundMessageBadge_SelfRO = "#my-service-message span.km-tab";
+	private String inboundMessageBadge_SelfRO = " .km-container #my-service-message";
 	private String inboundMessageBadge_SelfSO = "#my-sales-message span.km-tab";
 	private String inboundMessageBadge_AllRO = "#all-service-message span.km-tab";
 	private String inboundMessageBadge_AllSO = "#all-sales-message span.km-tab";
@@ -122,11 +122,11 @@ public class HomePage extends JavaUtility {
 
 	private String accountDropdownButton = "li.account-nav";
 	private String accountSetting_TextButton = "ul#user-menu-list li a[href='/user-account/'] ";
-	private String helpPage_TextButton = "ul#user-menu-list li a[href='https://truvideo.com/help-page/'] ";
+	private String helpPage_TextButton = "ul#user-menu-list li a[href='http://gettransparency.com/help-page/'] ";
 	private String dealerId_Label = "a:has-text('Dealer ID')";
 	private String supportNumber_Label = "#user-menu-list a:has-text('Support')";
 	private String allRightReserved_Label = "#user-menu-list a:has-text('© TruVideo  |  All Rights Reserved.')";
-	private String dealerSearch_TextBox = "#dealer-search-form";
+	private String dealerSearch_TextBox = "input#dealer-search-form";
 	private String logOut_Button = "#user-menu-list li a[class='logout-a']";
 	private String other = "//a[contains(text(), 'Other ')]";
 	
@@ -371,6 +371,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public String clickOnDevicesHeaderTab() {
+		page.waitForTimeout(5000);
 		navigateToDevicesPage();
 		logger.info("Devices Page is opened : " + page.title());
 		return page.title();
@@ -378,16 +379,16 @@ public class HomePage extends JavaUtility {
 
 	public DevicesPage navigateToDevicesPage() {
 		if (!page.isVisible(system_Header)) {
+			page.waitForTimeout(8000);
 			page.click(other_Header);
 			logger.info("Clicked on Other tab");
 		}
-		page.waitForTimeout(4000);
-		page.click(other_Header);
 		page.waitForTimeout(3000);
-		page.locator("a[href='#']:has-text('System')").hover(new HoverOptions().setTimeout(60000));
+		//page.click(other_Header);
+		page.locator(system_Header).hover(new HoverOptions().setTimeout(60000));
 		//page.locator(system_Header).hover();
 		logger.info("Clicked on System tab");
-		page.waitForTimeout(3000);
+		page.waitForTimeout(2000);
 		page.locator(devicesTab).click();
 		logger.info("Clicked on Devices tab");
 		return new DevicesPage(page);
@@ -751,16 +752,24 @@ public class HomePage extends JavaUtility {
 		page.waitForLoadState();
 		page.click(accountDropdownButton);
 		logger.info("Clicked on user account dropdown button");
+		page.isVisible(accountSetting_TextButton);
+		page.isVisible(helpPage_TextButton);
+		page.isVisible(dealerId_Label);
+		page.isVisible(supportNumber_Label);
+		page.isVisible(allRightReserved_Label);
+		page.isVisible(dealerSearch_TextBox);
+		page.waitForTimeout(2000);
 		if (page.isVisible(accountSetting_TextButton) && page.isVisible(helpPage_TextButton)
-				&& page.isVisible(dealerId_Label) && page.isVisible(supportNumber_Label)
-				&& page.isVisible(allRightReserved_Label) && page.isVisible(dealerSearch_TextBox)) {
+				&& page.isVisible(dealerId_Label) && page.isVisible(allRightReserved_Label) 
+				&& page.isVisible(dealerSearch_TextBox))
+			{
 			logger.info("User Dropdown is opened and all elements are available");
 			logger.info("Account setting & Help Page text button is available");
 			int colonIndex1 = page.textContent(dealerId_Label).indexOf(':');
 			logger.info("Dealer ID is : " + page.textContent(dealerId_Label).substring(colonIndex1 + 1).trim());
-			int colonIndex2 = page.textContent(supportNumber_Label).indexOf(':');
-			logger.info(
-					"Support Number is : " + page.textContent(supportNumber_Label).substring(colonIndex2 + 1).trim());
+			//int colonIndex2 = page.textContent(supportNumber_Label).indexOf(':');
+//			logger.info(
+//					"Support Number is : " + page.textContent(supportNumber_Label).substring(colonIndex2 + 1).trim());
 			logger.info("AllRights Reserved Label and Dealer Search Text box is displayed");
 			page.click(accountDropdownButton);
 			logger.info("Closed user account dropdown ");
@@ -799,17 +808,20 @@ public class HomePage extends JavaUtility {
 			logger.info("User is switched to another dealer and switched dealer is : "
 					+ page.locator(logInDealerLabel).textContent());
 			page.waitForLoadState();
+			page.waitForTimeout(5000);
 			page.click(accountDropdownButton);
 			logger.info("Clicked on user account dropdown button again : To switch Back");
-			page.waitForTimeout(2000);
+			page.waitForTimeout(5000);
+
 			page.click(dealerSearch_TextBox);
+			System.out.println("again");
 			page.keyboard().type(prop.getProperty("dealerused"));
 			// page.fill(dealerSearch_TextBox, prop.getProperty("dealerused"));
 			page.waitForTimeout(2000);
 			page.locator(getSearchedDealer(prop.getProperty("dealerused"))).first().click();
 			logger.info("Clicked on first dealer to switch : To switch Back");
 			flags.add(true);
-			page.waitForLoadState();
+			page.waitForTimeout(15000);
 			if (page.locator(logInDealerLabel).textContent().contains(prop.getProperty("dealerused"))) {
 				logger.info("User is switched back to first dealer and switched dealer is : "
 						+ page.locator(logInDealerLabel).textContent());

@@ -27,7 +27,6 @@ import com.truvideo.utility.JavaUtility;
 public class RepairOrderDetailPage extends JavaUtility {
 	private Page page;
 	OrderListPage orderpage = new OrderListPage(page);
-
 	public RepairOrderDetailPage(Page page) {
 		this.page = page;
 	}
@@ -265,7 +264,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.click(repairOrder_Header);
 		OrderListPage orderpage = new OrderListPage(page);
-		orderpage.navigateToOrderDetails();
+		orderpage.navigateToOrderDetails("Existing");
 
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
@@ -690,6 +689,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Endlink : Click on pay Now Button");
 			endlinkPage.click(payWithCardButton);
 			// ------------------------------------------
+			
+			
+			
 			String paymentResponse = createPayment();
 			if (paymentResponse != null) {
 				sendToTruvideo(paymentResponse);
@@ -1383,19 +1385,17 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void insightFunctionality() {
 		// addVideoToOrder();
+		HomePage homepage=new HomePage(page);
+		homepage.clickOn_RepairOrder_Header();
+		OrderListPage listpage=new OrderListPage(page);
+		listpage.navigateToOrderDetails("New");
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		if (frame.locator(roStatusBar).textContent().contains("New")) {
-			logger.info("RO is New & No media is added");
-			// String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to
-			// customer");
-			// String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with
-			// customer");
+			logger.info("RO is New & No media is added");		
 			String insightClass = getLocatorClass(operations_Buttons, "Insights");
-			// System.out.println("send to customer class "+sendToCustomerClass);
-			// System.out.println("viewWithCustomerClass "+viewWithCustomerClass);
 			System.out.println("insightClass " + insightClass);
 			if (insightClass.contains("disabled")) {
 				logger.info("'Insights' button is disabled");

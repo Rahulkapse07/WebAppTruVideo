@@ -64,7 +64,7 @@ public class OrderListPageTest extends BaseTest {
 
 	@Test(priority = 11,description = "WA-5600")
 	public void verifyAddRepairOrder() throws Exception {
-		String newCreatedRO = orderlistpage.addRepairOrder();
+		String newCreatedRO = orderlistpage.addRepairOrder("New");
 		String firstROInList = orderlistpage.getFirstROInList();
 		Assert.assertEquals(firstROInList, newCreatedRO);
 	}

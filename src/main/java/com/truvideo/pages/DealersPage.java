@@ -39,8 +39,6 @@ public class DealersPage extends JavaUtility {
 		page.fill(DealerName, Name);
 		page.locator(DealerSearchBtn).click();
 		page.waitForTimeout(4000);
-		System.out.println("click1");
-
 		List<String> Dealerlist = page.locator(DealerList).allInnerTexts();
 		String name = Name;
 		int n = 0;
@@ -263,7 +261,7 @@ public class DealersPage extends JavaUtility {
 		hp.clickOn_RepairOrder_Header();
 		OrderListPage op = new OrderListPage(page);
 		//op.clickOnAddRepairOrder();
-		op.navigateToOrderDetails();
+		op.navigateToOrderDetails("New");
 		page.waitForTimeout(5000);
 		page.waitForCondition(() -> frame.locator(sms_Tab).isVisible());
 		frame.locator(sms_Tab).click();

@@ -14,11 +14,13 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	@BeforeClass
 	public void repairOrderDetailPageSetup() {
 		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList().navigateToOrderDetails();
+				.navigateToOrderList().navigateToOrderDetails("New");
 	}
 
 
+
 	@Test(priority = 1)
+
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
@@ -82,6 +84,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	}
 
 
+
 	@Test(priority = 14,description = "WA-5569")
 	public void verifyCreateReminder() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.createreminder());
@@ -138,6 +141,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyInsightFunctionality() throws InterruptedException {
 		repairOrderPage.insightFunctionality();
 	}
+
 
 	@Test(priority = 25,description = "WA-5394") // try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {

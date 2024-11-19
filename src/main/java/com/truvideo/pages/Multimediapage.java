@@ -1,6 +1,9 @@
 package com.truvideo.pages;
 
-import org.testng.Assert;
+import java.util.List;
+
+import javax.mail.Flags.Flag;
+
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.FrameLocator;
@@ -8,8 +11,6 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 import com.truvideo.utility.JavaUtility;
-
-import io.reactivex.rxjava3.exceptions.Exceptions;
 
 public class Multimediapage extends JavaUtility {
 
@@ -36,20 +37,21 @@ public class Multimediapage extends JavaUtility {
 	private String imageinlarge = ".container-gallery  .detail-image__fullscreen-img mat-icon";
 	private String imagename = ".container-gallery h3";
 	private String sendtocustomerbtn = ".orders-detail-video__details.ng-star-inserted span";
+	private String Hiddenlabel = ".orders-detail-video__details p:has-text('Hidden')";
+
+	// roaster notification
+
+	private String Roasternotify = ".tru-toast__right-container p.ng-tns-c2835246437-0 ";
 
 	private String multioptions(String Option) {
 		return ".cdk-overlay-pane div.mat-mdc-menu-content button:has-text('" + Option + "')";
 	}
 
-	public void verifyDownloadsingleimage(String format) throws Exception {
+	public void verifyDownloadsingleimage() throws Exception {
 
 		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
 		SoftAssert Softassert = new SoftAssert();
 		// Objects
-		HomePage homepage = new HomePage(page);
-		RepairOrderDetailPage repairorder = new RepairOrderDetailPage(page);
-		OrderListPage orderpage = new OrderListPage(page);
-
 		page.waitForCondition(() -> page.locator(Searchheader).isVisible());
 		if (page.locator(Searchheader).isVisible()) {
 			page.locator(Searchheader).fill("49494984");
@@ -115,10 +117,9 @@ public class Multimediapage extends JavaUtility {
 
 						iframe.locator(multioptions(" Hide from customer ")).click();
 						page.waitForTimeout(3000);
-						Locator hidelabel = iframe.locator(".orders-detail-video__details p:has-text('Hidden')");
+						Locator hidelabel = iframe.locator(Hiddenlabel);
 						Softassert.assertEquals(hidelabel.isVisible(), true, "Hidden tag is not shown");
-						String notify = iframe.locator(".tru-toast__right-container p.ng-tns-c2835246437-0 ")
-								.innerText();
+						String notify = iframe.locator(Roasternotify).innerText();
 						Softassert.assertEquals(notify, "This image is hidden from the customer",
 								"Wrong toaster message here");
 
@@ -126,10 +127,9 @@ public class Multimediapage extends JavaUtility {
 
 						iframe.locator(multioptions(" Show to customer ")).click();
 						page.waitForTimeout(3000);
-						Locator hidelabel = iframe.locator(".orders-detail-video__details p:has-text('Hidden')");
+						Locator hidelabel = iframe.locator(Hiddenlabel);
 						Softassert.assertEquals(hidelabel.isVisible(), false, "Wrong label Shown");
-						String notify = iframe.locator(".tru-toast__right-container p.ng-tns-c2835246437-0 ")
-								.innerText();
+						String notify = iframe.locator(Roasternotify).innerText();
 						Softassert.assertEquals(notify, "This image is visible to the customer",
 								"Wrong toaster message here");
 					} else {
@@ -144,8 +144,7 @@ public class Multimediapage extends JavaUtility {
 				page.waitForTimeout(2000);
 				if (iframe.locator(multioptions("Download ")).isVisible()) {
 					iframe.locator(multioptions("Download")).click();
-					String Dowmloadnotify = iframe.locator(".tru-toast__right-container p.ng-tns-c2835246437-0")
-							.innerText();
+					String Dowmloadnotify = iframe.locator(Roasternotify).innerText();
 					Softassert.assertEquals(Dowmloadnotify,
 							"Your download has started. Please check your downloads folder.", "Image not downloading");
 
@@ -171,13 +170,13 @@ public class Multimediapage extends JavaUtility {
 					logger.info("Image send to customer");
 
 					iframe.locator(".selected-channel-actions button mat-icon:has-text('sms')");
-					String Sendtocustomer = iframe.locator(".tru-toast__right-container p.ng-tns-c2835246437-0")
-							.innerText();
+					String Sendtocustomer = iframe.locator(Roasternotify).innerText();
 					Softassert.assertEquals(Sendtocustomer, "Message send to customer", "Not send to the customer");
-					String status = iframe.locator(".order__column--navigation div p:has-text('RO Status - Sent')").innerText();
+					String status = iframe.locator(".order__column--navigation div p:has-text('RO Status - Sent')")
+							.innerText();
 					System.out.println(status);
-					if(status.contains("Sent")){
-						logger.info("Status change into sent" +  status);
+					if (status.contains("Sent")) {
+						logger.info("Status change into sent" + status);
 					}
 				}
 			} else {
@@ -188,14 +187,308 @@ public class Multimediapage extends JavaUtility {
 
 		}
 
+		// verify status of image sent
+
+		// ------
+
 		Softassert.assertAll();
 	}
 
-	public void VerifyDownloadMultipleimage(String format) {
+	private String imageThreedots = ".orders-detail-menu__media-videos span";
+	private String Hide_show_button = ".cdk-overlay-pane button:nth-child(1) span";
+	private String Images = "div.orders-detail-menu__media-gallery img";
+	private String add_btn = ".orders-detail-menu__media-footer p:nth-child(1)";
+	private String viewbtn = ".orders-detail-menu__media-footer p:nth-child(2)";
+
+	private String Threedots = ".detail-media__menu-container button mat-icon";
+	private String hidecustomer = ".mat-mdc-menu-content button:nth-child(1) span";
+	private String Download = ".mat-mdc-menu-content button span:has-text('Download')";
+	private String mediainsight = ".mat-mdc-menu-content button span:has-text('Media Insights')";
+
+	private String addbutton = ".button-row > mat-icon:nth-child(1)";
+	private String viewallbutton = ".button-row > mat-icon:nth-child(2)";
+
+	private String View1 = ".button-row > mat-icon:nth-child(1)";
+	private String View2 = ".button-row > mat-icon:nth-child(2)";
+
+	private String Downloadbutton(int i) {
+		return ".mat-mdc-menu-content button:nth-child(" + i + ")";
+	}
+
+	public void VerifyHideandshowMultipleimage(String format) {
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+
+		page.waitForCondition(() -> page.locator(Searchheader).isVisible());
+		if (page.locator(Searchheader).isVisible()) {
+			page.locator(Searchheader).fill("4543381849");
+			page.keyboard().press("Enter");
+			page.waitForTimeout(4000);
+
+			String Value = "4543381849";
+			boolean roFound = false;
+			while (!roFound) {
+				Locator TableRow = page.locator(tableRows);
+				int rowCount = TableRow.count();
+				logger.info(rowCount);
+				for (int i = 0; i < rowCount - 1; i++) {
+					Locator roNumberList = TableRow.locator(Ronumber).nth(i);
+					String roNumber = roNumberList.innerText().trim();
+
+					if (roNumber.equals(Value)) {
+						logger.info("The RO " + Value + " found in  list and RO Number is: " + roNumber);
+
+						TableRow.locator(Ronumber).nth(i).click();
+						page.waitForTimeout(4000);
+						roFound = true;
+						break;
+					}
+					logger.info("Checking for: " + Value + " And found :" + roNumber);
+				}
+				if (!roFound && page.isVisible(nextButton)) {
+					logger.info("next button displayed ");
+					page.click(nextButton);
+					logger.info("The RO is not found on the current page, checking on the next page.");
+					page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+					page.waitForTimeout(4000);
+				} else if (!roFound) {
+					logger.info("RO number not found and no more pages to check.");
+					roFound = false;
+					break;
+				}
+			}
+
+			page.waitForTimeout(20000);
+
+			Locator list = iframe.locator(imageThreedots);
+			int count = list.count();
+			System.out.println(count);
+			for (int i = 3; i < count; i++) {
+
+				iframe.locator(imageThreedots).nth(i).click();
+
+				page.waitForTimeout(5000);
+				if (iframe.locator(Hide_show_button).isVisible()) {
+					String Label = iframe.locator(Hide_show_button).innerText();
+					System.out.println(Label);
+					if (Label.contains("Hide from customer")) {
+						page.waitForTimeout(1000);
+						iframe.locator(Hide_show_button).click();
+						String notify = iframe.locator(Roasternotify).innerText();
+						Softassert.assertEquals(notify, "This image is hidden from the customer",
+								"Wrong toaster message here");
+						iframe.locator(Images).nth(i).click();
+						Locator hidelabel = iframe.locator(Hiddenlabel);
+						Softassert.assertEquals(hidelabel.isVisible(), true, "Hidden tag is not shown");
+						page.waitForCondition(() -> iframe.locator(crossbutton).isVisible());
+						iframe.locator(crossbutton).click();
+						page.waitForTimeout(2000);
+						iframe.locator(imageThreedots).nth(i).click();
+						page.waitForTimeout(5000);
+						iframe.locator(Hide_show_button).click();
+						page.waitForTimeout(3000);
+
+						String notify2 = iframe.locator(Roasternotify).innerText();
+						Softassert.assertEquals(notify2, "This image is visible to the customer",
+								"Wrong toaster message here");
+						iframe.locator(Images).nth(i).click();
+						page.waitForTimeout(3000);
+						Locator Showlabel = iframe.locator(Hiddenlabel);
+						Softassert.assertEquals(Showlabel.isVisible(), false, "Wrong label Shown");
+						iframe.locator(crossbutton).click();
+
+					} else if (Label.contains("Show to customer")) {
+						iframe.locator(Hide_show_button).click();
+						String notify2 = iframe.locator(Roasternotify).innerText();
+						Softassert.assertEquals(notify2, "This image is visible to the customer",
+								"Wrong toaster message here");
+						iframe.locator(Images).nth(i).click();
+						Locator Showlabel = iframe.locator(Hiddenlabel);
+						Softassert.assertEquals(Showlabel.isVisible(), false, "Wrong label Shown");
+						page.waitForCondition(() -> iframe.locator(crossbutton).isVisible());
+						iframe.locator(crossbutton).click();
+						page.waitForTimeout(2000);
+						iframe.locator(imageThreedots).nth(i).click();
+						iframe.locator(Hide_show_button).click();
+						String notify = iframe.locator(Roasternotify).innerText();
+						Softassert.assertEquals(notify, "This image is hidden from the customer",
+								"Wrong toaster message here");
+						iframe.locator(Images).nth(i).click();
+						page.waitForTimeout(3000);
+						Locator hidelabel = iframe.locator(Hiddenlabel);
+						Softassert.assertEquals(hidelabel.isVisible(), true, "Hidden tag is not shown");
+						page.waitForCondition(() -> iframe.locator(crossbutton).isVisible());
+						iframe.locator(crossbutton).click();
+					} else {
+						logger.error("Incorrect name find");
+					}
+				} else {
+					System.out.println("failed");
+				}
+			}
+			page.waitForTimeout(4000);
+
+			if (iframe.locator(add_btn).isVisible()) {
+				iframe.locator(viewbtn).click();
+				page.waitForTimeout(5000);
+				if (iframe.locator(View1).isVisible() && iframe.locator(View2).isVisible()) {
+
+					iframe.locator(View2).click();
+					logger.info("Grid view");
+					iframe.locator(View1).click();
+					logger.info("normal view");
+					iframe.locator(View2).click();
+				}
+
+				logger.info("clicked on download button");
+
+				for (int i = 1; i <= 2; i++) {
+					iframe.locator("button.mat-mdc-menu-trigger >span").click();
+					page.waitForTimeout(5000);
+					iframe.locator(Downloadbutton(i)).click();
+
+					System.out.println("checked");
+					page.waitForTimeout(5000);
+				}
+				iframe.locator(crossbutton).click();
+				logger.info("Image downloadwd in both format");
+			} else {
+				System.out.println("failed");
+			}
+
+		}
 
 	}
 
-	public void verify_functionality_Selectall() {
+	private String Imagecheckbox = ".cdk-drag.image-list__card-item:nth-child(1) >div > mat-checkbox > div";
+	private String Selectclosebtn = "div.footer-actions mat-icon:has-text('close')";
+	private String Select_all = "span.mdc-button__label:has-text(' Select All ')";
+	private String Download_Selectedimage = ".mdc-button__label  > span:has-text('Download Selected in')";
+
+	public void verify_functionality_Selectall() throws Exception {
+
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+
+		if (iframe.locator(viewbtn).isVisible()) {
+			iframe.locator(viewbtn).click();
+
+			if (iframe.locator(Imagecheckbox).isVisible()) {
+
+				iframe.locator(Imagecheckbox).click();
+				System.out.println("Single image selected");
+				page.waitForTimeout(1000);
+				iframe.locator(Select_all).click();
+				System.out.println("All images are selected");
+				page.waitForTimeout(1000);
+				iframe.locator(Selectclosebtn).click();
+				System.out.println("Removed selected images");
+				page.waitForTimeout(2000);
+				iframe.locator(Imagecheckbox).click();
+				for (int i = 1; i <= 2; i++) {
+
+					iframe.locator(Download_Selectedimage).click();
+					System.out.println("Download single image");
+
+					page.waitForTimeout(2000);
+					iframe.locator(Downloadbutton(i)).click();
+					String notify2 = iframe.locator(Roasternotify).innerText();
+					System.out.println(notify2);
+					Softassert.assertEquals(notify2, "Your download has started. Please check your downloads folder");
+					page.waitForTimeout(2000);
+
+				}
+
+			} else {
+				throw new Exception("failed");
+			}
+
+			page.waitForTimeout(5000);
+		} else {
+			throw new Exception("View / ADD Element is missing from UI");
+		}
 
 	}
+
+	private String Conversationinfo = ".chat-header__drop-down  button span:nth-child(3)";
+	private String Conversationtext = "#header-info p";
+	private String Mark_read_buttn = ".info-container__content div.info-container__content__actions";
+	private String Mark_read = ".info-container__content div.info-container__content__actions span";
+	private String Ownbadgecount = ".km-drop-container #my-service-message";
+
+	public boolean verify_functionality_Mark_Unmark() {
+
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+		boolean flag = true;
+		OrderListPage order = new OrderListPage(page);
+		order.navigateToOrderDetails("New");
+		logger.info("New Ro created");
+		page.waitForCondition(()-> iframe.locator(Conversationinfo).isVisible());
+		if (iframe.locator(Conversationinfo).isVisible()) {
+
+			logger.info("Conversation Info. visible");
+			iframe.locator(Conversationinfo).click();
+			logger.info("converdastion info. clicked");
+			page.waitForTimeout(10000);
+			iframe.locator(Mark_read).click();
+
+			if (iframe.locator(Mark_read_buttn).isVisible()) {
+				logger.info("Mark as read element is avaiable on UI");
+				String MarkAsRead = iframe.locator(Mark_read_buttn).innerText();;
+				System.out.println(MarkAsRead);
+				iframe.locator(Mark_read).click();
+				if (MarkAsRead.contains(" Mark as unread ")) {
+					iframe.locator(Mark_read).click();
+					page.waitForTimeout(3000);
+					// ---initial count
+					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
+					int initialCount = Integer.parseInt(initialCountStr);
+					// ---After mark as unread
+					String increasedCount = page.locator(Ownbadgecount).textContent().trim();
+					int finalCount = Integer.parseInt(increasedCount);
+
+					if (finalCount == initialCount + 1) {
+						System.out.println("Badge count increased as expected.");
+					} else {
+						System.out.println("Badge count did not increase as expected. Initial: " + initialCount
+								+ ", After: " + increasedCount);
+					}
+					iframe.locator(Mark_read_buttn).click();
+
+				} else if (MarkAsRead.contains("Mark as read")) {
+
+					iframe.locator(Mark_read).click();
+					// ---initial count
+					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
+					int initialCount = Integer.parseInt(initialCountStr);
+					// ---After mark as unread
+					String increasedCount = page.locator(Ownbadgecount).textContent().trim();
+					int finalCount = Integer.parseInt(increasedCount);
+
+					if (finalCount == initialCount + 1) {
+						System.out.println("Badge count increased as expected.");
+					} else {
+						System.out.println("Badge count did not increase as expected. Initial: " + initialCount
+								+ ", After: " + increasedCount);
+					}
+					iframe.locator(Mark_read_buttn).click();
+
+				}
+				else {
+					logger.info("Element is not visible on UIdscsdcsdcdscsd");
+					flag = false;
+				}
+
+			} else {
+				logger.info("Element is not visible on UI");
+				flag = false;
+			}
+		} else {
+			logger.info("Element is not visible on UI");
+			flag = false;
+		}
+
+		return flag;
+	} 
 }

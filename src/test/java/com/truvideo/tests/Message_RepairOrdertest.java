@@ -109,7 +109,7 @@ public class Message_RepairOrdertest extends BaseTest {
 	}
 
 	@Test()
-	public void MessageSendattachments() {
+	public void MessageSendattachments() throws Exception {
 		Assert.assertTrue(MessageScreen_order.MessageSendAttachments(prop.getProperty("MobileNo")));
 	}
 

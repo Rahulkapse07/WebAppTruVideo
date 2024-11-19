@@ -12,6 +12,7 @@ public class BaseTest {
 	protected Properties prop;
 	protected LoginPage loginpage;
 
+	
 	@Parameters({ "browser", "headless" }) // this line is added
 	@BeforeTest
 	public void loginPageSetup(@Optional("chrome") String browser, @Optional("false") String headless) {
