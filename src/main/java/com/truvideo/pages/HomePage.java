@@ -129,6 +129,8 @@ public class HomePage extends JavaUtility {
 	private String dealerSearch_TextBox = "#dealer-search-form";
 	private String logOut_Button = "#user-menu-list li a[class='logout-a']";
 	private String other = "//a[contains(text(), 'Other ')]";
+	
+	
 
 	private String getSearchedDealer(String dealerName) {
 		return "ul#dealerList li a:has-text('" + dealerName + "')";
@@ -291,6 +293,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public DealersPage navigateToDealersPage() {
+		page.waitForTimeout(3000);
 		if (!page.isVisible(organization_Header)) {
 			page.click(other_Header);
 			logger.info("Clicked on Other tab");
@@ -354,6 +357,17 @@ public class HomePage extends JavaUtility {
 		page.click(savedVideoLibraryTab);
 		logger.info("Clicked on Saved Video Library tab");
 		return new SavedVideoLibraryPage(page);
+	}
+	
+	private String acctDropDown = ".account-nav.dropdown";
+	private String logoutBtn = "ul#user-menu-list  li a.logout-a";
+	public void LogOutfunctionality() {
+		if(page.isVisible(acctDropDown)) {
+			page.click(acctDropDown);
+			logger.info("Click on Drop Down");
+		}
+		page.click(logoutBtn);
+		logger.info("Click on LogOut button");	
 	}
 
 	public String clickOnDevicesHeaderTab() {

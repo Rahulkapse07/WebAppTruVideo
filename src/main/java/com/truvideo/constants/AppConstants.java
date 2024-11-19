@@ -76,6 +76,9 @@ public class AppConstants {
 	public static final String VideoUpload = "Record has been successfully added";
 	public static final String Update = "Record has been successfully updated";
 	public static final String Remove = "Record has been successfully deleted";
+	//Dealer Settings
+		public static final String StandardResponseAdded = "Record has been successfully added";
+		
 			
 
 	

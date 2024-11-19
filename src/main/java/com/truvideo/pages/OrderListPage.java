@@ -419,6 +419,12 @@ public class OrderListPage extends JavaUtility {
 		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
 		// page.locator("table#repair-order-results tr
 		// td:nth-child(4)").first().click();
+		try {
+			Thread.sleep(14000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		page.waitForURL(url -> url.contains("order/service/view"));
 		return new RepairOrderDetailPage(page);
 	}
