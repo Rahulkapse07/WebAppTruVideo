@@ -20,5 +20,6 @@ public class DevicesPageTest extends BaseTest {
 	public void VerificationDealersPage() {
 		Assert.assertTrue(devicespage.verifyDevicesPage());
 	}
+	
 
 }

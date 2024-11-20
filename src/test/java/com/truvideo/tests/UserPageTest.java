@@ -31,7 +31,8 @@ public class UserPageTest extends BaseTest {
 				{ "Service Dashboard", "Kenility Store", "verifyusersSearchFunctionality", "", "" } };
 	}
 
-	@Test(dataProvider = "userData")
+	@Test(dataProvider = "userData", priority  = 1, 
+			description  = "WA-5577, WA-5578, WA-5575, WA-5576, WA-5521, WA-5570, WA-5511")
 	public void verifyUserCreation(String role, String store, String methodName, String password,
 			String updatedPassword) throws InterruptedException {
 		role = userPage.extractValue(role);
@@ -69,27 +70,27 @@ public class UserPageTest extends BaseTest {
 		}
 	}
 
-	@Test
+	@Test(priority  = 2 ,description = "WA-5612")
 	public void verifyUserStatus() throws InterruptedException {
 		Assert.assertTrue(userPage.userStatus());
 	}
 
-	@Test
+	@Test(priority  = 3 ,description = "WA-5668")
 	public void verifyBulkUserCreation() throws InterruptedException {
 		Assert.assertTrue(userPage.bulkCreateUser());
 	}
 
-	@Test
+	@Test(priority  = 4 ,description = "WA-5512")
 	public void verifyselectActionsonUser() throws InterruptedException {
 		userPage.actionsOnUsers();
 	}
 
-	@Test
+	@Test(priority  = 5 ,description = "WA-5562")
 	public void verifyElementsOnUserPage() throws InterruptedException {
 		Assert.assertTrue(userPage.elementsonUserPage());
 	}
 
-	@Test
+	@Test(priority  = 6 ,description = "WA-5670")
 	public void verifyusersfromSelectDealer() throws InterruptedException {
 		Assert.assertTrue(userPage.getUsersFromSelectDealer());
 	}
@@ -100,7 +101,7 @@ public class UserPageTest extends BaseTest {
 				{ "Send Invite to Web Dashboard", "Sent invitation to dashboard.", "Password Creation" } };
 	}
 
-	@Test(dataProvider = "userActionsProvider")
+	@Test(dataProvider = "userActionsProvider",priority  = 7 ,description = "WA-5512")
 	public void verifySelectActionsOnUser(String actionType, String expectedMessage, String message)
 			throws InterruptedException {
 

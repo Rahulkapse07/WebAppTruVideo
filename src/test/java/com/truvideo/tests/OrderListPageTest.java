@@ -26,7 +26,7 @@ public class OrderListPageTest extends BaseTest {
 				{ "invalidFilter", false } };
 	}
 
-	@Test(dataProvider = "filterTypes")
+	@Test(dataProvider = "filterTypes",description = "WA-5893")
 	public void testFilters(String filterType, boolean expectedResult) {
 		boolean result = orderlistpage.clickOnFilter(filterType);
 		Assert.assertEquals(result, expectedResult, "Filter type: " + filterType + " did not behave as expected.");
@@ -42,7 +42,7 @@ public class OrderListPageTest extends BaseTest {
 		Assert.assertTrue(orderlistpage.selectDealerFromSelectDealerDropdown());
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7,description = "WA-5894")
 	public void verify_CloseRepairOrderFunction_ROListPage() {
 		Assert.assertTrue(orderlistpage.closeRepairOrder());
 	}
@@ -62,7 +62,7 @@ public class OrderListPageTest extends BaseTest {
 		Assert.assertTrue(orderlistpage.checkAllMandatoryErrorMessage());
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 11,description = "WA-5600")
 	public void verifyAddRepairOrder() throws Exception {
 		String newCreatedRO = orderlistpage.addRepairOrder("New");
 		String firstROInList = orderlistpage.getFirstROInList();

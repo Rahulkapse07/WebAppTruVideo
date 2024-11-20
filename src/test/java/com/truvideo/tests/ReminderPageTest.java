@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
+import com.truvideo.pages.DealersPage;
 import com.truvideo.pages.ReminderPage;
 
 public class ReminderPageTest extends BaseTest {
@@ -25,7 +26,7 @@ public class ReminderPageTest extends BaseTest {
 		Assert.assertTrue(reminderspage.getRemindersPageDealer());
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 3,description = "WA-5560")
 	public void verifykeys() {
 		Assert.assertTrue(reminderspage.reminder());
 	}

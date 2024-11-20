@@ -14,7 +14,7 @@ public class ProspectDetailPageTest extends BaseTest {
 		prospectdetailpage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).navigateToProspectList().navigateToProspectDetails();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,description = "")
 	public void test1()
 	{
 		prospectdetailpage.addVideoToOrder();
@@ -25,16 +25,16 @@ public class ProspectDetailPageTest extends BaseTest {
 		prospectdetailpage.sendVideoToCustomer("WhatsApp");
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4,description = "")
 	public void verifyAddMediaFunction_SecondVideo() {
 		prospectdetailpage.addVideoToOrder();
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5,description = "")
 	public void verifySendToCustomer_ForSecondVideo() {
 		prospectdetailpage.sendVideoToCustomer("SMS");
 	}
-	@Test(priority = 6)
+	@Test(priority = 6,description = "")
 	public void verifyViewedStatus() {
 		prospectdetailpage.checkStatus_OnVideoWatch();
 	}

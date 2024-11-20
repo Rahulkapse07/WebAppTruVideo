@@ -1453,11 +1453,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("click on Service_Rec");
 		page.waitForTimeout(5000);
 		
-		
-
-			
-		
-			
 				   page.keyboard().down("Control");
 				   page.keyboard().press("-");
 				   page.keyboard().press("-");
