@@ -215,7 +215,7 @@ public class Multimediapage extends JavaUtility {
 		return ".mat-mdc-menu-content button:nth-child(" + i + ")";
 	}
 
-	public void VerifyHideandshowMultipleimage(String format) {
+	public void VerifyHideandshowMultipleimage() {
 		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
 		SoftAssert Softassert = new SoftAssert();
 
@@ -424,7 +424,7 @@ public class Multimediapage extends JavaUtility {
 		OrderListPage order = new OrderListPage(page);
 		order.navigateToOrderDetails("New");
 		logger.info("New Ro created");
-		page.waitForCondition(()-> iframe.locator(Conversationinfo).isVisible());
+		page.waitForCondition(() -> iframe.locator(Conversationinfo).isVisible());
 		if (iframe.locator(Conversationinfo).isVisible()) {
 
 			logger.info("Conversation Info. visible");
@@ -435,7 +435,8 @@ public class Multimediapage extends JavaUtility {
 
 			if (iframe.locator(Mark_read_buttn).isVisible()) {
 				logger.info("Mark as read element is avaiable on UI");
-				String MarkAsRead = iframe.locator(Mark_read_buttn).innerText();;
+				String MarkAsRead = iframe.locator(Mark_read_buttn).innerText();
+				;
 				System.out.println(MarkAsRead);
 				iframe.locator(Mark_read).click();
 				if (MarkAsRead.contains(" Mark as unread ")) {
@@ -474,8 +475,7 @@ public class Multimediapage extends JavaUtility {
 					}
 					iframe.locator(Mark_read_buttn).click();
 
-				}
-				else {
+				} else {
 					logger.info("Element is not visible on UIdscsdcsdcdscsd");
 					flag = false;
 				}
@@ -490,5 +490,71 @@ public class Multimediapage extends JavaUtility {
 		}
 
 		return flag;
-	} 
+	}
+
+	public boolean verify_View_all_functionality() {
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+		// Objects
+		page.waitForCondition(() -> page.locator(Searchheader).isVisible());
+		if (page.locator(Searchheader).isVisible()) {
+			page.locator(Searchheader).fill("96385276");
+			page.keyboard().press("Enter");
+			page.waitForTimeout(4000);
+			String Value = "96385276";
+
+			boolean roFound = false;
+			while (!roFound) {
+				Locator TableRow = page.locator(tableRows);
+				int rowCount = TableRow.count();
+				logger.info(rowCount);
+				for (int i = 0; i < rowCount - 1; i++) {
+					Locator roNumberList = TableRow.locator(Ronumber).nth(i);
+					String roNumber = roNumberList.innerText().trim();
+
+					if (roNumber.contains(Value)) {
+						logger.info("The RO " + Value + " found in  list and RO Number is: " + roNumber);
+
+						TableRow.locator(Ronumber).nth(i).click();
+						page.waitForTimeout(4000);
+						roFound = true;
+						break;
+					}
+					logger.info("Checking for: " + Value + " And found :" + roNumber);
+				}
+				page.waitForCondition(() -> iframe.locator(imageThreedots).first().isVisible());
+
+				Locator list = iframe.locator(imageThreedots);
+				int count = list.count();
+				System.out.println(count);
+				if (count > 2) {
+					iframe.locator(viewbtn).isVisible();
+					logger.info("View button is visible , When we added " + count + " " + "images");
+
+					iframe.locator(add_btn).isVisible();
+					iframe.locator(add_btn).click();
+					if (!iframe.locator(".orders-detail-menu__media-gallery  mat-icon.mat-icon:has-text('videocam')")
+							.first().isVisible()) {
+						for (int i = 1; count >= i; i++) {
+							iframe.locator(
+									".mat-grid-list.video-library__video-grid mat-grid-tile:nth-child(" + i + ")")
+									.click();
+							logger.info("Select multiple videos");
+
+						}
+						iframe.locator(".video-library__add-video-button > span:nth-child(2)").click();
+						logger.info("Clicked on add Video button");
+						iframe.locator(Roasternotify).waitFor();
+						String notify2 = iframe.locator(Roasternotify).innerText();
+						Softassert.assertEquals(notify2, "Added to RO successfully");
+					}
+					iframe.locator(viewbtn).click();
+					
+					
+					
+				}
+			}
+		}
+		return true;
+	}
 }

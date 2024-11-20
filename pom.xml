@@ -123,6 +123,9 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<suiteXmlFiles>
+						<suiteXmlFile>TestRunnerSuites/ProdSmokeSuite.xml</suiteXmlFile>
+					</suiteXmlFiles>
 				</configuration>
 			</plugin>
 		</plugins>
