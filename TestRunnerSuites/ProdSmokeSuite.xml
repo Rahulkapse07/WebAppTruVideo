@@ -12,13 +12,7 @@
 	<test name="Login Page Test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
-			<class name="">
-				<methods>
-					<include name="">
-					</include>
-				</methods>
-			</class>
-			<class name=""></class>
+			
 		</classes>
 	</test>
 </suite>
