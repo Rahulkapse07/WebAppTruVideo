@@ -61,13 +61,13 @@ public void loginPageSetup(
     prop = pf.init_prop(); // Load config.properties
 
     // System Property Check (Highest Priority)
-    baseUrl = prop.getProperty("baseUrl", baseUrl);
+    baseUrl = System.getProperty("baseUrl", baseUrl);
     browser = prop.getProperty("browser", browser);
     headless = System.getProperty("headless", headless);
 
     // XML Parameter Check (Medium Priority)
     if (baseUrl == null || baseUrl.isEmpty()) {
-        baseUrl = System.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
+        baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
     }
     if (browser == null || browser.isEmpty()) {
         browser = prop.getProperty("browser", "chrome");
