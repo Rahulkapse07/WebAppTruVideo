@@ -7,7 +7,11 @@ import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
 
 public class BaseTest {
-  // Add baseUrl field
+//    protected PlaywrightFactory pf;
+//    public Page page;
+//    protected Properties prop;
+//    protected LoginPage loginpage;
+//    private String baseUrl; // Add baseUrl field
 //
 //    @Parameters({ "browser", "headless", "baseUrl" }) // Add baseUrl parameter
 //    @BeforeTest
@@ -105,7 +109,7 @@ public class BaseTest {
             // System Property Check (Highest Priority)
             baseUrl = System.getProperty("baseUrl", baseUrl);
             Produrl = System.getProperty("Produrl", Produrl);
-            browser = System.getProperty("browser", browser);
+            browser = prop.getProperty("browser", browser);
             headless = System.getProperty("headless", headless);
 
             // Environment-based Check: Default to 'staging' if not provided

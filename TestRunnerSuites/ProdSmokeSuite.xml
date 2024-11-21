@@ -5,7 +5,7 @@
     </listeners>
     <parameter name="browser" value="chrome" />
     <parameter name="headless" value="false" />
-  <!--   <parameter name="baseUrl" value="https://rc.truvideo.com/login" /> -->
+    <parameter name="baseUrl" value="https://rc.truvideo.com/login" /> 
     <parameter name="Produrl" value="https://app.truvideo.com/login" />
     <parameter name="environment" value="prod" /> <!-- Production environment -->
 
