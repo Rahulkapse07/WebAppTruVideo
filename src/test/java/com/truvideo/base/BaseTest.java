@@ -7,51 +7,108 @@ import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
 
 public class BaseTest {
-	
-	    protected PlaywrightFactory pf;
-	    public Page page;
-	    protected Properties prop;
-	    protected LoginPage loginpage;
-	    private String baseUrl;  // For storing the final base URL
 
-	    // Use @Parameters to pass values from XML
-	    @Parameters({"browser", "headless", "baseUrl", "Produrl", "environment"})
-	    @BeforeTest
-	    public void loginPageSetup(
-	        @Optional("chrome") String browser,
-	        @Optional("false") String headless,
-	        @Optional("") String baseUrl,
-	        @Optional("") String Produrl,
-	        @Optional("prod") String environment) {
+	protected PlaywrightFactory pf;
+	public Page page;
+	protected Properties prop;
+	protected LoginPage loginpage;
+	private String baseUrl; // For storing the final base URL
 
-	        pf = new PlaywrightFactory();
-	        prop = pf.init_prop(); // Load config.properties
+	@BeforeTest
+	@Parameters({ "browser", "headless", "baseUrl" })
+	public void loginPageSetup(
+			@Optional("chrome") String browser, 
+			@Optional("false") String headless,
+			@Optional("") String baseUrl) {
 
-	        // Override URL and environment with parameters passed from Maven
-	        baseUrl = System.getProperty("baseUrl", baseUrl);
-	        Produrl = System.getProperty("Produrl", Produrl);
-	        environment = System.getProperty("environment", environment);
+		pf = new PlaywrightFactory();
+		prop = pf.init_prop(); // Load config.properties
 
-	        browser = prop.getProperty("browser", browser);
-	        headless = System.getProperty("headless", headless);
+		// Use config.properties as default, override with XML values if provided
+		browser = prop.getProperty("browser", browser);
+		headless = prop.getProperty("headless", headless);
 
-	        // Use the environment to decide which URL to use
-	        if ("prod".equalsIgnoreCase(environment)) {
-	            this.baseUrl = Produrl; // Use production URL
-	        } else {
-	            this.baseUrl = baseUrl; // Use default (staging or fallback URL)
-	        }
+		// Check if baseUrl was passed via XML; if not, use the default from properties
+		if (baseUrl.isEmpty()) {
+			baseUrl = prop.getProperty("baseUrl");
+		}
 
-	        System.out.println("Final Base URL: " + this.baseUrl);
+		// Ensure baseUrl is not null or empty
+		if (baseUrl == null || baseUrl.isEmpty()) {
+			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
+		}
 
-	        boolean headlessMode = Boolean.parseBoolean(headless);
-	        page = pf.initBrowser(browser, headlessMode);
+		System.out.println("Browser: " + browser);
+		System.out.println("Headless: " + headless);
+		System.out.println("Final Base URL: " + baseUrl);
 
-	        loginpage = new LoginPage(page);
-	        page.navigate(this.baseUrl);
-	    }
+		boolean headlessMode = Boolean.parseBoolean(headless);
+		page = pf.initBrowser(browser, headlessMode);
 
+		loginpage = new LoginPage(page);
+		page.navigate(baseUrl);
+	}
+
+	@AfterTest
+	public void tearDown() {
+		page.context().browser().close();
+	}
 }
+
+//package com.truvideo.base;
+//
+//import java.util.Properties;
+//import org.testng.annotations.*;
+//import com.microsoft.playwright.Page;
+//import com.truvideo.factory.PlaywrightFactory;
+//import com.truvideo.pages.LoginPage;
+//
+//public class BaseTest {
+
+//	    protected PlaywrightFactory pf;
+//	    public Page page;
+//	    protected Properties prop;
+//	    protected LoginPage loginpage;
+//	    private String baseUrl;  // For storing the final base URL
+//
+//	    // Use @Parameters to pass values from XML
+//	    @Parameters({"browser", "headless", "baseUrl", "Produrl", "environment"})
+//	    @BeforeTest
+//	    public void loginPageSetup(
+//	        @Optional("chrome") String browser,
+//	        @Optional("false") String headless,
+//	        @Optional("") String baseUrl,
+//	        @Optional("") String Produrl,
+//	        @Optional("prod") String environment) {
+//
+//	        pf = new PlaywrightFactory();
+//	        prop = pf.init_prop(); // Load config.properties
+//
+//	        // Override URL and environment with parameters passed from Maven
+//	        baseUrl = System.getProperty("baseUrl", baseUrl);
+//	        Produrl = System.getProperty("Produrl", Produrl);
+//	        environment = System.getProperty("environment", environment);
+//
+//	        browser = prop.getProperty("browser", browser);
+//	        headless = System.getProperty("headless", headless);
+//
+//	        // Use the environment to decide which URL to use
+//	        if ("prod".equalsIgnoreCase(environment)) {
+//	            this.baseUrl = Produrl; // Use production URL
+//	        } else {
+//	            this.baseUrl = baseUrl; // Use default (staging or fallback URL)
+//	        }
+//
+//	        System.out.println("Final Base URL: " + this.baseUrl);
+//
+//	        boolean headlessMode = Boolean.parseBoolean(headless);
+//	        page = pf.initBrowser(browser, headlessMode);
+//
+//	        loginpage = new LoginPage(page);
+//	        page.navigate(this.baseUrl);
+//	    }
+//
+//}
 //    protected PlaywrightFactory pf;
 //    public Page page;
 //    protected Properties prop;
@@ -132,7 +189,7 @@ public class BaseTest {
 //    page.navigate(this.baseUrl);
 //}
 //}
-   
+
 //        protected PlaywrightFactory pf;
 //        public Page page;
 //        protected Properties prop;
@@ -191,5 +248,3 @@ public class BaseTest {
 //            page.navigate(this.baseUrl); // Navigate to the selected baseUrl (RC or Production)
 //        }
 //    }
-
-
