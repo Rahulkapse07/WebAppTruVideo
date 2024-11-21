@@ -67,7 +67,7 @@ public void loginPageSetup(
 
     // XML Parameter Check (Medium Priority)
     if (baseUrl == null || baseUrl.isEmpty()) {
-        baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
+        baseUrl = System.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
     }
     if (browser == null || browser.isEmpty()) {
         browser = prop.getProperty("browser", "chrome");
