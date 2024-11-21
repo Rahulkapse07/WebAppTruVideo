@@ -103,8 +103,8 @@ public class BaseTest {
             prop = pf.init_prop(); // Load config.properties
 
             // System Property Check (Highest Priority)
-            baseUrl = System.getProperty("baseUrl", baseUrl);
-            Produrl = System.getProperty("Produrl", Produrl);
+            baseUrl = prop.getProperty("baseUrl", baseUrl);
+            Produrl = prop.getProperty("Produrl", Produrl);
             browser = prop.getProperty("browser", browser);
             headless = System.getProperty("headless", headless);
 
