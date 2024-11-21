@@ -49,6 +49,8 @@ public class AppConstants {
 	public static final String PRINT_SCREEN_URL = "https://dashboard-rc.truvideo.com/";
 	public static final String REPAIR_ORDER_DELETED_MESSAGE = "Repair order Deleted successfully";
 	public static final String REPAIR_ORDER_EDITED_MESSAGE="The Repair Order has been edited successfully";
+	
+
 
 	// Users Page
 	public static final String USER_SAVED_MESSAGE = "Record has been successfully added";
@@ -77,7 +79,8 @@ public class AppConstants {
 	public static final String Update = "Record has been successfully updated";
 	public static final String Remove = "Record has been successfully deleted";
 	//Dealer Settings
-		public static final String StandardResponseAdded = "Record has been successfully added";
+	public static final String StandardResponseAdded = "Record has been successfully added";
+	
 		
 			
 
