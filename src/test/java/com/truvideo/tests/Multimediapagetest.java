@@ -25,16 +25,20 @@ public class Multimediapagetest extends BaseTest {
 	@Test()
 	public void verifyDownloadMultipleimage() {
 		
-		multimediapage.VerifyHideandshowMultipleimage("d");
+		multimediapage.VerifyHideandshowMultipleimage();
 	}
 	@Test(priority = 3 , dependsOnMethods = "verifyDownloadMultipleimage")
 	public void verify_functionality_Selectall() throws Exception{
 		
 		multimediapage.verify_functionality_Selectall();
 	}
-	@Test
+	@Test(priority = 4)
 	public void  verify_functionality_Mark_Unmark() {
-		Assert.assertTrue(multimediapage. verify_functionality_Mark_Unmark());   
+		Assert.assertTrue(multimediapage.verify_functionality_Mark_Unmark());   
 	}
 
+	@Test(priority = 5)
+	public void verify_View_all_functionality() {
+		Assert.assertTrue(multimediapage.verify_View_all_functionality());
+	}
 }

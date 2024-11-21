@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="true">
-		<listeners>
+<suite name="Prod Smoke Suite" parallel="false" thread-count="3"
+	verbose="5" preserve-order="true">
+	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
-	<parameter name="baseUrl" value="https://rc.truvideo.com/login" />
+    <parameter name="baseUrl" value="https://app.truvideo.com/login" />
 
 
 	<test name="Login Page Test">
@@ -14,5 +15,5 @@
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 			
 		</classes>
-</test>
+	</test>
 </suite>

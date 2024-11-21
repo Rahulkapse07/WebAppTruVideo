@@ -31,7 +31,7 @@ public class AppConstants {
 	public static final String DEVICES_PAGE_TITLE = "TruVideo - Devices";
 
 	// Forgot password page
-	public static final String ERROR_MESSAGE_WITHOUT_ENTERING_lOGIN_CREDENTIALS = "The username/password you entered is incorrect."
+	public static final String ERROR_MESSAGE_WITHOUT_ENTERING_lOGIN_CREDENTIALS = "Log in Failed. Cannot pass null or empty values"
 			+ "";
 	public static final String ERROR_MESSAGE_WHEN_ENTERING_WRONG_CREDENTIALS = "The username/password you entered is incorrect.";
 	// Sign Up Page

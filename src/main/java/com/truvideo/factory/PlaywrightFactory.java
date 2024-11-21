@@ -85,14 +85,14 @@ public class PlaywrightFactory extends JavaUtility {
 		if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase( "edge")) {
 			tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
 			tlPage.set(getBrowserContext().newPage());
-			getPage().navigate(prop.getProperty("url").trim());
+			getPage().navigate(prop.getProperty("baseUrl").trim());
 			//getPage().setViewportSize(width, height);
 			return getPage();
 		}else {
 		
 		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
 		tlPage.set(getBrowserContext().newPage());
-		getPage().navigate(prop.getProperty("url").trim());
+		getPage().navigate(prop.getProperty("baseUrl").trim());
 		getPage().setViewportSize(width, height);
 		return getPage();
 		
