@@ -61,9 +61,9 @@ public void loginPageSetup(
     prop = pf.init_prop(); // Load config.properties
 
     // System Property Check (Highest Priority)
-    baseUrl = System.getProperty("baseUrl", baseUrl);
-    browser = System.getProperty("browser", browser);
-    headless = System.getProperty("headless", headless);
+    baseUrl = prop.getProperty("baseUrl", baseUrl);
+    browser = prop.getProperty("browser", browser);
+    headless = prop.getProperty("headless", headless);
 
     // XML Parameter Check (Medium Priority)
     if (baseUrl == null || baseUrl.isEmpty()) {
