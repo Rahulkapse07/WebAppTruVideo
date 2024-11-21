@@ -40,7 +40,7 @@ public class LoginPageTest extends BaseTest {
 	public Object[][] loginDataProvider() {
 		return new Object[][] { { " ", " ", "Empty" }, // Empty field
 				{ "XYZASSA@dg.com", "***********", "INVALID" }, // Invalid credentials
-				{ prop.getProperty("username"), prop.getProperty("password"), "VALID" } // Valid credentials
+				{ prop.getProperty("username"), prop.getProperty("password") , "VALID" } // Valid credentials
 		};
 	}
 	

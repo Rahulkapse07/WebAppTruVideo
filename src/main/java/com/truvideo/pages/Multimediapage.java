@@ -1,9 +1,11 @@
 package com.truvideo.pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.mail.Flags.Flag;
 
+import org.apache.poi.hpsf.Array;
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.FrameLocator;
@@ -263,7 +265,7 @@ public class Multimediapage extends JavaUtility {
 			Locator list = iframe.locator(imageThreedots);
 			int count = list.count();
 			System.out.println(count);
-			for (int i = 3; i < count; i++) {
+			for (int i = 1; i < count; i++) {
 
 				iframe.locator(imageThreedots).nth(i).click();
 
@@ -492,6 +494,26 @@ public class Multimediapage extends JavaUtility {
 		return flag;
 	}
 
+	private String videos = "#mat-tab-label-2-0 span.mdc-tab__text-label";
+	private String images = "#mat-tab-label-2-1 span.mdc-tab__text-label";
+	private String threedotforvideo = "button.mat-mdc-menu-trigger";
+	private String videohidden = ".mat-mdc-menu-content button:nth-child(1)";
+	private String videoshow = ".mat-mdc-menu-content button:nth-child(1)";
+	private String videoMediaInsight = ".mat-mdc-menu-content button:nth-child(2)";
+	private String videoSave = ".mat-mdc-menu-content button:nth-child(3)";
+	private String videoEditinfo = ".mat-mdc-menu-content button:nth-child(4)";
+
+	private String Hiddentag1 = ".orders-detail-video__hide-video-status > p";
+	private String imageName = "div.orders-detail-video__title-body h3";
+	
+	
+	// image  
+	
+	private String threedotforimage = ".detail-media__menu-container button mat-icon";
+	private String imagehidden = ".mat-mdc-menu-content button:nth-child(1)";
+	private String imagedownload = ".mat-mdc-menu-content button:nth-child(2)";
+	private String imagemediaInsight = ".mat-mdc-menu-content button:nth-child(3)";
+
 	public boolean verify_View_all_functionality() {
 		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
 		SoftAssert Softassert = new SoftAssert();
@@ -531,10 +553,10 @@ public class Multimediapage extends JavaUtility {
 					iframe.locator(viewbtn).isVisible();
 					logger.info("View button is visible , When we added " + count + " " + "images");
 
-					iframe.locator(add_btn).isVisible();
-					iframe.locator(add_btn).click();
 					if (!iframe.locator(".orders-detail-menu__media-gallery  mat-icon.mat-icon:has-text('videocam')")
 							.first().isVisible()) {
+						iframe.locator(add_btn).isVisible();
+						iframe.locator(add_btn).click();
 						for (int i = 1; count >= i; i++) {
 							iframe.locator(
 									".mat-grid-list.video-library__video-grid mat-grid-tile:nth-child(" + i + ")")
@@ -549,12 +571,191 @@ public class Multimediapage extends JavaUtility {
 						Softassert.assertEquals(notify2, "Added to RO successfully");
 					}
 					iframe.locator(viewbtn).click();
-					
-					
-					
+					// List<String> imagenames = Extractname();
+
+					if (iframe.locator(videos).isVisible() && iframe.locator(images).isVisible()) {
+						logger.info("Verify Hidden functionality for videos");
+						iframe.locator(threedotforvideo).click();
+						page.waitForTimeout(2000);
+						if (iframe.locator(videohidden).isVisible() && iframe.locator(videoMediaInsight).isVisible()
+								&& iframe.locator(videoSave).isVisible() && iframe.locator(videoEditinfo).isVisible()) {
+							logger.info("All elements present after clicking Three dots");
+							if (iframe.locator(videohidden).isVisible()) {
+								String Label = iframe.locator(videohidden).innerText();
+								System.out.println(Label);
+								if (Label.contains("Hide from customer")) {
+									page.waitForTimeout(1000);
+
+									String imagename = iframe.locator(imageName).innerText();
+									iframe.locator(videohidden).click();
+									page.waitForTimeout(2500);
+									Softassert.assertEquals(true, iframe.locator(Hiddentag1).isVisible(),
+											"Hidden tag is not Available");
+									for (int i = 1; i <= 3; i++) {
+										String Imagename = iframe.locator(
+												".cdk-drop-list.images-list__container.gallery-view >div:nth-child(" + i
+														+ ") p.info__name")
+												.innerText();
+										String[] parts = Imagename.split(":");
+										String interior = parts.length > 1 ? parts[1].trim() : "";
+										System.out.println(interior);
+
+										if (imagename.contains(interior)) {
+											logger.info("Image matched" + " : " + imagename);
+											if (iframe.locator(
+													".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+															+ i + ") p.info__hidden")
+													.isVisible()) {
+
+												System.out.println("hidden button is visible");
+											}
+
+										}
+
+									}
+
+								} else if (Label.contains("Show to customer")) {
+									page.waitForTimeout(2000);
+									iframe.locator(videohidden).click();
+
+									String imagename = iframe.locator(imageName).innerText();
+									page.waitForTimeout(2500);
+									Softassert.assertEquals(false, !iframe.locator(Hiddentag1).isVisible(),
+											"Hidden tag is Available");
+									for (int i = 1; i <= 3; i++) {
+										String Imagename = iframe.locator(
+												".cdk-drop-list.images-list__container.gallery-view >div:nth-child(" + i
+														+ ") p.info__name")
+												.innerText();
+										String[] parts = Imagename.split(":");
+										String interior = parts.length > 1 ? parts[1].trim() : "";
+										System.out.println(interior);
+
+										if (imagename.contains(interior)) {
+											logger.info("Image matched" + " : " + imagename);
+											if (iframe.locator(
+													".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+															+ i + ") p.info__hidden")
+													.isVisible()) {
+
+												System.out.println("hidden button is visible");
+											}
+
+										}
+
+									}
+
+								}
+							}
+							page.waitForTimeout(count);
+							iframe.locator(images).click();
+							logger.info("Switched in Video to Image");
+							iframe.locator(threedotforimage).click();
+							page.waitForTimeout(2000);
+							if (iframe.locator(imagehidden).isVisible() && iframe.locator(imagedownload).isVisible()
+									&& iframe.locator(imagemediaInsight).isVisible())
+									 {
+								logger.info("All elements present after clicking Three dots");
+								if (iframe.locator(imagehidden).isVisible()) {
+									String Label = iframe.locator(imagehidden).innerText();
+									System.out.println(Label);
+									if (Label.contains("Hide from customer")) {
+										page.waitForTimeout(1000);
+
+										String imagename = iframe.locator(imageName).innerText();
+										iframe.locator(videohidden).click();
+										page.waitForTimeout(2500);
+										Softassert.assertEquals(true, iframe.locator(Hiddentag1).isVisible(),
+												"Hidden tag is not Available");
+										for (int i = 1; i <= 3; i++) {
+											String Imagename = iframe.locator(
+													".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+															+ i + ") p.info__name")
+													.innerText();
+											String[] parts = Imagename.split(":");
+											String interior = parts.length > 1 ? parts[1].trim() : "";
+											System.out.println(interior);
+
+											if (imagename.contains(interior)) {
+												logger.info("Image matched" + " : " + imagename);
+												if (iframe.locator(
+														".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+																+ i + ") p.info__hidden")
+														.isVisible()) {
+
+													System.out.println("hidden button is visible");
+												}
+
+											}
+
+										}
+
+									} else if (Label.contains("Show to customer")) {
+										page.waitForTimeout(2000);
+										iframe.locator(imagehidden).click();
+
+										String imagename = iframe.locator(imageName).innerText();
+										page.waitForTimeout(2500);
+										Softassert.assertEquals(false, !iframe.locator(Hiddentag1).isVisible(),
+												"Hidden tag is Available");
+										for (int i = 1; i <= 3; i++) {
+											String Imagename = iframe.locator(
+													".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+															+ i + ") p.info__name")
+													.innerText();
+											String[] parts = Imagename.split(":");
+											String interior = parts.length > 1 ? parts[1].trim() : "";
+											System.out.println(interior);
+
+											if (imagename.contains(interior)) {
+												logger.info("Image matched" + " : " + imagename);
+												if (iframe.locator(
+														".cdk-drop-list.images-list__container.gallery-view >div:nth-child("
+																+ i + ") p.info__hidden")
+														.isVisible()) {
+
+													System.out.println("hidden button is visible");
+												}
+
+											}
+
+										}
+
+									}
+									
+									if(iframe.locator(".mat-mdc-menu-trigger.btn-download-all span").isVisible()) {
+										iframe.locator(".mat-mdc-menu-trigger.btn-download-all span").click();
+										iframe.locator("span.mat-mdc-menu-item-text:has-text('JPG')").click();
+										
+
+									}
+								}
+
+							} else {
+
+							}
+						}
+					}
 				}
 			}
 		}
+
 		return true;
+	}
+
+	private List<String> Extractname() {
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		List<String> extractedname = new ArrayList<>();
+		List<String> imagenames = iframe.locator("div.info-container").allInnerTexts();
+		for (String image : imagenames) {
+			if (image != null && !image.trim().isEmpty()) {
+				String[] parts = image.split(":");
+				String interior = parts.length > 1 ? parts[1].trim() : "";
+				extractedname.add(interior);
+				System.out.println("Extracted value: " + interior);
+
+			}
+		}
+		return extractedname;
 	}
 }
