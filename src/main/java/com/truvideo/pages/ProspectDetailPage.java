@@ -15,19 +15,21 @@ import com.truvideo.utility.JavaUtility;
 
 public class ProspectDetailPage extends JavaUtility {
 	private Page page;
-
-	public ProspectDetailPage(Page page) {
-		this.page = page;
+	
+	public ProspectDetailPage(Page page)
+	{
+		this.page=page;
 	}
-
-	private String salesIframe = "#order-details-iframe";
-	private String salesHeaderText = ".return";
-	private String customerName = "h1.orders-detail-menu__customer-name";
+	
+	
+	private String salesIframe="#order-details-iframe";
+	private String salesHeaderText=".return";
+	private String customerName="h1.orders-detail-menu__customer-name";
 	private String soStatusBar = "div.orders-detail-menu__action";
 	private String addMedia = "div.orders-detail-menu__media-add";
-	private String operationsTitleText = "div.operations__container__title";
+	private String operationsTitleText="div.operations__container__title";
 	private String details_Heading = "span.title--details";
-	private String activity_Tab = "div[role='tab'] span:has-text('Activity')"; // found 2 elemetns
+	private String activity_Tab = "div[role='tab'] span:has-text('Activity')";  //found 2 elemetns
 	private String customer_tab = "div[role='tab'] span:has-text('Customer')";
 	private String activities = "app-activity div.detail__activity  p.detail__activity-title";
 	private String addVideo_Title = "div.video-library__title p";
@@ -42,7 +44,9 @@ public class ProspectDetailPage extends JavaUtility {
 	private String messages = "ngx-message div.message";
 	private String lastMessageEndlink = "ngx-message div.message a";
 	private String playButton = "button[title='Play Video']";
-
+	
+	
+	
 	public void addVideoToOrder() {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		frame.locator(salesHeaderText).waitFor();
@@ -53,8 +57,7 @@ public class ProspectDetailPage extends JavaUtility {
 			String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to customer");
 			String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with customer");
 			String insightClass = getLocatorClass(operations_Buttons, "Insights");
-			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled")
-					&& insightClass.contains("disabled")) {
+			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled") && insightClass.contains("disabled")) {
 				logger.info("Both 'Send to customer','View with customer' & 'Insights' button is disabled");
 				flags.add(true);
 			} else {
@@ -113,7 +116,6 @@ public class ProspectDetailPage extends JavaUtility {
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
 		softAssert.assertAll();
 	}
-
 	public void sendVideoToCustomer(String channelSelected) {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		if (!frame.locator(added_Video).first().isVisible()) {
@@ -140,7 +142,6 @@ public class ProspectDetailPage extends JavaUtility {
 		softAssert.assertAll();
 		flags.clear();
 	}
-
 	public void checkStatus_OnVideoWatch() {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		SoftAssert softAssert = new SoftAssert();
@@ -167,7 +168,7 @@ public class ProspectDetailPage extends JavaUtility {
 		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
 		softAssert.assertAll();
 	}
-
+	
 	private boolean verifyNavigationToChannel(String channelSelected) {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		boolean flag = false;
@@ -189,7 +190,6 @@ public class ProspectDetailPage extends JavaUtility {
 		}
 		return flag;
 	}
-
 	private boolean checkLastMessageInConversation(String messageKeyWords) {
 		boolean flag = false;
 		FrameLocator frame = page.frameLocator(salesIframe);
@@ -231,6 +231,7 @@ public class ProspectDetailPage extends JavaUtility {
 		return flag;
 	}
 
+	
 	private void clickOperationButton(String buttonText) {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(salesIframe);
@@ -243,7 +244,6 @@ public class ProspectDetailPage extends JavaUtility {
 			}
 		}
 	}
-
 	private void selectChannelToPerformAction(String channelSelected) {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		page.waitForTimeout(2000);
@@ -259,7 +259,7 @@ public class ProspectDetailPage extends JavaUtility {
 			logger.info("WhatsApp is Disabled : sent from SMS");
 		}
 	}
-
+	
 	private String getLocatorClass(String operationButtons, String visibleText) {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(salesIframe);
@@ -274,7 +274,7 @@ public class ProspectDetailPage extends JavaUtility {
 		}
 		return className;
 	}
-
+	
 	private boolean checkStatus(String status) {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		page.waitForTimeout(2000);
@@ -286,7 +286,7 @@ public class ProspectDetailPage extends JavaUtility {
 			return false;
 		}
 	}
-
+	
 	private boolean verifyChangedStatusOnROList(String status) {
 		Page newPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
 			page.evaluate("window.open()");
@@ -304,12 +304,12 @@ public class ProspectDetailPage extends JavaUtility {
 			return false;
 		}
 	}
-
+	
 	private String getSO(String createdSO) {
 		String createdSoInList = "#sales-order-results tbody tr:has-text('" + createdSO + "')";
 		return createdSoInList;
 	}
-
+	
 	private boolean checkActivity(String activityLog) {
 		boolean flag = false;
 		FrameLocator frame = page.frameLocator(salesIframe);
@@ -349,75 +349,10 @@ public class ProspectDetailPage extends JavaUtility {
 		frame.locator(customer_tab).first().click();
 		return flag;
 	}
-
-	public void verifyElements() {
-
+	
+	public void verifyElements()
+	{
+		
 	}
 
-	// Notes
-	private String communicationTab = "div.orders-detail-communications__title";
-	private String whatsApp_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('WhatsApp')";
-	private String sMs_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('SMS')";
-	private String chat_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Chat')";
-	private String notes_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (0)')";
-	private String textArea = "div.orders-detail-notes__message textarea[placholder='Add a new note...']";
-	private String clear_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--del";
-	private String save_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--send";
-	private String writetText = ".orders-detail-notes__message__input";
-	private String notes_tab1 = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (1)')";
-
-	public boolean notesFunctionalityOnSO() throws InterruptedException {
-		try {
-			FrameLocator frame = page.frameLocator(salesIframe);
-			page.waitForTimeout(3000);
-			if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
-					&& frame.locator(chat_tab).isVisible() && frame.locator(notes_tab).isVisible()) {
-				logger.info("All tabs are vissible");
-
-			} else {
-				logger.info("All tabs are not vissible");
-			}
-			if (frame.locator(whatsApp_tab).isVisible()) {
-				logger.info("WhatsApp tab is vissible");
-			} else {
-				logger.info("WhatsApp setting is disabled from dealer settings");
-
-			}
-			frame.locator(notes_tab).click();
-			logger.info("Notes window is displayed sucessfully");
-			logger.info("Notes count is displayed 0 by default");
-			frame.locator(textArea).isVisible();
-			logger.info("Add a new note...text are display in the text box");
-			if (frame.locator(clear_btn).isVisible() && frame.locator(save_btn).isVisible()) {
-				logger.info("Clear and Save button is displayed at the bottom");
-			} else {
-				logger.info("Both buttons are not vissible");
-
-			}
-			frame.locator(writetText).fill(getRandomString(4));
-			logger.info("Text entered succesfully into the text box");
-			frame.locator(clear_btn).click();
-			logger.info("Text are clear successfully in the text box");
-			Thread.sleep(3000);
-			frame.locator(writetText).fill(getRandomString(4));
-			logger.info("Again text entered succesfully into the text box");
-			frame.locator(save_btn).click();
-			logger.info("Notes added succesfully in the text box");
-			Thread.sleep(3000);
-			frame.locator(notes_tab1).isVisible();
-			logger.info("Notes count are increased by +1");
-			String notes1 = frame.locator(notes_tab1).innerText().toLowerCase();
-			String numbersOnly = notes1.replaceAll("[^0-9]", "");
-			System.out.println(numbersOnly);
-			logger.info("Notes count increased: " + numbersOnly);
-			page.reload();
-			frame.locator(notes_tab1).waitFor();
-			logger.info("Page refreshed and notes count validated.");
-			return true;
-		} catch (Exception e) {
-			logger.error("Error during notes functionality validation: " + e.getMessage());
-			return false;
-		}
-
-	}
 }

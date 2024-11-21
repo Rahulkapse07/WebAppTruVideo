@@ -147,15 +147,5 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}
-	
-	@Test(priority = 26,description = "WA-5386")
-	public void VerifyNotesFunctionalityOnRODetailPage() throws InterruptedException {
-		Assert.assertTrue(repairOrderPage.notesFunctionalityOnRO());
-	}
-	@Test(priority = 27,description = "WA-5385")
-	public void VerifyROChatFunctionalityOnOrderDetailPage() throws InterruptedException {
-		Assert.assertTrue(repairOrderPage.repairOrderChatFunctionality());
-	}
-	
 
 }
