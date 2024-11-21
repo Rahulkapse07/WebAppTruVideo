@@ -1,6 +1,5 @@
 package com.truvideo.testutils;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -10,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
@@ -21,7 +21,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -31,6 +30,7 @@ import com.microsoft.playwright.options.ScreenshotType;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import com.truvideo.utility.JavaUtility;
+
 import io.appium.java_client.AppiumDriver;
 
 public class TestUtils extends JavaUtility {
