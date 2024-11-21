@@ -63,7 +63,7 @@ public void loginPageSetup(
     // System Property Check (Highest Priority)
     baseUrl = prop.getProperty("baseUrl", baseUrl);
     browser = prop.getProperty("browser", browser);
-    headless = prop.getProperty("headless", headless);
+    headless = System.getProperty("headless", headless);
 
     // XML Parameter Check (Medium Priority)
     if (baseUrl == null || baseUrl.isEmpty()) {
