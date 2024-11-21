@@ -104,8 +104,8 @@ public class BaseTest {
 
             // System Property Check (Highest Priority)
             baseUrl = System.getProperty("baseUrl", baseUrl);
-            Produrl = prop.getProperty("Produrl", Produrl);
-            browser = prop.getProperty("browser", browser);
+            Produrl = System.getProperty("Produrl", Produrl);
+            browser = System.getProperty("browser", browser);
             headless = System.getProperty("headless", headless);
 
             // Environment-based Check: Default to 'staging' if not provided
