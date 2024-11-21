@@ -7,11 +7,7 @@ import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
 
 public class BaseTest {
-    protected PlaywrightFactory pf;
-    public Page page;
-    protected Properties prop;
-    protected LoginPage loginpage;
-    private String baseUrl; // Add baseUrl field
+  // Add baseUrl field
 //
 //    @Parameters({ "browser", "headless", "baseUrl" }) // Add baseUrl parameter
 //    @BeforeTest
@@ -51,39 +47,100 @@ public class BaseTest {
 //    }
 //}
 
-@Parameters({ "browser", "headless", "baseUrl" })
-@BeforeTest
-public void loginPageSetup(
-        @Optional("chrome") String browser, 
-        @Optional("false") String headless, 
-        @Optional("") String baseUrl) {
-    pf = new PlaywrightFactory();
-    prop = pf.init_prop(); // Load config.properties
+//@Parameters({ "browser", "headless", "baseUrl" , "Produrl" })
+//@BeforeTest
+//public void loginPageSetup(
+//        @Optional("chrome") String browser, 
+//        @Optional("false") String headless, 
+//        @Optional("") String baseUrl,
+//        @Optional("") String Produrl ){
+//    pf = new PlaywrightFactory();
+//    prop = pf.init_prop(); // Load config.properties
+//
+//    // System Property Check (Highest Priority)
+//    baseUrl = System.getProperty("baseUrl", baseUrl);
+//    browser = prop.getProperty("browser", browser);
+//    headless = System.getProperty("headless", headless);
+//
+//    // XML Parameter Check (Medium Priority)
+//    if (baseUrl == null || baseUrl.isEmpty()) {
+//        baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
+//    }
+//    if (browser == null || browser.isEmpty()) {
+//        browser = prop.getProperty("browser", "chrome");
+//    }
+//    if (headless == null || headless.isEmpty()) {
+//        headless = prop.getProperty("headless", "false");
+//    }
+//
+//    this.baseUrl = baseUrl;
+//    System.out.println("Final Base URL: " + this.baseUrl);
+//
+//    boolean headlessMode = Boolean.parseBoolean(headless);
+//    page = pf.initBrowser(browser, headlessMode);
+//
+//    loginpage = new LoginPage(page);
+//    page.navigate(this.baseUrl);
+//}
+//}
+   
+        protected PlaywrightFactory pf;
+        public Page page;
+        protected Properties prop;
+        protected LoginPage loginpage;
+        private String baseUrl;
 
-    // System Property Check (Highest Priority)
-    baseUrl = System.getProperty("baseUrl", baseUrl);
-    browser = prop.getProperty("browser", browser);
-    headless = System.getProperty("headless", headless);
+        @Parameters({ "browser", "headless", "baseUrl", "Produrl", "environment" })
+        @BeforeTest
+        public void loginPageSetup(
+                @Optional("chrome") String browser, 
+                @Optional("false") String headless, 
+                @Optional("") String baseUrl,
+                @Optional("") String Produrl,
+                @Optional("staging") String environment) { // Add environment parameter to distinguish staging/production
 
-    // XML Parameter Check (Medium Priority)
-    if (baseUrl == null || baseUrl.isEmpty()) {
-        baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
+            pf = new PlaywrightFactory();
+            prop = pf.init_prop(); // Load config.properties
+
+            // System Property Check (Highest Priority)
+            baseUrl = System.getProperty("baseUrl", baseUrl);
+            Produrl = System.getProperty("Produrl", Produrl);
+            browser = prop.getProperty("browser", browser);
+            headless = System.getProperty("headless", headless);
+
+            // Environment-based Check: Default to 'staging' if not provided
+            if (environment.equals("prod")) {
+                baseUrl = Produrl; // Use Produrl if environment is 'prod'
+            } else {
+                // Use baseUrl (RC) for non-prod (staging or others)
+                if (baseUrl == null || baseUrl.isEmpty()) {
+                    baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
+                }
+            }
+
+            // If baseUrl is still empty, default to RC URL
+            if (baseUrl == null || baseUrl.isEmpty()) {
+                baseUrl = "https://rc.truvideo.com/login";
+            }
+
+            if (browser == null || browser.isEmpty()) {
+                browser = prop.getProperty("browser", "chrome");
+            }
+            if (headless == null || headless.isEmpty()) {
+                headless = prop.getProperty("headless", "false");
+            }
+
+            this.baseUrl = baseUrl;  // Set the final baseUrl (either RC or production)
+
+            // Log the final baseUrl
+            System.out.println("Final Base URL: " + this.baseUrl);
+
+            boolean headlessMode = Boolean.parseBoolean(headless);
+            page = pf.initBrowser(browser, headlessMode);
+
+            loginpage = new LoginPage(page);
+            page.navigate(this.baseUrl); // Navigate to the selected baseUrl (RC or Production)
+        }
     }
-    if (browser == null || browser.isEmpty()) {
-        browser = prop.getProperty("browser", "chrome");
-    }
-    if (headless == null || headless.isEmpty()) {
-        headless = prop.getProperty("headless", "false");
-    }
 
-    this.baseUrl = baseUrl;
-    System.out.println("Final Base URL: " + this.baseUrl);
-
-    boolean headlessMode = Boolean.parseBoolean(headless);
-    page = pf.initBrowser(browser, headlessMode);
-
-    loginpage = new LoginPage(page);
-    page.navigate(this.baseUrl);
-}
-}
 

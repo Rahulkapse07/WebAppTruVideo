@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<suite name="Prod Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="true">
+    <listeners>
+        <listener class-name="com.truvideo.testutils.Listeners"></listener>
+    </listeners>
+    <parameter name="browser" value="chrome" />
+    <parameter name="headless" value="false" />
+    <parameter name="baseUrl" value="https://rc.truvideo.com/login" />
+    <parameter name="Produrl" value="https://app.truvideo.com/login" />
+    <parameter name="environment" value="prod" /> <!-- Production environment -->
+
+    <test name="Login Page Test">
+        <classes>
+            <class name="com.truvideo.tests.LoginPageTest"></class>
+        </classes>
+    </test>
+</suite>
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Prod Smoke Suite" parallel="false" thread-count="3"
 	verbose="5" preserve-order="true">
@@ -16,4 +34,4 @@
 			
 		</classes>
 	</test>
-</suite>
+</suite> -->
