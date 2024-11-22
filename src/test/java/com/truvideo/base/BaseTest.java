@@ -33,7 +33,6 @@ public class BaseTest {
 			baseUrl = prop.getProperty("baseUrl");
 		}
 
-		// Ensure baseUrl is not null or empty
 		if (baseUrl == null || baseUrl.isEmpty()) {
 			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
 		}

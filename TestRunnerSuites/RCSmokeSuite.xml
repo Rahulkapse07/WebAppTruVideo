@@ -5,7 +5,7 @@
 	</listeners>
 	<parameter name="baseUrl" value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
-	<parameter name="headless" value="false" />
+	<parameter name="headless" value="true" />
 	<test name="RC smoke test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>

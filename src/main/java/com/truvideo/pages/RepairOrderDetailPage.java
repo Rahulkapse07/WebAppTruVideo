@@ -231,8 +231,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
 		softAssert.assertAll();
 	}
-
-	public void sendVideoToCustomer(String channelSelected) {
+        public void sendVideoToCustomer(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		if (!frame.locator(added_Video).first().isVisible()) {
 			logger.info("Condition not satisfied for Send Video : video not added to RO");
