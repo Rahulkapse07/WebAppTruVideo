@@ -53,8 +53,9 @@ public class JavaUtility {
 	public Properties init_prop() {
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(ip);
+			String configPath = System.getenv("CONFIG_PATH");
+			FileInputStream ip = new FileInputStream(configPath);
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException f) {
