@@ -6,12 +6,12 @@
 	<parameter name="baseUrl" value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
-	<test name="Login Page Test">
+	<test name="RC smoke test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-	<test name = "message order">
+	<test name = "Repair order detail page">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
 				<methods>
@@ -19,8 +19,15 @@
 					<include name="verifyAddMediaFunction_FirstVideo" />
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
-					<include name="verifyelement" />
-					<include name="verifyelement" />
+					<include name="verifyViewedStatus" />
+					<!-- <include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" /> -->
 					
 				</methods>
 			</class>
