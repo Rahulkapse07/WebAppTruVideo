@@ -117,7 +117,7 @@ public class Listeners extends TestUtils implements ITestListener {
 
 	public void onFinish(ITestContext context) {
 		extent.flush();
-		sendReportToEmail();
+		//sendReportToEmail();
 	}
 
 }
