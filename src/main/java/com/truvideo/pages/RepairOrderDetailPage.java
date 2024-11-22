@@ -1983,6 +1983,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String welcomeText = "h1.chat-empty-container__title";
 	private String noConversationText = "p.chat-empty-container__subtitle";
 	private String textBox = ".mat-mdc-form-field-infix.ng-tns-c508571215-8";
+	private String writeInput = "#mat-input-1";
 	private String typeHereYourText = "#mat-input-0";
 	private String emojisBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__emoji";
 	private String attachmentBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__clip";
@@ -2007,7 +2008,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("WhatsApp setting is disabled from dealer settings");
 
 		}
-		page.waitForTimeout(2000);
+		page.waitForTimeout(5000);
 		frame.locator(chat_tab).click();
 		logger.info("Chat window are displayed sucessfully");
 		page.waitForTimeout(20000);
@@ -2024,8 +2025,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 		frame.locator(sendDisabled).isVisible();
 		logger.info("By default send button is disable");
-		frame.locator(typeHereYourText).click();
-		frame.locator(typeHereYourText).fill(getRandomString(4));
+		frame.locator(writeInput).click();
+		System.out.println("click");
+		frame.locator(writeInput).fill(getRandomString(4));
 		logger.info("Text entered succesfully into the text box");
 		frame.locator(sendEnabled).isVisible();
 		logger.info("Send button is enable");

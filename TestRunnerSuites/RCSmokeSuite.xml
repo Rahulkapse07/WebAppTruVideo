@@ -14,12 +14,17 @@
 	<test name="Login Page Test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
+		</classes>
+	</test>
+	<test name="Repair Order Detail Page Test">
+		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
-				<methods>
-					<include name="verifyAllAvailableElementsOnOrderDetails" />
-				</methods>
-			</class>
+				<!-- <methods>
+				
+					<include name="RepairOrderDetailPageTest.verifyAllAvailableElementsOnOrderDetails" />
+				</methods> -->
 
+			</class>
 		</classes>
 	</test>
 </suite>
