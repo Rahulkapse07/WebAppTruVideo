@@ -31,7 +31,7 @@
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
 		</classes>
-	</est> 
+	</test> 
 	<test name="User Page Test">
 		<classes>
 			<class name="com.truvideo.tests.UserPageTest"></class>

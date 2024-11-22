@@ -97,8 +97,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String description_TextField = "input[placeholder='Description']";
 	private String amount_TextField = "input[placeholder='Amount']";
 	private String type_DropdownField = "input[placeholder='Type']";
-	
-
 
 	private String selectTypeFromDropdown(String type) {
 		return ".tru-dropdown__content-items strong:has-text('" + type + "')";
@@ -1905,8 +1903,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		return !flags.contains(false);
 	}
-	
-	// Notes
+
 
 	private String communicationTab = "div.orders-detail-communications__title";
 	private String whatsApp_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('WhatsApp')";
@@ -2038,5 +2035,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	}
 	
+
 
 }

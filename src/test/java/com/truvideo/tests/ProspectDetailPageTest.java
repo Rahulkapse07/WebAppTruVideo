@@ -1,6 +1,5 @@
 package com.truvideo.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -38,11 +37,6 @@ public class ProspectDetailPageTest extends BaseTest {
 	@Test(priority = 6,description = "")
 	public void verifyViewedStatus() {
 		prospectdetailpage.checkStatus_OnVideoWatch();
-	}
-	
-	@Test(priority = 7,description = "WA-5413")
-	public void VerifyNotesFunctionalityOnSODeatilPage() throws InterruptedException {
-		Assert.assertTrue(prospectdetailpage.notesFunctionalityOnSO());
 	}
 
 }

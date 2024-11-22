@@ -71,7 +71,7 @@ public class LoginPage extends JavaUtility {
 		return errorMessage;
 	}
 
-	public String loginToApplicationUpdatedpass(String username, String password ) {
+	public String loginToApplicationUpdatedpass(String username, String password) {
 
 		navigateToHomePage(username, password);
 		logger.info("Username / password entered and clicked on LogIn button");
@@ -91,41 +91,38 @@ public class LoginPage extends JavaUtility {
 
 	public HomePage navigateToHomePage(String username, String password) {
 		System.out.println(page.url());
-		
-		if(page.url().contains( "https://rc.truvideo.com/login")) {
-			
-		page.fill(username_Field, username);
-		logger.info("Entered User Name  " + username);
-		page.fill(password_Field, password);
-		logger.info("Entered Password    *********");
-		page.click(logIn_Button);
-		logger.info("Navigated to the Home Page");
-		HomePage homePage = new HomePage(page);
-		logInUsername = page.textContent(homePage.getLoginUserLabel());
-		logInDealer = page.textContent(homePage.getLoginDealerLabel());
-		// PlaywrightFactory.getBrowserContext().storageState(new
-		// BrowserContext.StorageStateOptions()
-		// .setPath(Paths.get("./src/main/resources/LoginStorageState/loginDetails.json")));
-		
+
+		if (page.url().contains("https://rc.truvideo.com/login")) {
+
+			page.fill(username_Field, username);
+			logger.info("Entered User Name  " + username);
+			page.fill(password_Field, password);
+			logger.info("Entered Password    *********");
+			page.click(logIn_Button);
+			logger.info("Navigated to the Home Page");
+			HomePage homePage = new HomePage(page);
+			logInUsername = page.textContent(homePage.getLoginUserLabel());
+			logInDealer = page.textContent(homePage.getLoginDealerLabel());
+			// PlaywrightFactory.getBrowserContext().storageState(new
+			// BrowserContext.StorageStateOptions()
+			// .setPath(Paths.get("./src/main/resources/LoginStorageState/loginDetails.json")));
+
 		}
-		
-//		else if(page.url().contains("https://app.truvideo.com/login")) {
-//			
-//			    page.fill(username_Field,prop.getProperty("Produsername"));
-//				logger.info("Entered User Name  " + prop.getProperty("Produsername"));
-//				page.fill(password_Field, prop.getProperty("Prodpassword"));
-//				logger.info("Entered Password    *********");
-//				page.click(logIn_Button);
-//				logger.info("Navigated to the Home Page");
-//				HomePage homePage = new HomePage(page);
-//				logInUsername = page.textContent(homePage.getLoginUserLabel());
-//				logInDealer = page.textContent(homePage.getLoginDealerLabel());
-//				// PlaywrightFactory.getBrowserContext().storageState(new
-//				// BrowserContext.StorageStateOptions()
-//				// .setPath(Paths.get("./src/main/resources/LoginStorageState/loginDetails.json")));
-//				
-//		}
-		else {
+			else if(page.url().contains("https://app.truvideo.com/login")) { 
+		  page.fill(username_Field,prop.getProperty("Produsername")); 
+		  logger.info("Entered User Name  " + prop.getProperty("Produsername")); 
+		  page.fill(password_Field, prop.getProperty("Prodpassword")); //
+		  logger.info("Entered Password    *********"); page.click(logIn_Button); 
+		  logger.info("Navigated to the Home Page"); HomePage homePage = new
+		  HomePage(page); logInUsername =
+		  page.textContent(homePage.getLoginUserLabel()); logInDealer =
+		  page.textContent(homePage.getLoginDealerLabel()); 
+//		  PlaywrightFactory.getBrowserContext().storageState(new 
+//		  BrowserContext.StorageStateOptions() // //
+//		  .setPath(Paths.get("./src/main/resources/LoginStorageState/loginDetails.json"
+//		  )));  
+		  }
+		  else {
 			logger.info("Incorrect url showing");
 		}
 		return new HomePage(page);

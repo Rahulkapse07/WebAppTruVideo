@@ -7,83 +7,51 @@ import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
 
 public class BaseTest {
-    protected PlaywrightFactory pf;
-    public Page page;
-    protected Properties prop;
-    protected LoginPage loginpage;
-    private String baseUrl; // Add baseUrl field
-//
-//    @Parameters({ "browser", "headless", "baseUrl" }) // Add baseUrl parameter
-//    @BeforeTest
-//    public void loginPageSetup(
-//            @Optional("chrome") String browser, 
-//            @Optional("false") String headless, 
-//            @Optional("") String baseUrl) {
-//        pf = new PlaywrightFactory();
-//        prop = pf.init_prop(); // Initialize from config file
-//
-//        if (browser == null || browser.isEmpty()) {
-//            browser = prop.getProperty("browser", "chrome");
-//        }
-//
-//        if (headless == null || headless.isEmpty()) {
-//            headless = prop.getProperty("headless", "false");
-//        }
-//
-//        if (baseUrl == null || baseUrl.isEmpty()) {
-//            baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login");
-//        }
-//
-//        this.baseUrl = baseUrl; // Set baseUrl dynamically
-//
-//        boolean headlessMode = Boolean.parseBoolean(headless);
-//        page = pf.initBrowser(browser, headlessMode);
-//
-//        loginpage = new LoginPage(page); // Initialize LoginPage with the Page instance
-//
-//        // Navigate to the base URL after browser initialization
-//        page.navigate(this.baseUrl);
-//    }
-//
-//    @AfterTest
-//    public void tearDown() {
-//        page.context().browser().close();
-//    }
-//}
 
-@Parameters({ "browser", "headless", "baseUrl" })
-@BeforeTest
-public void loginPageSetup(
-        @Optional("chrome") String browser, 
-        @Optional("false") String headless, 
-        @Optional("") String baseUrl) {
-    pf = new PlaywrightFactory();
-    prop = pf.init_prop(); // Load config.properties
+	protected PlaywrightFactory pf;
+	public Page page;
+	protected Properties prop;
+	protected LoginPage loginpage;
+	private String baseUrl; // For storing the final base URL
 
-    // System Property Check (Highest Priority)
-    baseUrl = prop.getProperty("baseUrl", baseUrl);
-    browser = prop.getProperty("browser", browser);
-    headless = System.getProperty("headless", headless);
+	@BeforeTest
+	@Parameters({ "browser", "headless", "baseUrl" })
+	public void loginPageSetup(
+			@Optional("chrome") String browser, 
+			@Optional("false") String headless,
+			@Optional("") String baseUrl) {
 
-    // XML Parameter Check (Medium Priority)
-    if (baseUrl == null || baseUrl.isEmpty()) {
-        baseUrl = prop.getProperty("baseUrl", "https://rc.truvideo.com/login"); // Fallback to config.properties
-    }
-    if (browser == null || browser.isEmpty()) {
-        browser = prop.getProperty("browser", "chrome");
-    }
-    if (headless == null || headless.isEmpty()) {
-        headless = prop.getProperty("headless", "false");
-    }
+		pf = new PlaywrightFactory();
+		prop = pf.init_prop(); // Load config.properties
 
-    this.baseUrl = baseUrl;
-    System.out.println("Final Base URL: " + this.baseUrl);
+		// Use config.properties as default, override with XML values if provided
+		browser = prop.getProperty("browser", browser);
+		headless = prop.getProperty("headless", headless);
 
-    boolean headlessMode = Boolean.parseBoolean(headless);
-    page = pf.initBrowser(browser, headlessMode);
+		// Check if baseUrl was passed via XML; if not, use the default from properties
+		if (baseUrl.isEmpty()) {
+			baseUrl = prop.getProperty("baseUrl");
+		}
 
-    loginpage = new LoginPage(page);
-    page.navigate(this.baseUrl);
-}
+		// Ensure baseUrl is not null or empty
+		if (baseUrl == null || baseUrl.isEmpty()) {
+			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
+		}
+
+		System.out.println("Browser: " + browser);
+		System.out.println("Headless: " + headless);
+		System.out.println("Final Base URL: " + baseUrl);
+
+		boolean headlessMode = Boolean.parseBoolean(headless);
+		page = pf.initBrowser(browser, headlessMode);
+
+		loginpage = new LoginPage(page);
+		page.navigate(baseUrl);
+	}
+
+	@AfterTest
+	public void tearDown() {
+		page.context().browser().close();
+	}
 }
 

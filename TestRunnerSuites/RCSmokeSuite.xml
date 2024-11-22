@@ -1,30 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="RC Smoke Suite" parallel="false" thread-count="3"
 	verbose="5" preserve-order="true">
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
+	<parameter name="baseUrl" value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
-	<parameter name="baseUrl"
-		value="https://rc.truvideo.com/login" />
-
-
-	<test name="Login Page Test">
+	<test name="RC smoke test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-	<test name="Repair Order Detail Page Test">
+	<test name = "Repair order detail page">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
-				<!-- <methods>
-				
-					<include name="RepairOrderDetailPageTest.verifyAllAvailableElementsOnOrderDetails" />
-				</methods> -->
-
+				<methods>
+					<include name="verifyAllAvailableElementsOnOrderDetails" />
+					<include name="verifyAddMediaFunction_FirstVideo" />
+					<include name="verifySendToCustomer_ForFirstVideo" />
+					<include name="verifySendToCustomer_ForSecondVideo" />
+					<include name="verifyViewedStatus" />
+					<!-- <include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" /> -->
+					
+				</methods>
 			</class>
-		</classes>
+			</classes>
 	</test>
 </suite>
