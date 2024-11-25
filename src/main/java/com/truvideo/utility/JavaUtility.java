@@ -20,18 +20,38 @@ import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Tracing;
 import com.microsoft.playwright.options.FilePayload;
 
 public class JavaUtility {
 	
-
+ 
 	
 	public static Properties prop;
 	public Logger logger = LogManager.getLogger(this.getClass().getName());
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	private static final SecureRandom RANDOM = new SecureRandom();
+	
+	
+//	 // Start Trace Recording
+//    public static void startTracing(String testName) {
+//        testName.tracing().start(new Tracing.StartOptions()
+//            .setScreenshots(true)
+//            .setSnapshots(true)
+//            .setSources(true));
+//    }
+
+    // Stop Trace Recording and Export
+    public static void stopTracing(BrowserContext context, String testCaseName) {
+        String tracePath = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + "-trace.zip";
+        context.tracing().stop(new Tracing.StopOptions()
+            .setPath(Paths.get(tracePath)));
+    }
+	
+	
 
 	public String getRandomString(int length) {
 		StringBuilder sb = new StringBuilder(length);

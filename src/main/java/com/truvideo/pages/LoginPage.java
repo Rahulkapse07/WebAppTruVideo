@@ -35,7 +35,7 @@ public class LoginPage extends JavaUtility {
 			logger.info("Some elements are missing on Login Page");
 			return false;
 		}
-	}
+	} 
 
 	public String click_CreateAccount_Button() {
 		navigateToSignUpPage();

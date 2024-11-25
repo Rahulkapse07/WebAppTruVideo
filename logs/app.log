@@ -1,0 +1,1123 @@
+2024-11-22 15:18:40 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 15:18:40 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 15:18:40 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 15:18:40 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 15:18:40 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 15:18:41 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 15:18:42 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 15:18:44 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 15:18:44 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 15:18:45 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 15:18:46 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 15:18:47 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 15:18:47 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 15:18:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 15:18:49 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 15:18:49 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 15:31:31 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 15:31:31 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 15:31:31 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 15:31:31 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 15:31:31 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 15:31:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 15:31:34 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 15:31:35 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 15:31:36 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 15:31:38 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 15:31:38 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 15:31:40 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 15:31:40 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 15:31:42 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 15:31:43 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 15:31:43 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 16:19:49 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 16:19:49 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 16:19:49 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 16:19:49 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 16:19:49 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 16:19:51 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 16:19:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 16:19:55 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 16:19:55 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 16:19:57 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 16:19:57 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 16:19:59 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 16:19:59 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 16:20:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 16:20:02 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 16:20:02 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 16:39:53 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 16:39:53 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 16:39:53 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 16:39:53 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 16:39:53 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 16:39:55 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 16:40:27 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 16:40:28 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 16:40:29 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 16:40:30 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 16:40:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 16:40:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 16:40:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 16:40:34 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 16:40:34 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 16:43:55 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 16:43:55 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 16:43:55 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 16:43:55 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 16:43:55 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 16:43:57 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 16:44:10 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 16:44:12 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 16:44:12 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 16:44:14 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 16:44:14 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 16:44:16 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 16:44:16 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 16:44:17 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 16:44:18 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 16:44:18 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 16:54:53 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 16:54:53 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 16:54:53 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 16:54:53 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 16:54:53 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 17:07:51 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 17:07:51 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 17:07:51 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 17:07:51 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 17:07:51 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 17:07:54 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 17:17:29 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 17:17:29 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 17:17:29 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 17:17:29 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 17:17:29 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 17:17:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 17:17:35 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 17:17:37 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 17:17:38 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 17:17:39 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 17:17:40 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 17:17:42 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 17:17:42 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 17:17:43 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 17:17:44 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 17:17:44 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 17:50:39 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 17:50:39 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 17:50:39 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 17:50:39 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 17:50:39 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 17:50:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 17:50:44 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 17:50:46 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 17:50:47 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 17:50:48 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 17:50:49 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 17:50:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 17:50:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 17:50:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 17:50:54 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 17:50:54 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 17:56:47 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 17:56:47 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 17:56:47 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 17:56:47 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 17:56:47 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 17:56:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 17:56:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 17:56:55 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 17:56:56 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 17:56:58 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 17:56:58 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 17:57:00 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 17:57:00 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 17:57:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 17:57:02 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 17:57:02 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:00:26 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:00:26 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:00:26 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:00:26 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:00:26 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:00:27 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:00:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:00:33 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:00:34 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:00:35 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:00:36 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:00:37 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:00:37 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:00:39 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:00:40 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:00:40 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:02:34 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:02:34 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:02:34 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:02:34 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:02:34 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:02:36 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:02:39 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:02:41 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:02:42 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:02:43 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:02:44 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:02:46 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:02:46 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:02:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:02:49 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:02:49 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:05:15 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:05:15 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:05:15 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:05:15 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:05:15 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:05:16 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:05:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:05:24 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:05:25 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:05:26 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:05:27 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:05:28 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:05:28 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:05:30 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:05:31 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:05:31 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:07:24 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:07:24 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:07:24 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:07:24 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:07:24 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:07:25 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:07:29 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:07:31 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:07:31 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:07:33 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:07:34 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:07:35 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:07:35 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:07:37 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:07:38 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:07:38 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:13:49 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:13:49 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:13:49 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:13:49 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:13:49 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:13:50 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:13:51 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:13:53 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:13:54 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:13:55 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:13:56 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:13:57 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:13:57 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:13:59 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:14:00 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:14:00 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:19:21 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:19:21 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:19:21 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:19:21 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:19:21 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:19:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:19:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:19:26 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:19:26 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:19:28 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:19:28 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:19:30 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:19:30 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:19:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:19:33 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:19:33 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:21:24 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:21:24 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:21:24 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:21:24 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:21:24 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:23:53 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:23:53 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:23:53 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:23:53 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:23:53 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:23:54 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:23:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:23:58 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:23:58 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:24:00 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:24:00 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:24:02 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:24:02 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:24:03 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:24:04 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:24:04 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:57:46 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 18:57:46 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 18:57:46 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 18:57:46 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 18:57:46 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 18:57:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 18:57:50 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 18:57:51 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 18:57:52 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 18:57:54 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 18:57:54 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 18:57:56 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:57:56 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:57:57 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:57:59 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 18:57:59 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 18:58:06 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 18:58:06 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 18:58:07 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 18:58:17 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-22 18:58:32 INFO  com.truvideo.pages.HomePage - Clicked on Orders Message Screen Header Tab
+2024-11-22 18:58:32 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 18:58:32 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SERVICE
+2024-11-22 18:58:40 INFO  com.truvideo.pages.HomePage - Clicked on Prospect Header Tab
+2024-11-22 18:58:53 INFO  com.truvideo.pages.HomePage - Clicked on Prospects Message Header Tab
+2024-11-22 18:58:53 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 18:58:53 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SALES
+2024-11-22 18:59:03 INFO  com.truvideo.pages.HomePage - Clicked on Reminder Header Tab
+2024-11-22 18:59:07 INFO  com.truvideo.pages.HomePage - Clicked on Training Header Tab
+2024-11-22 18:59:10 INFO  com.truvideo.pages.HomePage - Clicked on User Header Tab
+2024-11-22 18:59:18 INFO  com.truvideo.pages.HomePage - Clicked on Contacts List Header Tab
+2024-11-22 18:59:22 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 18:59:23 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 18:59:23 INFO  com.truvideo.pages.HomePage - Clicked on dealers tab
+2024-11-22 18:59:24 INFO  com.truvideo.pages.HomePage - Dealers Page is opened : TruVideo - Dealers
+2024-11-22 18:59:25 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 18:59:25 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 18:59:26 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-11-22 18:59:26 INFO  com.truvideo.pages.HomePage - Dealer Group Page is opened : TruVideo - Dealer Groups
+2024-11-22 18:59:27 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 18:59:28 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 18:59:29 INFO  com.truvideo.pages.HomePage - Clicked on User Group tab
+2024-11-22 18:59:29 INFO  com.truvideo.pages.HomePage - User Group Page is opened : TruVideo - User Groups
+2024-11-22 18:59:31 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 18:59:31 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 18:59:32 INFO  com.truvideo.pages.HomePage - Clicked on Saved Video Library tab
+2024-11-22 18:59:32 INFO  com.truvideo.pages.HomePage - Saved Video Library Page is opened : TruVideo - Saved Videos
+2024-11-22 18:59:34 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:00:18 INFO  com.truvideo.pages.HomePage - Clicked on System tab
+2024-11-22 19:00:51 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:00:51 INFO  com.truvideo.pages.HomePage - Search Button displayed
+2024-11-22 19:00:51 INFO  com.truvideo.pages.HomePage - Clicked on Close advance search window button
+2024-11-22 19:00:53 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:00:55 INFO  com.truvideo.pages.HomePage - Clicked on search button when by default All filter are selected
+2024-11-22 19:00:57 INFO  com.truvideo.pages.HomePage - Repair Orders Heading , Prospect Heading, Both RO/SO Messages heading, Reminder heading is displayed
+2024-11-22 19:00:58 INFO  com.truvideo.pages.HomePage - 'All' filter removed & applied single 'Repair Order' checkbox filter
+2024-11-22 19:01:02 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order List and Only repair order list is displaying
+2024-11-22 19:01:02 INFO  com.truvideo.pages.HomePage - 'Repair Order' filter removed & applied single 'Prospect' checkbox filter
+2024-11-22 19:01:05 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospect List and Only prospect list is displaying
+2024-11-22 19:01:05 INFO  com.truvideo.pages.HomePage - 'Prospect' filter removed & applied single 'Repair Order Messages' checkbox filter
+2024-11-22 19:01:07 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order Messages screen
+2024-11-22 19:01:08 INFO  com.truvideo.pages.HomePage - 'Repair Order Message' filter removed & applied single 'Prospect Messages' checkbox filter
+2024-11-22 19:01:11 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospects Messages screen
+2024-11-22 19:01:11 INFO  com.truvideo.pages.HomePage - 'Prospect Message' filter removed & applied single 'Reminder' checkbox filter
+2024-11-22 19:01:13 INFO  com.truvideo.pages.HomePage - User is navigated to the Reminder screen
+2024-11-22 19:01:14 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:01:15 INFO  com.truvideo.pages.HomePage - Clicked on 'This week' radio filter
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This week filter is selected
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:55 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:51 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:45 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:42 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:37 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:35 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:33 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:28 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:26 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:25 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:18 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:16 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:14 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:12 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:10 AM
+2024-11-22 19:01:18 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:06 AM
+2024-11-22 19:01:19 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:01:20 INFO  com.truvideo.pages.HomePage - Clicked on 'This Month' radio filter
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This month filter is selected
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:55 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:51 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:45 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:42 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:37 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:35 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:33 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:28 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:26 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:25 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:18 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:16 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:14 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:12 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:10 AM
+2024-11-22 19:01:23 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:06 AM
+2024-11-22 19:01:24 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:01:26 INFO  com.truvideo.pages.HomePage - Entered from date in the calendar & Entered date is : 10/28/2024 12:00 AM
+2024-11-22 19:01:26 INFO  com.truvideo.pages.HomePage - Entered upto date in the calendar & Entered date is : 12/06/2024 11:59 PM
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:55 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:51 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:45 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:42 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:37 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:35 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:33 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:28 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:26 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:25 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:18 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:16 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:14 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:12 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:10 AM is within the range.
+2024-11-22 19:01:31 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:06 AM is within the range.
+2024-11-22 19:01:32 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:01:33 INFO  com.truvideo.pages.HomePage - Text entered in search box
+2024-11-22 19:01:35 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 64679787878 not contains searched text which is test
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 67876467698 not contains searched text which is test
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 24587961646 not contains searched text which is test
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 3256786446 not contains searched text which is test
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 8529973446 contains searched text which is test
+2024-11-22 19:01:37 INFO  com.truvideo.pages.HomePage - 1048 not contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 7812059487 not contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 12345 contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 1245 contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - test1326541 contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 1047 contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 648761649 not contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 6767 not contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 2135456451320 contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 64346 not contains searched text which is test
+2024-11-22 19:01:38 INFO  com.truvideo.pages.HomePage - 465486541651 contains searched text which is test
+2024-11-22 19:01:39 INFO  com.truvideo.pages.HomePage - 346 not contains searched text which is test
+2024-11-22 19:01:39 INFO  com.truvideo.pages.HomePage - 454874465465453 contains searched text which is test
+2024-11-22 19:01:39 INFO  com.truvideo.pages.HomePage - 1046 not contains searched text which is test
+2024-11-22 19:01:39 INFO  com.truvideo.pages.HomePage - 42424 not contains searched text which is test
+2024-11-22 19:01:39 INFO  com.truvideo.pages.HomePage - Clicked on notification bell icon
+2024-11-22 19:01:40 INFO  com.truvideo.pages.HomePage - Recent Notification heading displayed
+2024-11-22 19:01:45 INFO  com.truvideo.pages.HomePage - Again clicked on notification bell icon
+2024-11-22 19:01:45 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Code button
+2024-11-22 19:01:46 INFO  com.truvideo.pages.HomePage - Service code is displayed as :220310
+2024-11-22 19:01:46 INFO  com.truvideo.pages.HomePage - Sales code is displayed as :027872
+2024-11-22 19:01:59 INFO  com.truvideo.pages.HomePage - Clicked on Chat button
+2024-11-22 19:02:04 INFO  com.truvideo.pages.HomePage - Click on Away button
+2024-11-22 19:02:06 INFO  com.truvideo.pages.HomePage - Button change to  Back
+2024-11-22 19:02:06 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have set your text messaging auto-reply for your Away message. This will send an automatic text reply to the first inbound message from your customers (to you) letting them know that you are away from your desk and will reply to them shortly. Customers will only receive this "away" message once every hour, so if they send an inbound text multiple times they will only receive it on the first reply.
+2024-11-22 19:02:13 INFO  com.truvideo.pages.HomePage - Click on Back button
+2024-11-22 19:02:13 INFO  com.truvideo.pages.HomePage - Button change to  Away
+2024-11-22 19:02:13 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have turned off your "Away" message. To turn it back on, click on the Away button.
+2024-11-22 19:02:17 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:02:18 INFO  com.truvideo.pages.HomePage - Something went wrong during opening User Account dropdown
+2024-11-22 19:02:18 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:02:48 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:02:53 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2024-11-22 19:02:53 INFO  com.truvideo.pages.HomePage - User is switched to another dealer and switched dealer is : Kenility Store 
+2024-11-22 19:02:54 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button again : To switch Back
+2024-11-22 19:03:27 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:04:00 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-11-22 19:04:04 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-11-22 19:04:04 INFO  com.truvideo.pages.HomePage - The count 51 on badge is equal to total count Displaying 1 to 20 of 51 records
+2024-11-22 19:04:04 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:05 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:05 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:05 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:05 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:06 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:06 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:06 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:06 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:06 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review $-Paid Insp-Published
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review Est-Sent
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:07 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:08 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:08 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:08 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:08 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:11 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-11-22 19:04:14 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all RO's
+2024-11-22 19:04:14 INFO  com.truvideo.pages.HomePage - The count 310 on badge is equal to total count Displaying 1 to 20 of 310 records
+2024-11-22 19:04:14 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:14 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:15 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:15 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:15 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:15 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid
+2024-11-22 19:04:15 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid Insp-Published
+2024-11-22 19:04:16 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:16 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:16 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Approved Insp-Published
+2024-11-22 19:04:16 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:16 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Draft $-Draft
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Viewed
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Viewed $-Viewed Insp-Published
+2024-11-22 19:04:17 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:18 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Draft
+2024-11-22 19:04:18 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:04:21 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-11-22 19:04:24 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-11-22 19:04:24 INFO  com.truvideo.pages.HomePage - The count 32 on badge is equal to total count Displaying 1 to 20 of 32 records
+2024-11-22 19:04:25 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:25 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:26 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:26 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:26 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:26 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:26 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:27 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:27 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:27 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:27 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:27 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:28 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:28 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:28 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:28 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:28 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:29 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:29 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:29 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:04:31 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-11-22 19:04:34 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-11-22 19:04:34 INFO  com.truvideo.pages.HomePage - The count 81 on badge is equal to total count Displaying 1 to 20 of 81 records
+2024-11-22 19:04:34 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:35 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:36 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:37 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:04:39 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is not available
+2024-11-22 19:04:43 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-11-22 19:04:47 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is available
+2024-11-22 19:04:49 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self SO's Messages
+2024-11-22 19:04:54 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 19:04:59 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is available
+2024-11-22 19:05:00 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All SO's Messages
+2024-11-22 19:05:03 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 19:05:07 INFO  com.truvideo.pages.HomePage - Badge for Self reminder is available
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self Reminder
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - The count 3 on badge is not equal to total count Displaying 1 to 4 of 4 records
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:05:09 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:05:13 INFO  com.truvideo.pages.HomePage - Badge for All reminder is available
+2024-11-22 19:05:15 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All Reminder
+2024-11-22 19:05:15 INFO  com.truvideo.pages.HomePage - The count 18 on badge is equal to total count Displaying 1 to 18 of 18 records
+2024-11-22 19:05:15 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-11-22 19:05:16 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-11-22 19:43:04 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 19:43:04 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 19:43:04 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 19:43:04 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 19:43:04 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 19:43:05 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 19:43:06 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 19:43:07 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 19:43:07 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 19:43:08 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 19:43:09 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 19:43:10 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 19:43:10 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 19:43:11 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 19:43:12 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 19:43:12 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 19:43:22 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 19:43:22 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 19:43:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 19:43:30 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-22 19:43:37 INFO  com.truvideo.pages.HomePage - Clicked on Orders Message Screen Header Tab
+2024-11-22 19:43:37 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 19:43:37 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SERVICE
+2024-11-22 19:43:50 INFO  com.truvideo.pages.HomePage - Clicked on Prospect Header Tab
+2024-11-22 19:43:56 INFO  com.truvideo.pages.HomePage - Clicked on Prospects Message Header Tab
+2024-11-22 19:43:56 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 19:43:56 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SALES
+2024-11-22 19:44:03 INFO  com.truvideo.pages.HomePage - Clicked on Reminder Header Tab
+2024-11-22 19:44:06 INFO  com.truvideo.pages.HomePage - Clicked on Training Header Tab
+2024-11-22 19:44:08 INFO  com.truvideo.pages.HomePage - Clicked on User Header Tab
+2024-11-22 19:44:10 INFO  com.truvideo.pages.HomePage - Clicked on Contacts List Header Tab
+2024-11-22 19:44:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:44:12 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 19:44:13 INFO  com.truvideo.pages.HomePage - Clicked on dealers tab
+2024-11-22 19:44:13 INFO  com.truvideo.pages.HomePage - Dealers Page is opened : TruVideo - Dealers
+2024-11-22 19:44:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:44:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 19:44:14 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-11-22 19:44:14 INFO  com.truvideo.pages.HomePage - Dealer Group Page is opened : TruVideo - Dealer Groups
+2024-11-22 19:44:15 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:44:16 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 19:44:16 INFO  com.truvideo.pages.HomePage - Clicked on User Group tab
+2024-11-22 19:44:16 INFO  com.truvideo.pages.HomePage - User Group Page is opened : TruVideo - User Groups
+2024-11-22 19:44:17 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:44:18 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 19:44:18 INFO  com.truvideo.pages.HomePage - Clicked on Saved Video Library tab
+2024-11-22 19:44:18 INFO  com.truvideo.pages.HomePage - Saved Video Library Page is opened : TruVideo - Saved Videos
+2024-11-22 19:44:19 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 19:45:26 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:45:26 INFO  com.truvideo.pages.HomePage - Search Button displayed
+2024-11-22 19:45:27 INFO  com.truvideo.pages.HomePage - Clicked on Close advance search window button
+2024-11-22 19:45:27 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:45:29 INFO  com.truvideo.pages.HomePage - Clicked on search button when by default All filter are selected
+2024-11-22 19:45:31 INFO  com.truvideo.pages.HomePage - Repair Orders Heading , Prospect Heading, Both RO/SO Messages heading, Reminder heading is displayed
+2024-11-22 19:45:32 INFO  com.truvideo.pages.HomePage - 'All' filter removed & applied single 'Repair Order' checkbox filter
+2024-11-22 19:45:35 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order List and Only repair order list is displaying
+2024-11-22 19:45:35 INFO  com.truvideo.pages.HomePage - 'Repair Order' filter removed & applied single 'Prospect' checkbox filter
+2024-11-22 19:45:38 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospect List and Only prospect list is displaying
+2024-11-22 19:45:39 INFO  com.truvideo.pages.HomePage - 'Prospect' filter removed & applied single 'Repair Order Messages' checkbox filter
+2024-11-22 19:45:40 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order Messages screen
+2024-11-22 19:45:41 INFO  com.truvideo.pages.HomePage - 'Repair Order Message' filter removed & applied single 'Prospect Messages' checkbox filter
+2024-11-22 19:45:43 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospects Messages screen
+2024-11-22 19:45:44 INFO  com.truvideo.pages.HomePage - 'Prospect Message' filter removed & applied single 'Reminder' checkbox filter
+2024-11-22 19:45:46 INFO  com.truvideo.pages.HomePage - User is navigated to the Reminder screen
+2024-11-22 19:45:46 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:45:47 INFO  com.truvideo.pages.HomePage - Clicked on 'This week' radio filter
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This week filter is selected
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:55 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:51 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:45 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:42 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:37 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:35 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:33 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:28 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:26 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:25 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:18 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:16 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:14 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:12 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:10 AM
+2024-11-22 19:45:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:06 AM
+2024-11-22 19:45:50 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:45:51 INFO  com.truvideo.pages.HomePage - Clicked on 'This Month' radio filter
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This month filter is selected
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:55 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:51 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:45 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:42 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:37 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:35 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:33 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:28 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:26 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:25 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:18 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:16 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:14 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:12 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:10 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:06 AM
+2024-11-22 19:45:54 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:45:56 INFO  com.truvideo.pages.HomePage - Entered from date in the calendar & Entered date is : 10/28/2024 12:00 AM
+2024-11-22 19:45:57 INFO  com.truvideo.pages.HomePage - Entered upto date in the calendar & Entered date is : 12/06/2024 11:59 PM
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:55 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:51 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:45 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:42 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:37 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:35 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:33 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:28 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:26 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:25 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:18 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:16 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:14 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:12 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:10 AM is within the range.
+2024-11-22 19:46:01 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:06 AM is within the range.
+2024-11-22 19:46:02 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 19:46:03 INFO  com.truvideo.pages.HomePage - Text entered in search box
+2024-11-22 19:46:05 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
+2024-11-22 19:46:08 INFO  com.truvideo.pages.HomePage - 64679787878 not contains searched text which is test
+2024-11-22 19:46:08 INFO  com.truvideo.pages.HomePage - 67876467698 not contains searched text which is test
+2024-11-22 19:46:08 INFO  com.truvideo.pages.HomePage - 24587961646 not contains searched text which is test
+2024-11-22 19:46:08 INFO  com.truvideo.pages.HomePage - 3256786446 not contains searched text which is test
+2024-11-22 19:46:08 INFO  com.truvideo.pages.HomePage - 8529973446 contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - 1048 not contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - 7812059487 not contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - 12345 contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - 1245 contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - test1326541 contains searched text which is test
+2024-11-22 19:46:09 INFO  com.truvideo.pages.HomePage - 1047 contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 648761649 not contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 6767 not contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 2135456451320 contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 64346 not contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 465486541651 contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 346 not contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 454874465465453 contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 1046 not contains searched text which is test
+2024-11-22 19:46:10 INFO  com.truvideo.pages.HomePage - 42424 not contains searched text which is test
+2024-11-22 19:46:11 INFO  com.truvideo.pages.HomePage - Clicked on notification bell icon
+2024-11-22 19:46:12 INFO  com.truvideo.pages.HomePage - Recent Notification heading displayed
+2024-11-22 19:46:16 INFO  com.truvideo.pages.HomePage - Again clicked on notification bell icon
+2024-11-22 19:46:17 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Code button
+2024-11-22 19:46:17 INFO  com.truvideo.pages.HomePage - Service code is displayed as :220310
+2024-11-22 19:46:18 INFO  com.truvideo.pages.HomePage - Sales code is displayed as :027872
+2024-11-22 19:46:30 INFO  com.truvideo.pages.HomePage - Clicked on Chat button
+2024-11-22 19:46:34 INFO  com.truvideo.pages.HomePage - Click on Away button
+2024-11-22 19:46:36 INFO  com.truvideo.pages.HomePage - Button change to  Back
+2024-11-22 19:46:36 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have set your text messaging auto-reply for your Away message. This will send an automatic text reply to the first inbound message from your customers (to you) letting them know that you are away from your desk and will reply to them shortly. Customers will only receive this "away" message once every hour, so if they send an inbound text multiple times they will only receive it on the first reply.
+2024-11-22 19:46:43 INFO  com.truvideo.pages.HomePage - Click on Back button
+2024-11-22 19:46:43 INFO  com.truvideo.pages.HomePage - Button change to  Away
+2024-11-22 19:46:43 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have turned off your "Away" message. To turn it back on, click on the Away button.
+2024-11-22 19:46:48 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:46:48 INFO  com.truvideo.pages.HomePage - Something went wrong during opening User Account dropdown
+2024-11-22 19:46:48 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:47:18 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:47:23 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2024-11-22 19:47:23 INFO  com.truvideo.pages.HomePage - User is switched to another dealer and switched dealer is : Kenility Store 
+2024-11-22 19:47:23 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button again : To switch Back
+2024-11-22 19:47:57 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 19:48:29 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-11-22 19:48:33 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-11-22 19:48:34 INFO  com.truvideo.pages.HomePage - The count 51 on badge is equal to total count Displaying 1 to 20 of 51 records
+2024-11-22 19:48:34 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:35 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:35 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:36 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:36 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:36 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:36 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:37 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:37 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:37 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:37 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review $-Paid Insp-Published
+2024-11-22 19:48:37 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review Est-Sent
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:38 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:39 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:41 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-11-22 19:48:44 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all RO's
+2024-11-22 19:48:44 INFO  com.truvideo.pages.HomePage - The count 310 on badge is equal to total count Displaying 1 to 20 of 310 records
+2024-11-22 19:48:45 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:45 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:45 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:45 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:45 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid Insp-Published
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Approved Insp-Published
+2024-11-22 19:48:46 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Draft $-Draft
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Viewed
+2024-11-22 19:48:47 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Viewed $-Viewed Insp-Published
+2024-11-22 19:48:48 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:48 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Draft
+2024-11-22 19:48:48 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 19:48:50 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-11-22 19:48:52 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-11-22 19:48:52 INFO  com.truvideo.pages.HomePage - The count 32 on badge is equal to total count Displaying 1 to 20 of 32 records
+2024-11-22 19:48:52 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:52 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:52 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:53 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:54 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:55 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:55 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:55 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 19:48:57 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-11-22 19:48:59 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The count 81 on badge is equal to total count Displaying 1 to 20 of 81 records
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:00 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:01 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 19:49:03 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is not available
+2024-11-22 19:49:07 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-11-22 19:49:11 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is available
+2024-11-22 19:49:14 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self SO's Messages
+2024-11-22 19:49:20 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 19:49:24 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is available
+2024-11-22 19:49:27 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All SO's Messages
+2024-11-22 19:49:32 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 19:49:36 INFO  com.truvideo.pages.HomePage - Badge for Self reminder is available
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self Reminder
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - The count 3 on badge is not equal to total count Displaying 1 to 4 of 4 records
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:49:38 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 19:49:43 INFO  com.truvideo.pages.HomePage - Badge for All reminder is available
+2024-11-22 19:49:44 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All Reminder
+2024-11-22 19:49:44 INFO  com.truvideo.pages.HomePage - The count 18 on badge is equal to total count Displaying 1 to 18 of 18 records
+2024-11-22 19:49:44 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-11-22 19:49:44 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-11-22 20:01:46 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-22 20:01:46 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-22 20:01:46 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-22 20:01:46 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-22 20:01:46 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-22 20:01:47 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-22 20:01:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-22 20:01:50 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-22 20:01:50 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-22 20:01:52 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-22 20:01:53 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-22 20:01:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 20:01:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 20:01:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 20:01:57 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-22 20:01:57 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-22 20:02:08 INFO  com.truvideo.pages.LoginPage - Entered User Name  rahul.kapse@5exceptions.com
+2024-11-22 20:02:08 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-22 20:02:10 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-22 20:02:16 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-22 20:02:24 INFO  com.truvideo.pages.HomePage - Clicked on Orders Message Screen Header Tab
+2024-11-22 20:02:24 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 20:02:24 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SERVICE
+2024-11-22 20:02:32 INFO  com.truvideo.pages.HomePage - Clicked on Prospect Header Tab
+2024-11-22 20:02:40 INFO  com.truvideo.pages.HomePage - Clicked on Prospects Message Header Tab
+2024-11-22 20:02:40 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-11-22 20:02:40 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SALES
+2024-11-22 20:02:47 INFO  com.truvideo.pages.HomePage - Clicked on Reminder Header Tab
+2024-11-22 20:02:50 INFO  com.truvideo.pages.HomePage - Clicked on Training Header Tab
+2024-11-22 20:02:52 INFO  com.truvideo.pages.HomePage - Clicked on User Header Tab
+2024-11-22 20:02:55 INFO  com.truvideo.pages.HomePage - Clicked on Contacts List Header Tab
+2024-11-22 20:02:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 20:02:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 20:02:57 INFO  com.truvideo.pages.HomePage - Clicked on dealers tab
+2024-11-22 20:02:57 INFO  com.truvideo.pages.HomePage - Dealers Page is opened : TruVideo - Dealers
+2024-11-22 20:02:59 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 20:02:59 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 20:03:00 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-11-22 20:03:00 INFO  com.truvideo.pages.HomePage - Dealer Group Page is opened : TruVideo - Dealer Groups
+2024-11-22 20:03:08 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 20:03:08 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 20:03:10 INFO  com.truvideo.pages.HomePage - Clicked on User Group tab
+2024-11-22 20:03:10 INFO  com.truvideo.pages.HomePage - User Group Page is opened : TruVideo - User Groups
+2024-11-22 20:03:13 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 20:03:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-11-22 20:03:14 INFO  com.truvideo.pages.HomePage - Clicked on Saved Video Library tab
+2024-11-22 20:03:14 INFO  com.truvideo.pages.HomePage - Saved Video Library Page is opened : TruVideo - Saved Videos
+2024-11-22 20:03:16 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-11-22 20:04:23 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:04:23 INFO  com.truvideo.pages.HomePage - Search Button displayed
+2024-11-22 20:04:24 INFO  com.truvideo.pages.HomePage - Clicked on Close advance search window button
+2024-11-22 20:04:25 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:04:27 INFO  com.truvideo.pages.HomePage - Clicked on search button when by default All filter are selected
+2024-11-22 20:04:29 INFO  com.truvideo.pages.HomePage - Repair Orders Heading , Prospect Heading, Both RO/SO Messages heading, Reminder heading is displayed
+2024-11-22 20:04:30 INFO  com.truvideo.pages.HomePage - 'All' filter removed & applied single 'Repair Order' checkbox filter
+2024-11-22 20:04:33 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order List and Only repair order list is displaying
+2024-11-22 20:04:34 INFO  com.truvideo.pages.HomePage - 'Repair Order' filter removed & applied single 'Prospect' checkbox filter
+2024-11-22 20:04:37 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospect List and Only prospect list is displaying
+2024-11-22 20:04:38 INFO  com.truvideo.pages.HomePage - 'Prospect' filter removed & applied single 'Repair Order Messages' checkbox filter
+2024-11-22 20:04:40 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order Messages screen
+2024-11-22 20:04:43 INFO  com.truvideo.pages.HomePage - 'Repair Order Message' filter removed & applied single 'Prospect Messages' checkbox filter
+2024-11-22 20:04:44 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospects Messages screen
+2024-11-22 20:04:45 INFO  com.truvideo.pages.HomePage - 'Prospect Message' filter removed & applied single 'Reminder' checkbox filter
+2024-11-22 20:04:48 INFO  com.truvideo.pages.HomePage - User is navigated to the Reminder screen
+2024-11-22 20:04:49 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:04:50 INFO  com.truvideo.pages.HomePage - Clicked on 'This week' radio filter
+2024-11-22 20:04:52 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This week filter is selected
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 09:30 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 09:28 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 09:26 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 09:25 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:55 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:51 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:45 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:42 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:37 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:35 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:34 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:33 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:32 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:28 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:26 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:25 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:18 AM
+2024-11-22 20:04:53 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 11/22/2024 06:16 AM
+2024-11-22 20:04:54 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:04:55 INFO  com.truvideo.pages.HomePage - Clicked on 'This Month' radio filter
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This month filter is selected
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 09:30 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 09:28 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 09:26 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 09:25 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:55 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:51 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:45 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:42 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:37 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:35 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:34 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:33 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:32 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:28 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:26 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:25 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:18 AM
+2024-11-22 20:04:58 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 11/22/2024 06:16 AM
+2024-11-22 20:04:59 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:05:01 INFO  com.truvideo.pages.HomePage - Entered from date in the calendar & Entered date is : 10/28/2024 12:00 AM
+2024-11-22 20:05:02 INFO  com.truvideo.pages.HomePage - Entered upto date in the calendar & Entered date is : 12/06/2024 11:59 PM
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 09:30 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 09:28 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 09:26 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 09:25 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:55 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:51 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:45 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:42 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:37 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:35 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:34 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:33 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:32 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:28 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:26 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:25 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:18 AM is within the range.
+2024-11-22 20:05:06 INFO  com.truvideo.pages.HomePage - Date 11/22/2024 06:16 AM is within the range.
+2024-11-22 20:05:07 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-11-22 20:05:09 INFO  com.truvideo.pages.HomePage - Text entered in search box
+2024-11-22 20:05:10 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
+2024-11-22 20:05:13 INFO  com.truvideo.pages.HomePage - 64111 not contains searched text which is test
+2024-11-22 20:05:13 INFO  com.truvideo.pages.HomePage - 52312 contains searched text which is test
+2024-11-22 20:05:13 INFO  com.truvideo.pages.HomePage - 9495 not contains searched text which is test
+2024-11-22 20:05:13 INFO  com.truvideo.pages.HomePage - AutoanaCP not contains searched text which is test
+2024-11-22 20:05:14 INFO  com.truvideo.pages.HomePage - 64679787878 not contains searched text which is test
+2024-11-22 20:05:14 INFO  com.truvideo.pages.HomePage - 67876467698 not contains searched text which is test
+2024-11-22 20:05:14 INFO  com.truvideo.pages.HomePage - 24587961646 not contains searched text which is test
+2024-11-22 20:05:14 INFO  com.truvideo.pages.HomePage - 3256786446 not contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 8529973446 contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 1048 not contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 7812059487 not contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 12345 contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 1245 contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - test1326541 contains searched text which is test
+2024-11-22 20:05:15 INFO  com.truvideo.pages.HomePage - 1047 contains searched text which is test
+2024-11-22 20:05:16 INFO  com.truvideo.pages.HomePage - 648761649 not contains searched text which is test
+2024-11-22 20:05:16 INFO  com.truvideo.pages.HomePage - 6767 not contains searched text which is test
+2024-11-22 20:05:16 INFO  com.truvideo.pages.HomePage - 2135456451320 contains searched text which is test
+2024-11-22 20:05:16 INFO  com.truvideo.pages.HomePage - 64346 not contains searched text which is test
+2024-11-22 20:05:16 INFO  com.truvideo.pages.HomePage - 465486541651 contains searched text which is test
+2024-11-22 20:05:17 INFO  com.truvideo.pages.HomePage - Clicked on notification bell icon
+2024-11-22 20:05:18 INFO  com.truvideo.pages.HomePage - Recent Notification heading displayed
+2024-11-22 20:05:22 INFO  com.truvideo.pages.HomePage - Again clicked on notification bell icon
+2024-11-22 20:05:23 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Code button
+2024-11-22 20:05:24 INFO  com.truvideo.pages.HomePage - Service code is displayed as :220310
+2024-11-22 20:05:24 INFO  com.truvideo.pages.HomePage - Sales code is displayed as :027872
+2024-11-22 20:05:37 INFO  com.truvideo.pages.HomePage - Clicked on Chat button
+2024-11-22 20:05:41 INFO  com.truvideo.pages.HomePage - Click on Away button
+2024-11-22 20:05:44 INFO  com.truvideo.pages.HomePage - Button change to  Back
+2024-11-22 20:05:44 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have set your text messaging auto-reply for your Away message. This will send an automatic text reply to the first inbound message from your customers (to you) letting them know that you are away from your desk and will reply to them shortly. Customers will only receive this "away" message once every hour, so if they send an inbound text multiple times they will only receive it on the first reply.
+2024-11-22 20:05:50 INFO  com.truvideo.pages.HomePage - Click on Back button
+2024-11-22 20:05:51 INFO  com.truvideo.pages.HomePage - Button change to  Away
+2024-11-22 20:05:51 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have turned off your "Away" message. To turn it back on, click on the Away button.
+2024-11-22 20:05:55 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 20:05:55 INFO  com.truvideo.pages.HomePage - Something went wrong during opening User Account dropdown
+2024-11-22 20:05:56 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 20:06:26 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 20:06:31 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2024-11-22 20:06:31 INFO  com.truvideo.pages.HomePage - User is switched to another dealer and switched dealer is : Kenility Store 
+2024-11-22 20:06:31 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button again : To switch Back
+2024-11-22 20:07:05 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-11-22 20:07:38 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-11-22 20:07:42 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-11-22 20:07:42 INFO  com.truvideo.pages.HomePage - The count 52 on badge is equal to total count Displaying 1 to 20 of 52 records
+2024-11-22 20:07:42 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:42 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:43 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:43 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:43 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:43 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:44 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:44 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:44 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:44 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:44 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review $-Paid Insp-Published
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review Est-Sent
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:45 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:46 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:46 INFO  com.truvideo.pages.HomePage - The RO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:48 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-11-22 20:07:51 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all RO's
+2024-11-22 20:07:51 INFO  com.truvideo.pages.HomePage - The count 310 on badge is equal to total count Displaying 1 to 20 of 310 records
+2024-11-22 20:07:51 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:51 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Paid Insp-Published
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Approved Insp-Published
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:52 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Draft $-Draft
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Viewed
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Viewed $-Viewed Insp-Published
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Draft
+2024-11-22 20:07:53 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-11-22 20:07:56 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-11-22 20:07:58 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The count 32 on badge is equal to total count Displaying 1 to 20 of 32 records
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:07:59 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:00 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:01 INFO  com.truvideo.pages.HomePage - The SO is of :RahulTest Kapse & Contains status  : For Review
+2024-11-22 20:08:04 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The count 81 on badge is equal to total count Displaying 1 to 20 of 81 records
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:07 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:08 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:09 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:09 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:09 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:09 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-11-22 20:08:11 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is not available
+2024-11-22 20:08:15 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-11-22 20:08:19 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is available
+2024-11-22 20:08:22 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self SO's Messages
+2024-11-22 20:08:27 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 20:08:32 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is available
+2024-11-22 20:08:33 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All SO's Messages
+2024-11-22 20:08:36 INFO  com.truvideo.pages.HomePage - My Filter is selected on message screen
+2024-11-22 20:08:41 INFO  com.truvideo.pages.HomePage - Badge for Self reminder is available
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self Reminder
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - The count 3 on badge is not equal to total count Displaying 1 to 4 of 4 records
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 20:08:43 INFO  com.truvideo.pages.HomePage - The RO in the list is of Login User  : RahulTest Kapse
+2024-11-22 20:08:47 INFO  com.truvideo.pages.HomePage - Badge for All reminder is available
+2024-11-22 20:08:49 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All Reminder
+2024-11-22 20:08:49 INFO  com.truvideo.pages.HomePage - The count 18 on badge is equal to total count Displaying 1 to 18 of 18 records
+2024-11-22 20:08:50 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-11-22 20:08:50 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT

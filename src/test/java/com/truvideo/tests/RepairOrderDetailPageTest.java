@@ -10,7 +10,7 @@ import com.truvideo.pages.RepairOrderDetailPage;
 
 public class RepairOrderDetailPageTest extends BaseTest {
 	RepairOrderDetailPage repairOrderPage;
-
+ 
 	@BeforeClass
 	public void repairOrderDetailPageSetup() {
 		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
@@ -18,12 +18,12 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	}
 
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"smoke"})
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,groups = {"smoke"})
 	public void verifyAddMediaFunction_FirstVideo() {
 		repairOrderPage.addVideoToOrder();
 	}
@@ -121,12 +121,16 @@ public class RepairOrderDetailPageTest extends BaseTest {
 
 
 	@Test(priority = 20)
-
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
+	
+	@Test
+	public void verifyCustomerDetails() {
+		Assert.assertTrue(repairOrderPage.detailsFieldonRODetails());
+	}
 
-	@Test(priority = 21)
+	@Test()
 	public void verifyViewWithCustomerFunctionality() {
 		repairOrderPage.viewWithCustomer();
 	}
