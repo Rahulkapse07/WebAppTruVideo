@@ -940,7 +940,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		HP.clickOn_RepairOrder_Header();
 		String RONumber = OLP.addRepairOrder("Existing");
-		System.out.println("chjcb");
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
 		page.waitForURL(url -> url.contains("order/service/view"));

@@ -1124,7 +1124,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(5000);
 		for (ElementHandle locator : buttons.elementHandles()) {
 			String textContent = locator.innerText();
-			System.out.println("IS Text found ?" + textContent);
 			if (textContent != null && textContent.contains(buttonText)) {
 				locator.click();
 				break;
