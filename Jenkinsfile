@@ -28,7 +28,7 @@ pipeline {
       stage('Run Tests') {
          steps {
             // Run the tests with Maven, passing the suite XML file and the base URL parameter
-            sh "mvn clean test -DsuiteXmlFile=${SUITE_FILE} -DbaseUrl=${params.baseUrl}"
+            bat "mvn clean test -DsuiteXmlFile=${SUITE_FILE} -DbaseUrl=${params.baseUrl}"
          }
       }
       
