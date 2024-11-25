@@ -21,23 +21,18 @@ pipeline {
       stage('Install Dependencies') {
          steps {
             // Install dependencies (e.g., Maven dependencies)
-            start 'mvn clean install'
+            sh 'mvn clean install'  // Use the 'sh' step instead of 'start'
          }
       }
       
       stage('Run Tests') {
          steps {
             // Run the tests with Maven, passing the suite XML file and the base URL parameter
-            start "mvn clean test -DsuiteXmlFile=${SUITE_FILE} -DbaseUrl=${params.baseUrl}"
+            sh "mvn clean test -DsuiteXmlFile=${SUITE_FILE} -DbaseUrl=${baseUrl}"  // Use the 'sh' step instead of 'start'
          }
       }
       
-      stage('Archive Test Results') {
-         steps {
-            // Publish JUnit test results to Jenkins
-            junit '**/target/test-*.xml'
-         }
-      }
+     
    }
    
    post {
