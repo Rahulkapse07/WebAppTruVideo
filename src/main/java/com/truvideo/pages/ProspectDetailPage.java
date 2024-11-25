@@ -44,6 +44,18 @@ public class ProspectDetailPage extends JavaUtility {
 	private String messages = "ngx-message div.message";
 	private String lastMessageEndlink = "ngx-message div.message a";
 	private String playButton = "button[title='Play Video']";
+	private String sms_Textbox = ".mat-mdc-form-field-infix textarea";
+	private String send_SMS_Button = "mat-icon[svgicon=\"send\"]";
+	private String send_Original_Button = ".mdc-button--outlined";
+	private String sms_Tab = "#mat-tab-label-1-1";
+	private String openurl = "//p //a";
+	private String newTab_text = ".my-3.mt-md-5.ml-md-5";
+	private String customernameByHover="div.mat-mdc-tooltip-surface";
+	private String insightButton = ".operations__container__action-menu tru-button:nth-child(5) button";
+	private String noInsightText = ".insights__content-no-data.ng-star-inserted p";
+	private String insightDataafterVideoView = ".insights__content-header p";
+	private String closeInsightWindow = ".insights__header mat-icon:nth-child(2)";
+
 	
 	
 	
@@ -117,7 +129,9 @@ public class ProspectDetailPage extends JavaUtility {
 		softAssert.assertAll();
 	}
 	public void sendVideoToCustomer(String channelSelected) {
+		page.waitForTimeout(8000);
 		FrameLocator frame = page.frameLocator(salesIframe);
+		addVideoToOrder();
 		if (!frame.locator(added_Video).first().isVisible()) {
 			logger.info("Condition not satisfied for Send Video : video not added to SO");
 			throw new SkipException("video not added to SO");
@@ -142,9 +156,17 @@ public class ProspectDetailPage extends JavaUtility {
 		softAssert.assertAll();
 		flags.clear();
 	}
-	public void checkStatus_OnVideoWatch() {
+	public void checkStatus_OnVideoWatch(String channelSelected) {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		SoftAssert softAssert = new SoftAssert();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		addVideoToOrder();
+		page.waitForTimeout(2000);
+		clickOperationButton("Send to customer");
+		selectChannelToPerformAction(channelSelected); // Select channel to send video
+		flags.add(verifyNavigationToChannel(channelSelected));// Navigation to channel after video sent
+		softAssert.assertTrue(!flags.contains(false), "Verify Navigation To selected channel");
+		flags.clear();
 		String lastMessage = frame.locator(messages).last().textContent();
 		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
 			logger.info("Last message is video Endlink");
@@ -353,6 +375,330 @@ public class ProspectDetailPage extends JavaUtility {
 	public void verifyElements()
 	{
 		
+	}
+	
+	
+	public boolean copyLinkToClipboard() {
+	    FrameLocator frame = page.frameLocator(salesIframe);
+	    page.waitForCondition(() -> frame.locator(sms_Tab).isVisible());
+	    addVideoToOrder();
+	    clickOperationButton("Copy link to clipboard");
+	    page.waitForTimeout(2000);
+
+	    String customerNameInSO = getCustomerNameFromSO();
+	    logger.info("Customer Name in SO: " + customerNameInSO);
+
+	    sendSMSText();
+
+	    return verifyCustomerNameInEndLink(customerNameInSO);
+	}
+
+	private String getCustomerNameFromSO() {
+		FrameLocator frame = page.frameLocator(salesIframe);
+		frame.locator(customerName).click();
+		page.waitForTimeout(1000);
+		frame.locator(customerName).hover();
+		String customerfullName = frame.locator(customernameByHover).innerText().toLowerCase().trim();
+		logger.info("Customer full name in SO :- " + customerfullName);
+		String[] splitText = customerfullName.split("-");
+
+		String CustomerFullName = splitText.length > 1 ? splitText[1].trim() : "";
+		logger.info("Extracted Customer Name: " + CustomerFullName);
+		return CustomerFullName;
+	}
+
+	private void sendSMSText() {
+		FrameLocator frame = page.frameLocator(salesIframe);
+		frame.locator(sms_Tab).click();
+		page.waitForTimeout(1000);
+		frame.locator(sms_Textbox).click();
+
+		pasteClipboardContent();
+		logger.info("Pasted link into SMS text box.");
+
+		frame.locator(send_SMS_Button).click();
+		frame.locator(send_Original_Button).click();
+		logger.info("Original text has been sent successfully.");
+	}
+
+	private void pasteClipboardContent() {
+		page.keyboard().down("Control");
+		page.keyboard().press("V");
+		page.keyboard().up("Control");
+	}
+
+	private boolean verifyCustomerNameInEndLink(String customerFullName) {
+	    FrameLocator frame = page.frameLocator(salesIframe);
+	    Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+	        frame.locator(openurl).click();
+	        logger.info("End link opened in another tab.");
+	    });
+
+	    endlinkPage.waitForLoadState();
+
+	    if (!endlinkPage.url().contains("truvideo.com/w/")) {
+	        logger.warn("End link URL does not contain the expected path.");
+	        endlinkPage.close();
+	        return false; 
+	    }
+
+	    String customerNameInEndLink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+	    logger.info("Customer Name in End Link: " + customerNameInEndLink);
+
+	    boolean isMatching = customerNameInEndLink.equals(customerFullName);
+	    if (isMatching) {
+	        logger.info("SO customer name matches the end link customer name.");
+	    } else {
+	        logger.error("SO customer name does NOT match the end link customer name.");
+	    }
+	    endlinkPage.close();
+	    return isMatching;
+	}
+	private String soStatus="orders-detail-menu__action info-bg";
+//	public void viewWithCustomer() {
+//		page.waitForTimeout(10000);
+//		addVideoToOrder();
+//		SoftAssert softAssert = new SoftAssert();
+//		List<Boolean> flags = new ArrayList<Boolean>();
+//		FrameLocator frame = page.frameLocator(salesIframe);
+//		page.waitForTimeout(2000);
+//		Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+//
+//			clickOperationButton("View with customer");
+//			logger.info("Endlink opened in another tab");
+//		});
+//		endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/w/"));
+//		endlinkPage.locator(playButton).first().click();
+//		logger.info("Clicked on Play Button");
+//		logger.info("Waiting to play video for 8 Seconds");
+//		page.waitForTimeout(10000);
+//		String CustomerNameinEndlink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+//		logger.info(CustomerNameinEndlink);
+//		page.waitForTimeout(1000);
+//
+//		String customerNameInSO1 = getCustomerNameFromSO();
+//		logger.info("Customer Name in SO: " + customerNameInSO1);
+//		
+//
+//		endlinkPage.waitForLoadState();
+//
+//		if (!endlinkPage.url().contains("truvideo.com/w/")) {
+//			logger.warn("End link URL does not contain the expected path.");
+//			endlinkPage.close();
+//			return;
+//		}
+//
+//		String customerNameInEndLink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+//		logger.info("Customer Name in End Link: " + customerNameInEndLink);
+//
+//		boolean isMatching = customerNameInEndLink.equals(customerNameInSO1);
+//		if (isMatching) {
+//			logger.info("SO customer name matches the end link customer name.");
+//		} else {
+//			logger.error("SO customer name does NOT match the end link customer name.");
+//		}
+//		endlinkPage.close();
+//		String SO_Status=frame.locator(soStatusBar).innerText();
+//		logger.info("Current SO status is :-"+SO_Status);
+//		
+//		if(SO_Status.contains("For Review")) {
+//			
+//			logger.info("SO status is showing For Review.");
+//		} else {
+//			logger.error("SO status is showing different status rather than For Review.");
+//		}
+//		
+//		flags.add(checkStatus("For Review"));
+//		softAssert.assertTrue(!flags.contains(false), "Verify status should be For Review");
+//		flags.clear();
+//		softAssert.assertTrue(verifyChangedStatusOnROList("For Review"),
+//				"Verify status should not change to Viewed from For Review");
+//		
+//		page.reload();
+//		
+//		flags.add(checkStatus("For Review"));
+//		softAssert.assertTrue(!flags.contains(false), "Verify status should be For Review");
+//		flags.clear();
+//		softAssert.assertTrue(verifyChangedStatusOnROList("For Review"),
+//				"Verify status should not change to Viewed from For Review");
+//		softAssert.assertAll();
+//
+//	}
+	
+	public boolean viewWithCustomer() {
+	    boolean isSuccessful = true; // Tracks the overall success of the method
+	    List<Boolean> flags = new ArrayList<>();
+	    SoftAssert softAssert = new SoftAssert();
+	    FrameLocator frame = page.frameLocator(salesIframe);
+
+	    try {
+	        page.waitForTimeout(10000);
+	        addVideoToOrder();
+
+	        Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+	            clickOperationButton("View with customer");
+	            logger.info("Endlink opened in another tab");
+	        });
+
+	        // Validate the end link URL
+	        if (!endlinkPage.url().contains("truvideo.com/w/")) {
+	            logger.warn("End link URL does not contain the expected path.");
+	            endlinkPage.close();
+	            return false; // Early return if URL check fails
+	        }
+
+	        // Play video and log customer name
+	        endlinkPage.locator(playButton).first().click();
+	        logger.info("Clicked on Play Button");
+	        page.waitForTimeout(8000);
+
+	        String customerNameInEndLink = endlinkPage.locator(newTab_text).innerText().toLowerCase().trim();
+	        logger.info("Customer Name in End Link: " + customerNameInEndLink);
+
+	        String customerNameInSO1 = getCustomerNameFromSO();
+	        logger.info("Customer Name in SO: " + customerNameInSO1);
+
+	        // Compare customer names
+	        boolean isMatching = customerNameInEndLink.equals(customerNameInSO1);
+	        if (isMatching) {
+	            logger.info("SO customer name matches the end link customer name.");
+	        } else {
+	            logger.error("SO customer name does NOT match the end link customer name.");
+	            isSuccessful = false;
+	        }
+
+	        endlinkPage.close();
+
+	        // Check SO status
+	        String soStatus = frame.locator(soStatusBar).innerText();
+	        logger.info("Current SO status is: " + soStatus);
+
+	        if (soStatus.contains("For Review")) {
+	            logger.info("SO status is showing 'For Review'.");
+	        } else {
+	            logger.error("SO status is showing a different status rather than 'For Review'.");
+	            isSuccessful = false;
+	        }
+
+	        flags.add(checkStatus("For Review"));
+	        if (flags.contains(false)) {
+	            isSuccessful = false;
+	        }
+
+	        softAssert.assertTrue(!flags.contains(false), "Verify status should be 'For Review'");
+	        flags.clear();
+
+	        boolean statusChanged = verifyChangedStatusOnROList("For Review");
+	        if (!statusChanged) {
+	            isSuccessful = false;
+	        }
+	        softAssert.assertTrue(statusChanged, "Verify status should not change to 'Viewed' from 'For Review'");
+
+	        page.reload();
+
+	        flags.add(checkStatus("For Review"));
+	        if (flags.contains(false)) {
+	            isSuccessful = false;
+	        }
+
+	        softAssert.assertTrue(!flags.contains(false), "Verify status should be 'For Review'");
+	        flags.clear();
+
+	        boolean finalStatusChanged = verifyChangedStatusOnROList("For Review");
+	        if (!finalStatusChanged) {
+	            isSuccessful = false;
+	        }
+	        softAssert.assertTrue(finalStatusChanged, "Verify status should not change to 'Viewed' from 'For Review'");
+
+	        softAssert.assertAll();
+
+	    } catch (Exception e) {
+	        logger.error("An error occurred in viewWithCustomer: " + e.getMessage());
+	        isSuccessful = false; // Mark the process as unsuccessful if an exception occurs
+	    }
+
+	    return isSuccessful;
+	}
+
+	public void insightFunctionality() {
+//		HomePage homepage=new HomePage(page);
+//		homepage.clickOn_RepairOrder_Header();
+//		OrderListPage listpage=new OrderListPage(page);
+//		listpage.navigateToOrderDetails();
+		FrameLocator frame = page.frameLocator(salesIframe);
+		//frame.locator(repairOrder_PageHeading).waitFor();
+		List<Boolean> flags = new ArrayList<Boolean>();
+		SoftAssert softAssert = new SoftAssert();
+		if (frame.locator(soStatusBar).textContent().contains("New")) {
+			logger.info("SO is New & No media is added");		
+			String insightClass = getLocatorClass(operations_Buttons, "Insights");
+			System.out.println("insightClass " + insightClass);
+			if (insightClass.contains("disabled")) {
+				logger.info("'Insights' button is disabled");
+				flags.add(true);
+			} else {
+				logger.info(" 'Insights' button is not disabled");
+				flags.add(false);
+			}
+			softAssert.assertTrue(!flags.contains(false), // should be false
+					"Verify 'Insight' button is disabled");
+			flags.clear();
+		} else {
+			logger.info("SO is Not new & some videos are already added to SO");
+		}
+		frame.locator(addMedia).click();
+		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
+			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
+			flags.add(true);
+		} else {
+			logger.info("Multimedia Screen not opened");
+			flags.add(false);
+		}
+		softAssert.assertTrue(!flags.contains(false), "Verify Add Media button is clickable");
+		flags.clear();
+		frame.locator(videos).first().click();
+		logger.info("Selected 1 video from multimedia screen");
+		page.waitForTimeout(2000);
+		frame.locator(add_Button).click();
+		logger.info("Clicked on Add Video Button");
+		page.waitForTimeout(4000);
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is not showing");
+		String insightText = frame.locator(noInsightText).innerText().trim();
+		softAssert.assertTrue(insightText.contains("There's no insights yet"), "Verify No insight showing");
+		frame.locator(closeInsightWindow).click();
+		copyLinkToClipboard();
+		frame.locator(insightButton).click();
+		logger.info("Verifying Without customer opened the Video Insight data is now showing");
+		String InsightData = frame.locator(insightDataafterVideoView).innerText().trim();
+		softAssert.assertTrue(InsightData.contains("Seen by"), "Verify now insight data is showing");
+
+		frame.locator(closeInsightWindow).click();
+		logger.info("Insight window closed");
+		softAssert.assertAll();
+	}
+	
+	public boolean deleteRepairOrder() throws InterruptedException {
+		page.waitForTimeout(9000);
+
+		FrameLocator frame = page.frameLocator(salesIframe);
+
+		page.waitForTimeout(5000);
+		logger.info(ProspectListPage.newSOName);
+		// frame.locator(".menu-options__info.delete").click();
+		page.waitForTimeout(2000);
+		clickOperationButton("Delete this SO");
+		page.waitForTimeout(2000);
+
+		HomePage hp = new HomePage(page);
+		// boolean bb=hp.globalSearchwitheText(OrderListPage.newRoNumber);
+		if (hp.globalSearchwitheText(ProspectListPage.newSOName)) {
+			logger.info("Selected SO has been deleted successfully");
+			return true;
+		} else {
+			logger.info("Getting issue while deleting SO");
+			return false;
+		}
 	}
 
 }

@@ -81,9 +81,22 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String lastNameWithoutEdit = "[formgroupname='customerDTO'].detail__main-data-wrapper.apply-border div:nth-child(2) p:nth-child(2)";
 	private String mobileFieldEditing = "#mat-input-1";
 	private String mobileNumberField = "[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(5)";
+	private String companyField="[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(4)";
+	private String fleetField="[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(3)";
 	private String emailFieldEditing = "[formcontrolname='email']";
 	private String emailField = "[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(6)";
-	private String advisorField = ".detail__main-data-wrapper.ng-star-inserted div:nth-child(4) p:nth-child(2)";
+	private String customerID="[formgroupname='customerDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(7)";
+	private String vehicleMake="[formgroupname='vehicleDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(2)";
+	private String vehicleModel="[formgroupname='vehicleDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(3)";
+	private String vehicleYear="[formgroupname='vehicleDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(4)";
+	private String vehicleColor="[formgroupname='vehicleDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(5)";
+	private String vehicleVIN="[formgroupname='vehicleDTO'].detail__main-data-wrapper .detail__main-data-item:nth-child(6)";
+	private String dealerField=".detail__main-data-wrapper.ng-star-inserted div:nth-child(2) p:nth-child(1)";
+	private String dealerFieldValue=".detail__main-data-wrapper.ng-star-inserted div:nth-child(2) p:nth-child(2)";
+	private String technicianField=".detail__main-data-wrapper.ng-star-inserted div:nth-child(3) p:nth-child(1)";
+	private String technicianFieldValue=".detail__main-data-wrapper.ng-star-inserted div:nth-child(3) p:nth-child(2)";
+	private String advisorField = ".detail__main-data-wrapper.ng-star-inserted div:nth-child(4) p:nth-child(1)";
+	private String advisorFieldValue=".detail__main-data-wrapper.ng-star-inserted div:nth-child(4) p:nth-child(2)";
 	private String advisorFieldEditing = "[formcontrolname='advisorId']";
 	private String topRightCornerNotification = "div.notifications";
 	private String topRightCornerNotification1 = "div.tru-toast";
@@ -1206,9 +1219,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 	
 
 	public void copyLinktoClipboard() {
-		page.waitForTimeout(19000);
+		page.waitForTimeout(9000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		logger.info(OrderListPage.newRoNumber);
+		addVideoToOrder();
 		clickOperationButton("Copy link to clipboard");
 		page.waitForTimeout(5000);
 //		frame.locator(notesTab_Communication).click();
@@ -1303,6 +1317,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 		softAssert.assertTrue(isMatching, "Customer name should match from RO details");
 		endlinkPage.close();
+		flags.add(checkStatus("For Review"));
+		softAssert.assertTrue(!flags.contains(false), "Verify status should be For Review");
+		flags.clear();
+		softAssert.assertTrue(verifyChangedStatusOnROList("For Review"),
+				"Verify status should not change to Viewed from For Review");
 		softAssert.assertAll();
 
 	}
@@ -1349,6 +1368,34 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Email After edited :-" + EmailEdited);
 		String MobileNumberEdited = frame.locator(mobileNumberField).innerText();
 		logger.info("Mobile Number After edited :-" + MobileNumberEdited);
+//		if 
+//		(frame.locator(firstNameWithoutEdit).isVisible() && frame.locator(lastNameWithoutEdit).isVisible() && 
+//		frame.locator(mobileNumberField).isVisible() && frame.locator(emailField).isVisible() && 
+//		frame.locator(fleetField).isVisible() && frame.locator(companyField).isVisible() && 
+//		frame.locator(customerID).isVisible() && frame.locator(vehicleMake).isVisible() && 
+//		frame.locator(vehicleModel).isVisible() && frame.locator(vehicleYear).isVisible() && 
+//		frame.locator(vehicleColor).isVisible() && frame.locator(vehicleVIN).isVisible()  &&
+//		frame.locator(dealerField).isVisible() && frame.locator(technicianField).isVisible() &&
+//		frame.locator(advisorField).isVisible()) {
+//			logger.info("All Customer details and Vehicle fields are visible in Details section");
+//			return true;
+//		}
+//		else {
+//			logger.info("Their is issue to show All Customer details and Vehicle fields in Details section");
+//			return false;
+//		}
+//		if (page.isVisible(firstNameWithoutEdit) && page.isVisible() && page.isVisible()
+//				&& page.isVisible(createAccount_ButtonLink) && page.isVisible(forgotPassword_ButtonLink)) {
+//			logger.info("All elements are visible on Login Page");
+//			logger.info("Username/Password field is visible on Login Page");
+//			logger.info("LogIn button is visible on Login Page");
+//			logger.info("Create account link button is visible on Login Page");
+//			logger.info("Forgot password link button is visible on Login page");
+//			//return true;
+//		} else {
+//			logger.info("Some elements are missing on Login Page");
+//			//return false;
+//		}
 
 		// String name=frame.locator(customerName).innerText();
 		// logger.info(name);
@@ -1364,20 +1411,19 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		softAssert.assertAll();
 		// page.waitForTimeout(1000);
-		/*
-		 * page.waitForCondition(() ->
-		 * frame.locator(topRightCornerNotification1).isVisible());
-		 * 
-		 * page.waitForSelector(topRightCornerNotification1);
-		 * //page.waitForTimeout(1000); System.out.println("545454"); String
-		 * topRightCornerNotificationPopup =
-		 * page.locator(topRightCornerNotification1).innerText();
-		 * logger.info(topRightCornerNotificationPopup); page.waitForTimeout(1000); if
-		 * (topRightCornerNotificationPopup.contains(AppConstants.
-		 * REPAIR_ORDER_EDITED_MESSAGE)) {
-		 * logger.info("New RO has been deleted successfully Successfully"); } else {
-		 * logger.info("Getting error to delete Repair Order "); }
-		 */
+		
+//		  page.waitForCondition(() ->
+//		  frame.locator(topRightCornerNotification1).isVisible());
+//		  
+//		  page.waitForSelector(topRightCornerNotification1);
+//		  //page.waitForTimeout(1000); System.out.println("545454"); String
+//		  String topRightCornerNotificationPopup =page.locator(topRightCornerNotification1).innerText();
+//		  logger.info(topRightCornerNotificationPopup); page.waitForTimeout(1000); if
+//		  (topRightCornerNotificationPopup.contains(AppConstants.
+//		  REPAIR_ORDER_EDITED_MESSAGE)) {
+//		  logger.info(" RO has been Edited successfully"); } else {
+//		  logger.info("Getting error to edit Repair Order "); }
+		 
 
 		// logger.info(firstName);
 	}
@@ -1441,6 +1487,33 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertAll();
 		// There's no insights yet
 	}
+	
+	public boolean detailsFieldonRODetails()
+	{
+		
+		page.waitForTimeout(9000);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);			
+	page.waitForCondition(()->frame.locator(vehicleModel).isVisible());			
+		if 
+		(frame.locator(firstNameWithoutEdit).isVisible() && frame.locator(lastNameWithoutEdit).isVisible() && 
+		frame.locator(mobileNumberField).isVisible() && frame.locator(emailField).isVisible() && 
+		frame.locator(fleetField).isVisible() && frame.locator(companyField).isVisible() && 
+		frame.locator(customerID).isVisible() && frame.locator(vehicleMake).isVisible() && 
+		frame.locator(vehicleModel).isVisible() && frame.locator(vehicleYear).isVisible() && 
+		frame.locator(vehicleColor).isVisible() && frame.locator(vehicleVIN).isVisible()  &&
+		frame.locator(dealerField).isVisible() && frame.locator(technicianField).isVisible() &&
+		frame.locator(advisorField).isVisible()) {
+			logger.info("All Customer details and Vehicle fields are visible in Details section");
+			return true;
+		}
+		else {
+			logger.info("Their is issue to show All Customer details and Vehicle fields in Details section");
+			return false;
+		}
+		
+	}
+		
+	
 
 	public boolean createreminder() throws InterruptedException {
 		Thread.sleep(8000);
@@ -1451,7 +1524,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(".mat-mdc-tab-list div#mat-tab-label-0-1").click();
 		logger.info("click on Service_Rec");
 		page.waitForTimeout(5000);
-		
+
 				   page.keyboard().down("Control");
 				   page.keyboard().press("-");
 				   page.keyboard().press("-");

@@ -10,12 +10,13 @@ import com.truvideo.pages.RepairOrderDetailPage;
 
 public class RepairOrderDetailPageTest extends BaseTest {
 	RepairOrderDetailPage repairOrderPage;
-
+ 
 	@BeforeClass
 	public void repairOrderDetailPageSetup() {
 		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
 				.navigateToOrderList().navigateToOrderDetails("New");
 	}
+
 
 	@Test(priority = 1)
 
@@ -115,13 +116,19 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.printInspection());
 	}
 
-	@Test(priority = 21, description = "WA-5393")
 
+	@Test(priority = 21, description = "WA-5393")
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
+	
+	@Test
+	public void verifyCustomerDetails() {
+		Assert.assertTrue(repairOrderPage.detailsFieldonRODetails());
+	}
 
 	@Test(priority = 22, description = "WA-5391")
+
 	public void verifyViewWithCustomerFunctionality() {
 		repairOrderPage.viewWithCustomer();
 	}

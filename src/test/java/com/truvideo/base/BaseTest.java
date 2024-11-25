@@ -2,6 +2,7 @@ package com.truvideo.base;
 
 import java.util.Properties;
 import org.testng.annotations.*;
+import com.aventstack.extentreports.ExtentTest;
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
@@ -12,6 +13,8 @@ public class BaseTest {
 	public Page page;
 	protected Properties prop;
 	protected LoginPage loginpage;
+	protected ExtentTest test;
+
 	private String baseUrl; // For storing the final base URL
 
 	@BeforeSuite
@@ -46,11 +49,15 @@ public class BaseTest {
 
 		loginpage = new LoginPage(page);
 		page.navigate(baseUrl);
+
 	}
 
 	@AfterSuite
 	public void tearDown() {
-		page.context().browser().close();
+		String destinationField = System.getProperty("user.dir") + "/Reports/";
+		String traceFilePath = destinationField + "trace.zip";
+		pf.stopTracing(traceFilePath);
+		pf.closeBrowser();
 	}
 }
 
