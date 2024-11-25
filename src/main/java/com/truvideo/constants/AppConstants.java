@@ -23,7 +23,7 @@ public class AppConstants {
 	public static final String CONTACT_LIST_PAGE_TITLE = "TruVideo - Contact List";
 	public static final String CHAT_PAGE_TITLE = "TruVideo - Chat v2";
 	public static final String ACCOUNT_SETTING_PAGE_TITLE = "TruVideo - Account Settings";
-	public static final String HELP_PAGE_TITLE = "Help - TruVideo";
+	public static final String HELP_PAGE_TITLE = "gettransparency.com";
 	public static final String DEALERS_PAGE_TITLE = "TruVideo - Dealers";
 	public static final String DEALER_GROUP_PAGE_TITLE = "TruVideo - Dealer Groups";
 	public static final String USER_GROUP_PAGE_TITLE = "TruVideo - User Groups";
@@ -31,7 +31,7 @@ public class AppConstants {
 	public static final String DEVICES_PAGE_TITLE = "TruVideo - Devices";
 
 	// Forgot password page
-	public static final String ERROR_MESSAGE_WITHOUT_ENTERING_lOGIN_CREDENTIALS = "The username/password you entered is incorrect."
+	public static final String ERROR_MESSAGE_WITHOUT_ENTERING_lOGIN_CREDENTIALS = "Log in Failed. Cannot pass null or empty values"
 			+ "";
 	public static final String ERROR_MESSAGE_WHEN_ENTERING_WRONG_CREDENTIALS = "The username/password you entered is incorrect.";
 	// Sign Up Page
@@ -76,6 +76,9 @@ public class AppConstants {
 	public static final String VideoUpload = "Record has been successfully added";
 	public static final String Update = "Record has been successfully updated";
 	public static final String Remove = "Record has been successfully deleted";
+	//Dealer Settings
+		public static final String StandardResponseAdded = "Record has been successfully added";
+		
 			
 
 	

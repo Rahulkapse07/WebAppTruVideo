@@ -346,24 +346,38 @@ public class OrderListPage extends JavaUtility {
 		}
 	}
 
-	public String addRepairOrder() {
+	public String addRepairOrder(String Number) {
 		page.click(addRepairOrder_Button);
 		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
 		logger.info("Clicked on Add Repair Order button");
 		page.waitForLoadState();
-		newRoNumber = "Automation" + getRandomString(5);
+		newRoNumber = "Auto" + getRandomString(5);
 		page.fill(repairOrderNumber_Field, newRoNumber);
 		logger.info("Repair Order Number filled : " + newRoNumber);
 		String firstName = "Automation";
 		page.fill(firstName_Field, firstName);
 		logger.info("First Name filled : " + firstName);
-		String lastName = "Last" + getRandomString(8);
+		String lastName = "Last" + getRandomString(4);
 		page.fill(lastName_Field, lastName);
 		logger.info("Last Name filled : " + lastName);
 		page.click(phoneNumber_Field);
 		String phoneNumber = "781205" + getRandomNumber(4);
-		page.fill(phoneNumber_Field, phoneNumber);
-		logger.info("Phone number filled : " + phoneNumber);
+
+		// This method use for to switch between Random number and Existing number
+		
+		switch (Number) {
+		case "Existing":
+			page.fill(phoneNumber_Field, "7812059487");
+			logger.info("Phone number filled : " + phoneNumber);
+			break;
+		case "New":
+			page.fill(phoneNumber_Field, phoneNumber);
+			logger.info("Phone number filled : " + phoneNumber);
+			break;
+
+		default:
+			break;
+		}
 		String emailId = "Automated" + getRandomString(4) + "@gmail.com";
 		page.fill(emailId_Field, emailId);
 		logger.info("Email Id filled : " + emailId);
@@ -414,12 +428,18 @@ public class OrderListPage extends JavaUtility {
 		return up.login_verify_created_RO(prop.getProperty("MobileUserLogin"));
 	}
 
-	public RepairOrderDetailPage navigateToOrderDetails() {
-		newRoNumber = addRepairOrder();
+	public RepairOrderDetailPage navigateToOrderDetails(String String) {
+		newRoNumber = addRepairOrder(String);
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
-		// page.locator("table#repair-order-results tr
+		// page.locator("table#repair-order-results 
 		// td:nth-child(4)").first().click();
+		try {
+			Thread.sleep(14000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		page.waitForURL(url -> url.contains("order/service/view"));
 		return new RepairOrderDetailPage(page);
 	}

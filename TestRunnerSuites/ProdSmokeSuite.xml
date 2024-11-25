@@ -1,0 +1,14 @@
+<suite name="Prod Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="true">
+    <listeners>
+        <listener class-name="com.truvideo.testutils.Listeners"></listener>
+    </listeners>
+    <parameter name="browser" value="chrome" />
+    <parameter name="headless" value="false" />
+    <parameter name="baseUrl" value="https://app.truvideo.com/login" />
+    <test name="Login Page Test">
+        <classes>
+            <class name="com.truvideo.tests.LoginPageTest"></class>
+        </classes>
+    </test>
+</suite>
+

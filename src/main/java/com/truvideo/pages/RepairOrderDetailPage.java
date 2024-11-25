@@ -27,7 +27,6 @@ import com.truvideo.utility.JavaUtility;
 public class RepairOrderDetailPage extends JavaUtility {
 	private Page page;
 	OrderListPage orderpage = new OrderListPage(page);
-
 	public RepairOrderDetailPage(Page page) {
 		this.page = page;
 	}
@@ -245,8 +244,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
 		softAssert.assertAll();
 	}
-
-	public void sendVideoToCustomer(String channelSelected) {
+        public void sendVideoToCustomer(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		if (!frame.locator(added_Video).first().isVisible()) {
 			logger.info("Condition not satisfied for Send Video : video not added to RO");
@@ -278,7 +276,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.click(repairOrder_Header);
 		OrderListPage orderpage = new OrderListPage(page);
-		orderpage.navigateToOrderDetails();
+		orderpage.navigateToOrderDetails("Existing");
 
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
@@ -703,6 +701,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Endlink : Click on pay Now Button");
 			endlinkPage.click(payWithCardButton);
 			// ------------------------------------------
+			
+			
+			
 			String paymentResponse = createPayment();
 			if (paymentResponse != null) {
 				sendToTruvideo(paymentResponse);
@@ -1432,7 +1433,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		HomePage homepage=new HomePage(page);
 		homepage.clickOn_RepairOrder_Header();
 		OrderListPage listpage=new OrderListPage(page);
-		listpage.navigateToOrderDetails();
+		listpage.navigateToOrderDetails("New");
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		frame.locator(repairOrder_PageHeading).waitFor();
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -1523,7 +1524,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(".mat-mdc-tab-list div#mat-tab-label-0-1").click();
 		logger.info("click on Service_Rec");
 		page.waitForTimeout(5000);
-			
+
 				   page.keyboard().down("Control");
 				   page.keyboard().press("-");
 				   page.keyboard().press("-");
@@ -1974,6 +1975,138 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		return !flags.contains(false);
 	}
+
+
+	private String communicationTab = "div.orders-detail-communications__title";
+	private String whatsApp_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('WhatsApp')";
+	private String sMs_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('SMS')";
+	private String chat_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Chat')";
+	private String notes_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (0)')";
+	private String textArea = "div.orders-detail-notes__message textarea[placholder='Add a new note...']";
+	private String clear_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--del";
+	private String save_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--send";
+	private String writetText = ".orders-detail-notes__message__input";
+	private String notes_tab1 = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (1)')";
+
+	public boolean notesFunctionalityOnRO() throws InterruptedException {
+		try {
+			FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+			page.waitForTimeout(3000);
+			if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
+					&& frame.locator(chat_tab).isVisible() && frame.locator(notes_tab).isVisible()) {
+				logger.info("All tabs are vissible");
+
+			} else {
+				logger.info("All tabs are not vissible");
+			}
+			if (frame.locator(whatsApp_tab).isVisible()) {
+				logger.info("WhatsApp tab is vissible");
+			} else {
+				logger.info("WhatsApp setting is disabled from dealer settings");
+
+			}
+			frame.locator(notes_tab).click();
+			logger.info("Notes window is displayed sucessfully");
+			logger.info("Notes count is displayed 0 by default");
+			frame.locator(textArea).isVisible();
+			logger.info("Add a new note...text are display in the text box");
+			if (frame.locator(clear_btn).isVisible() && frame.locator(save_btn).isVisible()) {
+				logger.info("Clear and Save button is displayed at the bottom");
+			} else {
+				logger.info("Both buttons are not vissible");
+
+			}
+			frame.locator(writetText).fill(getRandomString(4));
+			logger.info("Text entered succesfully into the text box");
+			frame.locator(clear_btn).click();
+			logger.info("Text are clear successfully in the text box");
+			Thread.sleep(3000);
+			frame.locator(writetText).fill(getRandomString(4));
+			logger.info("Again text entered succesfully into the text box");
+			frame.locator(save_btn).click();
+			logger.info("Notes added succesfully in the text box");
+			Thread.sleep(3000);
+			frame.locator(notes_tab1).isVisible();
+			logger.info("Notes count are increased by +1");
+			String notes1 = frame.locator(notes_tab1).innerText().toLowerCase();
+			String numbersOnly = notes1.replaceAll("[^0-9]", "");
+			System.out.println(numbersOnly);
+			logger.info("Notes count increased: " + numbersOnly);
+			page.reload();
+			frame.locator(notes_tab1).waitFor();
+			logger.info("Page refreshed and notes count validated.");
+			return true;
+		} catch (Exception e) {
+			logger.error("Error during notes functionality validation: " + e.getMessage());
+			return false;
+		}
+
+	}
+
+	// ROChat
+	
+	private String roNo = "div.chat-header__main p.chat-header__title";
+	private String memberCount = "p.chat-header__members.ng-star-inserted";
+	private String videoCallBtn = ".mat-icon.notranslate.cam.mat-icon-no-color";
+	private String iBtn = "path[d='M40 0C17.92 0 0 17.92 0 40s17.92 40 40 40 40-17.92 40-40S62.08 0 40 0Zm4 60h-8V36h8v24Zm0-32h-8v-8h8v8Z']";
+	private String welcomeText = "h1.chat-empty-container__title";
+	private String noConversationText = "p.chat-empty-container__subtitle";
+	private String textBox = ".mat-mdc-form-field-infix.ng-tns-c508571215-8";
+	private String writeInput = "#mat-input-1";
+	private String typeHereYourText = "#mat-input-0";
+	private String emojisBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__emoji";
+	private String attachmentBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__clip";
+	private String gifBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__image";
+	private String sendDisabled = ".mdc-icon-button.mat-mdc-icon-button.mat-unthemed.mat-mdc-button-base.ng-star-inserted.mat-mdc-button-disabled";
+	private String sendEnabled = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__send";
+
+	public boolean repairOrderChatFunctionality() throws InterruptedException {
+
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		page.waitForTimeout(6000);
+		if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
+				&& frame.locator(chat_tab).isVisible() && frame.locator(notes_tab).isVisible()) {
+			logger.info("All tabs are vissible");
+
+		} else {
+			logger.info("All tabs are not vissible");
+		}
+		if (frame.locator(whatsApp_tab).isVisible()) {
+			logger.info("WhatsApp tab is vissible");
+		} else {
+			logger.info("WhatsApp setting is disabled from dealer settings");
+
+		}
+		page.waitForTimeout(5000);
+		frame.locator(chat_tab).click();
+		logger.info("Chat window are displayed sucessfully");
+		page.waitForTimeout(20000);
+		if (frame.locator(roNo).isVisible() && frame.locator(memberCount).isVisible()
+				&& frame.locator(videoCallBtn).isVisible() && frame.locator(iBtn).isVisible()
+				&& frame.locator(welcomeText).isVisible() && frame.locator(noConversationText).isVisible()
+				&& frame.locator(textBox).isVisible() && frame.locator(typeHereYourText).isVisible()
+				&& frame.locator(emojisBtn).isVisible() && frame.locator(attachmentBtn).isVisible()
+				&& frame.locator(gifBtn).isVisible()) {
+			logger.info("All the text and buttons are vissible");
+
+		} else {
+			logger.info("All the text and buttons are not vissible");
+		}
+		frame.locator(sendDisabled).isVisible();
+		logger.info("By default send button is disable");
+		frame.locator(writeInput).click();
+		System.out.println("click");
+		frame.locator(writeInput).fill(getRandomString(4));
+		logger.info("Text entered succesfully into the text box");
+		frame.locator(sendEnabled).isVisible();
+		logger.info("Send button is enable");
+		frame.locator(sendEnabled).click();
+		logger.info("Text sent to the Advisor/Tech");
+
+		return true;
+
+	}
+	
 
 
 }

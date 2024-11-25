@@ -14,16 +14,17 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	@BeforeClass
 	public void repairOrderDetailPageSetup() {
 		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList().navigateToOrderDetails();
+				.navigateToOrderList().navigateToOrderDetails("New");
 	}
 
 
-	@Test(priority = 1,groups = {"smoke"})
+	@Test(priority = 1)
+
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
-
-	@Test(priority = 2,groups = {"smoke"})
+	
+	@Test(priority = 2)
 	public void verifyAddMediaFunction_FirstVideo() {
 		repairOrderPage.addVideoToOrder();
 	}
@@ -69,7 +70,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.createPayment("WhatsApp");
 	}
 
-
 	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction")
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
@@ -81,46 +81,43 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.submitPayment("SMS");
 	}
 
-
-	@Test(priority = 14)
+	@Test(priority = 14, description = "WA-5569")
 	public void verifyCreateReminder() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.createreminder());
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 15, description = "WA-5378")
 	public void VerifyOpenInspection() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.openInspection());
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 16, description = "WA-5382")
 	public void VerifySendbackInspection() {
 		Assert.assertTrue(repairOrderPage.sendbackInspection());
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 17, description = "WA-5379")
 	public void VerifyPublishInspections() {
 		Assert.assertTrue(repairOrderPage.publishInspection());
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 18, description = "WA-5381")
 	public void VerifyNotifyCustomer() {
 		Assert.assertTrue(repairOrderPage.notifyCustomerBtn());
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 19, description = "WA-5383")
 	public void VerifyHide_Show() {
 		Assert.assertTrue(repairOrderPage.hide_showBtn());
 	}
 
-	@Test(priority = 20)
+	@Test(priority = 20, description = "WA-5380")
 	public void VerifyPrintInspection() throws InterruptedException {
 		Assert.assertTrue(repairOrderPage.printInspection());
 	}
 
 
-
-
-	@Test(priority = 20)
+	@Test(priority = 21, description = "WA-5393")
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();
 	}
@@ -130,22 +127,23 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		Assert.assertTrue(repairOrderPage.detailsFieldonRODetails());
 	}
 
-	@Test()
+	@Test(priority = 22, description = "WA-5391")
+
 	public void verifyViewWithCustomerFunctionality() {
 		repairOrderPage.viewWithCustomer();
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23, description = "WA-5390")
 	public void verifyEditThisROFunctionality() throws InterruptedException {
 		repairOrderPage.editThisRO();
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 24, description = "WA-5527")
 	public void verifyInsightFunctionality() throws InterruptedException {
 		repairOrderPage.insightFunctionality();
 	}
 
-	@Test(priority = 24) // try to run this method at the end of class
+	@Test(priority = 25, description = "WA-5394") // try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}

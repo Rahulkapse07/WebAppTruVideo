@@ -8,37 +8,48 @@ import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
 
 public class BaseTest {
+
 	protected PlaywrightFactory pf;
 	public Page page;
 	protected Properties prop;
 	protected LoginPage loginpage;
 	protected ExtentTest test;
 
-	@Parameters({ "browser", "headless" })
+	private String baseUrl; // For storing the final base URL
 
 	@BeforeTest
-	public void loginPageSetup(@Optional("chrome") String browser, @Optional("false") String headless) {
+	@Parameters({ "browser", "headless", "baseUrl" })
+	public void loginPageSetup(
+			@Optional("chrome") String browser, 
+			@Optional("false") String headless,
+			@Optional("") String baseUrl) {
 
 		pf = new PlaywrightFactory();
-		prop = pf.init_prop();
+		prop = pf.init_prop(); // Load config.properties
 
-		if (browser == null || browser.isEmpty()) {
-			browser = prop.getProperty("browser", "chrome");
+		// Use config.properties as default, override with XML values if provided
+		browser = prop.getProperty("browser", browser);
+		headless = prop.getProperty("headless", headless);
+
+		// Check if baseUrl was passed via XML; if not, use the default from properties
+		if (baseUrl.isEmpty()) {
+			baseUrl = prop.getProperty("baseUrl");
 		}
 
-		if (headless == null || headless.isEmpty()) {
-			headless = prop.getProperty("headless", "false");
+		if (baseUrl == null || baseUrl.isEmpty()) {
+			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
 		}
+
+		System.out.println("Browser: " + browser);
+		System.out.println("Headless: " + headless);
+		System.out.println("Final Base URL: " + baseUrl);
 
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		page = pf.initBrowser(browser, headlessMode);
 
-		if (page != null) {
-			loginpage = new LoginPage(page);
-			System.out.println("LoginPage initialized: " + (loginpage != null));
-		} else {
-			System.out.println("Page initialization failed.");
-		}
+		loginpage = new LoginPage(page);
+		page.navigate(baseUrl);
+
 	}
 
 	@AfterTest
@@ -48,5 +59,5 @@ public class BaseTest {
 		pf.stopTracing(traceFilePath);
 		pf.closeBrowser();
 	}
-
 }
+

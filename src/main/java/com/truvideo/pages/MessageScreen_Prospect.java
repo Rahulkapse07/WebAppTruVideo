@@ -690,7 +690,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 
 		HP.clickOn_RepairOrder_Header();
-		OLP.addRepairOrder();
+		OLP.addRepairOrder("Existing");
 		page.waitForTimeout(5000);
 
 		HP.navigateToMessageScreen_Order();

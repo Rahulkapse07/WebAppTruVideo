@@ -16,23 +16,23 @@ public class SavedVideoLibraryPageTest extends BaseTest{
 				.navigateToSavedVideoLibrary();	
 	}
 	
-	@Test(priority  = 1)
+	@Test(priority  = 1,description = "WA-5556")
 	public void VerificationSavedvideolibrary() {
 		Assert.assertTrue(savedvideolibrarypage.verificationSavedVideoLibrary());
 	}
-	@Test(priority  = 2)
+	@Test(priority  = 2,description = "WA-5611")
 	public void VerifyAddVideo() {
 		Assert.assertTrue(savedvideolibrarypage.addVideoFunctionality());
 	}
-	@Test(priority  = 3)
+	@Test(priority  = 3,description = "WA-5620")
 	public void VerifyEditfunctionality() {
 		Assert.assertTrue(savedvideolibrarypage.editFunctionality());
 	}
-	@Test(priority  = 4)
+	@Test(priority  = 4,description = "WA-5622")
 	public void VerifyRemovefunctionality() {
 		Assert.assertTrue(savedvideolibrarypage.removeFunctionality());
 	} 
-	@Test(priority  = 5)
+	@Test(priority  = 5,description = "WA-5613")
 	public void VerifyFavoritefunctionality() {
 		Assert.assertTrue(savedvideolibrarypage.favoriteFunctionality());
 	}

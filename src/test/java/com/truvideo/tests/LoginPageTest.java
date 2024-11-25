@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.truvideo.base.BaseTest;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.pages.LoginPage;
@@ -48,7 +49,7 @@ public class LoginPageTest extends BaseTest {
 	public Object[][] loginDataProvider() {
 		return new Object[][] { { " ", " ", "Empty" }, // Empty field
 				{ "XYZASSA@dg.com", "***********", "INVALID" }, // Invalid credentials
-				{ prop.getProperty("username"), prop.getProperty("password"), "VALID" } // Valid credentials
+				{ prop.getProperty("username"), prop.getProperty("password") , "VALID" } // Valid credentials
 		};
 	}
 
