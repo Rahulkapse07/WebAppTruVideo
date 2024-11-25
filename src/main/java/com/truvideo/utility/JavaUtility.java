@@ -115,13 +115,7 @@ public class JavaUtility {
 	public Properties init_prop() {
 	    try {
 	        prop = new Properties();
-	        
-	        // Determine the path dynamically
 	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
-
-	        // Log the file path for debugging
-	        System.out.println("Loading config file from: " + filePath);
-
 	        // Load the properties file
 	        FileInputStream ip = new FileInputStream(filePath);
 	        prop.load(ip);

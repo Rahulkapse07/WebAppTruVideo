@@ -17,7 +17,7 @@ public class BaseTest {
 
 	private String baseUrl; // For storing the final base URL
 
-	@BeforeSuite
+	@BeforeClass
 	@Parameters({ "browser", "headless", "baseUrl" })
 	public void loginPageSetup(
 			@Optional("chrome") String browser, 
@@ -52,7 +52,7 @@ public class BaseTest {
 
 	}
 
-	@AfterSuite
+	@AfterClass
 	public void tearDown() {
 		String destinationField = System.getProperty("user.dir") + "/Reports/";
 		String traceFilePath = destinationField + "trace.zip";
