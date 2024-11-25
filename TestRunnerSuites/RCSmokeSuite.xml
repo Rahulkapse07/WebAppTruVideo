@@ -12,21 +12,7 @@
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest" >
-			<methods>
-					<include name="verifyAllAvailableElementsOnOrderDetails" />
-					<include name="verifyAddMediaFunction_FirstVideo" />
-					<include name="verifySendToCustomer_ForFirstVideo" />
-					<include name="verifySendToCustomer_ForSecondVideo" />
-					<include name="verifyViewedStatus" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-				</methods>
+			
 				</class>
 		</classes>
 	</test>

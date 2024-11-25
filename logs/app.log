@@ -1430,3 +1430,19 @@
 2024-11-25 16:30:14 INFO  com.truvideo.pages.MessageScreen_Order - WHATSAPP FILTER SELECTED
 2024-11-25 16:30:14 INFO  com.truvideo.pages.MessageScreen_Order - Whatsapp Chat is Expired
 2024-11-25 16:30:29 INFO  com.truvideo.pages.MessageScreen_Order - Search Filter is Present
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-25 17:32:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-25 17:32:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-25 17:32:35 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-25 17:32:35 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-25 17:32:37 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-25 17:32:37 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-25 17:32:38 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 17:32:38 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 17:32:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 17:32:41 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-25 17:32:41 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
