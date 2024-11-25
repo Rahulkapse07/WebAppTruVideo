@@ -1,5 +1,5 @@
-<suite name="RC Smoke Suite" parallel="false" thread-count="3"
-	verbose="5" preserve-order="true">
+<suite name="RC Smoke Suite" configfailurepolicy="continue" parallel="false" thread-count="3"
+	verbose="5" preserve-order="false">
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
@@ -30,30 +30,6 @@
 				</class>
 		</classes>
 	</test>
-
-	<!-- <test name="Repair order detail page">
-		<classes>
-			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
-				<methods>
-					<include name="verifyAllAvailableElementsOnOrderDetails" />
-					<include name="verifyAddMediaFunction_FirstVideo" />
-					<include name="verifySendToCustomer_ForFirstVideo" />
-					<include name="verifySendToCustomer_ForSecondVideo" />
-					<include name="verifyViewedStatus" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-				</methods>
-			</class>
-		</classes>
-	</test> -->
-
-
 	<test name="Message order service">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
