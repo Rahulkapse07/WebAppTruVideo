@@ -11,9 +11,7 @@
 	<test name="RC smoke test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
-			<class name="com.truvideo.tests.RepairOrderDetailPageTest" >
-			
-				</class>
+			<class name="com.truvideo.tests.RepairOrderDetailPageTest" />
 		</classes>
 	</test>
 	<test name="Message order service">
