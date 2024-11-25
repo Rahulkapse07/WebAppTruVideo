@@ -3,15 +3,18 @@
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
-	<parameter name="baseUrl" value="https://rc.truvideo.com/login" />
+	<parameter name="baseUrl"
+		value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="true" />
+
 	<test name="RC smoke test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-	<test name = "Repair order detail page">
+
+	<test name="Repair order detail page">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
 				<methods>
@@ -20,17 +23,27 @@
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
 					<include name="verifyViewedStatus" />
-					<!-- <include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" /> -->
-					
+					<include name="verifyVariousActivityOfEstimate" />
+					<include name="verifyVariousActivityOfEstimate" />
 				</methods>
 			</class>
-			</classes>
+		</classes>
 	</test>
+
+
+	<test name="Message order service">
+		<classes>
+			<class name="com.truvideo.tests.Message_RepairOrdertest">
+			</class>
+		</classes>
+	</test>
+
+
+
 </suite>

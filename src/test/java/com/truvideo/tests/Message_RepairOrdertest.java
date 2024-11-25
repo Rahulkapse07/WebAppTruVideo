@@ -20,32 +20,32 @@ public class Message_RepairOrdertest extends BaseTest {
 				.navigateToMessageScreen_Order();
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifyelement() {
 		Assert.assertTrue(MessageScreen_order.VerifyAll_Elements());
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void VerifyReadUnreadnotification() throws Exception {
 		Assert.assertTrue(MessageScreen_order.VerifyReadUnreadNotification());
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifyGoToRopage() {
 		Assert.assertTrue(MessageScreen_order.ConversationGOtoRobtn());
 	}
 
-	@Test(dependsOnMethods = "verifyelement")
+	@Test(dependsOnMethods = "verifyelement",description = "WA-5572")
 	public void verifySearchfilterbtn() {
 		Assert.assertTrue(MessageScreen_order.SearchMessagefilter());
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifyDefaultFilters() throws Exception {
 		Assert.assertTrue(MessageScreen_order.verify_Default_Filters());
 	}
 
-	@Test(dependsOnMethods = "verifyDefaultFilters")
+	@Test(dependsOnMethods = "verifyDefaultFilters",description = "WA-5572")
 	public void verifyWhatsAppChatEnablecondition() throws Exception {
 		Assert.assertTrue(MessageScreen_order.VerifyWhatsAppChatEnableCondition());
 	}
@@ -58,7 +58,7 @@ public class Message_RepairOrdertest extends BaseTest {
 				{ "My & Unread", "My", "whatsapp", "SMS", "Unread", "" } };
 	}
 
-	@Test(dataProvider = "VerifyFilters")
+	@Test(dataProvider = "VerifyFilters",description = "WA-5572")
 	public void verifyfilters(String filtername, String MY, String Whatsapp, String SMS, String Unread,
 			String filter2) {
 		switch (filtername) {
@@ -87,38 +87,38 @@ public class Message_RepairOrdertest extends BaseTest {
 		}
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void click_My_AND_UNREAD_filterBotton() {
 		Assert.assertTrue(MessageScreen_order.click_My_AND_UNREAD_filterBotton("My & Unread", "My", "whatsapp", "SMS",
 				"Unread", ""));
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void message_Profile_setting_button() {
 		Assert.assertTrue(MessageScreen_order.Verify_Profile_setting_button("Sandeep singh"));
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifystartConversatationbtn() throws Exception {
 		Assert.assertTrue(MessageScreen_order.verifyStartconversatationbtn(prop.getProperty("MobileNo"), "SMS"));
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifyMessageuser() {
 		Assert.assertTrue(MessageScreen_order.Verify_message_Name());
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void MessageSendattachments() throws Exception {
 		Assert.assertTrue(MessageScreen_order.MessageSendAttachments(prop.getProperty("MobileNo")));
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifyconversationStartfromRO() throws Exception {
 		MessageScreen_order.verifyconversationStartfromRO();
 	}
 
-	@Test()
+	@Test(description = "WA-5572")
 	public void verifychannelownereditRo() throws Exception {
 		MessageScreen_order.verifychannelownereditRo();
 	}

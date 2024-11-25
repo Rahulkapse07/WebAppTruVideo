@@ -14,7 +14,7 @@ public class BaseTest {
 	protected LoginPage loginpage;
 	private String baseUrl; // For storing the final base URL
 
-	@BeforeTest
+	@BeforeSuite
 	@Parameters({ "browser", "headless", "baseUrl" })
 	public void loginPageSetup(
 			@Optional("chrome") String browser, 
@@ -48,7 +48,7 @@ public class BaseTest {
 		page.navigate(baseUrl);
 	}
 
-	@AfterTest
+	@AfterSuite
 	public void tearDown() {
 		page.context().browser().close();
 	}
