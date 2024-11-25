@@ -2,12 +2,12 @@ pipeline {
    agent any
    
    environment {
-      BASE_URL = 'https://rc.truvideo.com/login'
+      baseurl = 'https://rc.truvideo.com/login'  // Lowercase environment variable
       SUITE_FILE = 'TestRunnerSuites/RCSmokeSuite.xml'
    }
    
    parameters {
-      string(name: 'baseUrl', defaultValue: BASE_URL, description: 'Base URL for the application')
+      string(name: 'baseUrl', defaultValue: "${baseurl}", description: 'Base URL for the application')  // Reference environment variable
    }
    
    stages {
