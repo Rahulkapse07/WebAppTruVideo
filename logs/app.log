@@ -1121,3 +1121,312 @@
 2024-11-22 20:08:49 INFO  com.truvideo.pages.HomePage - The count 18 on badge is equal to total count Displaying 1 to 18 of 18 records
 2024-11-22 20:08:50 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
 2024-11-22 20:08:50 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-11-25 16:08:38 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-25 16:08:38 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-25 16:08:38 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-25 16:08:38 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-25 16:08:38 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-25 16:08:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-25 16:08:43 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-25 16:08:46 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-25 16:08:46 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-25 16:08:48 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-25 16:08:49 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-25 16:08:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 16:08:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 16:08:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 16:08:53 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-25 16:08:53 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-25 16:09:09 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 16:09:09 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 16:09:11 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 16:09:16 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:09:17 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : Autoj6C32
+2024-11-25 16:09:17 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:09:17 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Lastc0tY
+2024-11-25 16:09:17 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812052538
+2024-11-25 16:09:17 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedDGRn@gmail.com
+2024-11-25 16:09:19 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:09:56 INFO  com.truvideo.pages.RepairOrderDetailPage - All Customer details and Vehicle fields are visible in Details section
+2024-11-25 16:09:59 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - New expand_more
+2024-11-25 16:09:59 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Created new repair order.  by suraj Singh 
+2024-11-25 16:11:27 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-11-25 16:11:27 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-11-25 16:11:27 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-11-25 16:11:27 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-11-25 16:11:27 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-11-25 16:11:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-11-25 16:11:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-11-25 16:11:34 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-11-25 16:11:35 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-11-25 16:11:38 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-11-25 16:11:38 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-11-25 16:11:40 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 16:11:40 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 16:11:42 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 16:11:43 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-11-25 16:11:43 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-11-25 16:12:00 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 16:12:00 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 16:12:02 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 16:12:08 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:12:08 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : Autopsb5l
+2024-11-25 16:12:08 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:12:08 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Lastcues
+2024-11-25 16:12:09 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812055397
+2024-11-25 16:12:09 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedIF5x@gmail.com
+2024-11-25 16:12:11 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:12:44 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - New expand_more
+2024-11-25 16:12:48 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Created new repair order.  by suraj Singh 
+2024-11-25 16:12:52 INFO  com.truvideo.pages.RepairOrderDetailPage - RO is New & No media is added
+2024-11-25 16:12:58 INFO  com.truvideo.pages.RepairOrderDetailPage - 'Send to customer','View with customer' & 'Insights' button is not disabled
+2024-11-25 16:12:58 INFO  com.truvideo.pages.RepairOrderDetailPage - Multimedia Screen opened: Add video
+2024-11-25 16:12:59 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected 1 video from multimedia screen
+2024-11-25 16:13:02 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Add Video Button
+2024-11-25 16:13:10 INFO  com.truvideo.pages.RepairOrderDetailPage - Video added sucessfully and visible on media gallery
+2024-11-25 16:13:12 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - For Review expand_more
+2024-11-25 16:13:19 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:13:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to For Review
+2024-11-25 16:13:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Both 'Send to customer' & 'View with customer' button is enabled
+2024-11-25 16:13:20 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (testeeee) from Saved Video Library  by suraj Singh 
+2024-11-25 16:13:31 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected whatsApp channel to send
+2024-11-25 16:13:32 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on whatsApp button : sent through WhatsApp
+2024-11-25 16:13:38 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the WhatsApp channel after sent 
+2024-11-25 16:13:40 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Sent expand_more
+2024-11-25 16:13:45 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:13:45 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Sent
+2024-11-25 16:13:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - video at attempt 1
+2024-11-25 16:13:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagefrom kenility store: hello automation , your vehicle service video is ready for viewing at https://dev.tru-vid.com/c64c13cd76bd. lastcues, suraj singh
+  
+ 11/25/24 05:43:37 am 
+2024-11-25 16:14:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-11-25 16:14:19 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (testeeee) from Saved Video Library  by suraj Singh 
+2024-11-25 16:14:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-11-25 16:14:49 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (testeeee) from Saved Video Library  by suraj Singh 
+2024-11-25 16:15:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-11-25 16:15:20 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (testeeee) from Saved Video Library  by suraj Singh 
+2024-11-25 16:15:20 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-11-25 16:15:39 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:15:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - sent to customer on Refresh
+2024-11-25 16:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-11-25 16:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-11-25 16:15:57 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-11-25 16:15:59 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Sent expand_more
+2024-11-25 16:16:05 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:16:05 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Sent
+2024-11-25 16:16:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - video at attempt 1
+2024-11-25 16:16:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagefrom kenility store: hello automation , your vehicle service video is ready for viewing at https://dev.tru-vid.com/c64c13cd76bd. lastcues, suraj singh reply "stop" to opt out.
+  
+ 11/25/24 05:45:56 am 
+2024-11-25 16:16:09 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:16:21 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-11-25 16:16:21 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-11-25 16:16:27 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-11-25 16:16:29 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Sent expand_more
+2024-11-25 16:16:35 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:16:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Sent
+2024-11-25 16:16:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - video at attempt 1
+2024-11-25 16:16:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagefrom kenility store: hello automation , your vehicle service video is ready for viewing at https://dev.tru-vid.com/c64c13cd76bd. lastcues, suraj singh reply "stop" to opt out.
+  
+ 11/25/24 05:46:25 am 
+2024-11-25 16:16:39 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:16:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message is video Endlink
+2024-11-25 16:16:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Endlink opened in another tab
+2024-11-25 16:16:47 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Play Button
+2024-11-25 16:16:47 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting to play video for 8 Seconds
+2024-11-25 16:17:06 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:17:06 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is not changed to Viewed
+2024-11-25 16:17:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-11-25 16:17:38 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:18:08 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-11-25 16:18:08 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:18:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-11-25 16:18:38 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-11-25 16:18:38 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-11-25 16:18:56 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Customer watched video. [testeeee] 
+2024-11-25 16:18:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - Customer watched video on Refresh
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoQID5S
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastvtOC
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812052989
+2024-11-25 16:19:04 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automatedl9rC@gmail.com
+2024-11-25 16:19:06 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:19:34 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting for the Estimate button to be visible
+2024-11-25 16:19:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Create Estimate button
+2024-11-25 16:19:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is available in the Item List
+2024-11-25 16:19:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-11-25 16:19:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-11-25 16:19:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-11-25 16:19:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-11-25 16:19:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-11-25 16:19:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-11-25 16:19:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-11-25 16:19:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-11-25 16:19:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-11-25 16:19:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-11-25 16:19:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-11-25 16:20:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on close estimate window
+2024-11-25 16:20:06 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-11-25 16:20:06 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Draft
+2024-11-25 16:20:07 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Created new estimate. 
+2024-11-25 16:20:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Edit Estimate button
+2024-11-25 16:20:11 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-11-25 16:20:11 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-11-25 16:20:12 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-11-25 16:20:12 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-11-25 16:20:14 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Preview Estimate button
+2024-11-25 16:20:18 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Hide from customer button
+2024-11-25 16:20:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Hidden message displayed
+2024-11-25 16:20:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Hide from customer button
+2024-11-25 16:20:22 INFO  com.truvideo.pages.RepairOrderDetailPage - Hidden message removed
+2024-11-25 16:20:24 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigate back to add item screen
+2024-11-25 16:20:24 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigate to preview screen again
+2024-11-25 16:20:25 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Print button
+2024-11-25 16:20:29 INFO  com.truvideo.pages.RepairOrderDetailPage - Button name changed to Estimate Closed
+2024-11-25 16:20:31 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate closed. 
+2024-11-25 16:20:57 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-11-25 16:20:57 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-11-25 16:20:59 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-11-25 16:21:08 INFO  com.truvideo.pages.MessageScreen_Order - Verify Message Profile Settings
+2024-11-25 16:21:23 INFO  com.truvideo.pages.MessageScreen_Order - Message profile clicked
+2024-11-25 16:21:38 INFO  com.truvideo.pages.MessageScreen_Order - Clicked on save button
+2024-11-25 16:21:41 INFO  com.truvideo.pages.MessageScreen_Order - Profile After changes Matched
+2024-11-25 16:21:44 INFO  com.truvideo.pages.MessageScreen_Order - Message profile clicked
+2024-11-25 16:21:56 INFO  com.truvideo.pages.MessageScreen_Order - Clicked on save button
+2024-11-25 16:21:59 INFO  com.truvideo.pages.MessageScreen_Order - Profile After changes Matched
+2024-11-25 16:22:07 INFO  com.truvideo.pages.MessageScreen_Order - DEFAULT FILTERS PRESENT
+2024-11-25 16:22:07 INFO  com.truvideo.pages.MessageScreen_Order - Verify Visible Elements
+2024-11-25 16:22:16 INFO  com.truvideo.pages.MessageScreen_Order - Elements are verifed and Visible
+2024-11-25 16:22:23 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-11-25 16:22:23 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:28 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-11-25 16:22:36 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-11-25 16:22:36 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-11-25 16:22:36 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:39 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-11-25 16:22:43 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-11-25 16:22:44 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-11-25 16:22:44 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:47 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-11-25 16:22:49 INFO  com.truvideo.pages.MessageScreen_Order - VERIFY ATTACHMENT
+2024-11-25 16:22:49 INFO  com.truvideo.pages.MessageScreen_Order - SELECT SMS FILTER TOS END ATTACHMENT
+2024-11-25 16:22:57 INFO  com.truvideo.pages.MessageScreen_Order - SMS SELECTED
+2024-11-25 16:23:07 INFO  com.truvideo.pages.MessageScreen_Order - Alredy exist
+2024-11-25 16:23:14 INFO  com.truvideo.pages.MessageScreen_Order - File Attached
+2024-11-25 16:23:18 INFO  com.truvideo.pages.MessageScreen_Order - Attachement Send
+2024-11-25 16:23:23 INFO  com.truvideo.pages.MessageScreen_Order - UNREAD NOTIFICATIONS ARE PRESENT
+2024-11-25 16:23:26 INFO  com.truvideo.pages.MessageScreen_Order - COUNT UNREAD MESSAGE PRESENT
+2024-11-25 16:24:13 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-11-25 16:24:19 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-25 16:24:21 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:24:21 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoilzEF
+2024-11-25 16:24:21 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:24:21 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastkrOV
+2024-11-25 16:24:21 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812057782
+2024-11-25 16:24:22 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automated4g7t@gmail.com
+2024-11-25 16:24:24 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:25:04 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to message header
+2024-11-25 16:25:27 INFO  com.truvideo.pages.MessageScreen_Order - test case
+2024-11-25 16:25:28 INFO  com.truvideo.pages.MessageScreen_Order - Verify Start Conversation Tab
+2024-11-25 16:25:28 INFO  com.truvideo.pages.MessageScreen_Order - INSERT FIRST NAME:Automation
+2024-11-25 16:25:28 INFO  com.truvideo.pages.MessageScreen_Order - INSERT LAST NAME:Name
+2024-11-25 16:25:31 INFO  com.truvideo.pages.MessageScreen_Order - SELECT COUNTRY :-United States
+2024-11-25 16:25:31 INFO  com.truvideo.pages.MessageScreen_Order - Number:-(781) 205-9487
+2024-11-25 16:25:36 INFO  com.truvideo.pages.MessageScreen_Order - Select SMS
+2024-11-25 16:25:36 INFO  com.truvideo.pages.MessageScreen_Order - Button hit
+2024-11-25 16:25:40 INFO  com.truvideo.pages.MessageScreen_Order - GO_TO_RO button clicked
+2024-11-25 16:25:40 INFO  com.truvideo.pages.MessageScreen_Order - Ro Channel name updated correctlly
+2024-11-25 16:25:51 INFO  com.truvideo.pages.MessageScreen_Order - GO_TO_RO button clicked
+2024-11-25 16:26:01 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHEDAutomation LastkrOV-:-Automation LastkrOV
+2024-11-25 16:26:01 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHED
+2024-11-25 16:26:02 INFO  com.truvideo.pages.MessageScreen_Order - suraj singhThe Channel owner is same user who is login--suraj singh
+2024-11-25 16:26:08 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-25 16:26:09 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:26:10 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoYbVFE
+2024-11-25 16:26:10 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:26:10 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastemCo
+2024-11-25 16:26:10 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812054880
+2024-11-25 16:26:10 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automated9siy@gmail.com
+2024-11-25 16:26:12 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:26:54 INFO  com.truvideo.pages.MessageScreen_Order - Changes Saved
+2024-11-25 16:27:00 INFO  com.truvideo.pages.MessageScreen_Order - Same RO opened we created
+2024-11-25 16:27:18 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-11-25 16:27:37 INFO  com.truvideo.pages.MessageScreen_Order - matched
+2024-11-25 16:27:42 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoQGOcG
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastAsdD
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812059610
+2024-11-25 16:27:44 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automated44wh@gmail.com
+2024-11-25 16:27:46 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-11-25 16:28:26 INFO  com.truvideo.pages.MessageScreen_Order - Changes Saved
+2024-11-25 16:28:33 INFO  com.truvideo.pages.MessageScreen_Order - Same RO opened we created
+2024-11-25 16:28:50 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-11-25 16:29:09 INFO  com.truvideo.pages.MessageScreen_Order - matched
+2024-11-25 16:29:22 INFO  com.truvideo.pages.MessageScreen_Order - CONVERSATION CHAT IS VISIBLE
+2024-11-25 16:29:23 INFO  com.truvideo.pages.MessageScreen_Order - OPENED CONVERSATION TAB
+2024-11-25 16:29:23 INFO  com.truvideo.pages.MessageScreen_Order - ENTERED FIRSTNAME :-Automation
+2024-11-25 16:30:02 INFO  com.truvideo.pages.MessageScreen_Order - CheckWhatsapp filter is Enable or Disable From Dealer Setting
+2024-11-25 16:30:07 INFO  com.truvideo.pages.MessageScreen_Order - CheckWhatsapp filter is Enable
+2024-11-25 16:30:14 INFO  com.truvideo.pages.MessageScreen_Order - WHATSAPP FILTER SELECTED
+2024-11-25 16:30:14 INFO  com.truvideo.pages.MessageScreen_Order - Whatsapp Chat is Expired
+2024-11-25 16:30:29 INFO  com.truvideo.pages.MessageScreen_Order - Search Filter is Present
