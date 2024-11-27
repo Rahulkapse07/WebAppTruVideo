@@ -18,64 +18,64 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	}
 
 
-	@Test(priority = 1)
+	@Test(priority = 1 , description = )
 
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, description = )
 	public void verifyAddMediaFunction_FirstVideo() {
 		repairOrderPage.addVideoToOrder();
 	}
 
-	@Test(dependsOnMethods = "verifyAddMediaFunction_FirstVideo")
+	@Test(dependsOnMethods = "verifyAddMediaFunction_FirstVideo", description = )
 	public void verifySendToCustomer_ForFirstVideo() {
 		repairOrderPage.sendVideoToCustomer("WhatsApp");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForFirstVideo")
+	@Test(dependsOnMethods = "verifySendToCustomer_ForFirstVideo", description = )
 	public void verifySendToCustomer_ForSecondVideo() {
 		repairOrderPage.sendVideoToCustomer("SMS");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForSecondVideo")
+	@Test(dependsOnMethods = "verifySendToCustomer_ForSecondVideo", description = )
 	public void verifyViewedStatus() {
 		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, description = )
 	public void verifyVariousActivityOfEstimate() {
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
-	@Test(priority = 8, dependsOnMethods = "verifyVariousActivityOfEstimate")
+	@Test(priority = 8, dependsOnMethods = "verifyVariousActivityOfEstimate", description = )
 	public void verifySendEstimateFunction() {
 		repairOrderPage.sendEstimate("SMS");
 	}
 
-	@Test(priority = 9, dependsOnMethods = "verifySendEstimateFunction")
+	@Test(priority = 9, dependsOnMethods = "verifySendEstimateFunction", description = )
 	public void verifyResendEstimateFunction() {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(priority = 10, dependsOnMethods = "verifySendEstimateFunction")
+	@Test(priority = 10, dependsOnMethods = "verifySendEstimateFunction", description = )
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 11, description = )
 	public void verifyPaymentFunction() {
 		page.reload();
 		repairOrderPage.createPayment("WhatsApp");
 	}
 
-	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction")
+	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction", description = )
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
 	}
 
-	@Test(priority = 13, dependsOnMethods = "verifyPaymentResendFunction")
+	@Test(priority = 13, dependsOnMethods = "verifyPaymentResendFunction", description = )
 	public void verifySubmitPayment_ProcessedPayment() {
 
 		repairOrderPage.submitPayment("SMS");
