@@ -14,27 +14,30 @@ public class Multimediapagetest extends BaseTest {
 
 	@BeforeClass
 	public void NavigatetoMultimedia() {
-		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).NavigateToOrderList();
-}
-	
-	@Test()
-	public void  verifyDownloadsingleimage() throws Exception {
+		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+				.NavigateToOrderList();
+	}
+
+	@Test(priority = 1)
+	public void verifyDownloadsingleimage() throws Exception {
 		multimediapage.verifyDownloadsingleimage();
 	}
-	
-	@Test()
+
+	@Test(priority = 2)
 	public void verifyDownloadMultipleimage() {
-		
+
 		multimediapage.VerifyHideandshowMultipleimage();
 	}
-	@Test(priority = 3 , dependsOnMethods = "verifyDownloadMultipleimage")
-	public void verify_functionality_Selectall() throws Exception{
-		
+
+	@Test(priority = 3, dependsOnMethods = "verifyDownloadMultipleimage")
+	public void verify_functionality_Selectall() throws Exception {
+
 		multimediapage.verify_functionality_Selectall();
 	}
+
 	@Test(priority = 4)
-	public void  verify_functionality_Mark_Unmark() {
-		Assert.assertTrue(multimediapage.verify_functionality_Mark_Unmark());   
+	public void verify_functionality_Mark_Unmark() {
+		Assert.assertTrue(multimediapage.verify_functionality_Mark_Unmark());
 	}
 
 	@Test(priority = 5)

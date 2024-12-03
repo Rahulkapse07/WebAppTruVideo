@@ -8,7 +8,7 @@
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
 
-	<test name="Login page">
+<!-- 	<test name="Login page">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest">
 			</class>
@@ -24,9 +24,9 @@
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 			</class>
 		</classes>
-	</test>
+	</test> -->
 
-	<!-- <test name="Message order service">
+	<test name="Repair order service">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest">
 				<methods>
@@ -40,22 +40,24 @@
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
-					<include name="verifyPaymentResendFunction" />
+					
+				<!--<include name="verifyPaymentResendFunction" />
 					<include name="VerifyOpenInspection" />
 					<include name="VerifySendbackInspection" />
 					<include name="VerifyPublishInspections" />
 					<include name="VerifyNotifyCustomer" />
-					<include name="VerifyPrintInspection" />
+					<include name="VerifyPrintInspection" /> -->
+			<!-- 		
 					<include name="verifyCopylinktoClipboardFunctionality" />
 					<include name="verifyViewWithCustomerFunctionality" />
 					<include name="verifyEditThisROFunctionality" />
 					<include name="verifyDeleteRepairOrderFunction" />
-					<include name="verifyNotesFunctionalityOnRoDetailPage" />
+					<include name="verifyNotesFunctionalityOnRoDetailPage" /> -->
 				</methods>
 			</class>
 
 		</classes>
-	</test> -->
+	 </test>
 
 	<test name="Order List Page Test">
 		<classes>
@@ -72,4 +74,17 @@
 		</classes>
 
 	</test>
+	<test name="Multimedia page test">
+		<classes>
+			<class name="com.truvideo.tests.Multimediapagetest">
+				<methods>
+					<include name="verifyDownloadsingleimage" />
+					<include name="verifyDownloadMultipleimage" />
+					<include name="verify_functionality_Selectall" />
+					<include name="verify_functionality_Mark_Unmark" />
+					<include name="verify_View_all_functionality" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
 </suite>

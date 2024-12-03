@@ -12,7 +12,7 @@ public class PlaywrightFactory extends JavaUtility {
 	private Browser browser;
 	private BrowserContext browserContext;
 	private Page page;
- 
+
 	Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
 	int width = (int) screensize.getWidth();
 	int height = (int) screensize.getHeight();
@@ -69,30 +69,31 @@ public class PlaywrightFactory extends JavaUtility {
 			break;
 		}
 
-
 		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
- 		startTracing("Test Trace");
+		startTracing("Test Trace");
 
 		// Initialize page
 		tlPage.set(getBrowserContext().newPage());
 		getPage().navigate(prop.getProperty("baseUrl").trim());
 
-		if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase( "edge")) {
-			tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
-			tlPage.set(getBrowserContext().newPage());
-			getPage().navigate(prop.getProperty("baseUrl").trim());
-			//getPage().setViewportSize(width, height);
-			return getPage();
-		}else {
-		
-		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
-		tlPage.set(getBrowserContext().newPage());
-		getPage().navigate(prop.getProperty("baseUrl").trim());
-		getPage().setViewportSize(width, height);
-
+		/*
+		 * if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase(
+		 * "edge")) { tlBrowserContext.set(getBrowser().newContext(new
+		 * Browser.NewContextOptions().setViewportSize(null)));
+		 * tlPage.set(getBrowserContext().newPage());
+		 * getPage().navigate(prop.getProperty("baseUrl").trim());
+		 * //getPage().setViewportSize(width, height); return getPage(); }else {
+		 * 
+		 * tlBrowserContext.set(getBrowser().newContext(new
+		 * Browser.NewContextOptions().setViewportSize(width, height)));
+		 * tlPage.set(getBrowserContext().newPage());
+		 * getPage().navigate(prop.getProperty("baseUrl").trim());
+		 * getPage().setViewportSize(width, height);
+		 * 
+		 * }
+		 */
 		return getPage();
 	}
-		}
 
 	private Tracing tracing;
 

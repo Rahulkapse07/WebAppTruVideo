@@ -48,7 +48,7 @@ public class BaseTest {
 		page = pf.initBrowser(browser, headlessMode);
 
 		loginpage = new LoginPage(page);
-		page.navigate(baseUrl);
+		//page.navigate(baseUrl);
 
 	}
 

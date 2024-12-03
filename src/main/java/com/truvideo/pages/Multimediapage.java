@@ -65,7 +65,7 @@ public class Multimediapage extends JavaUtility {
 			while (!roFound) {
 				Locator TableRow = page.locator(tableRows);
 				int rowCount = TableRow.count();
-				logger.info(rowCount);
+				logger.info("Number of image  in RO " + ":" + rowCount);
 				for (int i = 0; i < rowCount - 1; i++) {
 					Locator roNumberList = TableRow.locator(Ronumber).nth(i);
 					String roNumber = roNumberList.innerText().trim();
@@ -353,7 +353,7 @@ public class Multimediapage extends JavaUtility {
 					page.waitForTimeout(5000);
 				}
 				iframe.locator(crossbutton).click();
-				logger.info("Image downloadwd in both format");
+				logger.info("Image download in both format");
 			} else {
 				System.out.println("failed");
 			}
@@ -362,7 +362,7 @@ public class Multimediapage extends JavaUtility {
 
 	}
 
-	private String Imagecheckbox = ".cdk-drag.image-list__card-item:nth-child(1) >div > mat-checkbox > div";
+	private String Imagecheckbox = ".cdk-drag.image-list__card-item:nth-child(1) >div > mat-checkbox > div.mdc-form-field";
 	private String Selectclosebtn = "div.footer-actions mat-icon:has-text('close')";
 	private String Select_all = "span.mdc-button__label:has-text(' Select All ')";
 	private String Download_Selectedimage = ".mdc-button__label  > span:has-text('Download Selected in')";
@@ -438,13 +438,14 @@ public class Multimediapage extends JavaUtility {
 			if (iframe.locator(Mark_read_buttn).isVisible()) {
 				logger.info("Mark as read element is avaiable on UI");
 				String MarkAsRead = iframe.locator(Mark_read_buttn).innerText();
-				;
+
 				System.out.println(MarkAsRead);
 				iframe.locator(Mark_read).click();
 				if (MarkAsRead.contains(" Mark as unread ")) {
 					iframe.locator(Mark_read).click();
 					page.waitForTimeout(3000);
 					// ---initial count
+					System.out.println(MarkAsRead);
 					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
 					int initialCount = Integer.parseInt(initialCountStr);
 					// ---After mark as unread
@@ -463,6 +464,7 @@ public class Multimediapage extends JavaUtility {
 
 					iframe.locator(Mark_read).click();
 					// ---initial count
+					System.out.println(MarkAsRead);
 					String initialCountStr = page.locator(Ownbadgecount).textContent().trim();
 					int initialCount = Integer.parseInt(initialCountStr);
 					// ---After mark as unread
@@ -505,10 +507,9 @@ public class Multimediapage extends JavaUtility {
 
 	private String Hiddentag1 = ".orders-detail-video__hide-video-status > p";
 	private String imageName = "div.orders-detail-video__title-body h3";
-	
-	
-	// image  
-	
+
+	// image
+
 	private String threedotforimage = ".detail-media__menu-container button mat-icon";
 	private String imagehidden = ".mat-mdc-menu-content button:nth-child(1)";
 	private String imagedownload = ".mat-mdc-menu-content button:nth-child(2)";
@@ -653,8 +654,7 @@ public class Multimediapage extends JavaUtility {
 							iframe.locator(threedotforimage).click();
 							page.waitForTimeout(2000);
 							if (iframe.locator(imagehidden).isVisible() && iframe.locator(imagedownload).isVisible()
-									&& iframe.locator(imagemediaInsight).isVisible())
-									 {
+									&& iframe.locator(imagemediaInsight).isVisible()) {
 								logger.info("All elements present after clicking Three dots");
 								if (iframe.locator(imagehidden).isVisible()) {
 									String Label = iframe.locator(imagehidden).innerText();
@@ -722,11 +722,10 @@ public class Multimediapage extends JavaUtility {
 										}
 
 									}
-									
-									if(iframe.locator(".mat-mdc-menu-trigger.btn-download-all span").isVisible()) {
+
+									if (iframe.locator(".mat-mdc-menu-trigger.btn-download-all span").isVisible()) {
 										iframe.locator(".mat-mdc-menu-trigger.btn-download-all span").click();
 										iframe.locator("span.mat-mdc-menu-item-text:has-text('JPG')").click();
-										
 
 									}
 								}

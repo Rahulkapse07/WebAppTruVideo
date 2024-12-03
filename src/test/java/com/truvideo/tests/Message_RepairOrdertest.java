@@ -104,8 +104,8 @@ public class Message_RepairOrdertest extends BaseTest {
 	}
 
 	@Test()
-	public void verifyMessageuser() {
-		Assert.assertTrue(MessageScreen_order.Verify_message_Name());
+	public void Verify_Conversation_Channel() throws Exception {
+		Assert.assertTrue(MessageScreen_order.Verify_Conversation_Channel());
 	}
 
 	@Test(description = "MT-2159 ,MT-2287")
@@ -127,5 +127,13 @@ public class Message_RepairOrdertest extends BaseTest {
 	public void verifyChannelname() throws Exception {
 		MessageScreen_order.verifychannelname("SMS");
 
+	}
+	@Test(description = "WA-6163")
+	public void verify_videolink_functionality() {
+		MessageScreen_order.verify_videolink_functionality("SMS");
+	}
+	@Test
+	public void Verify_welcome_message() {
+		MessageScreen_order.Verify_welcome_message();
 	}
 }
