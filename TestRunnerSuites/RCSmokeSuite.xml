@@ -1,5 +1,4 @@
-<suite name="RC Smoke Suite" parallel="false" thread-count="3"
-	verbose="5" preserve-order="false">
+<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="false">
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
@@ -8,7 +7,7 @@
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
 
-<!-- 	<test name="Login page">
+	<test name="Login page">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest">
 			</class>
@@ -22,9 +21,46 @@
 	<test name="Message service">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
+				<methods>
+					<include name="verifyDefaultFilters" />
+					<include name="verifyfilters" />
+					<include name="verifyWhatsAppChatEnablecondition" />
+					<include name="verifyGoToRopage" />
+					<include name="Verify_Conversation_Channel" />
+					<include name="MessageSendattachments" />
+					<include name="verifyconversationStartfromRO" />
+					<include name="verifychannelownereditRo" />
+					<include name="verifyChannelname" />
+					<include name="verify_videolink_functionality" />
+					<include name="Verify_welcome_message" />
+
+
+				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test>
+	
+	<test name="Message Sales">
+		<classes>
+			<class name="com.truvideo.tests.Message_RepairOrdertest">
+				<methods>
+					<include name="VerifyAll_Elements" />
+					<include name="verifyfilters" />
+					<include name="verifyWhatsAppChatEnablecondition" />
+					<include name="verifyGoToRopage" />
+					<include name="Verify_Conversation_Channel" />
+					<include name="MessageSendattachments" />
+					<include name="verifyconversationStartfromRO" />
+					<include name="verifychannelownereditRo" />
+					<include name="verifyChannelname" />
+					<include name="verify_videolink_functionality" />
+					<include name="Verify_welcome_message" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
 
 	<test name="Repair order service">
 		<classes>
@@ -40,24 +76,24 @@
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
-					
-				<!--<include name="verifyPaymentResendFunction" />
+
+					<include name="verifyPaymentResendFunction" />
 					<include name="VerifyOpenInspection" />
 					<include name="VerifySendbackInspection" />
 					<include name="VerifyPublishInspections" />
 					<include name="VerifyNotifyCustomer" />
-					<include name="VerifyPrintInspection" /> -->
-			<!-- 		
+					<include name="VerifyPrintInspection" />
+
 					<include name="verifyCopylinktoClipboardFunctionality" />
 					<include name="verifyViewWithCustomerFunctionality" />
 					<include name="verifyEditThisROFunctionality" />
 					<include name="verifyDeleteRepairOrderFunction" />
-					<include name="verifyNotesFunctionalityOnRoDetailPage" /> -->
+					<include name="verifyNotesFunctionalityOnRoDetailPage" />
 				</methods>
 			</class>
 
 		</classes>
-	 </test>
+	</test>
 
 	<test name="Order List Page Test">
 		<classes>
@@ -86,5 +122,6 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+
+	</test>
 </suite>

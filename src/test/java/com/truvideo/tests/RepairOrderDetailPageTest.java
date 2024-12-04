@@ -29,37 +29,37 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.addVideoToOrder();
 	}
 
-	@Test(dependsOnMethods = "verifyAddMediaFunction_FirstVideo", description = "" )
+	@Test( priority = 3, description = "" )
 	public void verifySendToCustomer_ForFirstVideo() {
 		repairOrderPage.sendVideoToCustomer("WhatsApp");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForFirstVideo", description = "" )
+	@Test(priority = 4, description = "" )
 	public void verifySendToCustomer_ForSecondVideo() {
 		repairOrderPage.sendVideoToCustomer("SMS");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForSecondVideo", description = "")
+	@Test(priority = 5, description = "")
 	public void verifyViewedStatus() {
 		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
 
-	@Test(priority = 7, description =  "")
+	@Test(priority = 6, description =  "")
 	public void verifyVariousActivityOfEstimate() {
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
-	@Test(priority = 8, dependsOnMethods = "verifyVariousActivityOfEstimate", description = "" )
+	@Test(priority = 7, description = "" )
 	public void verifySendEstimateFunction() {
 		repairOrderPage.sendEstimate("SMS");
 	}
 
-	@Test(priority = 9, dependsOnMethods = "verifySendEstimateFunction", description = "")
+	@Test(priority = 8, description = "")
 	public void verifyResendEstimateFunction() {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(priority = 10, dependsOnMethods = "verifySendEstimateFunction", description = "" )
+	@Test(priority = 9, description = "" )
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
@@ -76,12 +76,12 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.createPayment("WhatsApp");
 	}
 
-	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction", description = "" )
+	@Test(priority = 12, description = "" )
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
 	}
 
-	@Test(priority = 13, dependsOnMethods = "verifyPaymentResendFunction", description = "" )
+	@Test(priority = 13, description = "" )
 	public void verifySubmitPayment_ProcessedPayment() {
 
 		repairOrderPage.submitPayment("SMS");

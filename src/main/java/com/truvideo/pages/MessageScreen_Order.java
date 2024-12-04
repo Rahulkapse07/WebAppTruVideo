@@ -41,8 +41,8 @@ public class MessageScreen_Order extends JavaUtility {
 	private String message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
 	private String startconversationBtn = ".chat-input__button span.mdc-button__label";
 	private String countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
-	private String startconversatationFirstname = "#mat-input-1";
-	private String startconversatationlastname = "#mat-input-2";
+	private String startconversatationFirstname = "//input[@placeholder = 'Customer first name']";
+	private String startconversatationlastname = "//input[@placeholder = 'Customer last name']";
 	private String startconMobileno = "ngx-material-intl-tel-input mat-form-field:nth-child(2) input";
 	private String message_Search_icon = "#profile div.avatar-container";
 	private String startConverSMS_Whatsapp_filterbuttn = "form mat-form-field:nth-child(4) ";
@@ -1007,7 +1007,6 @@ public class MessageScreen_Order extends JavaUtility {
 		String Channelname = iframe.locator(rochannelName).innerText();
 		if (ROChannelname.equals(Channelname)) {
 			page.waitForTimeout(5000);
-			logger.info("test case");
 			if (iframe.locator(message_start_convers_buttn).isVisible()) {
 				iframe.locator(message_start_convers_buttn).click();
 				logger.info("Verify Start Conversation Tab");
