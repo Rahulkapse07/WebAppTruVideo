@@ -51,7 +51,7 @@ public class BaseTest {
 
 		// pf.startTracing("traceName1");
 		loginpage = new LoginPage(page);
-		page.navigate(baseUrl);
+		//page.navigate(baseUrl);
 
 	}
 	

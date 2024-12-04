@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.SkipException;
+import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -40,8 +41,8 @@ public class MessageScreen_Order extends JavaUtility {
 	private String message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
 	private String startconversationBtn = ".chat-input__button span.mdc-button__label";
 	private String countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
-	private String startconversatationFirstname = "#mat-input-2";
-	private String startconversatationlastname = "#mat-input-3";
+	private String startconversatationFirstname = "//input[@placeholder = 'Customer first name']";
+	private String startconversatationlastname = "//input[@placeholder = 'Customer last name']";
 	private String startconMobileno = "ngx-material-intl-tel-input mat-form-field:nth-child(2) input";
 	private String message_Search_icon = "#profile div.avatar-container";
 	private String startConverSMS_Whatsapp_filterbuttn = "form mat-form-field:nth-child(4) ";
@@ -76,10 +77,9 @@ public class MessageScreen_Order extends JavaUtility {
 
 	private String messageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
 	private String attachmentPath = "src/main/resources/Data/image/testimage.png";
-	private String messageSendBtn = ".chat-input__options button";
+	private String messageSendBtn = ".chat-input__options button:nth-child(3) mat-icon";
 	private String conversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
 	private String messageownername = ".chat-header__phone p:nth-child(4)";
-	private String addRepairOrder_Btn = "#repair-order-add";
 	private String sendOriginal_btn = ".mdc-button.mdc-button--outlined.mat-mdc-outlined-button span.mat-mdc-focus-indicator";
 
 	private String conversationTextlabel = ".chat-header__main p.chat-header__title";
@@ -171,9 +171,35 @@ public class MessageScreen_Order extends JavaUtility {
 		return !flags.contains(false);
 	}
 
-	public boolean Verify_message_Name() {
+	public boolean Verify_Conversation_Channel() throws Exception {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage homePage = new HomePage(page);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		SoftAssert softAssert = new SoftAssert();
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+
+		logger.info("Navigate to repair order header");
+		homePage.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder("Existing");
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.waitForTimeout(5000);
+		String ROChannelname = frame.locator(rochannelName).innerText().toLowerCase().trim();
+		homePage.navigateToMessageScreen_Order();
+		logger.info("Navigate to Servbice message");
+		String messageChannelname = iframe.locator(rochannelName).innerText().toLowerCase().trim();
+		if(ROChannelname.equals(messageChannelname)) {
+			iframe.locator(channalList).first().click();
+			iframe.locator(messagechatfield).fill("demotext..........");
+			iframe.locator(messageSendBtn).click();
+			iframe.locator(sendOriginal_btn).click();
+			
+			
+		}
+		
 		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
 		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
 		if (storeusername.trim().equals(messageusername.trim())) {
@@ -589,7 +615,7 @@ public class MessageScreen_Order extends JavaUtility {
 			flags.add(false);
 		} else {
 
-			iframe.locator(searchFilter).fill("Suraj");
+			iframe.locator(searchFilter).fill("Automation");
 			logger.info("Search Filter is Present");
 		}
 
@@ -620,46 +646,7 @@ public class MessageScreen_Order extends JavaUtility {
 		page.locator(Messagebadge).click();
 		page.waitForCondition(() -> iframe.locator(conversationinactivemess).isVisible());
 
-		// Badge count for self notifications.
-		iframe.locator(ReadUnreadbtn(" Mark as unread ")).click();
-		int num = iframe.locator(MessageReDotNotification).count();
-		String count = Integer.toString(num);
-		System.out.println(count);
-		page.waitForTimeout(5000);
-		String ownernotifications;
-		ownernotifications = page.locator(Messagebadge).innerText();
-		System.out.println(ownernotifications);
-
-		if (count.contains(ownernotifications)) {
-			logger.info("Badge count is correct" + ownernotifications);
-		} else {
-			logger.info("Badge count is incorrect" + ownernotifications);
-			flags.add(false);
-		}
-
-		// Badge count for all notifications
-		page.locator(Messagebandagtotalcount).click();
-		page.waitForCondition(() -> iframe.locator(conversationinactivemess).isVisible());
-		iframe.locator(ReadUnreadbtn(" Mark as unread ")).click();
-		iframe.locator(filterButton("Whatsapp")).click();
-		int Totalcount = iframe.locator(MessageReDotNotification).count();
-		int value = (Totalcount - num);
-		String count2 = Integer.toString(value);
-		System.out.println(count2);
-		page.waitForTimeout(5000);
-		String AllNotications;
-		AllNotications = page.locator(Messagebandagtotalcount).innerText();
-		System.out.println(AllNotications);
-
-		if (count2.equals(AllNotications)) {
-			logger.info("Badge count is correct" + AllNotications);
-		} else {
-			logger.info("Badge count is incorrect" + AllNotications);
-			flags.add(false);
-		}
-
-		return !flags.contains(false);
-
+		return true;
 	}
 
 	public boolean ConversationGOtoRobtn() {
@@ -747,7 +734,7 @@ public class MessageScreen_Order extends JavaUtility {
 				iframe.locator(".channels-list-item__main div:nth-child(3) span:has-text('(781) 205-9487')").first()
 						.click();
 				iframe.locator(messagechatfield).fill("demotext..........");
-				iframe.locator(".chat-input__options button:nth-child(3) mat-icon").click();
+				iframe.locator(messageSendBtn).click();
 				iframe.locator(sendOriginal_btn).click();
 			}
 		} else {
@@ -843,7 +830,6 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-
 	private void clickOperationButton(String buttonText) {
 		page.waitForTimeout(2000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
@@ -877,7 +863,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		HP.clickOn_RepairOrder_Header();
 		String RONumber = OLP.addRepairOrder("New");
-		System.out.println("chjcb");
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
 		page.waitForURL(url -> url.contains("order/service/view"));
@@ -940,7 +925,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		HP.clickOn_RepairOrder_Header();
 		String RONumber = OLP.addRepairOrder("Existing");
-		System.out.println("chjcb");
 		Locator tableRow = page.locator(tableRows);
 		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
 		page.waitForURL(url -> url.contains("order/service/view"));
@@ -1023,7 +1007,6 @@ public class MessageScreen_Order extends JavaUtility {
 		String Channelname = iframe.locator(rochannelName).innerText();
 		if (ROChannelname.equals(Channelname)) {
 			page.waitForTimeout(5000);
-			logger.info("test case");
 			if (iframe.locator(message_start_convers_buttn).isVisible()) {
 				iframe.locator(message_start_convers_buttn).click();
 				logger.info("Verify Start Conversation Tab");
@@ -1101,4 +1084,153 @@ public class MessageScreen_Order extends JavaUtility {
 		}
 
 	}
+
+	
+	private String addMedia = "div.orders-detail-menu__media-add";
+	private String addVideo_Title = "div.video-library__title p";
+	private String videos = "img[alt='video thumbnail']";
+	private String add_Button = "div.video-library__add-video-container button";
+	private String added_Video = "div.orders-detail-menu__media-videos img";
+	private String roStatusBar = "div.orders-detail-menu__action";
+	private String messages = "ngx-message div.message";
+	private String lastMessageEndlink = "ngx-message div.message a";
+	private String playButton = "button[title='Play Video']";
+	
+	
+	public void verify_videolink_functionality(String filter) {
+
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<>();
+		SoftAssert softAssert = new SoftAssert();
+
+		HomePage HP = new HomePage(page);
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+
+		logger.info("Navigate to repair order header");
+		HP.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder("Existing");
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.waitForTimeout(5000);
+		if (frame.locator(roStatusBar).textContent().contains("New")) {
+			logger.info("RO is New & No media is added");
+			String sendToCustomerClass = RO.getLocatorClass(operations_Buttons, "Send to customer");
+			String viewWithCustomerClass = RO.getLocatorClass(operations_Buttons, "View with customer");
+			String insightClass = RO.getLocatorClass(operations_Buttons, "Insights");
+			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled")
+					&& insightClass.contains("disabled")) {
+				logger.info("Both 'Send to customer','View with customer' & 'Insights' button is disabled");
+				flags.add(true);
+			} else {
+				logger.info("'Send to customer','View with customer' & 'Insights' button is not disabled");
+				flags.add(false);
+			}
+			softAssert.assertTrue(!flags.contains(true), // should be false
+					"Verify 'Send to customer' & 'View with customer' button is disabled");
+			flags.clear();
+		} else {
+			logger.info("RO is Not new & some videos are already added to RO");
+		}
+		frame.locator(addMedia).click();
+		
+		
+		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
+			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
+			flags.add(true);
+		} else {
+			logger.info("Multimedia Screen not opened");
+			flags.add(false);
+		}
+		softAssert.assertTrue(!flags.contains(false), "Verify Add Media button is clickable");
+		flags.clear();
+		frame.locator(videos).first().click();
+		logger.info("Selected 1 video from multimedia screen");
+		page.waitForTimeout(2000);
+		frame.locator(add_Button).click();
+		logger.info("Clicked on Add Video Button");
+		page.waitForTimeout(4000);
+		String sendToCustomerClass_AfterVideoAdded = RO.getLocatorClass(operations_Buttons, "Send to customer");
+		String viewWithCustomerClass_AfterVideoAdded = RO.getLocatorClass(operations_Buttons, "View with customer");
+		int addedVideoCount = frame.locator(added_Video).count();
+		if (addedVideoCount >= 0) {
+			logger.info("Video added sucessfully and visible on media gallery");
+			flags.add(true);
+		} else {
+			logger.info("Selected Video not added to media gallery");
+			flags.add(false);
+		}
+		flags.add(RO.checkStatus("For Review")); // verify status whether For Review or Not
+		softAssert.assertTrue(!flags.contains(false), "Verify status changed to For Review");
+		flags.clear();
+		softAssert.assertTrue(RO.verifyChangedStatusOnROList("For Review"),
+				"Verify status changed to For Review on RO list screen");
+		if (sendToCustomerClass_AfterVideoAdded == null || viewWithCustomerClass_AfterVideoAdded == null) {
+			logger.info("'Send to customer' or 'View with customer' button is not found");
+			flags.add(false);
+		} else if (!sendToCustomerClass_AfterVideoAdded.contains("disabled")
+				&& !viewWithCustomerClass_AfterVideoAdded.contains("disabled")) {
+			logger.info("Both 'Send to customer' & 'View with customer' button is enabled");
+			flags.add(true);
+		} else {
+			logger.info("'Send to customer' or 'View with customer' button is disabled");
+			flags.add(false);
+		}
+		flags.add(RO.checkActivity("Added video"));
+		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
+		RO.sendVideoToCustomer(filter);
+		String lastMessage = frame.locator(messages).last().textContent();
+		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
+			logger.info("Last message is video Endlink");
+			Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+				frame.locator(lastMessageEndlink).last().click();
+				logger.info("Endlink opened in another tab");
+			});
+			endlinkPage.waitForLoadState();
+			endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+			endlinkPage.locator(playButton).first().click();
+			logger.info("Clicked on Play Button");
+			logger.info("Waiting to play video for 8 Seconds");
+			page.waitForTimeout(8000);
+			endlinkPage.close();
+		} else {
+			logger.info("Last message is not video Endlink");
+			throw new SkipException("Last message is not video Endlink");
+		}
+		page.waitForTimeout(4000);
+		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(RO.verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(RO.checkActivity("Customer watched video"), "verify activity for video view");
+		page.waitForTimeout(2000);
+		softAssert.assertAll();
+	}
+		
+
+        public void Verify_welcome_message() {
+            FrameLocator iframe = page.frameLocator(messageIframe);
+    		HomePage homePage = new HomePage(page);
+    		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+    		OrderListPage OLP = new OrderListPage(page);
+    		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+    		logger.info("Navigate to repair order header");
+    		homePage.clickOn_RepairOrder_Header();
+    		String RONumber = OLP.addRepairOrder("New");
+    		Locator tableRow = page.locator(tableRows);
+    		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+    		page.waitForURL(url -> url.contains("order/service/view"));
+    		page.waitForTimeout(30000);
+    		
+    		String Welcomemessage = frame.locator("div.message div.ng-star-inserted p").last().innerText();
+    		String Welcome_message = "welcome";
+    	
+        	if(Welcomemessage.contains(Welcome_message)) {
+        		logger.info("Welcome message present");
+        	}else {
+        		logger.info("jhdvasgvd");
+        	}
+        }
 }

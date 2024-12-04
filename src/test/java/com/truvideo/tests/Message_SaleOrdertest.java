@@ -34,33 +34,33 @@ public class Message_SaleOrdertest extends BaseTest {
 		Assert.assertTrue(MessageScreen_prospect.Verify_message_Name());
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 4)
 	public void verifyMyFilter() {
 		Assert.assertTrue(MessageScreen_prospect.verifyMyFilter());
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 5)
 	public void Verify_my_filterIsApplied() {
 		Assert.assertTrue(MessageScreen_prospect.Verify_my_filterIsApplied());
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 6)
 	public void Verify_channel_ownername() {
 		Assert.assertTrue(MessageScreen_prospect.Verify_channel_ownername());
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 7)
 	public void verifystartConversatationbtn() {
 		Assert.assertTrue(
 				MessageScreen_prospect.verifyStartconversatationbtn(prop.getProperty("MobileNo"), "WHATSAPP"));
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 8)
 	public void VerifyMessageSendattachments() {
 		Assert.assertTrue(MessageScreen_prospect.MessageSendAttachments(prop.getProperty("MobileNo")));
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 9)
 	public void VerifyConversationMessage_RoDetails() throws Exception {
 		MessageScreen_prospect.VerifyConversationMessage_RoDetails();
 	}

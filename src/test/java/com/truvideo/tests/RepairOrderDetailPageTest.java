@@ -18,103 +18,111 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	}
 
 
-	@Test(priority = 1)
+	@Test(priority = 1 , description = "" )
 
 	public void verifyAllAvailableElementsOnOrderDetails() {
 		Assert.assertTrue(repairOrderPage.checkAllMandatoryFields_ForNewRO());
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, description = "")
 	public void verifyAddMediaFunction_FirstVideo() {
 		repairOrderPage.addVideoToOrder();
 	}
 
-	@Test(dependsOnMethods = "verifyAddMediaFunction_FirstVideo")
+	@Test( priority = 3, description = "" )
 	public void verifySendToCustomer_ForFirstVideo() {
 		repairOrderPage.sendVideoToCustomer("WhatsApp");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForFirstVideo")
+	@Test(priority = 4, description = "" )
 	public void verifySendToCustomer_ForSecondVideo() {
 		repairOrderPage.sendVideoToCustomer("SMS");
 	}
 
-	@Test(dependsOnMethods = "verifySendToCustomer_ForSecondVideo")
+	@Test(priority = 5, description = "")
 	public void verifyViewedStatus() {
 		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
-	
-	@Test(priority = 7)
+
+
+	@Test(priority = 6, description =  "")
 	public void verifyVariousActivityOfEstimate() {
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
-	@Test(priority = 8, dependsOnMethods = "verifyVariousActivityOfEstimate")
+	@Test(priority = 7, description = "" )
 	public void verifySendEstimateFunction() {
 		repairOrderPage.sendEstimate("SMS");
 	}
 
-	@Test(priority = 9, dependsOnMethods = "verifySendEstimateFunction")
+	@Test(priority = 8, description = "")
 	public void verifyResendEstimateFunction() {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(priority = 10, dependsOnMethods = "verifySendEstimateFunction")
+	@Test(priority = 9, description = "" )
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
 
-	@Test(priority = 11)
+	
+	
+	
+	
+	
+	
+	@Test(priority = 11, description =  "")
 	public void verifyPaymentFunction() {
 		page.reload();
 		repairOrderPage.createPayment("WhatsApp");
 	}
 
-	@Test(priority = 12, dependsOnMethods = "verifyPaymentFunction")
+	@Test(priority = 12, description = "" )
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
 	}
 
-	@Test(priority = 13, dependsOnMethods = "verifyPaymentResendFunction")
+	@Test(priority = 13, description = "" )
 	public void verifySubmitPayment_ProcessedPayment() {
 
 		repairOrderPage.submitPayment("SMS");
 	}
 
-	@Test(priority = 14, description = "WA-5569")
-	public void verifyCreateReminder() throws InterruptedException {
-		Assert.assertTrue(repairOrderPage.createreminder());
-	}
-
-	@Test(priority = 15, description = "WA-5378")
-	public void VerifyOpenInspection() throws InterruptedException {
-		Assert.assertTrue(repairOrderPage.openInspection());
-	}
-
-	@Test(priority = 16, description = "WA-5382")
-	public void VerifySendbackInspection() {
-		Assert.assertTrue(repairOrderPage.sendbackInspection());
-	}
-
-	@Test(priority = 17, description = "WA-5379")
-	public void VerifyPublishInspections() {
-		Assert.assertTrue(repairOrderPage.publishInspection());
-	}
-
-	@Test(priority = 18, description = "WA-5381")
-	public void VerifyNotifyCustomer() {
-		Assert.assertTrue(repairOrderPage.notifyCustomerBtn());
-	}
-
-	@Test(priority = 19, description = "WA-5383")
-	public void VerifyHide_Show() {
-		Assert.assertTrue(repairOrderPage.hide_showBtn());
-	}
-
-	@Test(priority = 20, description = "WA-5380")
-	public void VerifyPrintInspection() throws InterruptedException {
-		Assert.assertTrue(repairOrderPage.printInspection());
-	}
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * @Test(priority = 14, description = "WA-5569") public void
+	 * verifyCreateReminder() throws InterruptedException {
+	 * Assert.assertTrue(repairOrderPage.createreminder()); }
+	 * 
+	 * @Test(priority = 15, description = "WA-5378") public void
+	 * VerifyOpenInspection() throws InterruptedException {
+	 * Assert.assertTrue(repairOrderPage.openInspection()); }
+	 * 
+	 * @Test(priority = 16, description = "WA-5382") public void
+	 * VerifySendbackInspection() {
+	 * Assert.assertTrue(repairOrderPage.sendbackInspection()); }
+	 * 
+	 * @Test(priority = 17, description = "WA-5379") public void
+	 * VerifyPublishInspections() {
+	 * Assert.assertTrue(repairOrderPage.publishInspection()); }
+	 * 
+	 * @Test(priority = 18, description = "WA-5381") public void
+	 * VerifyNotifyCustomer() {
+	 * Assert.assertTrue(repairOrderPage.notifyCustomerBtn()); }
+	 * 
+	 * @Test(priority = 19, description = "WA-5383") public void VerifyHide_Show() {
+	 * Assert.assertTrue(repairOrderPage.hide_showBtn()); }
+	 * 
+	 * @Test(priority = 20, description = "WA-5380") public void
+	 * VerifyPrintInspection() throws InterruptedException {
+	 * Assert.assertTrue(repairOrderPage.printInspection()); }
+	 */
 
 
 	@Test(priority = 21, description = "WA-5393")

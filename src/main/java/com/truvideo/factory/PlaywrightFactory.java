@@ -12,7 +12,7 @@ public class PlaywrightFactory extends JavaUtility {
 	private Browser browser;
 	private BrowserContext browserContext;
 	private Page page;
- 
+
 	Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
 	int width = (int) screensize.getWidth();
 	int height = (int) screensize.getHeight();
@@ -69,10 +69,11 @@ public class PlaywrightFactory extends JavaUtility {
 			break;
 		}
 
-
 		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
+
 		// UnComment below code to start Tracing of script
  		//startTracing("Test Trace");
+
 
  		// UnComment below code to start recording of browser
 		String videoDir = System.getProperty("user.dir") + "/Videos/";
@@ -90,6 +91,7 @@ public class PlaywrightFactory extends JavaUtility {
 		tlPage.set(getBrowserContext().newPage());
 		getPage().navigate(prop.getProperty("baseUrl").trim());
 
+
 //		if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase( "edge")) {
 //			tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
 //			tlPage.set(getBrowserContext().newPage());
@@ -106,6 +108,7 @@ public class PlaywrightFactory extends JavaUtility {
 //	return getPage();
 //	}
 		return getPage();		}
+
 
 	private Tracing tracing;
 

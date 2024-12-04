@@ -1,7 +1,7 @@
 package com.truvideo.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,6 +11,11 @@ import com.truvideo.pages.LoginPage;
 
 
 public class LoginPageTest extends BaseTest {
+
+	@BeforeClass
+	void setup() {
+		loginpage = new LoginPage(page); //
+	}
 
 
 	@Test(priority = 1, description = "WA-5572, WA-5555")

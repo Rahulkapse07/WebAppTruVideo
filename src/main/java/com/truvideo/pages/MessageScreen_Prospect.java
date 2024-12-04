@@ -61,7 +61,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 	private String ConversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
 	private String ChannalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
 	private String MessageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
-	private String AttachmentPath = "src/main/resources/Images/testimage.png";
+	private String AttachmentPath ="src/main/resources/Data/image/testimage.png";
 	
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
@@ -516,8 +516,8 @@ public class MessageScreen_Prospect extends JavaUtility {
 		return !values.contains(false);
 
 	}
-	private String firstname = "Suraj";
-	private String lastname = "Singh";
+	private String firstname = "Automation";
+	private String lastname = "Name";
 
 	private String StartConFilter(String filter) {
 		return "#mat-select-0-panel mat-option span:has-text('" + filter + "')";
