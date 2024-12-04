@@ -71,28 +71,41 @@ public class PlaywrightFactory extends JavaUtility {
 
 
 		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
- 		startTracing("Test Trace");
+		// UnComment below code to start Tracing of script
+ 		//startTracing("Test Trace");
 
+ 		// UnComment below code to start recording of browser
+		String videoDir = System.getProperty("user.dir") + "/Videos/";
+// 		 tlBrowserContext.set(
+// 		        getBrowser().newContext(
+// 		            new Browser.NewContextOptions()
+// 		                .setViewportSize(null)
+// 		                .setRecordVideoDir(Paths.get(videoDir))
+// 		                .setRecordVideoSize(1920, 1080) // Optional: specify video resolution
+// 		        )
+// 		    );
+ 		 
+ 		
 		// Initialize page
 		tlPage.set(getBrowserContext().newPage());
 		getPage().navigate(prop.getProperty("baseUrl").trim());
 
-		if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase( "edge")) {
-			tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
-			tlPage.set(getBrowserContext().newPage());
-			getPage().navigate(prop.getProperty("baseUrl").trim());
-			//getPage().setViewportSize(width, height);
-			return getPage();
-		}else {
-		
-		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
-		tlPage.set(getBrowserContext().newPage());
-		getPage().navigate(prop.getProperty("baseUrl").trim());
-		getPage().setViewportSize(width, height);
-
-		return getPage();
-	}
-		}
+//		if(browserName.equalsIgnoreCase("chrome" )||browserName.equalsIgnoreCase( "edge")) {
+//			tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)));
+//			tlPage.set(getBrowserContext().newPage());
+//			getPage().navigate(prop.getProperty("baseUrl").trim());
+//			//getPage().setViewportSize(width, height);
+//			return getPage();
+//		}else {
+//		
+//		tlBrowserContext.set(getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(width, height)));
+//		tlPage.set(getBrowserContext().newPage());
+//		getPage().navigate(prop.getProperty("baseUrl").trim());
+//		getPage().setViewportSize(width, height);
+//
+//	return getPage();
+//	}
+		return getPage();		}
 
 	private Tracing tracing;
 
@@ -129,5 +142,17 @@ public class PlaywrightFactory extends JavaUtility {
 			getBrowser().close();
 		}
 	}
+//	public BrowserContext createNewContextWithVideo(String videoDir, String testName) {
+//	    // Create a new browser context with video recording enabled
+//	    BrowserContext context = getBrowser().newContext(
+//	        new Browser.NewContextOptions()
+//	            .setViewportSize(null)
+//	            .setRecordVideoDir(Paths.get(videoDir + testName)) // Unique directory per test
+//	            .setRecordVideoSize(1920, 1080) // Set video resolution
+//	    );
+//	    tlBrowserContext.set(context); // Store context in ThreadLocal
+//	    return context;
+//	}
+
 
 }

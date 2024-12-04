@@ -104,36 +104,36 @@ public class HomePageTest extends BaseTest {
 //		page.goBack();
 //	}
 //
-//	@Test(priority = 14)
-//	public void verify_Open_Close_OnAdvanceSearchWindow() {
-//		Assert.assertTrue(homepage.openAndCloseAdvanceSearchWindow());
-//	}
-//
-//	@Test(priority = 15)
-//	public void verify_AllAvailableCheckBox_Filters_OnAdvanceSearchWindow() {
-//		homepage.checkVariousCheckBoxFilters();
-//	}
-//
-//	@Test(priority = 16)
-//	public void verify_ThisWeek_RadioFilter_OnAdvanceSearchWindow() {
-//		Assert.assertTrue(homepage.checkThisWeeksRepairOrders());
-//	}
-//
-//	@Test(priority = 17)
-//	public void verify_ThisMonth_RadioFilter_OnAdvanceSearchWindow() {
-//		Assert.assertTrue(homepage.checkThisMonthRepairOrders());
-//	}
-//
-//	@Test(priority = 18)
-//	public void verify_DateRangeFilter_OnAdvanceSearchWindow() {
-//		Assert.assertTrue(homepage.checkRepairOrdersWithinDateRange());
-//	}
-//
-//	@Test(priority = 19)
-//	public void verify_SearchFilter_OnAdvanceSearchWindow() {
-//		Assert.assertTrue(homepage.listAsPerTheTextSearch());
-//		//Assert.assertTrue(homepage.listAsPerTheTextSearch("text"));  //Added by RK
-//	}
+	@Test(priority = 14)
+	public void verify_Open_Close_OnAdvanceSearchWindow() {
+		Assert.assertTrue(homepage.openAndCloseAdvanceSearchWindow());
+	}
+
+	@Test(priority = 15,description = "WA-5563")
+	public void verify_AllAvailableCheckBox_Filters_OnAdvanceSearchWindow() {
+		homepage.checkVariousCheckBoxFilters();
+	}
+
+	@Test(priority = 16)
+	public void verify_ThisWeek_RadioFilter_OnAdvanceSearchWindow() {
+		Assert.assertTrue(homepage.checkThisWeeksRepairOrders());
+	}
+
+	@Test(priority = 17,description = "WA-5509")
+	public void verify_ThisMonth_RadioFilter_OnAdvanceSearchWindow() {
+		Assert.assertTrue(homepage.checkThisMonthRepairOrders());
+	}
+
+	@Test(priority = 18,description ="WA-5580,5581")
+	public void verify_DateRangeFilter_OnAdvanceSearchWindow() {
+		Assert.assertTrue(homepage.checkRepairOrdersWithinDateRange(),"Searched Data is NOT Within Date range");
+	}
+
+	@Test(priority = 19)
+	public void verify_SearchFilter_OnAdvanceSearchWindow() {
+		Assert.assertTrue(homepage.listAsPerTheTextSearch());
+		//Assert.assertTrue(homepage.listAsPerTheTextSearch("text"));  //Added by RK
+	}
 //
 //	@Test(priority = 20)
 //	public void verify_Notification_BellIconWorking() {

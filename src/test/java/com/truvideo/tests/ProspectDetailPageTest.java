@@ -56,9 +56,18 @@ public class ProspectDetailPageTest extends BaseTest {
 	public void verifyInsightFunctionality() {
 		prospectdetailpage.insightFunctionality();
 	}
+	
+	@Test(description = "5410")
+	public void verifyTradeInLinkFunctionality() {
+		prospectdetailpage.verifyTradeInLink("SMS");
+	}
+	@Test(description = "5405")
+	public void verifyEditthisSOFunctionality() {
+		prospectdetailpage.editThisSO();
+	}
 	@Test(priority = 24,description = "WA-5409") // try to run this method at the end of class
 	public void verifyDeleteSalesOrderFunction() throws InterruptedException {
-		prospectdetailpage.deleteRepairOrder();
+		Assert.assertTrue(prospectdetailpage.deleteSalesOrder());
 	}
 
 

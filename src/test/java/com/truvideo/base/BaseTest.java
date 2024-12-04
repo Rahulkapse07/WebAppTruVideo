@@ -1,8 +1,10 @@
 package com.truvideo.base;
 
+import java.lang.reflect.Method;
 import java.util.Properties;
 import org.testng.annotations.*;
 import com.aventstack.extentreports.ExtentTest;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
@@ -17,7 +19,7 @@ public class BaseTest {
 
 	private String baseUrl; // For storing the final base URL
 
-	@BeforeTest
+	@BeforeClass
 	@Parameters({ "browser", "headless", "baseUrl" })
 	public void loginPageSetup(
 			@Optional("chrome") String browser, 
@@ -40,24 +42,30 @@ public class BaseTest {
 			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
 		}
 
-		System.out.println("Browser: " + browser);
-		System.out.println("Headless: " + headless);
-		System.out.println("Final Base URL: " + baseUrl);
+//		System.out.println("Browser: " + browser);
+//		System.out.println("Headless: " + headless);
+//		System.out.println("Final Base URL: " + baseUrl);
 
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		page = pf.initBrowser(browser, headlessMode);
 
+		// pf.startTracing("traceName1");
 		loginpage = new LoginPage(page);
 		page.navigate(baseUrl);
 
 	}
+	
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
 		String destinationField = System.getProperty("user.dir") + "/Reports/";
 		String traceFilePath = destinationField + "trace.zip";
-		pf.stopTracing(traceFilePath);
+		//pf.stopTracing(traceFilePath);
 		pf.closeBrowser();
 	}
+
+
+
+
 }
 

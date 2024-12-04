@@ -60,7 +60,8 @@ public class HomePage extends JavaUtility {
 	private String repairOrderDates = "#repair-order-results tbody tr td:nth-of-type(2)";
 	private String dateRange_CheckBox = "//input[@value='date_range']";
 	private String selectDateFrom_1st_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(1) td:nth-of-type(2)";
-	private String selectDateFrom_2nd_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(6) td:nth-of-type(6)";
+	//private String selectDateFrom_2nd_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(6) td:nth-of-type(6)";
+	private String selectDateFrom_2nd_Calendar="div[class='datepicker-days'] tbody tr:nth-of-type(2) td:nth-of-type(7)";
 	private String fromDate_TextBox = "#date-range-from";
 	private String toDate_TextBox = "#date-range-to";
 
@@ -575,6 +576,7 @@ public class HomePage extends JavaUtility {
 		}
 		page.click(dateRange_CheckBox); // Selecting date range with the help of calendar
 		page.click(fromDate_TextBox);
+		
 		page.locator(selectDateFrom_1st_Calendar).first().click();
 		String selected_StartDate = page.inputValue(fromDate_TextBox) + " 12:00 AM";
 		logger.info("Entered from date in the calendar & Entered date is : " + selected_StartDate);

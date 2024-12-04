@@ -11,10 +11,7 @@ import com.truvideo.pages.LoginPage;
 
 
 public class LoginPageTest extends BaseTest {
-	@BeforeMethod
-	void setup() {
-		loginpage = new LoginPage(page); //
-	}
+
 
 	@Test(priority = 1, description = "WA-5572, WA-5555")
 	public void verifyAllElementsOfLoginPage() {

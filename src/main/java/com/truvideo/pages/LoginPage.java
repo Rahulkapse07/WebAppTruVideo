@@ -90,7 +90,7 @@ public class LoginPage extends JavaUtility {
 	}
 
 	public HomePage navigateToHomePage(String username, String password) {
-		System.out.println(page.url());
+		//System.out.println(page.url());
 
 		if (page.url().contains("https://rc.truvideo.com/login")) {
 
