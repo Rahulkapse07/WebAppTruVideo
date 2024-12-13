@@ -1,5 +1,7 @@
 package com.truvideo.tests;
 
+import javax.mail.SendFailedException;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -63,6 +65,12 @@ public class Message_SaleOrdertest extends BaseTest {
 	@Test(priority = 9)
 	public void VerifyConversationMessage_RoDetails() throws Exception {
 		MessageScreen_prospect.VerifyConversationMessage_RoDetails();
+	}
+	@Test(priority = 10)
+	
+	public void VerifyBadgecountfunctionality() throws Exception {
+		MessageScreen_prospect.VerifyBadgecountfunctionality();
+		
 	}
 
 }

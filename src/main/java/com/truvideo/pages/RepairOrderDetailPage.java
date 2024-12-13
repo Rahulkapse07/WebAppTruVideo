@@ -1201,19 +1201,14 @@ public class RepairOrderDetailPage extends JavaUtility {
 		page.waitForTimeout(9000);
 
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		// page.waitForCondition(()->frame.locator(communicationTabs).isVisible());
 		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		page.waitForTimeout(5000);
 		logger.info(" back 2 ");
 		logger.info(OrderListPage.newRoNumber);
-		// frame.locator(".menu-options__info.delete").click();
 		clickOperationButton("Delete this RO");
 		page.waitForTimeout(2000);
-
 		HomePage hp = new HomePage(page);
-
-		// boolean bb=hp.globalSearchwitheText(OrderListPage.newRoNumber);
 
 		if (hp.globalSearchwitheText(OrderListPage.newRoNumber)) {
 			logger.info("Selected RO has been deleted successfully");
@@ -1223,19 +1218,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 			return false;
 		}
 
-		// page.waitForCondition(() ->
-		// frame.locator(topRightCornerNotification1).isVisible());
-
-//		page.waitForSelector(topRightCornerNotification1);
-//		System.out.println("545454");
-//		String topRightCornerNotificationPopup = page.locator(topRightCornerNotification1).innerText();
-//		logger.info(topRightCornerNotificationPopup);
-//		if (topRightCornerNotificationPopup.contains(AppConstants.REPAIR_ORDER_DELETED_MESSAGE)) {
-//			logger.info("New RO has been deleted successfully Successfully");
-//		} else {
-//			logger.info("Getting error to delete Repair Order ");
-//		}
-		// softAssert.assertAll();
 	}
 
 	// Create reminder on detail page
@@ -2132,6 +2114,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		return true;
 
+	}
+	
+	public void verifyRejectdeletefunctionality( ) {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		addVideoToOrder();
 	}
 
 }

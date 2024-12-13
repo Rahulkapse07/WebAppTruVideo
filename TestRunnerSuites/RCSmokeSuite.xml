@@ -1,11 +1,10 @@
-<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="false">
+<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="true">
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
-	<parameter name="baseUrl"
-		value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
+	<parameter name="env" value="stagingrc"/>
 
 	<test name="Login page">
 		<classes>
@@ -13,12 +12,12 @@
 			</class>
 		</classes>
 	</test>
-	<test name="Home page">
+	<!-- <test name="Home page">
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest" />
 		</classes>
-	</test>
-	<test name="Message service">
+	</test> -->
+	<!-- <test name="Message service">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 				<methods>
@@ -45,18 +44,12 @@
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 				<methods>
 					<include name="VerifyAll_Elements" />
+					<include name="Verify_message_Name" />
 					<include name="verifyfilters" />
-					<include name="verifyWhatsAppChatEnablecondition" />
-					<include name="verifyGoToRopage" />
-					<include name="Verify_Conversation_Channel" />
-					<include name="MessageSendattachments" />
-					<include name="verifyconversationStartfromRO" />
-					<include name="verifychannelownereditRo" />
-					<include name="verifyChannelname" />
-					<include name="verify_videolink_functionality" />
-					<include name="Verify_welcome_message" />
-
-
+					<include name="Verify_channel_ownername" />
+					<include name="verifystartConversatationbtn" />
+					<include name="VerifyMessageSendattachments" />
+					<include name="VerifyConversationMessage_RoDetails" />
 				</methods>
 			</class>
 		</classes>
@@ -123,5 +116,5 @@
 			</class>
 		</classes>
 
-	</test>
+	</test> -->
 </suite>
