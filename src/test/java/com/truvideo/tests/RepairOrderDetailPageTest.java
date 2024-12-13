@@ -44,6 +44,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
 
+
 	@Test(priority = 6, description =  "")
 	public void verifyVariousActivityOfEstimate() {
 		repairOrderPage.activitiesOfCreateEstimateWindow();

@@ -1,5 +1,6 @@
 package com.truvideo.base;
 
+import java.lang.reflect.Method;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
@@ -8,6 +9,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
@@ -52,17 +54,23 @@ public class BaseTest {
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		page = pf.initBrowser(browser, headlessMode);
 
+		// pf.startTracing("traceName1");
 		loginpage = new LoginPage(page);
 		page.navigate(baseUrl);
 
 	}
+	
 
 	@AfterClass
 	public void tearDown() {
 		String destinationField = System.getProperty("user.dir") + "/Reports/";
 		String traceFilePath = destinationField + "trace.zip";
-		pf.stopTracing(traceFilePath);
+		//pf.stopTracing(traceFilePath);
 		pf.closeBrowser();
 	}
+
+
+
+
 }
 

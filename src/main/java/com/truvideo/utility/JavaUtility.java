@@ -43,6 +43,8 @@ public class JavaUtility {
 //            .setSnapshots(true)
 //            .setSources(true));
 //    }
+	
+	
 
     // Stop Trace Recording and Export
     public static void stopTracing(BrowserContext context, String testCaseName) {
@@ -112,10 +114,14 @@ public class JavaUtility {
 //	    	        }
 //	    	        return prop;
 //	    	    }
-	public Properties init_prop() {
+ 	public Properties init_prop() {
 	    try {
 	        prop = new Properties();
 	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
+
+	        // Log the file path for debugging
+	       // System.out.println("Loading config file from: " + filePath);
+
 	        // Load the properties file
 	        FileInputStream ip = new FileInputStream(filePath);
 	        prop.load(ip);

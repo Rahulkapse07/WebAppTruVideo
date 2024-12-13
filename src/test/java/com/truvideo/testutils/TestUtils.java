@@ -6,8 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 
 import java.io.IOException;
-
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,6 +51,46 @@ public class TestUtils extends JavaUtility {
 		extent.setSystemInfo("Browser", "chrome");
 		return extent;
 	}
+	
+	public void generatePlaywrightReport() {
+		try {
+	        String traceDir = System.getProperty("user.dir") + "/Reports/playwright-traces";
+	        ProcessBuilder processBuilder = new ProcessBuilder(
+	            "npx", "playwright", "show-trace", traceDir);
+	        processBuilder.redirectErrorStream(true);
+	        Process process = processBuilder.start();
+
+	        // Wait for process to complete and check result
+	        int exitCode = process.waitFor();
+	        if (exitCode == 0) {
+	            System.out.println("Playwright report generated successfully.");
+	        } else {
+	            System.err.println("Failed to generate Playwright report. Exit code: " + exitCode);
+	        }
+	    } catch (IOException | InterruptedException e) {
+	        System.err.println("Error generating Playwright report: " + e.getMessage());
+	    }
+	}
+	
+	public void deleteOldVideos(Path videoFolderPath) {
+	    if (Files.exists(videoFolderPath) && Files.isDirectory(videoFolderPath)) {
+	        try (DirectoryStream<Path> stream = Files.newDirectoryStream(videoFolderPath, "*.webm")) {
+	            for (Path file : stream) {
+	                try {
+	                    Files.delete(file);
+	                   // System.out.println("Deleted old video file: " + file);
+	                } catch (IOException e) {
+	                    //System.err.println("Failed to delete video file: " + file + ". Reason: " + e.getMessage());
+	                }
+	            }
+	        } catch (IOException e) {
+	            System.err.println("Error accessing video folder: " + videoFolderPath + ". Reason: " + e.getMessage());
+	        }
+	    } else {
+	        System.out.println("Video folder does not exist or is not a directory: " + videoFolderPath);
+	    }
+	}
+
 
 	public String getScreenShotPath(String testCaseName, AppiumDriver driver) throws IOException {
 		File source = driver.getScreenshotAs(OutputType.FILE);

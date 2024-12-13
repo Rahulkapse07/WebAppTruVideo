@@ -15,6 +15,7 @@ public class HomePageTest extends BaseTest {
 		homepage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
+
 	@Test(priority = 1)
 	public void verify_RepairOrder_HeaderTab_Working() {
 		String actualTitle = homepage.clickOn_RepairOrder_Header();
@@ -109,7 +110,9 @@ public class HomePageTest extends BaseTest {
 		Assert.assertTrue(homepage.openAndCloseAdvanceSearchWindow());
 	}
 
-	@Test(priority = 15)
+
+	@Test(priority = 15,description = "WA-5563")
+
 	public void verify_AllAvailableCheckBox_Filters_OnAdvanceSearchWindow() {
 		homepage.checkVariousCheckBoxFilters();
 	}
@@ -119,14 +122,18 @@ public class HomePageTest extends BaseTest {
 		Assert.assertTrue(homepage.checkThisWeeksRepairOrders());
 	}
 
-	@Test(priority = 17)
+
+	@Test(priority = 17,description = "WA-5509")
+
 	public void verify_ThisMonth_RadioFilter_OnAdvanceSearchWindow() {
 		Assert.assertTrue(homepage.checkThisMonthRepairOrders());
 	}
 
-	@Test(priority = 18)
+
+	@Test(priority = 18,description ="WA-5580,5581")
 	public void verify_DateRangeFilter_OnAdvanceSearchWindow() {
-		Assert.assertTrue(homepage.checkRepairOrdersWithinDateRange());
+		Assert.assertTrue(homepage.checkRepairOrdersWithinDateRange(),"Searched Data is NOT Within Date range");
+
 	}
 
 	@Test(priority = 19)
@@ -134,6 +141,7 @@ public class HomePageTest extends BaseTest {
 		Assert.assertTrue(homepage.listAsPerTheTextSearch());
 		//Assert.assertTrue(homepage.listAsPerTheTextSearch("text"));  //Added by RK
 	}
+
 
 	@Test(priority = 20)
 	public void verify_Notification_BellIconWorking() {
@@ -156,6 +164,7 @@ public class HomePageTest extends BaseTest {
 	public void verify_BackAway_ButtonIsWorking() {
 		Assert.assertTrue(homepage.clickOn_Back_Away_Button());
 	}
+
 
 	@Test(priority = 24)
 	public void verify_UserAccountDropdown_And_Options() {
