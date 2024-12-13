@@ -4,9 +4,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.mail.SendFailedException;
+
 import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
+import org.testng.reporters.FailedReporter;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -191,15 +194,14 @@ public class MessageScreen_Order extends JavaUtility {
 		homePage.navigateToMessageScreen_Order();
 		logger.info("Navigate to Servbice message");
 		String messageChannelname = iframe.locator(rochannelName).innerText().toLowerCase().trim();
-		if(ROChannelname.equals(messageChannelname)) {
+		if (ROChannelname.equals(messageChannelname)) {
 			iframe.locator(channalList).first().click();
 			iframe.locator(messagechatfield).fill("demotext..........");
 			iframe.locator(messageSendBtn).click();
 			iframe.locator(sendOriginal_btn).click();
-			
-			
+
 		}
-		
+
 		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
 		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
 		if (storeusername.trim().equals(messageusername.trim())) {
@@ -212,11 +214,6 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	private String ChatFilterButtons = "span button span:nth-child(2)";
-//	private String logInDealerLabel = "li.account-nav a span span:nth-child(1)";
-//
-//	public String getLoginDealerLabel() {
-//		return logInDealerLabel;
-//	}
 
 	public boolean verify_Default_Filters() throws Exception {
 		page.reload();
@@ -597,9 +594,6 @@ public class MessageScreen_Order extends JavaUtility {
 
 		newBrowserPage.close();
 		page.waitForTimeout(5000);
-		String channelownername = iframe.locator(channelOwnername).innerText().toLowerCase();
-		String userlable = page.innerText(homepage.getLoginUserLabel()).toLowerCase();
-
 		return !flag.contains(false);
 
 	}
@@ -623,28 +617,129 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-	private String ReadUnreadbtn(String Value) {
-		return ".info-container__content__actions.ng-star-inserted:has-text('" + Value + "')";
+	private String Chat(int Value) {
+		return ".channels-list__section.list-all ngx-channels-list-item:nth-child(" + Value
+				+ ") div.channels-list-item__main";
+	}
+
+	private String MarkChat(int Value) {
+		return ".channels-list__section.list-all ngx-channels-list-item:nth-child(" + Value
+				+ ") span.channels-list-item__unreads";
 	}
 
 	private String MessageReDotNotification = "div.channels-list-item__unreads-container.ng-star-inserted span";
-	private String Messagebadge = "span#my-service-message";
+	private String Messagebadge = "span#my-service-message span";
 	private String Messagebandagtotalcount = "#all-service-message a span";
+	private String Markbuttn = "div.info-container__content__actions.ng-star-inserted";
+	private String Readmark = "span.info-container__content__actions__unreads";
+	private String MarkedChat = ".channels-list__section.list-all ngx-channels-list-item span.channels-list-item__unreads";
 
 	public boolean VerifyReadUnreadNotification() throws Exception {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
-		page.waitForCondition(() -> page.locator(Messagebadge).isVisible());
-		if (!page.locator(Messagebadge).isVisible() && !page.locator(Messagebandagtotalcount).isVisible()) {
+		page.waitForTimeout(10000);
+		
+		if (!page.locator(Messagebadge).isVisible()) {
+
 			logger.info("NO UNREAD MESSAGES ARE PRESENT");
-			throw new Exception("Notifications not available");
+			if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true && !isFilterApplied("SMS") == true
+					&& !isFilterApplied("Unread") == true) {
+				iframe.locator(filterButton("Whatsapp")).click();
+
+				for (int i = 1; i < 5; i++) {
+
+					iframe.locator(Chat(i)).click();
+					page.waitForTimeout(5000);
+					String value = iframe.locator(Markbuttn).innerText();
+					System.out.println(value);
+					if (value.contains("Mark as unread")) {
+						iframe.locator(Readmark).click();
+						page.waitForTimeout(1500);
+						logger.info("Mark as read");
+					}
+				}
+				if (!page.locator(Messagebadge).isVisible()) {
+					logger.info("Badge count is not updating");
+					iframe.locator(filterButton("Unread")).click();
+					page.waitForTimeout(5000);
+					int Markedcount = iframe.locator(MarkedChat).count();
+					System.out.println(Markedcount);
+					page.reload();
+					page.waitForTimeout(5000);
+					String afterrefreshcount = page.locator(Messagebadge).innerText();
+					int initialcount = Integer.parseInt(afterrefreshcount);
+					System.out.println(initialcount);
+					if (Markedcount == initialcount) {
+						logger.info("Badge count is increasing correctly after Refresh the page");
+						throw new SendFailedException("Badge count increase but after refresh");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+
+				} else {
+                    logger.info("Badge count is updating");
+					iframe.locator(filterButton("Unread")).click();
+					int Markedcount = iframe.locator(MarkedChat).count();
+					page.waitForTimeout(5000);
+					String afterrefreshcount = page.locator(Messagebadge).innerText();
+					int initialcount = Integer.parseInt(afterrefreshcount);
+
+					if (Markedcount == initialcount) {
+						logger.info("Badge count is increasing correctly");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+				}
+
+			}
+
 		}
-		logger.info("UNREAD NOTIFICATIONS ARE PRESENT");
-		page.waitForTimeout(3000);
-		logger.info("COUNT UNREAD MESSAGE PRESENT");
-		page.locator(Messagebadge).click();
-		page.waitForCondition(() -> iframe.locator(conversationinactivemess).isVisible());
+		iframe.locator(filterButton("Whatsapp")).click();
+		String Count = page.locator(Messagebadge).innerText();
+		System.out.println(Count);
+		int initialcount = Integer.parseInt(Count);
+		for (int j = 1; j <= (initialcount + initialcount); j++) {
+			logger.info("enter in for loop");
+
+			iframe.locator(Chat(j)).click();
+			logger.info("click on chat no." + " :- " + " " + j);
+			String value = iframe.locator(Markbuttn).innerText();
+			if (value.contains("Mark as unread")) {
+				iframe.locator(Readmark).click();
+				logger.info("Chat is Marked");
+			}
+
+			else if (value.contains("Mark as read")) {
+				iframe.locator(Readmark).click();
+				logger.info("Chat is Marked");
+			} else {
+				logger.info("Mark button is not visible on page");
+			}
+		}
+
+		page.waitForTimeout(5000);
+		iframe.locator(filterButton("Unread")).click();
+		page.waitForTimeout(5000);
+		int Markedcount = iframe.locator(MarkedChat).count();
+		System.out.println(Markedcount);
+		String count = page.locator(Messagebadge).innerText();
+		int Finalcount = Integer.parseInt(count);
+		if (Finalcount == Markedcount) {
+			logger.info("Badge count is updating properly");
+		} else if (Finalcount != Markedcount) {
+			page.reload();
+			String Afterrefreshcount = page.locator(Messagebadge).innerText();
+			int RefreshFinalcount = Integer.parseInt(Afterrefreshcount);
+			System.out.println(RefreshFinalcount);
+			logger.info("Refresh the page");
+			page.waitForTimeout(5000);
+			if (Markedcount == RefreshFinalcount) {
+				throw new SendFailedException("To update badge count page need to refresh");
+			} else {
+				throw new SendFailedException("Badge count is not updating after even refresh the page");
+			}
+		}
 
 		return true;
 	}
@@ -1085,7 +1180,6 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-	
 	private String addMedia = "div.orders-detail-menu__media-add";
 	private String addVideo_Title = "div.video-library__title p";
 	private String videos = "img[alt='video thumbnail']";
@@ -1095,8 +1189,7 @@ public class MessageScreen_Order extends JavaUtility {
 	private String messages = "ngx-message div.message";
 	private String lastMessageEndlink = "ngx-message div.message a";
 	private String playButton = "button[title='Play Video']";
-	
-	
+
 	public void verify_videolink_functionality(String filter) {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
@@ -1135,8 +1228,7 @@ public class MessageScreen_Order extends JavaUtility {
 			logger.info("RO is Not new & some videos are already added to RO");
 		}
 		frame.locator(addMedia).click();
-		
-		
+
 		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
 			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
 			flags.add(true);
@@ -1208,29 +1300,28 @@ public class MessageScreen_Order extends JavaUtility {
 		page.waitForTimeout(2000);
 		softAssert.assertAll();
 	}
-		
 
-        public void Verify_welcome_message() {
-            FrameLocator iframe = page.frameLocator(messageIframe);
-    		HomePage homePage = new HomePage(page);
-    		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-    		OrderListPage OLP = new OrderListPage(page);
-    		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
-    		logger.info("Navigate to repair order header");
-    		homePage.clickOn_RepairOrder_Header();
-    		String RONumber = OLP.addRepairOrder("New");
-    		Locator tableRow = page.locator(tableRows);
-    		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
-    		page.waitForURL(url -> url.contains("order/service/view"));
-    		page.waitForTimeout(30000);
-    		
-    		String Welcomemessage = frame.locator("div.message div.ng-star-inserted p").last().innerText();
-    		String Welcome_message = "welcome";
-    	
-        	if(Welcomemessage.contains(Welcome_message)) {
-        		logger.info("Welcome message present");
-        	}else {
-        		logger.info("jhdvasgvd");
-        	}
-        }
+	public void Verify_welcome_message() {
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage homePage = new HomePage(page);
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		OrderListPage OLP = new OrderListPage(page);
+		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
+		logger.info("Navigate to repair order header");
+		homePage.clickOn_RepairOrder_Header();
+		String RONumber = OLP.addRepairOrder("New");
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		page.waitForURL(url -> url.contains("order/service/view"));
+		page.waitForTimeout(30000);
+
+		String Welcomemessage = frame.locator("div.message div.ng-star-inserted p").last().innerText();
+		String Welcome_message = "welcome";
+
+		if (Welcomemessage.contains(Welcome_message)) {
+			logger.info("Welcome message present");
+		} else {
+			logger.info("jhdvasgvd");
+		}
+	}
 }

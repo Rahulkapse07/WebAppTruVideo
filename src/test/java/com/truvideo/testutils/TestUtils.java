@@ -179,4 +179,18 @@ public class TestUtils extends JavaUtility {
 		}
 
 	}
+	
+	 public String getBaseUrlForEnvironment(String env) {
+	        switch (env.toLowerCase()) {
+	            case "production":
+	                return prop.getProperty("ProdUrl" ,"https://app.truvideo.com/login");
+	            case "stagingrc":
+	                return prop.getProperty("baseUrl" ,"https://rc.truvideo.com/login");
+//	            case "development":
+//	                return prop.getProperty("development.baseUrl", "https://www.development-website.com");
+	            default:
+	                throw new IllegalArgumentException("Unknown environment: " + env);
+	        }
+	    }
+	
 }

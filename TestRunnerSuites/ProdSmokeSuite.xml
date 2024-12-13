@@ -4,7 +4,7 @@
     </listeners>
     <parameter name="browser" value="chrome" />
     <parameter name="headless" value="false" />
-    <parameter name="baseUrl" value="https://app.truvideo.com/login" />
+    <parameter name="env" value="production" />
     <test name="Login Page Test">
         <classes>
             <class name="com.truvideo.tests.LoginPageTest"></class>

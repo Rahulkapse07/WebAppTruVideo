@@ -117,12 +117,15 @@
 				 <version>2.22.2</version>
 		<!--		<version>3.0.0-M5</version> -->
 			 <configuration>
+					
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/FullRegressionSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<suiteXmlFiles>
+					
+					 <suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/ProdSmokeSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>

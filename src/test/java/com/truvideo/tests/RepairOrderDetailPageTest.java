@@ -149,6 +149,11 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyInsightFunctionality() throws InterruptedException {
 		repairOrderPage.insightFunctionality();
 	}
+	
+	@Test(priority = 25, description = "")
+	public void verifyRejectdeletefunctionality() {
+		repairOrderPage.verifyRejectdeletefunctionality();
+	}
 
 	@Test(priority = 25, description = "WA-5394") // try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
