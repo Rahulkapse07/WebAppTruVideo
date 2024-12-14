@@ -106,32 +106,60 @@
 
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
-				<!--		<version>3.0.0-M5</version> -->
-				<configuration>
+	<profiles>
+    <profile>
+        <id>full-regression</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>TestRunnerSuites/FullRegressionSuite.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
 
-					<suiteXmlFiles>
-						<suiteXmlFile>TestRunnerSuites/FullRegressionSuite.xml</suiteXmlFile>
-						<suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
-						<suiteXmlFile>TestRunnerSuites/ProdSmokeSuite.xml</suiteXmlFile>
-					</suiteXmlFiles>
+    <profile>
+        <id>rc-smoke</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
 
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <profile>
+        <id>prod-smoke</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>TestRunnerSuites/ProdSmokeSuite.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
+
 </project>

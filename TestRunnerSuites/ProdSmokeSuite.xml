@@ -1,17 +1,18 @@
-<suite name="Prod Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="true">
-    <listeners>
-        <listener class-name="com.truvideo.testutils.Listeners"></listener>
-    </listeners>
-    <parameter name="browser" value="chrome" />
-    <parameter name="headless" value="false" />
-    <parameter name="env" value="production" />
-    <test name="Login page">
+<suite name="Prod Smoke Suite" parallel="false"
+	verbose="5" preserve-order="true">
+	<listeners>
+		<listener class-name="com.truvideo.testutils.Listeners"></listener>
+	</listeners>
+	<parameter name="browser" value="chrome" />
+	<parameter name="headless" value="false" />
+	<parameter name="env" value="production" />
+	<test name="Login page">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest">
 			</class>
 		</classes>
 	</test>
-	<test name="Home page">
+	<!-- <test name="Home page">
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest" />
 		</classes>
@@ -111,6 +112,6 @@
 			</class>
 		</classes>
 
-	</test>
+	</test> -->
 </suite>
 

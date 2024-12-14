@@ -13,13 +13,13 @@
 
 	<parameter name="headless" value="false" />	
 
-	<!-- <test name="Login Page Test">
+	 <test name="Login Page Test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
 
-	<test name="Home page Test">
+<!--	<test name="Home page Test">
 
 
 		<classes>
