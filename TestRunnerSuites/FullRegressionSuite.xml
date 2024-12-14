@@ -13,7 +13,7 @@
 
 	<parameter name="headless" value="false" />	
 
-	<test name="Login Page Test">
+	<!-- <test name="Login Page Test">
 		<classes>
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
@@ -54,6 +54,6 @@
 
 		</classes>
 
-	</test>
+	</test> -->
 
 </suite>
