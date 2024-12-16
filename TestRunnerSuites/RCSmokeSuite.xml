@@ -12,12 +12,12 @@
 			</class>
 		</classes>
 	</test>
-	<!-- <test name="Home page">
+	<test name="Home page">
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest" />
 		</classes>
-	</test> -->
-	<!-- <test name="Message service">
+	</test>
+	<test name="Message service">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 				<methods>
@@ -116,5 +116,5 @@
 			</class>
 		</classes>
 
-	</test> -->
+	</test>
 </suite>
