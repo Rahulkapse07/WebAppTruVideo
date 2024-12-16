@@ -1,21 +1,20 @@
-<suite name="Prod Smoke Suite" parallel="false"
-	verbose="5" preserve-order="true">
+<suite name="Prod Smoke Suite" parallel="false" thread-count="3"
+	verbose="5" preserve-order="false">
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
 	<parameter name="headless" value="false" />
 	<parameter name="env" value="production" />
-	<test name="Login page">
+	<test name="Login Page Test">
 		<classes>
-			<class name="com.truvideo.tests.LoginPageTest">
-			</class>
+			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-	<!-- <test name="Home page">
-		<classes>
-			<class name="com.truvideo.tests.HomePageTest" />
-		</classes>
+	<test name="Home page">
+	<classes>
+		<class name="com.truvideo.tests.HomePageTest" />
+	</classes>
 	</test>
 	<test name="Message service">
 		<classes>
@@ -67,12 +66,12 @@
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
-					<include name="verifyPaymentResendFunction" />
-					<include name="VerifyOpenInspection" />
-					<include name="VerifySendbackInspection" />
-					<include name="VerifyPublishInspections" />
-					<include name="VerifyNotifyCustomer" />
-					<include name="VerifyPrintInspection" />
+
+					<!-- <include name="verifyPaymentResendFunction" /> <include name="VerifyOpenInspection" 
+						/> <include name="VerifySendbackInspection" /> <include name="VerifyPublishInspections" 
+						/> <include name="VerifyNotifyCustomer" /> <include name="VerifyPrintInspection" 
+						/> -->
+
 					<include name="verifyCopylinktoClipboardFunctionality" />
 					<include name="verifyViewWithCustomerFunctionality" />
 					<include name="verifyEditThisROFunctionality" />
@@ -111,7 +110,7 @@
 				</methods>
 			</class>
 		</classes>
+	</test>
 
-	</test> -->
 </suite>
 

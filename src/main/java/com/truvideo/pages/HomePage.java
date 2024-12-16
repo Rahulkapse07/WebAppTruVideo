@@ -123,7 +123,7 @@ public class HomePage extends JavaUtility {
 
 	private String accountDropdownButton = "li.account-nav";
 	private String accountSetting_TextButton = "ul#user-menu-list li a[href='/user-account/'] ";
-	private String helpPage_TextButton = "ul#user-menu-list li a[href='http://gettransparency.com/help-page/'] ";
+	private String helpPage_TextButton = "ul#user-menu-list li a[href='https://truvideo.com/help-page/'] ";
 	private String dealerId_Label = "a:has-text('Dealer ID')";
 	private String supportNumber_Label = "#user-menu-list a:has-text('Support')";
 	private String allRightReserved_Label = "#user-menu-list a:has-text('© TruVideo  |  All Rights Reserved.')";

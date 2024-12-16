@@ -23,7 +23,7 @@ public class AppConstants {
 	public static final String CONTACT_LIST_PAGE_TITLE = "TruVideo - Contact List";
 	public static final String CHAT_PAGE_TITLE = "TruVideo - Chat v2";
 	public static final String ACCOUNT_SETTING_PAGE_TITLE = "TruVideo - Account Settings";
-	public static final String HELP_PAGE_TITLE = "gettransparency.com";
+	public static final String HELP_PAGE_TITLE = "Help - TruVideo";
 	public static final String DEALERS_PAGE_TITLE = "TruVideo - Dealers";
 	public static final String DEALER_GROUP_PAGE_TITLE = "TruVideo - Dealer Groups";
 	public static final String USER_GROUP_PAGE_TITLE = "TruVideo - User Groups";

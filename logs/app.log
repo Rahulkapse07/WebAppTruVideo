@@ -20839,3 +20839,770 @@ Log in Failed. Your account is currently disabled.
 2024-12-14 17:34:05 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
 2024-12-14 17:34:07 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
 2024-12-14 17:34:07 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+<<<<<<< HEAD
+=======
+2024-12-15 12:14:44 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:14:44 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:14:46 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:14:47 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:15:19 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The count 29 on badge is equal to total count Displaying 1 to 20 of 29 records
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review Est-Approved $-Viewed
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:25 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:15:27 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-12-15 12:16:03 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-15 12:16:06 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The count 5 on badge is equal to total count Displaying 1 to 5 of 5 records
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:16:07 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:16:09 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The count 43 on badge is equal to total count Displaying 1 to 20 of 43 records
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:11 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:16:13 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-15 12:16:15 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self RO's Messages
+2024-12-15 12:17:02 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is available
+2024-12-15 12:17:04 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All RO's Messages
+2024-12-15 12:17:45 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-15 12:17:49 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-15 12:17:53 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-15 12:17:57 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-15 12:17:57 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-15 12:17:57 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-15 12:22:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:22:30 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:22:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:22:32 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:22:54 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-15 12:23:12 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:23:12 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:23:14 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:23:14 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:23:47 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The count 29 on badge is equal to total count Displaying 1 to 20 of 29 records
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review Est-Approved $-Viewed
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:52 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:23:54 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-12-15 12:24:27 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The count 5 on badge is equal to total count Displaying 1 to 5 of 5 records
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:24:32 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:24:34 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The count 43 on badge is equal to total count Displaying 1 to 20 of 43 records
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:38 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:24:40 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-15 12:24:41 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self RO's Messages
+2024-12-15 12:25:22 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is available
+2024-12-15 12:25:24 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All RO's Messages
+2024-12-15 12:26:03 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-15 12:26:07 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-15 12:26:11 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-15 12:26:15 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-15 12:26:15 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-15 12:26:15 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-15 12:36:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:36:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:36:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:36:33 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:39:11 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:39:11 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:39:13 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:39:14 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:39:14 INFO  com.truvideo.pages.HomePage - New Page opened in another tab
+2024-12-15 12:39:24 INFO  com.truvideo.pages.HomePage - New Page Loaded : Help - TruVideo
+2024-12-15 12:39:24 INFO  com.truvideo.pages.HomePage - Newly Opened Page Closed
+2024-12-15 12:40:52 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:40:52 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:40:54 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:40:55 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:40:55 INFO  com.truvideo.pages.HomePage - New Page opened in another tab
+2024-12-15 12:41:00 INFO  com.truvideo.pages.HomePage - New Page Loaded : Help - TruVideo
+2024-12-15 12:41:00 INFO  com.truvideo.pages.HomePage - Newly Opened Page Closed
+2024-12-15 12:41:41 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:41:41 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:41:43 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:41:44 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:41:45 INFO  com.truvideo.pages.HomePage - New Page opened in another tab
+2024-12-15 12:41:50 INFO  com.truvideo.pages.HomePage - New Page Loaded : Help - TruVideo
+2024-12-15 12:41:50 INFO  com.truvideo.pages.HomePage - Newly Opened Page Closed
+2024-12-15 12:42:16 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-15 12:42:16 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-15 12:42:18 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-15 12:42:19 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-15 12:42:19 INFO  com.truvideo.pages.HomePage - New Page opened in another tab
+2024-12-15 12:42:24 INFO  com.truvideo.pages.HomePage - New Page Loaded : Help - TruVideo
+2024-12-15 12:42:24 INFO  com.truvideo.pages.HomePage - Newly Opened Page Closed
+2024-12-15 12:42:26 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The count 29 on badge is equal to total count Displaying 1 to 20 of 29 records
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:30 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review Est-Approved $-Viewed
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:31 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:42:33 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-12-15 12:43:06 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The count 5 on badge is equal to total count Displaying 1 to 5 of 5 records
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:43:08 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-15 12:43:10 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The count 43 on badge is equal to total count Displaying 1 to 20 of 43 records
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:12 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-15 12:43:14 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-15 12:43:15 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self RO's Messages
+2024-12-15 12:43:55 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is available
+2024-12-15 12:43:57 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All RO's Messages
+2024-12-15 12:44:36 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-15 12:44:40 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-15 12:44:45 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-16 13:05:39 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-16 13:05:39 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-16 13:05:42 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-16 14:17:25 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-12-16 14:17:25 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-12-16 14:17:25 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-12-16 14:17:25 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-12-16 14:17:25 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-12-16 14:17:27 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-12-16 14:17:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-12-16 14:17:30 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-12-16 14:17:30 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-12-16 14:18:40 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-12-16 14:18:40 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-12-16 14:18:40 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-12-16 14:18:40 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-12-16 14:18:40 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-12-16 14:18:41 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-12-16 14:18:43 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-12-16 14:18:45 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-12-16 14:18:45 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-12-16 14:18:46 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-12-16 14:18:47 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-12-16 14:18:48 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-16 14:18:48 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:18:50 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:18:51 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-12-16 14:18:51 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-12-16 14:19:03 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-16 14:19:03 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:19:06 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:19:09 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-16 14:19:41 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The count 73 on badge is equal to total count Displaying 1 to 20 of 73 records
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review $-Sent
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review Est-Confirmed $-Draft
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:46 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:47 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:47 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:47 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:47 INFO  com.truvideo.pages.HomePage - The RO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:19:49 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-12-16 14:20:22 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-16 14:20:25 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-16 14:20:25 INFO  com.truvideo.pages.HomePage - The count 5 on badge is equal to total count Displaying 1 to 5 of 5 records
+2024-12-16 14:20:25 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:20:25 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:20:26 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:20:26 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:20:26 INFO  com.truvideo.pages.HomePage - The SO is of :suraj Singh & Contains status  : For Review
+2024-12-16 14:20:28 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The count 116 on badge is equal to total count Displaying 1 to 20 of 116 records
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:30 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-16 14:20:32 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-16 14:20:33 INFO  com.truvideo.pages.HomePage - Clicked on Badge for Self RO's Messages
+2024-12-16 14:21:14 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-12-16 14:21:19 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-16 14:21:23 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is available
+2024-12-16 14:21:30 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All SO's Messages
+2024-12-16 14:21:32 INFO  com.truvideo.pages.HomePage - My Filter is not selected on message screen
+2024-12-16 14:21:37 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-16 14:21:41 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-16 14:21:41 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-16 14:21:41 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-16 14:21:49 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-16 14:21:49 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:21:51 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:22:06 INFO  com.truvideo.pages.MessageScreen_Order - DEFAULT FILTERS PRESENT
+2024-12-16 14:22:13 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-12-16 14:22:13 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:18 INFO  com.truvideo.pages.MessageScreen_Order - suraj singh Login user is matched with channele owner : Service Advisor - suraj Singh
+2024-12-16 14:22:27 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:22:27 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-12-16 14:22:27 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:30 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:22:37 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:22:37 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-12-16 14:22:37 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : suraj singh
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:41 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:22:50 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-16 14:22:50 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:22:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:22:58 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-16 14:22:59 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoacvUc
+2024-12-16 14:22:59 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-16 14:22:59 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastJyVr
+2024-12-16 14:22:59 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812054307
+2024-12-16 14:22:59 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedH9ak@gmail.com
+2024-12-16 14:23:02 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-16 14:24:24 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-12-16 14:24:24 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-12-16 14:24:24 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-12-16 14:24:24 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-12-16 14:24:24 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-12-16 14:24:25 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-12-16 14:24:26 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-12-16 14:24:28 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-12-16 14:24:28 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-12-16 14:24:29 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-12-16 14:24:30 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-12-16 14:24:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:24:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:24:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:24:34 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-12-16 14:24:34 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-12-16 14:24:44 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:24:44 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:24:46 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:24:47 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-16 14:24:47 INFO  com.truvideo.pages.HomePage - New Page opened in another tab
+2024-12-16 14:24:58 INFO  com.truvideo.pages.HomePage - New Page Loaded : Help - TruVideo
+2024-12-16 14:24:58 INFO  com.truvideo.pages.HomePage - Newly Opened Page Closed
+2024-12-16 14:25:01 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-16 14:25:35 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all RO's is available
+2024-12-16 14:25:39 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all RO's
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The count 143 on badge is equal to total count Displaying 1 to 20 of 143 records
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Insp-Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Processed
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Processed Insp-Published
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Processed Insp-Published
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review $-Viewed Insp-Published
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Confirmed $-Draft
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Insp-Returned
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Est-Draft Insp-Published
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review
+2024-12-16 14:25:40 INFO  com.truvideo.pages.HomePage - The RO in the list Contains status  : For Review Insp-Review
+2024-12-16 14:25:46 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-16 14:25:53 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The count 14 on badge is equal to total count Displaying 1 to 14 of 14 records
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Dinesh Borude & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:25:54 INFO  com.truvideo.pages.HomePage - The SO is of :Seema Bhardwaj & Contains status  : For Review
+2024-12-16 14:26:00 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-16 14:26:33 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-16 14:27:08 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-12-16 14:27:12 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-16 14:27:16 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-16 14:27:20 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-16 14:27:24 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-16 14:27:25 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-16 14:27:25 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-16 14:27:33 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:27:34 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:27:35 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:27:49 INFO  com.truvideo.pages.MessageScreen_Order - DEFAULT FILTERS PRESENT
+2024-12-16 14:27:53 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-12-16 14:27:53 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:27:58 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:28:02 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:28:02 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-12-16 14:28:02 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:28:10 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:28:10 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-12-16 14:28:10 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:14 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:28:28 INFO  com.truvideo.pages.MessageScreen_Order - GO_TO_RO button clicked
+2024-12-16 14:28:42 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHEDSeema Bhardwaj-:-Seema Bhardwaj
+2024-12-16 14:28:42 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHED
+2024-12-16 14:28:42 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-16 14:28:47 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:29:22 INFO  com.truvideo.pages.MessageScreen_Order - VERIFY ATTACHMENT
+2024-12-16 14:29:22 INFO  com.truvideo.pages.MessageScreen_Order - SELECT SMS FILTER TOS END ATTACHMENT
+2024-12-16 14:29:59 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:30:37 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:31:13 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-16 14:31:19 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:31:51 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-16 14:31:57 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:32:30 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-16 14:32:42 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-16 14:33:24 INFO  com.truvideo.pages.MessageScreen_Order - CheckWhatsapp filter is Enable or Disable From Dealer Setting
+2024-12-16 14:33:29 INFO  com.truvideo.pages.MessageScreen_Order - WhatsApp filter is Disabled
+2024-12-16 14:34:01 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:34:01 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:34:02 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:34:17 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-12-16 14:34:17 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:22 INFO  com.truvideo.pages.MessageScreen_Order - seema bhardwaj Login user is matched with channele owner : Service Advisor - Seema Bhardwaj
+2024-12-16 14:34:28 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:34:28 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-12-16 14:34:28 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:32 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-16 14:34:39 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-16 14:34:40 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-12-16 14:34:40 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : seema bhardwaj
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:43 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-16 14:34:54 INFO  com.truvideo.pages.MessageScreen_Order - CONVERSATION CHAT IS VISIBLE
+2024-12-16 14:34:54 INFO  com.truvideo.pages.MessageScreen_Order - OPENED CONVERSATION TAB
+2024-12-16 14:34:55 INFO  com.truvideo.pages.MessageScreen_Order - ENTERED FIRSTNAME :-Automation
+2024-12-16 14:34:55 INFO  com.truvideo.pages.MessageScreen_Order - ENTERED LASTNAME :-Name
+2024-12-16 14:34:59 INFO  com.truvideo.pages.MessageScreen_Order - SELECTED COUNTRY
+2024-12-16 14:35:02 INFO  com.truvideo.pages.MessageScreen_Order - Number:-7812059487
+2024-12-16 14:35:06 INFO  com.truvideo.pages.MessageScreen_Order - Select SMS
+2024-12-16 14:35:06 INFO  com.truvideo.pages.MessageScreen_Order - Button hit
+2024-12-16 14:35:14 INFO  com.truvideo.pages.MessageScreen_Order - All names are Matched :automation name:automation name:automation name
+2024-12-16 14:35:17 INFO  com.truvideo.pages.MessageScreen_Order - Launch new browser
+2024-12-16 14:35:58 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:35:58 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:36:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:36:47 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:36:47 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:36:49 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:36:54 INFO  com.truvideo.pages.OrderListPage - Clicked on myros filter
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 1: Advisor: Seema Bhardwaj, Technician: Seema Bhardwaj
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 2: Advisor: Seema Bhardwaj, Technician: Seema Bhardwaj
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 3: Advisor: Seema Bhardwaj, Technician: 
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 4: Advisor: Seema Bhardwaj, Technician: Seema Bhardwaj
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 5: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 6: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:00 INFO  com.truvideo.pages.OrderListPage - Match found in Row 7: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 8: Advisor: Seema Bhardwaj, Technician: 
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 9: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 10: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 11: Advisor: Seema Bhardwaj, Technician: 
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 12: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 13: Advisor: Seema Bhardwaj, Technician: 
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 14: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 15: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 16: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 17: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 18: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 19: Advisor: Seema Bhardwaj, Technician: Toshi yaduwanshi
+2024-12-16 14:37:01 INFO  com.truvideo.pages.OrderListPage - Match found in Row 20: Advisor: Seema Bhardwaj, Technician: Gopal Vish
+2024-12-16 14:37:02 INFO  com.truvideo.pages.OrderListPage - Clicked on allopen filter
+2024-12-16 14:37:03 INFO  com.truvideo.pages.OrderListPage - The RO: 735472522 is open & Status is: Viewed Est-Confirmed $-Processed
+2024-12-16 14:37:04 INFO  com.truvideo.pages.OrderListPage - The RO: 462411 is open & Status is: Sent
+2024-12-16 14:37:05 INFO  com.truvideo.pages.OrderListPage - The RO: 75227727 is open & Status is: Sent
+2024-12-16 14:37:06 INFO  com.truvideo.pages.OrderListPage - The RO: 34143611 is open & Status is: New
+2024-12-16 14:37:08 INFO  com.truvideo.pages.OrderListPage - The RO: 72244234 is open & Status is: Sent
+2024-12-16 14:37:09 INFO  com.truvideo.pages.OrderListPage - The RO: 558 is open & Status is: Sent
+2024-12-16 14:37:10 INFO  com.truvideo.pages.OrderListPage - The RO: 8463434881 is open & Status is: For Review
+2024-12-16 14:37:11 INFO  com.truvideo.pages.OrderListPage - The RO: 6788 is open & Status is: For Review
+2024-12-16 14:37:12 INFO  com.truvideo.pages.OrderListPage - The RO: 32838 is open & Status is: Viewed Est-Confirmed $-Draft
+2024-12-16 14:37:13 INFO  com.truvideo.pages.OrderListPage - The RO: 7673737211 is open & Status is: New
+2024-12-16 14:37:14 INFO  com.truvideo.pages.OrderListPage - The RO: 75427511 is open & Status is: Viewed Est-Confirmed $-Processed
+2024-12-16 14:37:15 INFO  com.truvideo.pages.OrderListPage - The RO: 256561 is open & Status is: New
+2024-12-16 14:37:16 INFO  com.truvideo.pages.OrderListPage - The RO: 4264222 is open & Status is: New
+2024-12-16 14:37:17 INFO  com.truvideo.pages.OrderListPage - The RO: 4361411 is open & Status is: Sent
+2024-12-16 14:37:18 INFO  com.truvideo.pages.OrderListPage - The RO: 46246211 is open & Status is: Sent Insp-Published
+2024-12-16 14:37:19 INFO  com.truvideo.pages.OrderListPage - The RO: 1090 is open & Status is: For Review
+2024-12-16 14:37:20 INFO  com.truvideo.pages.OrderListPage - The RO: 485467 is open & Status is: Sent
+2024-12-16 14:37:21 INFO  com.truvideo.pages.OrderListPage - The RO: 131348454544 is open & Status is: Sent Est-Draft
+2024-12-16 14:37:22 INFO  com.truvideo.pages.OrderListPage - The RO: 54545421156 is open & Status is: New
+2024-12-16 14:37:23 INFO  com.truvideo.pages.OrderListPage - The RO: 4556456454 is open & Status is: New
+2024-12-16 14:37:25 INFO  com.truvideo.pages.OrderListPage - Clicked on forreview filter
+2024-12-16 14:37:29 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 8463434881 Contains For Review and is: For Review
+2024-12-16 14:37:31 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 6788 Contains For Review and is: For Review
+2024-12-16 14:37:33 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 1090 Contains For Review and is: For Review
+2024-12-16 14:37:35 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 6656562321 Contains For Review and is: For Review
+2024-12-16 14:37:37 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 143562111 Contains For Review and is: For Review Est-Draft
+2024-12-16 14:37:39 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 36512436 Contains For Review and is: For Review
+2024-12-16 14:37:41 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 421547 Contains For Review and is: For Review
+2024-12-16 14:37:43 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 232425 Contains For Review and is: For Review Insp-Review
+2024-12-16 14:37:45 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 45621 Contains For Review and is: For Review Est-Confirmed $-Processed
+2024-12-16 14:37:47 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 123566777 Contains For Review and is: For Review
+2024-12-16 14:37:50 INFO  com.truvideo.pages.OrderListPage - The Status of RO: testaa Contains For Review and is: For Review
+2024-12-16 14:37:52 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 45500 Contains For Review and is: For Review
+2024-12-16 14:37:54 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 431524 Contains For Review and is: For Review Est-Confirmed $-Processed Insp-Published
+2024-12-16 14:37:56 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 541625 Contains For Review and is: For Review Insp-Review
+2024-12-16 14:37:58 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 2432222 Contains For Review and is: For Review
+2024-12-16 14:38:00 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 5890 Contains For Review and is: For Review Est-Confirmed $-Processed Insp-Published
+2024-12-16 14:38:02 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 67689 Contains For Review and is: For Review
+2024-12-16 14:38:04 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 461251 Contains For Review and is: For Review
+2024-12-16 14:38:06 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 541651 Contains For Review and is: For Review
+2024-12-16 14:38:08 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 7645836758 Contains For Review and is: For Review
+2024-12-16 14:38:08 INFO  com.truvideo.pages.OrderListPage - Clicked on allclosed filter
+2024-12-16 14:38:11 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 3461243611 is closed & Contains: Closed New
+2024-12-16 14:38:13 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 46546465 is closed & Contains: Closed New
+2024-12-16 14:38:14 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 46124561 is closed & Contains: Closed New
+2024-12-16 14:38:15 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 34614611 is closed & Contains: Closed Sent
+2024-12-16 14:38:16 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 46464478 is closed & Contains: Closed New
+2024-12-16 14:38:17 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 7656556 is closed & Contains: Closed New
+2024-12-16 14:38:18 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 2441111 is closed & Contains: Closed New
+2024-12-16 14:38:19 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 4216541 is closed & Contains: Closed Sent Est-Approved $-Draft Insp-Published
+2024-12-16 14:38:20 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 527527 is closed & Contains: Closed Sent
+2024-12-16 14:38:21 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 454554 is closed & Contains: Closed New
+2024-12-16 14:38:22 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 454551 is closed & Contains: Closed New
+2024-12-16 14:38:23 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 25336 is closed & Contains: Closed Sent Est-Sent $-Sent
+2024-12-16 14:38:24 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 556533 is closed & Contains: Closed New
+2024-12-16 14:38:25 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 46541561646515 is closed & Contains: Closed Sent
+2024-12-16 14:38:26 INFO  com.truvideo.pages.OrderListPage - The Status of RO: test33 is closed & Contains: Closed Viewed Est-Confirmed $-Processed
+2024-12-16 14:38:27 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 531761 is closed & Contains: Closed New
+2024-12-16 14:38:28 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 34153 is closed & Contains: Closed New
+2024-12-16 14:38:29 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 45611 is closed & Contains: Closed For Review
+2024-12-16 14:38:30 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Smoke TEST is closed & Contains: Closed For Review
+2024-12-16 14:38:31 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 56465 is closed & Contains: Closed New
+2024-12-16 14:38:32 ERROR com.truvideo.pages.OrderListPage - Invalid filter type provided: invalidFilter
+2024-12-16 14:38:32 INFO  com.truvideo.pages.OrderListPage - Clicked on My RO filter
+2024-12-16 14:38:34 INFO  com.truvideo.pages.OrderListPage - Clicked on 'Close Repair Order' Button without selecting any RO to closed
+2024-12-16 14:38:34 INFO  com.truvideo.pages.OrderListPage - Please select repair orders to be closed. message displayed 
+2024-12-16 14:38:35 INFO  com.truvideo.pages.OrderListPage - selected first RO's checkox in My RO's Filter
+2024-12-16 14:38:35 INFO  com.truvideo.pages.OrderListPage - Clicked on 'Close Repair Order' Button when One RO is selected to closed'
+2024-12-16 14:38:36 INFO  com.truvideo.pages.OrderListPage - Clicked on All Closed filter
+2024-12-16 14:38:39 INFO  com.truvideo.pages.OrderListPage - The Closed RO 462411 found in closed list and RO Number is: 462411
+2024-12-16 14:39:17 INFO  com.truvideo.pages.LoginPage - Entered User Name  seema.bhardwaj@5exceptions.com
+2024-12-16 14:39:17 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-16 14:39:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-16 14:39:35 INFO  com.truvideo.pages.Multimediapage - 0
+2024-12-16 14:39:35 INFO  com.truvideo.pages.Multimediapage - RO number not found and no more pages to check.
+2024-12-16 14:40:30 INFO  com.truvideo.pages.Multimediapage - 0
+>>>>>>> suraj

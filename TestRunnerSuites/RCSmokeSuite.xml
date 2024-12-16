@@ -1,4 +1,5 @@
-<suite name="RC Smoke Suite" parallel="false" verbose="5" preserve-order="false">
+<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="false">
+
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
@@ -12,11 +13,11 @@
 			</class>
 		</classes>
 	</test>
- 	<!-- <test name="Home page">
+	<test name="Home page">
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest" />
 		</classes>
-	</test> -->
+	</test>
 	<test name="Message service">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
@@ -37,7 +38,7 @@
 		</classes>
 	</test>
 
-	<!--<test name="Message Sales">
+	<test name="Message Sales">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 				<methods>
@@ -112,5 +113,5 @@
 			</class>
 		</classes>
 
-	</test> -->
+	</test>
 </suite>
