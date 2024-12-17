@@ -160,10 +160,11 @@ public class ProspectDetailPage extends JavaUtility {
 		flags.clear();
 	}
 	public void checkStatus_OnVideoWatch(String channelSelected) {
+		System.out.println("svcghsvcghvsaghv");
 		FrameLocator frame = page.frameLocator(salesIframe);
 		SoftAssert softAssert = new SoftAssert();
 		List<Boolean> flags = new ArrayList<Boolean>();
-		addVideoToOrder();
+		//addVideoToOrder();
 		page.waitForTimeout(2000);
 		clickOperationButton("Send to customer");
 		selectChannelToPerformAction(channelSelected); // Select channel to send video

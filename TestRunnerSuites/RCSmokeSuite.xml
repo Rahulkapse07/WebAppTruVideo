@@ -84,6 +84,12 @@
 
 		</classes>
 	</test>
+	
+	<test name="Prospect order sales">
+		<classes>
+			<class name="com.truvideo.tests.ProspectListPageTest"></class>
+	</classes>
+	</test>
 
 	<test name="Order List Page Test">
 		<classes>

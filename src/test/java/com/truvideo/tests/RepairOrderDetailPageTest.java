@@ -65,12 +65,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
 
-	
-	
-	
-	
-	
-	
 	@Test(priority = 11, description =  "")
 	public void verifyPaymentFunction() {
 		page.reload();
@@ -87,14 +81,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 
 		repairOrderPage.submitPayment("SMS");
 	}
-
-	
-	
-	
-	
-	
-	
-	
 	/*
 	 * @Test(priority = 14, description = "WA-5569") public void
 	 * verifyCreateReminder() throws InterruptedException {

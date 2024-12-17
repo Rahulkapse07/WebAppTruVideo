@@ -2119,6 +2119,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void verifyRejectdeletefunctionality( ) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		addVideoToOrder();
+		
 	}
 
 }

@@ -21,23 +21,17 @@ public class ProspectDetailPageTest extends BaseTest {
 		prospectdetailpage.addVideoToOrder();
 	}
 	
-	//@Test(priority = 3)           //WhatsApp feature is not wokring in Sales side
-	public void verifySendToCustomer_ForFirstVideo() {
-		prospectdetailpage.sendVideoToCustomer("WhatsApp");
-	}
-
-
-	@Test(priority = 4,description = "")
+	@Test(priority = 2,description = "")
 	public void verifyAddMediaFunction_SecondVideo() {
 		prospectdetailpage.addVideoToOrder();
 	}
 
 
-	@Test(priority = 5,description = "WA-5406")
+	@Test(priority = 3,description = "WA-5406")
 	public void verifySendToCustomer_ForSecondVideo() {
 		prospectdetailpage.sendVideoToCustomer("SMS");
 	}
-	@Test(priority = 6,description = "")
+	@Test(priority = 4,description = "")
 	public void verifyViewedStatus() {
 		prospectdetailpage.checkStatus_OnVideoWatch("SMS");
 	}
