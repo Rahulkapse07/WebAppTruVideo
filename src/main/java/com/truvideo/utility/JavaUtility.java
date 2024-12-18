@@ -20,18 +20,40 @@ import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Tracing;
 import com.microsoft.playwright.options.FilePayload;
 
 public class JavaUtility {
 	
-
+ 
 	
 	public static Properties prop;
 	public Logger logger = LogManager.getLogger(this.getClass().getName());
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	private static final SecureRandom RANDOM = new SecureRandom();
+	
+	
+//	 // Start Trace Recording
+//    public static void startTracing(String testName) {
+//        testName.tracing().start(new Tracing.StartOptions()
+//            .setScreenshots(true)
+//            .setSnapshots(true)
+//            .setSources(true));
+//    }
+	
+	
+
+    // Stop Trace Recording and Export
+    public static void stopTracing(BrowserContext context, String testCaseName) {
+        String tracePath = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + "-trace.zip";
+        context.tracing().stop(new Tracing.StopOptions()
+            .setPath(Paths.get(tracePath)));
+    }
+	
+	
 
 	public String getRandomString(int length) {
 		StringBuilder sb = new StringBuilder(length);
@@ -50,18 +72,71 @@ public class JavaUtility {
 	}
 
 	// this method is used to initialize the properties from config file
-	public Properties init_prop() {
-		try {
-			prop = new Properties();
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(ip);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException f) {
-			f.printStackTrace();
-		}
-		return prop;
+//	public Properties init_prop() {
+//		try {
+//			prop = new Properties();
+//			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
+//			prop.load(ip);
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (IOException f) {
+//			f.printStackTrace();
+//		}
+//		return prop;
+//	}
+
+//	     public Properties init_prop() {
+//	    	
+//	    	        try {
+//	    	            prop = new Properties();
+//
+//	    	            // Get the path from the system property or default to the relative path
+//	    	            String filePath = System.getProperty("config.path");
+//
+//	    	            if (filePath == null || filePath.isEmpty()) {
+//	    	                // Default relative path if no system property is set
+//	    	                filePath = "./src/test/resources/config/config.properties";
+//	    	            }
+//
+//	    	            // Log the file path being used (optional)
+//	    	            System.out.println("Loading configuration from: " + filePath);
+//
+//	    	            // Load the properties file
+//	    	            FileInputStream ip = new FileInputStream(filePath);
+//	    	            prop.load(ip);
+//
+//	    	        } catch (FileNotFoundException e) {
+//	    	            e.printStackTrace();
+//	    	            throw new RuntimeException("Configuration file not found: " + e.getMessage());
+//	    	        } catch (IOException f) {
+//	    	            f.printStackTrace();
+//	    	            throw new RuntimeException("Failed to load configuration file: " + f.getMessage());
+//	    	        }
+//	    	        return prop;
+//	    	    }
+ 	public Properties init_prop() {
+	    try {
+	        prop = new Properties();
+	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
+
+	        // Log the file path for debugging
+	       // System.out.println("Loading config file from: " + filePath);
+
+	        // Load the properties file
+	        FileInputStream ip = new FileInputStream(filePath);
+	        prop.load(ip);
+
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	        throw new RuntimeException("Configuration file not found: " + e.getMessage());
+	    } catch (IOException f) {
+	        f.printStackTrace();
+	        throw new RuntimeException("Failed to load configuration file: " + f.getMessage());
+	    }
+	    return prop;
 	}
+
+	
 
 	public static String takeScreenshot(Page page) {
 		String path = System.getProperty("user.dir" + "/screenshots/" + System.currentTimeMillis() + ".png");

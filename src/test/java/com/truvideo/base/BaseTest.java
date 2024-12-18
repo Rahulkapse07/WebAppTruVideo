@@ -1,10 +1,17 @@
 package com.truvideo.base;
 
 import java.util.Properties;
-import org.testng.annotations.*;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentTest;
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.pages.LoginPage;
+import com.truvideo.testutils.TestUtils;
 
 public class BaseTest {
 
@@ -12,14 +19,19 @@ public class BaseTest {
 	public Page page;
 	protected Properties prop;
 	protected LoginPage loginpage;
+	protected ExtentTest test;
+	
+	TestUtils util = new TestUtils();
+	
 	private String baseUrl; // For storing the final base URL
 
-	@BeforeTest
-	@Parameters({ "browser", "headless", "baseUrl" })
+	@BeforeClass
+	@Parameters({ "browser", "headless", "env" })
 	public void loginPageSetup(
 			@Optional("chrome") String browser, 
 			@Optional("false") String headless,
-			@Optional("") String baseUrl) {
+			@Optional("stagingrc") String env)
+			{
 
 		pf = new PlaywrightFactory();
 		prop = pf.init_prop(); // Load config.properties
@@ -28,30 +40,35 @@ public class BaseTest {
 		browser = prop.getProperty("browser", browser);
 		headless = prop.getProperty("headless", headless);
 
-		// Check if baseUrl was passed via XML; if not, use the default from properties
+		  baseUrl = util.getBaseUrlForEnvironment(env);
+	    
 		if (baseUrl.isEmpty()) {
 			baseUrl = prop.getProperty("baseUrl");
 		}
-
-		// Ensure baseUrl is not null or empty
 		if (baseUrl == null || baseUrl.isEmpty()) {
 			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
 		}
 
-		System.out.println("Browser: " + browser);
-		System.out.println("Headless: " + headless);
-		System.out.println("Final Base URL: " + baseUrl);
-
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		page = pf.initBrowser(browser, headlessMode);
 
+		// pf.startTracing("traceName1");
 		loginpage = new LoginPage(page);
 		page.navigate(baseUrl);
+
+	}
+	
+
+	@AfterClass
+	public void tearDown() {
+		String destinationField = System.getProperty("user.dir") + "/Reports/";
+		String traceFilePath = destinationField + "trace.zip";
+		//pf.stopTracing(traceFilePath);
+		pf.closeBrowser();
 	}
 
-	@AfterTest
-	public void tearDown() {
-		page.context().browser().close();
-	}
+
+
+
 }
 

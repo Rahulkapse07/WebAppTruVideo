@@ -1,17 +1,27 @@
 package com.truvideo.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
 import com.truvideo.constants.AppConstants;
+import com.truvideo.pages.LoginPage;
+
 
 public class LoginPageTest extends BaseTest {
 
-	@Test(priority = 1,description = "WA-5572")
+	@BeforeClass
+	void setup() {
+		loginpage = new LoginPage(page); //
+	}
+
+
+	@Test(priority = 1, description = "WA-5572, WA-5555")
 	public void verifyAllElementsOfLoginPage() {
 		Assert.assertTrue(loginpage.checkAllElements_LoginPage());
+
 	}
 
 	@Test(priority = 2)
@@ -19,6 +29,7 @@ public class LoginPageTest extends BaseTest {
 		String actualSignUpPageTitle = loginpage.click_CreateAccount_Button();
 		Assert.assertEquals(actualSignUpPageTitle, AppConstants.SIGN_UP_PAGE_TITLE);
 		page.goBack();
+
 	}
 
 	@Test(priority = 3)
@@ -43,8 +54,8 @@ public class LoginPageTest extends BaseTest {
 				{ prop.getProperty("username"), prop.getProperty("password") , "VALID" } // Valid credentials
 		};
 	}
-	
-	@Test(dataProvider = "loginDataProvider", priority = 5,description = "WA-5571")
+
+	@Test(dataProvider = "loginDataProvider", priority = 5, description = "WA-5571")
 	public void testLogin(String Username, String password, String loginType) {
 
 		switch (loginType) {

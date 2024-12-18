@@ -35,7 +35,7 @@ public class LoginPage extends JavaUtility {
 			logger.info("Some elements are missing on Login Page");
 			return false;
 		}
-	}
+	} 
 
 	public String click_CreateAccount_Button() {
 		navigateToSignUpPage();
@@ -90,7 +90,7 @@ public class LoginPage extends JavaUtility {
 	}
 
 	public HomePage navigateToHomePage(String username, String password) {
-		System.out.println(page.url());
+		//System.out.println(page.url());
 
 		if (page.url().contains("https://rc.truvideo.com/login")) {
 
