@@ -20,17 +20,25 @@
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
 					<include name="verifyViewedStatus" />
-					<!-- <include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
+				   <!--  <include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifyVariousActivityOfEstimate" /> -->
+					<include name="VerifyOpenInspection" />
+					<include name="VerifySendbackInspection" />
+					<include name="VerifyPublishInspections" />
+					<include name="VerifyNotifyCustomer" />
+					<include name="VerifyPrintInspection" />
+					<include name="verifyCopylinktoClipboardFunctionality" />
+					<include name="verifyViewWithCustomerFunctionality" />
+					<include name="verifyEditThisROFunctionality" />
+					<include name="verifyDeleteRepairOrderFunction" />
+					<include name="verifyNotesFunctionalityOnRoDetailPage" />
+					
 					
 				</methods>
 			</class>
 			</classes>
-	</test>
+	</test> 
+	
 </suite>

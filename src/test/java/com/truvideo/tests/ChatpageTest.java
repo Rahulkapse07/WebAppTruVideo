@@ -26,4 +26,9 @@ public class ChatpageTest extends BaseTest {
 		chatpage.VerifyChannelleaveFunc();
 	}
 	
+	@Test(priority = 3, description = "MT-2382")
+	public void VerifyconversationFilterOnChat() {
+		chatpage.verifySelectConversationFilter();
+	}
+	
 }

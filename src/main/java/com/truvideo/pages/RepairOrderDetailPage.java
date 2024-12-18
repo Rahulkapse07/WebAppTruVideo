@@ -1980,13 +1980,22 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String welcomeText = "h1.chat-empty-container__title";
 	private String noConversationText = "p.chat-empty-container__subtitle";
 	private String textBox = ".mat-mdc-form-field-infix.ng-tns-c508571215-8";
-	private String writeInput = "#mat-input-1";
+	private String chat_Textbox = ".mat-mdc-form-field-infix textarea";
 	private String typeHereYourText = "#mat-input-0";
 	private String emojisBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__emoji";
 	private String attachmentBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__clip";
 	private String gifBtn = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__image";
 	private String sendDisabled = ".mdc-icon-button.mat-mdc-icon-button.mat-unthemed.mat-mdc-button-base.ng-star-inserted.mat-mdc-button-disabled";
 	private String sendEnabled = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__send";
+	private String message = ".message-container.message-container-incoming.ng-star-inserted";
+	private String conversation_Info = "p.info-container__header__title";
+	private String infoAvatar = "div.info-container__content__image";
+	private String orderNameDate = "div.info-container__content__title";
+	private String muteChannel = "div.info-container__content__actions.ng-star-inserted:nth-child(1)";
+	private String markasUnread = "div.info-container__content__actions.ng-star-inserted:nth-child(2)";
+	private String addParticipant = "div.info-container__content.ng-star-inserted";
+	
+	
 
 	public boolean repairOrderChatFunctionality() throws InterruptedException {
 
@@ -2022,18 +2031,119 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 		frame.locator(sendDisabled).isVisible();
 		logger.info("By default send button is disable");
-		frame.locator(writeInput).click();
+		frame.locator(chat_Textbox).click();
 		System.out.println("click");
-		frame.locator(writeInput).fill(getRandomString(4));
+		page.waitForTimeout(3000);
+		frame.locator(chat_Textbox).fill(getRandomString(4));
 		logger.info("Text entered succesfully into the text box");
 		frame.locator(sendEnabled).isVisible();
 		logger.info("Send button is enable");
+		page.waitForTimeout(3000);
 		frame.locator(sendEnabled).click();
 		logger.info("Text sent to the Advisor/Tech");
-
+		page.waitForTimeout(3000);
+		frame.locator(message).isVisible();
+		logger.info("Message is displaying in  the last");
+		page.waitForTimeout(3000);
+		frame.locator(iBtn).click();
+		logger.info("Click on info button");
+		frame.locator(conversation_Info).click();
+		logger.info("Conversation info is displayed sucessfully");
+		
 		return true;
 
 	}
+	
+	private String sMs_Tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('SMS')";
+	private String customerNoNotAvailable = "#mat-tab-content-1-1 div.orders-detail__no-conversation.ng-star-inserted p";
+	private String logoFLname = "div.chat-header__avatar .avatar-content.ng-star-inserted";
+	private String flName = "div.chat-header__main p.chat-header__title";
+	private String mobileNo = "div.chat-header__phone p.chat-header__members:nth-child(2)";
+	private String channelOwnerName = "div.chat-header__phone p.chat-header__members:nth-child(4)";
+	private String logInUserLabel = "li.account-nav a span span:nth-child(3)";
+	private String standardResponse  = "div.standard-responses__chips.ng-star-inserted div:nth-child(1)";
+	
+	
+	public boolean smsFunctionalityOnRO() {
+		
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		HomePage hp = new HomePage(page);
+		OrderListPage op = new OrderListPage(page);
+		logger.info("Creating RO with mail...");
+        hp.clickOn_RepairOrder_Header();
+		page.waitForTimeout(15000);
+		op.addRepairOrderWithoutMobileNO();
+		logger.info("Creating RO without mobile no and mail...");
+		page.waitForTimeout(30000);
+		if (frame.locator(communicationTab).isVisible() && frame.locator(whatsApp_tab).isVisible() &&
+				frame.locator(sMs_tab).isVisible() && frame.locator(chat_tab).isVisible() &&
+				frame.locator(notes_tab).isVisible()) {
+			logger.info("All tabs are vissible");
+
+		} else {
+			logger.info("All tabs are not vissible");
+		}
+		frame.locator(sMs_Tab).click();
+		logger.info("Click on SMS tab successfully");
+		frame.locator(customerNoNotAvailable).isVisible();
+		logger.info(" Customer's phone number not available or invalid ");
+		page.waitForTimeout(3000);
+		hp.clickOn_RepairOrder_Header();
+		page.waitForTimeout(15000);
+		op.navigateToOrderDetails("Existing");
+		page.waitForTimeout(10000);
+		logger.info("Create New repair order with 'mobile & email' open that order");
+		page.waitForTimeout(30000);
+		if (frame.locator(communicationTab).isVisible() && frame.locator(whatsApp_tab).isVisible() &&
+				frame.locator(sMs_tab).isVisible() && frame.locator(chat_tab).isVisible() &&
+				frame.locator(notes_tab).isVisible()) {
+			logger.info("All tabs are vissible");
+
+		} else {
+			logger.info("All tabs are not vissible");
+		}
+		page.waitForTimeout(3000);
+		frame.locator(sMs_Tab).click();
+		logger.info("Click on SMS tab successfully");
+		if(frame.locator(logoFLname).isVisible() && frame.locator(flName).isVisible()
+				 && frame.locator(mobileNo).isVisible()) {
+			logger.info("Logo, FL name and Mobile number are vissible");
+		}
+		else {
+			logger.info("Name & Mobile no are not vissible");
+		}
+		List<String> s1 = page.locator(channelOwnerName).allInnerTexts();
+        logger.info(s1);
+        String ownername = page.locator(logInUserLabel).innerText().toLowerCase();
+		System.out.println(ownername);
+		for (String name : s1) {
+
+			if (name.toLowerCase().contains(ownername)) {
+				logger.info("Name of Advisor is matched" + ownername);
+				return true;
+			} else {
+				logger.info("Name of Advisor is notmatched" + ownername);
+				return false;
+			}
+		}
+		page.waitForTimeout(1000);
+		frame.locator(sms_Textbox).click();
+		page.keyboard().down("Control");
+		page.keyboard().press("V");
+		page.keyboard().up("Control");
+		logger.info("Verifying a control paste");
+		frame.locator(send_SMS_Button).click();
+		frame.locator(send_Original_Button).click();
+		logger.info("Original Text has been sent successfully");
+		frame.locator(standardResponse).click();
+		logger.info("Select Standard response");
+		frame.locator(send_SMS_Button).click();
+		logger.info("Standard response send successfully");
+		return true;
+		
+	}
+
+	
 	
 
 

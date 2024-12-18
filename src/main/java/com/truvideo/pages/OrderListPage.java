@@ -388,6 +388,31 @@ public class OrderListPage extends JavaUtility {
 		page.waitForSelector(tableRows);
 		return newRoNumber;
 	}
+	
+	public String addRepairOrderWithoutMobileNO() {
+		page.click(addRepairOrder_Button);
+		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
+		logger.info("Clicked on Add Repair Order button");
+		page.waitForLoadState();
+		newRoNumber = "Auto" + getRandomString(5);
+		page.fill(repairOrderNumber_Field, newRoNumber);
+		logger.info("Repair Order Number filled : " + newRoNumber);
+		String firstName = "Automation";
+		page.fill(firstName_Field, firstName);
+		logger.info("First Name filled : " + firstName);
+		String lastName = "Last" + getRandomString(4);
+		page.fill(lastName_Field, lastName);
+		logger.info("Last Name filled : " + lastName);
+		page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
+		page.waitForTimeout(2000);
+		page.click(save_Button);
+		logger.info("Clicked on Save Button");
+		page.waitForSelector(tableRows);
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
+		return newRoNumber;
+	}
+
 
 	public void addmultipleRepairOrder(String firstname, String lastname, String emailId, String phoneNumber) {
 

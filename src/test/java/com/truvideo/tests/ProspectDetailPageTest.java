@@ -38,5 +38,14 @@ public class ProspectDetailPageTest extends BaseTest {
 	public void verifyViewedStatus() {
 		prospectdetailpage.checkStatus_OnVideoWatch();
 	}
+	@Test(priority = 7, description = "WA-5413")
+	public void verifyNotesFunctionalityOnSoDetailPage() throws InterruptedException {
+		prospectdetailpage.notesFunctionalityOnSO();
+	}
+	@Test(priority = 8, description = "WA-5412")
+	public void VerifySMSFunctionalityOnSoDetailPage() throws InterruptedException {
+		prospectdetailpage.smsFunctionalityOnSO();
+	}
+
 
 }
