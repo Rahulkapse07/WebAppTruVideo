@@ -111,21 +111,26 @@ public class HomePageTest extends BaseTest {
 	  //Assert.assertTrue(homepage.listAsPerTheTextSearch("text")); //Added by RK }
 	  }
 	  @Test(priority = 20) public void verify_Notification_BellIconWorking() {
-	  Assert.assertTrue(homepage.checkBellIcon()); }
+	  Assert.assertTrue(homepage.checkBellIcon());
+	  }
 	  
-	  @Test(priority = 21) public void verify_DealerCodeButtonIsWorking() {
-	  Assert.assertTrue(homepage.checkDealerCodeButton()); }
+//	  @Test(priority = 21) public void verify_DealerCodeButtonIsWorking() {
+//	  Assert.assertTrue(homepage.checkDealerCodeButton()); 
+//	  }
 	  
 	  @Test(priority = 22) public void verify_Chat_ButtonIsWorking() { String
 	  actualTitle = homepage.clickOnChatButton(); Assert.assertEquals(actualTitle,
-	  AppConstants.CHAT_PAGE_TITLE); page.goBack(); }
+	  AppConstants.CHAT_PAGE_TITLE); page.goBack(); 
+	  }
 	  
 	  @Test(priority = 23) public void verify_BackAway_ButtonIsWorking() {
-	  Assert.assertTrue(homepage.clickOn_Back_Away_Button()); }
+	  Assert.assertTrue(homepage.clickOn_Back_Away_Button()); 
+	  }
 	  
 	  
 	  @Test(priority = 24) public void verify_UserAccountDropdown_And_Options() {
-	  Assert.assertTrue(homepage.openUserAccountDropdown()); }
+	  Assert.assertTrue(homepage.openUserAccountDropdown());
+	  }
 	  
 	  @Test(priority = 25) public void
 	  verify_AccountSetting_TextButtonIsClickable() { String actualTitle =

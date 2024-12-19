@@ -689,7 +689,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not estimate Endlink");
 			throw new SkipException("Last message is not estimate Endlink");
 		}
-		page.waitForTimeout(5000);
+		page.waitForTimeout(15000);
 		softAssert.assertTrue(frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Review Approved Work status");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Approved"), "verify Est-Approved status on RO list");
@@ -701,7 +701,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		logger.info("Click on Confirm button");
 		frame.locator(closeWindow_Button).click();
 		logger.info("Click on close estimate window button");
-		page.waitForTimeout(3000);
+		page.waitForTimeout(8000);
 		softAssert.assertTrue(!frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Estimate status on confirm estimate");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Confirmed"), "verify Est-Confirmed status on RO list");

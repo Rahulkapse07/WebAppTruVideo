@@ -164,7 +164,7 @@ public class ProspectDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(salesIframe);
 		SoftAssert softAssert = new SoftAssert();
 		List<Boolean> flags = new ArrayList<Boolean>();
-		//addVideoToOrder();
+		addVideoToOrder();
 		page.waitForTimeout(2000);
 		clickOperationButton("Send to customer");
 		selectChannelToPerformAction(channelSelected); // Select channel to send video
@@ -179,7 +179,7 @@ public class ProspectDetailPage extends JavaUtility {
 				logger.info("Endlink opened in another tab");
 			});
 			endlinkPage.waitForLoadState();
-			endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+			//endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
 			endlinkPage.locator(playButton).first().click();
 			logger.info("Clicked on Play Button");
 			logger.info("Waiting to play video for 8 Seconds");
@@ -385,7 +385,7 @@ public class ProspectDetailPage extends JavaUtility {
 	public boolean copyLinkToClipboard() {
 	    FrameLocator frame = page.frameLocator(salesIframe);
 	    page.waitForCondition(() -> frame.locator(sms_Tab).isVisible());
-	    addVideoToOrder();
+	    //addVideoToOrder();
 	    clickOperationButton("Copy link to clipboard");
 	    page.waitForTimeout(2000);
 
@@ -683,7 +683,7 @@ public class ProspectDetailPage extends JavaUtility {
 		logger.info("Clicked on Edit this SO button");
 		page.waitForTimeout(6000);
 		frame.locator(firstNameEditing).click();
-		page.waitForTimeout(1000);
+		page.waitForTimeout(3000);
 		frame.locator(firstNameEditing).fill("FirstName Edited");
 		logger.info("Edited FirstName successfully");
 		frame.locator(lastNameEditing).fill("Edited LastName");

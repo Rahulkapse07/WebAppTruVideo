@@ -50,7 +50,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
-	@Test(priority = 7, description = "" )
+	@Test(priority = 7, description = "",dependsOnMethods = "verifyVariousActivityOfEstimate")
 	public void verifySendEstimateFunction() {
 		repairOrderPage.sendEstimate("SMS");
 	}
@@ -60,7 +60,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(priority = 9, description = "" )
+	@Test(priority = 9, description = "" ,dependsOnMethods = "verifySendEstimateFunction")
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
