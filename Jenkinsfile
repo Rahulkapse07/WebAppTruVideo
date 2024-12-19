@@ -3,11 +3,12 @@ pipeline {
 
     tools {
         maven 'Maven' // Ensure 'Maven' matches the Maven installation name in Jenkins
-        DISPLAY = ':99'
+        
     }
 
     environment {
         MAVEN_OPTS = '-Xmx1024m' // Optional: Configure Maven memory options if needed
+         DISPLAY = ':99'
     }
 
     stages {
