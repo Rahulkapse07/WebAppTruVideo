@@ -798,11 +798,11 @@ public class HomePage extends JavaUtility {
 	public boolean switchDealer() {
 		page.click(accountDropdownButton);
 		logger.info("Clicked on user account dropdown button");
-		page.waitForTimeout(2000);
+		page.waitForTimeout(3000);
 		page.click(dealerSearch_TextBox);
 		page.keyboard().type(prop.getProperty("anotherDealer"));
 		// page.fill(dealerSearch_TextBox, prop.getProperty("dealertoswitch"));
-		page.waitForTimeout(2000);
+		page.waitForTimeout(3000);
 		page.locator(getSearchedDealer(prop.getProperty("anotherDealer"))).first().click();
 		logger.info("Clicked on another dealer to switch");
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -810,16 +810,15 @@ public class HomePage extends JavaUtility {
 			logger.info("User is switched to another dealer and switched dealer is : "
 					+ page.locator(logInDealerLabel).textContent());
 			page.waitForLoadState();
-			page.waitForTimeout(5000);
+			page.waitForTimeout(8000);
 			page.click(accountDropdownButton);
 			logger.info("Clicked on user account dropdown button again : To switch Back");
-			page.waitForTimeout(5000);
-
+			page.waitForTimeout(8000);
 			page.click(dealerSearch_TextBox);
 			System.out.println("again");
 			page.keyboard().type(prop.getProperty("dealerused"));
 			// page.fill(dealerSearch_TextBox, prop.getProperty("dealerused"));
-			page.waitForTimeout(2000);
+			page.waitForTimeout(4000);
 			page.locator(getSearchedDealer(prop.getProperty("dealerused"))).first().click();
 			logger.info("Clicked on first dealer to switch : To switch Back");
 			flags.add(true);

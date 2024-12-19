@@ -119,5 +119,105 @@ public class ChatPage extends JavaUtility {
 
 		return true;
 	}
+	
+	//span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text(' Groups ')
+	private String filter = ".mat-mdc-form-field-icon-suffix.ng-tns-c2400808035-2.ng-star-inserted";
+	private String groups = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text('  Groups  ')";
+	private String announcements = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text('  Announcements  ')";
+	private String direct = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text('  Directs  ')";
+	private String order = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text('  Order  ')";
+	private String unread = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label span.ng-star-inserted";
+	//private String unread = "span.mdc-evolution-chip__text-label.mat-mdc-chip-action-label:has-text('  Unread ')";
+	private String list = ".channels-list__section.list-all";
+	
+	public boolean verifySelectConversationFilter() {
+		FrameLocator iframe = page.frameLocator(iframe_chat);
+		iframe.locator(filter).click();
+		logger.info("Click on filter");
+		if(iframe.locator(groups).isVisible() && iframe.locator(announcements).isVisible() &&
+				iframe.locator(filter).isVisible() && iframe.locator(filter).isVisible()) {
+			logger.info("All filter are visible");
+		}
+		else {
+			logger.info("All filter are not visible");
+
+		}
+        page.waitForTimeout(5000);
+		iframe.locator(groups).click();
+		logger.info("Only Group filter is selected");
+        page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Group chat list is displaying only");
+		iframe.locator(groups).click();
+		logger.info("All the conversation list are displayed");
+        page.waitForTimeout(3000);
+		iframe.locator(announcements).click();
+		logger.info("Only Announcement filter is selected");
+        page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Broadcast chat list is displaying only");
+		iframe.locator(announcements).click();
+		logger.info("All the conversation list are displayed");
+        page.waitForTimeout(3000);
+		iframe.locator(direct).click();
+		logger.info("Only Direct filter is selected");
+        page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Direct chat list is displaying only");
+		iframe.locator(direct).click();
+		logger.info("All the conversation list are displayed");
+        page.waitForTimeout(3000);
+		iframe.locator(order).click();
+		logger.info("Only Order filter is selected");
+        page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Order chat list is displaying only");
+		iframe.locator(order).click();
+		logger.info("All the conversation list are displayed");
+        page.waitForTimeout(3000);
+        iframe.locator(unread).click();
+		logger.info("Only Unread filter is selected");
+		page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Unread chat list is displaying only");
+		iframe.locator(unread).isDisabled();
+		logger.info("All the conversation list are displayed");
+		page.waitForTimeout(30000);
+		iframe.locator(groups).locator(order).click();
+		logger.info("Order and Group filter is selected");
+		page.waitForTimeout(5000);
+		iframe.locator(list).click();
+		logger.info("Both order and group chat list are displaying");
+		iframe.locator(groups).locator(order).click();
+		logger.info("All the conversation list are displayed");
+        page.waitForTimeout(30000);
+//        iframe.locator(groups).locator(direct).click();
+//		logger.info("Direct and Group filter is selected");
+//		page.waitForTimeout(5000);
+//		iframe.locator(list).click();
+//		logger.info("Both direct and group chat list are displaying");
+//		iframe.locator(groups).locator(direct).click();
+//		logger.info("All the conversation list are displayed");
+//        page.waitForTimeout(8000);
+//        iframe.locator(direct).locator(groups).locator(order).click();
+//        logger.info("Direct,Group and Order filter is selected");
+//        page.waitForTimeout(5000);
+//		iframe.locator(list).click();
+//		logger.info("Direct, Group and Order chat list are displaying");
+//		iframe.locator(direct).locator(groups).locator(order).click();
+//		logger.info("All the conversation list are displayed");
+//		page.waitForTimeout(8000);
+//	    iframe.locator(direct).locator(groups).locator(announcements).locator(order).click();
+//	    logger.info("Direct,Group,Announcement and Order filter is selected");
+//	    page.waitForTimeout(5000);
+//	    iframe.locator(list).click();
+//		logger.info("Direct, Group,Announcement and Order chat list are displaying");
+//		iframe.locator(direct).locator(groups).locator(announcements).locator(order).click();
+//		logger.info("All the conversation list are displayed");		
+		return true;
+		
+	}
+
+	
 
 }

@@ -63,12 +63,14 @@
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
 					<include name="verifyViewedStatus" />
+
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifySendEstimateFunction" />
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
 					<include name="verifyPaymentResendFunction" />
+
 					<include name="VerifyOpenInspection" />
 					<include name="VerifySendbackInspection" />
 					<include name="VerifyPublishInspections" />
@@ -79,6 +81,7 @@
 					<include name="verifyEditThisROFunctionality" />
 					<include name="verifyDeleteRepairOrderFunction" />
 					<include name="verifyNotesFunctionalityOnRoDetailPage" />
+
 				</methods>
 			</class>
 
@@ -121,3 +124,4 @@
 
 	</test>
 </suite>
+

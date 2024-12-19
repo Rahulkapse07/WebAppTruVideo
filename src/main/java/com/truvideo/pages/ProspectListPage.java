@@ -205,12 +205,49 @@ public class ProspectListPage extends JavaUtility {
 		page.click(vehicleYear_Field);
 		page.fill(vehicleYear_Field, "2026");
 		logger.info("Filled Year value");
+		page.waitForTimeout(2000);
+		page.selectOption(salesAgentDropdown_Field, prop.getProperty("MobileUserLogin").trim());
+		page.waitForTimeout(2000);
+		logger.info("Selected sales Agent");
+		page.click(savePropsectButton);
+		logger.info("Clicked on Save Button");
+		return newSOName;
+	}
+	public String addNewSalesProspectWithoutMobileNo()
+	{
+		page.click(addSalesProspect_Button);
+		page.waitForURL(url -> url.contains(AppConstants.ADD_PROSPECT_URL));
+		logger.info("Clicked on AddSalesProspect button");
+		page.waitForLoadState();
+		page.click(lastName_Field);
+		String lastName="LastName"+getRandomString(3);
+		page.fill(lastName_Field, lastName);
+		logger.info("Filled Last name of Customer");
+		String firstName="FirstName"+getRandomString(3);
+		page.click(firstName_Field);
+		page.fill(firstName_Field, firstName);
+		logger.info("Filled First name of Customer");
+		newSOName=lastName+", "+firstName;
+		page.click(stockNo_Field);
+		page.fill(stockNo_Field, "cshpp44344");
+		logger.info("Stock number field is filled");
+		page.click(vehicleMake_Field);
+		page.fill(vehicleMake_Field, "Test11");
+		logger.info("Filled Vehicle Make  of Customer");
+		page.click(vehicleModel_Field);
+		page.fill(vehicleModel_Field, "Test22");
+		logger.info("Filled Model of Customer vehicle");
+		page.click(vehicleYear_Field);
+		page.fill(vehicleYear_Field, "2026");
+		logger.info("Filled Year value");
 		page.waitForTimeout(1000);
 		page.selectOption(salesAgentDropdown_Field, prop.getProperty("MobileUserLogin").trim());
 		page.waitForTimeout(2000);
 		logger.info("Selected sales Agent");
 		page.click(savePropsectButton);
 		logger.info("Clicked on Save Button");
+		page.locator("#sales-order-results tbody tr:nth-child(2) td:nth-child(6)").first().click();
+		logger.info("Open first sales order");
 		return newSOName;
 	}
 	public String getFirstSOInList() {
@@ -225,5 +262,13 @@ public class ProspectListPage extends JavaUtility {
 			page.waitForURL(url-> url.contains("/order/sales/view/"));
 			return new ProspectDetailPage(page);
 	}
+	public ProspectDetailPage navigateToProspectDetails1() {
+	    newSOName = addNewSalesProspectWithoutMobileNo();
+		Locator tableRow = page.locator(tableRows);
+		tableRow.locator("td:has-text('" + newSOName + "')").first().click();
+		page.waitForURL(url-> url.contains("/order/sales/view/"));
+		return new ProspectDetailPage(page);
+}
+
 	
 }
