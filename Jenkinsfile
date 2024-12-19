@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven' // Ensure 'Maven' matches the Maven installation name in Jenkins
+        DISPLAY = ':99'
     }
 
     environment {
@@ -19,13 +20,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn clean install'
+                sh 'mvn test -Prc-smoke'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests with xvfb...'
-                sh 'xvfb-run -a mvn test -Prc-smoke'
+               sh 'xvfb-run -a mvn test -Prc-smoke'
             }
         }
         stage('Archive') {
