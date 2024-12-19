@@ -4,7 +4,7 @@
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
-	<parameter name="headless" value="false" />
+	<!-- <parameter name="headless" value="false" /> -->
 	<parameter name="env" value="stagingrc" />
 
 	<test name="Login page">
