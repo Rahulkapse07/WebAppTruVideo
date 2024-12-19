@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven' // Make sure 'Maven3' matches the Maven installation name in Jenkins
-        
+        maven 'Maven' // Ensure 'Maven' matches the Maven installation name in Jenkins
     }
 
     environment {
@@ -25,8 +24,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                sh 'mvn test -Prc-smoke'
+                echo 'Running tests with xvfb...'
+                sh 'xvfb-run -a mvn test -Prc-smoke'
             }
         }
         stage('Archive') {
