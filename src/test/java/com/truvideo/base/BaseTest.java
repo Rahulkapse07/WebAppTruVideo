@@ -29,7 +29,7 @@ public class BaseTest {
 	@Parameters({ "browser", "headless", "env" })
 	public void loginPageSetup(
 			@Optional("chrome") String browser, 
-			@Optional("false") String headless,
+			@Optional("") String headless,
 			@Optional("stagingrc") String env)
 			{
 
