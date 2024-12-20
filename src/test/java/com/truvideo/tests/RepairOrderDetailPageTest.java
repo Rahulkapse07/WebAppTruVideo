@@ -2,7 +2,6 @@ package com.truvideo.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -50,7 +49,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.activitiesOfCreateEstimateWindow();
 	}
 
-	@Test(priority = 7, description = "" )
+	@Test(priority = 7, description = "",dependsOnMethods = "verifyVariousActivityOfEstimate")
 	public void verifySendEstimateFunction() {
 		repairOrderPage.sendEstimate("SMS");
 	}
@@ -60,17 +59,11 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(priority = 9, description = "" )
+	@Test(priority = 9, description = "" ,dependsOnMethods = "verifySendEstimateFunction")
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
 
-	
-	
-	
-	
-	
-	
 	@Test(priority = 11, description =  "")
 	public void verifyPaymentFunction() {
 		page.reload();
@@ -87,14 +80,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 
 		repairOrderPage.submitPayment("SMS");
 	}
-
-	
-	
-	
-	
-	
-	
-	
 	/*
 	 * @Test(priority = 14, description = "WA-5569") public void
 	 * verifyCreateReminder() throws InterruptedException {
@@ -150,10 +135,28 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyInsightFunctionality() throws InterruptedException {
 		repairOrderPage.insightFunctionality();
 	}
+	
+	@Test(priority = 25, description = "")
+	public void verifyRejectdeletefunctionality() {
+		repairOrderPage.verifyRejectdeletefunctionality();
+	}
 
 	@Test(priority = 25, description = "WA-5394") // try to run this method at the end of class
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
+	}
+	@Test(priority = 26, description = "WA-5386")
+	public void verifyNotesFunctionalityOnRoDetailPage() throws InterruptedException {
+		repairOrderPage.notesFunctionalityOnRO();
+	}
+	@Test(priority = 27, description = "WA-5385")
+	public void verifyROChatFunctionalityDetailPage() throws InterruptedException {
+		repairOrderPage.repairOrderChatFunctionality();
+	}
+	
+	@Test(priority = 28, description = "WA-5384")
+	public void VerifySMSFunctionalityOnRoDetailPage() {
+		repairOrderPage.smsFunctionalityOnRO();
 	}
 
 }

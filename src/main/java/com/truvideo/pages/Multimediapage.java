@@ -651,6 +651,7 @@ public class Multimediapage extends JavaUtility {
 							page.waitForTimeout(count);
 							iframe.locator(images).click();
 							logger.info("Switched in Video to Image");
+							page.waitForTimeout(5000);
 							iframe.locator(threedotforimage).click();
 							page.waitForTimeout(2000);
 							if (iframe.locator(imagehidden).isVisible() && iframe.locator(imagedownload).isVisible()

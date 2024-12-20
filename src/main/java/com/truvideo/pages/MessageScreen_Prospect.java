@@ -4,6 +4,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.mail.SendFailedException;
+
 import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.asserts.SoftAssert;
 
@@ -54,15 +56,15 @@ public class MessageScreen_Prospect extends JavaUtility {
 	private String StartconversatationFirstname = "#mat-input-1";
 	private String Startconversatationlastname = "#mat-input-2";
 	private String StartconversationBtn = ".chat-input__button span.mdc-button__label";
-	
+
 	private String SearchFilter = "#mat-input-0";
 	private String NOconversationStartmessasge = ".chat-empty-container.ng-star-inserted h1";
 	private String Message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
 	private String ConversationStartbtn = "#mat-select-0-panel:has-text('SMS')";
 	private String ChannalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
 	private String MessageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
-	private String AttachmentPath ="src/main/resources/Data/image/testimage.png";
-	
+	private String AttachmentPath = "src/main/resources/Data/image/testimage.png";
+
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
 		FrameLocator iframes = page.frameLocator(messageIframe);
@@ -72,8 +74,9 @@ public class MessageScreen_Prospect extends JavaUtility {
 		page.waitForTimeout(4000);
 		page.waitForCondition(() -> iframes.locator(message_profile).isVisible());
 		if (iframes.locator(createIcon).isVisible() && iframes.locator(Message_Search_conversation).isVisible()
-				&& iframes.locator(Message_Search_icon).isVisible() && iframes.locator(Conversation_header).isVisible()){
-		
+				&& iframes.locator(Message_Search_icon).isVisible()
+				&& iframes.locator(Conversation_header).isVisible()) {
+
 			logger.info("Elements are verifed and Visible");
 			return true;
 		} else {
@@ -82,86 +85,87 @@ public class MessageScreen_Prospect extends JavaUtility {
 		}
 	}
 
-	 private String messageownername = ".chat-header__phone p:nth-child(4)";
-		private String MessageProfileName = ".profile__user-info p:nth-child(1)";
-		private String loginusername =   "li.account-nav a span span:nth-child(3)";
-		public boolean Verify_Profile_setting_button(String ProfileName) {
-			page.reload();
-			logger.info("Verify Message Profile Settings");
-			List<Boolean> flags = new ArrayList<>();
-			FrameLocator iframe = page.frameLocator(messageIframe);
-			String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
-			String MessageOwneraName = iframe.locator(messageownername).innerText().toLowerCase();
-			page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
+	private String messageownername = ".chat-header__phone p:nth-child(4)";
+	private String MessageProfileName = ".profile__user-info p:nth-child(1)";
+	private String loginusername = "li.account-nav a span span:nth-child(3)";
+
+	public boolean Verify_Profile_setting_button(String ProfileName) {
+		page.reload();
+		logger.info("Verify Message Profile Settings");
+		List<Boolean> flags = new ArrayList<>();
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		String MessageprofileName = iframe.locator(MessageProfileName).innerText().toLowerCase();
+		String MessageOwneraName = iframe.locator(messageownername).innerText().toLowerCase();
+		page.waitForCondition(() -> iframe.locator(message_profile).isVisible());
 //			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
 //				logger.info("Profile After changes Matched");
 //			} else {
 //				logger.info("Profile name not changed");
 //			}
-		
-			if (iframe.locator(message_profile).isVisible()) {
-				page.waitForTimeout(3000);
-				iframe.locator(message_profile).click();
-				logger.info("Message profile clicked");
-				page.waitForTimeout(5000);
-				// iframe.locator(message_profile_input).click();
-				page.keyboard().press("Control+A");
-				page.waitForTimeout(5000);
-				iframe.locator(message_profile_input).type(ProfileName);
-				page.waitForTimeout(1500);
-				iframe.locator(message_profile_save_btn).click();
-				page.waitForTimeout(3000);
-				logger.info("Clicked on save button");
-				//page.reload(); // We dont need this reload,This is the issue right now
-			} else {
-				logger.info("Message Profile Setting Failed To Open");
-				flags.add(false);
-			}
+
+		if (iframe.locator(message_profile).isVisible()) {
 			page.waitForTimeout(3000);
-			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
-				logger.info("Profile After changes Matched");
-			} else {
-				logger.info("Profile name not changed");
-			}
-			
-			if (iframe.locator(message_profile).isVisible()) {
-				page.waitForTimeout(3000);
-				iframe.locator(message_profile).click();
-				logger.info("Message profile clicked");
-				page.waitForTimeout(5000);
-				Locator Loginuserlabel = page.locator(loginusername);
-				String Loginuser = Loginuserlabel.innerText();
-				System.out.println(Loginuser);
-				page.keyboard().press("Control+A");
-				page.waitForTimeout(5000);
-				iframe.locator(message_profile_input2).type(Loginuser);
-				page.waitForTimeout(1500);
-				iframe.locator(message_profile_save_btn).click();
-				logger.info("Clicked on save button");
-			}
+			iframe.locator(message_profile).click();
+			logger.info("Message profile clicked");
+			page.waitForTimeout(5000);
+			// iframe.locator(message_profile_input).click();
+			page.keyboard().press("Control+A");
+			page.waitForTimeout(5000);
+			iframe.locator(message_profile_input).type(ProfileName);
+			page.waitForTimeout(1500);
+			iframe.locator(message_profile_save_btn).click();
 			page.waitForTimeout(3000);
-			if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
-				logger.info("Profile After changes Matched");
-			} else {
-				logger.info("Profile name not changed");
-			}
-			return !flags.contains(false);
+			logger.info("Clicked on save button");
+			// page.reload(); // We dont need this reload,This is the issue right now
+		} else {
+			logger.info("Message Profile Setting Failed To Open");
+			flags.add(false);
+		}
+		page.waitForTimeout(3000);
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
 		}
 
-		public boolean Verify_message_Name() {
-			FrameLocator iframe = page.frameLocator(messageIframe);
-			HomePage homePage = new HomePage(page);
-			String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
-			String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
-
-			if (storeusername.trim().equals(messageusername.trim())) {
-				logger.info(storeusername + "The Channel owner is same user who is login--" + messageusername);
-				return true;
-			} else {
-				logger.info(storeusername+"The Channel owner is not match with user who is login--" + messageusername);
-				return false;
-			}
+		if (iframe.locator(message_profile).isVisible()) {
+			page.waitForTimeout(3000);
+			iframe.locator(message_profile).click();
+			logger.info("Message profile clicked");
+			page.waitForTimeout(5000);
+			Locator Loginuserlabel = page.locator(loginusername);
+			String Loginuser = Loginuserlabel.innerText();
+			System.out.println(Loginuser);
+			page.keyboard().press("Control+A");
+			page.waitForTimeout(5000);
+			iframe.locator(message_profile_input2).type(Loginuser);
+			page.waitForTimeout(1500);
+			iframe.locator(message_profile_save_btn).click();
+			logger.info("Clicked on save button");
 		}
+		page.waitForTimeout(3000);
+		if (MessageprofileName.toLowerCase().equals(MessageOwneraName)) {
+			logger.info("Profile After changes Matched");
+		} else {
+			logger.info("Profile name not changed");
+		}
+		return !flags.contains(false);
+	}
+
+	public boolean Verify_message_Name() {
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		HomePage homePage = new HomePage(page);
+		String storeusername = page.innerText(homePage.getLoginUserLabel()).toLowerCase();
+		String messageusername = iframe.locator(message_profile_user).innerText().toLowerCase();
+
+		if (storeusername.trim().equals(messageusername.trim())) {
+			logger.info(storeusername + "The Channel owner is same user who is login--" + messageusername);
+			return true;
+		} else {
+			logger.info(storeusername + "The Channel owner is not match with user who is login--" + messageusername);
+			return false;
+		}
+	}
 
 	private String filterButton(String buttonText) {
 		return "button:has-text('" + buttonText + "')";
@@ -348,7 +352,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 
 		}
 		for (String element : isWhatsappButtonSelected) {
-			if (element.contains("whatsapp")){
+			if (element.contains("whatsapp")) {
 				logger.info("CHANNELS ARE IN RIGHT FILTER");
 			} else {
 				logger.info("CHANNELS ARE IN WRONG FILTER");
@@ -516,6 +520,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 		return !values.contains(false);
 
 	}
+
 	private String firstname = "Automation";
 	private String lastname = "Name";
 
@@ -527,7 +532,9 @@ public class MessageScreen_Prospect extends JavaUtility {
 
 		return ".mdc-list-item__primary-text .country-option  div:nth-child(2):has-text('" + countryname + "')";
 	}
+
 	private String Conversationinfo = ".chat-header__drop-down button";
+
 	public boolean verifyStartconversatationbtn(String number, String filter) {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		List<Boolean> flags = new ArrayList<>();
@@ -538,7 +545,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 			logger.info("OPENED CONVERSATION TAB");
 			page.waitForCondition(() -> iframe.locator(StartconversatationFirstname).isVisible());
 			iframe.locator(StartconversatationFirstname).fill(firstname);
-			logger.info("ENTERED FIRSTNAME :-"+ firstname);
+			logger.info("ENTERED FIRSTNAME :-" + firstname);
 			iframe.locator(Startconversatationlastname).fill(lastname);
 			logger.info("ENTERED LASTNAME :-" + lastname);
 			page.waitForTimeout(3000);
@@ -607,6 +614,7 @@ public class MessageScreen_Prospect extends JavaUtility {
 		}
 		return !flags.contains(false);
 	}
+
 	public boolean MessageSendAttachments(String number) {
 		page.reload();
 		logger.info("VERIFY ATTACHMENT");
@@ -646,8 +654,8 @@ public class MessageScreen_Prospect extends JavaUtility {
 				logger.info("SELECT COUNTRY :-" + "United States");
 				logger.info(Message_Filter_Icon);
 				page.waitForTimeout(3000);
-				//iframe.locator(StartconMobileno).click();
-			    iframe.locator(StartconMobileno).fill(number);
+				// iframe.locator(StartconMobileno).click();
+				iframe.locator(StartconMobileno).fill(number);
 				logger.info("Number:-" + number);
 				page.waitForTimeout(2000);
 				iframe.locator(StartConverSMS_Whatsapp_filterbuttn).click();
@@ -717,6 +725,133 @@ public class MessageScreen_Prospect extends JavaUtility {
 		return true;
 	}
 
+	private String Chat(int Value) {
+		return ".channels-list__section.list-all ngx-channels-list-item:nth-child(" + Value
+				+ ") div.channels-list-item__main";
+	}
 
+	private String MarkChat(int Value) {
+		return ".channels-list__section.list-all ngx-channels-list-item:nth-child(" + Value
+				+ ") span.channels-list-item__unreads";
+	}
+
+	private String MessageReDotNotification = "div.channels-list-item__unreads-container.ng-star-inserted span";
+	private String Messagebadge = "span#my-service-message span";
+	private String Messagebandagtotalcount = "#all-service-message a span";
+	private String Markbuttn = "div.info-container__content__actions.ng-star-inserted";
+	private String Readmark = "span.info-container__content__actions__unreads";
+	private String MarkedChat = ".channels-list__section.list-all ngx-channels-list-item span.channels-list-item__unreads";
+	
+	public  boolean VerifyBadgecountfunctionality() throws Exception {
+		FrameLocator iframe = page.frameLocator(messageIframe);
+		List<Boolean> flags = new ArrayList<>();
+		page.waitForTimeout(10000);
+		
+		if (!page.locator(Messagebadge).isVisible()) {
+
+			logger.info("NO UNREAD MESSAGES ARE PRESENT");
+			if (isFilterApplied("My") == true && isFilterApplied("Whatsapp") == true && !isFilterApplied("SMS") == true
+					&& !isFilterApplied("Unread") == true) {
+				iframe.locator(filterButton("Whatsapp")).click();
+
+				for (int i = 1; i < 5; i++) {
+
+					iframe.locator(Chat(i)).click();
+					page.waitForTimeout(5000);
+					String value = iframe.locator(Markbuttn).innerText();
+					System.out.println(value);
+					if (value.contains("Mark as unread")) {
+						iframe.locator(Readmark).click();
+						page.waitForTimeout(1500);
+						logger.info("Mark as read");
+					}
+				}
+				if (!page.locator(Messagebadge).isVisible()) {
+					logger.info("Badge count is not updating");
+					iframe.locator(filterButton("Unread")).click();
+					page.waitForTimeout(5000);
+					int Markedcount = iframe.locator(MarkedChat).count();
+					System.out.println(Markedcount);
+					page.reload();
+					page.waitForTimeout(5000);
+					String afterrefreshcount = page.locator(Messagebadge).innerText();
+					int initialcount = Integer.parseInt(afterrefreshcount);
+					System.out.println(initialcount);
+					if (Markedcount == initialcount) {
+						logger.info("Badge count is increasing correctly after Refresh the page");
+						throw new SendFailedException("Badge count increase but after refresh");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+
+				} else {
+                    logger.info("Badge count is updating");
+					iframe.locator(filterButton("Unread")).click();
+					int Markedcount = iframe.locator(MarkedChat).count();
+					page.waitForTimeout(5000);
+					String afterrefreshcount = page.locator(Messagebadge).innerText();
+					int initialcount = Integer.parseInt(afterrefreshcount);
+
+					if (Markedcount == initialcount) {
+						logger.info("Badge count is increasing correctly");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+				}
+
+			}
+
+		}
+		iframe.locator(filterButton("Whatsapp")).click();
+		String Count = page.locator(Messagebadge).innerText();
+		System.out.println(Count);
+		int initialcount = Integer.parseInt(Count);
+		for (int j = 1; j <= (initialcount + initialcount); j++) {
+			logger.info("enter in for loop");
+
+			iframe.locator(Chat(j)).click();
+			logger.info("click on chat no." + " :- " + " " + j);
+			String value = iframe.locator(Markbuttn).innerText();
+			if (value.contains("Mark as unread")) {
+				iframe.locator(Readmark).click();
+				logger.info("Chat is Marked");
+			}
+
+			else if (value.contains("Mark as read")) {
+				iframe.locator(Readmark).click();
+				logger.info("Chat is Marked");
+			} else {
+				logger.info("Mark button is not visible on page");
+			}
+		}
+
+		page.waitForTimeout(5000);
+		iframe.locator(filterButton("Unread")).click();
+		page.waitForTimeout(5000);
+		int Markedcount = iframe.locator(MarkedChat).count();
+		System.out.println(Markedcount);
+		String count = page.locator(Messagebadge).innerText();
+		int Finalcount = Integer.parseInt(count);
+		if (Finalcount == Markedcount) {
+			logger.info("Badge count is updating properly");
+		} else if (Finalcount != Markedcount) {
+			page.reload();
+			String Afterrefreshcount = page.locator(Messagebadge).innerText();
+			int RefreshFinalcount = Integer.parseInt(Afterrefreshcount);
+			System.out.println(RefreshFinalcount);
+			logger.info("Refresh the page");
+			page.waitForTimeout(5000);
+			if (Markedcount == RefreshFinalcount) {
+				throw new SendFailedException("To update badge count page need to refresh");
+			} else {
+				throw new SendFailedException("Badge count is not updating after even refresh the page");
+			}
+		}
+
+		return true;
+	}
+	
 
 }
+
+

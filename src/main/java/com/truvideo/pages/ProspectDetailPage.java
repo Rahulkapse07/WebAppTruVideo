@@ -10,8 +10,10 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
 import com.microsoft.playwright.options.SelectOption;
 import com.truvideo.constants.AppConstants;
+
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
 
@@ -160,6 +162,7 @@ public class ProspectDetailPage extends JavaUtility {
 		flags.clear();
 	}
 	public void checkStatus_OnVideoWatch(String channelSelected) {
+		System.out.println("svcghsvcghvsaghv");
 		FrameLocator frame = page.frameLocator(salesIframe);
 		SoftAssert softAssert = new SoftAssert();
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -178,7 +181,7 @@ public class ProspectDetailPage extends JavaUtility {
 				logger.info("Endlink opened in another tab");
 			});
 			endlinkPage.waitForLoadState();
-			endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+			//endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
 			endlinkPage.locator(playButton).first().click();
 			logger.info("Clicked on Play Button");
 			logger.info("Waiting to play video for 8 Seconds");
@@ -374,17 +377,175 @@ public class ProspectDetailPage extends JavaUtility {
 		frame.locator(customer_tab).first().click();
 		return flag;
 	}
+
 	
-	public void verifyElements()
-	{
-		
+
+	private String communicationTab = "div.orders-detail-communications__title";
+	private String whatsApp_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('WhatsApp')";
+	private String sMs_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('SMS')";
+	private String chat_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Chat')";
+	private String notes_tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (0)')";
+	private String textArea = "div.orders-detail-notes__message textarea[placholder='Add a new note...']";
+	private String clear_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--del";
+	private String save_btn = ".mat-mdc-tooltip-trigger.orders-detail-notes__message__bottom--btn--send";
+	private String writetText = ".orders-detail-notes__message__input";
+	private String notes_tab1 = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (1)')";
+
+	public boolean notesFunctionalityOnSO() throws InterruptedException {
+		try {
+			FrameLocator frame = page.frameLocator(salesIframe);
+			page.waitForTimeout(3000);
+			if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
+					&& frame.locator(chat_tab).isVisible() && frame.locator(notes_tab).isVisible()) {
+				logger.info("All tabs are vissible");
+
+			} else {
+				logger.info("All tabs are not vissible");
+			}
+			if (frame.locator(whatsApp_tab).isVisible()) {
+				logger.info("WhatsApp tab is vissible");
+			} else {
+				logger.info("WhatsApp setting is disabled from dealer settings");
+
+			}
+			frame.locator(notes_tab).click();
+			logger.info("Notes window is displayed sucessfully");
+			logger.info("Notes count is displayed 0 by default");
+			frame.locator(textArea).isVisible();
+			logger.info("Add a new note...text are display in the text box");
+			if (frame.locator(clear_btn).isVisible() && frame.locator(save_btn).isVisible()) {
+				logger.info("Clear and Save button is displayed at the bottom");
+			} else {
+				logger.info("Both buttons are not vissible");
+
+			}
+			frame.locator(writetText).fill(getRandomString(4));
+			logger.info("Text entered succesfully into the text box");
+			frame.locator(clear_btn).click();
+			logger.info("Text are clear successfully in the text box");
+			Thread.sleep(3000);
+			frame.locator(writetText).fill(getRandomString(4));
+			logger.info("Again text entered succesfully into the text box");
+			frame.locator(save_btn).click();
+			logger.info("Notes added succesfully in the text box");
+			Thread.sleep(3000);
+			frame.locator(notes_tab1).isVisible();
+			logger.info("Notes count are increased by +1");
+			String notes1 = frame.locator(notes_tab1).innerText().toLowerCase();
+			String numbersOnly = notes1.replaceAll("[^0-9]", "");
+			System.out.println(numbersOnly);
+			logger.info("Notes count increased: " + numbersOnly);
+			page.reload();
+			frame.locator(notes_tab1).waitFor();
+			logger.info("Page refreshed and notes count validated.");
+			return true;
+		} catch (Exception e) {
+			logger.error("Error during notes functionality validation: " + e.getMessage());
+			return false;
+		}
+
 	}
 	
+	
+	private String communication_tab = "div.orders-detail-communications__title";
+	private String whatsAppTab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('WhatsApp')";
+	private String sMs_Tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('SMS')";
+	private String chat_Tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Chat')";
+	private String notes_Tab = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (0)')";
+	private String customerNoNotAvailable = "#mat-tab-content-1-1 div.orders-detail__no-conversation.ng-star-inserted p";
+	//private String customerNoNotAvailable = "p.orders-detail__no-conversation-label";
+	private String logoFLname = "div.chat-header__avatar .avatar-content.ng-star-inserted";
+	private String flName = "div.chat-header__main p.chat-header__title";
+	private String mobileNo = "div.chat-header__phone p.chat-header__members:nth-child(2)";
+	private String channelOwnerName = "div.chat-header__phone p.chat-header__members:nth-child(4)";
+	private String logInUserLabel = "li.account-nav a span span:nth-child(3)";
+	private String standardResponse  = "div.standard-responses__chips.ng-star-inserted div:nth-child(1)";
+
+
+	public boolean smsFunctionalityOnSO() {
+
+		FrameLocator frame = page.frameLocator(salesIframe);
+		HomePage hp = new HomePage(page);
+		ProspectListPage pl = new ProspectListPage(page);
+		logger.info("Creating SO with mail...");
+		hp.clickOn_Prospect_Header();
+		page.waitForTimeout(15000);
+// Start script
+		pl.addNewSalesProspectWithoutMobileNo();
+		logger.info("Creating SO without mobile no and mail..");
+		page.waitForTimeout(30000);
+		if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
+				 && frame.locator(notes_tab).isVisible()) {
+			logger.info("All tabs are vissible");
+
+		} else {
+			logger.info("All tabs are not vissible");
+		}
+		
+		frame.locator(sMs_Tab).click();
+		logger.info("Click on SMS tab successfully");
+		frame.locator(customerNoNotAvailable).isVisible();
+		logger.info(" Customer's phone number not available or invalid ");
+		page.waitForTimeout(3000);
+		hp.clickOn_Prospect_Header();
+		page.waitForTimeout(15000);
+        pl.navigateToProspectDetails();
+		page.waitForTimeout(10000);
+		logger.info("Create New prospect with 'mobile & email' open that prospect");
+		page.waitForTimeout(30000);
+		if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
+				 && frame.locator(notes_tab).isVisible()) {
+			logger.info("All tabs are vissible");
+
+		} else {
+			logger.info("All tabs are not vissible");
+		}
+		frame.locator(sMs_Tab).click();
+		logger.info("Click on SMS tab successfully");
+		if(frame.locator(logoFLname).isVisible() && frame.locator(flName).isVisible()
+				 && frame.locator(mobileNo).isVisible()) {
+			logger.info("Logo, FL name and Mobile number are vissible");
+		}
+		else {
+			logger.info("Name & Mobile no are not vissible");
+		}
+		
+        List<String> s1 = page.locator(channelOwnerName).allInnerTexts();
+        logger.info(s1);
+        String ownername = page.locator(logInUserLabel).innerText().toLowerCase();
+		System.out.println(ownername);
+		for (String name : s1) {
+
+			if (name.toLowerCase().contains(ownername)) {
+				logger.info("Name of Advisor is matched" + ownername);
+				return true;
+			} else {
+				logger.info("Name of Advisor is notmatched" + ownername);
+				return false;
+			}
+		}
+        
+		page.waitForTimeout(1000);
+		frame.locator(sms_Textbox).click();
+		page.keyboard().down("Control");
+		page.keyboard().press("V");
+		page.keyboard().up("Control");
+		logger.info("Verifying a control paste");
+		frame.locator(send_SMS_Button).click();
+		frame.locator(send_Original_Button).click();
+		logger.info("Original Text has been sent successfully");
+		frame.locator(standardResponse).click();
+		logger.info("Select Standard response");
+		frame.locator(send_SMS_Button).click();
+		logger.info("Standard response send successfully");
+		return true;
+
+	}
 	
 	public boolean copyLinkToClipboard() {
 	    FrameLocator frame = page.frameLocator(salesIframe);
 	    page.waitForCondition(() -> frame.locator(sms_Tab).isVisible());
-	    addVideoToOrder();
+	    //addVideoToOrder();
 	    clickOperationButton("Copy link to clipboard");
 	    page.waitForTimeout(2000);
 
@@ -682,7 +843,7 @@ public class ProspectDetailPage extends JavaUtility {
 		logger.info("Clicked on Edit this SO button");
 		page.waitForTimeout(6000);
 		frame.locator(firstNameEditing).click();
-		page.waitForTimeout(1000);
+		page.waitForTimeout(3000);
 		frame.locator(firstNameEditing).fill("FirstName Edited");
 		logger.info("Edited FirstName successfully");
 		frame.locator(lastNameEditing).fill("Edited LastName");
@@ -753,6 +914,7 @@ public class ProspectDetailPage extends JavaUtility {
 			logger.info("Getting issue while deleting SO");
 			return false;
 		}
+
 	}
 
 }

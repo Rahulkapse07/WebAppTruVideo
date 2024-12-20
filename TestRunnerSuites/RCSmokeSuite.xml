@@ -1,11 +1,11 @@
 <suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="false">
+
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
-	<parameter name="baseUrl"
-		value="https://rc.truvideo.com/login" />
 	<parameter name="browser" value="chrome" />
-	<parameter name="headless" value="false" />
+	<!-- <parameter name="headless" value="false" /> -->
+	<parameter name="env" value="stagingrc" />
 
 	<test name="Login page">
 		<classes>
@@ -33,30 +33,22 @@
 					<include name="verifyChannelname" />
 					<include name="verify_videolink_functionality" />
 					<include name="Verify_welcome_message" />
-
-
 				</methods>
 			</class>
 		</classes>
 	</test>
-	
+
 	<test name="Message Sales">
 		<classes>
 			<class name="com.truvideo.tests.Message_RepairOrdertest">
 				<methods>
 					<include name="VerifyAll_Elements" />
+					<include name="Verify_message_Name" />
 					<include name="verifyfilters" />
-					<include name="verifyWhatsAppChatEnablecondition" />
-					<include name="verifyGoToRopage" />
-					<include name="Verify_Conversation_Channel" />
-					<include name="MessageSendattachments" />
-					<include name="verifyconversationStartfromRO" />
-					<include name="verifychannelownereditRo" />
-					<include name="verifyChannelname" />
-					<include name="verify_videolink_functionality" />
-					<include name="Verify_welcome_message" />
-
-
+					<include name="Verify_channel_ownername" />
+					<include name="verifystartConversatationbtn" />
+					<include name="VerifyMessageSendattachments" />
+					<include name="VerifyConversationMessage_RoDetails" />
 				</methods>
 			</class>
 		</classes>
@@ -71,28 +63,35 @@
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
 					<include name="verifyViewedStatus" />
+
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifySendEstimateFunction" />
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
-
 					<include name="verifyPaymentResendFunction" />
+
 					<include name="VerifyOpenInspection" />
 					<include name="VerifySendbackInspection" />
 					<include name="VerifyPublishInspections" />
 					<include name="VerifyNotifyCustomer" />
 					<include name="VerifyPrintInspection" />
-
 					<include name="verifyCopylinktoClipboardFunctionality" />
 					<include name="verifyViewWithCustomerFunctionality" />
 					<include name="verifyEditThisROFunctionality" />
 					<include name="verifyDeleteRepairOrderFunction" />
 					<include name="verifyNotesFunctionalityOnRoDetailPage" />
+
 				</methods>
 			</class>
 
 		</classes>
+	</test>
+	
+	<test name="Prospect order sales">
+		<classes>
+			<class name="com.truvideo.tests.ProspectListPageTest"></class>
+	</classes>
 	</test>
 
 	<test name="Order List Page Test">
@@ -125,3 +124,4 @@
 
 	</test>
 </suite>
+

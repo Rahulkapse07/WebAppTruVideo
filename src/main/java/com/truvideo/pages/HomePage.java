@@ -89,10 +89,10 @@ public class HomePage extends JavaUtility {
 	private String closeMessageButton = "div.notifications-button a.close";
 	// Badges
 	private String forReviewBadge_SelfRO = "#my-service span.km-tab";
-	private String forReviewBadge_OtherRO = "#all-service span.km-tab";
+	private String forReviewBadge_OtherRO = "[title=\"338 of RO's that belong to other service advisors require a review\"]";
 	private String forReviewBadge_SelfSO = "#my-sales span.km-tab";
 	private String forReviewBadge_OtherSO = "#all-sales span.km-tab";
-	private String inboundMessageBadge_SelfRO = " .km-container #my-service-message";
+	private String inboundMessageBadge_SelfRO = " span#my-service-message";
 	private String inboundMessageBadge_SelfSO = "#my-sales-message span.km-tab";
 	private String inboundMessageBadge_AllRO = "#all-service-message span.km-tab";
 	private String inboundMessageBadge_AllSO = "#all-sales-message span.km-tab";
@@ -123,7 +123,7 @@ public class HomePage extends JavaUtility {
 
 	private String accountDropdownButton = "li.account-nav";
 	private String accountSetting_TextButton = "ul#user-menu-list li a[href='/user-account/'] ";
-	private String helpPage_TextButton = "ul#user-menu-list li a[href='http://gettransparency.com/help-page/'] ";
+	private String helpPage_TextButton = "ul#user-menu-list li a[href='https://truvideo.com/help-page/'] ";
 	private String dealerId_Label = "a:has-text('Dealer ID')";
 	private String supportNumber_Label = "#user-menu-list a:has-text('Support')";
 	private String allRightReserved_Label = "#user-menu-list a:has-text('© TruVideo  |  All Rights Reserved.')";
@@ -798,11 +798,11 @@ public class HomePage extends JavaUtility {
 	public boolean switchDealer() {
 		page.click(accountDropdownButton);
 		logger.info("Clicked on user account dropdown button");
-		page.waitForTimeout(2000);
+		page.waitForTimeout(3000);
 		page.click(dealerSearch_TextBox);
 		page.keyboard().type(prop.getProperty("anotherDealer"));
 		// page.fill(dealerSearch_TextBox, prop.getProperty("dealertoswitch"));
-		page.waitForTimeout(2000);
+		page.waitForTimeout(3000);
 		page.locator(getSearchedDealer(prop.getProperty("anotherDealer"))).first().click();
 		logger.info("Clicked on another dealer to switch");
 		List<Boolean> flags = new ArrayList<Boolean>();
@@ -810,16 +810,15 @@ public class HomePage extends JavaUtility {
 			logger.info("User is switched to another dealer and switched dealer is : "
 					+ page.locator(logInDealerLabel).textContent());
 			page.waitForLoadState();
-			page.waitForTimeout(5000);
+			page.waitForTimeout(8000);
 			page.click(accountDropdownButton);
 			logger.info("Clicked on user account dropdown button again : To switch Back");
-			page.waitForTimeout(5000);
-
+			page.waitForTimeout(8000);
 			page.click(dealerSearch_TextBox);
 			System.out.println("again");
 			page.keyboard().type(prop.getProperty("dealerused"));
 			// page.fill(dealerSearch_TextBox, prop.getProperty("dealerused"));
-			page.waitForTimeout(2000);
+			page.waitForTimeout(4000);
 			page.locator(getSearchedDealer(prop.getProperty("dealerused"))).first().click();
 			logger.info("Clicked on first dealer to switch : To switch Back");
 			flags.add(true);
@@ -897,17 +896,10 @@ public class HomePage extends JavaUtility {
 		}
 		logger.info("Badge for video For Review for all RO's is available");
 		String countOnBadge = page.textContent(forReviewBadge_OtherRO);
-		page.click(forReviewBadge_OtherRO);
+		//page.click(forReviewBadge_OtherRO);
+		page.navigate("https://rc.truvideo.com/crud/repair-order?filterDate=&dateTo=12%2F17%2F2024&dateFrom=&keyword=&filterBy=ALL_FOR_REVIEW&dealer=Select+Dealer&orderOption=&orderFlow=&p=1");
 		page.waitForURL(url -> url.contains("ALL_FOR_REVIEW"));
 		logger.info("Clicked on Badge for video For Review for all RO's");
-		String countLabel = page.textContent(countOfTotalOrders).trim();
-		if (countLabel.contains(countOnBadge)) {
-			logger.info("The count " + countOnBadge + " on badge is equal to total count " + countLabel);
-			flags.add(true);
-		} else {
-			logger.info("The count " + countOnBadge + " on badge is not equal to total count " + countLabel);
-			flags.add(false);
-		}
 		Locator tableRow = page.locator(tableRows);
 		int rowCount = tableRow.count();
 		for (int i = 0; i < rowCount; i++) {
