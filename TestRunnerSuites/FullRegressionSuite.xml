@@ -14,19 +14,19 @@
 			<class name="com.truvideo.tests.LoginPageTest"></class>
 		</classes>
 	</test>
-		<!-- <test name="Home page Test">
+		<test name="Home page Test">
 
 		<classes>
 			<class name="com.truvideo.tests.HomePageTest"></class>
 		</classes>
-	</test> -->
+	</test>
 
-<!--	<test name="Order List Page Test">
+	<test name="Order List Page Test">
 		<classes>
 			<class name="com.truvideo.tests.OrderListPageTest"></class>
 		</classes>
-	</test>-->
-	<!-- 
+	</test>
+	
 	<test name="Order Details Page Test">
 		<classes>
 			<class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
@@ -48,6 +48,6 @@
 
 		</classes> 
 
-	</test>-->
+	</test>
 
 </suite>

@@ -126,13 +126,14 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/FullRegressionSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<suiteXmlFiles>
+					<!-- <suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/RCSmokeSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<suiteXmlFiles>
 						<suiteXmlFile>TestRunnerSuites/ProdSmokeSuite.xml</suiteXmlFile>
-					</suiteXmlFiles>
+					</suiteXmlFiles> -->
 				</configuration>
+				
 			</plugin>
 		</plugins>
 	</build>
