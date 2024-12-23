@@ -33997,3 +33997,1218 @@ Call log:
 2024-12-19 17:37:45 INFO  com.truvideo.pages.Multimediapage - clicked on download button
 2024-12-19 17:38:06 INFO  com.truvideo.pages.Multimediapage - Image download in both format
 2024-12-19 17:39:03 INFO  com.truvideo.pages.Multimediapage - 0
+2024-12-19 22:20:46 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-12-19 22:20:46 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-12-19 22:20:46 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-12-19 22:20:46 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-12-19 22:20:46 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-12-19 22:20:49 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-12-19 22:20:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-12-19 22:20:56 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-12-19 22:20:56 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-12-19 22:20:59 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-12-19 22:21:00 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-12-19 22:21:03 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-19 22:21:03 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-19 22:21:05 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-19 22:21:07 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-12-19 22:21:07 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-12-19 22:21:19 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-19 22:21:19 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-19 22:21:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-19 22:21:28 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:21:52 INFO  com.truvideo.pages.HomePage - Clicked on Orders Message Screen Header Tab
+2024-12-19 22:21:52 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-12-19 22:21:52 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SERVICE
+2024-12-19 22:22:06 INFO  com.truvideo.pages.HomePage - Clicked on Prospect Header Tab
+2024-12-19 22:22:15 INFO  com.truvideo.pages.HomePage - Clicked on Prospects Message Header Tab
+2024-12-19 22:22:15 INFO  com.truvideo.pages.HomePage - Title matched & Title is : TruVideo - Messages
+2024-12-19 22:22:15 INFO  com.truvideo.pages.HomePage - URL matched & opened url is : https://rc.truvideo.com/crud/messages?filterBy=Messages&filterType=SALES
+2024-12-19 22:22:23 INFO  com.truvideo.pages.HomePage - Clicked on Reminder Header Tab
+2024-12-19 22:22:27 INFO  com.truvideo.pages.HomePage - Clicked on Training Header Tab
+2024-12-19 22:22:33 INFO  com.truvideo.pages.HomePage - Clicked on User Header Tab
+2024-12-19 22:22:44 INFO  com.truvideo.pages.HomePage - Clicked on Contacts List Header Tab
+2024-12-19 22:22:59 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-19 22:23:00 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-19 22:23:01 INFO  com.truvideo.pages.HomePage - Clicked on dealers tab
+2024-12-19 22:23:02 INFO  com.truvideo.pages.HomePage - Dealers Page is opened : TruVideo - Dealers
+2024-12-19 22:23:07 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-19 22:23:07 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-19 22:23:09 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-19 22:23:09 INFO  com.truvideo.pages.HomePage - Dealer Group Page is opened : TruVideo - Dealer Groups
+2024-12-19 22:23:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-19 22:23:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-19 22:23:15 INFO  com.truvideo.pages.HomePage - Clicked on User Group tab
+2024-12-19 22:23:15 INFO  com.truvideo.pages.HomePage - User Group Page is opened : TruVideo - User Groups
+2024-12-19 22:23:19 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-19 22:23:19 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-19 22:23:20 INFO  com.truvideo.pages.HomePage - Clicked on Saved Video Library tab
+2024-12-19 22:23:20 INFO  com.truvideo.pages.HomePage - Saved Video Library Page is opened : TruVideo - Saved Videos
+2024-12-19 22:23:37 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-19 22:23:40 INFO  com.truvideo.pages.HomePage - Clicked on System tab
+2024-12-19 22:24:01 INFO  com.truvideo.pages.HomePage - Clicked on Devices tab
+2024-12-19 22:24:01 INFO  com.truvideo.pages.HomePage - Devices Page is opened : TruVideo - Devices
+2024-12-19 22:24:16 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:24:16 INFO  com.truvideo.pages.HomePage - Search Button displayed
+2024-12-19 22:24:16 INFO  com.truvideo.pages.HomePage - Clicked on Close advance search window button
+2024-12-19 22:24:18 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:24:20 INFO  com.truvideo.pages.HomePage - Clicked on search button when by default All filter are selected
+2024-12-19 22:24:22 INFO  com.truvideo.pages.HomePage - Repair Orders Heading , Prospect Heading, Both RO/SO Messages heading, Reminder heading is displayed
+2024-12-19 22:24:23 INFO  com.truvideo.pages.HomePage - 'All' filter removed & applied single 'Repair Order' checkbox filter
+2024-12-19 22:24:27 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order List and Only repair order list is displaying
+2024-12-19 22:24:29 INFO  com.truvideo.pages.HomePage - 'Repair Order' filter removed & applied single 'Prospect' checkbox filter
+2024-12-19 22:24:33 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospect List and Only prospect list is displaying
+2024-12-19 22:24:34 INFO  com.truvideo.pages.HomePage - 'Prospect' filter removed & applied single 'Repair Order Messages' checkbox filter
+2024-12-19 22:24:37 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order Messages screen
+2024-12-19 22:24:38 INFO  com.truvideo.pages.HomePage - 'Repair Order Message' filter removed & applied single 'Prospect Messages' checkbox filter
+2024-12-19 22:24:40 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospects Messages screen
+2024-12-19 22:24:41 INFO  com.truvideo.pages.HomePage - 'Prospect Message' filter removed & applied single 'Reminder' checkbox filter
+2024-12-19 22:24:43 INFO  com.truvideo.pages.HomePage - User is navigated to the Reminder screen
+2024-12-19 22:24:44 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:24:45 INFO  com.truvideo.pages.HomePage - Clicked on 'This week' radio filter
+2024-12-19 22:24:48 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This week filter is selected
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 10:11 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 10:02 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:59 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:51 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:48 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:44 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:44 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:41 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:37 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:35 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:34 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:34 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:26 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:25 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:24 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:21 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:20 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:19 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:19 AM
+2024-12-19 22:24:49 INFO  com.truvideo.pages.HomePage - Repair order in list is within this week & date is  : 12/19/2024 09:18 AM
+2024-12-19 22:24:51 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:24:52 INFO  com.truvideo.pages.HomePage - Clicked on 'This Month' radio filter
+2024-12-19 22:24:55 INFO  com.truvideo.pages.HomePage - Clicked on search button when by This month filter is selected
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 10:11 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 10:02 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:59 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:51 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:48 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:44 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:44 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:41 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:37 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:35 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:34 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:34 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:26 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:25 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:24 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:21 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:20 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:19 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:19 AM
+2024-12-19 22:24:56 INFO  com.truvideo.pages.HomePage - Repair order in list is within this month & date is  : 12/19/2024 09:18 AM
+2024-12-19 22:24:58 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:25:00 INFO  com.truvideo.pages.HomePage - Entered from date in the calendar & Entered date is : 11/25/2024 12:00 AM
+2024-12-19 22:25:01 INFO  com.truvideo.pages.HomePage - Entered upto date in the calendar & Entered date is : 12/07/2024 11:59 PM
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 10:11 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 10:02 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:59 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:51 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:48 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:44 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:44 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:41 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:37 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:35 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:34 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:34 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:26 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:25 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:24 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:21 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:20 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:19 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:19 AM is NOT within the range.
+2024-12-19 22:25:05 INFO  com.truvideo.pages.HomePage - Date 12/19/2024 09:18 AM is NOT within the range.
+2024-12-19 22:25:07 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-19 22:25:08 INFO  com.truvideo.pages.HomePage - Text entered in search box
+2024-12-19 22:25:10 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutohumdU contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutoLHZnL contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutouBGn7 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - Autooe0mP contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - 54545454545 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutolNaiG contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - 3256845551 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - 456451531 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - 5489743 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - gfjg6u56 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - 464884 not contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - dtf4554 contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutodPIgU not contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutomjkML contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - Auto3wyIZ not contains searched text which is test
+2024-12-19 22:25:13 INFO  com.truvideo.pages.HomePage - AutoS9J5H not contains searched text which is test
+2024-12-19 22:25:14 INFO  com.truvideo.pages.HomePage - AutoQ3I0g contains searched text which is test
+2024-12-19 22:25:14 INFO  com.truvideo.pages.HomePage - AutoJWJtJ not contains searched text which is test
+2024-12-19 22:25:14 INFO  com.truvideo.pages.HomePage - AutoWDfnR not contains searched text which is test
+2024-12-19 22:25:14 INFO  com.truvideo.pages.HomePage - AutokW9yy not contains searched text which is test
+2024-12-19 22:25:15 INFO  com.truvideo.pages.HomePage - Clicked on notification bell icon
+2024-12-19 22:25:16 INFO  com.truvideo.pages.HomePage - Recent Notification heading displayed
+2024-12-19 22:25:20 INFO  com.truvideo.pages.HomePage - Again clicked on notification bell icon
+2024-12-19 22:25:31 INFO  com.truvideo.pages.HomePage - Clicked on Chat button
+2024-12-19 22:25:36 INFO  com.truvideo.pages.HomePage - Click on Away button
+2024-12-19 22:25:38 INFO  com.truvideo.pages.HomePage - Button change to  Back
+2024-12-19 22:25:38 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have set your text messaging auto-reply for your Away message. This will send an automatic text reply to the first inbound message from your customers (to you) letting them know that you are away from your desk and will reply to them shortly. Customers will only receive this "away" message once every hour, so if they send an inbound text multiple times they will only receive it on the first reply.
+2024-12-19 22:25:44 INFO  com.truvideo.pages.HomePage - Click on Back button
+2024-12-19 22:25:44 INFO  com.truvideo.pages.HomePage - Button change to  Away
+2024-12-19 22:25:44 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have turned off your "Away" message. To turn it back on, click on the Away button.
+2024-12-19 22:25:49 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-19 22:25:51 INFO  com.truvideo.pages.HomePage - Something went wrong during opening User Account dropdown
+2024-12-19 22:25:52 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-19 22:26:23 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-19 22:26:29 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2024-12-19 22:26:29 INFO  com.truvideo.pages.HomePage - User is switched to another dealer and switched dealer is : Kenility Store 
+2024-12-19 22:26:38 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button again : To switch Back
+2024-12-19 22:27:21 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-19 22:27:54 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is available
+2024-12-19 22:28:00 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self RO's
+2024-12-19 22:28:00 INFO  com.truvideo.pages.HomePage - The count 24 on badge is equal to total count Displaying 1 to 20 of 24 records
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review Est-Draft $-Draft
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review Est-Sent $-Sent
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:01 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review Est-Sent $-Sent
+2024-12-19 22:28:02 INFO  com.truvideo.pages.HomePage - The RO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:05 INFO  com.truvideo.pages.HomePage - Badge for video For Review for All RO's is not available
+2024-12-19 22:28:07 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is available
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for self SO's
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - The count 11 on badge is equal to total count Displaying 1 to 11 of 11 records
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:12 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Yash Modi & Contains status  : For Review
+2024-12-19 22:28:13 INFO  com.truvideo.pages.HomePage - The SO is of :Dhanashri Giri & Contains status  : For Review
+2024-12-19 22:28:15 INFO  com.truvideo.pages.HomePage - Badge for video For Review for all SO's is available
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - Clicked on Badge for video For Review for all SO's
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The count 117 on badge is equal to total count Displaying 1 to 20 of 117 records
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:19 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:20 INFO  com.truvideo.pages.HomePage - The SO in the list Contains status  : For Review
+2024-12-19 22:28:23 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is available
+2024-12-19 22:28:57 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is available
+2024-12-19 22:29:00 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All RO's Messages
+2024-12-19 22:29:40 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-19 22:29:44 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-19 22:29:49 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-19 22:29:53 INFO  com.truvideo.pages.HomePage - Badge for All reminder is available
+2024-12-19 22:29:56 INFO  com.truvideo.pages.HomePage - Clicked on Badge for All Reminder
+2024-12-19 22:29:56 INFO  com.truvideo.pages.HomePage - The count 17 on badge is equal to total count Displaying 1 to 17 of 17 records
+2024-12-19 22:29:57 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-19 22:29:57 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-19 22:30:07 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-19 22:30:07 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-19 22:30:09 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-19 22:30:31 INFO  com.truvideo.pages.MessageScreen_Order - DEFAULT FILTERS PRESENT
+2024-12-19 22:30:46 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-12-19 22:30:46 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:30:52 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:31:01 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:31:01 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-12-19 22:31:01 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:05 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:31:15 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:31:16 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-12-19 22:31:16 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:19 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:31:32 INFO  com.truvideo.pages.MessageScreen_Order - GO_TO_RO button clicked
+2024-12-19 22:31:46 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHEDtest testmail-:-test testmail
+2024-12-19 22:31:46 INFO  com.truvideo.pages.MessageScreen_Order - CHANNEL OWNER NAME MATCHED
+2024-12-19 22:31:46 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-19 22:31:54 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:31:57 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:31:58 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoytbOm
+2024-12-19 22:31:58 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:31:59 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Last9gbE
+2024-12-19 22:31:59 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812055345
+2024-12-19 22:31:59 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedIZ8I@gmail.com
+2024-12-19 22:32:01 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:32:38 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to Servbice message
+2024-12-19 22:32:48 INFO  com.truvideo.pages.MessageScreen_Order - yash modiThe Channel owner is same user who is login--yash modi
+2024-12-19 22:32:51 INFO  com.truvideo.pages.MessageScreen_Order - VERIFY ATTACHMENT
+2024-12-19 22:32:51 INFO  com.truvideo.pages.MessageScreen_Order - SELECT SMS FILTER TOS END ATTACHMENT
+2024-12-19 22:33:02 INFO  com.truvideo.pages.MessageScreen_Order - SMS SELECTED
+2024-12-19 22:33:12 INFO  com.truvideo.pages.MessageScreen_Order - Alredy exist
+2024-12-19 22:33:20 INFO  com.truvideo.pages.MessageScreen_Order - File Attached
+2024-12-19 22:33:56 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:33:58 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:33:58 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoygrNO
+2024-12-19 22:33:58 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:33:58 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastW4zq
+2024-12-19 22:33:59 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812055278
+2024-12-19 22:33:59 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedovUF@gmail.com
+2024-12-19 22:34:01 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:34:39 INFO  com.truvideo.pages.MessageScreen_Order - Changes Saved
+2024-12-19 22:34:46 INFO  com.truvideo.pages.MessageScreen_Order - Same RO opened we created
+2024-12-19 22:35:03 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:35:22 INFO  com.truvideo.pages.MessageScreen_Order - matched
+2024-12-19 22:35:27 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:35:29 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:35:29 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoNa6Kg
+2024-12-19 22:35:30 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:35:30 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastXMym
+2024-12-19 22:35:30 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812051550
+2024-12-19 22:35:30 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedN8cu@gmail.com
+2024-12-19 22:35:32 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:36:11 INFO  com.truvideo.pages.MessageScreen_Order - Changes Saved
+2024-12-19 22:36:20 INFO  com.truvideo.pages.MessageScreen_Order - Same RO opened we created
+2024-12-19 22:36:41 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:37:00 INFO  com.truvideo.pages.MessageScreen_Order - matched
+2024-12-19 22:37:00 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-19 22:37:06 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoHYQSm
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LasttK5G
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812053257
+2024-12-19 22:37:08 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatednfcH@gmail.com
+2024-12-19 22:37:11 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:37:44 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to message header
+2024-12-19 22:38:08 INFO  com.truvideo.pages.MessageScreen_Order - Verify Start Conversation Tab
+2024-12-19 22:38:09 INFO  com.truvideo.pages.MessageScreen_Order - INSERT FIRST NAME:Automation
+2024-12-19 22:38:09 INFO  com.truvideo.pages.MessageScreen_Order - INSERT LAST NAME:Name
+2024-12-19 22:38:12 INFO  com.truvideo.pages.MessageScreen_Order - SELECT COUNTRY :-United States
+2024-12-19 22:38:12 INFO  com.truvideo.pages.MessageScreen_Order - Number:-(781) 205-9487
+2024-12-19 22:38:17 INFO  com.truvideo.pages.MessageScreen_Order - Select SMS
+2024-12-19 22:38:17 INFO  com.truvideo.pages.MessageScreen_Order - Button hit
+2024-12-19 22:38:21 INFO  com.truvideo.pages.MessageScreen_Order - GO_TO_RO button clicked
+2024-12-19 22:38:21 INFO  com.truvideo.pages.MessageScreen_Order - Ro Channel name updated correctlly
+2024-12-19 22:38:22 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-19 22:38:27 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:38:30 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:38:30 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoanEum
+2024-12-19 22:38:30 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:38:30 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LasthrVC
+2024-12-19 22:38:31 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812053738
+2024-12-19 22:38:31 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automatedxi8b@gmail.com
+2024-12-19 22:38:33 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:38:56 INFO  com.truvideo.pages.MessageScreen_Order - RO is New & No media is added
+2024-12-19 22:39:02 INFO  com.truvideo.pages.MessageScreen_Order - 'Send to customer','View with customer' & 'Insights' button is not disabled
+2024-12-19 22:39:03 INFO  com.truvideo.pages.MessageScreen_Order - Multimedia Screen opened: Add video
+2024-12-19 22:39:03 INFO  com.truvideo.pages.MessageScreen_Order - Selected 1 video from multimedia screen
+2024-12-19 22:39:05 INFO  com.truvideo.pages.MessageScreen_Order - Clicked on Add Video Button
+2024-12-19 22:39:13 INFO  com.truvideo.pages.MessageScreen_Order - Video added sucessfully and visible on media gallery
+2024-12-19 22:39:15 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - For Review expand_more
+2024-12-19 22:39:22 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-19 22:39:30 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to For Review
+2024-12-19 22:39:30 INFO  com.truvideo.pages.MessageScreen_Order - Both 'Send to customer' & 'View with customer' button is enabled
+2024-12-19 22:39:31 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-19 22:39:42 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-12-19 22:39:42 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-12-19 22:40:04 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-12-19 22:40:06 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Sent expand_more
+2024-12-19 22:40:12 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-19 22:40:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Sent
+2024-12-19 22:40:24 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - video at attempt 1
+2024-12-19 22:40:24 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagefrom kenility store: hello automation , your vehicle service video is ready for viewing at https://dev.tru-vid.com/d9f8e24ac781. lasthrvc, yash modi reply "stop" to opt out.
+  
+ 12/19/24 12:09:47 pm 
+2024-12-19 22:40:54 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-12-19 22:40:54 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-19 22:41:24 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-12-19 22:41:24 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-19 22:41:54 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-12-19 22:41:54 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-19 22:41:54 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-12-19 22:42:07 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by Yash Modi 
+2024-12-19 22:42:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - sent to customer on Refresh
+2024-12-19 22:42:07 INFO  com.truvideo.pages.MessageScreen_Order - Last message is not video Endlink
+2024-12-19 22:42:07 INFO  com.truvideo.pages.MessageScreen_Order - Navigate to repair order header
+2024-12-19 22:42:12 INFO  com.truvideo.pages.HomePage - Clicked on Repair Order Header Tab
+2024-12-19 22:42:14 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:42:15 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutopCsLr
+2024-12-19 22:42:15 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:42:15 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Last3o3L
+2024-12-19 22:42:15 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812056229
+2024-12-19 22:42:15 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedUpKW@gmail.com
+2024-12-19 22:42:17 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-19 22:43:35 INFO  com.truvideo.pages.MessageScreen_Order - CheckWhatsapp filter is Enable or Disable From Dealer Setting
+2024-12-19 22:43:40 INFO  com.truvideo.pages.MessageScreen_Order - CheckWhatsapp filter is Enable
+2024-12-19 22:43:47 INFO  com.truvideo.pages.MessageScreen_Order - WHATSAPP FILTER SELECTED
+2024-12-19 22:43:47 INFO  com.truvideo.pages.MessageScreen_Order - WHATSAPP CHAT IS ACTIVE
+2024-12-19 22:43:58 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-19 22:43:58 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-19 22:44:00 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-19 22:44:19 INFO  com.truvideo.pages.MessageScreen_Order - filter name:-My
+2024-12-19 22:44:19 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:24 INFO  com.truvideo.pages.MessageScreen_Order - yash modi Login user is matched with channele owner : Service Advisor - Yash Modi
+2024-12-19 22:44:32 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:44:32 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTED My & Whatsapp
+2024-12-19 22:44:32 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:35 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & Whatsapp
+2024-12-19 22:44:41 INFO  com.truvideo.pages.MessageScreen_Order - Condition True
+2024-12-19 22:44:41 INFO  com.truvideo.pages.MessageScreen_Order - FILTER SELECTEDMy & SMS
+2024-12-19 22:44:41 INFO  com.truvideo.pages.MessageScreen_Order - Login user name catched : yash modi
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:44 INFO  com.truvideo.pages.MessageScreen_Order - CHANNELS ARE IN RIGHT FILTERMy & SMS
+2024-12-19 22:44:57 INFO  com.truvideo.pages.MessageScreen_Order - CONVERSATION CHAT IS VISIBLE
+2024-12-19 22:44:57 INFO  com.truvideo.pages.MessageScreen_Order - OPENED CONVERSATION TAB
+2024-12-19 22:44:57 INFO  com.truvideo.pages.MessageScreen_Order - ENTERED FIRSTNAME :-Automation
+2024-12-19 22:44:57 INFO  com.truvideo.pages.MessageScreen_Order - ENTERED LASTNAME :-Name
+2024-12-19 22:45:01 INFO  com.truvideo.pages.MessageScreen_Order - SELECTED COUNTRY
+2024-12-19 22:45:04 INFO  com.truvideo.pages.MessageScreen_Order - Number:-7812059487
+2024-12-19 22:45:08 INFO  com.truvideo.pages.MessageScreen_Order - Select SMS
+2024-12-19 22:45:08 INFO  com.truvideo.pages.MessageScreen_Order - Button hit
+2024-12-19 22:45:16 INFO  com.truvideo.pages.MessageScreen_Order - All names are Matched :automation name:automation name:automation name
+2024-12-19 22:45:19 INFO  com.truvideo.pages.MessageScreen_Order - Launch new browser
+2024-12-19 22:45:26 INFO  com.truvideo.pages.MessageScreen_Order - navigated to the urlhttps://rc.truvideo.com/login;jsessionid=00668C3CC6771197C2E6A44854BBDD9E
+2024-12-19 22:45:41 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-19 22:45:41 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-19 22:45:43 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-19 22:45:47 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-19 22:45:48 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoIXpwQ
+2024-12-19 22:45:48 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-19 22:45:48 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Lastwzap
+2024-12-19 22:45:48 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812056199
+2024-12-19 22:45:48 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatediyhA@gmail.com
+2024-12-19 22:45:50 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-20 12:58:44 INFO  com.truvideo.pages.RepairOrderDetailPage - Condition not satisfied for Send Video : video not added to RO
+2024-12-20 12:58:44 INFO  com.truvideo.pages.RepairOrderDetailPage - Condition not satisfied for Send Video : video not added to RO
+2024-12-20 12:58:45 INFO  com.truvideo.pages.RepairOrderDetailPage - Condition not satisfied for Send Video : video not added to RO
+2024-12-20 12:58:54 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-20 12:58:55 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoyhIeg
+2024-12-20 12:58:55 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-20 12:58:55 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastLp97
+2024-12-20 12:58:55 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812053056
+2024-12-20 12:58:55 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automatedg8oi@gmail.com
+2024-12-20 12:58:58 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-20 12:59:40 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting for the Estimate button to be visible
+2024-12-20 12:59:41 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Create Estimate button
+2024-12-20 12:59:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is available in the Item List
+2024-12-20 12:59:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 12:59:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 12:59:50 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 12:59:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 12:59:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 12:59:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 12:59:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:00:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:00:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 13:00:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 13:00:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:00:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on close estimate window
+2024-12-20 13:00:24 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:00:32 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Draft
+2024-12-20 13:00:33 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Created new estimate. 
+2024-12-20 13:00:33 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Edit Estimate button
+2024-12-20 13:00:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:00:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 13:00:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 13:00:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:00:40 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Preview Estimate button
+2024-12-20 13:00:44 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Hide from customer button
+2024-12-20 13:00:46 INFO  com.truvideo.pages.RepairOrderDetailPage - Hidden message displayed
+2024-12-20 13:00:46 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Hide from customer button
+2024-12-20 13:00:48 INFO  com.truvideo.pages.RepairOrderDetailPage - Hidden message removed
+2024-12-20 13:00:51 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigate back to add item screen
+2024-12-20 13:00:51 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigate to preview screen again
+2024-12-20 13:00:52 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Print button
+2024-12-20 13:00:57 INFO  com.truvideo.pages.RepairOrderDetailPage - Button name changed to Estimate Closed
+2024-12-20 13:01:00 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate closed. 
+2024-12-20 13:01:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting for the Estimate button to be visible
+2024-12-20 13:01:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Estimate button
+2024-12-20 13:01:12 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is available in the Item List
+2024-12-20 13:01:12 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 13:01:13 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 13:01:13 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:01:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:01:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 13:01:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 13:01:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:01:25 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:01:25 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Type dropdown
+2024-12-20 13:01:26 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected type from dropdown
+2024-12-20 13:01:26 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:01:28 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on preview button
+2024-12-20 13:01:30 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Send button
+2024-12-20 13:01:32 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-12-20 13:01:32 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-12-20 13:01:54 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-12-20 13:01:54 INFO  com.truvideo.pages.RepairOrderDetailPage - Estimate status changed to : date_rangeResend EstimateEstimateschevron_right
+2024-12-20 13:02:01 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:02:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Sent
+2024-12-20 13:02:13 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - estimate at attempt 1
+2024-12-20 13:02:13 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messageautomation, please review the estimate that summarizes recommended and required work on your vehicle: https://dev.tru-vid.com/a21046a0b8b7. thanks, yash modi.
+  
+ 12/20/24 02:31:35 am 
+2024-12-20 13:02:14 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate sent to customer. 
+2024-12-20 13:02:24 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on confiem button
+2024-12-20 13:02:26 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected whatsApp channel to send
+2024-12-20 13:02:27 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on whatsApp button : sent through WhatsApp
+2024-12-20 13:02:49 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the WhatsApp channel after sent 
+2024-12-20 13:02:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Estimate status changed to : date_rangeResend EstimateEstimateschevron_right
+2024-12-20 13:02:54 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:03:03 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Sent
+2024-12-20 13:03:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - estimate at attempt 1
+2024-12-20 13:03:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messageautomation, please review the estimate that summarizes recommended and required work on your vehicle: https://dev.tru-vid.com/4e1d4ef134da. thanks, yash modi.
+  
+ 12/20/24 02:32:30 am 
+2024-12-20 13:03:07 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate resent to customer. 
+2024-12-20 13:03:18 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on confiem button
+2024-12-20 13:03:20 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected whatsApp channel to send
+2024-12-20 13:03:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on whatsApp button : sent through WhatsApp
+2024-12-20 13:03:42 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the WhatsApp channel after sent 
+2024-12-20 13:03:42 INFO  com.truvideo.pages.RepairOrderDetailPage - Estimate status changed to : date_rangeResend EstimateEstimateschevron_right
+2024-12-20 13:03:48 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:03:56 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Sent
+2024-12-20 13:04:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - estimate at attempt 1
+2024-12-20 13:04:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messageautomation, please review the estimate that summarizes recommended and required work on your vehicle: https://dev.tru-vid.com/b35d4863af4e. thanks, yash modi.
+  
+ 12/20/24 02:33:24 am 
+2024-12-20 13:04:01 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate resent to customer. 
+2024-12-20 13:04:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message is estimate Endlink
+2024-12-20 13:04:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Endlink opened in another tab
+2024-12-20 13:04:20 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on authorise work button
+2024-12-20 13:04:41 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:04:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Approved
+2024-12-20 13:05:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-12-20 13:05:19 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate resent to customer. 
+2024-12-20 13:05:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-12-20 13:05:49 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate resent to customer. 
+2024-12-20 13:06:19 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-12-20 13:06:19 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate resent to customer. 
+2024-12-20 13:06:19 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-12-20 13:06:33 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Customer submitted decision on estimate. 
+2024-12-20 13:06:33 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - Customer submitted decision on estimate on Refresh
+2024-12-20 13:06:34 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on estimate button
+2024-12-20 13:06:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Confirm button
+2024-12-20 13:06:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on close estimate window button
+2024-12-20 13:06:49 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:06:57 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Est-Confirmed
+2024-12-20 13:06:58 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate confirmed. 
+2024-12-20 13:06:58 INFO  com.truvideo.pages.RepairOrderDetailPage - Again click on estimate button
+2024-12-20 13:06:59 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Notify button
+2024-12-20 13:07:01 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected whatsApp channel to send
+2024-12-20 13:07:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on whatsApp button : sent through WhatsApp
+2024-12-20 13:07:24 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the WhatsApp channel after sent 
+2024-12-20 13:07:28 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - proceeding at attempt 1
+2024-12-20 13:07:28 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messageautomation, we are proceeding with the requested work on your vehicle. thanks, yash modi.
+  
+ 12/20/24 02:37:05 am 
+2024-12-20 13:07:28 INFO  com.truvideo.pages.RepairOrderDetailPage - last message is of estimate confirmation
+2024-12-20 13:07:28 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate confirmation sent to customer. 
+2024-12-20 13:07:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting for the Payment button to be visible
+2024-12-20 13:07:38 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Create Payment Button
+2024-12-20 13:07:42 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is available in the Item List
+2024-12-20 13:07:42 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:07:48 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:07:48 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:07:55 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is not available in the Item List
+2024-12-20 13:07:55 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:08:31 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-12-20 13:08:31 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate confirmation sent to customer. 
+2024-12-20 13:09:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-12-20 13:09:01 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate confirmation sent to customer. 
+2024-12-20 13:09:31 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-12-20 13:09:31 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Estimate confirmation sent to customer. 
+2024-12-20 13:09:31 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-12-20 13:09:43 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Created new invoice. 
+2024-12-20 13:09:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - Created new invoice. on Refresh
+2024-12-20 13:09:43 INFO  com.truvideo.pages.RepairOrderDetailPage - Payment Status changed to attach_moneyEdit PaymentPaymentschevron_right
+2024-12-20 13:09:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Entered text is available in the Item List
+2024-12-20 13:09:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Item added to list
+2024-12-20 13:09:58 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Notes Tab
+2024-12-20 13:10:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Internal Note Entered
+2024-12-20 13:10:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Customer Note Entered
+2024-12-20 13:10:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Item deleted from list
+2024-12-20 13:10:04 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Next Button
+2024-12-20 13:10:18 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Preview Button without entering amount
+2024-12-20 13:10:18 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Back Button
+2024-12-20 13:10:22 INFO  com.truvideo.pages.RepairOrderDetailPage - Again Click on Next Button
+2024-12-20 13:10:34 INFO  com.truvideo.pages.RepairOrderDetailPage - Amount entered in payment
+2024-12-20 13:10:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Preview button after adding Amount
+2024-12-20 13:10:47 INFO  com.truvideo.pages.RepairOrderDetailPage - Final Amount is  $ 101 
+2024-12-20 13:10:47 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on edit button of review screen
+2024-12-20 13:10:52 INFO  com.truvideo.pages.RepairOrderDetailPage - Again Clicked on preview button
+2024-12-20 13:11:04 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Print button
+2024-12-20 13:11:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Click on Send button
+2024-12-20 13:11:09 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected whatsApp channel to send
+2024-12-20 13:11:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on whatsApp button : sent through WhatsApp
+2024-12-20 13:11:31 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the WhatsApp channel after sent 
+2024-12-20 13:11:31 INFO  com.truvideo.pages.RepairOrderDetailPage - Payment status changed to : attach_moneyResend PaymentPaymentschevron_right
+2024-12-20 13:12:11 INFO  com.truvideo.pages.RepairOrderDetailPage - test
+2024-12-20 13:12:18 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:12:26 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to $-Sent
+2024-12-20 13:12:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - invoice at attempt 1
+2024-12-20 13:12:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagedear automation, lastlp97,  i am reaching out to kindly remind you about the final invoice payment of $101.00 online. you can make the payment securely through the following link: https://dev.tru-vid.com/a57cddc75398. thanks and  warm regards, yash modi
+  
+ 12/20/24 02:41:15 am 
+2024-12-20 13:12:35 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Invoice sent to customer. 
+2024-12-20 13:12:36 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting for the Payment button to be visible
+2024-12-20 13:12:36 INFO  com.truvideo.pages.RepairOrderDetailPage - Condition is satisfied to payment resend
+2024-12-20 13:12:36 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Payment Button
+2024-12-20 13:12:37 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Next Button
+2024-12-20 13:12:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on preview Button
+2024-12-20 13:12:59 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Send Button
+2024-12-20 13:13:01 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-12-20 13:13:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-12-20 13:13:23 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-12-20 13:13:26 INFO  com.truvideo.pages.RepairOrderDetailPage - Payment status changed to : attach_moneyResend PaymentPaymentschevron_right
+2024-12-20 13:13:57 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:14:05 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to $-Sent
+2024-12-20 13:14:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - invoice at attempt 1
+2024-12-20 13:14:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagedear automation, lastlp97,  i am reaching out to kindly remind you about the final invoice payment of $101.00 online. you can make the payment securely through the following link: https://dev.tru-vid.com/f8604920d428. thanks and  warm regards, yash modi
+  
+ 12/20/24 02:43:05 am 
+2024-12-20 13:14:09 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Invoice resent to customer. 
+2024-12-20 13:14:19 INFO  com.truvideo.pages.RepairOrderDetailPage - AutoyhIeg
+2024-12-20 13:14:22 INFO  com.truvideo.pages.RepairOrderDetailPage - RO is New & No media is added
+2024-12-20 13:14:28 INFO  com.truvideo.pages.RepairOrderDetailPage - 'Send to customer','View with customer' & 'Insights' button is not disabled
+2024-12-20 13:14:28 INFO  com.truvideo.pages.RepairOrderDetailPage - Multimedia Screen opened: Add video
+2024-12-20 13:14:30 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected 1 video from multimedia screen
+2024-12-20 13:14:32 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Add Video Button
+2024-12-20 13:14:40 INFO  com.truvideo.pages.RepairOrderDetailPage - Video added sucessfully and visible on media gallery
+2024-12-20 13:14:42 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - For Review expand_more
+2024-12-20 13:14:47 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:14:55 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to For Review
+2024-12-20 13:14:55 INFO  com.truvideo.pages.RepairOrderDetailPage - Both 'Send to customer' & 'View with customer' button is enabled
+2024-12-20 13:14:56 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-20 13:15:08 INFO  com.truvideo.pages.RepairOrderDetailPage - automation lastlp97
+2024-12-20 13:15:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Verifying a control paste
+2024-12-20 13:15:10 INFO  com.truvideo.pages.RepairOrderDetailPage - Original Text has been sent successfully
+2024-12-20 13:15:24 INFO  com.truvideo.pages.RepairOrderDetailPage - RO is Not new & some videos are already added to RO
+2024-12-20 13:15:24 INFO  com.truvideo.pages.RepairOrderDetailPage - Multimedia Screen opened: Add video
+2024-12-20 13:15:25 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected 1 video from multimedia screen
+2024-12-20 13:15:27 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Add Video Button
+2024-12-20 13:15:35 INFO  com.truvideo.pages.RepairOrderDetailPage - Video added sucessfully and visible on media gallery
+2024-12-20 13:15:37 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - For Review expand_more
+2024-12-20 13:15:43 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to For Review
+2024-12-20 13:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Both 'Send to customer' & 'View with customer' button is enabled
+2024-12-20 13:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by Yash Modi 
+2024-12-20 13:15:51 INFO  com.truvideo.pages.RepairOrderDetailPage - AutoyhIeg
+2024-12-20 13:15:53 INFO  com.truvideo.pages.RepairOrderDetailPage - automation lastlp97
+2024-12-20 13:16:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Endlink opened in another tab
+2024-12-20 13:16:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Play Button
+2024-12-20 13:16:07 INFO  com.truvideo.pages.RepairOrderDetailPage - Waiting to play video for 8 Seconds
+2024-12-20 13:16:15 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Play Button
+2024-12-20 13:16:15 INFO  com.truvideo.pages.RepairOrderDetailPage - automation lastlp97
+2024-12-20 13:16:16 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Customer name is matching with endlink Customer name
+2024-12-20 13:16:18 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Viewed expand_more
+2024-12-20 13:16:23 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 13:16:31 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is not changed to For Review
+2024-12-20 13:16:40 INFO  com.truvideo.pages.RepairOrderDetailPage - AutoyhIeg
+2024-12-20 13:16:45 INFO  com.truvideo.pages.RepairOrderDetailPage - FirstName before edited :-Automation
+2024-12-20 13:16:53 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Edit this RO button
+2024-12-20 13:17:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Edited FirstName successfully
+2024-12-20 13:17:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Edited LastName successfully :-
+2024-12-20 13:17:45 INFO  com.truvideo.pages.RepairOrderDetailPage -  back 2 
+2024-12-20 13:17:45 INFO  com.truvideo.pages.RepairOrderDetailPage - AutoyhIeg
+2024-12-20 13:17:54 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-20 13:17:54 INFO  com.truvideo.pages.HomePage - Text entered in search box
+2024-12-20 13:17:56 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
+2024-12-20 13:18:01 INFO  com.truvideo.pages.HomePage - Something went wrong to find selected value 
+2024-12-20 13:18:01 INFO  com.truvideo.pages.RepairOrderDetailPage - Getting issue while deleting RO
+2024-12-20 13:18:04 INFO  com.truvideo.pages.RepairOrderDetailPage - All tabs are not vissible
+2024-12-20 13:18:04 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp setting is disabled from dealer settings
+2024-12-20 13:18:34 ERROR com.truvideo.pages.RepairOrderDetailPage - Error during notes functionality validation: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\praja\AppData\Local\Temp\playwright-java-15614082525422699981\package\lib\server\progress.js:87:26)
+    at Frame.click (C:\Users\praja\AppData\Local\Temp\playwright-java-15614082525422699981\package\lib\server\frames.js:995:23)
+    at FrameDispatcher.click (C:\Users\praja\AppData\Local\Temp\playwright-java-15614082525422699981\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\praja\AppData\Local\Temp\playwright-java-15614082525422699981\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\praja\AppData\Local\Temp\playwright-java-15614082525422699981\package\lib\server\dispatchers\dispatcher.js:362:39)
+}
+Call log:
+- waiting for frameLocator("iframe#order-details-iframe").locator("span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (0)')")
+
+2024-12-20 13:18:43 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-20 13:18:43 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-20 13:18:45 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-20 13:18:52 INFO  com.truvideo.pages.ProspectListPage - All elements are visible on Prospect List page
+2024-12-20 13:18:53 INFO  com.truvideo.pages.ProspectListPage - Clicked on My SO's Filter button
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 1: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 2: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 3: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 4: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 5: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 6: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 7: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 8: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 9: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 10: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 11: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 12: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 13: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 14: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 15: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 16: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 17: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 18: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 19: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Match found in Row 20: SalesAgent: Yash Modi
+2024-12-20 13:18:54 INFO  com.truvideo.pages.ProspectListPage - Clicked on All Open filter
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :Qatest, viewed is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :ftft, thrd is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :test, testviwed is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :notify, prospect is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :test, qa is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :test, qa is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :dgfdgd, dgfdgf is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :sales , notify is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameZAJ, FirstNameaFZ is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameO1K, FirstNameMkj is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :Miller, David is open & Statuses is: Viewed
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameedy, FirstNamebLc is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameg8w, FirstNameoLi is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNamewg1, FirstNameKMP is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameZcC, FirstNamet60 is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNamertC, FirstNameijj is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNamepaD, FirstNamelE1 is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastName5pJ, FirstNameuZA is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastNameVjf, FirstNamewGN is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - The SO :LastName08A, FirstNamewty is open & Statuses is: New
+2024-12-20 13:18:56 INFO  com.truvideo.pages.ProspectListPage - Clicked on For Review filter
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Sales , Test Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastNamevbh, FirstNamevH9 Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastNameT60, FirstNameCiH Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastName6Ai, FirstName54o Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Taylor, Saras Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Edited LastName, FirstName Edited Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Edited LastName, FirstName Edited Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Edited LastName, FirstName Edited Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Sales, Notifications Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Notiyal, Jubian Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Sales, Sghsje Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Raina, Suresh Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :daily , 27 nov Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Turner, Iron Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :TESTQA, Gopal Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastName4lL, FirstNameaXQ Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastName5Tp, FirstNamesse Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Bravo, DJ Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastNamemO6, FirstNameNwv Contains For Review and  : For Review
+2024-12-20 13:18:58 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :LastNamehcF, FirstNameklO Contains For Review and  : For Review
+2024-12-20 13:18:59 INFO  com.truvideo.pages.ProspectListPage - Clicked on All Closed filter
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Transcript, Test under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Williams, Robert under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :sales , test under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Jain, Yash under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Lastchioa, Firstqqqwz under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Lastkulbf, Firstqnarr under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :34566, rachel under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Isoardi, Bruno under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Facu, with 5Exception number under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :New , Test under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Lastgqxmb, Firstwjuci under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :CESAR R, video under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :cesar, delete video under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :test, tradein under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:00 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :New , Test under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:01 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Sales 1, check under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:01 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Disable , checking under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:01 INFO  com.truvideo.pages.ProspectListPage - The Status of SO :Test, Sales under All Closed filter is closed & Contains: Closed
+2024-12-20 13:19:01 INFO  com.truvideo.pages.ProspectListPage - All elements are visible on Prospect List page
+2024-12-20 13:19:02 INFO  com.truvideo.pages.ProspectListPage - Clicked on AddSalesProspect button
+2024-12-20 13:19:02 INFO  com.truvideo.pages.ProspectListPage - Filled Last name of Customer
+2024-12-20 13:19:02 INFO  com.truvideo.pages.ProspectListPage - Filled First name of Customer
+2024-12-20 13:19:02 INFO  com.truvideo.pages.ProspectListPage - Phone number filled : 7812056037
+2024-12-20 13:19:03 INFO  com.truvideo.pages.ProspectListPage - Email Id filled : 2GzudMxQ@gmail.com
+2024-12-20 13:19:03 INFO  com.truvideo.pages.ProspectListPage - Stock number field is filled
+2024-12-20 13:19:03 INFO  com.truvideo.pages.ProspectListPage - Filled Vehicle Make  of Customer
+2024-12-20 13:19:03 INFO  com.truvideo.pages.ProspectListPage - Filled Model of Customer vehicle
+2024-12-20 13:19:03 INFO  com.truvideo.pages.ProspectListPage - Filled Year value
+2024-12-20 13:19:07 INFO  com.truvideo.pages.ProspectListPage - Selected sales Agent
+2024-12-20 13:19:08 INFO  com.truvideo.pages.ProspectListPage - Clicked on Save Button
+2024-12-20 13:19:18 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-20 13:19:18 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-20 13:19:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-20 13:19:23 INFO  com.truvideo.pages.OrderListPage - Clicked on myros filter
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 1: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 2: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 3: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 4: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 5: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 6: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 7: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 8: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 9: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 10: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 11: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:25 INFO  com.truvideo.pages.OrderListPage - Match found in Row 12: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 13: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 14: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 15: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 16: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 17: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 18: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 19: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Match found in Row 20: Advisor: Yash Modi, Technician: suraj Singh
+2024-12-20 13:19:26 INFO  com.truvideo.pages.OrderListPage - Clicked on allopen filter
+2024-12-20 13:19:27 INFO  com.truvideo.pages.OrderListPage - The RO: AutoyhIeg is open & Status is: Viewed Est-Confirmed $-Sent
+2024-12-20 13:19:28 INFO  com.truvideo.pages.OrderListPage - The RO: AutoIXpwQ is open & Status is: New
+2024-12-20 13:19:29 INFO  com.truvideo.pages.OrderListPage - The RO: AutopCsLr is open & Status is: New
+2024-12-20 13:19:30 INFO  com.truvideo.pages.OrderListPage - The RO: AutoanEum is open & Status is: Sent
+2024-12-20 13:19:31 INFO  com.truvideo.pages.OrderListPage - The RO: AutoHYQSm is open & Status is: New
+2024-12-20 13:19:33 INFO  com.truvideo.pages.OrderListPage - The RO: AutoNa6Kg is open & Status is: New
+2024-12-20 13:19:34 INFO  com.truvideo.pages.OrderListPage - The RO: AutoygrNO is open & Status is: New
+2024-12-20 13:19:35 INFO  com.truvideo.pages.OrderListPage - The RO: AutoytbOm is open & Status is: New
+2024-12-20 13:19:36 INFO  com.truvideo.pages.OrderListPage - The RO: AutohumdU is open & Status is: Sent
+2024-12-20 13:19:37 INFO  com.truvideo.pages.OrderListPage - The RO: AutoLHZnL is open & Status is: Viewed
+2024-12-20 13:19:38 INFO  com.truvideo.pages.OrderListPage - The RO: AutouBGn7 is open & Status is: Sent
+2024-12-20 13:19:39 INFO  com.truvideo.pages.OrderListPage - The RO: Autooe0mP is open & Status is: Viewed
+2024-12-20 13:19:40 INFO  com.truvideo.pages.OrderListPage - The RO: 54545454545 is open & Status is: Viewed
+2024-12-20 13:19:41 INFO  com.truvideo.pages.OrderListPage - The RO: AutolNaiG is open & Status is: Viewed
+2024-12-20 13:19:42 INFO  com.truvideo.pages.OrderListPage - The RO: 3256845551 is open & Status is: Viewed
+2024-12-20 13:19:43 INFO  com.truvideo.pages.OrderListPage - The RO: 456451531 is open & Status is: Viewed
+2024-12-20 13:19:44 INFO  com.truvideo.pages.OrderListPage - The RO: 5489743 is open & Status is: Viewed
+2024-12-20 13:19:45 INFO  com.truvideo.pages.OrderListPage - The RO: gfjg6u56 is open & Status is: Viewed
+2024-12-20 13:19:46 INFO  com.truvideo.pages.OrderListPage - The RO: 464884 is open & Status is: Viewed
+2024-12-20 13:19:47 INFO  com.truvideo.pages.OrderListPage - The RO: dtf4554 is open & Status is: New
+2024-12-20 13:19:48 INFO  com.truvideo.pages.OrderListPage - Clicked on forreview filter
+2024-12-20 13:19:52 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Autol44Ao Contains For Review and is: For Review
+2024-12-20 13:19:54 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 6554865431 Contains For Review and is: For Review
+2024-12-20 13:19:56 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoUri0f Contains For Review and is: For Review
+2024-12-20 13:19:58 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoSwN3i Contains For Review and is: For Review
+2024-12-20 13:20:00 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoWDdEi Contains For Review and is: For Review
+2024-12-20 13:20:03 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto2S35K Contains For Review and is: For Review
+2024-12-20 13:20:05 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutooHWen Contains For Review and is: For Review
+2024-12-20 13:20:07 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 4362141 Contains For Review and is: For Review
+2024-12-20 13:20:09 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoRakci Contains For Review and is: For Review
+2024-12-20 13:20:11 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 675758 Contains For Review and is: For Review
+2024-12-20 13:20:13 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoHz96E Contains For Review and is: For Review
+2024-12-20 13:20:15 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto7JMqC Contains For Review and is: For Review
+2024-12-20 13:20:17 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto8QRzg Contains For Review and is: For Review
+2024-12-20 13:20:19 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutohUrhR Contains For Review and is: For Review
+2024-12-20 13:20:21 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutopjCxX Contains For Review and is: For Review
+2024-12-20 13:20:23 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 686656149494 Contains For Review and is: For Review
+2024-12-20 13:20:25 INFO  com.truvideo.pages.OrderListPage - The Status of RO: test upload Contains For Review and is: For Review
+2024-12-20 13:20:27 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 06538668 Contains For Review and is: For Review
+2024-12-20 13:20:29 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 7586459 Contains For Review and is: For Review
+2024-12-20 13:20:31 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 5417522 Contains For Review and is: For Review
+2024-12-20 13:20:31 INFO  com.truvideo.pages.OrderListPage - Clicked on allclosed filter
+2024-12-20 13:20:34 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoS9J5H is closed & Contains: Closed New
+2024-12-20 13:20:35 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoJWJtJ is closed & Contains: Closed New
+2024-12-20 13:20:36 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutotcT2X is closed & Contains: Closed New
+2024-12-20 13:20:37 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoUmfhH is closed & Contains: Closed New
+2024-12-20 13:20:38 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto1N7XM is closed & Contains: Closed New
+2024-12-20 13:20:40 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutokpzLc is closed & Contains: Closed New
+2024-12-20 13:20:41 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoPAaUJ is closed & Contains: Closed New
+2024-12-20 13:20:42 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutogJl2J is closed & Contains: Closed New
+2024-12-20 13:20:43 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoHVYX4 is closed & Contains: Closed New
+2024-12-20 13:20:44 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutodO9k9 is closed & Contains: Closed New
+2024-12-20 13:20:45 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoaKnIs is closed & Contains: Closed New
+2024-12-20 13:20:46 INFO  com.truvideo.pages.OrderListPage - The Status of RO: 4364442 is closed & Contains: Closed Sent Est-Draft
+2024-12-20 13:20:47 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto3098Z is closed & Contains: Closed Viewed Est-Confirmed $-Sent
+2024-12-20 13:20:48 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoVilBy is closed & Contains: Closed Viewed Est-Viewed $-Sent
+2024-12-20 13:20:49 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Autor5l3F is closed & Contains: Closed New
+2024-12-20 13:20:50 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoFa7WX is closed & Contains: Closed Sent
+2024-12-20 13:20:51 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto0BWJ4 is closed & Contains: Closed New
+2024-12-20 13:20:52 INFO  com.truvideo.pages.OrderListPage - The Status of RO: Auto7VmHl is closed & Contains: Closed For Review
+2024-12-20 13:20:53 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoOIIs9 is closed & Contains: Closed Viewed Est-Sent $-Sent
+2024-12-20 13:20:54 INFO  com.truvideo.pages.OrderListPage - The Status of RO: AutoI12AD is closed & Contains: Closed New
+2024-12-20 13:20:54 ERROR com.truvideo.pages.OrderListPage - Invalid filter type provided: invalidFilter
+2024-12-20 13:20:54 INFO  com.truvideo.pages.OrderListPage - Clicked on My RO filter
+2024-12-20 13:20:56 INFO  com.truvideo.pages.OrderListPage - Clicked on 'Close Repair Order' Button without selecting any RO to closed
+2024-12-20 13:20:56 INFO  com.truvideo.pages.OrderListPage - Please select repair orders to be closed. message displayed 
+2024-12-20 13:20:58 INFO  com.truvideo.pages.OrderListPage - selected first RO's checkox in My RO's Filter
+2024-12-20 13:20:58 INFO  com.truvideo.pages.OrderListPage - Clicked on 'Close Repair Order' Button when One RO is selected to closed'
+2024-12-20 13:20:59 INFO  com.truvideo.pages.OrderListPage - Clicked on All Closed filter
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoS9J5H
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoJWJtJ
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutotcT2X
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoUmfhH
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto1N7XM
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutokpzLc
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoPAaUJ
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutogJl2J
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoHVYX4
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutodO9k9
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoaKnIs
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :4364442
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto3098Z
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoVilBy
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Autor5l3F
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoFa7WX
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto0BWJ4
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto7VmHl
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoOIIs9
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoI12AD
+2024-12-20 13:21:00 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:01 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoceyTX
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :565654654
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoLc7ry
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoKu0lC
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoVDv3f
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoJnLQw
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoJx50A
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1060
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoQfSbM
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :688669
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto4OcvV
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutovhqEL
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoGIP7e
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Auto8VLDR
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutotGkDQ
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutouuCJ7
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutonOy1C
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutotJq8J
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoPtj6X
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :85649
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:05 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :5353
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutotxhvH
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :102112
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automationc7kpr
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1050
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1046
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationxP4DP
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationiscTD
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :9797900704
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationrFww7
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoT6kJI
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationmH7Po
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationVIfSu
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation6sCcq
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationTGVHe
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation0QFdH
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation3tvlW
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutoN7u78
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationnRvXB
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :6545616
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:09 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :6545616
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :784565613
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationY0rhZ
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1007
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :NPS1316541
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :84564654
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :987564
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1003
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1002
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationagNRR
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :982348
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :102031
+2024-12-20 13:21:13 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationcggKo
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation37MGL
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationCmYvx
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationL250d
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automationxuqft
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :46325
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :454ytt
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :sdhbhdjs41
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:14 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :trrrrr445
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Test56
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationaqhxJ
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationlaakL
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automationp3U51
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation2i0IO
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :NPS34
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :test-20241025_2020
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationHJOkc
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :64443
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :7868
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :554657
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :453647
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationbG5Ib
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationIK9wd
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :784512963
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationDp2wv
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automationch2Lz
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationW9ZwS
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :TestNPS
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:18 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :645262
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :546252
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :1234
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :23
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :45624
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :424
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :21
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :4524
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :232
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :425252
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :436256
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :83883283
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :2822722
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :AutomationX9QmF
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :12345111
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :766677
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :Automation6DA5p
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBfAJH2
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBbmNmd
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBQD3Hd
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - next button displayed 
+2024-12-20 13:21:22 INFO  com.truvideo.pages.OrderListPage - The Closed RO is not found on the current page, checking on the next page.
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :645262
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :6545646515
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :99887766
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :20240926001
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :11223344
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :12352341324
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBlEtWy
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBGtqBu
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :RO156777495
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :RO13363151
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBa9DYH
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBk4p8T
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBXcO0N
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBUXFEd
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEB1Y5lJ
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBx51fG
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBwOwgl
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBFfjm7
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBJztXh
+2024-12-20 13:21:26 INFO  com.truvideo.pages.OrderListPage - Checking for: AutoyhIeg And found :WEBOg8QY
+2024-12-20 13:21:59 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-20 13:21:59 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoWpqYw
+2024-12-20 13:22:00 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-20 13:22:00 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastDRwm
+2024-12-20 13:22:00 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812056463
+2024-12-20 13:22:00 INFO  com.truvideo.pages.OrderListPage - Email Id filled : Automated9d1m@gmail.com
+2024-12-20 13:22:02 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-23 14:11:11 INFO  com.truvideo.pages.LoginPage - All elements are visible on Login Page
+2024-12-23 14:11:11 INFO  com.truvideo.pages.LoginPage - Username/Password field is visible on Login Page
+2024-12-23 14:11:11 INFO  com.truvideo.pages.LoginPage - LogIn button is visible on Login Page
+2024-12-23 14:11:11 INFO  com.truvideo.pages.LoginPage - Create account link button is visible on Login Page
+2024-12-23 14:11:11 INFO  com.truvideo.pages.LoginPage - Forgot password link button is visible on Login page
+2024-12-23 14:11:13 INFO  com.truvideo.pages.LoginPage - Navigated to the Create User Page
+2024-12-23 14:11:15 INFO  com.truvideo.pages.LoginPage - Navigated to the Forgot Password Page
+2024-12-23 14:11:17 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button without entering credentials
+2024-12-23 14:11:18 INFO  com.truvideo.pages.LoginPage - Error message displayed for null credentials 
+2024-12-23 14:11:20 INFO  com.truvideo.pages.LoginPage - Clicked on LogIn button when entering invalid login credentials
+2024-12-23 14:11:21 INFO  com.truvideo.pages.LoginPage - Error message displayed for ivalid credentials 
+2024-12-23 14:11:22 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:11:22 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:11:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:11:25 INFO  com.truvideo.pages.LoginPage - Username / password entered and clicked on LogIn button
+2024-12-23 14:11:25 INFO  com.truvideo.pages.LoginPage - navigated to the Home Page & Title is : TruVideo - Home
+2024-12-23 14:11:33 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:11:33 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:11:35 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:13:56 INFO  com.truvideo.pages.HomePage - Clicked on Training Header Tab
+2024-12-23 14:14:03 INFO  com.truvideo.pages.HomePage - Clicked on User Header Tab
+2024-12-23 14:14:42 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 14:15:12 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 14:15:42 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 14:16:13 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 14:16:51 INFO  com.truvideo.pages.HomePage - Clicked on System tab
+2024-12-23 14:17:23 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-23 14:17:23 INFO  com.truvideo.pages.HomePage - Search Button displayed
+2024-12-23 14:17:23 INFO  com.truvideo.pages.HomePage - Clicked on Close advance search window button
+2024-12-23 14:17:25 INFO  com.truvideo.pages.HomePage - Clicked on search text box
+2024-12-23 14:17:27 INFO  com.truvideo.pages.HomePage - Clicked on search button when by default All filter are selected
+2024-12-23 14:17:29 INFO  com.truvideo.pages.HomePage - Something went wrong , when applied 'All' filter
+2024-12-23 14:17:29 INFO  com.truvideo.pages.HomePage - 'All' filter removed & applied single 'Repair Order' checkbox filter
+2024-12-23 14:17:33 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order List and Only repair order list is displaying
+2024-12-23 14:17:33 INFO  com.truvideo.pages.HomePage - 'Repair Order' filter removed & applied single 'Prospect' checkbox filter
+2024-12-23 14:17:35 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospect List and Only prospect list is displaying
+2024-12-23 14:17:35 INFO  com.truvideo.pages.HomePage - 'Prospect' filter removed & applied single 'Repair Order Messages' checkbox filter
+2024-12-23 14:17:38 INFO  com.truvideo.pages.HomePage - User is navigated to the Repair Order Messages screen
+2024-12-23 14:17:38 INFO  com.truvideo.pages.HomePage - 'Repair Order Message' filter removed & applied single 'Prospect Messages' checkbox filter
+2024-12-23 14:17:40 INFO  com.truvideo.pages.HomePage - User is navigated to the Prospects Messages screen
+2024-12-23 14:21:36 INFO  com.truvideo.pages.HomePage - Click on Away button
+2024-12-23 14:21:38 INFO  com.truvideo.pages.HomePage - Button change to  Back
+2024-12-23 14:21:38 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have set your text messaging auto-reply for your Away message. This will send an automatic text reply to the first inbound message from your customers (to you) letting them know that you are away from your desk and will reply to them shortly. Customers will only receive this "away" message once every hour, so if they send an inbound text multiple times they will only receive it on the first reply.
+2024-12-23 14:21:44 INFO  com.truvideo.pages.HomePage - Click on Back button
+2024-12-23 14:21:44 INFO  com.truvideo.pages.HomePage - Button change to  Away
+2024-12-23 14:21:44 INFO  com.truvideo.pages.HomePage - Away Message displayed as : ×You have turned off your "Away" message. To turn it back on, click on the Away button.
+2024-12-23 14:21:48 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-23 14:21:50 INFO  com.truvideo.pages.HomePage - Something went wrong during opening User Account dropdown
+2024-12-23 14:21:51 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-23 14:22:21 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-23 14:22:27 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2024-12-23 14:22:27 INFO  com.truvideo.pages.HomePage - User is switched to another dealer and switched dealer is : Kenility Store 
+2024-12-23 14:22:35 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button again : To switch Back
+2024-12-23 14:23:18 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-23 14:23:50 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self RO's is not available
+2024-12-23 14:23:52 INFO  com.truvideo.pages.HomePage - Badge for video For Review for All RO's is not available
+2024-12-23 14:23:55 INFO  com.truvideo.pages.HomePage - Badge for video For Review for self SO's is not available
+2024-12-23 14:23:57 INFO  com.truvideo.pages.HomePage - Badge for video For Review for All SO's is not available
+2024-12-23 14:23:59 INFO  com.truvideo.pages.HomePage - Badge for Self RO's Messages is not available
+2024-12-23 14:24:03 INFO  com.truvideo.pages.HomePage - Badge for All RO's Messages is not available
+2024-12-23 14:24:07 INFO  com.truvideo.pages.HomePage - Badge for Self SO's Messages is not available
+2024-12-23 14:24:12 INFO  com.truvideo.pages.HomePage - Badge for All SO's Messages is not available
+2024-12-23 14:24:16 INFO  com.truvideo.pages.HomePage - Badge for self Reminder is not available
+2024-12-23 14:24:20 INFO  com.truvideo.pages.HomePage - Badge for All Reminder is not available
+2024-12-23 14:24:20 INFO  com.truvideo.pages.HomePage - Verify Dealer Name
+2024-12-23 14:24:20 INFO  com.truvideo.pages.HomePage - DEALER IS DIFFRENT
+2024-12-23 14:24:30 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:24:30 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:24:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:24:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:24:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:24:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:25:09 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:25:09 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:25:11 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:26:09 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:26:10 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:26:12 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:26:59 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:26:59 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:27:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 14:27:45 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 14:27:45 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 14:27:46 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
