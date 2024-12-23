@@ -599,8 +599,16 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void checkStatus_OnVideoWatch(String Filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		addVideoToOrder();
 		sendVideoToCustomer(Filter);
-		String lastMessage = frame.locator(messages).last().textContent();
+		page.waitForTimeout(5000);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String lastMessage = frame.locator(messages).last().textContent();		
 		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
 			logger.info("Last message is video Endlink");
 			Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
@@ -618,39 +626,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not video Endlink");
 			throw new SkipException("Last message is not video Endlink");
 		}
-		page.waitForTimeout(1000);
+		page.waitForTimeout(5000);
 		
-		  
-//		page.waitForTimeout(1000);
-//		page.onConsoleMessage(consoleMessage -> {
-//		    String messageText = consoleMessage.text();
-//		    System.out.println("Captured Console Message: " + messageText);
-//
-//		    // Check for the "New Notification triggered" keyword
-//		    if (messageText.contains("New Notification triggered")) {
-//		        System.out.println("Detected a Notification Log");
-//
-//		        // Extract the line containing the `Notification` object
-//		        Pattern notificationPattern = Pattern.compile("Notification\\s*\\{([^}]*)\\}");
-//		        Matcher matcher = notificationPattern.matcher(messageText);
-//
-//		        if (matcher.find()) {
-//		            String title = matcher.group(1); // Extract the title field
-//		            System.out.println("Extracted Notification Title: " + title);
-//		        } else {
-//		            System.err.println("No `title` field found in the captured Notification.");
-//		        }
-//		    }
-//		});
-		 	  
-		page.waitForTimeout(4000);
-		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
-		page.waitForTimeout(2000);
-		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
-		page.waitForTimeout(2000);
-		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
-		page.waitForTimeout(4000);
-		
+		logger.info("checking console 1");
 		page.onConsoleMessage(consoleMessage -> {
 			String messageText = consoleMessage.text();
 			if (messageText.contains("New Notification triggered")) {
@@ -661,7 +639,47 @@ public class RepairOrderDetailPage extends JavaUtility {
 				logger.info("Video Viewed popup notifications NOT triggered and verified in console");
 			}
 		});
-		
+		page.waitForTimeout(3000);
+		page.onConsoleMessage(consoleMessage -> {
+		    String messageText = consoleMessage.text();
+		    System.out.println("Captured Console Message: " + messageText);
+
+		    // Check for the "New Notification triggered" keyword
+		    if (messageText.contains("New Notification triggered")) {
+		        System.out.println("Detected a Notification Log");
+
+		        // Extract the line containing the `Notification` object
+		        Pattern notificationPattern = Pattern.compile("Notification\\s*\\{([^}]*)\\}");
+		        Matcher matcher = notificationPattern.matcher(messageText);
+
+		        if (matcher.find()) {
+		            String title = matcher.group(1); // Extract the title field
+		            System.out.println("Extracted Notification Title: " + title);
+		        } else {
+		            System.err.println("No `title` field found in the captured Notification.");
+		        }
+		    }
+		});
+		 	  
+		page.waitForTimeout(4000);
+		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
+//		page.waitForTimeout(4000);
+//		logger.info("checking console 1");
+//		page.onConsoleMessage(consoleMessage -> {
+//			String messageText = consoleMessage.text();
+//			if (messageText.contains("New Notification triggered")) {
+//				System.out.println("Captured Notification: " + messageText);
+//				logger.info("Video Viewed popup notifications triggered and verified in console");
+//
+//			} else {
+//				logger.info("Video Viewed popup notifications NOT triggered and verified in console");
+//			}
+//		});
+		logger.info("checking console 2");
 		softAssert.assertAll();
 	}
 
@@ -1085,6 +1103,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 		frame.locator(customer_tab).first().click();
 		return flag;
+		
 	}
 
 	public boolean checkStatus(String status) {
