@@ -32,7 +32,7 @@ jobs:
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
     - name: Run Playwright Tests
-      run: xvfb-run --auto-servernum -- mvn test -Dsurefire.suiteXmlFiles=TestRunnerSuites/FullRegressionSuite.xml
+      run: xvfb-run --auto-servernum -- mvn test -Prc-smoke
 
     - name: Set permissions for Report file
       run: chmod 644 Reports/Index.html
