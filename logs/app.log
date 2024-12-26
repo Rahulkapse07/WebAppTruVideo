@@ -1,0 +1,40 @@
+2024-12-20 15:53:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Suraj.kushwah@5exceptions.com
+2024-12-20 15:53:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-20 15:53:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-20 15:54:01 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-20 15:54:02 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoKyE51
+2024-12-20 15:54:02 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-20 15:54:02 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastdASH
+2024-12-20 15:54:02 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812056074
+2024-12-20 15:54:02 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedJa8q@gmail.com
+2024-12-20 15:54:04 INFO  com.truvideo.pages.OrderListPage - Clicked on Save Button
+2024-12-20 15:54:42 INFO  com.truvideo.pages.RepairOrderDetailPage - RO is New & No media is added
+2024-12-20 15:54:48 INFO  com.truvideo.pages.RepairOrderDetailPage - 'Send to customer','View with customer' & 'Insights' button is not disabled
+2024-12-20 15:54:48 INFO  com.truvideo.pages.RepairOrderDetailPage - Multimedia Screen opened: Add video
+2024-12-20 15:54:49 INFO  com.truvideo.pages.RepairOrderDetailPage - Selected 1 video from multimedia screen
+2024-12-20 15:54:51 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on Add Video Button
+2024-12-20 15:55:00 INFO  com.truvideo.pages.RepairOrderDetailPage - Video added sucessfully and visible on media gallery
+2024-12-20 15:55:02 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - For Review expand_more
+2024-12-20 15:55:07 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 15:55:15 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to For Review
+2024-12-20 15:55:15 INFO  com.truvideo.pages.RepairOrderDetailPage - Both 'Send to customer' & 'View with customer' button is enabled
+2024-12-20 15:55:15 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by suraj Singh 
+2024-12-20 15:55:27 INFO  com.truvideo.pages.RepairOrderDetailPage - WhatsApp is enabled & Selected SMS channel to send
+2024-12-20 15:55:27 INFO  com.truvideo.pages.RepairOrderDetailPage - Clicked on SMS button : sent through SMS
+2024-12-20 15:55:49 INFO  com.truvideo.pages.RepairOrderDetailPage - User navigated to the SMS channel after sent 
+2024-12-20 15:55:51 INFO  com.truvideo.pages.RepairOrderDetailPage - RO Status is: RO Status - Sent expand_more
+2024-12-20 15:55:57 INFO  com.truvideo.pages.RepairOrderDetailPage - New Page opened in another tab
+2024-12-20 15:56:05 INFO  com.truvideo.pages.RepairOrderDetailPage - Status on RO list screen is changed to Sent
+2024-12-20 15:56:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last message contains keyword - video at attempt 1
+2024-12-20 15:56:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Last Message is :  am automatic messagefrom kenility store: hello automation , your vehicle service video is ready for viewing at https://dev.tru-vid.com/22ea48fc0077. lastdash, suraj singh reply "stop" to opt out.
+  
+ 12/20/24 05:25:36 am 
+2024-12-20 15:56:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 1
+2024-12-20 15:56:39 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by suraj Singh 
+2024-12-20 15:57:09 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 2
+2024-12-20 15:57:09 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by suraj Singh 
+2024-12-20 15:57:39 INFO  com.truvideo.pages.RepairOrderDetailPage - Searched activity not displayed at attempt 3
+2024-12-20 15:57:39 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Added video (Vuqs) from Saved Video Library  by suraj Singh 
+2024-12-20 15:57:39 INFO  com.truvideo.pages.RepairOrderDetailPage - refreshing page to get activity
+2024-12-20 15:57:53 INFO  com.truvideo.pages.RepairOrderDetailPage - RO activity is:  Text message and email sent to customer.  by suraj Singh 
+2024-12-20 15:57:53 INFO  com.truvideo.pages.RepairOrderDetailPage - Activity contains - sent to customer on Refresh

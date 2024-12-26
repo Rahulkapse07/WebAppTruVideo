@@ -107,7 +107,7 @@ public class TestUtils extends JavaUtility {
 //	}
 
 	public String getScreenShotPath(String testCaseName, Page page) throws IOException {
-		String destinationField = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + ".png";
+		String destinationField = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + ".jpeg";
 		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(destinationField)));
 		return destinationField;
 	}
