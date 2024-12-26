@@ -4,7 +4,14 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import com.microsoft.playwright.*;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.PlaywrightException;
+import com.microsoft.playwright.Tracing;
 import com.truvideo.utility.JavaUtility;
 
 public class PlaywrightFactory extends JavaUtility {
