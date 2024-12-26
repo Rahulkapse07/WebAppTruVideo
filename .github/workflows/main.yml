@@ -1,72 +1,86 @@
-name: Playwright Tests
+name: Run & Deploy Reports to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches:
+      - main
+      - master  # Trigger on changes to the main or master branch
+  workflow_dispatch:
 
 jobs:
-  test:
+  run-tests:
+    timeout-minutes: 60
+    name: Run Tests
     runs-on: ubuntu-latest
-    env:
-      EMAIL_USER: ${{ secrets.EMAIL_USER }}
-      EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-      SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Cache Maven Packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+
+      - name: Install Dependencies
+        run: mvn install -DskipTests
+
+      - name: Set up Xvfb (for GUI applications, if needed)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          Xvfb :99 &  # Start Xvfb on display :99
+          export DISPLAY=:99  # Set the DISPLAY environment variable
+
+      - name: Run Tests
+        run: |
+          export DISPLAY=:99  # Ensure DISPLAY is set
+          mvn test -Pfull-regression
+
+      - name: Archive Test Reports
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}  # Ensures this step runs even if tests fail
+        with:
+          name: Reports
+          path: Reports/  # Ensure this path points to the entire Reports folder
+
+  deploy-pages:
+    name: Deploy Reports to GitHub Pages
+    runs-on: ubuntu-latest
+    if: ${{ always() }}  # Ensures this step runs even if tests fail
+    needs: run-tests
+    permissions:
+      contents: write
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Download Test Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: Reports
+          path: ./Reports
 
-    - uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '11'
+      - name: Debug Deployment Files
+        run: ls -R ./Reports
 
-    - name: Build & Install (only if changes in pom.xml)
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: mvn -B install -D skipTests --no-transfer-progress
+      - name: Prepare Public Directory
+        run: |
+          mkdir -p public
+          cp -R Reports/* public/
+          mv public/Index.html public/index.html
 
-    - name: Install Xvfb (only if Playwright tests require a display)
-      run: sudo apt-get install -y xvfb
-
-    - name: Install Playwright (only if not cached)
-      run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
-
-    - name: Run Playwright Tests
-      run: xvfb-run --auto-servernum -- mvn test -Prc-smoke
-
-    - name: Set permissions for Report file
-      run: chmod 644 Reports/Index.html
-
-    - name: Send Email with Report
-      run: |
-        sudo apt-get install -y ssmtp
-        echo "root=postmaster" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "mailhub=${{ secrets.SMTP_SERVER }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "AuthUser=${{ secrets.EMAIL_USER }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "AuthPass=${{ secrets.EMAIL_PASS }}" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "FromLineOverride=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "UseTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-        echo "UseSTARTTLS=YES" | sudo tee -a /etc/ssmtp/ssmtp.conf
-
-        echo "To: mailto:rahul.kapse@5exceptions.com" > email.txt
-        echo "From: ${{ secrets.EMAIL_USER }}" >> email.txt
-        echo "Subject: Playwright Test Report" >> email.txt
-        echo "MIME-Version: 1.0" >> email.txt
-        echo "Content-Type: multipart/mixed; boundary=\"boundary123\"" >> email.txt
-        echo "" >> email.txt
-        echo "--boundary123" >> email.txt
-        echo "Content-Type: text/plain; charset=UTF-8" >> email.txt
-        echo "" >> email.txt
-        echo "Please find the attached test report." >> email.txt
-        echo "" >> email.txt
-
-        echo "--boundary123" >> email.txt
-        echo "Content-Type: text/html; charset=UTF-8" >> email.txt
-        echo "Content-Disposition: attachment; filename=\"TestReport.html\"" >> email.txt
-        echo "" >> email.txt
-        cat Reports/Index.html >> email.txt
-        echo "" >> email.txt
-        echo "--boundary123--" >> email.txt
-
-        ssmtp mailto:rahul.kapse@5exceptions.com < email.txt
-        echo "Email sent."
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./public
