@@ -1,0 +1,237 @@
+package com.truvideo.testutils;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+import java.io.FileReader;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.List;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.OutputType;
+
+import org.openqa.selenium.TakesScreenshot;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.microsoft.playwright.Page;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+import com.truvideo.utility.JavaUtility;
+
+import io.appium.java_client.AppiumDriver;
+
+public class TestUtils extends JavaUtility {
+	public static ExtentReports extent;
+
+	public static ExtentReports getReporterObject() {
+		String path = System.getProperty("user.dir") + "/Reports";
+		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+		reporter.config().setReportName("RC Truvideo Web App");
+		reporter.config().setDocumentTitle("Web Automation Test Report");
+		reporter.config().setTheme(Theme.STANDARD);
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
+		extent.setSystemInfo("5 Exceptions", "RC Truvideo");
+		extent.setSystemInfo("Browser", "chrome");
+		return extent;
+	}
+	
+	public void generatePlaywrightReport() {
+		try {
+	        String traceDir = System.getProperty("user.dir") + "/Reports/playwright-traces";
+	        ProcessBuilder processBuilder = new ProcessBuilder(
+	            "npx", "playwright", "show-trace", traceDir);
+	        processBuilder.redirectErrorStream(true);
+	        Process process = processBuilder.start();
+
+	        // Wait for process to complete and check result
+	        int exitCode = process.waitFor();
+	        if (exitCode == 0) {
+	            System.out.println("Playwright report generated successfully.");
+	        } else {
+	            System.err.println("Failed to generate Playwright report. Exit code: " + exitCode);
+	        }
+	    } catch (IOException | InterruptedException e) {
+	        System.err.println("Error generating Playwright report: " + e.getMessage());
+	    }
+	}
+	
+	public void deleteOldVideos(Path videoFolderPath) {
+	    if (Files.exists(videoFolderPath) && Files.isDirectory(videoFolderPath)) {
+	        try (DirectoryStream<Path> stream = Files.newDirectoryStream(videoFolderPath, "*.webm")) {
+	            for (Path file : stream) {
+	                try {
+	                    Files.delete(file);
+	                   // System.out.println("Deleted old video file: " + file);
+	                } catch (IOException e) {
+	                    //System.err.println("Failed to delete video file: " + file + ". Reason: " + e.getMessage());
+	                }
+	            }
+	        } catch (IOException e) {
+	            System.err.println("Error accessing video folder: " + videoFolderPath + ". Reason: " + e.getMessage());
+	        }
+	    } else {
+	        System.out.println("Video folder does not exist or is not a directory: " + videoFolderPath);
+	    }
+	}
+
+
+	public String getScreenShotPath(String testCaseName, AppiumDriver driver) throws IOException {
+		File source = driver.getScreenshotAs(OutputType.FILE);
+		String destinationField = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + ".png";
+		FileUtils.copyFile(source, new File(destinationField));
+		return destinationField;
+	}
+
+//	public String getScreenShotPath(String testCaseName, Page page) throws IOException {
+//	    String destinationField = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + ".png";
+//	    // Capture the screenshot and save it to the destination path
+//	    page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(destinationField)));
+//	    return destinationField;
+//	}
+
+	public String getScreenShotPath(String testCaseName, Page page) throws IOException {
+		String destinationField = System.getProperty("user.dir") + "/Reports/ScreenShots/" + testCaseName + ".png";
+		page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(destinationField)));
+		return destinationField;
+	}
+
+	public String getBase64Screenshot(Page page) {
+		byte[] screenshotBytes = page.screenshot();
+		return Base64.getEncoder().encodeToString(screenshotBytes);
+	}
+
+	public String getBase64ScreenshotFromFile(Page page, String testCaseName) throws IOException {
+		// Take a file screenshot
+		String filePath = getScreenShotPath(testCaseName, page);
+		byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
+		return Base64.getEncoder().encodeToString(fileContent);
+	}
+
+//	public void sendReportToEmail() {
+//			EmailAttachment attachment = new EmailAttachment();
+//			attachment.setPath(System.getProperty("user.dir") + "/Reports/index.html");
+//			attachment.setDisposition(EmailAttachment.ATTACHMENT);
+//			attachment.setDescription("Extent Report");
+//			
+//			try {
+//		        String reportPath;
+//		        // Determine the path based on the environment
+//		        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+//		            reportPath = System.getProperty("user.dir") + "/Reports/index.html";
+//		            		//"D:/TruvideoWeb_Playwright/Reports/Index.html"; // Adjust for Windows
+//		        } else {
+//		            reportPath = System.getProperty("user.dir") + "/Reports/Index.html"; // Default relative path
+//		        }
+//		        File reportFile = new File(reportPath);
+//		        if (!reportFile.exists()) {
+//		            System.err.println("Report file not found at: " + reportPath);
+//		            return;
+//		        }
+//		     //   System.out.println("Report file found: " + reportPath);
+//						
+//			MultiPartEmail email = new MultiPartEmail();
+//			email.setHostName("smtp.mail.yahoo.com");
+//			email.setSmtpPort(465); // port
+//			email.setTLS(true);
+//			//scusooxsoohzvlfz
+//			email.setAuthenticator(new DefaultAuthenticator("rahul.kapse@5exceptions.com", "lnvpdqluxdqhdufz")); // pass=AppPass
+//			email.setSSLOnConnect(true); // Use SSL
+//			email.setFrom("rahul.kapse@5exceptions.com");
+//		
+//			//email.addTo("rahul.kapse@5exceptions.com");
+//			email.addTo("gopal.chandre@5exceptions.com");
+//			email.addTo("yash.modi@5exceptions.com");
+//			email.addTo("rahul.kapse@5exceptions.com");
+//			email.addTo("suraj.kushwah@5exceptions.com");
+//			email.setSubject("Automation Report");
+//			email.setMsg("Please find the attached Truvideo Web Automation Report.");
+//			
+//			// Attach the file
+//			email.attach(attachment);
+//			// Send the email
+//			email.send();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+
+	public static List<String> getTicketID(String testCaseName) {
+		String filePath = System.getProperty("user.dir") + "/src/test/resources/TestCaseData/ManualTestCases.xlsx";
+		String searchValue = testCaseName;
+		List<String> tags = new ArrayList<>();
+		String testCaseDescription = ""; // To store data from the third column
+		try {
+			FileInputStream file = new FileInputStream(new File(filePath));
+			Workbook workbook = WorkbookFactory.create(file);
+			Sheet sheet = workbook.getSheetAt(0); // Reading the first sheet
+			// Iterate through each row
+			for (Row row : sheet) {
+				Cell firstCell = row.getCell(0); // First column
+				Cell secondCell = row.getCell(1); // Second column
+				Cell thirdCell = row.getCell(2); // Third column
+				if (firstCell != null && firstCell.getCellType() == CellType.STRING) {
+					String cellValue = firstCell.getStringCellValue();
+					if (cellValue.contains(searchValue)) {
+						if (secondCell != null && secondCell.getCellType() == CellType.STRING) {
+							String[] tagArray = secondCell.getStringCellValue().split(",");
+							tags.addAll(Arrays.asList(tagArray));
+						}
+						if (thirdCell != null && thirdCell.getCellType() == CellType.STRING) {
+							testCaseDescription = thirdCell.getStringCellValue();
+							tags.add(testCaseDescription);
+						}
+					}
+				}
+			}
+			workbook.close();
+			file.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return tags;
+	}
+
+	public static Object[][] readCSV(String filePath) throws CsvException {
+		try (CSVReader csvReader = new CSVReader(new FileReader(filePath))) {
+			String[] values;
+			csvReader.readNext(); // Skip header
+			return csvReader.readAll().stream().map(row -> new Object[] { row[0], row[1], row[2], row[3] })
+					.toArray(Object[][]::new);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return new Object[0][0];
+		}
+
+	}
+	
+	 public String getBaseUrlForEnvironment(String env) {
+	        switch (env.toLowerCase()) {
+	            case "production":
+	                return prop.getProperty("ProdUrl" ,"https://app.truvideo.com/login");
+	            case "stagingrc":
+	                return prop.getProperty("baseUrl" ,"https://rc.truvideo.com/login");
+//	            case "development":
+//	                return prop.getProperty("development.baseUrl", "https://www.development-website.com");
+	            default:
+	                throw new IllegalArgumentException("Unknown environment: " + env);
+	        }
+	    }
+	
+}
