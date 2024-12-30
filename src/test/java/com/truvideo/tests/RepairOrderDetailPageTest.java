@@ -1,7 +1,11 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.ReminderPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -11,12 +15,15 @@ import net.bytebuddy.agent.builder.AgentBuilder.DescriptionStrategy;
 
 public class RepairOrderDetailPageTest extends BaseTest {
 	RepairOrderDetailPage repairOrderPage;
- 
-	@BeforeClass
-	public void repairOrderDetailPageSetup() {
-		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList().navigateToOrderDetails("New");
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		repairOrderPage = new RepairOrderDetailPage(getPage());
 	}
+
 
 
 	@Test(priority = 1 , description = "" )
@@ -68,7 +75,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 
 	@Test(priority = 11, description =  "WA-5375")
 	public void verifyPaymentFunction() {
-		page.reload();
+		getPage().reload();
 		repairOrderPage.createPayment("WhatsApp");
 	}
 

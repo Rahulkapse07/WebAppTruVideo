@@ -1,74 +1,77 @@
 package com.truvideo.base;
 
-import java.util.Properties;
-
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import com.aventstack.extentreports.ExtentTest;
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
-import com.truvideo.pages.LoginPage;
-import com.truvideo.testutils.TestUtils;
+import org.testng.annotations.*;
+import java.util.Properties;
+import static com.truvideo.factory.SessionManagement.clearSessionFile;
 
 public class BaseTest {
-
-	protected PlaywrightFactory pf;
-	public Page page;
+	protected PlaywrightFactory playwrightFactory;
 	protected Properties prop;
-	protected LoginPage loginpage;
-	protected ExtentTest test;
-	
-	TestUtils util = new TestUtils();
-	
-	private String baseUrl; // For storing the final base URL
 
-	@BeforeClass
-	@Parameters({ "browser", "headless", "env" })
-	public void loginPageSetup(
-			@Optional("chrome") String browser, 
-			@Optional("false") String headless,
-			@Optional("stagingrc") String env)
-			{
-
-		pf = new PlaywrightFactory();
-		prop = pf.init_prop(); // Load config.properties
-
-		// Use config.properties as default, override with XML values if provided
-		browser = prop.getProperty("browser", browser);
-		headless = prop.getProperty("headless", headless);
-
-		  baseUrl = util.getBaseUrlForEnvironment(env);
-	    
-		if (baseUrl.isEmpty()) {
-			baseUrl = prop.getProperty("baseUrl");
+	@Parameters({"browser", "headless"})
+	@BeforeSuite
+	public void initialize_Browser_And_Save_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
+		playwrightFactory = new PlaywrightFactory();
+		prop = playwrightFactory.init_prop();
+		if (browser == null || browser.isEmpty()) {
+			browser = prop.getProperty("browser", "chrome");
 		}
-		if (baseUrl == null || baseUrl.isEmpty()) {
-			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
+		if (headless == null || headless.isEmpty()) {
+			headless = prop.getProperty("headless", "false");
 		}
-
 		boolean headlessMode = Boolean.parseBoolean(headless);
-		page = pf.initBrowser(browser, headlessMode);
-
-		// pf.startTracing("traceName1");
-		loginpage = new LoginPage(page);
-		page.navigate(baseUrl);
-
+		// Pre-store session using shared BrowserContext
+		Page sessionPage = playwrightFactory.initBrowser(browser, headlessMode);
+		sessionPage.context().browser().close();
 	}
-	
 
-	@AfterClass
+	@Parameters({"browser", "headless"})
+	@BeforeMethod
+	public void initialize_Browser_With_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
+		playwrightFactory = new PlaywrightFactory();
+		prop = playwrightFactory.init_prop();
+		if (browser == null || browser.isEmpty()) {
+			browser = prop.getProperty("browser", "chrome");
+		}
+		if (headless == null || headless.isEmpty()) {
+			headless = prop.getProperty("headless", "false");
+		}
+		boolean headlessMode = Boolean.parseBoolean(headless);
+		playwrightFactory = new PlaywrightFactory();
+		playwrightFactory.initBrowser(browser, headlessMode);
+	}
+
+	protected Page getPage() {
+		return PlaywrightFactory.getPage();
+	}
+
+	@AfterMethod
 	public void tearDown() {
-		String destinationField = System.getProperty("user.dir") + "/Reports/";
-		String traceFilePath = destinationField + "trace.zip";
-		//pf.stopTracing(traceFilePath);
-		pf.closeBrowser();
+		try {
+			if (PlaywrightFactory.getPage() != null) {
+				getPage().waitForTimeout(3000);
+				try {
+					PlaywrightFactory.getPage().close();
+				} catch (Exception e) {
+					System.out.println("Page already closed: " + e.getMessage());
+				}
+			}
+			if (PlaywrightFactory.getBrowserContext() != null) {
+				try {
+					PlaywrightFactory.getBrowserContext().close();
+				} catch (Exception e) {
+					System.out.println("BrowserContext already closed: " + e.getMessage());
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Error during tearDown: " + e.getMessage());
+		}
 	}
 
-
-
-
+	@AfterSuite
+	public void clearSession() {
+		clearSessionFile();
+	}
 }
-

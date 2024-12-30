@@ -1,7 +1,11 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.RepairOrderDetailPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -10,10 +14,15 @@ import com.truvideo.pages.SavedVideoLibraryPage;
 public class SavedVideoLibraryPageTest extends BaseTest{
 	
 	SavedVideoLibraryPage savedvideolibrarypage;
-	@BeforeClass
-	public void homePageSetup() throws InterruptedException {
-		savedvideolibrarypage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToSavedVideoLibrary();	
+	RepairOrderDetailPage repairOrderPage;
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		repairOrderPage = new RepairOrderDetailPage(getPage());
+		savedvideolibrarypage = new SavedVideoLibraryPage(getPage());
 	}
 	
 	@Test(priority  = 1,description = "WA-5556")
