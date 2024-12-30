@@ -3,6 +3,7 @@ package com.truvideo.tests;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 import com.truvideo.pages.ForgotPasswordPage;
+import com.truvideo.testutils.AdditionalDescriptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
@@ -76,6 +77,7 @@ public class HomePageTest extends BaseTest {
 	}
 
 	@Test(priority = 9, description = "")
+	@AdditionalDescriptions({"",""})
 	public void verifyDealerTab_UnderOrgainizationHeader_Working() {
 		String actualTitle = homepage.clickOnDealersHeaderTab();
 		Assert.assertEquals(actualTitle, AppConstants.DEALERS_PAGE_TITLE);
