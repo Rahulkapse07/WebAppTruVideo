@@ -10,11 +10,11 @@ import com.truvideo.pages.SavedVideoLibraryPage;
 public class SavedVideoLibraryPageTest extends BaseTest{
 	
 	SavedVideoLibraryPage savedvideolibrarypage;
-	@BeforeClass
-	public void homePageSetup() throws InterruptedException {
-		savedvideolibrarypage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToSavedVideoLibrary();	
-	}
+//	@BeforeClass
+//	public void homePageSetup() throws InterruptedException {
+//		savedvideolibrarypage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToSavedVideoLibrary();
+//	}
 	
 	@Test(priority  = 1,description = "WA-5556")
 	public void VerificationSavedvideolibrary() {

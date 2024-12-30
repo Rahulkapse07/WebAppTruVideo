@@ -11,11 +11,12 @@ import com.truvideo.pages.LoginPage;
 
 
 public class LoginPageTest extends BaseTest {
+   LoginPage loginpage;
 
-	@BeforeClass
-	void setup() {
-		loginpage = new LoginPage(page); //
-	}
+//	@BeforeClass
+//	void setup() {
+//		loginpage = new LoginPage(page); //
+//	}
 
 
 	@Test(priority = 1, description = "WA-5572, WA-5555")

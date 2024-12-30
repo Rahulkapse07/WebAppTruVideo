@@ -14,12 +14,12 @@ public class Message_SaleOrdertest extends BaseTest {
 
 	MessageScreen_Prospect MessageScreen_prospect;
 
-	@BeforeClass
-	public void Message_salesorderlogin() {
-		MessageScreen_prospect = loginpage
-				.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToMessageScreen_Prospect();
-	}
+//	@BeforeClass
+//	public void Message_salesorderlogin() {
+//		MessageScreen_prospect = loginpage
+//				.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToMessageScreen_Prospect();
+//	}
 
 	@Test(priority = 1)
 	public void VerifyAll_Elements() {

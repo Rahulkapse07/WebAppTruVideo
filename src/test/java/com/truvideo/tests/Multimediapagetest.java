@@ -12,11 +12,11 @@ public class Multimediapagetest extends BaseTest {
 
 	Multimediapage multimediapage;
 
-	@BeforeClass
-	public void NavigatetoMultimedia() {
-		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.NavigateToOrderList();
-	}
+//	@BeforeClass
+//	public void NavigatetoMultimedia() {
+//		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.NavigateToOrderList();
+//	}
 
 	@Test(priority = 1,description = "WA-5790 ,WA-5793 ")
 	public void verifyDownloadsingleimage() throws Exception {

@@ -9,12 +9,13 @@ import com.truvideo.pages.DealersPage;
 
 public class DealersPageTest extends BaseTest {
 	DealersPage dealerspage;
-	@BeforeClass
-	public void homePageSetup() throws InterruptedException {
-		dealerspage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToDealersPage();
-		
-	}
+
+//	@BeforeClass
+//	public void homePageSetup() throws InterruptedException {
+//		dealerspage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToDealersPage();
+//
+//	}
 	
 	@Test(priority  = 1, description = "WA-5519")
 	public void VerifyReminderEnaDisablefunctionality() {

@@ -10,11 +10,11 @@ import com.truvideo.pages.ReminderPage;
 
 public class ReminderPageTest extends BaseTest {
 	ReminderPage reminderspage;
-	@BeforeClass
-	public void homePageSetup() throws InterruptedException {
-		reminderspage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToReminder();
-	}
+//	@BeforeClass
+//	public void homePageSetup() throws InterruptedException {
+//		reminderspage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToReminder();
+//	}
 
 	@Test(priority = 1)
 	public void reminder() {

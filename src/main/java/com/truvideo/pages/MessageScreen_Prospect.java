@@ -13,7 +13,6 @@ import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.sun.tools.javac.util.Names;
 import com.truvideo.utility.JavaUtility;
 
 public class MessageScreen_Prospect extends JavaUtility {

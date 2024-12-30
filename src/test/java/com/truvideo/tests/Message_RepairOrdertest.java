@@ -14,11 +14,11 @@ public class Message_RepairOrdertest extends BaseTest {
 
 	MessageScreen_Order MessageScreen_order;
 
-	@BeforeClass
-	public void setuplogin() throws Exception {
-		MessageScreen_order = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToMessageScreen_Order();
-	}
+//	@BeforeClass
+//	public void setuplogin() throws Exception {
+//		MessageScreen_order = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToMessageScreen_Order();
+//	}
 
 	@Test(description = "MT-2137")
 	public void verifyelement() {

@@ -10,10 +10,10 @@ import com.truvideo.pages.SignUpPage;
 public class SignUpPageTest extends BaseTest {
 	SignUpPage signUpPage;
 
-	@BeforeClass
-	public void signUpPageSetup() {
-		signUpPage = loginpage.navigateToSignUpPage();
-	}
+//	@BeforeClass
+//	public void signUpPageSetup() {
+//		signUpPage = loginpage.navigateToSignUpPage();
+//	}
 	
 	@Test(priority = 1)
 	public void verifyAllElementsAreAvailable_SignUpPage() {

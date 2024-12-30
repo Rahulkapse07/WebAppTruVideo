@@ -1,74 +1,81 @@
 package com.truvideo.base;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Properties;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
-import com.truvideo.pages.LoginPage;
-import com.truvideo.testutils.TestUtils;
+import com.truvideo.utility.JavaUtility;
+import org.testng.annotations.*;
+import com.microsoft.playwright.Page;
+
+import static com.truvideo.factory.PlaywrightFactory.getBrowserContext;
 
 public class BaseTest {
+    protected PlaywrightFactory pf;
+    public Page page;
+    protected Properties prop;
 
-	protected PlaywrightFactory pf;
-	public Page page;
-	protected Properties prop;
-	protected LoginPage loginpage;
-	protected ExtentTest test;
-	
-	TestUtils util = new TestUtils();
-	
-	private String baseUrl; // For storing the final base URL
+    @Parameters({"browser", "headless"})
+    @BeforeMethod
+    public void playwrightSetup(@Optional("chrome") String browser, @Optional("false") String headless) {
+        pf = new PlaywrightFactory();
+        prop = pf.init_prop();
 
-	@BeforeClass
-	@Parameters({ "browser", "headless", "env" })
-	public void loginPageSetup(
-			@Optional("chrome") String browser, 
-			@Optional("false") String headless,
-			@Optional("stagingrc") String env)
-			{
+        if (browser == null || browser.isEmpty()) {
+            browser = prop.getProperty("browser", "chrome");
+        }
+        if (headless == null || headless.isEmpty()) {
+            headless = prop.getProperty("headless", "false");
+        }
 
-		pf = new PlaywrightFactory();
-		prop = pf.init_prop(); // Load config.properties
+        boolean headlessMode = Boolean.parseBoolean(headless);
+        page = pf.initBrowser(browser, headlessMode);
+    }
 
-		// Use config.properties as default, override with XML values if provided
-		browser = prop.getProperty("browser", browser);
-		headless = prop.getProperty("headless", headless);
+    @Parameters({"browser", "headless"})
+    @BeforeSuite
+    public void playwrightSetup_SaveSession(@Optional("chrome") String browser, @Optional("false") String headless) {
+        pf = new PlaywrightFactory();
+        prop = pf.init_prop();
+        if (browser == null || browser.isEmpty()) {
+            browser = prop.getProperty("browser", "chrome");
+        }
+        if (headless == null || headless.isEmpty()) {
+            headless = prop.getProperty("headless", "false");
+        }
+        boolean headlessMode = Boolean.parseBoolean(headless);
+        page = pf.initBrowser(browser, headlessMode);
+        getBrowserContext().browser().close();
+    }
 
-		  baseUrl = util.getBaseUrlForEnvironment(env);
-	    
-		if (baseUrl.isEmpty()) {
-			baseUrl = prop.getProperty("baseUrl");
-		}
-		if (baseUrl == null || baseUrl.isEmpty()) {
-			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
-		}
+    @AfterMethod
+    public void tearDown() {
+        pf.cleanUp();
+    }
 
-		boolean headlessMode = Boolean.parseBoolean(headless);
-		page = pf.initBrowser(browser, headlessMode);
-
-		// pf.startTracing("traceName1");
-		loginpage = new LoginPage(page);
-		page.navigate(baseUrl);
-
-	}
-	
-
-	@AfterClass
-	public void tearDown() {
-		String destinationField = System.getProperty("user.dir") + "/Reports/";
-		String traceFilePath = destinationField + "trace.zip";
-		//pf.stopTracing(traceFilePath);
-		pf.closeBrowser();
-	}
-
-
-
-
+    @AfterSuite
+    public void clearSession() {
+        pf = new PlaywrightFactory();
+        String sessionPath = pf.init_prop().getProperty("sessionPath");
+        if (sessionPath != null && !sessionPath.isEmpty()) {
+            try {
+                Path path = Path.of(sessionPath);
+                if (Files.exists(path)) {
+                    Files.delete(path);
+                    System.out.println("Session file cleared: " + sessionPath);
+                } else {
+                    System.out.println("Session file does not exist: " + sessionPath);
+                }
+            } catch (IOException e) {
+                System.err.println("Failed to clear session file: " + e.getMessage());
+                e.printStackTrace();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("Session path is not configured.");
+        }
+    }
 }
-

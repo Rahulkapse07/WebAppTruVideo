@@ -1,5 +1,7 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.truvideo.factory.PlaywrightFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
@@ -9,10 +11,11 @@ import com.truvideo.pages.HomePage;
 
 public class HomePageTest extends BaseTest {
 	HomePage homepage;
-
-	@BeforeClass
-	public void homePageSetup() {
-		homepage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"));
+	@BeforeMethod
+	public void initializeHomePage(){
+		    page.navigate(prop.getProperty("homePageUrl"));
+			page.waitForTimeout(2000);
+			homepage = new HomePage(page);
 	}
 
 	@Test(priority = 1, description = "")

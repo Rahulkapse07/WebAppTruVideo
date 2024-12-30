@@ -14,11 +14,11 @@ public class OrderListPageTest extends BaseTest {
 	OrderListPage orderlistpage;
 	TestUtils ExcelUtil = new TestUtils();
 
-	@BeforeClass
-	public void orderListPageSetup() {
-		orderlistpage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList();
-	}
+//	@BeforeClass
+//	public void orderListPageSetup() {
+//		orderlistpage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToOrderList();
+//	}
 
 	@DataProvider(name = "filterTypes")
 	public Object[][] filterTypes() {

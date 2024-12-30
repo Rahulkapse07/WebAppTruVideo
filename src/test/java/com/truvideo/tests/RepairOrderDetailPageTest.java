@@ -12,11 +12,11 @@ import net.bytebuddy.agent.builder.AgentBuilder.DescriptionStrategy;
 public class RepairOrderDetailPageTest extends BaseTest {
 	RepairOrderDetailPage repairOrderPage;
  
-	@BeforeClass
-	public void repairOrderDetailPageSetup() {
-		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList().navigateToOrderDetails("New");
-	}
+//	@BeforeClass
+//	public void repairOrderDetailPageSetup() {
+//		repairOrderPage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToOrderList().navigateToOrderDetails("New");
+//	}
 
 
 	@Test(priority = 1 , description = "" )

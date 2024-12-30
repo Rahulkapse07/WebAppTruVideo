@@ -114,7 +114,7 @@ public class JavaUtility {
 //	    	        }
 //	    	        return prop;
 //	    	    }
- 	public Properties init_prop() {
+ 	public static Properties init_prop() {
 	    try {
 	        prop = new Properties();
 	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
@@ -269,6 +269,5 @@ public class JavaUtility {
 	        return false;
 	    }
 	}
-
 
 }

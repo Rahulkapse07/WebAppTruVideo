@@ -11,11 +11,11 @@ public class ProspectListPageTest extends BaseTest {
 
 	ProspectListPage prospectListPage;
 
-	@BeforeClass
-	public void prospectListPageSetup() {
-		prospectListPage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToProspectList();
-	}
+//	@BeforeClass
+//	public void prospectListPageSetup() {
+//		prospectListPage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
+//				.navigateToProspectList();
+//	}
 	
 	@Test(priority = 1)
 	public void verifyAllAvailableElementsOnROListPage() {

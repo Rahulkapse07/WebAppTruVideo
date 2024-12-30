@@ -2,6 +2,7 @@ package com.truvideo.tests;
 
 import java.io.IOException;
 
+import com.truvideo.pages.DevicesPage;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -13,10 +14,16 @@ import com.truvideo.pages.ForgotPasswordPage;
 public class ForgotPasswordPageTest extends BaseTest {
 	ForgotPasswordPage forgotPasswordPage;
 
-	@BeforeClass
-	public void forgotPasswordPageSetup() {
-		forgotPasswordPage = loginpage.navigateToForgotPasswordPage();
+	@BeforeMethod
+	public void initializeDevicesPage(){
+		page.navigate(prop.getProperty(""));
+		forgotPasswordPage = new ForgotPasswordPage(page);
 	}
+
+//	@BeforeClass
+//	public void forgotPasswordPageSetup() {
+//		forgotPasswordPage = loginpage.navigateToForgotPasswordPage();
+//	}
 
 	@Test(priority = 1)
 	public void validateAllAvailableElementsOnForgotPasswordPage()  {

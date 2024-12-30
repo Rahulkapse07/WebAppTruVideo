@@ -9,11 +9,11 @@ import com.truvideo.pages.ProspectDetailPage;
 
 public class ProspectDetailPageTest extends BaseTest {
 	ProspectDetailPage prospectdetailpage;
-	@BeforeClass
-	public void salesOrderDetailPageSetup()
-	{
-		prospectdetailpage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).navigateToProspectList().navigateToProspectDetails();
-	}
+//	@BeforeClass
+//	public void salesOrderDetailPageSetup()
+//	{
+//		prospectdetailpage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).navigateToProspectList().navigateToProspectDetails();
+//	}
 
 	@Test(priority = 1,description = "")
 	public void test1()
