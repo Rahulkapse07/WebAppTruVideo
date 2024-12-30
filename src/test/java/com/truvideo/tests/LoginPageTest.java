@@ -12,11 +12,10 @@ import com.truvideo.pages.LoginPage;
 
 public class LoginPageTest extends BaseTest {
    LoginPage loginpage;
-
-//	@BeforeClass
-//	void setup() {
-//		loginpage = new LoginPage(page); //
-//	}
+	@BeforeClass
+	void setup() {
+		loginpage = new LoginPage(getPage()); //
+	}
 
 
 	@Test(priority = 1, description = "WA-5572, WA-5555")
@@ -29,7 +28,7 @@ public class LoginPageTest extends BaseTest {
 	public void verifyIsCreateUserButtonWorking() {
 		String actualSignUpPageTitle = loginpage.click_CreateAccount_Button();
 		Assert.assertEquals(actualSignUpPageTitle, AppConstants.SIGN_UP_PAGE_TITLE);
-		page.goBack();
+		getPage().goBack();
 
 	}
 
@@ -37,7 +36,7 @@ public class LoginPageTest extends BaseTest {
 	public void verifyIsForgotPasswordButtonWorking() {
 		String actualForgotPasswordPageTitle = loginpage.click_ForgotPassword_Button();
 		Assert.assertEquals(actualForgotPasswordPageTitle, AppConstants.FORGOT_PASSWORD_PAGE_TITLE);
-		page.goBack();
+		getPage().goBack();
 	}
 
 //	@Test(priority = 4)

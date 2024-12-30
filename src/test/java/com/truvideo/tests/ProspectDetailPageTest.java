@@ -1,7 +1,11 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.Multimediapage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -9,11 +13,15 @@ import com.truvideo.pages.ProspectDetailPage;
 
 public class ProspectDetailPageTest extends BaseTest {
 	ProspectDetailPage prospectdetailpage;
-//	@BeforeClass
-//	public void salesOrderDetailPageSetup()
-//	{
-//		prospectdetailpage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).navigateToProspectList().navigateToProspectDetails();
-//	}
+
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		prospectdetailpage = new ProspectDetailPage(getPage());
+	}
 
 	@Test(priority = 1,description = "")
 	public void test1()

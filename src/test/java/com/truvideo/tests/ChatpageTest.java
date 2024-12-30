@@ -1,6 +1,8 @@
 package com.truvideo.tests;
 
-import org.testng.annotations.BeforeClass;
+
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -9,11 +11,17 @@ import com.truvideo.pages.ChatPage;
 
 
 public class ChatpageTest extends BaseTest {
+
+
 	ChatPage chatpage ;
-	@BeforeMethod
-	public void initializeChatPage(){
-		page.navigate(prop.getProperty("chatPageUrl"));
-		chatpage = new ChatPage(page);
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		chatpage = new ChatPage(getPage());
+
 	}
 
 	@Test(priority = 1)

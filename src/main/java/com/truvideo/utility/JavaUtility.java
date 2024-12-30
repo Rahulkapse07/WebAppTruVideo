@@ -114,29 +114,28 @@ public class JavaUtility {
 //	    	        }
 //	    	        return prop;
 //	    	    }
- 	public static Properties init_prop() {
-	    try {
-	        prop = new Properties();
-	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
 
-	        // Log the file path for debugging
-	       // System.out.println("Loading config file from: " + filePath);
-
-	        // Load the properties file
-	        FileInputStream ip = new FileInputStream(filePath);
-	        prop.load(ip);
-
-	    } catch (FileNotFoundException e) {
-	        e.printStackTrace();
-	        throw new RuntimeException("Configuration file not found: " + e.getMessage());
-	    } catch (IOException f) {
-	        f.printStackTrace();
-	        throw new RuntimeException("Failed to load configuration file: " + f.getMessage());
-	    }
-	    return prop;
-	}
-
-	
+// 	public Properties init_prop() {
+//	    try {
+//	        prop = new Properties();
+//	        String filePath = System.getProperty("config.path", "./src/test/resources/config/config.properties");
+//
+//	        // Log the file path for debugging
+//	       // System.out.println("Loading config file from: " + filePath);
+//
+//	        // Load the properties file
+//	        FileInputStream ip = new FileInputStream(filePath);
+//	        prop.load(ip);
+//
+//	    } catch (FileNotFoundException e) {
+//	        e.printStackTrace();
+//	        throw new RuntimeException("Configuration file not found: " + e.getMessage());
+//	    } catch (IOException f) {
+//	        f.printStackTrace();
+//	        throw new RuntimeException("Failed to load configuration file: " + f.getMessage());
+//	    }
+//	    return prop;
+//	}
 
 	public static String takeScreenshot(Page page) {
 		String path = System.getProperty("user.dir" + "/screenshots/" + System.currentTimeMillis() + ".png");
@@ -241,11 +240,11 @@ public class JavaUtility {
 		}
 	}
 	
-	private String generateUniqueEmail() {
+	protected String generateUniqueEmail() {
 		return "user" + getRandomString(5) + "@example.com";
 	}
 
-	private String generateUniqueString() {
+	protected String generateUniqueString() {
 		return "Text" + getRandomString(5);
 	}
 

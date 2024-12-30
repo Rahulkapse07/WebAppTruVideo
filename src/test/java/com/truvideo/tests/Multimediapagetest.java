@@ -1,5 +1,8 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.MessageScreen_Prospect;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -12,11 +15,15 @@ public class Multimediapagetest extends BaseTest {
 
 	Multimediapage multimediapage;
 
-//	@BeforeClass
-//	public void NavigatetoMultimedia() {
-//		multimediapage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-//				.NavigateToOrderList();
-//	}
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		multimediapage = new Multimediapage(getPage());
+	}
+
 
 	@Test(priority = 1,description = "WA-5790 ,WA-5793 ")
 	public void verifyDownloadsingleimage() throws Exception {

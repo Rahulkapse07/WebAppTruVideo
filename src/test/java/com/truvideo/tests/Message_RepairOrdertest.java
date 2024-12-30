@@ -1,7 +1,10 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -14,11 +17,15 @@ public class Message_RepairOrdertest extends BaseTest {
 
 	MessageScreen_Order MessageScreen_order;
 
-//	@BeforeClass
-//	public void setuplogin() throws Exception {
-//		MessageScreen_order = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-//				.navigateToMessageScreen_Order();
-//	}
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		MessageScreen_order = new MessageScreen_Order(getPage());
+	}
+
 
 	@Test(description = "MT-2137")
 	public void verifyelement() {

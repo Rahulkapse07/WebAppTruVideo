@@ -2,6 +2,9 @@ package com.truvideo.tests;
 
 import java.io.IOException;
 
+
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.truvideo.pages.DevicesPage;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -14,10 +17,14 @@ import com.truvideo.pages.ForgotPasswordPage;
 public class ForgotPasswordPageTest extends BaseTest {
 	ForgotPasswordPage forgotPasswordPage;
 
-	@BeforeMethod
-	public void initializeDevicesPage(){
-		page.navigate(prop.getProperty(""));
-		forgotPasswordPage = new ForgotPasswordPage(page);
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToChatPage_And_InitializeChatPage() {
+		getPage().navigate(prop.getProperty("chatPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		forgotPasswordPage = new ForgotPasswordPage(getPage());
+
 	}
 
 //	@BeforeClass
