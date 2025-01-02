@@ -53,13 +53,13 @@ public class BaseTest {
 	}
 
 	protected Page getPage() {
-		return PlaywrightFactory.getPage();
+		return PlaywrightFactory.getCurrentPage();
 	}
 
 	@AfterMethod
 	public void tearDown() {
 		try {
-			Page page = PlaywrightFactory.getPage();
+			Page page = PlaywrightFactory.getCurrentPage();
 			if (page != null) {
 				try {
 					page.waitForTimeout(5000);

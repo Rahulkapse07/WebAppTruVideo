@@ -3,7 +3,6 @@ package com.truvideo.tests;
 import com.microsoft.playwright.Page;
 
 import com.microsoft.playwright.options.LoadState;
-import com.truvideo.pages.ForgotPasswordPage;
 import com.truvideo.testutils.AdditionalDescriptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -11,8 +10,6 @@ import org.testng.annotations.Test;
 import com.truvideo.base.BaseTest;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.pages.HomePage;
-
-import static com.truvideo.factory.PlaywrightFactory.getPage;
 
 public class HomePageTest extends BaseTest {
 	HomePage homepage;

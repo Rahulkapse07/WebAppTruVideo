@@ -8,11 +8,10 @@ import java.util.Properties;
 
 import com.microsoft.playwright.*;
 
-
 public class PlaywrightFactory {
-	private static final ThreadLocal<Playwright> tlPlaywright = new ThreadLocal<>();
+	private static final ThreadLocal<Playwright> tlPlaywright = ThreadLocal.withInitial(Playwright::create);
 	private static final ThreadLocal<Browser> tlBrowser = new ThreadLocal<>();
-	protected static final ThreadLocal<BrowserContext> tlBrowserContext = new ThreadLocal<>();
+	private static final ThreadLocal<BrowserContext> tlBrowserContext = new ThreadLocal<>();
 	private static final ThreadLocal<Page> tlPage = new ThreadLocal<>();
 	public static Properties prop;
 
@@ -28,15 +27,15 @@ public class PlaywrightFactory {
 		return tlBrowserContext.get();
 	}
 
-	public static Page getPage() {
+	public static Page getCurrentPage() {
 		return tlPage.get();
 	}
 
 	public Page initBrowser(String browserName, boolean headless) {
 		System.out.println("Browser name is: " + browserName);
-		tlPlaywright.set(Playwright.create());
 		ArrayList<String> arguments = new ArrayList<>();
 		arguments.add("--start-maximized");
+
 		switch (browserName.toLowerCase()) {
 			case "chrome":
 				tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(headless)));
@@ -52,14 +51,14 @@ public class PlaywrightFactory {
 		}
 		tlBrowserContext.set(SessionManagement.loginAndStoreSession_UsingValidCredentials());
 		tlPage.set(getBrowserContext().newPage());
-		return getPage();
+		return getCurrentPage();
 	}
 
 	public void initBrowser_WithoutLogin(String browserName, boolean headless) {
 		System.out.println("Browser name is: " + browserName);
-		tlPlaywright.set(Playwright.create());
 		ArrayList<String> arguments = new ArrayList<>();
 		arguments.add("--start-maximized");
+
 		switch (browserName.toLowerCase()) {
 			case "chrome":
 				tlBrowser.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(headless)));

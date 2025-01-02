@@ -62,25 +62,24 @@ public class TestUtils {
     }
 
     public void createTrace(String testName) {
-        String traceDir = "./Reports/traces";
-        String traceFileName = testName + "-trace.zip";
+        String traceFileName = "./Reports/traces"+ testName + "-trace.zip";
         try {
             if (getBrowserContext() != null) {
-                Path dir = Paths.get(traceDir);
-                java.nio.file.Files.createDirectories(dir);
-                Path tracePath = dir.resolve(traceFileName);
-                stopTrace(tracePath);
+                stopTracing(traceFileName);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Failed to save trace for test: " + e.getMessage());
         }
     }
 
-    public void stopTrace(Path tracePath) {
+    protected void stopTracing(String tracePath) {
         try {
-            getBrowserContext().tracing().stop(new Tracing.StopOptions().setPath(tracePath));
+            if (getBrowserContext() != null && getBrowserContext().tracing() != null) {
+                getBrowserContext().tracing().stop(new Tracing.StopOptions()
+                        .setPath(Paths.get(tracePath)));
+            }
         } catch (Exception e) {
-            System.out.println("Failed to stop trace for test: " + e.getMessage());
+            System.out.println("Error stopping tracing: {}" + e.getMessage());
         }
     }
 

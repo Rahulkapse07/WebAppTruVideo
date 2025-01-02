@@ -70,7 +70,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 //
 //	@Test(description =  "WA-5375")
 //	public void verifyPaymentFunction() {
-//		getPage().reload();
+//		getCurrentPage().reload();
 //		repairOrderPage.createPayment("WhatsApp");
 //	}
 //
