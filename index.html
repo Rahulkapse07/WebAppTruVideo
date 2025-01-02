@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">RC Truvideo Web App</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 2, 2025 06:14:38 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 2, 2025 06:27:28 PM</span></a>
 </li>
 </ul>
 </div>
@@ -85,40 +85,40 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">WA-5572,WA-5555</a><a class="dropdown-item" href="#">WA-5571</a>
+<a class="dropdown-item" href="#">MT-2139</a><a class="dropdown-item" href="#">MT-2294,MT-2197,MT-2157</a><a class="dropdown-item" href="#">MT-2136</a><a class="dropdown-item" href="#">WA-5576</a><a class="dropdown-item" href="#">MT-2189</a><a class="dropdown-item" href="#">MT-2205</a><a class="dropdown-item" href="#">WA-5539</a><a class="dropdown-item" href="#">WA-5578</a><a class="dropdown-item" href="#">MT-2159,MT-2287</a><a class="dropdown-item" href="#">MT-2137</a><a class="dropdown-item" href="#">WA-5577</a><a class="dropdown-item" href="#">WA-2434</a><a class="dropdown-item" href="#">MT-2292</a><a class="dropdown-item" href="#">WA-5668</a><a class="dropdown-item" href="#">MT-2211</a><a class="dropdown-item" href="#">WA-5570</a><a class="dropdown-item" href="#">WA-5575</a><a class="dropdown-item" href="#">MT-2147,MT-2383</a><a class="dropdown-item" href="#">WA-5511</a><a class="dropdown-item" href="#">WA-5612</a><a class="dropdown-item" href="#">WA-6163</a><a class="dropdown-item" href="#">WA-5521</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="18"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">verifyIsForgotPasswordButtonWorking</p>
+            <p class="name">Verify_Conversation_Channel</p>
             <p class="text-sm">
-              <span>6:14:56 PM</span> / <span>00:00:01:471</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:27:35 PM</span> / <span>00:00:16:474</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifyIsForgotPasswordButtonWorking</h5>
-<span class='badge badge-success'>01.02.2025 6:14:56 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:14:58 PM</span>
-<span class='badge badge-default'>00:00:01:471</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<h5 class="test-status text-fail">Verify_Conversation_Channel</h5>
+<span class='badge badge-success'>01.02.2025 6:27:35 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:27:51 PM</span>
+<span class='badge badge-default'>00:00:16:474</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/verifyIsForgotPasswordButtonWorking.png' src="screenshots/verifyIsForgotPasswordButtonWorking.png">
-    <div class="title">verifyIsForgotPasswordButtonWorking</div>
+<img data-featherlight='screenshots/Verify_Conversation_Channel.png' src="screenshots/Verify_Conversation_Channel.png">
+    <div class="title">Verify_Conversation_Channel</div>
     </div></div>
 <div class="detail-body mt-4">
 <table class="table table-sm">
@@ -126,22 +126,94 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:56 PM</td>
+        <td>6:27:35 PM</td>
         <td>
-          Failed to attach Jira Test IDs: No description provided for the test: verifyIsForgotPasswordButtonWorking
+          Failed to attach Jira Test IDs: No description provided for the test: Verify_Conversation_Channel
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:58 PM</td>
+        <td>6:27:51 PM</td>
         <td>
-          Trace: <a href='traces/verifyIsForgotPasswordButtonWorking-trace.zip' target='_blank'>Download Trace</a>
+          Trace: <a href='traces/Verify_Conversation_Channel-trace.zip' target='_blank'>Download Trace</a>
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:14:58 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:27:51 PM</td>
         <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.PlaywrightException: Error {
+  message='Target page, context or browser has been closed
+  name='TargetClosedError
+  stack='TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (/tmp/playwright-java-5971881212008893095/package/lib/utils/stackTrace.js:50:17)
+    at LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:91:52)
+    at LongStandingScope.race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.Verify_Conversation_Channel(MessageScreen_Order.java:188)
+	at com.truvideo.tests.Message_RepairOrdertest.Verify_Conversation_Channel(Message_RepairOrdertest.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.impl.TargetClosedError: Error {
+  message='Target page, context or browser has been closed
+  name='TargetClosedError
+  stack='TargetClosedError:Target page, context or browser has been closed
+Error
+    at captureRawStack (/tmp/playwright-java-5971881212008893095/package/lib/utils/stackTrace.js:50:17)
+    at LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:91:52)
+    at LongStandingScope.race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:84:17)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:96:36)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
           
         </td>
       </tr>
@@ -150,14 +222,14 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="2"
+        <li class="test-item"  status="fail" test-id="19"
           author=""
-          tag="WA-5572,WA-5555"
+          tag="WA-5539"
           device="">
           <div class="test-detail">
-            <p class="name">verifyAllElementsOfLoginPage</p>
+            <p class="name">VerifyReadUnreadnotification</p>
             <p class="text-sm">
-              <span>6:14:57 PM</span> / <span>00:00:01:497</span>
+              <span>6:27:35 PM</span> / <span>00:00:10:442</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -165,20 +237,20 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">verifyAllElementsOfLoginPage</h5>
-<span class='badge badge-success'>01.02.2025 6:14:57 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:14:58 PM</span>
-<span class='badge badge-default'>00:00:01:497</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<h5 class="test-status text-fail">VerifyReadUnreadnotification</h5>
+<span class='badge badge-success'>01.02.2025 6:27:35 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:27:45 PM</span>
+<span class='badge badge-default'>00:00:10:442</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5572,WA-5555</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5539</span></div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/verifyAllElementsOfLoginPage.png' src="screenshots/verifyAllElementsOfLoginPage.png">
-    <div class="title">verifyAllElementsOfLoginPage</div>
+<img data-featherlight='screenshots/VerifyReadUnreadnotification.png' src="screenshots/VerifyReadUnreadnotification.png">
+    <div class="title">VerifyReadUnreadnotification</div>
     </div></div>
 <div class="detail-body mt-4">
 <table class="table table-sm">
@@ -186,38 +258,39 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:57 PM</td>
+        <td>6:27:35 PM</td>
         <td>
-          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5572, WA-5555' target='_blank'>WA-5572, WA-5555</a>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5539' target='_blank'>WA-5539</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:58 PM</td>
+        <td>6:27:45 PM</td>
         <td>
-          Trace: <a href='traces/verifyAllElementsOfLoginPage-trace.zip' target='_blank'>Download Trace</a>
+          Trace: <a href='traces/VerifyReadUnreadnotification-trace.zip' target='_blank'>Download Trace</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:14:58 PM</td>
+        <td>6:27:45 PM</td>
         <td>
-          <textarea readonly class="code-block">com.microsoft.playwright.PlaywrightException: Object doesn't exist: request@f1ca68d89fb14bbf92582d1229f356de
+          <textarea readonly class="code-block">com.microsoft.playwright.PlaywrightException: Object doesn't exist: frame@82ac614f3450ad14326e3b888a89ba85
 	at com.microsoft.playwright.impl.Connection.getExistingObject(Connection.java:190)
-	at com.microsoft.playwright.impl.BrowserContextImpl.handleEvent(BrowserContextImpl.java:708)
+	at com.microsoft.playwright.impl.PageImpl.handleEvent(PageImpl.java:157)
 	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:290)
 	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
 	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
 	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
 	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
-	at com.microsoft.playwright.impl.FrameImpl.isVisibleImpl(FrameImpl.java:641)
-	at com.microsoft.playwright.impl.PageImpl.lambda$isVisible$56(PageImpl.java:905)
+	at com.microsoft.playwright.impl.FrameImpl.waitForTimeoutImpl(FrameImpl.java:1076)
+	at com.microsoft.playwright.impl.PageImpl.lambda$waitForTimeout$94(PageImpl.java:1471)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
 	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
 	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
-	at com.microsoft.playwright.impl.PageImpl.isVisible(PageImpl.java:904)
-	at com.microsoft.playwright.Page.isVisible(Page.java:5557)
-	at com.truvideo.pages.LoginPage.checkAllElements_LoginPage(LoginPage.java:29)
-	at com.truvideo.tests.LoginPageTest.verifyAllElementsOfLoginPage(LoginPageTest.java:30)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.PageImpl.waitForTimeout(PageImpl.java:1471)
+	at com.truvideo.pages.MessageScreen_Order.VerifyReadUnreadNotification(MessageScreen_Order.java:641)
+	at com.truvideo.tests.Message_RepairOrdertest.VerifyReadUnreadnotification(Message_RepairOrdertest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -245,73 +318,14 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="fail" test-id="20"
           author=""
-          tag=""
+          tag="MT-2159,MT-2287"
           device="">
           <div class="test-detail">
-            <p class="name">verifyIsCreateUserButtonWorking</p>
+            <p class="name">MessageSendattachments</p>
             <p class="text-sm">
-              <span>6:14:57 PM</span> / <span>00:00:02:141</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">verifyIsCreateUserButtonWorking</h5>
-<span class='badge badge-success'>01.02.2025 6:14:57 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:14:59 PM</span>
-<span class='badge badge-default'>00:00:02:141</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
-<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
-<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
-<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
-</div>
-</div>
-</div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/verifyIsCreateUserButtonWorking.png' src="screenshots/verifyIsCreateUserButtonWorking.png">
-    <div class="title">verifyIsCreateUserButtonWorking</div>
-    </div></div>
-<div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:57 PM</td>
-        <td>
-          Failed to attach Jira Test IDs: No description provided for the test: verifyIsCreateUserButtonWorking
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>6:14:59 PM</td>
-        <td>
-          Trace: <a href='traces/verifyIsCreateUserButtonWorking-trace.zip' target='_blank'>Download Trace</a>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:14:59 PM</td>
-        <td>
-          
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="4"
-          author=""
-          tag="WA-5571"
-          device="">
-          <div class="test-detail">
-            <p class="name">testLogin</p>
-            <p class="text-sm">
-              <span>6:15:04 PM</span> / <span>00:00:01:455</span>
+              <span>6:27:35 PM</span> / <span>00:01:00:590</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -319,20 +333,20 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">testLogin</h5>
-<span class='badge badge-success'>01.02.2025 6:15:04 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:15:06 PM</span>
-<span class='badge badge-default'>00:00:01:455</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<h5 class="test-status text-fail">MessageSendattachments</h5>
+<span class='badge badge-success'>01.02.2025 6:27:35 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:28:35 PM</span>
+<span class='badge badge-default'>00:01:00:590</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5571</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2159,MT-2287</span></div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/testLogin.png' src="screenshots/testLogin.png">
-    <div class="title">testLogin</div>
+<img data-featherlight='screenshots/MessageSendattachments.png' src="screenshots/MessageSendattachments.png">
+    <div class="title">MessageSendattachments</div>
     </div></div>
 <div class="detail-body mt-4">
 <table class="table table-sm">
@@ -340,28 +354,50 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:04 PM</td>
+        <td>6:27:35 PM</td>
         <td>
-          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5571' target='_blank'>WA-5571</a>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2159 ,MT-2287' target='_blank'>MT-2159 ,MT-2287</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:06 PM</td>
+        <td>6:28:35 PM</td>
         <td>
-          Trace: <a href='traces/testLogin-trace.zip' target='_blank'>Download Trace</a>
+          Trace: <a href='traces/MessageSendattachments-trace.zip' target='_blank'>Download Trace</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>6:15:06 PM</td>
+        <td>6:28:35 PM</td>
         <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at org.testng.Assert.assertTrue(Assert.java:67)
-	at com.truvideo.tests.LoginPageTest.testLogin(LoginPageTest.java:71)
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for frameLocator("#messages-body-iframe > #messages-iframe").locator(".chat-input__options button:nth-child(3) mat-icon").last()
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:140)
+	at com.microsoft.playwright.Locator.click(Locator.java:2387)
+	at com.truvideo.pages.MessageScreen_Order.MessageSendAttachments(MessageScreen_Order.java:913)
+	at com.truvideo.tests.Message_RepairOrdertest.MessageSendattachments(Message_RepairOrdertest.java:120)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -380,6 +416,23 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for frameLocator("#messages-body-iframe > #messages-iframe").locator(".chat-input__options button:nth-child(3) mat-icon").last()
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
 </textarea>
           
         </td>
@@ -389,35 +442,34 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="5"
+        <li class="test-item"  status="fail" test-id="21"
           author=""
-          tag="WA-5571"
+          tag=""
           device="">
           <div class="test-detail">
-            <p class="name">testLogin</p>
+            <p class="name">Verify_welcome_message</p>
             <p class="text-sm">
-              <span>6:15:12 PM</span> / <span>00:00:01:863</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:27:52 PM</span> / <span>00:00:38:290</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">testLogin</h5>
-<span class='badge badge-success'>01.02.2025 6:15:12 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:15:14 PM</span>
-<span class='badge badge-default'>00:00:01:863</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<h5 class="test-status text-fail">Verify_welcome_message</h5>
+<span class='badge badge-success'>01.02.2025 6:27:52 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:28:30 PM</span>
+<span class='badge badge-default'>00:00:38:290</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5571</span></div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/testLogin.png' src="screenshots/testLogin.png">
-    <div class="title">testLogin</div>
+<img data-featherlight='screenshots/Verify_welcome_message.png' src="screenshots/Verify_welcome_message.png">
+    <div class="title">Verify_welcome_message</div>
     </div></div>
 <div class="detail-body mt-4">
 <table class="table table-sm">
@@ -425,21 +477,151 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:12 PM</td>
+        <td>6:27:52 PM</td>
         <td>
-          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5571' target='_blank'>WA-5571</a>
+          Failed to attach Jira Test IDs: No description provided for the test: Verify_welcome_message
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:14 PM</td>
+        <td>6:28:30 PM</td>
         <td>
-          Trace: <a href='traces/testLogin-trace.zip' target='_blank'>Download Trace</a>
+          Trace: <a href='traces/Verify_welcome_message-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:28:30 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.Verify_welcome_message(MessageScreen_Order.java:1312)
+	at com.truvideo.tests.Message_RepairOrdertest.Verify_welcome_message(Message_RepairOrdertest.java:144)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag="WA-5539"
+          device="">
+          <div class="test-detail">
+            <p class="name">click_My_AND_UNREAD_filterBotton</p>
+            <p class="text-sm">
+              <span>6:27:59 PM</span> / <span>00:00:14:036</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">click_My_AND_UNREAD_filterBotton</h5>
+<span class='badge badge-success'>01.02.2025 6:27:59 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:28:13 PM</span>
+<span class='badge badge-default'>00:00:14:036</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5539</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/click_My_AND_UNREAD_filterBotton.png' src="screenshots/click_My_AND_UNREAD_filterBotton.png">
+    <div class="title">click_My_AND_UNREAD_filterBotton</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:27:59 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5539' target='_blank'>WA-5539</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:28:13 PM</td>
+        <td>
+          Trace: <a href='traces/click_My_AND_UNREAD_filterBotton-trace.zip' target='_blank'>Download Trace</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:15:14 PM</td>
+        <td>6:28:13 PM</td>
         <td>
           
         </td>
@@ -449,14 +631,14 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="6"
+        <li class="test-item"  status="pass" test-id="23"
           author=""
-          tag="WA-5571"
+          tag="MT-2147,MT-2383"
           device="">
           <div class="test-detail">
-            <p class="name">testLogin</p>
+            <p class="name">message_Profile_setting_button</p>
             <p class="text-sm">
-              <span>6:15:21 PM</span> / <span>00:00:03:015</span>
+              <span>6:28:20 PM</span> / <span>00:00:47:107</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -464,20 +646,20 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">testLogin</h5>
-<span class='badge badge-success'>01.02.2025 6:15:21 PM</span>
-<span class='badge badge-danger'>01.02.2025 6:15:24 PM</span>
-<span class='badge badge-default'>00:00:03:015</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<h5 class="test-status text-pass">message_Profile_setting_button</h5>
+<span class='badge badge-success'>01.02.2025 6:28:20 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:29:07 PM</span>
+<span class='badge badge-default'>00:00:47:107</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5571</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2147,MT-2383</span></div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='screenshots/testLogin.png' src="screenshots/testLogin.png">
-    <div class="title">testLogin</div>
+<img data-featherlight='screenshots/message_Profile_setting_button.png' src="screenshots/message_Profile_setting_button.png">
+    <div class="title">message_Profile_setting_button</div>
     </div></div>
 <div class="detail-body mt-4">
 <table class="table table-sm">
@@ -485,21 +667,1773 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:21 PM</td>
+        <td>6:28:20 PM</td>
         <td>
-          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5571' target='_blank'>WA-5571</a>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2147 , MT-2383' target='_blank'>MT-2147 , MT-2383</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:15:24 PM</td>
+        <td>6:29:07 PM</td>
         <td>
-          Trace: <a href='traces/testLogin-trace.zip' target='_blank'>Download Trace</a>
+          Trace: <a href='traces/message_Profile_setting_button-trace.zip' target='_blank'>Download Trace</a>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:15:24 PM</td>
+        <td>6:29:07 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="24"
+          author=""
+          tag="MT-2211"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyChannelname</p>
+            <p class="text-sm">
+              <span>6:28:37 PM</span> / <span>00:00:39:336</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyChannelname</h5>
+<span class='badge badge-success'>01.02.2025 6:28:37 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:29:16 PM</span>
+<span class='badge badge-default'>00:00:39:336</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2211</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyChannelname.png' src="screenshots/verifyChannelname.png">
+    <div class="title">verifyChannelname</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:28:37 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2211' target='_blank'>MT-2211</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:16 PM</td>
+        <td>
+          Trace: <a href='traces/verifyChannelname-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:29:16 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:449:9)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.verifychannelname(MessageScreen_Order.java:1086)
+	at com.truvideo.tests.Message_RepairOrdertest.verifyChannelname(Message_RepairOrdertest.java:135)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at process.processImmediate (node:internal/timers:449:9)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag="MT-2292"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDefaultFilters</p>
+            <p class="text-sm">
+              <span>6:28:43 PM</span> / <span>00:00:04:465</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDefaultFilters</h5>
+<span class='badge badge-success'>01.02.2025 6:28:43 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:28:48 PM</span>
+<span class='badge badge-default'>00:00:04:465</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2292</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyDefaultFilters.png' src="screenshots/verifyDefaultFilters.png">
+    <div class="title">verifyDefaultFilters</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:28:43 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2292' target='_blank'>MT-2292</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:28:48 PM</td>
+        <td>
+          Trace: <a href='traces/verifyDefaultFilters-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:28:48 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag="WA-2434"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyGoToRopage</p>
+            <p class="text-sm">
+              <span>6:28:54 PM</span> / <span>00:00:18:938</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyGoToRopage</h5>
+<span class='badge badge-success'>01.02.2025 6:28:54 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:29:13 PM</span>
+<span class='badge badge-default'>00:00:18:938</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-2434</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyGoToRopage.png' src="screenshots/verifyGoToRopage.png">
+    <div class="title">verifyGoToRopage</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:28:54 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-2434' target='_blank'>WA-2434</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:13 PM</td>
+        <td>
+          Trace: <a href='traces/verifyGoToRopage-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:29:13 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag="MT-2136"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyWhatsAppChatEnablecondition</p>
+            <p class="text-sm">
+              <span>6:29:14 PM</span> / <span>00:00:25:487</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyWhatsAppChatEnablecondition</h5>
+<span class='badge badge-success'>01.02.2025 6:29:14 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:29:39 PM</span>
+<span class='badge badge-default'>00:00:25:487</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2136</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyWhatsAppChatEnablecondition.png' src="screenshots/verifyWhatsAppChatEnablecondition.png">
+    <div class="title">verifyWhatsAppChatEnablecondition</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:14 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2136' target='_blank'>MT-2136</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:39 PM</td>
+        <td>
+          Trace: <a href='traces/verifyWhatsAppChatEnablecondition-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:29:39 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="28"
+          author=""
+          tag="WA-6163"
+          device="">
+          <div class="test-detail">
+            <p class="name">verify_videolink_functionality</p>
+            <p class="text-sm">
+              <span>6:29:20 PM</span> / <span>00:00:41:957</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verify_videolink_functionality</h5>
+<span class='badge badge-success'>01.02.2025 6:29:20 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:02 PM</span>
+<span class='badge badge-default'>00:00:41:957</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-6163</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verify_videolink_functionality.png' src="screenshots/verify_videolink_functionality.png">
+    <div class="title">verify_videolink_functionality</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:20 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-6163' target='_blank'>WA-6163</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:02 PM</td>
+        <td>
+          Trace: <a href='traces/verify_videolink_functionality-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:30:02 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.verify_videolink_functionality(MessageScreen_Order.java:1206)
+	at com.truvideo.tests.Message_RepairOrdertest.verify_videolink_functionality(Message_RepairOrdertest.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="29"
+          author=""
+          tag="MT-2189"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifychannelownereditRo</p>
+            <p class="text-sm">
+              <span>6:29:25 PM</span> / <span>00:00:40:469</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifychannelownereditRo</h5>
+<span class='badge badge-success'>01.02.2025 6:29:25 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:06 PM</span>
+<span class='badge badge-default'>00:00:40:469</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2189</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifychannelownereditRo.png' src="screenshots/verifychannelownereditRo.png">
+    <div class="title">verifychannelownereditRo</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:25 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2189' target='_blank'>MT-2189</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:06 PM</td>
+        <td>
+          Trace: <a href='traces/verifychannelownereditRo-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:30:06 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.verifychannelownereditRo(MessageScreen_Order.java:1022)
+	at com.truvideo.tests.Message_RepairOrdertest.verifychannelownereditRo(Message_RepairOrdertest.java:130)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="30"
+          author=""
+          tag="MT-2205"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyconversationStartfromRO</p>
+            <p class="text-sm">
+              <span>6:29:46 PM</span> / <span>00:00:37:406</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyconversationStartfromRO</h5>
+<span class='badge badge-success'>01.02.2025 6:29:46 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:24 PM</span>
+<span class='badge badge-default'>00:00:37:406</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2205</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyconversationStartfromRO.png' src="screenshots/verifyconversationStartfromRO.png">
+    <div class="title">verifyconversationStartfromRO</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:29:46 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2205' target='_blank'>MT-2205</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:24 PM</td>
+        <td>
+          Trace: <a href='traces/verifyconversationStartfromRO-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:30:24 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.selectOption(FrameImpl.java:722)
+	at com.microsoft.playwright.impl.FrameImpl.selectOptionImpl(FrameImpl.java:701)
+	at com.microsoft.playwright.impl.PageImpl.lambda$selectOption$66(PageImpl.java:1056)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1055)
+	at com.microsoft.playwright.impl.PageImpl.selectOption(PageImpl.java:1044)
+	at com.microsoft.playwright.Page.selectOption(Page.java:6325)
+	at com.truvideo.pages.OrderListPage.addRepairOrder(OrderListPage.java:394)
+	at com.truvideo.pages.MessageScreen_Order.verifyconversationStartfromRO(MessageScreen_Order.java:960)
+	at com.truvideo.tests.Message_RepairOrdertest.verifyconversationStartfromRO(Message_RepairOrdertest.java:125)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:1152:23)
+    at FrameDispatcher.selectOption (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:242:33)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("//select[@id='technician']")
+-   locator resolved to <select id="technician" name="technician">…</select>
+-   selecting specified option(s)
+-     did not find some options - waiting... 
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag="MT-2137"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyelement</p>
+            <p class="text-sm">
+              <span>6:30:09 PM</span> / <span>00:00:10:470</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyelement</h5>
+<span class='badge badge-success'>01.02.2025 6:30:09 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:20 PM</span>
+<span class='badge badge-default'>00:00:10:470</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2137</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyelement.png' src="screenshots/verifyelement.png">
+    <div class="title">verifyelement</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:09 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2137' target='_blank'>MT-2137</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:20 PM</td>
+        <td>
+          Trace: <a href='traces/verifyelement-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:30:20 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag="MT-2136"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyfilters</p>
+            <p class="text-sm">
+              <span>6:30:13 PM</span> / <span>00:00:09:954</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyfilters</h5>
+<span class='badge badge-success'>01.02.2025 6:30:13 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:23 PM</span>
+<span class='badge badge-default'>00:00:09:954</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2136</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyfilters.png' src="screenshots/verifyfilters.png">
+    <div class="title">verifyfilters</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:13 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2136' target='_blank'>MT-2136</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:23 PM</td>
+        <td>
+          Trace: <a href='traces/verifyfilters-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:30:23 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag="MT-2139"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifySearchfilterbtn</p>
+            <p class="text-sm">
+              <span>6:30:27 PM</span> / <span>00:00:13:332</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifySearchfilterbtn</h5>
+<span class='badge badge-success'>01.02.2025 6:30:27 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:40 PM</span>
+<span class='badge badge-default'>00:00:13:332</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2139</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifySearchfilterbtn.png' src="screenshots/verifySearchfilterbtn.png">
+    <div class="title">verifySearchfilterbtn</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:27 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2139' target='_blank'>MT-2139</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:40 PM</td>
+        <td>
+          Trace: <a href='traces/verifySearchfilterbtn-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:30:40 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag="MT-2136"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyfilters</p>
+            <p class="text-sm">
+              <span>6:30:30 PM</span> / <span>00:00:09:550</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyfilters</h5>
+<span class='badge badge-success'>01.02.2025 6:30:30 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:39 PM</span>
+<span class='badge badge-default'>00:00:09:550</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2136</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyfilters.png' src="screenshots/verifyfilters.png">
+    <div class="title">verifyfilters</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:30 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2136' target='_blank'>MT-2136</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:39 PM</td>
+        <td>
+          Trace: <a href='traces/verifyfilters-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:30:39 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="35"
+          author=""
+          tag="MT-2294,MT-2197,MT-2157"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifystartConversatationbtn</p>
+            <p class="text-sm">
+              <span>6:30:31 PM</span> / <span>00:00:32:271</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifystartConversatationbtn</h5>
+<span class='badge badge-success'>01.02.2025 6:30:31 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:31:04 PM</span>
+<span class='badge badge-default'>00:00:32:271</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2294,MT-2197,MT-2157</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifystartConversatationbtn.png' src="screenshots/verifystartConversatationbtn.png">
+    <div class="title">verifystartConversatationbtn</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:31 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2294 , MT-2197 , MT-2157' target='_blank'>MT-2294 , MT-2197 , MT-2157</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:04 PM</td>
+        <td>
+          Trace: <a href='traces/verifystartConversatationbtn-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:31:04 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.PlaywrightException: Error {
+  message='Error: strict mode violation: locator(".chat-header__drop-down button") resolved to 2 elements:
+    1) <button mat-icon-button="" cdk-describedby-host="ng-1" m…>…</button> aka locator("button").filter(new Locator.FilterOptions().setHasText("chatbot"))
+    2) <button mat-icon-button="" mat-ripple-loader-centered=""…>…</button> aka getByRole(AriaRole.BUTTON).nth(2)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator(".chat-header__drop-down button") resolved to 2 elements:
+    1) <button mat-icon-button="" cdk-describedby-host="ng-1" m…>…</button> aka locator("button").filter(new Locator.FilterOptions().setHasText("chatbot"))
+    2) <button mat-icon-button="" mat-ripple-loader-centered=""…>…</button> aka getByRole(AriaRole.BUTTON).nth(2)
+
+    at CRExecutionContext.evaluateWithArguments (/tmp/playwright-java-5971881212008893095/package/lib/server/chromium/crExecutionContext.js:92:33)
+    at async LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:96:14)
+    at async evaluateExpression (/tmp/playwright-java-5971881212008893095/package/lib/server/javascript.js:241:12)
+    at async /tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:941:22
+    at async Frame.retryWithProgressAndTimeouts (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:912:24)
+    at async /tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:996:29
+    at async ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:91:22)
+    at async FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:12)
+    at async LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:96:14)
+}
+Call log:
+- waiting for frameLocator("#messages-body-iframe > #messages-iframe").locator(".chat-header__drop-down button")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:54)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+	at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:140)
+	at com.microsoft.playwright.Locator.click(Locator.java:2387)
+	at com.truvideo.pages.MessageScreen_Order.verifyStartconversatationbtn(MessageScreen_Order.java:465)
+	at com.truvideo.tests.Message_RepairOrdertest.verifystartConversatationbtn(Message_RepairOrdertest.java:110)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Error: strict mode violation: locator(".chat-header__drop-down button") resolved to 2 elements:
+    1) <button mat-icon-button="" cdk-describedby-host="ng-1" m…>…</button> aka locator("button").filter(new Locator.FilterOptions().setHasText("chatbot"))
+    2) <button mat-icon-button="" mat-ripple-loader-centered=""…>…</button> aka getByRole(AriaRole.BUTTON).nth(2)
+
+  name='Error
+  stack='Error: Error: strict mode violation: locator(".chat-header__drop-down button") resolved to 2 elements:
+    1) <button mat-icon-button="" cdk-describedby-host="ng-1" m…>…</button> aka locator("button").filter(new Locator.FilterOptions().setHasText("chatbot"))
+    2) <button mat-icon-button="" mat-ripple-loader-centered=""…>…</button> aka getByRole(AriaRole.BUTTON).nth(2)
+
+    at CRExecutionContext.evaluateWithArguments (/tmp/playwright-java-5971881212008893095/package/lib/server/chromium/crExecutionContext.js:92:33)
+    at async LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:96:14)
+    at async evaluateExpression (/tmp/playwright-java-5971881212008893095/package/lib/server/javascript.js:241:12)
+    at async /tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:941:22
+    at async Frame.retryWithProgressAndTimeouts (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:912:24)
+    at async /tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:996:29
+    at async ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:91:22)
+    at async FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:12)
+    at async LongStandingScope._race (/tmp/playwright-java-5971881212008893095/package/lib/utils/manualPromise.js:96:14)
+    at async FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:96:14)
+}
+Call log:
+- waiting for frameLocator("#messages-body-iframe > #messages-iframe").locator(".chat-header__drop-down button")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:257)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag="MT-2136"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyfilters</p>
+            <p class="text-sm">
+              <span>6:30:46 PM</span> / <span>00:00:08:096</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyfilters</h5>
+<span class='badge badge-success'>01.02.2025 6:30:46 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:30:55 PM</span>
+<span class='badge badge-default'>00:00:08:096</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2136</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyfilters.png' src="screenshots/verifyfilters.png">
+    <div class="title">verifyfilters</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:46 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2136' target='_blank'>MT-2136</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:55 PM</td>
+        <td>
+          Trace: <a href='traces/verifyfilters-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:30:55 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="37"
+          author=""
+          tag="WA-5575 WA-5576 WA-5521 WA-5577 WA-5511 WA-5578 WA-5570"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCreation</p>
+            <p class="text-sm">
+              <span>6:30:48 PM</span> / <span>00:01:21:251</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCreation</h5>
+<span class='badge badge-success'>01.02.2025 6:30:48 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:32:09 PM</span>
+<span class='badge badge-default'>00:01:21:251</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5575</span>
+<span class="badge badge-pill badge-default">WA-5576</span>
+<span class="badge badge-pill badge-default">WA-5521</span>
+<span class="badge badge-pill badge-default">WA-5577</span>
+<span class="badge badge-pill badge-default">WA-5511</span>
+<span class="badge badge-pill badge-default">WA-5578</span>
+<span class="badge badge-pill badge-default">WA-5570</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyUserCreation.png' src="screenshots/verifyUserCreation.png">
+    <div class="title">verifyUserCreation</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5577' target='_blank'>WA-5577</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5578' target='_blank'>WA-5578</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5575' target='_blank'>WA-5575</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5576' target='_blank'>WA-5576</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/ WA-5521' target='_blank'> WA-5521</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5570' target='_blank'>WA-5570</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:30:48 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5511' target='_blank'>WA-5511</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:32:09 PM</td>
+        <td>
+          Trace: <a href='traces/verifyUserCreation-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:32:09 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator(".approved-user-action a.edit-action")
+-   locator resolved to <a data-id="19859" data-title="Edit User" data-orig…>…</a>
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-     element is not visible - waiting...
+- element was detached from the DOM, retrying
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.PageImpl.lambda$click$17(PageImpl.java:586)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.PageImpl.click(PageImpl.java:585)
+	at com.microsoft.playwright.Page.click(Page.java:3779)
+	at com.truvideo.pages.UserPage.updateUserPassword(UserPage.java:416)
+	at com.truvideo.pages.UserPage.checkLoginWithEdit_Update_User(UserPage.java:454)
+	at com.truvideo.tests.UserPageTest.verifyUserCreation(UserPageTest.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator(".approved-user-action a.edit-action")
+-   locator resolved to <a data-id="19859" data-title="Edit User" data-orig…>…</a>
+- attempting click action
+-   waiting for element to be visible, enabled and stable
+-     element is not visible - waiting...
+- element was detached from the DOM, retrying
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="38"
+          author=""
+          tag="MT-2136"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyfilters</p>
+            <p class="text-sm">
+              <span>6:31:02 PM</span> / <span>00:00:00:364</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyfilters</h5>
+<span class='badge badge-success'>01.02.2025 6:31:02 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:31:03 PM</span>
+<span class='badge badge-default'>00:00:00:364</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">MT-2136</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyfilters.png' src="screenshots/verifyfilters.png">
+    <div class="title">verifyfilters</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:02 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/MT-2136' target='_blank'>MT-2136</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:03 PM</td>
+        <td>
+          Trace: <a href='traces/verifyfilters-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:31:03 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verify_RepairOrder_HeaderTab_Working</p>
+            <p class="text-sm">
+              <span>6:31:09 PM</span> / <span>00:00:06:470</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verify_RepairOrder_HeaderTab_Working</h5>
+<span class='badge badge-success'>01.02.2025 6:31:09 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:31:16 PM</span>
+<span class='badge badge-default'>00:00:06:470</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verify_RepairOrder_HeaderTab_Working.png' src="screenshots/verify_RepairOrder_HeaderTab_Working.png">
+    <div class="title">verify_RepairOrder_HeaderTab_Working</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:09 PM</td>
+        <td>
+          Failed to attach Jira Test IDs: No description provided for the test: verify_RepairOrder_HeaderTab_Working
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:16 PM</td>
+        <td>
+          Trace: <a href='traces/verify_RepairOrder_HeaderTab_Working-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:31:16 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author=""
+          tag="WA-5612"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserStatus</p>
+            <p class="text-sm">
+              <span>6:31:12 PM</span> / <span>00:00:47:681</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyUserStatus</h5>
+<span class='badge badge-success'>01.02.2025 6:31:12 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:32:00 PM</span>
+<span class='badge badge-default'>00:00:47:681</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5612</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyUserStatus.png' src="screenshots/verifyUserStatus.png">
+    <div class="title">verifyUserStatus</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:12 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5612' target='_blank'>WA-5612</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:32:00 PM</td>
+        <td>
+          Trace: <a href='traces/verifyUserStatus-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:32:00 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verify_OrdersMessage_HeaderTab_Working</p>
+            <p class="text-sm">
+              <span>6:31:23 PM</span> / <span>00:00:07:309</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verify_OrdersMessage_HeaderTab_Working</h5>
+<span class='badge badge-success'>01.02.2025 6:31:23 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:31:30 PM</span>
+<span class='badge badge-default'>00:00:07:309</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verify_OrdersMessage_HeaderTab_Working.png' src="screenshots/verify_OrdersMessage_HeaderTab_Working.png">
+    <div class="title">verify_OrdersMessage_HeaderTab_Working</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:23 PM</td>
+        <td>
+          Failed to attach Jira Test IDs: No description provided for the test: verify_OrdersMessage_HeaderTab_Working
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:30 PM</td>
+        <td>
+          Trace: <a href='traces/verify_OrdersMessage_HeaderTab_Working-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:31:30 PM</td>
+        <td>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="42"
+          author=""
+          tag="WA-5668"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyBulkUserCreation</p>
+            <p class="text-sm">
+              <span>6:31:38 PM</span> / <span>00:01:22:858</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyBulkUserCreation</h5>
+<span class='badge badge-success'>01.02.2025 6:31:38 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:33:00 PM</span>
+<span class='badge badge-default'>00:01:22:858</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">WA-5668</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verifyBulkUserCreation.png' src="screenshots/verifyBulkUserCreation.png">
+    <div class="title">verifyBulkUserCreation</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:31:38 PM</td>
+        <td>
+          Test Case : <a href='https://truvideo.atlassian.net/browse/WA-5668' target='_blank'>WA-5668</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:33:00 PM</td>
+        <td>
+          Trace: <a href='traces/verifyBulkUserCreation-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:33:00 PM</td>
+        <td>
+          <textarea readonly class="code-block">com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("#save-user")
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:129)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+	at com.microsoft.playwright.impl.PageImpl.lambda$click$17(PageImpl.java:586)
+	at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+	at com.microsoft.playwright.impl.PageImpl.click(PageImpl.java:585)
+	at com.microsoft.playwright.Page.click(Page.java:3779)
+	at com.truvideo.pages.UserPage.bulkCreateUser(UserPage.java:318)
+	at com.truvideo.tests.UserPageTest.verifyBulkUserCreation(UserPageTest.java:84)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/tmp/playwright-java-5971881212008893095/package/lib/server/progress.js:87:26)
+    at Frame.click (/tmp/playwright-java-5971881212008893095/package/lib/server/frames.js:995:23)
+    at FrameDispatcher.click (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/tmp/playwright-java-5971881212008893095/package/lib/server/dispatchers/dispatcher.js:362:39)
+}
+Call log:
+- waiting for locator("#save-user")
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:252)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:209)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 30 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verify_Prospect_HeaderTab_Working</p>
+            <p class="text-sm">
+              <span>6:32:06 PM</span> / <span>00:00:07:145</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verify_Prospect_HeaderTab_Working</h5>
+<span class='badge badge-success'>01.02.2025 6:32:06 PM</span>
+<span class='badge badge-danger'>01.02.2025 6:32:14 PM</span>
+<span class='badge badge-default'>00:00:07:145</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='screenshots/verify_Prospect_HeaderTab_Working.png' src="screenshots/verify_Prospect_HeaderTab_Working.png">
+    <div class="title">verify_Prospect_HeaderTab_Working</div>
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:32:06 PM</td>
+        <td>
+          Failed to attach Jira Test IDs: No description provided for the test: verify_Prospect_HeaderTab_Working
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>6:32:14 PM</td>
+        <td>
+          Trace: <a href='traces/verify_Prospect_HeaderTab_Working-trace.zip' target='_blank'>Download Trace</a>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>6:32:14 PM</td>
         <td>
           
         </td>
@@ -529,15 +2463,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log badge-danger'>3</span>
 </span>
-<p class="name">java.lang.AssertionError</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">com.microsoft.playwright.PlaywrightException</p>
+<p class="duration text-sm">3 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>java.lang.AssertionError</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>com.microsoft.playwright.PlaywrightException</h4>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -550,9 +2484,23 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>18:15:04 PM</td>
+<td>18:27:35 PM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>testLogin</a>
+<a href="#" class="linked" test-id='19' id='19'>VerifyReadUnreadnotification</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:27:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>Verify_Conversation_Channel</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>verifystartConversatationbtn</a>
 </td>
 </tr>
 </tbody>
@@ -562,15 +2510,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log badge-danger'>8</span>
 </span>
-<p class="name">com.microsoft.playwright.PlaywrightException</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">com.microsoft.playwright.TimeoutError</p>
+<p class="duration text-sm">8 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>com.microsoft.playwright.PlaywrightException</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>com.microsoft.playwright.TimeoutError</h4>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -583,9 +2531,58 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>18:14:57 PM</td>
+<td>18:27:52 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>verifyAllElementsOfLoginPage</a>
+<a href="#" class="linked" test-id='21' id='21'>Verify_welcome_message</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:27:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>MessageSendattachments</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:28:37 PM</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyChannelname</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verify_videolink_functionality</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>verifychannelownereditRo</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>verifyconversationStartfromRO</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:31:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>verifyBulkUserCreation</a>
 </td>
 </tr>
 </tbody>
@@ -604,22 +2601,22 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">22</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>1</span>
+<span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">WA-5572,WA-5555</p>
+<p class="name">MT-2139</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>WA-5572,WA-5555</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
+<h4>MT-2139</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -630,11 +2627,11 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>18:14:57 PM</td>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:27 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>verifyAllElementsOfLoginPage</a>
+<a href="#" class="linked" test-id='33' id='33'>verifySearchfilterbtn</a>
 </td>
 </tr>
 </tbody>
@@ -644,16 +2641,14 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>2</span>
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">WA-5571</p>
-<p class="duration text-sm">3 tests</p>
+<p class="name">MT-2294,MT-2197,MT-2157</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>WA-5571</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
+<h4>MT-2294,MT-2197,MT-2157</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -667,23 +2662,706 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>18:15:04 PM</td>
+<td>18:30:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='4' id='4'>testLogin</a>
+<a href="#" class="linked" test-id='35' id='35'>verifystartConversatationbtn</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">MT-2136</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2136</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:29:14 PM</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>verifyWhatsAppChatEnablecondition</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:15:12 PM</td>
+<td>18:30:13 PM</td>
 <td>
-<a href="#" class="linked" test-id='5' id='5'>testLogin</a>
+<a href="#" class="linked" test-id='32' id='32'>verifyfilters</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>18:15:21 PM</td>
+<td>18:30:30 PM</td>
 <td>
-<a href="#" class="linked" test-id='6' id='6'>testLogin</a>
+<a href="#" class="linked" test-id='34' id='34'>verifyfilters</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>verifyfilters</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:31:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>verifyfilters</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5576</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5576</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">MT-2189</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2189</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>verifychannelownereditRo</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">MT-2205</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2205</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>verifyconversationStartfromRO</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5539</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5539</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:27:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>VerifyReadUnreadnotification</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:27:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>click_My_AND_UNREAD_filterBotton</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5578</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5578</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">MT-2159,MT-2287</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2159,MT-2287</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:27:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>MessageSendattachments</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">MT-2137</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2137</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:30:09 PM</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>verifyelement</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5577</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5577</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">WA-2434</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-2434</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>verifyGoToRopage</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">MT-2292</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2292</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>verifyDefaultFilters</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5668</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5668</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:31:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>verifyBulkUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">MT-2211</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2211</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:28:37 PM</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyChannelname</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5570</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5570</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5575</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5575</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">MT-2147,MT-2383</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>MT-2147,MT-2383</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:28:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>message_Profile_setting_button</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5511</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5511</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">WA-5612</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5612</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:31:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>verifyUserStatus</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-6163</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-6163</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:29:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verify_videolink_functionality</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">WA-5521</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>WA-5521</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:30:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>verifyUserCreation</a>
 </td>
 </tr>
 </tbody>
@@ -703,25 +3381,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 2, 2025 06:14:38 PM</h3>
+<h3>Jan 2, 2025 06:27:28 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 2, 2025 06:15:29 PM</h3>
+<h3>Jan 2, 2025 06:33:00 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>4</h3>
+<h3>15</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>2</h3>
+<h3>11</h3>
 </div></div>
 </div>
 </div>
@@ -737,12 +3415,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='66%'>
-<b>4</b> tests passed
+<div><small data-tooltip='57%'>
+<b>15</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='33%'><b>2</b> tests failed,
+<small data-tooltip='42%'><b>11</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -760,10 +3438,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='22%'><b>4</b> events passed</small></div>
+<div><small data-tooltip='17%'><b>15</b> events passed</small></div>
 <div>
-<small data-tooltip='11%'><b>2</b> events failed,
-<b data-tooltip='%'>12</b> others
+<small data-tooltip='13%'><b>11</b> events failed,
+<b data-tooltip='%'>58</b> others
 </small>
 </div>
 </div>
@@ -779,7 +3457,7 @@
 </div></div>
 <script>
 var timeline = {
-"verifyIsForgotPasswordButtonWorking":1.471,"verifyAllElementsOfLoginPage":1.497,"verifyIsCreateUserButtonWorking":2.141,"testLogin":1.455,"testLogin":1.863,"testLogin":3.015
+"Verify_Conversation_Channel":16.474,"VerifyReadUnreadnotification":10.442,"MessageSendattachments":60.59,"Verify_welcome_message":38.29,"click_My_AND_UNREAD_filterBotton":14.036,"message_Profile_setting_button":47.107,"verifyChannelname":39.336,"verifyDefaultFilters":4.465,"verifyGoToRopage":18.938,"verifyWhatsAppChatEnablecondition":25.487,"verify_videolink_functionality":41.957,"verifychannelownereditRo":40.469,"verifyconversationStartfromRO":37.406,"verifyelement":10.47,"verifyfilters":9.954,"verifySearchfilterbtn":13.332,"verifyfilters":9.55,"verifystartConversatationbtn":32.271,"verifyfilters":8.096,"verifyUserCreation":81.251,"verifyfilters":0.364,"verify_RepairOrder_HeaderTab_Working":6.47,"verifyUserStatus":47.681,"verify_OrdersMessage_HeaderTab_Working":7.309,"verifyBulkUserCreation":82.858,"verify_Prospect_HeaderTab_Working":7.145
 };
 </script>
 <div class="row">
@@ -789,7 +3467,15 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>WA-5572,WA-5555</td>
+<td>MT-2139</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>MT-2294,MT-2197,MT-2157</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -797,12 +3483,164 @@ var timeline = {
 <td>0%</td>
 </tr>
 <tr>
-<td>WA-5571</td>
-<td>2</td>
+<td>MT-2136</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>WA-5576</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>66.667%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2189</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2205</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-5539</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>WA-5578</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2159,MT-2287</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2137</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>WA-5577</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-2434</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>MT-2292</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>WA-5668</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2211</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-5570</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-5575</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>MT-2147,MT-2383</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>WA-5511</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-5612</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>WA-6163</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>WA-5521</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -831,8 +3669,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 4,
-failParent: 2,
+passParent: 15,
+failParent: 11,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -848,11 +3686,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 4,
-failEvents: 2,
+passEvents: 15,
+failEvents: 11,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 12
+infoEvents: 58
 };
 </script>        </div>
       </div>
