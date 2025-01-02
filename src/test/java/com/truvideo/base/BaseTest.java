@@ -62,7 +62,7 @@ public class BaseTest {
 			Page page = PlaywrightFactory.getPage();
 			if (page != null) {
 				try {
-					page.waitForTimeout(4000);
+					page.waitForTimeout(5000);
 					page.close();
 					System.out.println("Page closed successfully.");
 				} catch (Exception e) {

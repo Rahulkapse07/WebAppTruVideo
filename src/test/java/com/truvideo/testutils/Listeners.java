@@ -16,34 +16,42 @@ import static com.truvideo.factory.PlaywrightFactory.getPage;
 import static com.truvideo.testutils.JiraTestCaseUtils.attachJiraTestId;
 
 public class Listeners extends TestUtils implements ITestListener {
-    public Logger logger = LogManager.getLogger(this.getClass().getName());
+    private static final Logger logger = LogManager.getLogger(Listeners.class);
     private static final ThreadLocal<Page> threadLocalPage = new ThreadLocal<>();
     private static final ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
-
+    private static final ThreadLocal<String> threadLocalTracePath = new ThreadLocal<>();
     private ExtentReports extent;
 
     @Override
     public void onStart(ITestContext context) {
         extent = TestUtils.getReporterObject();
+        logger.info("Test suite execution started.");
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        String testName = result.getTestContext().getName();
-        String methodName = result.getMethod().getMethodName();
-        ExtentTest test = extent.createTest(methodName)
-                .assignCategory(testName);
-        threadLocalTest.set(test);
-        logger.info("Test Execution started for test case: {}", methodName);
-
-        // Start tracing for Playwright
-        if (getBrowserContext() != null) {
+        try {
+            Method method = result.getMethod().getConstructorOrMethod().getMethod();
+            String methodName = result.getMethod().getMethodName();
+            // Start tracing with Playwright
             getBrowserContext().tracing().start(new Tracing.StartOptions()
                     .setScreenshots(true)
                     .setSnapshots(true));
+            // Create ExtentTest instance
+            ExtentTest test = extent.createTest(methodName);
+            threadLocalTest.set(test);
+            logger.info("Test execution started for: {}", methodName);
+            // Set up trace file path
+            String tracePath = "./Reports/traces/" + methodName + ".zip";
+            threadLocalTracePath.set(tracePath);
+            // Attach Jira Test ID
+            attachJiraTestId(method, test);
+            // Get Playwright Page instance
+            Page page = getPage();
+            threadLocalPage.set(page);
+        } catch (Exception e) {
+            logger.error("Error during test setup: {}", e.getMessage(), e);
         }
-        attachJiraTestId(result.getMethod().getConstructorOrMethod().getMethod(), test); // Attach Jira ID if applicable
-        threadLocalPage.set(getPage());
     }
 
     @Override
@@ -52,56 +60,58 @@ public class Listeners extends TestUtils implements ITestListener {
         if (test != null) {
             test.pass("Test passed: " + result.getMethod().getMethodName());
         }
+        logger.info("Test passed: {}", result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         handleTestCompletion(result, false);
+        logger.error("Test failed: {}", result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentTest test = threadLocalTest.get();
-        String methodName = result.getMethod().getMethodName();
         Page page = threadLocalPage.get();
+        String methodName = result.getMethod().getMethodName();
         if (test != null) {
             attachScreenshotToReport(test, methodName, page);
-            test.skip("Test skipped: " + result.getThrowable());
+            test.skip(result.getThrowable());
         }
+        logger.info("Test skipped: {}", methodName);
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        // Not used in this implementation
+        // This method is not used in the current implementation
     }
 
     @Override
     public void onFinish(ITestContext context) {
         if (extent != null) {
-            extent.flush(); // Write everything to the report
+            extent.flush();
+            logger.info("Test suite execution completed.");
         }
+        cleanupThreadLocals();
     }
 
     private void handleTestCompletion(ITestResult result, boolean isSuccess) {
         String methodName = result.getMethod().getMethodName();
+        ExtentTest test = threadLocalTest.get();
+        Page page = threadLocalPage.get();
         try {
-            Page page = threadLocalPage.get();
-            ExtentTest test = threadLocalTest.get();
-            if (page != null && test != null) {
+            if (test != null && page != null) {
                 attachScreenshotToReport(test, methodName, page);
-                //attachTrace(test, methodName);
-                Throwable throwable = result.getThrowable();
+                attachTrace(test, methodName);
                 if (!isSuccess) {
-                        test.fail("Assertion Failed: " + throwable.getMessage());
-                    } else {
-                        test.fail("Test failed due to an unexpected exception: " + throwable.getClass().getSimpleName());
-                    }
+                    test.fail(result.getThrowable());
+                }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.info("Error during test completion for {}: {}", methodName, e.getMessage(), e);
         } finally {
-            threadLocalPage.remove();
-            threadLocalTest.remove();
+            stopTracing();
+            cleanupThreadLocals();
         }
     }
 
@@ -111,7 +121,13 @@ public class Listeners extends TestUtils implements ITestListener {
                 getBrowserContext().tracing().stop();
             }
         } catch (Exception e) {
-            System.err.println("Error stopping tracing: " + e.getMessage());
+            System.out.println("Error stopping tracing: " + e.getMessage());
         }
+    }
+
+    private void cleanupThreadLocals() {
+        threadLocalPage.remove();
+        threadLocalTest.remove();
+        threadLocalTracePath.remove();
     }
 }
