@@ -24,18 +24,15 @@ public class Listeners extends TestUtils implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        extent = TestUtils.getReporterObject(); // Initialize ExtentReports once
+        extent = TestUtils.getReporterObject();
     }
 
     @Override
     public void onTestStart(ITestResult result) {
-        String testName = result.getTestContext().getName(); // Test name from XML
+        String testName = result.getTestContext().getName();
         String methodName = result.getMethod().getMethodName();
-
         ExtentTest test = extent.createTest(methodName)
-                .assignCategory(testName) // Assign category based on test name
-                .assignAuthor("Automation Team");
-
+                .assignCategory(testName);
         threadLocalTest.set(test);
         logger.info("Test Execution started for test case: {}", methodName);
 
@@ -92,15 +89,13 @@ public class Listeners extends TestUtils implements ITestListener {
             ExtentTest test = threadLocalTest.get();
             if (page != null && test != null) {
                 attachScreenshotToReport(test, methodName, page);
-                attachTrace(test, methodName);
+                //attachTrace(test, methodName);
                 Throwable throwable = result.getThrowable();
                 if (!isSuccess) {
-                    if (throwable instanceof AssertionError) {
                         test.fail("Assertion Failed: " + throwable.getMessage());
                     } else {
                         test.fail("Test failed due to an unexpected exception: " + throwable.getClass().getSimpleName());
                     }
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
