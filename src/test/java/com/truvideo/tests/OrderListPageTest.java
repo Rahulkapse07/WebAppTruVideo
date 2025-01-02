@@ -21,8 +21,8 @@ public class OrderListPageTest extends BaseTest {
 
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
-		getPage().navigate(prop.getProperty("chatPageUrl"),
+	public void navigateToOrderListPage_And_InitializeOrderListPage() {
+		getPage().navigate(prop.getProperty("roListPageUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
 		orderlistpage = new OrderListPage(getPage());

@@ -27,10 +27,7 @@ import com.microsoft.playwright.Tracing;
 import com.microsoft.playwright.options.FilePayload;
 
 public class JavaUtility {
-	
- 
-	
-	public static Properties prop;
+
 	public Logger logger = LogManager.getLogger(this.getClass().getName());
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 	private static final SecureRandom RANDOM = new SecureRandom();

@@ -2,10 +2,12 @@ package com.truvideo.pages;
 
 import com.microsoft.playwright.Page;
 import com.truvideo.utility.JavaUtility;
+import static com.truvideo.factory.PlaywrightFactory.prop;
 
 public class LoginPage extends JavaUtility {
 	private Page page;
 
+	
 	public LoginPage(Page page) {
 		this.page = page;
 	}
@@ -109,7 +111,7 @@ public class LoginPage extends JavaUtility {
 
 		}
 			else if(page.url().contains("https://app.truvideo.com/login")) { 
-		  page.fill(username_Field,prop.getProperty("Produsername")); 
+		  page.fill(username_Field, prop.getProperty("Produsername")); 
 		  logger.info("Entered User Name  " + prop.getProperty("Produsername")); 
 		  page.fill(password_Field, prop.getProperty("Prodpassword")); //
 		  logger.info("Entered Password    *********"); page.click(logIn_Button); 

@@ -16,6 +16,8 @@ import com.truvideo.utility.JavaUtility;
 
 import io.appium.java_client.AppiumDriver;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 public class OrderListPage extends JavaUtility {
 	private Page page;
 	private AppiumDriver driver;
@@ -346,7 +348,7 @@ public class OrderListPage extends JavaUtility {
 		}
 	}
 
-	public String addRepairOrder(String Number) {
+	public String addRepairOrder(String text) {
 		page.click(addRepairOrder_Button);
 		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
 		logger.info("Clicked on Add Repair Order button");
@@ -365,7 +367,7 @@ public class OrderListPage extends JavaUtility {
 
 		// This method use for to switch between Random number and Existing number
 
-		switch (Number) {
+		switch (text) {
 		case "Existing":
 			page.fill(phoneNumber_Field, "7812059487");
 			logger.info("Phone number filled : " + phoneNumber);
@@ -394,6 +396,8 @@ public class OrderListPage extends JavaUtility {
 			page.click(save_Button);
 			logger.info("Clicked on Save Button");
 			page.waitForSelector(tableRows);
+			Locator tableRow = page.locator(tableRows);
+			tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
 			return newRoNumber;
 		}
 	}

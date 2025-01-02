@@ -1,15 +1,16 @@
 package com.truvideo.factory;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.Page;
-import com.truvideo.pages.LoginPage;
+import static com.truvideo.factory.PlaywrightFactory.getBrowser;
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static com.truvideo.factory.PlaywrightFactory.getBrowser;
-import static com.truvideo.factory.PlaywrightFactory.prop;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.Page;
+import com.truvideo.pages.LoginPage;
 
 public class SessionManagement {
 
@@ -23,12 +24,13 @@ public class SessionManagement {
             context = getBrowser().newContext(
                     new Browser.NewContextOptions()
                             .setStorageStatePath(sessionPath)
+                            .setViewportSize(null)
 //                            .setRecordVideoDir(Paths.get("./Reports/videos/"))
 //                            .setRecordVideoSize(1280, 720)
             );
         } else {
             System.out.println("Session file not found. Logging in to create a new session.");
-            context = getBrowser().newContext(); // Create a new context
+            context = getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)); // Create a new context
             Page page = context.newPage();
             page.navigate(prop.getProperty("loginPageUrl"));
             LoginPage loginPage =new LoginPage(page);

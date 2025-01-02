@@ -19,7 +19,7 @@ public class Message_RepairOrdertest extends BaseTest {
 
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
+	public void navigateToMessageServicePage_And_InitializeMessageServicePage() {
 		getPage().navigate(prop.getProperty("messageserviceUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);

@@ -7,7 +7,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.utility.JavaUtility;
-
+import static com.truvideo.factory.PlaywrightFactory.prop;
 public class ProspectListPage extends JavaUtility {
 	private Page page;
 

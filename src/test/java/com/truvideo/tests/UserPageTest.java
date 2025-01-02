@@ -9,13 +9,14 @@ import org.testng.annotations.*;
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.LoginPage;
 import com.truvideo.pages.UserPage;
+import com.truvideo.testutils.AdditionalDescriptions;
 
 public class UserPageTest extends BaseTest {
 	UserPage userPage;
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
-		getPage().navigate(prop.getProperty("chatPageUrl"),
+	public void navigateToUserpage_And_InitializeUserPage() {
+		getPage().navigate(prop.getProperty("usersPageURL"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
 		userPage = new UserPage(getPage());
@@ -34,8 +35,8 @@ public class UserPageTest extends BaseTest {
 				{ "Service Dashboard", "Kenility Store", "verifyusersSearchFunctionality", "", "" } };
 	}
 
-	@Test(dataProvider = "userData", priority  = 1, 
-			description  = "WA-5577, WA-5578, WA-5575, WA-5576, WA-5521, WA-5570, WA-5511")
+	@Test(dataProvider = "userData", priority  = 1)
+	@AdditionalDescriptions({"WA-5577","WA-5578","WA-5575","WA-5576"," WA-5521","WA-5570","WA-5511"})
 	public void verifyUserCreation(String role, String store, String methodName, String password,
 			String updatedPassword) throws InterruptedException {
 		role = userPage.extractValue(role);

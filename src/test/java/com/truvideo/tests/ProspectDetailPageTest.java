@@ -16,8 +16,8 @@ public class ProspectDetailPageTest extends BaseTest {
 
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
-		getPage().navigate(prop.getProperty("chatPageUrl"),
+	public void navigateToSOdetailPage_And_InitializeSOdetailPage() {
+		getPage().navigate(prop.getProperty("sodetailUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
 		prospectdetailpage = new ProspectDetailPage(getPage());

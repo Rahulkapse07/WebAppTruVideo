@@ -17,7 +17,7 @@ import static com.truvideo.factory.PlaywrightFactory.getPage;
 public class HomePageTest extends BaseTest {
 	HomePage homepage;
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
+	public void navigateToHomePage_And_InitializeHomePage() {
 		getPage().navigate(prop.getProperty("homePageUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);

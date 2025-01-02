@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.Multimediapage;
+import com.truvideo.testutils.AdditionalDescriptions;
 
 public class Multimediapagetest extends BaseTest {
 
@@ -17,20 +18,22 @@ public class Multimediapagetest extends BaseTest {
 
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
-		getPage().navigate(prop.getProperty("chatPageUrl"),
+	public void navigateToMultimediaPage_And_InitializeMultimediaPage() {
+		getPage().navigate(prop.getProperty("romultimediaUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
 		multimediapage = new Multimediapage(getPage());
 	}
 
 
-	@Test(priority = 1,description = "WA-5790 ,WA-5793 ")
+	@Test(priority = 1,description = "WA-5790")
+	@AdditionalDescriptions({"WA-5793"})
 	public void verifyDownloadsingleimage() throws Exception {
 		multimediapage.verifyDownloadsingleimage();
 	}
 
-	@Test(priority = 2,description = "WA-5789 , WA-5794")
+	@Test(priority = 2,description = "WA-5789")
+	@AdditionalDescriptions({"WA-5794"})
 	public void verifyDownloadMultipleimage() {
 
 		multimediapage.VerifyHideandshowMultipleimage();

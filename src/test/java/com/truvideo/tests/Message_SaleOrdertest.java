@@ -15,8 +15,8 @@ public class Message_SaleOrdertest extends BaseTest {
 
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
-	public void navigateToChatPage_And_InitializeChatPage() {
-		getPage().navigate(prop.getProperty("chatPageUrl"),
+	public void navigateToMessageSalesPage_And_InitializeMessageSalesPage() {
+		getPage().navigate(prop.getProperty("messagesaleUrl"),
 				new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
 		MessageScreen_prospect = new MessageScreen_Prospect(getPage());
