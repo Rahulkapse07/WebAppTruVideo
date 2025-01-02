@@ -62,7 +62,7 @@ public class TestUtils {
     }
 
     public void createTrace(String testName) {
-        String traceFileName = "./Reports/traces"+ testName + "-trace.zip";
+        String traceFileName = "./Reports/traces/"+ testName + "-trace.zip";
         try {
             if (getBrowserContext() != null) {
                 stopTracing(traceFileName);

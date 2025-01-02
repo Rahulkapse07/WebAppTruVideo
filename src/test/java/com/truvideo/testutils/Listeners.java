@@ -8,7 +8,9 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
 import java.lang.reflect.Method;
+
 import static com.truvideo.factory.PlaywrightFactory.*;
 import static com.truvideo.testutils.JiraTestCaseUtils.attachJiraTestId;
 
@@ -46,13 +48,14 @@ public class Listeners extends TestUtils implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentTest test = threadLocalTest.get();
-        handleTestCompletion(result, true);
+        handleTestCompletion(test, result, true);
         logger.info("Test passed: {}", result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        handleTestCompletion(result, false);
+        ExtentTest test = threadLocalTest.get();
+        handleTestCompletion(test, result, false);
         logger.info("Test failed: {}", result.getMethod().getMethodName());
     }
 
@@ -81,9 +84,8 @@ public class Listeners extends TestUtils implements ITestListener {
         cleanupThreadLocals();
     }
 
-    private void handleTestCompletion(ITestResult result, boolean isSuccess) {
+    private void handleTestCompletion(ExtentTest test, ITestResult result, boolean isSuccess) {
         String methodName = result.getMethod().getMethodName();
-        ExtentTest test = threadLocalTest.get();
         try {
             if (test != null) {
                 attachScreenshotToReport(test, methodName, getCurrentPage());
@@ -97,7 +99,6 @@ public class Listeners extends TestUtils implements ITestListener {
         } catch (Exception e) {
             logger.info("Error during test completion for : {}", e.getMessage());
         } finally {
-            //stopTracing(threadLocalTracePath.get());
             cleanupThreadLocals();
         }
     }
