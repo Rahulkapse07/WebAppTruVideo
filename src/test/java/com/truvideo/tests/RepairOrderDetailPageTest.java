@@ -1,17 +1,13 @@
 package com.truvideo.tests;
 
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.LoadState;
-import com.truvideo.pages.ReminderPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.RepairOrderDetailPage;
-
-import net.bytebuddy.agent.builder.AgentBuilder.DescriptionStrategy;
 
 public class RepairOrderDetailPageTest extends BaseTest {
 	RepairOrderDetailPage repairOrderPage;
@@ -40,16 +36,16 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifySendToCustomer_ForFirstVideo() {
 		repairOrderPage.sendVideoToCustomer("WhatsApp");
 	}
-//
-//	@Test(description = "WA-5354" )
-//	public void verifySendToCustomer_ForSecondVideo() {
-//		repairOrderPage.sendVideoToCustomer("SMS");
-//	}
-//
-//	@Test(description = "WA-5354")
-//	public void verifyViewedStatus() {
-//		repairOrderPage.checkStatus_OnVideoWatch("SMS");
-//	}
+
+	@Test(description = "WA-5354" )
+	public void verifySendToCustomer_ForSecondVideo() {
+		repairOrderPage.sendVideoToCustomer("SMS");
+	}
+
+	@Test(description = "WA-5354")
+	public void verifyViewedStatus() {
+		repairOrderPage.checkStatus_OnVideoWatch("SMS");
+	}
 //
 //
 //	@Test(description =  "WA-5363 , WA-5364")

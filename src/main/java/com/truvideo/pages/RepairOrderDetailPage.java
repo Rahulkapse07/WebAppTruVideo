@@ -589,6 +589,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void checkStatus_OnVideoWatch(String Filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		addVideoToOrder();
 		sendVideoToCustomer(Filter);
 		page.waitForTimeout(5000);
