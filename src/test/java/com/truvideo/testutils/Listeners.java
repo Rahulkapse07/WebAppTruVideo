@@ -15,33 +15,46 @@ import static com.truvideo.factory.PlaywrightFactory.getBrowserContext;
 import static com.truvideo.factory.PlaywrightFactory.getPage;
 import static com.truvideo.testutils.JiraTestCaseUtils.attachJiraTestId;
 
-
 public class Listeners extends TestUtils implements ITestListener {
     public Logger logger = LogManager.getLogger(this.getClass().getName());
     private static final ThreadLocal<Page> threadLocalPage = new ThreadLocal<>();
     private static final ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
-    private static final ThreadLocal<String> threadLocalTracePath = new ThreadLocal<>();
 
-    ExtentReports extent = TestUtils.getReporterObject();
+    private ExtentReports extent;
+
+    @Override
+    public void onStart(ITestContext context) {
+        extent = TestUtils.getReporterObject(); // Initialize ExtentReports once
+    }
 
     @Override
     public void onTestStart(ITestResult result) {
-        getBrowserContext().tracing().start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true));
-        Method method = result.getMethod().getConstructorOrMethod().getMethod();
+        String testName = result.getTestContext().getName(); // Test name from XML
         String methodName = result.getMethod().getMethodName();
-        ExtentTest test = extent.createTest(methodName);
+
+        ExtentTest test = extent.createTest(methodName)
+                .assignCategory(testName) // Assign category based on test name
+                .assignAuthor("Automation Team");
+
         threadLocalTest.set(test);
-        logger.info("Test Execution started for test case : {}", methodName);
-        String tracePath = "./Reports/traces/" + methodName + ".zip";
-        threadLocalTracePath.set(tracePath);
-        attachJiraTestId(method, test);
-        Page page = getPage();
-        threadLocalPage.set(page);
+        logger.info("Test Execution started for test case: {}", methodName);
+
+        // Start tracing for Playwright
+        if (getBrowserContext() != null) {
+            getBrowserContext().tracing().start(new Tracing.StartOptions()
+                    .setScreenshots(true)
+                    .setSnapshots(true));
+        }
+        attachJiraTestId(result.getMethod().getConstructorOrMethod().getMethod(), test); // Attach Jira ID if applicable
+        threadLocalPage.set(getPage());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        handleTestCompletion(result, true);
+        ExtentTest test = threadLocalTest.get();
+        if (test != null) {
+            test.pass("Test passed: " + result.getMethod().getMethodName());
+        }
     }
 
     @Override
@@ -52,28 +65,26 @@ public class Listeners extends TestUtils implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentTest test = threadLocalTest.get();
-        Page page = threadLocalPage.get();
         String methodName = result.getMethod().getMethodName();
-        attachScreenshotToReport(test, methodName, page);
-		test.skip(result.getThrowable());
+        Page page = threadLocalPage.get();
+        if (test != null) {
+            attachScreenshotToReport(test, methodName, page);
+            test.skip("Test skipped: " + result.getThrowable());
+        }
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-
+        // Not used in this implementation
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush();
+        if (extent != null) {
+            extent.flush(); // Write everything to the report
+        }
     }
 
-    // Handle test completion for success or failure
     private void handleTestCompletion(ITestResult result, boolean isSuccess) {
         String methodName = result.getMethod().getMethodName();
         try {
@@ -82,18 +93,20 @@ public class Listeners extends TestUtils implements ITestListener {
             if (page != null && test != null) {
                 attachScreenshotToReport(test, methodName, page);
                 attachTrace(test, methodName);
-                //attachVideo(test,methodName);
+                Throwable throwable = result.getThrowable();
                 if (!isSuccess) {
-                    test.fail(result.getThrowable());
+                    if (throwable instanceof AssertionError) {
+                        test.fail("Assertion Failed: " + throwable.getMessage());
+                    } else {
+                        test.fail("Test failed due to an unexpected exception: " + throwable.getClass().getSimpleName());
+                    }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            stopTracing();
             threadLocalPage.remove();
             threadLocalTest.remove();
-            threadLocalTracePath.remove();
         }
     }
 
@@ -106,6 +119,4 @@ public class Listeners extends TestUtils implements ITestListener {
             System.err.println("Error stopping tracing: " + e.getMessage());
         }
     }
-
-
 }

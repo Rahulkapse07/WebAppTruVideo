@@ -59,19 +59,22 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown() {
 		try {
-			if (PlaywrightFactory.getPage() != null) {
-				getPage().waitForTimeout(4000);
+			Page page = PlaywrightFactory.getPage();
+			if (page != null) {
 				try {
-					PlaywrightFactory.getPage().close();
+					page.waitForTimeout(4000);
+					page.close();
+					System.out.println("Page closed successfully.");
 				} catch (Exception e) {
-					System.out.println("Page already closed: " + e.getMessage());
+					System.out.println("Error closing page: " + e.getMessage());
 				}
 			}
 			if (PlaywrightFactory.getBrowserContext() != null) {
 				try {
 					PlaywrightFactory.getBrowserContext().close();
+					System.out.println("BrowserContext closed successfully.");
 				} catch (Exception e) {
-					System.out.println("BrowserContext already closed: " + e.getMessage());
+					System.out.println("Error closing BrowserContext: " + e.getMessage());
 				}
 			}
 		} catch (Exception e) {
