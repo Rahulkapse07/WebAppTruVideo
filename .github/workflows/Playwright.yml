@@ -51,7 +51,7 @@ jobs:
         with:
           name: Reports
           path: Reports/  # Ensure this path points to the entire Reports folder
-          retention-days: 7  # Set the retention period to 7 days
+          retention-days: 30  # Set the retention period to 30 days
   deploy-pages:
     name: Deploy Reports to GitHub Pages
     runs-on: ubuntu-latest
@@ -64,10 +64,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Git for pushing
-        run: |
-            git config user.name "GitHub Actions"
-            git config user.email "rajeev@5exceptions.com"
+#      - name: Set up Git for pushing
+#        run: |
+#            git config user.name "GitHub Actions"
+#            git config user.email "rajeev@5exceptions.com"
 
       - name: Download Test Reports
         uses: actions/download-artifact@v4

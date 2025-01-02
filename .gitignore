@@ -4,11 +4,7 @@ logs/loggers.log
 test-output/
 Reports/Index.html
 Reports/
-<<<<<<< HEAD
 .settings
 .idea
 /logs/
-=======
-.github
 *.csv
->>>>>>> b3bf496ba0df378929cc987a487d7161d4b65a81

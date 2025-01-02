@@ -2,8 +2,11 @@ package com.truvideo.base;
 
 import com.microsoft.playwright.Page;
 import com.truvideo.factory.PlaywrightFactory;
+import com.truvideo.factory.SessionManagement;
 import org.testng.annotations.*;
+
 import java.util.Properties;
+
 import static com.truvideo.factory.SessionManagement.clearSessionFile;
 
 public class BaseTest {
@@ -11,7 +14,7 @@ public class BaseTest {
 	protected Properties prop;
 
 	@Parameters({"browser", "headless"})
-	@BeforeSuite
+	@BeforeTest
 	public void initialize_Browser_And_Save_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
 		playwrightFactory = new PlaywrightFactory();
 		prop = playwrightFactory.init_prop();
@@ -23,6 +26,7 @@ public class BaseTest {
 		}
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		// Pre-store session using shared BrowserContext
+		clearSessionFile();
 		Page sessionPage = playwrightFactory.initBrowser(browser, headlessMode);
 		sessionPage.context().browser().close();
 	}
@@ -40,7 +44,12 @@ public class BaseTest {
 		}
 		boolean headlessMode = Boolean.parseBoolean(headless);
 		playwrightFactory = new PlaywrightFactory();
-		playwrightFactory.initBrowser(browser, headlessMode);
+		SessionManagement sessionManagement = new SessionManagement();
+		if (sessionManagement.isBeforeLoggedInClass()) {
+			playwrightFactory.initBrowser_WithoutLogin(browser, headlessMode);
+		} else {
+			playwrightFactory.initBrowser(browser, headlessMode);
+		}
 	}
 
 	protected Page getPage() {
@@ -51,7 +60,7 @@ public class BaseTest {
 	public void tearDown() {
 		try {
 			if (PlaywrightFactory.getPage() != null) {
-				getPage().waitForTimeout(3000);
+				getPage().waitForTimeout(4000);
 				try {
 					PlaywrightFactory.getPage().close();
 				} catch (Exception e) {
@@ -70,7 +79,7 @@ public class BaseTest {
 		}
 	}
 
-	@AfterSuite
+	@AfterTest
 	public void clearSession() {
 		clearSessionFile();
 	}
