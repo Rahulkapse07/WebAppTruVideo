@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
@@ -14,16 +16,34 @@ import java.lang.reflect.Method;
 import static com.truvideo.factory.PlaywrightFactory.*;
 import static com.truvideo.testutils.JiraTestCaseUtils.attachJiraTestId;
 
-public class Listeners extends TestUtils implements ITestListener {
+public class Listeners extends TestUtils implements ITestListener, ISuiteListener {
     private static final Logger logger = LogManager.getLogger(Listeners.class);
     private static final ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
     private static final ThreadLocal<String> threadLocalTracePath = new ThreadLocal<>();
-    private ExtentReports extent;
+    private static ExtentReports extent; // Static to persist across tests and suites
+
+    @Override
+    public void onStart(ISuite suite) {
+        extent = TestUtils.getReporterObject();
+        logger.info("Test suite '{}' execution started.", suite.getName());
+    }
+
+    @Override
+    public void onFinish(ISuite suite) {
+        if (extent != null) {
+            extent.flush();
+            logger.info("Test suite '{}' execution completed. Extent report flushed.", suite.getName());
+        }
+    }
 
     @Override
     public void onStart(ITestContext context) {
-        extent = TestUtils.getReporterObject();
-        logger.info("Test suite execution started.");
+        logger.info("Test '{}' execution started.", context.getName());
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+        logger.info("Test '{}' execution completed.", context.getName());
     }
 
     @Override
@@ -31,17 +51,27 @@ public class Listeners extends TestUtils implements ITestListener {
         try {
             Method method = result.getMethod().getConstructorOrMethod().getMethod();
             String methodName = result.getMethod().getMethodName();
-            getBrowserContext().tracing().start(new Tracing.StartOptions()
-                    .setScreenshots(true)
-                    .setSnapshots(true));
+            String className = result.getMethod().getTestClass().getName();
+            logger.info("Starting test: {}.{}", className, methodName);
+            try {
+                getBrowserContext().tracing().start(new Tracing.StartOptions()
+                        .setScreenshots(true)
+                        .setSnapshots(true));
+                logger.info("Tracing started for: {}", methodName);
+            } catch (Exception e) {
+                logger.error("Failed to start tracing for {}: {}", methodName, e.getMessage());
+            }
             ExtentTest test = extent.createTest(methodName);
             threadLocalTest.set(test);
-            logger.info("Test execution started for: {}", methodName);
+            logger.info("ExtentTest created for: {}.{}", className, methodName);
             String tracePath = "./Reports/traces/" + methodName + ".zip";
             threadLocalTracePath.set(tracePath);
+            logger.info("Trace path set for: {}", tracePath);
             attachJiraTestId(method, test);
         } catch (Exception e) {
-            logger.error("Error during test setup: {}", e.getMessage(), e);
+            threadLocalTest.remove();
+            threadLocalTracePath.remove();
+            logger.error("Error during test setup for {}: {}", result.getMethod().getMethodName(), e.getMessage(), e);
         }
     }
 
@@ -80,13 +110,6 @@ public class Listeners extends TestUtils implements ITestListener {
         } catch (Exception e) {
             logger.error("Error during onTestSkip: {}", e.getMessage());
         }
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-        extent.flush();
-        logger.info("Test suite execution completed.");
-        cleanupThreadLocals();
     }
 
     private void handleTestCompletion(ExtentTest test, ITestResult result, boolean isSuccess) {
