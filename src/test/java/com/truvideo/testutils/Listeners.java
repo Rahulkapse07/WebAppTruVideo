@@ -84,10 +84,8 @@ public class Listeners extends TestUtils implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        if (extent != null) {
-            extent.flush();
-            logger.info("Test suite execution completed.");
-        }
+        extent.flush();
+        logger.info("Test suite execution completed.");
         cleanupThreadLocals();
     }
 
