@@ -42,6 +42,7 @@ public class BaseTest {
 	@Parameters({"browser", "headless"})
 	@BeforeMethod
 	public void initialize_Browser_With_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
+		playwrightFactory = new PlaywrightFactory();
 		prop = playwrightFactory.init_prop();
 
 		// Set browser and headless defaults
