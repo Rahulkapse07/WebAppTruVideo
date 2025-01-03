@@ -61,7 +61,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.resendEstimate("WhatsApp");
 	}
 
-	@Test(description = "WA-5363", dependsOnMethods = "verifySendEstimateFunction")
+	@Test(description = "WA-5363")
 	public void verifyEstimateConfirmationFunction() {
 		repairOrderPage.estimateConfirmation("WhatsApp");
 	}
@@ -75,8 +75,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
 	}
-
-//
 //	@Test(description = "WA-5375" )
 //	public void verifySubmitPayment_ProcessedPayment() {
 //
@@ -111,8 +109,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 //	 * VerifyPrintInspection() throws InterruptedException {
 //	 * Assert.assertTrue(repairOrderPage.printInspection()); }
 //	 */
-//
-//
+
 	@Test(description = "WA-5393")
 	public void verifyCopylinktoClipboardFunctionality() {
 		repairOrderPage.copyLinktoClipboard();

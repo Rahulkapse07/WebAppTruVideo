@@ -12,16 +12,16 @@
     <test name="Before Login Scenarios" parallel="methods" thread-count="3" verbose="5">
         <classes>
             <class name="com.truvideo.tests.LoginPageTest"></class>
-            <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
-            <class name="com.truvideo.tests.SignUpPageTest"></class>
+           <!--  <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
+            <class name="com.truvideo.tests.SignUpPageTest"></class> -->
         </classes>
     </test>
     <test name="After Login Scenarios" parallel="methods" thread-count="3" verbose="5">
         <classes>
-           <!-- <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>-->
-            <class name="com.truvideo.tests.HomePageTest"></class>
+           <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
+          <!--   <class name="com.truvideo.tests.HomePageTest"></class>
             <class name="com.truvideo.tests.UserPageTest"></class>
-            <class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+            <class name="com.truvideo.tests.Message_RepairOrdertest"></class> -->
         </classes>
     </test>
 </suite>

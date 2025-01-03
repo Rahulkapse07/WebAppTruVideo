@@ -23,13 +23,14 @@ public class SessionManagement {
             System.out.println("Session file found. Using existing session.");
             context = getBrowser().newContext(
                     new Browser.NewContextOptions()
-                            .setStorageStatePath(sessionPath)
+                            .setStorageStatePath(sessionPath).
+                            setViewportSize(null)
 //                            .setRecordVideoDir(Paths.get("./Reports/videos/"))
 //                            .setRecordVideoSize(1280, 720)
             );
         } else {
             System.out.println("Session file not found. Logging in to create a new session.");
-            context = getBrowser().newContext(); // Create a new context
+            context = getBrowser().newContext( new Browser.NewContextOptions().setViewportSize(null)); // Create a new context
             Page page = context.newPage();
             page.navigate(prop.getProperty("loginPageUrl"));
             LoginPage loginPage = new LoginPage(page);
