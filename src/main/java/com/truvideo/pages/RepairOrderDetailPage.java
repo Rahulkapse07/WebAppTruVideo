@@ -9,12 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
 
@@ -273,7 +270,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.click(repairOrder_Header);
 		OrderListPage orderpage = new OrderListPage(page);
-		orderpage.navigateToOrderDetails("Existing");
+		orderpage.addRepairOrder("Existing");
 
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
@@ -374,7 +371,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public void sendEstimate(String channelSelected) {
+		
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		activitiesOfCreateEstimateWindow();
 		try {
 			logger.info("Waiting for the Estimate button to be visible");
 			page.waitForCondition(() -> frame.locator(estimate_Button).isVisible());
@@ -412,6 +411,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void resendEstimate(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		sendEstimate("WhatsApp");
 		frame.locator(estimate_Button).click();
 		page.waitForTimeout(10000);
 		if (!frame.locator(confirm_Button).isVisible()) {
@@ -420,7 +420,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			throw new SkipException("Estimate was not sent before");
 		}
 		frame.locator(confirm_Button).click();
-		logger.info("Clicked on confiem button");
+		logger.info("Clicked on confirm button");
 		selectChannelToPerformAction(channelSelected);// Select channel to send video
 		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertTrue(verifyNavigationToChannel(channelSelected), "Verify Navigation To selected channel");
@@ -437,6 +437,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void createPayment(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		OrderListPage orderpage = new OrderListPage(page);
+		orderpage.addRepairOrder("Existing");
+		
 		try {
 			logger.info("Waiting for the Payment button to be visible");
 			page.waitForCondition(() -> frame.locator(payment_Button).isVisible());
@@ -546,6 +549,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void resendPayment(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
+		createPayment("SMS");
+		
 		try {
 			logger.info("Waiting for the Payment button to be visible");
 			page.waitForCondition(() -> frame.locator(payment_Button).isVisible());
@@ -588,19 +593,111 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public void checkStatus_OnVideoWatch(String Filter) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		List<Boolean> flags = new ArrayList<Boolean>();
 		SoftAssert softAssert = new SoftAssert();
 		OrderListPage order = new OrderListPage(page);
 		order.addRepairOrder("New");
-		addVideoToOrder();
-		sendVideoToCustomer(Filter);
+	  //Sent video to customer
+		
+		frame.locator(repairOrder_PageHeading).waitFor();
+		if (frame.locator(roStatusBar).textContent().contains("New")) {
+			logger.info("RO is New & No media is added");
+			String sendToCustomerClass = getLocatorClass(operations_Buttons, "Send to customer");
+			String viewWithCustomerClass = getLocatorClass(operations_Buttons, "View with customer");
+			String insightClass = getLocatorClass(operations_Buttons, "Insights");
+			if (sendToCustomerClass.contains("disabled") && viewWithCustomerClass.contains("disabled")
+					&& insightClass.contains("disabled")) {
+				logger.info("Both 'Send to customer','View with customer' & 'Insights' button is disabled");
+				flags.add(true);
+			} else {
+				logger.info("'Send to customer','View with customer' & 'Insights' button is not disabled");
+				flags.add(false);
+			}
+			softAssert.assertTrue(!flags.contains(true), // should be false
+					"Verify 'Send to customer' & 'View with customer' button is disabled");
+			flags.clear();
+		} else {
+			logger.info("RO is Not new & some videos are already added to RO");
+		}
+		frame.locator(addMedia).click();
+		if (frame.locator(addVideo_Title).textContent().equals("Add video")) {
+			logger.info("Multimedia Screen opened: " + frame.locator(addVideo_Title).textContent());
+			flags.add(true);
+		} else {
+			logger.info("Multimedia Screen not opened");
+			flags.add(false);
+		}
+		softAssert.assertTrue(!flags.contains(false), "Verify Add Media button is clickable");
+		flags.clear();
+		frame.locator(videos).first().click();
+		logger.info("Selected 1 video from multimedia screen");
+		page.waitForTimeout(2000);
+		frame.locator(add_Button).click();
+		logger.info("Clicked on Add Video Button");
+		page.waitForTimeout(4000);
+		String sendToCustomerClass_AfterVideoAdded = getLocatorClass(operations_Buttons, "Send to customer");
+		String viewWithCustomerClass_AfterVideoAdded = getLocatorClass(operations_Buttons, "View with customer");
+		int addedVideoCount = frame.locator(added_Video).count();
+		if (addedVideoCount >= 0) {
+			logger.info("Video added sucessfully and visible on media gallery");
+			flags.add(true);
+		} else {
+			logger.info("Selected Video not added to media gallery");
+			flags.add(false);
+		}
+		flags.add(checkStatus("For Review")); // verify status whether For Review or Not
+		softAssert.assertTrue(!flags.contains(false), "Verify status changed to For Review");
+		flags.clear();
+		softAssert.assertTrue(verifyChangedStatusOnROList("For Review"),
+				"Verify status changed to For Review on RO list screen");
+		if (sendToCustomerClass_AfterVideoAdded == null || viewWithCustomerClass_AfterVideoAdded == null) {
+			logger.info("'Send to customer' or 'View with customer' button is not found");
+			flags.add(false);
+		} else if (!sendToCustomerClass_AfterVideoAdded.contains("disabled")
+				&& !viewWithCustomerClass_AfterVideoAdded.contains("disabled")) {
+			logger.info("Both 'Send to customer' & 'View with customer' button is enabled");
+			flags.add(true);
+		} else {
+			logger.info("'Send to customer' or 'View with customer' button is disabled");
+			flags.add(false);
+		}
+		flags.add(checkActivity("Added video"));
+		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
+		softAssert.assertAll();
+		
+		//Sent video to customer
+		
+		if (!frame.locator(added_Video).first().isVisible()) {
+			
+			logger.info("Condition not satisfied for Send Video : video not added to RO");
+			throw new SkipException("video not added to RO");
+		}
+		page.waitForTimeout(2000);
+		clickOperationButton("Send to customer");
+		selectChannelToPerformAction(Filter); // Select channel to send video
+		flags.add(verifyNavigationToChannel(Filter));// Navigation to channel after video sent
+		softAssert.assertTrue(!flags.contains(false), "Verify Navigation To selected channel");
+		flags.clear();
+		flags.add(checkStatus("Sent")); // verify status whether Sent or Not
+		softAssert.assertTrue(!flags.contains(false), "Verify Status changed to sent");
+		flags.clear();
+		softAssert.assertTrue(verifyChangedStatusOnROList("Sent"), "Verify Status changed to Sent on RO List");
+		flags.add(checkLastMessageInConversation("video")); // check last message is video end-link or Not
+		flags.clear();
+		softAssert.assertTrue(!flags.contains(false), "Verify last message is video endlink");
+		flags.add(checkActivity("sent to customer"));
+		softAssert.assertTrue(!flags.contains(false), "Verify activity update after video sent");
+		softAssert.assertAll();
+		flags.clear();
 		page.waitForTimeout(5000);
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			//Auto-generated catch block
 			e.printStackTrace();
 		}
 		String lastMessage = frame.locator(messages).last().textContent();
+		System.out.println(lastMessage);
 		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
 			logger.info("Last message is video Endlink");
 			Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
@@ -678,7 +775,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void estimateConfirmation(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
-		resendEstimate(channelSelected);
+		sendEstimate("WhatsApp");
 		String lastMessage = frame.locator(messages).last().textContent();
 		if (lastMessage.contains("estimate") || lastMessage.contains("Estimate")) {
 			logger.info("Last message is estimate Endlink");
@@ -699,7 +796,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("Last message is not estimate Endlink");
 			throw new SkipException("Last message is not estimate Endlink");
 		}
-		page.waitForTimeout(15000);
+		page.waitForTimeout(20000);
 		softAssert.assertTrue(frame.locator(estimate_Button).textContent().contains("Review Approved Work"),
 				"verify Review Approved Work status");
 		softAssert.assertTrue(verifyChangedStatusOnROList("Est-Approved"), "verify Est-Approved status on RO list");
@@ -1078,6 +1175,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("RO activity is: " + activityText);
 			if (activityText.contains(activityLog)) {
 				logger.info("Activity contains - " + activityLog + " on Refresh");
+				page.waitForTimeout(5000);
+				frame.locator(".mat-mdc-tab-list div.mdc-tab span.mdc-tab__text-label:has-text('SMS')").click();
 				flag = true;
 			}
 		}
@@ -1197,13 +1296,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public boolean deleteRepairOrder() throws InterruptedException {
-		page.waitForTimeout(9000);
-
-		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		List<Boolean> flags = new ArrayList<Boolean>();
-		SoftAssert softAssert = new SoftAssert();
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		page.waitForTimeout(5000);
-		logger.info(" back 2 ");
 		logger.info(OrderListPage.newRoNumber);
 		clickOperationButton("Delete this RO");
 		page.waitForTimeout(2000);
@@ -1220,17 +1315,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	// Create reminder on detail page
-	private String Iframe = "#order-details-iframe";
-	private String clickRepairOrder = "#repair-order-results tbody tr:nth-child(2)";
-	private String myROs_FilterButton = "#LBL_MY_RO";
-	private String service_recTab = "div[role='tab'] span:has-text('Serv. Rec.')";
 	private String checkbox = "#mat-mdc-checkbox-1-input";
 	private String original_Amt = "input#mat-input-1";
 	private String final_Amt = "#mat-input-2";
 	private String deferred_Amt = "#mat-input-3";
 	private String reminder_set = "#mat-select-0";
 	private String no_reminder = "#mat-option-0";
-	private String three_days = "#mat-option-1";
 	private String save_Btn = "span.mdc-button__label";
 	// private String topRightCornerNotification = "div.tru-toast";
 	public static final String Reminder_Save = "Service recomendation successfully saved";
@@ -1242,16 +1332,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 		addVideoToOrder();
 		clickOperationButton("Copy link to clipboard");
 		page.waitForTimeout(5000);
-//		frame.locator(notesTab_Communication).click();
-//		logger.info("Clicked on Notes Tab");
-//		page.waitForTimeout(1000);
-//		frame.locator(textboxNotesTab).click();
-//		  // Use the keyboard to simulate 'Ctrl + V' (paste)
-//        page.keyboard().down("Control");
-//        page.keyboard().press("V");
-//        page.keyboard().up("Control");
-//        logger.info("Verifying a control paste");
-//        page.waitForTimeout(1000);
 		String CustomerNameinRO = frame.locator(customerName).innerText().toLowerCase().trim();
 		logger.info(CustomerNameinRO);
 		frame.locator(sms_Tab).click();
@@ -1264,9 +1344,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(send_SMS_Button).click();
 		frame.locator(send_Original_Button).click();
 		logger.info("Original Text has been sent successfully");
-		// frame.locator(openurl).click();
-		// String text= frame.locator(textboxNotesTab).innerText();
-		// String text1=frame.locator(textboxNotesTab).textContent();
 		page.waitForTimeout(1000);
 
 		Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
@@ -1346,6 +1423,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	public void editThisRO() throws InterruptedException {
 		page.waitForTimeout(9000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		logger.info(OrderListPage.newRoNumber);
 		page.waitForTimeout(5000);
 		String firstName = frame.locator(firstNameWithoutEdit).innerText();
@@ -1492,7 +1571,109 @@ public class RepairOrderDetailPage extends JavaUtility {
 		String insightText = frame.locator(noInsightText).innerText().trim();
 		softAssert.assertTrue(insightText.contains("There's no insights yet"), "Verify No insight showing");
 		frame.locator(closeInsightWindow).click();
-		copyLinktoClipboard();
+		//copyLinktoClipboard();
+		page.waitForTimeout(2000);
+		clickOperationButton("Send to customer");
+		selectChannelToPerformAction("SMS"); // Select channel to send video
+		flags.add(verifyNavigationToChannel("SMS"));// Navigation to channel after video sent
+		softAssert.assertTrue(!flags.contains(false), "Verify Navigation To selected channel");
+		flags.clear();
+		flags.add(checkStatus("Sent")); // verify status whether Sent or Not
+		softAssert.assertTrue(!flags.contains(false), "Verify Status changed to sent");
+		flags.clear();
+		softAssert.assertTrue(verifyChangedStatusOnROList("Sent"), "Verify Status changed to Sent on RO List");
+		flags.add(checkLastMessageInConversation("video")); // check last message is video end-link or Not
+		flags.clear();
+		softAssert.assertTrue(!flags.contains(false), "Verify last message is video endlink");
+		flags.add(checkActivity("sent to customer"));
+		softAssert.assertTrue(!flags.contains(false), "Verify activity update after video sent");
+		softAssert.assertAll();
+		flags.clear();
+		page.waitForTimeout(5000);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			//Auto-generated catch block
+			e.printStackTrace();
+		}
+		String lastMessage = frame.locator(messages).last().textContent();
+		System.out.println(lastMessage);
+		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
+			logger.info("Last message is video Endlink");
+			Page endlinkPage = PlaywrightFactory.getBrowserContext().waitForPage(() -> {
+				frame.locator(lastMessageEndlink).last().click();
+				logger.info("Endlink opened in another tab");
+			});
+			endlinkPage.waitForLoadState();
+			endlinkPage.waitForCondition(() -> endlinkPage.url().contains("truvideo.com/v/"));
+			endlinkPage.locator(playButton).first().click();
+			logger.info("Clicked on Play Button");
+			logger.info("Waiting to play video for 8 Seconds");
+			page.waitForTimeout(8000);
+			endlinkPage.close();
+		} else {
+			logger.info("Last message is not video Endlink");
+			throw new SkipException("Last message is not video Endlink");
+		}
+		page.waitForTimeout(5000);
+
+		logger.info("checking console 1");
+		page.onConsoleMessage(consoleMessage -> {
+			String messageText = consoleMessage.text();
+			if (messageText.contains("New Notification triggered")) {
+				System.out.println("Captured Notification: " + messageText);
+				logger.info("Video Viewed popup notifications triggered and verified in console");
+
+			} else {
+				logger.info("Video Viewed popup notifications NOT triggered and verified in console");
+			}
+		});
+		page.waitForTimeout(3000);
+		page.onConsoleMessage(consoleMessage -> {
+			String messageText = consoleMessage.text();
+			System.out.println("Captured Console Message: " + messageText);
+
+			// Check for the "New Notification triggered" keyword
+			if (messageText.contains("New Notification triggered")) {
+				System.out.println("Detected a Notification Log");
+
+				// Extract the line containing the `Notification` object
+				Pattern notificationPattern = Pattern.compile("Notification\\s*\\{([^}]*)\\}");
+				Matcher matcher = notificationPattern.matcher(messageText);
+
+				if (matcher.find()) {
+					String title = matcher.group(1); // Extract the title field
+					System.out.println("Extracted Notification Title: " + title);
+				} else {
+					System.err.println("No `title` field found in the captured Notification.");
+				}
+			}
+		});
+
+		page.waitForTimeout(4000);
+		softAssert.assertTrue(frame.locator(roStatusBar).textContent().contains("Viewed"), "verify viewed status");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
+		page.waitForTimeout(2000);
+		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
+//		page.waitForTimeout(4000);
+//		logger.info("checking console 1");
+//		page.onConsoleMessage(consoleMessage -> {
+//			String messageText = consoleMessage.text();
+//			if (messageText.contains("New Notification triggered")) {
+//				System.out.println("Captured Notification: " + messageText);
+//				logger.info("Video Viewed popup notifications triggered and verified in console");
+//
+//			} else {
+//				logger.info("Video Viewed popup notifications NOT triggered and verified in console");
+//			}
+//		});
+		logger.info("checking console 2");
+		softAssert.assertAll();
+		
+		
+		
+		
 		frame.locator(insightButton).click();
 		logger.info("Verifying Without customer opened the Video Insight data is now showing");
 		String InsightData = frame.locator(insightDataafterVideoView).innerText().trim();
@@ -1508,6 +1689,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 		page.waitForTimeout(9000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		page.waitForCondition(() -> frame.locator(vehicleModel).isVisible());
 		if (frame.locator(firstNameWithoutEdit).isVisible() && frame.locator(lastNameWithoutEdit).isVisible()
 				&& frame.locator(mobileNumberField).isVisible() && frame.locator(emailField).isVisible()
@@ -1997,6 +2180,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String notes_tab1 = "span.mdc-tab__content >span.mdc-tab__text-label:has-text('Notes (1)')";
 
 	public boolean notesFunctionalityOnRO() throws InterruptedException {
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		try {
 			FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 			page.waitForTimeout(3000);
@@ -2077,6 +2262,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	public boolean repairOrderChatFunctionality() throws InterruptedException {
 
+		OrderListPage order = new OrderListPage(page);
+		order.addRepairOrder("New");
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.waitForTimeout(6000);
 		if (frame.locator(communicationTab).isVisible() && frame.locator(sMs_tab).isVisible()
@@ -2092,10 +2279,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("WhatsApp setting is disabled from dealer settings");
 
 		}
-		page.waitForTimeout(5000);
+		page.waitForTimeout(10000);
 		frame.locator(chat_tab).click();
+		page.waitForTimeout(5000);
 		logger.info("Chat window are displayed sucessfully");
-		page.waitForTimeout(20000);
 		if (frame.locator(roNo).isVisible() && frame.locator(memberCount).isVisible()
 				&& frame.locator(videoCallBtn).isVisible() && frame.locator(iBtn).isVisible()
 				&& frame.locator(welcomeText).isVisible() && frame.locator(noConversationText).isVisible()
@@ -2219,10 +2406,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 
 	}
 
-	public void verifyRejectdeletefunctionality() {
-		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		addVideoToOrder();
-
-	}
+//	public void verifyRejectdeletefunctionality() {
+//		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+//		addVideoToOrder();
+//
+//	}
 
 }

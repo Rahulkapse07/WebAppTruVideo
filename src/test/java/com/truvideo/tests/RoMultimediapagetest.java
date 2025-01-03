@@ -12,7 +12,7 @@ import com.truvideo.base.BaseTest;
 import com.truvideo.pages.Multimediapage;
 import com.truvideo.testutils.AdditionalDescriptions;
 
-public class Multimediapagetest extends BaseTest {
+public class RoMultimediapagetest extends BaseTest {
 
 	Multimediapage multimediapage;
 

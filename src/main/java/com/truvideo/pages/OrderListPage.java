@@ -467,8 +467,8 @@ public class OrderListPage extends JavaUtility {
 
 	public RepairOrderDetailPage navigateToOrderDetails(String String) {
 		newRoNumber = addRepairOrder(String);
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
+//		Locator tableRow = page.locator(tableRows);
+//		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
 		// page.locator("table#repair-order-results
 		// td:nth-child(4)").first().click();
 		try {
