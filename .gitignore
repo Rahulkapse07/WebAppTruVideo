@@ -8,3 +8,5 @@ Reports/
 .idea
 /logs/
 *.csv
+*/src/main/test/resources/CreateUserDataunique_data_advisor.csv
+*/src/main/test/resources/CreateUserDataunique_data_technician.csv

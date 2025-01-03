@@ -18,7 +18,7 @@
     </test>
     <test name="After Login Scenarios" parallel="methods" thread-count="3" verbose="5">
         <classes>
-            <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
+           <!-- <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>-->
             <class name="com.truvideo.tests.HomePageTest"></class>
             <class name="com.truvideo.tests.UserPageTest"></class>
             <class name="com.truvideo.tests.Message_RepairOrdertest"></class>

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.TimeZone;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.microsoft.playwright.Tracing;
@@ -24,6 +25,7 @@ public class TestUtils {
         reporter.config().setReportName("RC Truvideo Web App");
         reporter.config().setDocumentTitle("Web Automation Test Report");
         reporter.config().setTheme(Theme.STANDARD);
+        reporter.config().setTimeStampFormat(String.valueOf(TimeZone.getTimeZone("Asia/Kolkata")));
         extent = new ExtentReports();
         extent.attachReporter(reporter);
         extent.setSystemInfo("5 Exceptions", "RC Truvideo");
