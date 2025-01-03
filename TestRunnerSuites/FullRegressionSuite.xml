@@ -23,7 +23,7 @@
             <class name="com.truvideo.tests.Message_RepairOrdertest"></class>
         </classes>
     </test>
-
+</suite>
 
 
 
@@ -58,4 +58,4 @@
 <!--           <class name="com.truvideo.tests.Message_RepairOrdertest"></class>-->
 <!--       </classes>-->
 <!--   </test>-->
-</suite>
+<!--</suite>-->

@@ -47,32 +47,39 @@ public class Listeners extends TestUtils implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentTest test = threadLocalTest.get();
-        handleTestCompletion(test, result, true);
-        logger.info("Test passed: {}", result.getMethod().getMethodName());
+        try {
+            ExtentTest test = threadLocalTest.get();
+            handleTestCompletion(test, result, true);
+            logger.info("Test passed: {}", result.getMethod().getMethodName());
+        } catch (Exception e) {
+            logger.error("Error during onTestSuccess: {}", e.getMessage());
+        }
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentTest test = threadLocalTest.get();
-        handleTestCompletion(test, result, false);
-        logger.info("Test failed: {}", result.getMethod().getMethodName());
+        try {
+            ExtentTest test = threadLocalTest.get();
+            handleTestCompletion(test, result, false);
+            logger.info("Test failed: {}", result.getMethod().getMethodName());
+        } catch (Exception e) {
+            logger.error("Error during onTestFailure: {}", e.getMessage());
+        }
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentTest test = threadLocalTest.get();
-        String methodName = result.getMethod().getMethodName();
-        if (test != null) {
-            attachScreenshotToReport(test, methodName, getCurrentPage());
-            test.skip(result.getThrowable());
+        try {
+            ExtentTest test = threadLocalTest.get();
+            String methodName = result.getMethod().getMethodName();
+            if (test != null) {
+                attachScreenshotToReport(test, methodName, getCurrentPage());
+                test.skip(result.getThrowable());
+            }
+            logger.info("Test skipped: {}", methodName);
+        } catch (Exception e) {
+            logger.error("Error during onTestSkip: {}", e.getMessage());
         }
-        logger.info("Test skipped: {}", methodName);
-    }
-
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        // Not used in this implementation
     }
 
     @Override
