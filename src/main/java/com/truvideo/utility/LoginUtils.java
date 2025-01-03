@@ -12,7 +12,7 @@ import static com.truvideo.factory.PlaywrightFactory.getBrowserContext;
 public class LoginUtils {
 
     public static void loginAndSaveSession(String loginUrl, String username, String password, String sessionPath) {
-        Page page = PlaywrightFactory.getPage();
+        Page page = PlaywrightFactory.getCurrentPage();
         page.navigate(loginUrl);
         LoginPage loginPage = new LoginPage(page);
         loginPage.loginToApplication(username, password);

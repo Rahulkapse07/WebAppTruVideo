@@ -1,7 +1,10 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,10 +14,14 @@ import com.truvideo.pages.LoginPage;
 
 
 public class LoginPageTest extends BaseTest {
-   LoginPage loginpage;
-	@BeforeClass
-	void setup() {
-		loginpage = new LoginPage(getPage()); //
+	LoginPage loginpage;
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToLoginPage_And_InitializeLoginPage() {
+		getPage().navigate(prop.getProperty("loginPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		loginpage = new LoginPage(getPage());
 	}
 
 

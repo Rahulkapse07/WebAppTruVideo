@@ -45,6 +45,7 @@ public class RepairOrderDetailPageTest extends BaseTest {
 		repairOrderPage.checkStatus_OnVideoWatch("SMS");
 	}
 
+
 	@Test(description = "WA-5363 , WA-5364")
 	public void verifyVariousActivityOfEstimate() {
 		repairOrderPage.activitiesOfCreateEstimateWindow();

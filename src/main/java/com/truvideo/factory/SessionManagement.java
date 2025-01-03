@@ -1,16 +1,16 @@
 package com.truvideo.factory;
 
-import static com.truvideo.factory.PlaywrightFactory.getBrowser;
-import static com.truvideo.factory.PlaywrightFactory.prop;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.Page;
+import com.truvideo.pages.LoginPage;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.Page;
-import com.truvideo.pages.LoginPage;
+import static com.truvideo.factory.PlaywrightFactory.getBrowser;
+import static com.truvideo.factory.PlaywrightFactory.prop;
 
 public class SessionManagement {
 
@@ -24,16 +24,15 @@ public class SessionManagement {
             context = getBrowser().newContext(
                     new Browser.NewContextOptions()
                             .setStorageStatePath(sessionPath)
-                            .setViewportSize(null)
 //                            .setRecordVideoDir(Paths.get("./Reports/videos/"))
 //                            .setRecordVideoSize(1280, 720)
             );
         } else {
             System.out.println("Session file not found. Logging in to create a new session.");
-            context = getBrowser().newContext(new Browser.NewContextOptions().setViewportSize(null)); // Create a new context
+            context = getBrowser().newContext(); // Create a new context
             Page page = context.newPage();
             page.navigate(prop.getProperty("loginPageUrl"));
-            LoginPage loginPage =new LoginPage(page);
+            LoginPage loginPage = new LoginPage(page);
             loginPage.loginToApplication(prop.getProperty("username"), prop.getProperty("password"));
             // Save session to a file
             context.storageState(new BrowserContext.StorageStateOptions().setPath(sessionPath));
@@ -56,4 +55,12 @@ public class SessionManagement {
             System.err.println("Failed to delete session file: " + e.getMessage());
         }
     }
+
+    public boolean isBeforeLoggedInClass() {
+        String className = Thread.currentThread().getStackTrace()[2].getClassName();
+        return className.equals("LoginPageTest") ||
+                className.equals("ForgotPasswordPageTest") ||
+                className.equals("SignUpPageTest");
+    }
+
 }
