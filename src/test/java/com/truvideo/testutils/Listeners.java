@@ -1,194 +1,134 @@
-
 package com.truvideo.testutils;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import com.microsoft.playwright.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.Page;
-import com.truvideo.factory.PlaywrightFactory;
 
-public class Listeners extends TestUtils implements ITestListener {
-	Page page;
-	ExtentTest test;
-	ExtentReports extent = TestUtils.getReporterObject();
-	BrowserContext context;
+import java.lang.reflect.Method;
 
-	@Override
-	public void onTestStart(ITestResult result) {
-		Object[] parameters = result.getParameters();
-		String methodName = result.getMethod().getMethodName();
-		String description = result.getMethod().getDescription();
-		String caseType = parameters.length > 2 ? (String) parameters[2] : " ";
+import static com.truvideo.factory.PlaywrightFactory.*;
+import static com.truvideo.testutils.JiraTestCaseUtils.attachJiraTestId;
 
-		String testDisplayName = methodName + " " + caseType;
+public class Listeners extends TestUtils implements ITestListener, ISuiteListener {
+    private static final Logger logger = LogManager.getLogger(Listeners.class);
+    private static final ThreadLocal<ExtentTest> threadLocalTest = new ThreadLocal<>();
+    private static final ThreadLocal<String> threadLocalTracePath = new ThreadLocal<>();
+    private static ExtentReports extent; // Static to persist across tests and suites
 
-		test = extent.createTest(testDisplayName);
+    @Override
+    public void onStart(ISuite suite) {
+        extent = TestUtils.getReporterObject();
+        logger.info("Test suite '{}' execution started.", suite.getName());
+    }
 
-		if (description != null && !description.isEmpty()) {
-			String[] tags = description.split(",");
-			for (String tag : tags) {
-				tag = tag.trim();
-				test.assignCategory(tag);
-			}
-		}
-	}
+    @Override
+    public void onFinish(ISuite suite) {
+        if (extent != null) {
+            extent.flush();
+            logger.info("Test suite '{}' execution completed. Extent report flushed.", suite.getName());
+        }
+    }
 
-//	@Override
-//	public void onTestSuccess(ITestResult result) {
-//		//test.pass(result.getMethod().getMethodName() + " passed successfully");
-//
-//		//String traceFilePath = "path/to/trace.zip"; // Replace with the actual path where trace file is saved
-//		// test.info("Playwright Trace File: <a href='" + traceFilePath + "'
-//		// target='_blank'>Download Trace</a>");
-//
-//		Page page = null;
-//		try {
-//			page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		if (page != null) {
-//			try {
-//				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-//				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
-//			} catch (IOException e) {
-//				test.fail("Failed to capture screenshot: " + e.getMessage());
-//			}
-//		} else {
-//			test.fail("Page object is null, unable to capture screenshot.");
-//		}
-//	}
-	private Page getPageFromResult(ITestResult result) {
-		Page page = null;
-		try {
-			// Use reflection to get the "page" field from the test instance
-			page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return page;
-	}
+    @Override
+    public void onStart(ITestContext context) {
+        logger.info("Test '{}' execution started.", context.getName());
+    }
 
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		Page page = getPageFromResult(result);
+    @Override
+    public void onFinish(ITestContext context) {
+        logger.info("Test '{}' execution completed.", context.getName());
+    }
 
-		if (page != null) {
-			try {
-				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
+    @Override
+    public void onTestStart(ITestResult result) {
+        try {
+            Method method = result.getMethod().getConstructorOrMethod().getMethod();
+            String methodName = result.getMethod().getMethodName();
+            String className = result.getMethod().getTestClass().getName();
+            logger.info("Starting test: {}.{}", className, methodName);
+            try {
+                getBrowserContext().tracing().start(new Tracing.StartOptions()
+                        .setScreenshots(true)
+                        .setSnapshots(true));
+                logger.info("Tracing started for: {}", methodName);
+            } catch (Exception e) {
+                logger.error("Failed to start tracing for {}: {}", methodName, e.getMessage());
+            }
+            ExtentTest test = extent.createTest(methodName);
+            threadLocalTest.set(test);
+            logger.info("ExtentTest created for: {}.{}", className, methodName);
+            String tracePath = "./Reports/traces/" + methodName + ".zip";
+            threadLocalTracePath.set(tracePath);
+            logger.info("Trace path set for: {}", tracePath);
+            attachJiraTestId(method, test);
+        } catch (Exception e) {
+            threadLocalTest.remove();
+            threadLocalTracePath.remove();
+            logger.error("Error during test setup for {}: {}", result.getMethod().getMethodName(), e.getMessage(), e);
+        }
+    }
 
-				if (page.video() != null) {
-					Path videoPath = page.video().path();
-					test.info("Video recorded: <a href='" + videoPath + "'>Download Video</a>");
-//					String videoDir = System.getProperty("user.dir") + "/Videos/";
-//					Path videoFolderPath = Paths.get(videoDir);
-//
-//					// Step 1: Delete any existing videos in the folder
-//					deleteOldVideos(videoFolderPath);
-				}
-			} catch (IOException e) {
-				test.fail("Failed to capture screenshot or video: " + e.getMessage());
-			}
-		} else {
-			test.fail("Page object is null, unable to capture screenshot or video.");
-		}
-	}
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        try {
+            ExtentTest test = threadLocalTest.get();
+            handleTestCompletion(test, result, true);
+            logger.info("Test passed: {}", result.getMethod().getMethodName());
+        } catch (Exception e) {
+            logger.error("Error during onTestSuccess: {}", e.getMessage());
+        }
+    }
 
-	@Override
-	public void onTestFailure(ITestResult result) {
-		System.out.println("Test Failed: " + result.getMethod().getMethodName());
-		test.fail(result.getThrowable());
+    @Override
+    public void onTestFailure(ITestResult result) {
+        try {
+            ExtentTest test = threadLocalTest.get();
+            handleTestCompletion(test, result, false);
+            logger.info("Test failed: {}", result.getMethod().getMethodName());
+        } catch (Exception e) {
+            logger.error("Error during onTestFailure: {}", e.getMessage());
+        }
+    }
 
-		Page page = null;
-		try {
-			page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        try {
+            ExtentTest test = threadLocalTest.get();
+            String methodName = result.getMethod().getMethodName();
+            if (test != null) {
+                attachScreenshotToReport(test, methodName, getCurrentPage());
+                test.skip(result.getThrowable());
+            }
+            logger.info("Test skipped: {}", methodName);
+        } catch (Exception e) {
+            logger.error("Error during onTestSkip: {}", e.getMessage());
+        }
+    }
 
-			if (page != null) {
-//	            Path videoFolderPath = Paths.get("D:\\Automation RK Repo\\WebAppTruVideo\\Videos");//D:\Automation RK Repo\WebAppTruVideo\Videos
-//	            String videoDir =   System.getProperty("user.dir") + "/Videos/";
-//	            
-//	            // Step 1: Delete any existing videos in the folder
-//	            deleteOldVideos(videoFolderPath);
+    private void handleTestCompletion(ExtentTest test, ITestResult result, boolean isSuccess) {
+        String methodName = result.getMethod().getMethodName();
+        try {
+            if (test != null) {
+                attachScreenshotToReport(test, methodName, getCurrentPage());
+                attachTrace(test, methodName);
+                if (!isSuccess) {
+                    test.fail(result.getThrowable());
+                } else {
+                    test.pass(result.getThrowable());
+                }
+            }
+        } catch (Exception e) {
+            logger.info("Error during test completion for : {}", e.getMessage());
+        } finally {
+            cleanupThreadLocals();
+        }
+    }
 
-				String videoDir = System.getProperty("user.dir") + "/Videos/";
-				Path videoFolderPath = Paths.get(videoDir);
-
-				// Step 1: Delete any existing videos in the folder
-//				deleteOldVideos(videoFolderPath);
-//				// Step 2: Capture and save the new video
-//				Path videoPath = page.video().path();
-//				// Add video to the test report as a downloadable link
-//				test.info("Video recorded: <a href='" + videoPath + "'>Download Video</a>");
-			}
-		} catch (Exception e) {
-			System.out.println("Error retrieving video: " + e.getMessage());
-			e.printStackTrace();
-		}
-
-		// Capture screenshot if the page object is available
-		if (page != null) {
-			try {
-				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
-			} catch (IOException e) {
-				test.fail("Failed to capture screenshot: " + e.getMessage());
-			}
-		} else {
-			test.fail("Page object is null, unable to capture screenshot.");
-		}
-	}
-
-	@Override
-	public void onTestSkipped(ITestResult result) {
-		test.skip(result.getMethod().getMethodName() + " was skipped");
-
-		Throwable skipReason = result.getThrowable();
-		if (skipReason != null) {
-			test.skip("Skip Reason: " + skipReason.getMessage());
-		}
-
-		Page page = null;
-		try {
-			page = (Page) result.getTestClass().getRealClass().getField("page").get(result.getInstance());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		if (page != null) {
-			try {
-				String screenshotPath = getScreenShotPath(result.getMethod().getMethodName(), page);
-				test.addScreenCaptureFromPath(screenshotPath, result.getMethod().getMethodName());
-			} catch (IOException e) {
-				test.warning("Failed to capture screenshot for skipped test: " + e.getMessage());
-			}
-		} else {
-			test.warning("Page object is null, unable to capture screenshot for skipped test.");
-		}
-	}
-
-	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-	}
-
-	@Override
-	public void onStart(ITestContext context) {
-
-	}
-
-	@Override
-	public void onFinish(ITestContext context) {
-		extent.flush();
-	}
-
+    private void cleanupThreadLocals() {
+        threadLocalTest.remove();
+        threadLocalTracePath.remove();
+    }
 }

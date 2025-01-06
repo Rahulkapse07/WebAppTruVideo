@@ -1,74 +1,118 @@
 package com.truvideo.base;
 
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.BrowserContext;
+import com.truvideo.factory.PlaywrightFactory;
+import com.truvideo.factory.SessionManagement;
+import org.testng.annotations.*;
+
 import java.util.Properties;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.microsoft.playwright.Page;
-import com.truvideo.factory.PlaywrightFactory;
-import com.truvideo.pages.LoginPage;
-import com.truvideo.testutils.TestUtils;
+import static com.truvideo.factory.SessionManagement.clearSessionFile;
 
 public class BaseTest {
 
-	protected PlaywrightFactory pf;
-	public Page page;
-	protected Properties prop;
-	protected LoginPage loginpage;
-	protected ExtentTest test;
-	
-	TestUtils util = new TestUtils();
-	
-	private String baseUrl; // For storing the final base URL
+    protected PlaywrightFactory playwrightFactory;
+    protected Properties prop;
 
-	@BeforeClass
-	@Parameters({ "browser", "headless", "env" })
-	public void loginPageSetup(
-			@Optional("chrome") String browser, 
-			@Optional("false") String headless,
-			@Optional("stagingrc") String env)
-			{
+    @Parameters({"browser", "headless"})
+    @BeforeTest
+    public void initialize_Browser_And_Save_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
+        playwrightFactory = new PlaywrightFactory();
+        prop = playwrightFactory.init_prop();
 
-		pf = new PlaywrightFactory();
-		prop = pf.init_prop(); // Load config.properties
+        // Set browser and headless defaults
+        browser = (browser == null || browser.isEmpty()) ? prop.getProperty("browser", "chrome") : browser;
+        headless = (headless == null || headless.isEmpty()) ? prop.getProperty("headless", "false") : headless;
 
-		// Use config.properties as default, override with XML values if provided
-		browser = prop.getProperty("browser", browser);
-		headless = prop.getProperty("headless", headless);
+        boolean headlessMode = Boolean.parseBoolean(headless);
 
-		  baseUrl = util.getBaseUrlForEnvironment(env);
-	    
-		if (baseUrl.isEmpty()) {
-			baseUrl = prop.getProperty("baseUrl");
-		}
-		if (baseUrl == null || baseUrl.isEmpty()) {
-			throw new IllegalArgumentException("Base URL must be specified in the XML file or config.properties");
-		}
+        // Clear previous session
+        clearSessionFile();
 
-		boolean headlessMode = Boolean.parseBoolean(headless);
-		page = pf.initBrowser(browser, headlessMode);
+        // Initialize shared browser context and close it to save the session
+        try {
+            Page sessionPage = playwrightFactory.initBrowser(browser, headlessMode);
+            if (sessionPage != null) {
+                sessionPage.context().browser().close();
+            }
+        } catch (Exception e) {
+            System.err.println("Error during session initialization: " + e.getMessage());
+        }
+    }
 
-		// pf.startTracing("traceName1");
-		loginpage = new LoginPage(page);
-		page.navigate(baseUrl);
+    @Parameters({"browser", "headless"})
+    @BeforeMethod
+    public void initialize_Browser_With_Session(@Optional("chrome") String browser, @Optional("false") String headless) {
+        playwrightFactory = new PlaywrightFactory();
+        prop = playwrightFactory.init_prop();
 
-	}
-	
+        // Set browser and headless defaults
+        browser = (browser == null || browser.isEmpty()) ? prop.getProperty("browser", "chrome") : browser;
+        headless = (headless == null || headless.isEmpty()) ? prop.getProperty("headless", "false") : headless;
 
-	@AfterClass
-	public void tearDown() {
-		String destinationField = System.getProperty("user.dir") + "/Reports/";
-		String traceFilePath = destinationField + "trace.zip";
-		//pf.stopTracing(traceFilePath);
-		pf.closeBrowser();
-	}
+        boolean headlessMode = Boolean.parseBoolean(headless);
 
+        SessionManagement sessionManagement = new SessionManagement();
+        try {
+            if (sessionManagement.isBeforeLoggedInClass()) {
+                playwrightFactory.initBrowser_WithoutLogin(browser, headlessMode);
+            } else {
+                playwrightFactory.initBrowser(browser, headlessMode);
+            }
+        } catch (Exception e) {
+            System.err.println("Error during browser initialization: " + e.getMessage());
+        }
+    }
 
+    protected Page getPage() {
+        return PlaywrightFactory.getCurrentPage();
+    }
 
+    @AfterMethod
+    public void tearDown() {
+        try {
+            Page page = PlaywrightFactory.getCurrentPage();
+            if (page != null) {
+                try {
+                    page.waitForTimeout(5000); // Optional: Added a short wait to complete listener functions
+                    page.close();
+                    System.out.println("Page closed successfully.");
+                } catch (Exception e) {
+                    System.err.println("Error closing page: " + e.getMessage());
+                }
+            }
+            BrowserContext context = PlaywrightFactory.getBrowserContext();
+            if (context != null) {
+                try {
+                    context.close();
+                    System.out.println("BrowserContext closed successfully.");
+                } catch (Exception e) {
+                    System.err.println("Error closing BrowserContext: " + e.getMessage());
+                }
+            }
+            Browser browser = PlaywrightFactory.getBrowser();
+            if (browser != null) {
+                try {
+                    browser.close();
+                    System.out.println("Browser closed successfully.");
+                } catch (Exception e) {
+                    System.err.println("Error closing Browser: " + e.getMessage());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error during tearDown: " + e.getMessage());
+        }
+    }
 
+    @AfterTest
+    public void clearSession() {
+        try {
+            clearSessionFile();
+            System.out.println("Session file cleared successfully.");
+        } catch (Exception e) {
+            System.err.println("Error clearing session file: " + e.getMessage());
+        }
+    }
 }
-

@@ -515,7 +515,7 @@ public class Multimediapage extends JavaUtility {
 	private String imagedownload = ".mat-mdc-menu-content button:nth-child(2)";
 	private String imagemediaInsight = ".mat-mdc-menu-content button:nth-child(3)";
 
-	public boolean verify_View_all_functionality() {
+	public boolean verify_View_all_functionalityforimage() {
 		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
 		SoftAssert Softassert = new SoftAssert();
 		// Objects

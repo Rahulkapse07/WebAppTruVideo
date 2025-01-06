@@ -1,7 +1,12 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.Multimediapage;
+import com.truvideo.utility.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,13 +17,17 @@ import com.truvideo.testutils.TestUtils;
 
 public class OrderListPageTest extends BaseTest {
 	OrderListPage orderlistpage;
-	TestUtils ExcelUtil = new TestUtils();
+	ExcelUtils ExcelUtil = new ExcelUtils();
 
-	@BeforeClass
-	public void orderListPageSetup() {
-		orderlistpage = loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToOrderList();
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToOrderListPage_And_InitializeOrderListPage() {
+		getPage().navigate(prop.getProperty("roListPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		orderlistpage = new OrderListPage(getPage());
 	}
+
 
 	@DataProvider(name = "filterTypes")
 	public Object[][] filterTypes() {

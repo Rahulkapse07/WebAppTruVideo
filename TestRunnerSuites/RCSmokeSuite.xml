@@ -1,10 +1,10 @@
-<suite name="RC Smoke Suite" parallel="false" thread-count="3" verbose="5" preserve-order="false">
+<suite name="RC Smoke Suite" parallel="methods" thread-count="3" verbose="5" preserve-order="false">
 
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
-	<parameter name="headless" value="false" />
+	<!-- <parameter name="headless" value="false" /> -->
 	<parameter name="env" value="stagingrc" />
 
 	<test name="Login page">
@@ -63,19 +63,14 @@
 					<include name="verifySendToCustomer_ForFirstVideo" />
 					<include name="verifySendToCustomer_ForSecondVideo" />
 					<include name="verifyViewedStatus" />
-<<<<<<< HEAD
-				   <!--  <include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" />
-					<include name="verifyVariousActivityOfEstimate" /> -->
-=======
+
 					<include name="verifyVariousActivityOfEstimate" />
 					<include name="verifySendEstimateFunction" />
 					<include name="verifyResendEstimateFunction" />
 					<include name="verifyEstimateConfirmationFunction" />
 					<include name="verifyPaymentFunction" />
 					<include name="verifyPaymentResendFunction" />
->>>>>>> 304a11411e3844689f6433177599d2703a361c19
+
 					<include name="VerifyOpenInspection" />
 					<include name="VerifySendbackInspection" />
 					<include name="VerifyPublishInspections" />
@@ -86,16 +81,7 @@
 					<include name="verifyEditThisROFunctionality" />
 					<include name="verifyDeleteRepairOrderFunction" />
 					<include name="verifyNotesFunctionalityOnRoDetailPage" />
-<<<<<<< HEAD
-					
-					
-				</methods>
-			</class>
-			</classes>
-	</test> 
-	
-</suite>
-=======
+
 				</methods>
 			</class>
 
@@ -138,4 +124,4 @@
 
 	</test>
 </suite>
->>>>>>> 304a11411e3844689f6433177599d2703a361c19
+

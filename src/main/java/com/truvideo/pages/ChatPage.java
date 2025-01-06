@@ -1,14 +1,9 @@
 package com.truvideo.pages;
 
-import java.lang.System.Logger;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.openqa.selenium.bidi.browsingcontext.Locator;
 import org.testng.asserts.SoftAssert;
-
-import com.microsoft.playwright.Frame.WaitForURLOptions;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Page;
 import com.truvideo.utility.JavaUtility;

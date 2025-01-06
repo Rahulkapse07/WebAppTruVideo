@@ -1,3 +1,4 @@
+
 package com.truvideo.pages;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
+import static com.truvideo.factory.PlaywrightFactory.prop;
 
 public class HomePage extends JavaUtility {
 	private Page page;

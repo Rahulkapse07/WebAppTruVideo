@@ -1,7 +1,10 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,10 +14,14 @@ import com.truvideo.pages.LoginPage;
 
 
 public class LoginPageTest extends BaseTest {
+	LoginPage loginpage;
 
-	@BeforeClass
-	void setup() {
-		loginpage = new LoginPage(page); //
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToLoginPage_And_InitializeLoginPage() {
+		getPage().navigate(prop.getProperty("loginPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		loginpage = new LoginPage(getPage());
 	}
 
 
@@ -24,11 +31,11 @@ public class LoginPageTest extends BaseTest {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,description = "")
 	public void verifyIsCreateUserButtonWorking() {
 		String actualSignUpPageTitle = loginpage.click_CreateAccount_Button();
 		Assert.assertEquals(actualSignUpPageTitle, AppConstants.SIGN_UP_PAGE_TITLE);
-		page.goBack();
+		getPage().goBack();
 
 	}
 
@@ -36,7 +43,7 @@ public class LoginPageTest extends BaseTest {
 	public void verifyIsForgotPasswordButtonWorking() {
 		String actualForgotPasswordPageTitle = loginpage.click_ForgotPassword_Button();
 		Assert.assertEquals(actualForgotPasswordPageTitle, AppConstants.FORGOT_PASSWORD_PAGE_TITLE);
-		page.goBack();
+		getPage().goBack();
 	}
 
 //	@Test(priority = 4)

@@ -3,17 +3,12 @@ package com.truvideo.pages;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.mail.SendFailedException;
-
 import org.openqa.selenium.ElementNotInteractableException;
-import org.testng.asserts.SoftAssert;
-
 import com.microsoft.playwright.ElementHandle;
 import com.microsoft.playwright.FrameLocator;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.sun.tools.javac.util.Names;
 import com.truvideo.utility.JavaUtility;
 
 public class MessageScreen_Prospect extends JavaUtility {

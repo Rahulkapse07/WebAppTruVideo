@@ -1,7 +1,11 @@
 package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.Multimediapage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -9,10 +13,14 @@ import com.truvideo.pages.ProspectDetailPage;
 
 public class ProspectDetailPageTest extends BaseTest {
 	ProspectDetailPage prospectdetailpage;
-	@BeforeClass
-	public void salesOrderDetailPageSetup()
-	{
-		prospectdetailpage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password")).navigateToProspectList().navigateToProspectDetails();
+
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToSOdetailPage_And_InitializeSOdetailPage() {
+		getPage().navigate(prop.getProperty("sodetailUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		prospectdetailpage = new ProspectDetailPage(getPage());
 	}
 
 	@Test(priority = 1,description = "")
@@ -35,31 +43,31 @@ public class ProspectDetailPageTest extends BaseTest {
 	public void verifyViewedStatus() {
 		prospectdetailpage.checkStatus_OnVideoWatch("SMS");
 	}
-	@Test(description = "WA-5408")
+	@Test(priority = 5, description = "WA-5408" ,dependsOnMethods = "test1")
 	public void copyLinktoClipboard() {
 		 boolean isCustomerNameMatching = prospectdetailpage.copyLinkToClipboard();
 		    Assert.assertTrue(isCustomerNameMatching, "SO customer name does NOT match the end link customer name.");
 		   // Assert.assertTrue(prospectdetailpage.copyLinkToClipboard());
 	}
-	@Test(description = "WA-5407")
+	@Test(priority = 6, description = "WA-5407")
 	public void verifyViewWithCustomerFunctionality() {
 		boolean result = prospectdetailpage.viewWithCustomer();
 	    Assert.assertTrue(result, "The 'viewWithCustomer' process failed.");
 	}
-	@Test(priority = 8,description = "WA-5527")
+	@Test(priority = 7,description = "WA-5527")
 	public void verifyInsightFunctionality() {
 		prospectdetailpage.insightFunctionality();
 	}
 	
-	@Test(description = "5410")
+	@Test(priority = 8, description = "5410")
 	public void verifyTradeInLinkFunctionality() {
 		prospectdetailpage.verifyTradeInLink("SMS");
 	}
-	@Test(description = "5405")
+	@Test(priority = 9, description = "5405")
 	public void verifyEditthisSOFunctionality() {
 		prospectdetailpage.editThisSO();
 	}
-	@Test(priority = 24,description = "WA-5409") // try to run this method at the end of class
+	@Test(priority = 10,description = "WA-5409") // try to run this method at the end of class
 	public void verifyDeleteSalesOrderFunction() throws InterruptedException {
 		Assert.assertTrue(prospectdetailpage.deleteSalesOrder());
 	}

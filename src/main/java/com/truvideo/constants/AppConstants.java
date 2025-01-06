@@ -1,8 +1,4 @@
-
 package com.truvideo.constants;
-
-
-
 public class AppConstants {
 
 	// Login Page

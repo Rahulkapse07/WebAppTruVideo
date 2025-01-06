@@ -1,7 +1,11 @@
  package com.truvideo.tests;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
+import com.truvideo.pages.ProspectDetailPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.truvideo.base.BaseTest;
@@ -11,11 +15,15 @@ public class ProspectListPageTest extends BaseTest {
 
 	ProspectListPage prospectListPage;
 
-	@BeforeClass
-	public void prospectListPageSetup() {
-		prospectListPage=loginpage.navigateToHomePage(prop.getProperty("username"), prop.getProperty("password"))
-				.navigateToProspectList();
+
+	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
+	public void navigateToSOlistPage_And_InitializeSOlistPage() {
+		getPage().navigate(prop.getProperty("solistPageUrl"),
+				new Page.NavigateOptions().setTimeout(100000));
+		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
+		prospectListPage = new ProspectListPage(getPage());
 	}
+
 	
 	@Test(priority = 1)
 	public void verifyAllAvailableElementsOnROListPage() {

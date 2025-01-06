@@ -4,5 +4,10 @@ logs/loggers.log
 test-output/
 Reports/Index.html
 Reports/
-.github
+.settings
+.idea
+/logs/
 *.csv
+*/src/main/test/resources/CreateUserDataunique_data_advisor.csv
+*/src/main/test/resources/CreateUserDataunique_data_technician.csv
+/bin/

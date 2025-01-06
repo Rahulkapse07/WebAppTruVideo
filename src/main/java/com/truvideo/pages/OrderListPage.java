@@ -16,6 +16,8 @@ import com.truvideo.utility.JavaUtility;
 
 import io.appium.java_client.AppiumDriver;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 public class OrderListPage extends JavaUtility {
 	private Page page;
 	private AppiumDriver driver;
@@ -50,9 +52,9 @@ public class OrderListPage extends JavaUtility {
 	private String companyName_TextBox = "(//input[@id='customer.companyName'])[1]";
 	private String phoneNumber_Field = "//input[@id='phoneNumberCreate']";
 	private String emailId_Field = "(//input[@id='customer.email'])[1]";
-	//private String technician_Dropdown = "(//select[@id='technician'])[1]";
-	private String technician_Dropdown ="//select[@id='technician']";
-	private String save_Button = "input#add-repair-order-save";
+	// private String technician_Dropdown = "(//select[@id='technician'])[1]";
+	private String technician_Dropdown = "//select[@id='technician']";
+	private String save_Button = "#add-repair-order-save";
 	private String cancel_Button = "#add-repair-order-cancel";
 	// Error messages
 	private String repairOrder_MandatoryField = "small:has-text('Repair Order No. is a required field.')";
@@ -346,7 +348,7 @@ public class OrderListPage extends JavaUtility {
 		}
 	}
 
-	public String addRepairOrder(String Number) {
+	public String addRepairOrder(String text) {
 		page.click(addRepairOrder_Button);
 		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
 		logger.info("Clicked on Add Repair Order button");
@@ -364,8 +366,8 @@ public class OrderListPage extends JavaUtility {
 		String phoneNumber = "781205" + getRandomNumber(4);
 
 		// This method use for to switch between Random number and Existing number
-		
-		switch (Number) {
+
+		switch (text) {
 		case "Existing":
 			page.fill(phoneNumber_Field, "7812059487");
 			logger.info("Phone number filled : " + phoneNumber);
@@ -381,14 +383,25 @@ public class OrderListPage extends JavaUtility {
 		String emailId = "Automated" + getRandomString(4) + "@gmail.com";
 		page.fill(emailId_Field, emailId);
 		logger.info("Email Id filled : " + emailId);
-		page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
-		page.waitForTimeout(2000);
-		page.click(save_Button);
-		logger.info("Clicked on Save Button");
-		page.waitForSelector(tableRows);
-		return newRoNumber;
+		// Check for technician dropdown available
+
+		if (!page.locator(technician_Dropdown).isVisible()) {
+			page.click(save_Button);
+			logger.info("Clicked on Save Button");
+			page.waitForSelector(tableRows);
+			return newRoNumber;
+		} else {
+			page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
+			page.waitForTimeout(2000);
+			page.click(save_Button);
+			logger.info("Clicked on Save Button");
+			page.waitForSelector(tableRows);
+			Locator tableRow = page.locator(tableRows);
+			tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
+			return newRoNumber;
+		}
 	}
-	
+
 	public String addRepairOrderWithoutMobileNO() {
 		page.click(addRepairOrder_Button);
 		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
@@ -412,7 +425,6 @@ public class OrderListPage extends JavaUtility {
 		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
 		return newRoNumber;
 	}
-
 
 	public void addmultipleRepairOrder(String firstname, String lastname, String emailId, String phoneNumber) {
 
@@ -455,9 +467,9 @@ public class OrderListPage extends JavaUtility {
 
 	public RepairOrderDetailPage navigateToOrderDetails(String String) {
 		newRoNumber = addRepairOrder(String);
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
-		// page.locator("table#repair-order-results 
+//		Locator tableRow = page.locator(tableRows);
+//		tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
+		// page.locator("table#repair-order-results
 		// td:nth-child(4)").first().click();
 		try {
 			Thread.sleep(14000);
@@ -468,7 +480,6 @@ public class OrderListPage extends JavaUtility {
 		page.waitForURL(url -> url.contains("order/service/view"));
 		return new RepairOrderDetailPage(page);
 	}
-	
 
 // Inspection
 	private String RepairOrdertab = "li.nav-item > a[href=\"/crud/repair-order\"]";
@@ -479,14 +490,12 @@ public class OrderListPage extends JavaUtility {
 // Get Ro number from table
 	private String Ronumber = "td.results-row:nth-child(4)";
 
-	public boolean checkInspectionStatus() { 
-	  page.click(RepairOrdertab);
-      logger.info("click on repair order tab"); 
-      page.waitForTimeout(10000);
-      page.click(allOpen_FilterButton);
-      logger.info("check table");
-	  
-	  
+	public boolean checkInspectionStatus() {
+		page.click(RepairOrdertab);
+		logger.info("click on repair order tab");
+		page.waitForTimeout(10000);
+		page.click(allOpen_FilterButton);
+		logger.info("check table");
 
 		String Value = "Insp-Review";
 
@@ -512,119 +521,114 @@ public class OrderListPage extends JavaUtility {
 				}
 				logger.info("Checking for: " + Value + " And found :" + roNumber);
 			}
-			
-		if (!roFound && page.isVisible(nextButton)) {
-			logger.info("next button displayed ");
-			page.click(nextButton);
-			logger.info("The Closed RO is not found on the current page, checking on the next page.");
-			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-			page.waitForTimeout(4000);
-		} else if (!roFound) {
-			logger.info("RO number not found and no more pages to check.");
-			roFound = false;
-			break;
-		}
-	}
-	return roFound;
-  
-  }
-	
-  public boolean checkInspReturnedStatus() { 
-	  page.click(RepairOrdertab);
-      logger.info("click on repair order tab"); 
-      page.waitForTimeout(10000);
-      page.click(allOpen_FilterButton);
-	  logger.info("check table");
-	  
-	  String Value = "Insp-Returned";
-  
-    boolean roFound = false;
-	while (!roFound) {
-		Locator TableRow = page.locator(tableRows);
-		int rowCount = TableRow.count();
-		logger.info(rowCount);
-		for (int i = 0; i < rowCount - 1; i++) {
-			Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
-			String roNumber = roNumberList.innerText().trim();
-			
-			if (roNumber.contains(Value)) {
-				logger.info("The Closed RO " + Value + " found in closed list and RO Number is: "
-						+ roNumber);
-				
-				TableRow.locator(SearchInspectionStatus1).nth(i).click();
+
+			if (!roFound && page.isVisible(nextButton)) {
+				logger.info("next button displayed ");
+				page.click(nextButton);
+				logger.info("The Closed RO is not found on the current page, checking on the next page.");
+				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
 				page.waitForTimeout(4000);
-				//page.waitForCondition(() ->page.locator(".order__column--main div div.orders-detail-communications__title span").isVisible());
-			   
-				roFound = true;
+			} else if (!roFound) {
+				logger.info("RO number not found and no more pages to check.");
+				roFound = false;
 				break;
 			}
-			logger.info("Checking for: " + Value + " And found :" + roNumber);
 		}
-		if (!roFound && page.isVisible(nextButton)) {
-			logger.info("next button displayed ");
-			page.click(nextButton);
-			logger.info("The Closed RO is not found on the current page, checking on the next page.");
-			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-			page.waitForTimeout(4000);
-		} else if (!roFound) {
-			logger.info("RO number not found and no more pages to check.");
-			roFound = false;
-			break;
-		}
+		return roFound;
+
 	}
-	return roFound;
-  }
-  
-  
-  public boolean checkInspPublishStatus() { 
-	  page.click(RepairOrdertab);
-      logger.info("click on repair order tab"); 
-      page.waitForTimeout(10000);
-      page.click(allOpen_FilterButton);
-	  logger.info("check table");
-	  
-	  String Value = "Insp-Published";
-  
-    boolean roFound = false;
-	while (!roFound) {
-		Locator TableRow = page.locator(tableRows);
-		int rowCount = TableRow.count();
-		logger.info(rowCount);
-		for (int i = 0; i < rowCount - 1; i++) {
-			Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
-			String roNumber = roNumberList.innerText().trim();
-			
-			if (roNumber.contains(Value)) {
-				logger.info("The Closed RO " + Value + " found in closed list and RO Number is: "
-						+ roNumber);
-				
-				TableRow.locator(SearchInspectionStatus1).nth(i).click();
+
+	public boolean checkInspReturnedStatus() {
+		page.click(RepairOrdertab);
+		logger.info("click on repair order tab");
+		page.waitForTimeout(10000);
+		page.click(allOpen_FilterButton);
+		logger.info("check table");
+
+		String Value = "Insp-Returned";
+
+		boolean roFound = false;
+		while (!roFound) {
+			Locator TableRow = page.locator(tableRows);
+			int rowCount = TableRow.count();
+			logger.info(rowCount);
+			for (int i = 0; i < rowCount - 1; i++) {
+				Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
+				String roNumber = roNumberList.innerText().trim();
+
+				if (roNumber.contains(Value)) {
+					logger.info("The Closed RO " + Value + " found in closed list and RO Number is: " + roNumber);
+
+					TableRow.locator(SearchInspectionStatus1).nth(i).click();
+					page.waitForTimeout(4000);
+					// page.waitForCondition(() ->page.locator(".order__column--main div
+					// div.orders-detail-communications__title span").isVisible());
+
+					roFound = true;
+					break;
+				}
+				logger.info("Checking for: " + Value + " And found :" + roNumber);
+			}
+			if (!roFound && page.isVisible(nextButton)) {
+				logger.info("next button displayed ");
+				page.click(nextButton);
+				logger.info("The Closed RO is not found on the current page, checking on the next page.");
+				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
 				page.waitForTimeout(4000);
-				//page.waitForCondition(() ->page.locator(".order__column--main div div.orders-detail-communications__title span").isVisible());
-			   
-				roFound = true;
+			} else if (!roFound) {
+				logger.info("RO number not found and no more pages to check.");
+				roFound = false;
 				break;
 			}
-			logger.info("Checking for: " + Value + " And found :" + roNumber);
 		}
-		if (!roFound && page.isVisible(nextButton)) {
-			logger.info("next button displayed ");
-			page.click(nextButton);
-			logger.info("The Closed RO is not found on the current page, checking on the next page.");
-			page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-			page.waitForTimeout(4000);
-		} else if (!roFound) {
-			logger.info("RO number not found and no more pages to check.");
-			roFound = false;
-			break;
-		}
+		return roFound;
 	}
-	return roFound;
-  }
-   	  
 
+	public boolean checkInspPublishStatus() {
+		page.click(RepairOrdertab);
+		logger.info("click on repair order tab");
+		page.waitForTimeout(10000);
+		page.click(allOpen_FilterButton);
+		logger.info("check table");
 
-	
+		String Value = "Insp-Published";
+
+		boolean roFound = false;
+		while (!roFound) {
+			Locator TableRow = page.locator(tableRows);
+			int rowCount = TableRow.count();
+			logger.info(rowCount);
+			for (int i = 0; i < rowCount - 1; i++) {
+				Locator roNumberList = TableRow.locator(SearchInspectionStatus1).nth(i);
+				String roNumber = roNumberList.innerText().trim();
+
+				if (roNumber.contains(Value)) {
+					logger.info("The Closed RO " + Value + " found in closed list and RO Number is: " + roNumber);
+
+					TableRow.locator(SearchInspectionStatus1).nth(i).click();
+					page.waitForTimeout(4000);
+					// page.waitForCondition(() ->page.locator(".order__column--main div
+					// div.orders-detail-communications__title span").isVisible());
+
+					roFound = true;
+					break;
+				}
+				logger.info("Checking for: " + Value + " And found :" + roNumber);
+			}
+			if (!roFound && page.isVisible(nextButton)) {
+				logger.info("next button displayed ");
+				page.click(nextButton);
+				logger.info("The Closed RO is not found on the current page, checking on the next page.");
+				page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+				page.waitForTimeout(4000);
+			} else if (!roFound) {
+				logger.info("RO number not found and no more pages to check.");
+				roFound = false;
+				break;
+			}
+		}
+		return roFound;
+	}
+
 }
-		
-	
+
