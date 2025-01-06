@@ -1,13 +1,11 @@
 package com.truvideo.tests;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 import com.truvideo.base.BaseTest;
-import com.truvideo.pages.ChatPage;
 import com.truvideo.pages.DealerGroupPage;
 
 public class DealerGroupPageTest extends BaseTest {
