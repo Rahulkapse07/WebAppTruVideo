@@ -52,7 +52,7 @@ public class OrderListPage extends JavaUtility {
 	private String emailId_Field = "(//input[@id='customer.email'])[1]";
 	//private String technician_Dropdown = "(//select[@id='technician'])[1]";
 	private String technician_Dropdown ="//select[@id='technician']";
-	private String save_Button = "#add-repair-order-save";
+	private String save_Button = "input#add-repair-order-save";
 	private String cancel_Button = "#add-repair-order-cancel";
 	// Error messages
 	private String repairOrder_MandatoryField = "small:has-text('Repair Order No. is a required field.')";

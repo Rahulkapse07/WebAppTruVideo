@@ -1,5 +1,7 @@
 package com.truvideo.pages;
 
+import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.assertTrue;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
@@ -111,7 +113,7 @@ public class UserPage extends JavaUtility {
 	private String firstnameinUser = ".table.table-striped tr:nth-child(3) td:nth-child(2) span";
 	private String openUserDetails = ".table-bordered:nth-child(1) tbody tr td:nth-child(5)";
 	String uniqueFirstname;
-	String userEmailID;
+	public String userEmailID;
 	String usernewDummyPassword;
 
 	public String getsearchedUser(String username) {
@@ -159,6 +161,7 @@ public class UserPage extends JavaUtility {
 		fillUserDetails(title1);
 		softAssert.assertAll();
 	}
+	
 
 	private void checkAlertMessages(SoftAssert softAssert) {
 		List<Boolean> flags = new ArrayList<>();
@@ -214,6 +217,7 @@ public class UserPage extends JavaUtility {
 		if (page.locator(emailAddress).isVisible()) {
 			validateAndFillEmail();
 		}
+		
 
 		page.click(saveButton);
 		page.waitForTimeout(2000);

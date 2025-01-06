@@ -25242,3 +25242,2144 @@ Call log:
 2024-12-17 10:56:06 INFO  com.truvideo.pages.HomePage - Clicked on search button when text is entered in the text box
 2024-12-17 10:56:11 INFO  com.truvideo.pages.HomePage - Searched data has been not found in TruVideo
 2024-12-17 10:56:11 INFO  com.truvideo.pages.ProspectDetailPage - Selected SO has been deleted successfully
+2024-12-23 16:54:00 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 16:54:00 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 16:54:02 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 16:56:40 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 16:56:41 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 16:56:42 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 16:58:02 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 16:58:02 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 16:58:04 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 16:59:15 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 16:59:15 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 16:59:17 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 16:59:18 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 16:59:18 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 16:59:18 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 16:59:24 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 16:59:24 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 16:59:25 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 16:59:25 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 17:26:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 17:26:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 17:26:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 17:26:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 17:26:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 17:26:57 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 17:27:02 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 17:27:02 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 17:27:03 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 17:27:03 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 17:30:52 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 17:30:52 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 17:30:54 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 17:32:08 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 17:32:08 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 17:32:10 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 17:32:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 17:32:11 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 17:32:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 17:32:17 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 17:32:17 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 17:32:18 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 17:32:18 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 17:38:18 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 17:38:18 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 17:38:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 17:38:21 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 17:38:21 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 17:38:22 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 17:38:27 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 17:38:27 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 17:38:27 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 17:38:28 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 17:38:28 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 17:38:28 INFO  com.truvideo.pages.DealerGroupPage - right
+2024-12-23 19:40:38 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 19:40:38 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 19:40:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 19:42:27 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 19:42:27 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 19:42:29 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 19:43:57 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 19:43:57 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 19:43:59 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:05:26 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:05:26 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:05:27 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:05:31 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:05:31 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:05:32 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:05:40 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:05:40 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:05:41 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:05:41 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:05:41 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:05:41 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:05:41 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:05:42 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:11:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:11:29 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:11:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:11:35 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:11:35 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:11:35 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:11:43 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:11:43 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:11:45 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:11:45 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:11:45 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:11:45 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:11:46 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:11:46 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:23:42 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:23:42 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:23:44 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:23:47 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:23:47 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:23:48 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:23:51 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:23:51 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:23:52 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:23:52 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:23:52 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:23:53 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:23:53 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:23:53 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:25:53 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:25:53 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:25:54 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:25:58 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:25:58 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:25:58 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:26:01 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:26:01 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:26:02 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:26:02 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:26:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:26:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:26:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:26:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:30:20 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:30:20 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:30:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:30:25 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:30:25 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:30:26 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:30:29 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:30:29 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:30:30 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:34:07 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 20:34:07 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 20:34:08 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 20:34:12 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 20:34:12 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 20:34:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 20:34:15 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 20:34:15 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 20:34:16 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 20:34:17 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 20:34:17 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 20:34:17 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:34:17 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 20:34:17 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 22:18:59 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-23 22:18:59 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-23 22:19:00 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-23 22:19:04 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-23 22:19:04 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-23 22:19:05 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-23 22:19:08 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-23 22:19:08 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-23 22:19:09 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 22:19:09 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-23 22:19:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 22:19:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 22:19:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-23 22:19:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-23 22:19:15 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-23 22:19:16 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-23 22:19:20 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-23 22:19:21 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-23 22:19:22 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-23 22:19:22 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 22:19:24 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-23 22:19:24 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-23 22:19:26 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-23 22:19:26 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-23 22:19:26 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2024-12-23 22:19:26 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2024-12-23 22:19:26 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-23 22:19:28 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-23 22:19:29 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-23 22:19:29 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-23 22:19:29 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible. Remove button is red, Cancel button is grey.
+2024-12-23 22:19:29 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2024-12-23 22:19:30 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2024-12-23 22:19:30 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2024-12-23 22:19:30 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-23 22:19:30 INFO  com.truvideo.pages.DealerGroupPage - Message is not displaying
+2024-12-24 13:31:26 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 13:31:26 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 13:31:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 13:31:32 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 13:31:32 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 13:31:33 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 13:31:36 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 13:31:36 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 13:31:37 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 13:31:42 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 13:31:42 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 13:31:46 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 13:31:47 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 13:31:47 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 13:31:48 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 13:33:21 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 13:33:21 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 13:33:23 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 13:33:27 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 13:33:27 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 13:33:27 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 13:33:30 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 13:33:30 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 13:33:31 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 13:33:31 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 13:33:32 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 13:33:32 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 13:33:32 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 13:33:32 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 13:33:36 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 13:33:37 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 13:33:41 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 13:33:42 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 13:33:42 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 13:33:42 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 13:33:44 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 13:41:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 13:41:29 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 13:41:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : AutoU83nK
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - Last Name filled : Lastn9Aa
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812055755
+2024-12-24 13:41:37 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatednDg5@gmail.com
+2024-12-24 13:49:12 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 13:49:12 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 13:49:13 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 13:49:30 INFO  com.truvideo.pages.OrderListPage - Clicked on Add Repair Order button
+2024-12-24 13:49:31 INFO  com.truvideo.pages.OrderListPage - Repair Order Number filled : Autorb9Lg
+2024-12-24 13:49:31 INFO  com.truvideo.pages.OrderListPage - First Name filled : Automation
+2024-12-24 13:49:31 INFO  com.truvideo.pages.OrderListPage - Last Name filled : LastXQBf
+2024-12-24 13:49:31 INFO  com.truvideo.pages.OrderListPage - Phone number filled : 7812057843
+2024-12-24 13:49:31 INFO  com.truvideo.pages.OrderListPage - Email Id filled : AutomatedghXx@gmail.com
+2024-12-24 16:19:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:19:29 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:19:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:19:35 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:19:35 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:19:36 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:19:39 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:19:39 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:19:40 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:19:44 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:19:45 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:19:49 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:19:51 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:19:52 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:19:52 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:20:01 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:20:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:20:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:20:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:21:00 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:21:00 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:21:00 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:21:03 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:21:03 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:21:04 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:21:04 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:21:05 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:21:05 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:21:05 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:21:05 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:21:10 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:21:11 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:21:14 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:21:15 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:21:15 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:21:15 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:21:18 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:22:46 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:22:46 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:22:47 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:22:51 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:22:51 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:22:52 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:22:55 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:22:55 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:22:56 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:22:57 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:22:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:22:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:22:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:22:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:23:01 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:23:03 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:23:06 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:23:07 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:23:08 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:23:08 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:23:10 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:26:08 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:26:08 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:26:10 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:26:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:26:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:26:14 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:26:17 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:26:17 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:26:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:26:24 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:26:26 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:26:30 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:26:30 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:26:31 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:26:31 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:26:33 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:28:44 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:28:44 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:28:46 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:28:50 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:28:50 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:28:50 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:28:54 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:28:54 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:28:55 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:28:55 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:28:55 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:28:55 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:28:55 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:28:56 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:29:00 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:29:01 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:29:04 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:29:05 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:29:06 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:29:06 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:30:17 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:30:17 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:30:18 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:30:22 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:30:22 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:30:22 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:30:26 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:30:26 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:30:27 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:30:32 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:30:33 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:30:37 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:30:38 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:30:38 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:30:38 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:30:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:32:55 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:32:55 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:32:58 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:33:02 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:33:02 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:33:02 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:33:05 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:33:05 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:33:07 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:33:12 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:33:14 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:33:17 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:33:18 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:33:18 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:33:18 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:33:21 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:33:26 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:33:29 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:33:29 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:33:30 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:33:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:33:30 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:33:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:35:36 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:35:36 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:35:38 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:35:42 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:35:42 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:35:42 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:35:46 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:35:46 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:35:47 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:35:52 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:35:53 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:35:57 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:35:58 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:35:58 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:35:58 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:36:01 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:36:59 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:36:59 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:37:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:37:05 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:37:05 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:37:06 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:37:09 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:37:09 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:37:10 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:37:15 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:37:16 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:37:20 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:37:21 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:37:21 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:37:21 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:37:23 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:37:28 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:37:30 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:37:30 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:37:31 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:37:31 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:37:32 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:37:32 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:37:37 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-24 16:37:37 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-24 16:47:14 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:47:14 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:47:16 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:47:20 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:47:20 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:47:21 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:47:24 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:47:24 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:47:25 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:47:26 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:47:26 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:47:26 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:47:26 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:47:26 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:47:31 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:47:32 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:47:35 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:47:36 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:47:36 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:47:37 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:47:39 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:47:44 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:47:46 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:47:46 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:47:47 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:47:47 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:47:47 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:47:47 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:47:53 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-24 16:47:53 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-24 16:48:01 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible.
+2024-12-24 16:48:01 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2024-12-24 16:48:01 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2024-12-24 16:48:02 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2024-12-24 16:48:03 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully deleted.
+2024-12-24 16:48:03 INFO  com.truvideo.pages.DealerGroupPage - Dealer group removed successfully from the list
+2024-12-24 16:50:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:50:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:50:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:50:57 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:50:57 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:50:58 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:51:01 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:51:01 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:51:03 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:51:07 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:51:09 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:51:12 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:51:13 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:51:14 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:51:14 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:51:16 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:51:21 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:51:23 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:51:23 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:51:24 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:51:24 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:51:24 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:51:24 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:51:29 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-24 16:51:29 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-24 16:51:37 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible.
+2024-12-24 16:51:38 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2024-12-24 16:51:38 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2024-12-24 16:51:39 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2024-12-24 16:51:40 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully deleted.
+2024-12-24 16:51:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer group removed successfully from the list
+2024-12-24 16:52:46 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:52:46 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:52:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:52:52 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:52:52 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:52:52 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:52:55 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:52:55 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:52:56 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:52:57 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:52:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:52:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:52:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:52:57 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:53:02 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:53:03 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:53:06 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:53:07 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:53:07 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:53:07 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:53:10 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:53:15 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:53:17 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:53:17 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:53:19 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:53:19 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:53:19 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:53:19 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:53:25 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-24 16:53:25 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-24 16:58:22 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 16:58:22 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 16:58:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 16:58:27 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 16:58:27 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 16:58:28 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 16:58:31 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 16:58:31 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 16:58:32 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:58:32 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 16:58:33 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:58:33 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:58:33 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 16:58:33 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 16:58:38 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 16:58:39 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 16:58:42 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 16:58:43 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 16:58:43 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 16:58:43 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:58:46 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 16:58:51 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 16:58:53 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 16:58:53 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 16:58:54 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 16:58:54 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 16:58:55 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 16:58:55 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 17:02:36 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 17:02:36 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 17:02:37 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 17:02:41 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 17:02:41 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 17:02:41 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 17:02:45 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 17:02:45 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 17:02:46 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:02:46 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 17:02:49 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:02:50 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:02:51 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:02:52 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:02:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 17:02:58 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 17:03:01 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-24 17:03:02 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-24 17:03:02 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-24 17:03:02 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:03:04 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 17:03:09 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-24 17:03:10 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-24 17:03:10 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-24 17:03:12 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-24 17:03:12 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-24 17:03:12 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:03:12 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-24 17:06:32 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 17:06:32 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 17:06:35 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 17:06:39 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 17:06:39 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 17:06:39 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 17:06:43 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 17:06:43 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 17:06:44 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:06:44 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 17:06:46 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:06:52 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:06:53 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:06:58 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:07:03 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 17:07:05 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 17:09:06 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 17:09:06 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 17:09:08 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 17:09:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 17:09:12 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 17:09:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 17:09:15 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 17:09:15 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 17:09:16 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:09:16 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 17:09:17 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:09:26 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:09:27 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:09:35 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:09:39 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-24 17:09:40 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-24 17:11:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 17:11:52 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 17:11:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 17:11:57 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 17:11:57 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 17:11:57 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 17:12:00 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 17:12:00 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 17:12:01 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 17:12:01 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 17:12:04 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 17:12:18 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 17:12:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 21:58:36 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 21:58:36 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 21:58:38 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 21:58:42 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 21:58:42 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 21:58:43 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 21:58:46 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 21:58:46 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 21:58:47 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 21:58:47 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 21:58:48 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 21:59:07 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-24 21:59:25 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-24 22:01:38 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 22:01:38 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 22:01:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 22:01:44 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 22:01:44 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 22:01:47 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 22:01:52 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 22:01:52 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 22:01:53 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 22:01:53 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 22:03:23 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 22:03:23 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 22:03:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 22:03:28 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 22:03:28 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 22:03:29 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 22:03:32 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 22:03:32 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 22:03:33 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 22:03:33 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 22:07:23 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 22:07:23 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 22:07:25 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 22:07:29 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 22:07:29 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 22:07:30 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 22:07:33 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 22:07:33 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 22:07:34 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 22:07:34 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 22:10:18 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-24 22:10:18 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-24 22:10:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-24 22:10:23 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-24 22:10:23 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-24 22:10:24 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-24 22:10:27 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-24 22:10:27 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-24 22:10:28 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-24 22:10:28 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-24 22:10:28 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-26 13:38:42 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:38:42 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:38:44 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:38:47 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:38:47 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:38:48 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:38:51 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:38:51 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:38:52 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:38:52 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 13:39:11 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 13:39:29 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-26 13:39:34 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 13:39:35 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 13:41:11 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:41:11 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:41:13 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:41:17 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:41:17 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:41:20 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:41:23 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:41:23 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:41:24 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:41:24 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 13:41:42 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 13:43:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:43:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:43:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:43:57 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:43:57 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:43:58 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:44:01 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:44:01 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:44:02 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:44:02 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 13:44:21 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 13:46:06 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:46:06 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:46:08 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:46:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:46:11 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:46:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:46:15 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:46:15 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:46:16 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:46:16 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 13:46:36 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 13:50:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:50:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:50:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:50:36 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:50:36 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:50:37 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:50:40 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:50:40 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:50:41 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:50:41 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 13:51:00 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 13:51:18 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-26 13:51:23 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 13:51:24 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 13:59:06 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 13:59:07 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 13:59:08 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 13:59:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 13:59:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 13:59:15 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 13:59:18 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 13:59:18 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 13:59:19 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 13:59:19 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:00:09 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:00:09 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:00:11 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:00:15 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:00:15 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:00:16 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:00:19 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:00:19 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:00:21 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:00:21 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:04:34 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:04:35 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:04:36 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:04:40 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:04:40 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:04:41 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:04:44 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:04:44 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:04:45 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:04:45 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:11:34 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:11:34 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:11:36 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:11:41 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:11:41 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:11:41 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:11:44 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:11:44 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:11:45 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:16:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:16:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:16:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:16:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:16:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:16:57 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:17:00 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:17:00 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:17:01 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:19:24 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:19:24 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:19:26 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:19:29 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:19:29 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:19:30 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:19:33 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:19:33 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:19:34 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:19:34 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:20:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:20:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:20:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:20:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:20:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:20:57 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:21:00 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:21:00 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:21:01 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:21:01 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:22:20 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:22:20 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:22:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:22:26 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:22:26 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:22:27 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:22:30 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:22:33 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:22:33 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:22:33 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:23:24 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:23:24 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:23:26 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:23:30 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:23:30 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:23:30 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:23:33 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:23:33 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:23:35 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:23:45 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:25:58 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:25:58 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:25:59 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:26:03 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:26:03 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:26:04 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:26:07 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:26:07 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:26:08 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:26:13 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:27:32 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:27:32 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:27:34 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:27:37 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:27:37 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:27:38 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:27:41 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:27:41 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:27:42 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:27:47 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:29:01 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:29:01 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:29:03 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:29:07 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:29:07 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:29:07 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:29:10 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:29:10 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:29:11 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:29:16 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:30:50 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:30:50 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:30:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:30:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:30:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:30:56 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:30:59 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:30:59 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:31:01 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:31:06 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:35:26 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:35:26 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:35:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:35:32 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:35:32 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:35:32 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:35:35 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:35:35 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:35:36 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:35:41 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:39:26 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:39:26 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:39:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:39:33 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:39:33 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:39:34 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:39:37 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:39:37 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:39:38 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:39:43 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:42:16 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:42:16 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:42:18 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:42:22 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:42:22 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:42:22 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:42:26 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:42:26 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:42:27 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:42:32 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:44:03 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:44:03 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:44:04 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:44:08 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:44:08 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:44:09 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:44:12 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:44:12 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:44:13 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:44:19 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:45:07 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:45:07 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:45:09 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:45:12 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:45:13 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:45:13 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:45:16 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:45:16 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:45:17 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:45:23 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:46:04 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:46:04 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:46:06 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:46:10 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:46:10 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:46:10 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:46:13 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:46:13 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:46:15 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:46:20 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:52:05 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:52:06 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:52:07 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:52:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:52:12 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:52:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:52:15 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:52:15 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:52:17 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:52:22 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 14:53:18 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 14:53:18 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 14:53:19 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 14:53:23 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 14:53:24 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 14:53:24 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 14:53:27 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 14:53:27 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 14:53:30 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 14:53:35 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:13:00 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:13:00 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:13:01 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:13:05 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:13:05 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:13:06 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:13:09 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:13:09 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:13:11 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:13:16 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:13:36 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:13:36 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-26 15:17:39 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:17:39 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:17:41 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:17:45 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:17:45 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:17:45 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:17:48 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:17:48 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:17:50 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:17:55 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:18:05 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:20:47 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:20:47 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:20:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:20:52 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:20:52 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:20:53 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:20:56 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:20:56 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:20:57 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:21:02 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:21:18 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:22:58 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:22:58 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:23:00 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:23:04 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:23:04 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:23:05 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:23:08 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:23:08 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:23:09 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:23:14 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:23:29 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:24:49 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:24:49 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:24:51 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:24:55 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:24:55 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:24:55 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:24:58 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:24:58 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:25:00 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:25:05 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:25:20 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:27:23 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:27:23 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:27:24 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:27:28 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:27:28 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:27:28 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:27:32 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:27:32 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:27:33 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:27:38 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:27:54 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:28:09 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Available list
+2024-12-26 15:28:21 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 15:28:21 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 15:28:25 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-26 15:29:53 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:29:53 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:29:55 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:29:58 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:29:58 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:29:59 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:30:02 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:30:02 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:30:03 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:30:08 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:30:19 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:38:13 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:38:13 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:38:15 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:38:18 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:38:18 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:38:19 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:38:22 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:38:22 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:38:23 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:38:28 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:38:39 INFO  com.truvideo.pages.DealerGroupPage - TruVideo dealer is display in Selected list
+2024-12-26 15:41:37 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:41:37 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:41:39 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:41:42 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:41:42 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:41:43 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:41:46 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:41:46 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:41:47 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:41:52 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:47:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:47:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:47:52 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:47:56 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:47:56 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:47:57 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:48:00 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:48:00 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:48:01 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:48:06 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:48:24 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 15:48:25 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 15:48:28 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-26 15:48:29 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-26 15:48:29 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-26 15:48:29 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:48:32 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 15:48:37 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-26 15:48:38 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-26 15:48:38 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-26 15:48:40 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-26 15:48:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-26 15:48:40 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:48:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 15:48:45 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-26 15:51:02 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 15:51:02 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 15:51:03 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 15:51:07 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 15:51:07 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 15:51:07 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 15:51:11 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 15:51:11 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 15:51:12 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:51:17 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 15:51:34 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 15:51:35 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 15:51:38 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-26 15:51:39 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-26 15:51:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-26 15:51:40 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:51:42 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 15:51:47 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-26 15:51:48 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-26 15:51:48 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-26 15:51:50 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-26 15:51:50 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-26 15:51:50 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 15:51:50 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 15:51:55 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-26 15:51:55 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-26 15:52:03 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible.
+2024-12-26 15:52:03 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2024-12-26 15:52:04 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2024-12-26 15:52:05 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2024-12-26 15:52:06 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully deleted.
+2024-12-26 15:52:06 INFO  com.truvideo.pages.DealerGroupPage - Dealer group removed successfully from the list
+2024-12-26 17:38:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 17:38:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 17:38:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 17:38:57 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 17:38:57 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 17:38:58 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 18:55:37 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 18:55:37 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 18:55:39 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 18:55:43 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 18:55:43 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 18:55:44 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 18:55:47 INFO  com.truvideo.pages.UserPage - Clicked on Add User Button
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Clicked on Save button without selecting Roles or Dealers
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Alert message for Role displayed
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Alert message for Dealer displayed
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Alert message for First Name displayed
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Alert message for Last Name displayed
+2024-12-26 18:55:49 INFO  com.truvideo.pages.UserPage - Alert message for Email Address displayed
+2024-12-26 18:55:56 INFO  com.truvideo.pages.UserPage - First name is added
+2024-12-26 18:55:57 INFO  com.truvideo.pages.UserPage - Last name is added
+2024-12-26 18:55:59 INFO  com.truvideo.pages.UserPage - Email address is added
+2024-12-26 18:55:59 INFO  com.truvideo.pages.UserPage - Updated First Name: hivpU
+2024-12-26 18:55:59 INFO  com.truvideo.pages.UserPage - Email already registered, updating email...
+2024-12-26 18:55:59 INFO  com.truvideo.pages.UserPage - Final email address: 4uJnf@gmail.com
+2024-12-26 18:56:04 INFO  com.truvideo.pages.UserPage - User saved successfully
+2024-12-26 18:56:04 INFO  com.truvideo.pages.UserPage - User saved successfully 
+2024-12-26 21:15:20 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-26 21:15:21 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-26 21:15:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-26 21:15:26 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-26 21:15:27 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-26 21:15:27 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-26 21:15:30 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2024-12-26 21:15:30 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2024-12-26 21:15:32 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 21:15:37 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2024-12-26 21:15:56 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2024-12-26 21:15:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2024-12-26 21:16:00 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2024-12-26 21:16:01 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2024-12-26 21:16:02 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2024-12-26 21:16:02 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 21:16:04 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 21:16:09 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2024-12-26 21:16:11 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2024-12-26 21:16:11 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2024-12-26 21:16:13 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2024-12-26 21:16:13 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2024-12-26 21:16:13 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2024-12-26 21:16:13 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2024-12-26 21:16:18 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2024-12-26 21:16:18 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2024-12-26 21:16:26 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible.
+2024-12-26 21:16:26 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2024-12-26 21:16:27 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2024-12-26 21:16:28 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2024-12-26 21:16:29 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully deleted.
+2024-12-26 21:16:29 INFO  com.truvideo.pages.DealerGroupPage - Dealer group removed successfully from the list
+2024-12-31 15:08:36 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:08:36 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:08:37 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:08:41 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:08:41 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:08:41 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:08:45 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:08:46 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:10:26 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:10:26 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:10:28 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:10:32 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:10:32 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:10:32 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:10:35 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:10:36 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:12:25 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:12:25 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:12:26 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:12:30 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:12:30 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:12:30 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:12:34 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:12:34 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:17:47 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:17:47 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:17:49 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:17:52 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:17:52 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:17:53 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:17:57 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:17:57 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:19:30 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:19:30 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:19:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:19:36 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:19:36 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:19:37 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:19:40 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:19:41 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:20:58 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:20:58 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:21:00 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:21:04 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:21:04 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:21:05 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:21:09 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:21:10 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:34:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:34:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:34:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:34:59 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:34:59 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:35:00 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:35:04 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:35:04 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:39:16 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:39:16 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:39:17 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:39:21 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:39:21 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:39:22 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:39:26 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:39:27 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:39:36 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 15:39:38 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2024-12-31 15:43:15 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 15:43:15 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 15:43:16 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 15:43:22 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 15:43:22 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 15:43:23 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 15:43:29 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 15:43:29 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 15:43:37 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 16:22:07 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 16:22:07 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 16:22:09 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 16:22:13 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 16:22:13 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 16:22:14 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 16:22:19 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 16:22:21 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 16:22:29 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 16:22:32 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2024-12-31 16:22:32 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2024-12-31 16:22:32 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2024-12-31 16:22:33 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2024-12-31 16:22:34 INFO  com.truvideo.pages.LoginPage - Entered User Name  Username
+2024-12-31 16:22:34 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 16:22:35 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 16:39:51 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 16:39:51 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 16:39:53 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 16:39:57 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 16:39:57 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 16:39:58 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 16:40:02 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 16:40:04 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 16:40:12 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 16:40:15 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2024-12-31 16:40:15 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2024-12-31 16:40:15 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2024-12-31 16:40:16 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2024-12-31 16:43:11 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 16:43:11 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 16:43:12 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 16:43:16 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 16:43:16 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 16:43:16 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 16:43:20 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 16:43:21 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 16:43:29 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 16:43:31 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2024-12-31 16:43:31 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2024-12-31 16:43:32 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2024-12-31 16:43:33 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2024-12-31 16:51:40 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 16:51:40 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 16:51:41 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 16:51:45 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 16:51:45 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 16:51:45 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 16:51:49 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 16:51:49 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 16:51:58 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 18:24:08 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 18:24:09 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 18:24:10 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 18:24:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 18:24:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 18:24:14 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 18:24:18 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 18:24:20 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 18:24:28 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 18:27:06 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 18:27:06 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 18:27:08 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 18:27:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2024-12-31 18:27:11 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2024-12-31 18:27:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2024-12-31 18:27:16 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2024-12-31 18:27:16 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2024-12-31 18:27:25 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2024-12-31 18:27:26 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2024-12-31 18:27:27 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2024-12-31 18:27:27 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2024-12-31 18:27:28 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2024-12-31 18:27:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2024-12-31 18:27:29 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2024-12-31 18:27:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2024-12-31 18:27:31 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2024-12-31 18:27:38 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2025-01-02 14:31:05 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 14:31:05 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 14:31:07 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 14:31:11 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 14:31:11 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 14:31:12 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 14:31:14 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 14:31:14 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 14:31:16 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 14:31:21 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 14:31:39 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 14:31:40 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 14:31:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 14:31:52 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 14:31:56 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 14:32:04 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 14:35:20 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 14:35:20 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 14:35:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 14:35:26 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 14:35:26 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 14:35:27 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 14:35:28 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 14:35:28 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 14:35:30 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 14:35:35 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 14:35:53 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 14:35:53 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 14:35:54 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 14:36:00 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 14:36:00 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 14:36:09 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 14:43:49 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 14:43:49 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 14:43:51 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 14:43:54 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 14:43:54 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 14:43:56 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 14:43:59 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 14:43:59 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 14:44:00 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 14:44:05 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 14:44:23 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 14:44:24 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 14:44:24 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 14:44:27 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 14:44:27 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 14:44:30 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 14:44:31 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 14:44:39 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 14:52:00 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 14:52:00 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 14:52:02 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 14:52:06 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 14:52:06 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 14:52:07 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 14:52:10 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 14:52:10 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 14:52:12 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 14:52:17 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 14:52:34 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 14:52:36 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 14:52:36 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 14:52:38 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 14:52:38 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 14:52:44 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 14:52:48 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 14:52:56 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 14:59:21 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 14:59:21 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 14:59:23 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 14:59:27 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 14:59:27 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 14:59:28 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 14:59:29 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 14:59:29 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 14:59:32 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 14:59:37 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 14:59:54 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 14:59:55 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 14:59:55 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 14:59:57 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 14:59:57 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:00:00 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:00:02 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:00:10 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:11:25 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:11:25 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:11:27 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:11:30 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:11:30 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:11:31 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:11:34 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:11:34 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:11:35 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:11:40 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:11:58 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-02 15:11:58 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-02 15:12:02 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:12:03 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:12:03 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:12:05 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:12:05 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:12:05 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:12:05 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2025-01-02 15:12:11 INFO  com.truvideo.pages.DealerGroupPage - Click on edit button
+2025-01-02 15:12:12 INFO  com.truvideo.pages.DealerGroupPage - Update dealer group name
+2025-01-02 15:12:12 INFO  com.truvideo.pages.DealerGroupPage - Click on Save button
+2025-01-02 15:12:14 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully updated.
+2025-01-02 15:12:14 INFO  com.truvideo.pages.DealerGroupPage - Dealer group updated sucessfully
+2025-01-02 15:12:14 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:12:14 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group search successfully
+2025-01-02 15:12:19 INFO  com.truvideo.pages.DealerGroupPage - Click on delete button
+2025-01-02 15:12:19 INFO  com.truvideo.pages.DealerGroupPage - Confirmation dialog appeared: 'Are you sure to delete record?'
+2025-01-02 15:12:27 INFO  com.truvideo.pages.DealerGroupPage - Remove and Cancel buttons are visible.
+2025-01-02 15:12:27 INFO  com.truvideo.pages.DealerGroupPage - Canceled the deletion process; the confirmation dialog is closed.
+2025-01-02 15:12:28 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the delete button again.
+2025-01-02 15:12:28 INFO  com.truvideo.pages.DealerGroupPage - Clicked on the Remove button.
+2025-01-02 15:12:30 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully deleted.
+2025-01-02 15:12:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer group removed successfully from the list
+2025-01-02 15:12:30 INFO  com.truvideo.pages.LoginPage - Incorrect url showing
+2025-01-02 15:12:33 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:12:33 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:12:34 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:12:35 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:12:35 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:12:37 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:12:42 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:12:59 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:13:00 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:13:00 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:13:02 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:13:02 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:13:05 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:13:06 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:13:14 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:21:02 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:21:02 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:21:04 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:21:08 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:21:08 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:21:08 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:21:10 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:21:10 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:21:11 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:21:17 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:21:34 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:21:35 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:21:35 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:21:37 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:21:37 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:21:40 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:21:42 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:21:50 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:26:56 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:26:56 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:26:57 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:27:01 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:27:01 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:27:02 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:27:03 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:27:03 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:27:04 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:27:09 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:27:27 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:27:28 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:27:28 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:27:30 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:27:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:27:33 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:27:34 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:27:42 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:27:44 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-02 15:27:44 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-02 15:27:44 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2025-01-02 15:27:46 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2025-01-02 15:27:47 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:27:47 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:27:48 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:27:49 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2025-01-02 15:27:55 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2025-01-02 15:46:20 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:46:20 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:46:22 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:46:25 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:46:26 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:46:26 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:46:27 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:46:27 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:46:29 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:46:34 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:46:51 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:46:52 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:46:52 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:46:54 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:46:54 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:46:57 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:46:58 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:47:06 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:47:09 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-02 15:47:09 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-02 15:47:09 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2025-01-02 15:47:10 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2025-01-02 15:47:11 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:47:11 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:47:12 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:47:13 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2025-01-02 15:53:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:53:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:53:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:53:59 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 15:53:59 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 15:54:00 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 15:54:01 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 15:54:01 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 15:54:02 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 15:54:07 INFO  com.truvideo.pages.DealerGroupPage - Enter TruVideo dealer name
+2025-01-02 15:54:25 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 15:54:26 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 15:54:26 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 15:54:28 INFO  com.truvideo.pages.DealerGroupPage - ×
+Record has been successfully added.
+2025-01-02 15:54:28 INFO  com.truvideo.pages.DealerGroupPage - Dealer group added sucessfully
+2025-01-02 15:54:31 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 15:54:31 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 15:54:40 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 15:54:41 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-02 15:54:41 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-02 15:54:42 INFO  com.truvideo.pages.HomePage - Click on Drop Down
+2025-01-02 15:54:43 INFO  com.truvideo.pages.HomePage - Click on LogOut button
+2025-01-02 15:54:44 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 15:54:44 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 15:54:45 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 15:54:46 INFO  com.truvideo.pages.HomePage - Clicked on user account dropdown button
+2025-01-02 15:54:53 INFO  com.truvideo.pages.HomePage - Clicked on another dealer to switch
+2025-01-02 17:10:02 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 17:10:02 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 17:10:03 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 17:10:08 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 17:10:09 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 17:10:09 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 17:10:13 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 17:10:13 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 17:10:15 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 17:10:20 INFO  com.truvideo.pages.DealerGroupPage - Truvideo dealer is display in Available list
+2025-01-02 17:10:21 INFO  com.truvideo.pages.DealerGroupPage - Truvideo dealer is display in Selected list
+2025-01-02 17:10:27 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 17:10:28 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 17:10:28 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 17:52:36 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 17:52:36 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 17:52:37 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 17:52:41 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 17:52:41 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 17:52:43 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 17:52:47 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 17:52:47 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 17:52:49 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 17:52:54 INFO  com.truvideo.pages.DealerGroupPage - Truvideo dealer is display in Available list
+2025-01-02 17:52:55 INFO  com.truvideo.pages.DealerGroupPage - Truvideo dealer is display in Selected list
+2025-01-02 17:53:01 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 17:53:02 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 17:53:02 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 17:53:02 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-02 17:53:02 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-02 17:53:05 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 17:53:05 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 17:53:06 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 17:53:11 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-02 17:53:12 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-02 17:53:17 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-02 17:53:18 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-02 17:53:19 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 17:53:19 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-02 17:53:19 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-02 17:53:26 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 17:53:29 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 17:53:38 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 17:53:40 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-02 17:53:40 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-02 19:59:56 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-02 19:59:56 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-02 19:59:59 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-02 20:00:02 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-02 20:00:02 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-02 20:00:03 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-02 20:00:03 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 20:00:03 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 20:00:05 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 20:00:10 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-02 20:00:11 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-02 20:00:17 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-02 20:00:18 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-02 20:00:19 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 20:00:19 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-02 20:00:19 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-02 20:00:21 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-02 20:00:21 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-02 20:00:23 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-02 20:00:28 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-02 20:00:29 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-02 20:00:34 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-02 20:00:35 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-02 20:00:35 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-02 20:00:35 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-02 20:00:35 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-02 20:00:41 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 20:00:41 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 20:00:49 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 20:00:52 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-02 20:00:52 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-02 20:00:52 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-02 20:01:14 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-02 20:01:14 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-02 20:01:23 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-02 20:01:23 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 15:20:27 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 15:20:27 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 15:20:29 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 15:20:33 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 15:20:33 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 15:20:34 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 15:20:34 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:20:34 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:20:36 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:20:41 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 15:20:42 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 15:20:48 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 15:20:48 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 15:20:49 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:20:49 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:20:49 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:20:51 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:20:51 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:20:53 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:20:58 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 15:20:59 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 15:21:04 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 15:21:05 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 15:21:05 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:21:05 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:21:05 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:21:10 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 15:21:11 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 15:21:19 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 15:21:22 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 15:21:22 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 15:21:45 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 15:21:45 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 15:21:53 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 15:21:56 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 15:21:56 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 15:21:56 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 15:31:57 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 15:31:57 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 15:31:58 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 15:32:02 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 15:32:02 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 15:32:04 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 15:32:07 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:32:07 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:32:08 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:32:14 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 15:32:14 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 15:32:20 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 15:32:21 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 15:32:21 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:32:21 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:32:21 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:32:24 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:32:24 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:32:25 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:32:30 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 15:32:31 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 15:32:36 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 15:32:37 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 15:32:37 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:32:37 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:32:37 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:32:43 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 15:32:45 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 15:32:53 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 15:32:56 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 15:32:56 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 15:33:19 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 15:33:19 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 15:33:27 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 15:33:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 15:33:30 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 15:33:30 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 15:54:48 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 15:54:48 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 15:54:50 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 15:54:53 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 15:54:53 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 15:54:54 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 15:54:56 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:54:56 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:54:57 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:55:02 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 15:55:03 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 15:55:09 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 15:55:10 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 15:55:10 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:55:10 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:55:10 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:55:12 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 15:55:12 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 15:55:14 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 15:55:19 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 15:55:20 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 15:55:25 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 15:55:26 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 15:55:26 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 15:55:26 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 15:55:26 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 15:55:31 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 15:55:32 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 15:55:40 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 15:55:43 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 15:55:44 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:38:54 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 16:38:54 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 16:38:56 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 16:38:59 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 16:38:59 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 16:39:00 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 16:39:02 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:39:02 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:39:03 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:39:09 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 16:39:09 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 16:39:15 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 16:39:16 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 16:39:16 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:39:16 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:39:16 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:39:18 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:39:18 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:39:20 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:39:25 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 16:39:26 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 16:39:31 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 16:39:32 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 16:39:32 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:39:32 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:39:32 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:39:38 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:39:38 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:39:46 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:39:50 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:39:50 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:41:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 16:41:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 16:41:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 16:41:36 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 16:41:36 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 16:41:37 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 16:41:38 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:41:38 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:41:40 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:41:45 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 16:41:46 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 16:41:52 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 16:41:53 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 16:41:53 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:41:53 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:41:53 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:41:55 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:41:55 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:41:56 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:42:02 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 16:42:02 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 16:42:08 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 16:42:08 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 16:42:09 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:42:09 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:42:09 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:42:13 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:42:15 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:42:23 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:42:25 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:42:26 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:45:19 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 16:45:19 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 16:45:20 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 16:45:24 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 16:45:24 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 16:45:25 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 16:45:26 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:45:26 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:45:28 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:45:33 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 16:45:34 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 16:45:39 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 16:45:40 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 16:45:41 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:45:41 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:45:41 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:45:42 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:45:42 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:45:44 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:45:49 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 16:45:50 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 16:45:55 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 16:45:56 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 16:45:57 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:45:57 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:45:57 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:46:01 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:46:03 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:46:11 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:46:13 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:46:14 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:49:31 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 16:49:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 16:49:32 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 16:49:36 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 16:49:36 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 16:49:37 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 16:49:39 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:49:39 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:49:40 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:49:45 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 16:49:46 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 16:49:52 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 16:49:53 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 16:49:53 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:49:53 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:49:53 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:49:55 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:49:55 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:49:56 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:50:02 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 16:50:03 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 16:50:08 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 16:50:09 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 16:50:09 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:50:09 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:50:09 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:50:14 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:50:15 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:50:23 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:50:26 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:50:26 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:50:26 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 16:50:44 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:50:44 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:50:52 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:50:52 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 16:50:55 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:50:56 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:51:05 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:51:08 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:51:08 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:55:43 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 16:55:43 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 16:55:45 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 16:55:49 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 16:55:49 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 16:55:49 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 16:55:50 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:55:50 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:55:52 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:55:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 16:55:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 16:56:04 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 16:56:05 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 16:56:05 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:56:05 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:56:05 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:56:07 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 16:56:07 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 16:56:08 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 16:56:13 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 16:56:14 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 16:56:19 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 16:56:20 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 16:56:21 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 16:56:21 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 16:56:21 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 16:56:26 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:56:27 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:56:35 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:56:38 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 16:56:38 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 16:56:38 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 16:56:58 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 16:56:59 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 16:57:07 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 16:57:07 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 17:13:30 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 17:13:31 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 17:13:33 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 17:13:38 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 17:13:38 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 17:13:39 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 17:13:40 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:13:40 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:13:41 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:13:46 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 17:13:47 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 17:13:53 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 17:13:54 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 17:13:54 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:13:54 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:13:54 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:13:56 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:13:56 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:13:57 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:14:03 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 17:14:04 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 17:14:09 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 17:14:10 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 17:14:10 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:14:10 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:14:10 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:14:15 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:14:15 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:14:23 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:14:26 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 17:14:26 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 17:14:26 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 17:14:45 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:14:46 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:14:54 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:14:54 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 17:16:39 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 17:16:39 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 17:16:40 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 17:16:44 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 17:16:44 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 17:16:45 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 17:16:50 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:16:50 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:16:52 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:16:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 17:16:57 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 17:17:03 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 17:17:04 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 17:17:04 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:17:04 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:17:04 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:17:06 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:17:06 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:17:08 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:17:13 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 17:17:14 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 17:17:19 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 17:17:20 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 17:17:20 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:17:20 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:17:20 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:17:25 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:17:26 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:17:34 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:17:36 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 17:17:36 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 17:17:36 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 17:17:55 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:17:55 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:18:03 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:18:11 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 17:19:09 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 17:19:09 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 17:19:11 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 17:19:14 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 17:19:14 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 17:19:15 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 17:19:16 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:19:16 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:19:17 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:19:23 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 17:19:23 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 17:19:29 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 17:19:30 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 17:19:30 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:19:30 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:19:30 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:19:32 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:19:32 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:19:34 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:19:39 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 17:19:40 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 17:19:45 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 17:19:46 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 17:19:46 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:19:46 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:19:46 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:19:52 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:19:52 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:20:00 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:20:04 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 17:20:04 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 17:20:04 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 17:20:22 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:20:22 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:20:30 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:20:40 INFO  com.truvideo.pages.DealerGroupPage - Verify that Dealer group are not assign to the user properly
+2025-01-06 17:28:29 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 17:28:29 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 17:28:31 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 17:28:35 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 17:28:35 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 17:28:35 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 17:28:37 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:28:37 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:28:38 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:28:43 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 17:28:44 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 17:28:50 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 17:28:51 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 17:28:51 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:28:51 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:28:51 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:28:53 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:28:53 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:28:54 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:29:00 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 17:29:01 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 17:29:06 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 17:29:07 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 17:29:07 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:29:07 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:29:07 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:29:12 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:29:12 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:29:21 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:29:24 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 17:29:24 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 17:29:24 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 17:29:41 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:29:42 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:29:50 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:29:53 INFO  com.truvideo.pages.DealerGroupPage - Dealer groups not assigned properly. Visible: None, None
+2025-01-06 17:30:55 INFO  com.truvideo.pages.LoginPage - Entered User Name  Transform@gmail.com
+2025-01-06 17:30:55 INFO  com.truvideo.pages.LoginPage - Entered Password    *********
+2025-01-06 17:30:57 INFO  com.truvideo.pages.LoginPage - Navigated to the Home Page
+2025-01-06 17:31:00 INFO  com.truvideo.pages.HomePage - Clicked on Other tab
+2025-01-06 17:31:00 INFO  com.truvideo.pages.HomePage - Mouse hover on Organization tab
+2025-01-06 17:31:01 INFO  com.truvideo.pages.HomePage - Clicked on Dealer Group tab
+2025-01-06 17:31:02 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:31:02 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:31:03 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:31:08 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Available list
+2025-01-06 17:31:09 INFO  com.truvideo.pages.DealerGroupPage - Demo main street toyota dealer is display in Selected list
+2025-01-06 17:31:15 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Available list
+2025-01-06 17:31:16 INFO  com.truvideo.pages.DealerGroupPage - Kenility Store dealer is display in Selected list
+2025-01-06 17:31:16 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:31:16 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:31:16 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:31:18 INFO  com.truvideo.pages.DealerGroupPage - click on Add Dealer Group button
+2025-01-06 17:31:18 INFO  com.truvideo.pages.DealerGroupPage - Navigate to Add dealer group page
+2025-01-06 17:31:20 INFO  com.truvideo.pages.DealerGroupPage - Enter dealer group name
+2025-01-06 17:31:25 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Available list
+2025-01-06 17:31:26 INFO  com.truvideo.pages.DealerGroupPage - Cdk Test dealer is display in Selected list
+2025-01-06 17:31:31 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Available list
+2025-01-06 17:31:32 INFO  com.truvideo.pages.DealerGroupPage - PhonePurchase dealer is display in Selected list
+2025-01-06 17:31:32 INFO  com.truvideo.pages.DealerGroupPage - Dealer Group created successfully
+2025-01-06 17:31:32 INFO  com.truvideo.pages.DealerGroupPage - 
+2025-01-06 17:31:32 INFO  com.truvideo.pages.DealerGroupPage - Not displaying message
+2025-01-06 17:31:38 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:31:38 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:31:46 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:31:50 INFO  com.truvideo.pages.DealerGroupPage - Dealer group assign successfully to the user
+2025-01-06 17:31:50 INFO  com.truvideo.pages.DealerGroupPage - User Update Successfully
+2025-01-06 17:31:50 INFO  com.truvideo.pages.DealerGroupPage - Again open user
+2025-01-06 17:32:10 INFO  com.truvideo.pages.DealerGroupPage - Enter user name
+2025-01-06 17:32:10 INFO  com.truvideo.pages.DealerGroupPage - Search user
+2025-01-06 17:32:18 INFO  com.truvideo.pages.DealerGroupPage - Edit user
+2025-01-06 17:32:28 INFO  com.truvideo.pages.DealerGroupPage - Dealer groups not assigned properly. Visible: None, None

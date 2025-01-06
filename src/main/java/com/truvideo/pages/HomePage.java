@@ -313,6 +313,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	public DealerGroupPage navigateToDealerGroupPage() {
+		page.waitForTimeout(3000);
 		if (!page.isVisible(organization_Header)) {
 			page.click(other_Header);
 			logger.info("Clicked on Other tab");
@@ -803,7 +804,7 @@ public class HomePage extends JavaUtility {
 		page.keyboard().type(prop.getProperty("anotherDealer"));
 		// page.fill(dealerSearch_TextBox, prop.getProperty("dealertoswitch"));
 		page.waitForTimeout(3000);
-		page.locator(getSearchedDealer(prop.getProperty("anotherDealer"))).first().click();
+		page.locator(getSearchedDealer(prop.getProperty("anotherDealer"))).click();
 		logger.info("Clicked on another dealer to switch");
 		List<Boolean> flags = new ArrayList<Boolean>();
 		if (page.locator(logInDealerLabel).textContent().contains(prop.getProperty("anotherDealer"))) {
