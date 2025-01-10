@@ -1,6 +1,5 @@
 package com.truvideo.pages;
 
-
 import static com.truvideo.factory.PlaywrightFactory.prop;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +13,7 @@ import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
+
 public class HomePage extends JavaUtility {
 	private Page page;
 
@@ -37,8 +37,7 @@ public class HomePage extends JavaUtility {
 	private String userGroupsTab = "a[href='/organization/usergroups/']";
 	private String savedVideoLibraryTab = "a[href='/crud/saved-video']";
 	private String devicesTab = "a[href='/device/']";
-	private String dealername ="a.dropdown-toggle span span:nth-child(1)";
-	
+	private String dealername = "a.dropdown-toggle span span:nth-child(1)";
 
 	// search
 	private String search_TextBox = "#search-header";
@@ -51,8 +50,9 @@ public class HomePage extends JavaUtility {
 	private String repairOrder_Message_checkBox = "#ro_message_type_search";
 	private String prospect_Message_checkBox = "#so_message_type_search";
 	private String reminder_checkBox = "#reminder_type_search";
-	//private String noResultFoundText="h4:has-text('No Results Found')";
-	private String noResultFoundText="#bd h4:has-text('No Results Found.')";
+	// private String noResultFoundText="h4:has-text('No Results Found')";
+	private String noResultFoundText = "#bd h4:has-text('No Results Found.')";
+
 	private String getRadio(String radioType) {
 		String radioElement = "label[class='radio']:has-text('" + radioType + "')";
 		return radioElement;
@@ -61,8 +61,9 @@ public class HomePage extends JavaUtility {
 	private String repairOrderDates = "#repair-order-results tbody tr td:nth-of-type(2)";
 	private String dateRange_CheckBox = "//input[@value='date_range']";
 	private String selectDateFrom_1st_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(1) td:nth-of-type(2)";
-	//private String selectDateFrom_2nd_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(6) td:nth-of-type(6)";
-	private String selectDateFrom_2nd_Calendar="div[class='datepicker-days'] tbody tr:nth-of-type(2) td:nth-of-type(7)";
+	// private String selectDateFrom_2nd_Calendar = "div[class='datepicker-days']
+	// tbody tr:nth-of-type(6) td:nth-of-type(6)";
+	private String selectDateFrom_2nd_Calendar = "div[class='datepicker-days'] tbody tr:nth-of-type(2) td:nth-of-type(7)";
 	private String fromDate_TextBox = "#date-range-from";
 	private String toDate_TextBox = "#date-range-to";
 
@@ -109,7 +110,7 @@ public class HomePage extends JavaUtility {
 	}
 
 	// User Account Dropdown
-	
+
 	private String logInUserLabel = "li.account-nav a span span:nth-child(3)";
 
 	public String getLoginUserLabel() {
@@ -131,8 +132,6 @@ public class HomePage extends JavaUtility {
 	private String dealerSearch_TextBox = "input#dealer-search-form";
 	private String logOut_Button = "#user-menu-list li a[class='logout-a']";
 	private String other = "//a[contains(text(), 'Other ')]";
-	
-	
 
 	private String getSearchedDealer(String dealerName) {
 		return "ul#dealerList li a:has-text('" + dealerName + "')";
@@ -148,15 +147,14 @@ public class HomePage extends JavaUtility {
 	public Multimediapage NavigateToOrderList() {
 		page.click(repairOrder_Header);
 		return new Multimediapage(page);
-	
+
 	}
-	
+
 	public OrderListPage navigateToOrderList() {
 		page.click(repairOrder_Header);
 		return new OrderListPage(page);
-	
+
 	}
-	
 
 	public boolean clickOn_Order_MessagesHeader() throws Exception {
 		navigateToMessageScreen_Order();
@@ -173,16 +171,15 @@ public class HomePage extends JavaUtility {
 		}
 	}
 
-	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception{
+	public MessageScreen_Order navigateToMessageScreen_Order() throws Exception {
 		page.waitForTimeout(5000);
-		if(page.locator(orderMessage_Header).isVisible()) {
+		if (page.locator(orderMessage_Header).isVisible()) {
 			page.click(orderMessage_Header);
 			return new MessageScreen_Order(page);
-			}
-		else {
+		} else {
 			throw new Exception("Message header Disable");
 		}
-		
+
 	}
 
 	public String clickOn_Prospect_Header() {
@@ -223,7 +220,7 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Reminder Header Tab");
 		return page.url();
 	}
-	
+
 	public ReminderPage navigateToReminder() {
 		page.waitForTimeout(4000);
 		if (!page.isVisible(reminder_Header)) {
@@ -232,7 +229,7 @@ public class HomePage extends JavaUtility {
 		page.click(reminder_Header);
 		return new ReminderPage(page);
 	}
-	
+
 	/*
 	 * public String clickOn_Organization() { navigateToSavedVideoLibrary();
 	 * logger.info("Clicked on Organization"); return page.title(); }'
@@ -360,16 +357,17 @@ public class HomePage extends JavaUtility {
 		logger.info("Clicked on Saved Video Library tab");
 		return new SavedVideoLibraryPage(page);
 	}
-	
+
 	private String acctDropDown = ".account-nav.dropdown";
 	private String logoutBtn = "ul#user-menu-list  li a.logout-a";
+
 	public void LogOutfunctionality() {
-		if(page.isVisible(acctDropDown)) {
+		if (page.isVisible(acctDropDown)) {
 			page.click(acctDropDown);
 			logger.info("Click on Drop Down");
 		}
 		page.click(logoutBtn);
-		logger.info("Click on LogOut button");	
+		logger.info("Click on LogOut button");
 	}
 
 	public String clickOnDevicesHeaderTab() {
@@ -386,9 +384,9 @@ public class HomePage extends JavaUtility {
 			logger.info("Clicked on Other tab");
 		}
 		page.waitForTimeout(3000);
-		//page.click(other_Header);
+		// page.click(other_Header);
 		page.locator(system_Header).hover(new HoverOptions().setTimeout(60000));
-		//page.locator(system_Header).hover();
+		// page.locator(system_Header).hover();
 		logger.info("Clicked on System tab");
 		page.waitForTimeout(2000);
 		page.locator(devicesTab).click();
@@ -577,7 +575,7 @@ public class HomePage extends JavaUtility {
 		}
 		page.click(dateRange_CheckBox); // Selecting date range with the help of calendar
 		page.click(fromDate_TextBox);
-		
+
 		page.locator(selectDateFrom_1st_Calendar).first().click();
 		String selected_StartDate = page.inputValue(fromDate_TextBox) + " 12:00 AM";
 		logger.info("Entered from date in the calendar & Entered date is : " + selected_StartDate);
@@ -621,17 +619,17 @@ public class HomePage extends JavaUtility {
 		page.click(search_Button);
 		logger.info("Clicked on search button when text is entered in the text box");
 		page.waitForTimeout(5000);
-		
-		if(page.locator(noResultFoundText).isVisible()) {
-		logger.info("Searched data has been not found in TruVideo");
-		return true;
-		}else {
+
+		if (page.locator(noResultFoundText).isVisible()) {
+			logger.info("Searched data has been not found in TruVideo");
+			return true;
+		} else {
 			logger.info("Something went wrong to find selected value ");
-			return false ;
+			return false;
 		}
-			
-		}
-	
+
+	}
+
 	public boolean listAsPerTheTextSearch() {
 		page.click(search_TextBox);
 		logger.info("Clicked on search text box");
@@ -651,7 +649,7 @@ public class HomePage extends JavaUtility {
 		page.click(search_Button);
 		logger.info("Clicked on search button when text is entered in the text box");
 		page.waitForTimeout(2000);
-		
+
 		List<String> allTextUnderRO = page.locator(tableRows).allInnerTexts();
 		List<Boolean> flags = new ArrayList<>();
 		int intCount = 1;
@@ -763,14 +761,13 @@ public class HomePage extends JavaUtility {
 		page.isVisible(dealerSearch_TextBox);
 		page.waitForTimeout(2000);
 		if (page.isVisible(accountSetting_TextButton) && page.isVisible(helpPage_TextButton)
-				&& page.isVisible(dealerId_Label) && page.isVisible(allRightReserved_Label) 
-				&& page.isVisible(dealerSearch_TextBox))
-			{
+				&& page.isVisible(dealerId_Label) && page.isVisible(allRightReserved_Label)
+				&& page.isVisible(dealerSearch_TextBox)) {
 			logger.info("User Dropdown is opened and all elements are available");
 			logger.info("Account setting & Help Page text button is available");
 			int colonIndex1 = page.textContent(dealerId_Label).indexOf(':');
 			logger.info("Dealer ID is : " + page.textContent(dealerId_Label).substring(colonIndex1 + 1).trim());
-			//int colonIndex2 = page.textContent(supportNumber_Label).indexOf(':');
+			// int colonIndex2 = page.textContent(supportNumber_Label).indexOf(':');
 //			logger.info(
 //					"Support Number is : " + page.textContent(supportNumber_Label).substring(colonIndex2 + 1).trim());
 			logger.info("AllRights Reserved Label and Dealer Search Text box is displayed");
@@ -897,8 +894,9 @@ public class HomePage extends JavaUtility {
 		}
 		logger.info("Badge for video For Review for all RO's is available");
 		String countOnBadge = page.textContent(forReviewBadge_OtherRO);
-		//page.click(forReviewBadge_OtherRO);
-		page.navigate("https://rc.truvideo.com/crud/repair-order?filterDate=&dateTo=12%2F17%2F2024&dateFrom=&keyword=&filterBy=ALL_FOR_REVIEW&dealer=Select+Dealer&orderOption=&orderFlow=&p=1");
+		// page.click(forReviewBadge_OtherRO);
+		page.navigate(
+				"https://rc.truvideo.com/crud/repair-order?filterDate=&dateTo=12%2F17%2F2024&dateFrom=&keyword=&filterBy=ALL_FOR_REVIEW&dealer=Select+Dealer&orderOption=&orderFlow=&p=1");
 		page.waitForURL(url -> url.contains("ALL_FOR_REVIEW"));
 		logger.info("Clicked on Badge for video For Review for all RO's");
 		Locator tableRow = page.locator(tableRows);
@@ -1178,19 +1176,16 @@ public class HomePage extends JavaUtility {
 			return false;
 		}
 	}
-	
+
 	public void Verify_dealer_Name(String name) {
 		logger.info("Verify Dealer Name");
 		page.waitForCondition(() -> page.locator(dealername).isVisible());
-		
-		if(dealername.equals(name)){
+
+		if (dealername.equals(name)) {
 			logger.info("DEALER IS CORRECT");
-		}
-		else {
+		} else {
 			logger.info("DEALER IS DIFFRENT");
-			
+
 		}
 	}
 }
-
-

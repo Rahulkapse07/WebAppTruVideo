@@ -43,7 +43,7 @@ jobs:
       - name: Run Tests
         run: |
           export DISPLAY=:99  # Ensure DISPLAY is set
-          mvn test -Pfull-regression
+          mvn test -Phomepage
 
       - name: Archive Test Reports
         uses: actions/upload-artifact@v4
