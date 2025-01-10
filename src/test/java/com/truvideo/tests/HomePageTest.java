@@ -187,7 +187,7 @@ public class HomePageTest extends BaseTest {
 
 	@Test(priority = 27, description = "")
 	public void verifyHelpPageOpenedInAnotherTab() {
-		String actualTitle = homepage.clickOnHelpPage_TextButton();
+	 homepage.clickOnHelpPage_TextButton();
 		// Assert.assertEquals(actualTitle, AppConstants.HELP_PAGE_TITLE);
 	}
 

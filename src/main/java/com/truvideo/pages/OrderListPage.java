@@ -1,5 +1,7 @@
 package com.truvideo.pages;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +17,6 @@ import com.truvideo.mobilepages.UserListPage;
 import com.truvideo.utility.JavaUtility;
 
 import io.appium.java_client.AppiumDriver;
-
-import static com.truvideo.factory.PlaywrightFactory.prop;
 
 public class OrderListPage extends JavaUtility {
 	private Page page;
@@ -206,6 +206,7 @@ public class OrderListPage extends JavaUtility {
 	}
 
 	public boolean closeRepairOrder() {
+		
 		page.click(myROs_FilterButton);
 		logger.info("Clicked on My RO filter");
 		page.waitForURL(url -> url.contains("MY_RO"));
@@ -229,6 +230,7 @@ public class OrderListPage extends JavaUtility {
 		checkBox.click();
 		logger.info("selected first RO's checkox in My RO's Filter");
 		page.click(closeRepairOrder_Button);
+		page.waitForTimeout(10000);
 		logger.info("Clicked on 'Close Repair Order' Button when One RO is selected to closed'");
 		page.waitForTimeout(1000);
 		page.click(allClosed_FilterButton); // open closed RO list to verify
@@ -370,7 +372,7 @@ public class OrderListPage extends JavaUtility {
 		switch (text) {
 		case "Existing":
 			page.fill(phoneNumber_Field, "7812059487");
-			logger.info("Phone number filled : " + phoneNumber);
+			logger.info("Phone number filled : " + "7812059487");
 			break;
 		case "New":
 			page.fill(phoneNumber_Field, phoneNumber);
@@ -398,6 +400,57 @@ public class OrderListPage extends JavaUtility {
 			page.waitForSelector(tableRows);
 			Locator tableRow = page.locator(tableRows);
 			tableRow.locator("td:has-text('" + newRoNumber + "')").first().click();
+			return newRoNumber;
+		}
+	}
+	public String addRepairOrdertest(String text) {
+		page.click(addRepairOrder_Button);
+		page.waitForURL(url -> url.contains(AppConstants.ADD_ORDER_URL));
+		logger.info("Clicked on Add Repair Order button");
+		page.waitForLoadState();
+		newRoNumber = "Auto" + getRandomString(5);
+		page.fill(repairOrderNumber_Field, newRoNumber);
+		logger.info("Repair Order Number filled : " + newRoNumber);
+		String firstName = "Automation";
+		page.fill(firstName_Field, firstName);
+		logger.info("First Name filled : " + firstName);
+		String lastName = "Last" + getRandomString(4);
+		page.fill(lastName_Field, lastName);
+		logger.info("Last Name filled : " + lastName);
+		page.click(phoneNumber_Field);
+		String phoneNumber = "781205" + getRandomNumber(4);
+
+		// This method use for to switch between Random number and Existing number
+
+		switch (text) {
+		case "Existing":
+			page.fill(phoneNumber_Field, "7812059487");
+			logger.info("Phone number filled : " + "7812059487");
+			break;
+		case "New":
+			page.fill(phoneNumber_Field, phoneNumber);
+			logger.info("Phone number filled : " + phoneNumber);
+			break;
+
+		default:
+			break;
+		}
+		String emailId = "Automated" + getRandomString(4) + "@gmail.com";
+		page.fill(emailId_Field, emailId);
+		logger.info("Email Id filled : " + emailId);
+		// Check for technician dropdown available
+
+		if (!page.locator(technician_Dropdown).isVisible()) {
+			page.click(save_Button);
+			logger.info("Clicked on Save Button");
+			page.waitForSelector(tableRows);
+			return newRoNumber;
+		} else {
+			page.selectOption(technician_Dropdown, prop.getProperty("MobileUserLogin").trim());
+			page.waitForTimeout(2000);
+			page.click(save_Button);
+			logger.info("Clicked on Save Button");
+			page.waitForSelector(tableRows);
 			return newRoNumber;
 		}
 	}

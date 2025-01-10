@@ -1,5 +1,7 @@
 package com.truvideo.pages;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.regex.Matcher;
@@ -14,7 +16,6 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
-import static com.truvideo.factory.PlaywrightFactory.prop;
 
 public class ForgotPasswordPage extends JavaUtility {
 	private Page page;

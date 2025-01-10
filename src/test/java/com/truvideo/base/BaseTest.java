@@ -1,15 +1,21 @@
 package com.truvideo.base;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.BrowserContext;
-import com.truvideo.factory.PlaywrightFactory;
-import com.truvideo.factory.SessionManagement;
-import org.testng.annotations.*;
+import static com.truvideo.factory.SessionManagement.clearSessionFile;
 
 import java.util.Properties;
 
-import static com.truvideo.factory.SessionManagement.clearSessionFile;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
+import com.microsoft.playwright.Page;
+import com.truvideo.factory.PlaywrightFactory;
+import com.truvideo.factory.SessionManagement;
 
 public class BaseTest {
 
@@ -65,7 +71,7 @@ public class BaseTest {
             System.err.println("Error during browser initialization: " + e.getMessage());
         }
     }
-
+    
     protected Page getPage() {
         return PlaywrightFactory.getCurrentPage();
     }
@@ -78,7 +84,6 @@ public class BaseTest {
                 try {
                     page.waitForTimeout(5000); // Optional: Added a short wait to complete listener functions
                     page.close();
-                    System.out.println("Page closed successfully.");
                 } catch (Exception e) {
                     System.err.println("Error closing page: " + e.getMessage());
                 }
@@ -87,7 +92,6 @@ public class BaseTest {
             if (context != null) {
                 try {
                     context.close();
-                    System.out.println("BrowserContext closed successfully.");
                 } catch (Exception e) {
                     System.err.println("Error closing BrowserContext: " + e.getMessage());
                 }

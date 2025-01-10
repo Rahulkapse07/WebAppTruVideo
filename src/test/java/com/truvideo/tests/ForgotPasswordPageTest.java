@@ -2,14 +2,13 @@ package com.truvideo.tests;
 
 import java.io.IOException;
 
-
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.LoadState;
-import com.truvideo.pages.DevicesPage;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.mailosaur.MailosaurException;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.truvideo.base.BaseTest;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.pages.ForgotPasswordPage;

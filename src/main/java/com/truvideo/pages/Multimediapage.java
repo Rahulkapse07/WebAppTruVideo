@@ -3,9 +3,6 @@ package com.truvideo.pages;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.mail.Flags.Flag;
-
-import org.apache.poi.hpsf.Array;
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.FrameLocator;

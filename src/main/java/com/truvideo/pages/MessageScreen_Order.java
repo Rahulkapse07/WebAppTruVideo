@@ -1,5 +1,7 @@
 package com.truvideo.pages;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,6 @@ import javax.mail.SendFailedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
-import org.testng.reporters.FailedReporter;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -20,7 +21,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.SelectOption;
 import com.truvideo.factory.PlaywrightFactory;
 import com.truvideo.utility.JavaUtility;
-import static com.truvideo.factory.PlaywrightFactory.prop;
+
 public class MessageScreen_Order extends JavaUtility {
 
 	private Page page;
@@ -39,8 +40,6 @@ public class MessageScreen_Order extends JavaUtility {
 	private String createIcon = "mat-icon.profile__action-fab-icon";
 	private String message_Filter_Icon = "//div[@class='profile__actions']//button//span[3]";
 	private String message_Search_conversation = "input[id='mat-input-0']";
-	private String message_filter_buttons = "span.mat-mdc-chip-focus-overlay";
-	private String message_filter_Whatsapplable = ".channels-list-item__status-phone .mat-icon";
 	private String message_start_convers_buttn = "button.profile__action-fab > span.mat-mdc-button-persistent-ripple";
 	private String startconversationBtn = ".chat-input__button span.mdc-button__label";
 	private String countryoptionbtn = ".mat-mdc-form-field.prefix-form-field ";
@@ -50,9 +49,6 @@ public class MessageScreen_Order extends JavaUtility {
 	private String message_Search_icon = "#profile div.avatar-container";
 	private String startConverSMS_Whatsapp_filterbuttn = "form mat-form-field:nth-child(4) ";
 
-	private String startConverSMS_Whatsapp_text = ".mat-mdc-option span";
-	private String startConverSMS_Whatsapp = "#mat-select-0-panel mat-option span:has-text('Whatsapp')";
-	private String startConverSMS_Sms = "#mat-option-0:has-text('SMS')";
 	private String conversationInfo = "#header-info p";
 	private String conversationInfoname = "#first-content div.info-container__content__title";
 	private String converstiontitlename = ".chat-header__main p.chat-header__title";
@@ -60,8 +56,6 @@ public class MessageScreen_Order extends JavaUtility {
 
 	private String searchFilter2 = ".channels-search div.mat-mdc-text-field-wrapper div.mat-mdc-form-field-focus-overlay ";
 	private String searchFilter = "#mat-input-0";
-	private String searchbtnSvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-prefix svg";
-	private String searchbtnfiltersvg = ".mat-mdc-form-field-flex.ng-tns-c3736059725-2 .mat-mdc-form-field-icon-suffix svg";
 
 	private String conversation_header = ".info-container__content div.avatar-container";
 	private String conversation_GotoRo_btn = "button.order-button";
@@ -71,12 +65,10 @@ public class MessageScreen_Order extends JavaUtility {
 	private String rochannelName = "div.chat-header__main p.chat-header__title";
 
 	private String conversationinactivemess = "div.chat-body__blocked-message.ng-star-inserted";
-	private String ceactivatebtn = ".chat-input__options div";
 	private String messagechatfield = "#mat-input-1";
 	private String nOconversationStartmessasge = ".chat-empty-container.ng-star-inserted h1";
 	// private String nOconversationStartmessasge = "#header-info p";
 	private String channalList = ".channels-list__section.list-all .ng-star-inserted .channels-list-item";
-	private String channelscount = ".channels-list__section.list-all .channels-list-item__main";
 
 	private String messageAttachment_btn = "button.mdc-icon-button.mat-mdc-icon-button input[type='file']";
 	private String attachmentPath = "src/main/resources/Data/image/testimage.png";
@@ -86,6 +78,8 @@ public class MessageScreen_Order extends JavaUtility {
 	private String sendOriginal_btn = ".mdc-button.mdc-button--outlined.mat-mdc-outlined-button span.mat-mdc-focus-indicator";
 
 	private String conversationTextlabel = ".chat-header__main p.chat-header__title";
+	private String welcomemessage = "div.message div.ng-star-inserted p";
+	private String Welcome_message = "welcome";
 
 	public boolean VerifyAll_Elements() {
 		logger.info("Verify Visible Elements");
@@ -178,16 +172,10 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage homePage = new HomePage(page);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
-		List<Boolean> flags = new ArrayList<>();
-		SoftAssert softAssert = new SoftAssert();
 		OrderListPage OLP = new OrderListPage(page);
-		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
-
 		logger.info("Navigate to repair order header");
 		homePage.clickOn_RepairOrder_Header();
-		String RONumber = OLP.addRepairOrder("Existing");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		OLP.addRepairOrder("Existing");
 		page.waitForURL(url -> url.contains("order/service/view"));
 		page.waitForTimeout(5000);
 		String ROChannelname = frame.locator(rochannelName).innerText().toLowerCase().trim();
@@ -627,9 +615,7 @@ public class MessageScreen_Order extends JavaUtility {
 				+ ") span.channels-list-item__unreads";
 	}
 
-	private String MessageReDotNotification = "div.channels-list-item__unreads-container.ng-star-inserted span";
 	private String Messagebadge = "span#my-service-message span";
-	private String Messagebandagtotalcount = "#all-service-message a span";
 	private String Markbuttn = "div.info-container__content__actions.ng-star-inserted";
 	private String Readmark = "span.info-container__content__actions__unreads";
 	private String MarkedChat = ".channels-list__section.list-all ngx-channels-list-item span.channels-list-item__unreads";
@@ -637,9 +623,8 @@ public class MessageScreen_Order extends JavaUtility {
 	public boolean VerifyReadUnreadNotification() throws Exception {
 
 		FrameLocator iframe = page.frameLocator(messageIframe);
-		List<Boolean> flags = new ArrayList<>();
 		page.waitForTimeout(10000);
-		
+
 		if (!page.locator(Messagebadge).isVisible()) {
 
 			logger.info("NO UNREAD MESSAGES ARE PRESENT");
@@ -678,7 +663,7 @@ public class MessageScreen_Order extends JavaUtility {
 					}
 
 				} else {
-                    logger.info("Badge count is updating");
+					logger.info("Badge count is updating");
 					iframe.locator(filterButton("Unread")).click();
 					int Markedcount = iframe.locator(MarkedChat).count();
 					page.waitForTimeout(5000);
@@ -958,8 +943,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		HP.clickOn_RepairOrder_Header();
 		String RONumber = OLP.addRepairOrder("New");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
 		page.waitForURL(url -> url.contains("order/service/view"));
 		// page.waitForCondition(() ->
 		// orderDetailsiframe.locator(saveButton).isVisible());
@@ -972,7 +955,6 @@ public class MessageScreen_Order extends JavaUtility {
 		logger.info("Changes Saved");
 		page.waitForTimeout(5000);
 		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText().toLowerCase().trim();
-		String customername = orderDetailsiframe.locator(customerName).innerText().toLowerCase().trim();
 		String Ronumber = orderDetailsiframe.locator(roNumber).innerText();
 		String channelownername = orderDetailsiframe.locator(channelOwnername).innerText().toLowerCase().trim();
 		try {
@@ -1011,8 +993,6 @@ public class MessageScreen_Order extends JavaUtility {
 
 	}
 
-	private String channelownername = ".chat-header__main .chat-header__phone p:nth-child(4) ";
-
 	public void verifychannelownereditRo() throws Exception {
 		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage HP = new HomePage(page);
@@ -1020,9 +1000,6 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		HP.clickOn_RepairOrder_Header();
 		String RONumber = OLP.addRepairOrder("Existing");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
-		page.waitForURL(url -> url.contains("order/service/view"));
 		// page.waitForCondition(() ->
 		// orderDetailsiframe.locator(saveButton).isVisible());
 		page.waitForTimeout(15000);
@@ -1034,7 +1011,6 @@ public class MessageScreen_Order extends JavaUtility {
 		logger.info("Changes Saved");
 		page.waitForTimeout(5000);
 		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText().toLowerCase().trim();
-		String customername = orderDetailsiframe.locator(customerName).innerText().toLowerCase().trim();
 		String Ronumber = orderDetailsiframe.locator(roNumber).innerText();
 		String channelownername = orderDetailsiframe.locator(channelOwnername).innerText().toLowerCase().trim();
 		try {
@@ -1071,8 +1047,6 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	private String RoMobnumber = ".chat-header__main .chat-header__phone p:nth-child(2)";
-	private String Conversationinfo = ".chat-header__drop-down button";
-	private String ConversationInfo = "#first-content .info-container__content__title";
 
 	public void verifychannelname(String filter) throws Exception {
 		FrameLocator iframe = page.frameLocator(messageIframe);
@@ -1083,10 +1057,7 @@ public class MessageScreen_Order extends JavaUtility {
 		FrameLocator orderDetailsiframe = page.frameLocator(orderDetailsIFrame);
 		logger.info("Navigate to repair order header");
 		HP.clickOn_RepairOrder_Header();
-		String RONumber = OLP.addRepairOrder("Existing");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
-		page.waitForURL(url -> url.contains("order/service/view"));
+		OLP.addRepairOrder("Existing");
 		page.waitForTimeout(5000);
 		String RoMobileno = orderDetailsiframe.locator(RoMobnumber).innerText();
 		String ROChannelname = orderDetailsiframe.locator(rochannelName).innerText();
@@ -1143,15 +1114,16 @@ public class MessageScreen_Order extends JavaUtility {
 					} catch (ElementNotInteractableException e) {
 						logger.info("element is not clickable right now");
 						e.printStackTrace();
-						flags.add(true);
+						flags.add(false);
 					}
 				} else {
 					flags.add(false);
 					logger.info("Element not found");
 				}
-				page.waitForTimeout(4000);
-				if (!iframe.locator(ConversationInfo).isVisible()) {
-					iframe.locator(Conversationinfo).click();
+				page.waitForTimeout(8000);
+				if (!iframe.locator(conversationInfoname).isVisible()) {
+					logger.info("Button is not visible");
+					iframe.locator(conversationInfobn).click();
 				}
 				String newChannelname = iframe.locator(rochannelName).innerText();
 				String newchannelname2 = iframe.locator(conversationInfoname).innerText();
@@ -1192,20 +1164,15 @@ public class MessageScreen_Order extends JavaUtility {
 
 	public void verify_videolink_functionality(String filter) {
 
-		FrameLocator iframe = page.frameLocator(messageIframe);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		List<Boolean> flags = new ArrayList<>();
 		SoftAssert softAssert = new SoftAssert();
-
 		HomePage HP = new HomePage(page);
 		OrderListPage OLP = new OrderListPage(page);
 		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
-
 		logger.info("Navigate to repair order header");
 		HP.clickOn_RepairOrder_Header();
-		String RONumber = OLP.addRepairOrder("Existing");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
+		OLP.addRepairOrder("Existing");
 		page.waitForURL(url -> url.contains("order/service/view"));
 		page.waitForTimeout(5000);
 		if (frame.locator(roStatusBar).textContent().contains("New")) {
@@ -1272,7 +1239,22 @@ public class MessageScreen_Order extends JavaUtility {
 		}
 		flags.add(RO.checkActivity("Added video"));
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
-		RO.sendVideoToCustomer(filter);
+		page.waitForTimeout(2000);
+		clickOperationButton("Send to customer");
+		RepairOrderDetailPage order = new RepairOrderDetailPage(page);
+		order.selectChannelToPerformAction(filter); // Select channel to send video
+		flags.add(order.verifyNavigationToChannel(filter));// Navigation to channel after video sent
+		softAssert.assertTrue(!flags.contains(false), "Verify Navigation To selected channel");
+		flags.clear();
+		flags.add(order.checkStatus("Sent")); // verify status whether Sent or Not
+		softAssert.assertTrue(!flags.contains(false), "Verify Status changed to sent");
+		flags.clear();
+		softAssert.assertTrue(order.verifyChangedStatusOnROList("Sent"), "Verify Status changed to Sent on RO List");
+		flags.add(order.checkLastMessageInConversation("video")); // check last message is video end-link or Not
+		flags.clear();
+		softAssert.assertTrue(!flags.contains(false), "Verify last message is video endlink");
+		flags.add(order.checkActivity("sent to customer"));
+		softAssert.assertTrue(!flags.contains(false), "Verify activity update after video sent");
 		String lastMessage = frame.locator(messages).last().textContent();
 		if (lastMessage.contains("video") || lastMessage.contains("Video")) {
 			logger.info("Last message is video Endlink");
@@ -1302,26 +1284,19 @@ public class MessageScreen_Order extends JavaUtility {
 	}
 
 	public void Verify_welcome_message() {
-		FrameLocator iframe = page.frameLocator(messageIframe);
 		HomePage homePage = new HomePage(page);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		OrderListPage OLP = new OrderListPage(page);
-		RepairOrderDetailPage RO = new RepairOrderDetailPage(page);
 		logger.info("Navigate to repair order header");
 		homePage.clickOn_RepairOrder_Header();
-		String RONumber = OLP.addRepairOrder("New");
-		Locator tableRow = page.locator(tableRows);
-		tableRow.locator("td:has-text('" + RONumber + "')").first().click();
-		page.waitForURL(url -> url.contains("order/service/view"));
+		OLP.addRepairOrder("New");
+		page.locator(tableRows);
 		page.waitForTimeout(30000);
-
-		String Welcomemessage = frame.locator("div.message div.ng-star-inserted p").last().innerText();
-		String Welcome_message = "welcome";
-
+		String Welcomemessage = frame.locator(welcomemessage).last().innerText();
 		if (Welcomemessage.contains(Welcome_message)) {
 			logger.info("Welcome message present");
 		} else {
-			logger.info("jhdvasgvd");
+			logger.info("Failed");
 		}
 	}
 }

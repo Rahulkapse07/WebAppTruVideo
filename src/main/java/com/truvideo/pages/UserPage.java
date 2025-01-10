@@ -7,7 +7,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.mailosaur.MailosaurClient;

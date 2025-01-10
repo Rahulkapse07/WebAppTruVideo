@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.mail.SendFailedException;
+
 import org.testng.SkipException;
 import org.testng.asserts.SoftAssert;
 
@@ -105,13 +107,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	// private String addItem_Button = ".items__input-container
 	// button:has-text('add')";
 	private String addItem_Button = "//button //mat-icon[text()='add']";
-	private String removeItem_Button = ".items__input-container button:has-text('backspace')";
 	private String items_DropdownList = ".tru-dropdown__content-items";
-	private String deleteItem_Button = ".actions__div.ng-star-inserted button mat-icon:has-text('delete')";
-	private String editItem_Button = ".items__info-data__row-data button.mdc-button :has-text('edit')";
 	private String preview_Button = ".mdc-button__label:has-text('Preview')";
-	private String itemsAmount = "app-estimate-invoice .items__container p.items__info-data__row-data:nth-child(3)";
-	private String totalAmount = ".invoice-amount";
 	private String buttons_PreviewScreen = ".items__container-actions button.mr-5";
 	private String hideFromCustomer_Button = "button:has-text('Hide from customer')";
 	private String closeEstimate_Button = "button:has-text('Close Estimate')";
@@ -126,14 +123,12 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String next_Button = "app-items button:has-text('Next')";
 	private String internalNotes_TextBox = "form input[placeholder='Write an internal note.']";
 	private String customerNotes_TextBox = "form input[placeholder='Write a note for the customer.']";
-	// private String rowCount = "div.items__info-container div
-	// button:has-text('delete')";
+
 	private String rowCount = ".actions__div.ng-star-inserted button  mat-icon:has-text('delete')";
 	private String windowTitle = "mat-card-content .mat-toolbar span";
 	private String toaster_Message = "' Amount is required '";
 	private String back_Button = ".mdc-button__label:has-text('Back')";
 	private String amount_TextField_Payment = "app-price tru-text-input input";
-	private String addedNote_ReviewScreen = "app-invoice .invoice-notes";
 	private String final_Amount = ".invoice-total__container .invoice-amount";
 	private String editButton_ReviewScreen = "app-invoice button:has-text('Edit')";
 	private String printButton_ReviewScreen = "app-invoice button:has-text('Print')";
@@ -141,7 +136,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String lastMessageEndlink = "ngx-message div.message a";
 	private String playButton = "button[title='Play Video']";
 	private String authoriseWork_Button = "button:has-text('Authorize Work')";
-	private String addRepairOrder_Button = "#repair-order-add";
+
 	// Edit RO
 
 	private String getRO(String createdRO) {
@@ -240,7 +235,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		addVideoToOrder();
 		if (!frame.locator(added_Video).first().isVisible()) {
-		
+
 			logger.info("Condition not satisfied for Send Video : video not added to RO");
 			throw new SkipException("video not added to RO");
 		}
@@ -371,7 +366,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 	}
 
 	public void sendEstimate(String channelSelected) {
-		
+
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		activitiesOfCreateEstimateWindow();
 		try {
@@ -439,7 +434,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		SoftAssert softAssert = new SoftAssert();
 		OrderListPage orderpage = new OrderListPage(page);
 		orderpage.addRepairOrder("Existing");
-		
+
 		try {
 			logger.info("Waiting for the Payment button to be visible");
 			page.waitForCondition(() -> frame.locator(payment_Button).isVisible());
@@ -550,7 +545,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		SoftAssert softAssert = new SoftAssert();
 		createPayment("SMS");
-		
+
 		try {
 			logger.info("Waiting for the Payment button to be visible");
 			page.waitForCondition(() -> frame.locator(payment_Button).isVisible());
@@ -597,8 +592,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 		SoftAssert softAssert = new SoftAssert();
 		OrderListPage order = new OrderListPage(page);
 		order.addRepairOrder("New");
-	  //Sent video to customer
-		
+		// Sent video to customer
+
 		frame.locator(repairOrder_PageHeading).waitFor();
 		if (frame.locator(roStatusBar).textContent().contains("New")) {
 			logger.info("RO is New & No media is added");
@@ -664,11 +659,11 @@ public class RepairOrderDetailPage extends JavaUtility {
 		flags.add(checkActivity("Added video"));
 		softAssert.assertTrue(!flags.contains(false), "Verify add video function");
 		softAssert.assertAll();
-		
-		//Sent video to customer
-		
+
+		// Sent video to customer
+
 		if (!frame.locator(added_Video).first().isVisible()) {
-			
+
 			logger.info("Condition not satisfied for Send Video : video not added to RO");
 			throw new SkipException("video not added to RO");
 		}
@@ -693,7 +688,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			//Auto-generated catch block
+			// Auto-generated catch block
 			e.printStackTrace();
 		}
 		String lastMessage = frame.locator(messages).last().textContent();
@@ -1088,7 +1083,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 	}
 
-	private void selectChannelToPerformAction(String channelSelected) {
+	public void selectChannelToPerformAction(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		page.waitForTimeout(2000);
 		if (frame.locator(selectChannelWindow).isVisible() && channelSelected.contains("WhatsApp")) {
@@ -1120,7 +1115,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 	}
 
-	private boolean verifyNavigationToChannel(String channelSelected) {
+	public boolean verifyNavigationToChannel(String channelSelected) {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		boolean flag = false;
 		page.waitForTimeout(20000);
@@ -1158,6 +1153,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 				String activityText = frame.locator(activities).nth(0).textContent();
 				logger.info("RO activity is: " + activityText);
 				if (activityText.contains(activityLog)) {
+					System.out.println(activityLog);
 					flag = true;
 					break;
 				}
@@ -1197,7 +1193,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		}
 	}
 
-	private boolean checkLastMessageInConversation(String messageKeyWords) {
+	public boolean checkLastMessageInConversation(String messageKeyWords) {
 		boolean flag = false;
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		int retryCount = 3;
@@ -1571,7 +1567,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		String insightText = frame.locator(noInsightText).innerText().trim();
 		softAssert.assertTrue(insightText.contains("There's no insights yet"), "Verify No insight showing");
 		frame.locator(closeInsightWindow).click();
-		//copyLinktoClipboard();
+		// copyLinktoClipboard();
 		page.waitForTimeout(2000);
 		clickOperationButton("Send to customer");
 		selectChannelToPerformAction("SMS"); // Select channel to send video
@@ -1593,7 +1589,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			//Auto-generated catch block
+			// Auto-generated catch block
 			e.printStackTrace();
 		}
 		String lastMessage = frame.locator(messages).last().textContent();
@@ -1656,24 +1652,9 @@ public class RepairOrderDetailPage extends JavaUtility {
 		softAssert.assertTrue(verifyChangedStatusOnROList("Viewed"), "verify viewed status on RO list");
 		page.waitForTimeout(2000);
 		softAssert.assertTrue(checkActivity("Customer watched video"), "verify activity for video view");
-//		page.waitForTimeout(4000);
-//		logger.info("checking console 1");
-//		page.onConsoleMessage(consoleMessage -> {
-//			String messageText = consoleMessage.text();
-//			if (messageText.contains("New Notification triggered")) {
-//				System.out.println("Captured Notification: " + messageText);
-//				logger.info("Video Viewed popup notifications triggered and verified in console");
-//
-//			} else {
-//				logger.info("Video Viewed popup notifications NOT triggered and verified in console");
-//			}
-//		});
 		logger.info("checking console 2");
 		softAssert.assertAll();
-		
-		
-		
-		
+
 		frame.locator(insightButton).click();
 		logger.info("Verifying Without customer opened the Video Insight data is now showing");
 		String InsightData = frame.locator(insightDataafterVideoView).innerText().trim();
@@ -1682,12 +1663,10 @@ public class RepairOrderDetailPage extends JavaUtility {
 		frame.locator(closeInsightWindow).click();
 		logger.info("Insight window closed");
 		softAssert.assertAll();
-		// There's no insights yet
+		
 	}
 
 	public boolean detailsFieldonRODetails() {
-
-		page.waitForTimeout(9000);
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		OrderListPage order = new OrderListPage(page);
 		order.addRepairOrder("New");
@@ -1733,11 +1712,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 			frame.locator(checkbox).click();
 			logger.info("Checked");
 		}
-
-//		if (!frame.locator(checkbox).isChecked()) {
-//			frame.locator(checkbox).click();
-//			logger.info("Checked");
-//		}
 		logger.info("Click on checkbox ");
 		String number = "" + getRandomNumber(2);
 		frame.locator(original_Amt).fill(number);
@@ -1774,20 +1748,8 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String RequiresImmediateAttention = "div.checklist-result-section_title.red";
 	private String MayRequireFutureAttention = "div.checklist-result-section_title.yellow";
 	private String FullInspectionResults = "div.checklist-result-section_title.ng-star-inserted";
-	private String Interior_Exterior1 = "#mat-expansion-panel-header-10";
-	private String AdditionalRecommendations1 = "#mat-expansion-panel-header-11";
-	private String OpenRecalls = "#mat-expansion-panel-header-12";
-	private String Interior_Exterior2 = "#mat-expansion-panel-header-13";
-	private String UnderHood = "#mat-expansion-panel-header-14";
-	private String UnderVehicle = "#mat-expansion-panel-header-15";
-	private String AdditionalRecommendations2 = "#mat-expansion-panel-header-16";
-	private String CheckTires_MeasureTire_TreadDepth = "#mat-expansion-panel-header-17";
-	private String MeasureFront_RearBrakeLinings = "#mat-expansion-panel-header-18";
-	private String CheckBatteryPerformance = "#mat-expansion-panel-header-19";
 	private String Activity = "div p.checklist-activity_title";
 
-	// div.checklist-footer div button
-	// span.mat-mdc-button-persistent-ripple.mdc-button__ripple
 	public boolean openInspection() throws InterruptedException {
 		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
 		List<Boolean> flags = new ArrayList<>();
@@ -2254,11 +2216,6 @@ public class RepairOrderDetailPage extends JavaUtility {
 	private String sendEnabled = ".mat-icon.notranslate.chat-input__icons.chat-input__icons__send";
 	private String message = ".message-container.message-container-incoming.ng-star-inserted";
 	private String conversation_Info = "p.info-container__header__title";
-	private String infoAvatar = "div.info-container__content__image";
-	private String orderNameDate = "div.info-container__content__title";
-	private String muteChannel = "div.info-container__content__actions.ng-star-inserted:nth-child(1)";
-	private String markasUnread = "div.info-container__content__actions.ng-star-inserted:nth-child(2)";
-	private String addParticipant = "div.info-container__content.ng-star-inserted";
 
 	public boolean repairOrderChatFunctionality() throws InterruptedException {
 
@@ -2412,4 +2369,83 @@ public class RepairOrderDetailPage extends JavaUtility {
 //
 //	}
 
-}
+	private String Messagebadge = "span#my-service-message span";
+	private String Markbuttn = "div.info-container__content__actions.ng-star-inserted";
+	private String Readmark = "span.info-container__content__actions__unreads";
+	private String conversationInfobn = ".chat-header__drop-down button:nth-child(2) span.mat-mdc-button-touch-target";
+	public void verifyMarkandUnmarkfunctionality() throws Exception {
+		FrameLocator frame = page.frameLocator(orderDetailsIFrame);
+		OrderListPage order = new OrderListPage(page);
+		page.waitForLoadState();
+		order.addRepairOrder("New");
+		logger.info("New Ro created");
+		page.waitForTimeout(15000);
+		page.waitForCondition(()->frame.locator(conversationInfobn).isVisible());
+		if (frame.locator(conversationInfobn).isVisible()) {
+			frame.locator(conversationInfobn).click();
+
+			page.waitForCondition(()->page.locator(Messagebadge).isVisible());
+			if (!page.locator(Messagebadge).isVisible()) {
+				int count = 0;
+				System.out.println("gfxfgx");
+				String value = frame.locator(Markbuttn).innerText();
+				if (value.contains("Mark as unread")) {
+					frame.locator(Readmark).click();
+					page.waitForTimeout(1500);
+					logger.info("Chat is Marked as :-" + "unread");
+					count = count++;
+				}
+
+				String messagecount = page.locator(Messagebadge).innerText();
+				int initialcount = Integer.parseInt(messagecount);
+				logger.info("Count " + initialcount + "after mark chat");
+				if (count == initialcount) {
+					logger.info("Badge count is increasing correctly");
+				} else {
+					page.reload();
+					String messagecountref = page.locator(Messagebadge).innerText();
+					int initialcountref = Integer.parseInt(messagecountref);
+					if (count == initialcountref) {
+						logger.info("Badge count is increasing correctly after Refresh the page");
+						throw new SendFailedException("Badge count increase but after refresh");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+
+				}
+			} else {
+				String messagecount = page.locator(Messagebadge).innerText();
+				int initialcount = Integer.parseInt(messagecount);
+				String value = frame.locator(Markbuttn).innerText();
+				if (value.contains("Mark as unread")) {
+					frame.locator(Readmark).click();
+					page.waitForTimeout(1500);
+					logger.info("Chat is Marked as :-" + "unread");
+					
+				}
+
+				String count = page.locator(Messagebadge).innerText();
+				int finalcount = Integer.parseInt(count);
+				logger.info("Count " + initialcount + "after mark chat");
+				if ((initialcount + 1) == finalcount) {
+					logger.info("Badge count is increasing correctly");
+				} else {
+					page.reload();
+					String messagecountref = page.locator(Messagebadge).innerText();
+					int initialcountref = Integer.parseInt(messagecountref);
+					if ((initialcount + 1) == initialcountref) {
+						logger.info("Badge count is increasing correctly after Refresh the page");
+						throw new SendFailedException("Badge count increase but after refresh");
+					} else {
+						throw new SendFailedException("Badge count is not incresing correctly");
+					}
+
+				}
+			}
+		}
+			else {
+				System.out.println("cbhusdbchjdsb");
+			}
+		}
+	}
+

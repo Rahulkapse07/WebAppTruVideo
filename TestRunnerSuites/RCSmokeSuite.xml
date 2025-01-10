@@ -40,7 +40,7 @@
 
 	<test name="Message Sales">
 		<classes>
-			<class name="com.truvideo.tests.Message_RepairOrdertest">
+			<class name="com.truvideo.tests.Message_SaleOrdertest">
 				<methods>
 					<include name="VerifyAll_Elements" />
 					<include name="Verify_message_Name" />
@@ -111,7 +111,7 @@
 	</test>
 	<test name="Multimedia page test">
 		<classes>
-			<class name="com.truvideo.tests.Multimediapagetest">
+			<class name="com.truvideo.tests.RoMultimediapagetest">
 				<methods>
 					<include name="verifyDownloadsingleimage" />
 					<include name="verifyDownloadMultipleimage" />

@@ -1,20 +1,18 @@
 package com.truvideo.testutils;
 
+import static com.truvideo.factory.PlaywrightFactory.getBrowserContext;
+import static com.truvideo.testutils.MyScreenRecorder.stopRecording;
+
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.TimeZone;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.microsoft.playwright.Tracing;
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.microsoft.playwright.Page;
-
-import static com.truvideo.factory.PlaywrightFactory.getBrowserContext;
-import static com.truvideo.testutils.MyScreenRecorder.stopRecording;
+import com.microsoft.playwright.Tracing;
 
 public class TestUtils {
     static ExtentReports extent;

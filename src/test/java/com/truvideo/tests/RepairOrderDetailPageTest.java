@@ -140,6 +140,10 @@ public class RepairOrderDetailPageTest extends BaseTest {
 //	public void verifyRejectDeletefunctionality() {
 //		repairOrderPage.verifyRejectdeletefunctionality();
 //	}
+	@Test(description = "")
+	public void verifyMarkandUnmarkfunctionality() throws Exception {
+		repairOrderPage.verifyMarkandUnmarkfunctionality();
+	}
 
 	@Test(description = "WA-5386")
 	public void verifyNotesFunctionalityOnRoDetailPage() throws InterruptedException {

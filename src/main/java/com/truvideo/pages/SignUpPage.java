@@ -1,9 +1,10 @@
 package com.truvideo.pages;
 
-import com.microsoft.playwright.Page;
-import com.truvideo.utility.JavaUtility;
-import com.truvideo.constants.AppConstants;
 import static com.truvideo.factory.PlaywrightFactory.prop;
+
+import com.microsoft.playwright.Page;
+import com.truvideo.constants.AppConstants;
+import com.truvideo.utility.JavaUtility;
 public class SignUpPage extends JavaUtility {
 	private Page page;
 

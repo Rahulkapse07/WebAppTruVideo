@@ -1,13 +1,11 @@
  package com.truvideo.tests;
 
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.LoadState;
-import com.truvideo.pages.ProspectDetailPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.ProspectListPage;
 
@@ -25,36 +23,36 @@ public class ProspectListPageTest extends BaseTest {
 	}
 
 	
-	@Test(priority = 1)
+	@Test()
 	public void verifyAllAvailableElementsOnROListPage() {
 		Assert.assertTrue(prospectListPage.checkAllAvailableElements_SOListPage());
 	}
 	
-	@Test(priority = 2)
+	@Test()
 	public void verify_MyROs_Filter() {
 		Assert.assertTrue(prospectListPage.clickOn_MySOs_Filter());
 	}
 	
-	@Test(priority = 3)
+	@Test()
 	public void verify_AllOpen_Filter() {
 		Assert.assertTrue(prospectListPage.clickOn_AllOpen_Filter());
 	}
 	
-	@Test(priority = 4)
+	@Test()
 	public void verify_ForReview_Filter() {
 		Assert.assertTrue(prospectListPage.clickOn_ForReview_Filter());
 	}
 	
-	@Test(priority = 5)
+	@Test()
 	public void verify_AllClosed_Filter() {
 		Assert.assertTrue(prospectListPage.clickOn_AllClosed_Filter());
 	}
-	@Test(priority = 6)
+	@Test()
 	public void verify_AllFieldsOn_AddSalesProspectScreen() {
 		Assert.assertTrue(prospectListPage.checkAllAvailableElements_SOListPage());
 	}
 	
-	@Test(priority = 7)
+	@Test()
 	public void verify_AddNewSalesProspect() {
 		String newSO=prospectListPage.addNewSalesProspect();
 		String firstSOinTable=prospectListPage.getFirstSOInList();

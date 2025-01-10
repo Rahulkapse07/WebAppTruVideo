@@ -1,19 +1,16 @@
 package com.truvideo.tests;
 
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.options.LoadState;
-import com.truvideo.pages.Multimediapage;
-import com.truvideo.utility.ExcelUtils;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 import com.opencsv.exceptions.CsvException;
 import com.truvideo.base.BaseTest;
 import com.truvideo.pages.OrderListPage;
-import com.truvideo.testutils.TestUtils;
+import com.truvideo.utility.ExcelUtils;
 
 public class OrderListPageTest extends BaseTest {
 	OrderListPage orderlistpage;
@@ -41,39 +38,39 @@ public class OrderListPageTest extends BaseTest {
 		Assert.assertEquals(result, expectedResult, "Filter type: " + filterType + " did not behave as expected.");
 	}
 
-	@Test(priority = 1)
+	@Test()
 	public void verifyAllAvailableElementsOnROListPage() {
 		Assert.assertTrue(orderlistpage.checkAllAvailableElements_ROListPage());
 	}
 
-	@Test(priority = 6)
+	@Test()
 	public void verify_DealerDropdown_ROListPage() {
 		Assert.assertTrue(orderlistpage.selectDealerFromSelectDealerDropdown());
 	}
 
-	@Test(priority = 7,description = "WA-5894")
+	@Test(description = "WA-5894")
 	public void verify_CloseRepairOrderFunction_ROListPage() {
 		Assert.assertTrue(orderlistpage.closeRepairOrder());
 	}
 
-	@Test(priority = 8)
+	@Test()
 	public void verify_AllFieldsOn_AddOrderScreen() {
 		Assert.assertTrue(orderlistpage.clickOnAddRepairOrder());
 	}
 
-	@Test(priority = 9)
+	@Test()
 	public void verify_RequiredField_AccordingToFleetCustomer() {
 		Assert.assertTrue(orderlistpage.checkfleet_CheckBox_EnableDisabled());
 	}
 
-	@Test(priority = 10)
+	@Test()
 	public void verify_AllMandatoryErrorMessage() {
 		Assert.assertTrue(orderlistpage.checkAllMandatoryErrorMessage());
 	}
 
-	@Test(priority = 11,description = "WA-5600")
+	@Test(description = "WA-5600")
 	public void verifyAddRepairOrder() throws Exception {
-		String newCreatedRO = orderlistpage.addRepairOrder("New");
+		String newCreatedRO = orderlistpage.addRepairOrdertest("New");
 		String firstROInList = orderlistpage.getFirstROInList();
 		Assert.assertEquals(firstROInList, newCreatedRO);
 	}
@@ -94,13 +91,13 @@ public class OrderListPageTest extends BaseTest {
 
 
 
-	@Test(priority = 12, dependsOnMethods = "verifyAddRepairOrder")
+	@Test(dependsOnMethods = "verifyAddRepairOrder")
 	public void verifyCreatedROIsVisibleObMobileApp() throws Exception {
 		orderlistpage.verifyCreatedRO_OnMobile();
 	}
 
 	// added by yash
-	@Test(priority = 18)
+	@Test()
 	public void verifyInspectionStatus() {
 		Assert.assertTrue(orderlistpage.checkInspectionStatus());
 	}

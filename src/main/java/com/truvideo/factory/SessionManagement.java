@@ -27,6 +27,7 @@ public class SessionManagement {
                             setViewportSize(null)
 //                            .setRecordVideoDir(Paths.get("./Reports/videos/"))
 //                            .setRecordVideoSize(1280, 720)
+                         
             );
         } else {
             System.out.println("Session file not found. Logging in to create a new session.");

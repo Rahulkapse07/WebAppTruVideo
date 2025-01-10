@@ -1,5 +1,7 @@
 package com.truvideo.pages;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,6 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.truvideo.constants.AppConstants;
 import com.truvideo.utility.JavaUtility;
-import static com.truvideo.factory.PlaywrightFactory.prop;
 public class ProspectListPage extends JavaUtility {
 	private Page page;
 
@@ -19,17 +20,12 @@ public class ProspectListPage extends JavaUtility {
 	private String allOpen_FilterButton = "#LBL_ALL_OPEN";
 	private String ForReview_FilterButton = "#LBL_FOR_REVIEW";
 	private String allClosed_FilterButton = "#LBL_ALL_CLOSED";
-	private String closeSalesProspect_Button = "#sales-order-close";
 	private String addSalesProspect_Button = "#sales-order-add";
 	//Add Sales Prospect
 	private String salesProspect_Label = "#sales-order-page-title-text";
 	private String lastName_Field = "(//input[@id='customer.lastName'])[1]";
 	private String firstName_Field = "(//input[@id='customer.firstName'])[1]";
-	private String lastNameErrorMessage = "//small[text()='Last Name is a required field.']";
-	private String firstNameErrorMessage = "//small[text()='First Name is a required field.']";
 	private String phoneNumber_Field = "#phoneNumberCreate";
-	private String invalidPhoneNumberErrorMessage = "//small[text()=' Phone number is not valid']";
-	private String validatePhoneNumber_Field = "#validate-mobile-number";
 	private String emailId_Field = "(//input[@id='customer.email'])[1]";
 	private String stockNo_Field = "(//input[@id='vehicle.stockNo'])[1]";
 	private String vehicleMake_Field = "(//input[@id='vehicle.make'])[1]";
@@ -37,7 +33,6 @@ public class ProspectListPage extends JavaUtility {
 	private String vehicleYear_Field = "(//input[@id='vehicle.year'])[1]";
 	private String salesAgentDropdown_Field = "(//select[@id='salesAgent'])[1]";
 	private String savePropsectButton = "(//input[@value='Save'])[1]";
-	private String saveAndNewPropsectButton = "(//input[@value='Save and New'])[1]";
 	private String cancelPropsectButton = "//button[@type='button'][@class='btn'][text()='Cancel']";
 	public static String newSOName;
 	private String firstSOCustomerName = "#sales-order-results tbody tr:nth-child(2) td:nth-child(6)";

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Home Page" parallel="methods" thread-count="1" verbose="5" preserve-order="false">
+<suite name="Home Page" parallel="methods" thread-count="2" verbose="5" preserve-order="false">
 
     <listeners>
         <listener class-name="com.truvideo.testutils.Listeners"></listener>
@@ -12,7 +12,15 @@
 
     <test name="Login page">
         <classes>
+            <class name="com.truvideo.tests.LoginPageTest"></class>
+            <class name="com.truvideo.tests.HomePageTest"></class>
+            <class name="com.truvideo.tests.OrderListPageTest"></class>
             <class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
+            <class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+            <class name="com.truvideo.tests.RoMultimediapagetest"></class>
+            <class name="com.truvideo.tests.ProspectListPageTest"></class>
+            <class name="com.truvideo.tests.ProspectDetailPageTest"></class>
+            <class name="com.truvideo.tests.Message_SaleOrdertest"></class>
         </classes>
     </test>
 </suite>
