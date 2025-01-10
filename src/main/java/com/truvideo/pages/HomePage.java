@@ -1,7 +1,7 @@
 package com.truvideo.pages;
 
-import static com.truvideo.factory.PlaywrightFactory.prop;
 
+import static com.truvideo.factory.PlaywrightFactory.prop;
 import java.util.ArrayList;
 import java.util.List;
 

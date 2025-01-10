@@ -44,11 +44,6 @@ public class ReminderPage {
 	private String topRightCornerNotification1 = "div.tru-toast";
 	private String topRightCornerNotification = "div.notifications";
 
-	public static final String Reminder_Send_Message = "Text message sent to customer";
-	public static final String Reminder_Send_EmailMessage = "Email message sent to customer";
-	public static final String Reminder_Cancel_Message = "Reminder has been cancelled";
-	public static final String Reminder_Save = "Service recomendation successfully saved";
-
 	public ReminderPage(Page page) {
 		this.page = page;
 	}

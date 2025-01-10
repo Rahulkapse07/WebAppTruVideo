@@ -1,8 +1,4 @@
-
 package com.truvideo.constants;
-
-
-
 public class AppConstants {
 
 	// Login Page
@@ -80,9 +76,12 @@ public class AppConstants {
 	public static final String Update = "Record has been successfully updated";
 	public static final String Remove = "Record has been successfully deleted";
 	//Dealer Settings
-		public static final String StandardResponseAdded = "Record has been successfully added";
+	public static final String StandardResponseAdded = "Record has been successfully added";
 		
-			
+	//Dealer Group
+	public static final String DealerGroupAdded = "Record has been successfully added.";		
+	public static final String DealerGroupUpdate = "Record has been successfully updated";		
+	public static final String Remove1 = "Record has been successfully deleted";
 
 	
 }

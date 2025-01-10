@@ -1,3 +1,4 @@
+
 package com.truvideo.pages;
 
 import static org.testng.Assert.assertEquals;
@@ -718,3 +719,4 @@ public class UserPage extends JavaUtility {
 
 	}
 }
+
