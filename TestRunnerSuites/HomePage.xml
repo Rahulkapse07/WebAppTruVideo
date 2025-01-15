@@ -16,11 +16,11 @@
             <class name="com.truvideo.tests.HomePageTest"></class>
             <class name="com.truvideo.tests.OrderListPageTest"></class>
             <class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
-<!--             <class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+            <class name="com.truvideo.tests.Message_RepairOrdertest"></class>
             <class name="com.truvideo.tests.RoMultimediapagetest"></class>
             <class name="com.truvideo.tests.ProspectListPageTest"></class>
-            <class name="com.truvideo.tests.ProspectDetailPageTest"></class>
-            <class name="com.truvideo.tests.Message_SaleOrdertest"></class> -->
+            <class name="com.truvideo.tests.Message_SaleOrdertest"></class>
+            
         </classes>
     </test>
 </suite>
