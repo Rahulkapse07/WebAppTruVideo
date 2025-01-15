@@ -7,48 +7,51 @@ import org.testng.annotations.Test;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 import com.truvideo.base.BaseTest;
-import com.truvideo.pages.Multimediapage;
+import com.truvideo.pages.RoMultimediapage;
 import com.truvideo.testutils.AdditionalDescriptions;
 
 public class RoMultimediapagetest extends BaseTest {
 
-	Multimediapage multimediapage;
-
+	RoMultimediapage multimediapage;
 
 	@BeforeMethod(dependsOnMethods = "initialize_Browser_With_Session")
 	public void navigateToMultimediaPage_And_InitializeMultimediaPage() {
-		getPage().navigate(prop.getProperty("romultimediaUrl"),
-				new Page.NavigateOptions().setTimeout(100000));
+		getPage().navigate(prop.getProperty("romultimediaUrl"), new Page.NavigateOptions().setTimeout(100000));
 		getPage().waitForLoadState(LoadState.DOMCONTENTLOADED);
-		multimediapage = new Multimediapage(getPage());
+		multimediapage = new RoMultimediapage(getPage());
 	}
 
-
-	@Test(priority = 1,description = "WA-5790")
-	@AdditionalDescriptions({"WA-5793"})
+	@Test(description = "WA-5790")
+	@AdditionalDescriptions({ "WA-5793" })
 	public void verifyDownloadsingleimage() throws Exception {
 		multimediapage.verifyDownloadsingleimage();
 	}
 
-	@Test(priority = 2,description = "WA-5789")
-	@AdditionalDescriptions({"WA-5794"})
-	public void verifyDownloadMultipleimage() {
+	@Test(description = "WA-5793")
+	public void VerifydownloadMultipleimage() {
+    Assert.assertTrue(multimediapage.VerifydownloadMultipleimage());
+    
+	}
+
+	@Test(description = "WA-5789")
+	@AdditionalDescriptions({ "WA-5794" })
+	public void VerifyHideandshowMultipleimage() {
 
 		multimediapage.VerifyHideandshowMultipleimage();
 	}
 
-	@Test(priority = 3, dependsOnMethods = "verifyDownloadMultipleimage",description = "WA-5795 , WA-5796")
+	@Test(description = "WA-5795 , WA-5796")
 	public void verify_functionality_Selectall() throws Exception {
 
 		multimediapage.verify_functionality_Selectall();
 	}
 
-	@Test(priority = 4,description = "")
+	@Test(description = "")
 	public void verify_functionality_Mark_Unmark() {
 		Assert.assertTrue(multimediapage.verify_functionality_Mark_Unmark());
 	}
 
-	@Test(priority = 5,description = "WA-5404 , WA-5403")
+	@Test(description = "WA-5404 , WA-5403")
 	public void verify_View_all_functionality() {
 		Assert.assertTrue(multimediapage.verify_View_all_functionalityforimage());
 	}

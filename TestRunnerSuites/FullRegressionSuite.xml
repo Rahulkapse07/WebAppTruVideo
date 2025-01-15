@@ -3,58 +3,63 @@
 
 
 <suite name="Regression Suite" preserve-order="true">
-    <listeners>
-        <listener class-name="com.truvideo.testutils.Listeners"></listener>
-    </listeners>
-    <parameter name="browser" value="chrome"/>
-    <parameter name="headless" value="false"/>
+	<listeners>
+		<listener class-name="com.truvideo.testutils.Listeners"></listener>
+	</listeners>
+	<parameter name="browser" value="chrome" />
+	<parameter name="headless" value="false" />
 
-    <test name="Before Login Scenarios" parallel="methods" thread-count="3" verbose="5">
-        <classes>
-            <class name="com.truvideo.tests.LoginPageTest"></class>
-           <!--  <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
-            <class name="com.truvideo.tests.SignUpPageTest"></class> -->
-        </classes>
-    </test>
-    <test name="After Login Scenarios" parallel="methods" thread-count="3" verbose="5">
-        <classes>
-           <class name="com.truvideo.tests.ForgotPasswordPageTest"></class>
-          <!--   <class name="com.truvideo.tests.HomePageTest"></class>
-            <class name="com.truvideo.tests.UserPageTest"></class>
-            <class name="com.truvideo.tests.Message_RepairOrdertest"></class> -->
-        </classes>
-    </test>
+	<test name="Before Login Scenarios" parallel="methods"
+		thread-count="3" verbose="5">
+		<classes>
+			<class name="com.truvideo.tests.LoginPageTest"></class>
+			<class name="com.truvideo.tests.ForgotPasswordPageTest"></class> 
+			<class name="com.truvideo.tests.SignUpPageTest"></class>
+		</classes>
+	</test>
+	<test name="After Login Scenarios" parallel="methods"
+		thread-count="3" verbose="5">
+		<classes>
+		    <class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
+			<class name="com.truvideo.tests.OrderListPageTest"></class>
+			<class name="com.truvideo.tests.HomePageTest"></class>
+			<class name="com.truvideo.tests.UserPageTest"></class> 
+			<class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+			<class name="com.truvideo.tests.Message_SaleOrdertest"></class>
+		</classes>
+	</test>
 </suite>
 
 
-        <!--     <test name="Home page Test">
-                <classes>
-                    <class name="com.truvideo.tests.HomePageTest"></class>
-                </classes>
-            </test> -->
-        <!--    <test name="Order List Page Test">-->
-        <!--        <classes>-->
-        <!--            <class name="com.truvideo.tests.OrderListPageTest"></class>-->
-        <!--        </classes>-->
-        <!--    </test>-->
-        <!--    <test name="Order Details Page Test">-->
-        <!--        <classes>-->
-        <!--            <class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>-->
-        <!--        </classes>-->
-        <!--    </test>-->
-        <!--    <test name="User Page Test">-->
-        <!--        <classes>-->
-        <!--            <class name="com.truvideo.tests.UserPageTest"></class>-->
-        <!--        </classes>-->
-        <!--    </test>-->
-        <!--    <test name="Message Sales Page Test">
-               <classes>
-                   <class name="com.truvideo.tests.Message_SaleOrdertest"></class>
-               </classes>
-           </test> -->
-        <!--   <test name="Message Services Test">-->
-        <!--       <classes>-->
-        <!--           <class name="com.truvideo.tests.Message_RepairOrdertest"></class>-->
-        <!--       </classes>-->
-        <!--   </test>-->
-        <!--</suite>-->
+<!-- <test name="Home page Test">
+	<classes>
+		<class name="com.truvideo.tests.HomePageTest"></class>
+	</classes>
+</test>
+<test name="Order List Page Test">
+	<classes>
+		<class name="com.truvideo.tests.OrderListPageTest"></class>
+	</classes>
+</test>
+<test name="Order Details Page Test">
+	<classes>
+		<class name="com.truvideo.tests.RepairOrderDetailPageTest"></class>
+	</classes>
+</test>
+<test name="User Page Test">
+	<classes>
+		<class name="com.truvideo.tests.UserPageTest"></class>
+	</classes>
+</test>
+<test name="Message Sales Page Test">
+	<classes>
+		<class name="com.truvideo.tests.Message_SaleOrdertest"></class>
+	</classes>
+</test>
+<test name="Message Services Test">
+	<classes>
+		<class name="com.truvideo.tests.Message_RepairOrdertest"></class>
+	</classes>
+</test>
+</suite>
+ -->

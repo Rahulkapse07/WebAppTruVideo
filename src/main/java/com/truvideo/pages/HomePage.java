@@ -144,9 +144,9 @@ public class HomePage extends JavaUtility {
 		return page.title();
 	}
 
-	public Multimediapage NavigateToOrderList() {
+	public RoMultimediapage NavigateToOrderList() {
 		page.click(repairOrder_Header);
-		return new Multimediapage(page);
+		return new RoMultimediapage(page);
 
 	}
 

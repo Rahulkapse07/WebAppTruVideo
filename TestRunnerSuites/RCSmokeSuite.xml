@@ -1,10 +1,10 @@
-<suite name="RC Smoke Suite" parallel="methods" thread-count="3" verbose="5" preserve-order="false">
+<suite name="RC Smoke Suite" parallel="methods" thread-count="2" verbose="5" preserve-order="false">
 
 	<listeners>
 		<listener class-name="com.truvideo.testutils.Listeners"></listener>
 	</listeners>
 	<parameter name="browser" value="chrome" />
-	<!-- <parameter name="headless" value="false" /> -->
+	 <parameter name="headless" value="true" />
 	<parameter name="env" value="stagingrc" />
 
 	<test name="Login page">
@@ -115,6 +115,7 @@
 				<methods>
 					<include name="verifyDownloadsingleimage" />
 					<include name="verifyDownloadMultipleimage" />
+					
 					<include name="verify_functionality_Selectall" />
 					<include name="verify_functionality_Mark_Unmark" />
 					<include name="verify_View_all_functionality" />

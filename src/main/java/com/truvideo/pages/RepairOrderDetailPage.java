@@ -2236,7 +2236,7 @@ public class RepairOrderDetailPage extends JavaUtility {
 			logger.info("WhatsApp setting is disabled from dealer settings");
 
 		}
-		page.waitForTimeout(10000);
+		page.waitForTimeout(20000);
 		frame.locator(chat_tab).click();
 		page.waitForTimeout(5000);
 		logger.info("Chat window are displayed sucessfully");

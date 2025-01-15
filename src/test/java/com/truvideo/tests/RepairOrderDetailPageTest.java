@@ -75,40 +75,6 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyPaymentResendFunction() {
 		repairOrderPage.resendPayment("SMS");
 	}
-//	@Test(description = "WA-5375" )
-//	public void verifySubmitPayment_ProcessedPayment() {
-//
-//		repairOrderPage.submitPayment("SMS");
-//	}
-//	
-//	@Test(priority = 14, description = "WA-5569")
-//	public void verifyCreateReminder() throws InterruptedException {
-//		Assert.assertTrue(repairOrderPage.createreminder());
-//	}
-// 
-//	 * @Test(priority = 15, description = "WA-5378") public void
-//	 * VerifyOpenInspection() throws InterruptedException {
-//	 * Assert.assertTrue(repairOrderPage.openInspection()); }
-//	 * 
-//	 * @Test(priority = 16, description = "WA-5382") public void
-//	 * VerifySendbackInspection() {
-//	 * Assert.assertTrue(repairOrderPage.sendbackInspection()); }
-//	 * 
-//	 * @Test(priority = 17, description = "WA-5379") public void
-//	 * VerifyPublishInspections() {
-//	 * Assert.assertTrue(repairOrderPage.publishInspection()); }
-//	 * 
-//	 * @Test(priority = 18, description = "WA-5381") public void
-//	 * VerifyNotifyCustomer() {
-//	 * Assert.assertTrue(repairOrderPage.notifyCustomerBtn()); }
-//	 * 
-//	 * @Test(priority = 19, description = "WA-5383") public void VerifyHide_Show() {
-//	 * Assert.assertTrue(repairOrderPage.hide_showBtn()); }
-//	 * 
-//	 * @Test(priority = 20, description = "WA-5380") public void
-//	 * VerifyPrintInspection() throws InterruptedException {
-//	 * Assert.assertTrue(repairOrderPage.printInspection()); }
-//	 */
 
 	@Test(description = "WA-5393")
 	public void verifyCopylinktoClipboardFunctionality() {
@@ -162,5 +128,40 @@ public class RepairOrderDetailPageTest extends BaseTest {
 	public void verifyDeleteRepairOrderFunction() throws InterruptedException {
 		repairOrderPage.deleteRepairOrder();
 	}
+	
+//	@Test(description = "WA-5375" )
+//	public void verifySubmitPayment_ProcessedPayment() {
+//
+//		repairOrderPage.submitPayment("SMS");
+//	}
+//	
+//	@Test(priority = 14, description = "WA-5569")
+//	public void verifyCreateReminder() throws InterruptedException {
+//		Assert.assertTrue(repairOrderPage.createreminder());
+//	}
+// 
+//	 * @Test(priority = 15, description = "WA-5378") public void
+//	 * VerifyOpenInspection() throws InterruptedException {
+//	 * Assert.assertTrue(repairOrderPage.openInspection()); }
+//	 * 
+//	 * @Test(priority = 16, description = "WA-5382") public void
+//	 * VerifySendbackInspection() {
+//	 * Assert.assertTrue(repairOrderPage.sendbackInspection()); }
+//	 * 
+//	 * @Test(priority = 17, description = "WA-5379") public void
+//	 * VerifyPublishInspections() {
+//	 * Assert.assertTrue(repairOrderPage.publishInspection()); }
+//	 * 
+//	 * @Test(priority = 18, description = "WA-5381") public void
+//	 * VerifyNotifyCustomer() {
+//	 * Assert.assertTrue(repairOrderPage.notifyCustomerBtn()); }
+//	 * 
+//	 * @Test(priority = 19, description = "WA-5383") public void VerifyHide_Show() {
+//	 * Assert.assertTrue(repairOrderPage.hide_showBtn()); }
+//	 * 
+//	 * @Test(priority = 20, description = "WA-5380") public void
+//	 * VerifyPrintInspection() throws InterruptedException {
+//	 * Assert.assertTrue(repairOrderPage.printInspection()); }
+//	 */
 
 }

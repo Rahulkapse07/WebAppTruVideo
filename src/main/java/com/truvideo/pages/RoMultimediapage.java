@@ -3,6 +3,7 @@ package com.truvideo.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.microsoft.playwright.FrameLocator;
@@ -11,11 +12,11 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 import com.truvideo.utility.JavaUtility;
 
-public class Multimediapage extends JavaUtility {
+public class RoMultimediapage extends JavaUtility {
 
 	private Page page;
 
-	public Multimediapage(Page page) {
+	public RoMultimediapage(Page page) {
 		this.page = page;
 	}
 
@@ -37,11 +38,12 @@ public class Multimediapage extends JavaUtility {
 	private String imagename = ".container-gallery h3";
 	private String sendtocustomerbtn = ".orders-detail-video__details.ng-star-inserted span";
 	private String Hiddenlabel = ".orders-detail-video__details p:has-text('Hidden')";
+	private String downloadallimage = "button.mat-mdc-menu-trigger >span";
 
 	// roaster notification
 
-	private String Roasternotify = ".tru-toast__right-container p.ng-tns-c2835246437-0 ";
-
+	private String Roasternotify = ".tru-toast__container.ng-tns-c2835246437-0.ng-star-inserted ";
+	
 	private String multioptions(String Option) {
 		return ".cdk-overlay-pane div.mat-mdc-menu-content button:has-text('" + Option + "')";
 	}
@@ -89,6 +91,7 @@ public class Multimediapage extends JavaUtility {
 					break;
 				}
 			}
+			 assert page.locator("").equals(Value);
 			logger.info("Verify RO details");
 			String Type = iframe.locator(".orders-detail-menu__media-gallery mat-icon:has-text('photo_camera')")
 					.innerText();
@@ -392,7 +395,6 @@ public class Multimediapage extends JavaUtility {
 					page.waitForTimeout(2000);
 					iframe.locator(Downloadbutton(i)).click();
 					String notify2 = iframe.locator(Roasternotify).innerText();
-					System.out.println(notify2);
 					Softassert.assertEquals(notify2, "Your download has started. Please check your downloads folder");
 					page.waitForTimeout(2000);
 
@@ -404,7 +406,7 @@ public class Multimediapage extends JavaUtility {
 
 			page.waitForTimeout(5000);
 		} else {
-			throw new Exception("View / ADD Element is missing from UI");
+			throw new Exception("View/add element is missing from UI");
 		}
 
 	}
@@ -740,6 +742,92 @@ public class Multimediapage extends JavaUtility {
 		return true;
 	}
 
+	public boolean VerifydownloadMultipleimage() {
+
+		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
+		SoftAssert Softassert = new SoftAssert();
+		boolean flag = false;
+		page.waitForCondition(() -> page.locator(Searchheader).isVisible());
+		if (page.locator(Searchheader).isVisible()) {
+			page.locator(Searchheader).fill("4543381849");
+			page.keyboard().press("Enter");
+			page.waitForTimeout(4000);
+
+			String Value = "4543381849";
+			boolean roFound = false;
+			while (!roFound) {
+				Locator TableRow = page.locator(tableRows);
+				int rowCount = TableRow.count();
+				logger.info(rowCount);
+				for (int i = 0; i < rowCount - 1; i++) {
+					Locator roNumberList = TableRow.locator(Ronumber).nth(i);
+					String roNumber = roNumberList.innerText().trim();
+
+					if (roNumber.equals(Value)) {
+						logger.info("The RO " + Value + " found in  list and RO Number is: " + roNumber);
+
+						TableRow.locator(Ronumber).nth(i).click();
+						page.waitForTimeout(4000);
+						roFound = true;
+						break;
+					}
+					logger.info("Checking for: " + Value + " And found :" + roNumber);
+				}
+				if (!roFound && page.isVisible(nextButton)) {
+					logger.info("next button displayed ");
+					page.click(nextButton);
+					logger.info("The RO is not found on the current page, checking on the next page.");
+					page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+					page.waitForTimeout(4000);
+				} else if (!roFound) {
+					logger.info("RO number not found and no more pages to check.");
+					roFound = false;
+					flag = false;
+					break;
+				}
+				page.waitForTimeout(10000);
+				if (iframe.locator(add_btn).isVisible()) {
+					iframe.locator(viewbtn).click();
+					page.waitForTimeout(5000);
+					if (iframe.locator(View1).isVisible() && iframe.locator(View2).isVisible()) {
+
+						iframe.locator(View2).click();
+						logger.info("Grid view");
+						iframe.locator(View1).click();
+						logger.info("normal view");
+						iframe.locator(View2).click();
+					}
+
+					logger.info("clicked on download button");
+
+					for (int i = 1; i <= 2; i++) {
+						iframe.locator(downloadallimage).click();
+						page.waitForTimeout(5000);
+						iframe.locator(Downloadbutton(i)).click();
+						logger.info("clicked");
+						page.waitForCondition(()->page.locator(Roasternotify).isVisible());
+						String notify = iframe.locator(Roasternotify).innerText();
+						System.err.println(notify);
+						Assert.assertEquals(notify, "This image is hidden from the customer",
+								"Wrong toaster message here");
+
+						System.out.println("checked");
+						page.waitForTimeout(5000);
+						flag = true;
+					}
+					iframe.locator(crossbutton).click();
+					logger.info("Image download in both format");
+				} else {
+					System.out.println("failed");
+					flag = false;
+				}
+
+			}
+		}
+
+		return flag;
+	}
+
 	private List<String> Extractname() {
 		FrameLocator iframe = page.frameLocator(orderDetailsIFrame);
 		List<String> extractedname = new ArrayList<>();
@@ -753,6 +841,7 @@ public class Multimediapage extends JavaUtility {
 
 			}
 		}
+
 		return extractedname;
 	}
 }
